@@ -6,34 +6,32 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 
 const resources = [
   {
-    title: 'Web Development Bootcamp',
+    title: 'Khóa học tiếng Nhật N3',
     description:
-      'Master front-end and back-end technologies to build modern web applications.',
+      'Chinh phục kỳ thi JLPT N3 với lộ trình học bài bản và hiệu quả.',
     image: 'https://picsum.photos/600/400?random=1',
-    hint: 'code laptop',
+    hint: 'learning japan',
   },
   {
-    title: 'Data Science & Machine Learning',
-    description: 'Learn to analyze data, build predictive models, and drive business decisions.',
+    title: 'Kỹ năng làm việc tại công ty Nhật',
+    description: 'Hiểu rõ văn hóa công sở, cách giao tiếp và làm việc chuyên nghiệp.',
     image: 'https://picsum.photos/600/400?random=2',
-    hint: 'data charts',
+    hint: 'office meeting',
   },
   {
-    title: 'Cloud Computing Essentials',
-    description: 'Get certified in AWS, Azure, or Google Cloud to manage scalable infrastructures.',
+    title: 'Luyện phỏng vấn Tokutei Ginou',
+    description: 'Tự tin trả lời các câu hỏi phỏng vấn và ghi điểm với nhà tuyển dụng.',
     image: 'https://picsum.photos/600/400?random=3',
-    hint: 'cloud server',
+    hint: 'job interview',
   },
 ];
 
 export function Elearning() {
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold font-headline text-gray-800">
@@ -57,7 +55,7 @@ export function Elearning() {
                 />
               </div>
               <CardHeader>
-                <CardTitle className="font-headline text-gray-800">{resource.title}</CardTitle>
+                <CardTitle className="font-headline text-xl text-gray-800">{resource.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>{resource.description}</CardDescription>
@@ -69,5 +67,3 @@ export function Elearning() {
     </section>
   );
 }
-
-export { Elearning as CuratedResources };

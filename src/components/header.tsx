@@ -1,25 +1,35 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
+import { ChevronDown, Globe, LayoutGrid } from 'lucide-react';
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <div className="flex items-center gap-6">
+    <header className="sticky top-0 z-50 w-full border-b bg-white">
+      <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
+        <div className="flex items-center gap-10">
           <Link href="/">
             <Logo />
           </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link href="#jobs" className="text-foreground/60 transition-colors hover:text-foreground/80">Jobs</Link>
-            <Link href="#resources" className="text-foreground/60 transition-colors hover:text-foreground/80">Resources</Link>
-            <Link href="#" className="text-foreground/60 transition-colors hover:text-foreground/80">About</Link>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <Link href="#" className="text-foreground transition-colors hover:text-primary">Trang chủ</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Lộ trình</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Hướng nghiệp</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Tạo hồ sơ AI</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">E-Learning</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Cẩm nang</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Giới thiệu</Link>
           </nav>
         </div>
-        <div className="flex items-center gap-4">
-          <Button variant="ghost" className="hidden sm:inline-flex">Log In</Button>
-          <Button style={{ backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))' }}>
-            Post a Job
+        <div className="flex items-center gap-6">
+          <Button variant="ghost" className="hidden sm:inline-flex items-center gap-2">
+            <Globe className="h-4 w-4" />
+            <span>VN</span>
+            <ChevronDown className="h-4 w-4" />
+          </Button>
+          <Button variant="ghost" className="hidden sm:inline-flex">Hồ sơ của tôi</Button>
+          <Button variant="ghost" size="icon">
+            <LayoutGrid className="h-5 w-5" />
           </Button>
         </div>
       </div>
