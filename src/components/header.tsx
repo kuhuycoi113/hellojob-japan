@@ -26,6 +26,27 @@ const VietnamFlag = () => (
   </svg>
 );
 
+const JapanFlag = () => (
+    <svg width="24" height="18" viewBox="0 0 900 600">
+        <rect width="900" height="600" fill="#fff" stroke="#e7e7e7" strokeWidth="1"/>
+        <circle cx="450" cy="300" r="180" fill="#bc002d"/>
+    </svg>
+);
+
+const EnglishFlag = () => (
+    <svg width="24" height="18" viewBox="0 0 60 36">
+        <clipPath id="a">
+            <path d="M0 0h60v36H0z"/>
+        </clipPath>
+        <path d="M0 0h60v36H0z" fill="#012169"/>
+        <path d="M0 0l60 36m0-36L0 36" stroke="#fff" strokeWidth="6" clipPath="url(#a)"/>
+        <path d="M0 0l60 36m0-36L0 36" stroke="#C8102E" strokeWidth="4" clipPath="url(#a)"/>
+        <path d="M30 0v36M0 18h60" stroke="#fff" strokeWidth="10"/>
+        <path d="M30 0v36M0 18h60" stroke="#C8102E" strokeWidth="6"/>
+    </svg>
+);
+
+
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
@@ -93,11 +114,18 @@ export function Header() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>Ngôn ngữ</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Tiếng Việt</DropdownMenuItem>
-              <DropdownMenuItem>日本語</DropdownMenuItem>
-              <DropdownMenuItem>English</DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center gap-2">
+                <VietnamFlag />
+                <span>VN</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center gap-2">
+                <JapanFlag />
+                <span>JP</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center gap-2">
+                <EnglishFlag />
+                <span>EN</span>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
