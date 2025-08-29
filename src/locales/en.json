@@ -307,6 +307,11 @@
     "resultsTitle": "Your Golden Circle",
     "resultsDescription": "Here is the result of your brainstorming session. Use this to clarify your purpose and inspire action.",
     "resetButton": "Start Over",
-    "noResult": "No input provided."
+    "noResult": "No input provided.",
+    "aiAnalysis": {
+      "button": "Analyze with AI",
+      "title": "AI Analysis & Recommendation",
+      "loading": "Analyzing... This may take a moment."
+    }
   }
 }

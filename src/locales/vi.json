@@ -307,6 +307,11 @@
     "resultsTitle": "Vòng tròn Vàng của bạn",
     "resultsDescription": "Đây là kết quả từ buổi brainstorm của bạn. Hãy sử dụng nó để làm rõ mục đích và truyền cảm hứng hành động.",
     "resetButton": "Làm lại từ đầu",
-    "noResult": "Chưa có nội dung."
+    "noResult": "Chưa có nội dung.",
+    "aiAnalysis": {
+      "button": "Phân tích với AI",
+      "title": "Phân tích & Gợi ý từ AI",
+      "loading": "Đang phân tích... Vui lòng chờ trong giây lát."
+    }
   }
 }

@@ -307,6 +307,11 @@
     "resultsTitle": "あなたのゴールデンサークル",
     "resultsDescription": "ブレインストーミングセッションの結果です。これを活用して目的を明確にし、行動を促しましょう。",
     "resetButton": "やり直す",
-    "noResult": "入力がありません。"
+    "noResult": "入力がありません。",
+    "aiAnalysis": {
+      "button": "AIで分析",
+      "title": "AI分析と推奨",
+      "loading": "分析中... しばらくお待ちください。"
+    }
   }
 }

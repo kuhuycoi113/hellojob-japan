@@ -6,8 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/language-context';
-import { Target, HelpCircle, Settings, Heart, ArrowRight, RefreshCw, Save } from 'lucide-react';
+import { Target, HelpCircle, Settings, Heart, ArrowRight, RefreshCw, Save, Sparkles, LoaderCircle } from 'lucide-react';
 import Image from 'next/image';
+import { analyzeGoldenCircle, GoldenCircleAnalysisInput, GoldenCircleAnalysisOutput } from '@/ai/flows/golden-circle-analysis';
 
 type SessionState = 'idle' | 'in_progress' | 'completed';
 
@@ -21,6 +22,9 @@ export function GoldenCircle() {
   const { t } = useLanguage();
   const [sessionState, setSessionState] = useState<SessionState>('idle');
   const [values, setValues] = useState<GoldenCircleValues>({ why: '', how: '', what: '' });
+  const [analysis, setAnalysis] = useState<GoldenCircleAnalysisOutput | null>(null);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+
 
   const handleStart = () => {
     setSessionState('in_progress');
@@ -33,7 +37,23 @@ export function GoldenCircle() {
 
   const handleReset = () => {
     setValues({ why: '', how: '', what: '' });
+    setAnalysis(null);
+    setIsAnalyzing(false);
     setSessionState('idle');
+  }
+
+  const handleAnalyze = async () => {
+    setIsAnalyzing(true);
+    setAnalysis(null);
+    try {
+      const result = await analyzeGoldenCircle(values);
+      setAnalysis(result);
+    } catch (error) {
+      console.error("Error analyzing Golden Circle:", error);
+      // You could add a toast notification here to inform the user of the error
+    } finally {
+      setIsAnalyzing(false);
+    }
   }
 
   const dimensions = [
@@ -119,7 +139,13 @@ export function GoldenCircle() {
             )}
 
             {sessionState === 'completed' && (
-              <GoldenCircleResults values={values} onReset={handleReset} />
+              <GoldenCircleResults 
+                values={values} 
+                onReset={handleReset} 
+                onAnalyze={handleAnalyze}
+                analysisResult={analysis}
+                isAnalyzing={isAnalyzing}
+              />
             )}
 
             {sessionState === 'idle' && (
@@ -213,7 +239,15 @@ function GoldenCircleForm({ onSave }: { onSave: (values: GoldenCircleValues) => 
   );
 }
 
-function GoldenCircleResults({ values, onReset }: { values: GoldenCircleValues, onReset: () => void }) {
+interface GoldenCircleResultsProps {
+  values: GoldenCircleValues;
+  onReset: () => void;
+  onAnalyze: () => void;
+  isAnalyzing: boolean;
+  analysisResult: GoldenCircleAnalysisOutput | null;
+}
+
+function GoldenCircleResults({ values, onReset, onAnalyze, isAnalyzing, analysisResult }: GoldenCircleResultsProps) {
   const { t } = useLanguage();
   
   const results = [
@@ -239,10 +273,42 @@ function GoldenCircleResults({ values, onReset }: { values: GoldenCircleValues, 
           </Card>
         ))}
       </div>
-      <Button onClick={onReset} variant="outline">
-        <RefreshCw className="mr-2 h-4 w-4" />
-        {t.goldenCircle.resetButton}
-      </Button>
+
+      {(isAnalyzing || analysisResult) && (
+        <Card className="p-6 shadow-md text-left bg-blue-50/50">
+           <CardTitle className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+            <Sparkles className="w-6 h-6 text-primary"/>
+            {t.goldenCircle.aiAnalysis.title}
+          </CardTitle>
+          {isAnalyzing && (
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <LoaderCircle className="w-5 h-5 animate-spin" />
+              <p>{t.goldenCircle.aiAnalysis.loading}</p>
+            </div>
+          )}
+          {analysisResult && (
+            <div className="text-gray-700 whitespace-pre-wrap prose">
+              {analysisResult.analysis}
+            </div>
+          )}
+        </Card>
+      )}
+
+
+      <div className="flex justify-center gap-4">
+        <Button onClick={onReset} variant="outline">
+          <RefreshCw className="mr-2 h-4 w-4" />
+          {t.goldenCircle.resetButton}
+        </Button>
+        <Button onClick={onAnalyze} disabled={isAnalyzing}>
+          {isAnalyzing ? (
+            <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Sparkles className="mr-2 h-4 w-4" />
+          )}
+          {t.goldenCircle.aiAnalysis.button}
+        </Button>
+      </div>
     </div>
   )
 }
