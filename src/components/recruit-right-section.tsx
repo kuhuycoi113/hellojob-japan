@@ -41,7 +41,7 @@ export function RecruitRightSection() {
       description: t.recruitRight.goldenCircle.description,
       image: "https://picsum.photos/600/400?random=4",
       hint: "motivational presentation why",
-      href: "#"
+      href: "/recruit-right/golden-circle"
     },
   ];
 

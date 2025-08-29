@@ -278,5 +278,26 @@
     "ctaDescription": "Bản quét Văn hóa Tổ chức Hofstede chính thức yêu cầu giấy phép từ Hofstede Insights.",
     "ctaButton": "Bắt đầu Quét",
     "note": "(Tính năng sẽ sớm ra mắt)"
+  },
+  "goldenCircle": {
+    "title": "Tìm ra 'Lý do Tại sao' của bạn",
+    "description": "Vòng tròn Vàng là một mô hình của Simon Sinek giúp các tổ chức nói lên mục đích của mình. Bằng cách bắt đầu với 'Tại sao', bạn có thể truyền cảm hứng hành động và thu hút những nhân viên và khách hàng có cùng niềm tin cốt lõi.",
+    "explanationTitle": "Ba Vòng tròn",
+    "why": {
+      "title": "Why (Tại sao)",
+      "description": "Đây là niềm tin cốt lõi của doanh nghiệp. Đó không phải là về việc kiếm tiền—đó là một kết quả. 'Tại sao' là mục đích, nguyên nhân hoặc niềm tin truyền cảm hứng cho bạn làm những gì bạn làm."
+    },
+    "how": {
+      "title": "How (Làm thế nào)",
+      "description": "Đây là những hành động cụ thể được thực hiện để hiện thực hóa 'Tại sao'. Đó là Đề xuất Bán hàng Độc nhất (USP) của bạn, những điều giúp bạn khác biệt so với đối thủ cạnh tranh."
+    },
+    "what": {
+      "title": "What (Làm gì)",
+      "description": "Đây là những gì công ty làm—sản phẩm bán ra hoặc dịch vụ cung cấp. Đó là điều hữu hình và dễ xác định nhất."
+    },
+    "ctaTitle": "Xác định Mục đích của bạn",
+    "ctaDescription": "Sử dụng mô hình Vòng tròn Vàng để làm rõ thông điệp của bạn và xây dựng một thương hiệu mạnh mẽ, chân thực hơn.",
+    "ctaButton": "Bắt đầu Buổi Brainstorm",
+    "note": "(Đây là một công cụ khái niệm để lập kế hoạch chiến lược.)"
   }
 }
