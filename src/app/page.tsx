@@ -1,9 +1,9 @@
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
-import { DevelopmentPath } from '@/components/development-path';
+import { CandidateCategories } from '@/components/candidate-categories';
 import { Cta } from '@/components/cta';
-import { TopRecruiters } from '@/components/top-recruiters';
-import { Elearning } from '@/components/elearning';
+import { WhyChooseUs } from '@/components/why-choose-us';
+import { CandidateQuality } from '@/components/candidate-quality';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
@@ -12,10 +12,10 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <DevelopmentPath />
+        <WhyChooseUs />
+        <CandidateCategories />
+        <CandidateQuality />
         <Cta />
-        <TopRecruiters />
-        <Elearning />
       </main>
       <Footer />
     </div>

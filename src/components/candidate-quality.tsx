@@ -67,5 +67,3 @@ export function CandidateQuality() {
     </section>
   );
 }
-
-export { CandidateQuality as Elearning };

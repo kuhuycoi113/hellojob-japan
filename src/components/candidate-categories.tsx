@@ -48,5 +48,3 @@ export function CandidateCategories() {
     </section>
   );
 }
-
-export { CandidateCategories as TopRecruiters };

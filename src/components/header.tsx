@@ -13,24 +13,20 @@ export function Header() {
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             <Link href="#" className="text-foreground transition-colors hover:text-primary">Trang chủ</Link>
-            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Lộ trình</Link>
-            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Hướng nghiệp</Link>
-            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Tạo hồ sơ AI</Link>
-            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">E-Learning</Link>
-            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Cẩm nang</Link>
-            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Giới thiệu</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Tìm ứng viên</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Đăng tin tuyển dụng</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Về chúng tôi</Link>
+            <Link href="#" className="text-foreground/80 transition-colors hover:text-primary">Bảng giá</Link>
           </nav>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
           <Button variant="ghost" className="hidden sm:inline-flex items-center gap-2">
             <Globe className="h-4 w-4" />
-            <span>VN</span>
+            <span>JP</span>
             <ChevronDown className="h-4 w-4" />
           </Button>
-          <Button variant="ghost" className="hidden sm:inline-flex">Hồ sơ của tôi</Button>
-          <Button variant="ghost" size="icon">
-            <LayoutGrid className="h-5 w-5" />
-          </Button>
+          <Button>Đăng nhập</Button>
+          <Button variant="outline">Đăng ký</Button>
         </div>
       </div>
     </header>

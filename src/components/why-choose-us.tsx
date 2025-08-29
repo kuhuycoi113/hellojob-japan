@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Target, Award, Building, Search, FileText, Users } from 'lucide-react';
+import { Search, FileText, Users } from 'lucide-react';
 
-const paths = [
+const reasons = [
   {
     icon: <Search className="h-10 w-10 text-primary" />,
     title: 'Tìm kiếm & Sàng lọc',
@@ -32,14 +32,14 @@ export function WhyChooseUs() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {paths.map((path) => (
-            <Card key={path.title} className="text-center shadow-lg rounded-lg p-8">
+          {reasons.map((reason) => (
+            <Card key={reason.title} className="text-center shadow-lg rounded-lg p-8">
               <CardHeader className="flex justify-center items-center">
-                {path.icon}
+                {reason.icon}
               </CardHeader>
               <CardContent>
-                <CardTitle className="font-headline text-xl mb-2 text-gray-800">{path.title}</CardTitle>
-                <p className="text-muted-foreground">{path.description}</p>
+                <CardTitle className="font-headline text-xl mb-2 text-gray-800">{reason.title}</CardTitle>
+                <p className="text-muted-foreground">{reason.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -48,5 +48,3 @@ export function WhyChooseUs() {
     </section>
   );
 }
-
-export { WhyChooseUs as DevelopmentPath };
