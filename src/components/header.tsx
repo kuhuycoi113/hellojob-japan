@@ -34,7 +34,7 @@ export function Header() {
           <Link href="/">
             <Logo />
           </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             <Link
               href="#"
               className="text-foreground transition-colors hover:text-primary"
@@ -79,12 +79,12 @@ export function Header() {
             </Link>
           </nav>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="flex items-center gap-2 rounded-full"
+                className="flex items-center gap-2"
               >
                 <VietnamFlag />
                 <span>VN</span>
@@ -99,7 +99,7 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="outline" className="rounded-full">
+          <Button variant="outline">
             <Link href="#" className="flex items-center gap-2">
               <User className="h-4 w-4" />
               Hồ sơ của tôi
@@ -108,7 +108,7 @@ export function Header() {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon" className="rounded-full">
+              <Button variant="outline" size="icon">
                 <Menu className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
