@@ -116,15 +116,15 @@ export function Header() {
             <DropdownMenuContent align="end">
               <DropdownMenuItem className="flex items-center gap-2">
                 <VietnamFlag />
-                <span>VN</span>
+                <span>Tiếng Việt</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="flex items-center gap-2">
                 <JapanFlag />
-                <span>JP</span>
+                <span>Tiếng Nhật</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="flex items-center gap-2">
                 <EnglishFlag />
-                <span>EN</span>
+                <span>Tiếng Anh</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
