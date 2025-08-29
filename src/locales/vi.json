@@ -228,5 +228,20 @@
     "values": [
       "Trách nhiệm giải trình", "Thành tích", "Khả năng thích ứng", "Cân bằng", "Sự thuộc về", "Hợp tác", "Cam kết", "Cộng đồng", "Lòng trắc ẩn", "Năng lực", "Đóng góp", "Can đảm", "Sáng tạo", "Tò mò", "Sự hài lòng của khách hàng", "Đa dạng", "Đồng cảm", "Trao quyền", "Nhiệt tình", "Bảo vệ môi trường", "Công bằng", "Xuất sắc", "Sự công bằng", "Gia đình", "Ổn định tài chính", "Tha thứ", "Tự do", "Vui vẻ", "Hào phóng", "Lòng biết ơn", "Tăng trưởng", "Hài hòa", "Sức khỏe", "Trung thực", "Khiêm tốn", "Hài hước", "Hòa nhập", "Độc lập", "Sáng kiến", "Đổi mới", "Chính trực", "Công lý", "Tử tế", "Kiến thức", "Lãnh đạo", "Học hỏi", "Lòng trung thành", "Tạo ra sự khác biệt", "Cởi mở", "Lạc quan", "Trật tự", "Kiên nhẫn", "Lòng yêu nước", "Hòa bình", "Hiệu suất", "Kiên trì", "Sự viên mãn cá nhân", "Quyền lực", "Niềm tự hào", "Sự công nhận", "Tôn trọng", "Trách nhiệm", "Chấp nhận rủi ro", "An toàn", "An ninh", "Kỷ luật tự giác", "Phục vụ", "Đơn giản", "Tâm linh", "Ổn định", "Thành công", "Làm việc nhóm", "Sự chu đáo", "Truyền thống", "Minh bạch", "Tin tưởng", "Sự thật", "Thấu hiểu", "Tính độc đáo", "Tầm nhìn", "Sự giàu có", "Hạnh phúc", "Trí tuệ"
     ]
+  },
+  "gallupTest": {
+    "title": "Khai phá Tiềm năng Đội ngũ",
+    "description": "Bài đánh giá Gallup CliftonStrengths là một công cụ mạnh mẽ giúp mỗi cá nhân khám phá ra tài năng bẩm sinh của mình. Bằng cách thấu hiểu những điểm mạnh độc đáo này, bạn có thể xây dựng một đội ngũ vững mạnh, gắn kết và năng suất hơn.",
+    "benefitsTitle": "Lợi ích chính cho tổ chức của bạn:",
+    "benefits": [
+      "Cải thiện hiệu suất và năng suất của đội ngũ.",
+      "Tăng cường sự gắn kết và hài lòng trong công việc của nhân viên.",
+      "Thúc đẩy giao tiếp và hợp tác tốt hơn.",
+      "Đưa ra quyết định tuyển dụng và phát triển nhân sự thông minh hơn."
+    ],
+    "ctaTitle": "Sẵn sàng khám phá điểm mạnh của đội ngũ?",
+    "ctaDescription": "Việc triển khai bài đánh giá CliftonStrengths chính thức cần có giấy phép từ Gallup.",
+    "ctaButton": "Bắt đầu Đánh giá",
+    "note": "(Tính năng sẽ sớm ra mắt)"
   }
 }

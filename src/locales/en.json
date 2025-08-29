@@ -228,5 +228,20 @@
     "values": [
       "Accountability", "Achievement", "Adaptability", "Balance", "Belonging", "Collaboration", "Commitment", "Community", "Compassion", "Competence", "Contribution", "Courage", "Creativity", "Curiosity", "Customer Satisfaction", "Diversity", "Empathy", "Empowerment", "Enthusiasm", "Environmentalism", "Equity", "Excellence", "Fairness", "Family", "Financial Stability", "Forgiveness", "Freedom", "Fun", "Generosity", "Gratitude", "Growth", "Harmony", "Health", "Honesty", "Humility", "Humor", "Inclusion", "Independence", "Initiative", "Innovation", "Integrity", "Justice", "Kindness", "Knowledge", "Leadership", "Learning", "Loyalty", "Making a Difference", "Openness", "Optimism", "Order", "Patience", "Patriotism", "Peace", "Performance", "Perseverance", "Personal Fulfillment", "Power", "Pride", "Recognition", "Respect", "Responsibility", "Risk-taking", "Safety", "Security", "Self-discipline", "Service", "Simplicity", "Spirituality", "Stability", "Success", "Teamwork", "Thankfulness", "Thoughtfulness", "Tradition", "Transparency", "Trust", "Truth", "Understanding", "Uniqueness", "Vision", "Wealth", "Well-being", "Wisdom"
     ]
+  },
+  "gallupTest": {
+    "title": "Unlock Your Team's Potential",
+    "description": "The Gallup CliftonStrengths assessment is a powerful tool to help individuals discover their natural talents. By understanding these unique strengths, you can build a stronger, more engaged, and more productive team.",
+    "benefitsTitle": "Key Benefits for Your Organization:",
+    "benefits": [
+      "Improve team performance and productivity.",
+      "Increase employee engagement and job satisfaction.",
+      "Foster better communication and collaboration.",
+      "Make smarter hiring and development decisions."
+    ],
+    "ctaTitle": "Ready to discover your team's strengths?",
+    "ctaDescription": "Implementing the official CliftonStrengths assessment requires a license from Gallup.",
+    "ctaButton": "Start Assessment",
+    "note": "(Feature coming soon)"
   }
 }

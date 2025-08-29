@@ -25,7 +25,7 @@ export function RecruitRightSection() {
       description: t.recruitRight.gallup.description,
       image: "https://picsum.photos/600/400?random=2",
       hint: "team strengths collaboration",
-      href: "#"
+      href: "/recruit-right/gallup-test"
     },
     {
       icon: <Globe className="h-10 w-10 text-blue-500" />,
