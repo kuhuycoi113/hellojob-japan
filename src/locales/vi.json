@@ -243,5 +243,40 @@
     "ctaDescription": "Việc triển khai bài đánh giá CliftonStrengths chính thức cần có giấy phép từ Gallup.",
     "ctaButton": "Bắt đầu Đánh giá",
     "note": "(Tính năng sẽ sớm ra mắt)"
+  },
+  "hofstedeTest": {
+    "title": "Mô hình Văn hóa Hofstede",
+    "description": "Hiểu rõ sự khác biệt văn hóa ảnh hưởng đến tổ chức của bạn như thế nào. Mô hình 6 khía cạnh của Hofstede là một khuôn khổ cho giao tiếp đa văn hóa, mô tả ảnh hưởng của văn hóa xã hội lên giá trị của các thành viên và mối liên hệ giữa các giá trị này với hành vi.",
+    "dimensionsTitle": "6 khía cạnh của Văn hóa Quốc gia",
+    "dimensions": {
+      "powerDistance": {
+        "title": "Khoảng cách Quyền lực",
+        "description": "Mức độ mà các thành viên ít quyền lực hơn trong tổ chức chấp nhận và kỳ vọng rằng quyền lực được phân bổ không đồng đều."
+      },
+      "individualism": {
+        "title": "Chủ nghĩa Cá nhân vs. Chủ nghĩa Tập thể",
+        "description": "Mức độ hòa nhập của các cá nhân vào các nhóm. Các xã hội cá nhân chủ nghĩa nhấn mạnh thành tích cá nhân, trong khi các xã hội tập thể nhấn mạnh sự hòa hợp nhóm."
+      },
+      "masculinity": {
+        "title": "Nam tính vs. Nữ tính",
+        "description": "Nam tính đại diện cho sự ưa thích thành tích, chủ nghĩa anh hùng và sự quyết đoán. Nữ tính đại diện cho sự ưa thích hợp tác, khiêm tốn và chất lượng cuộc sống."
+      },
+      "uncertaintyAvoidance": {
+        "title": "Né tránh sự Bất định",
+        "description": "Mức độ chấp nhận sự mơ hồ của một xã hội. Nó cho thấy một nền văn hóa lập trình cho các thành viên của mình cảm thấy không thoải mái hoặc thoải mái trong các tình huống không có cấu trúc."
+      },
+      "longTermOrientation": {
+        "title": "Định hướng Dài hạn vs. Ngắn hạn",
+        "description": "Cách mỗi xã hội phải duy trì một số liên kết với quá khứ của chính mình trong khi đối phó với những thách thức của hiện tại và tương lai."
+      },
+      "indulgence": {
+        "title": "Sự hưởng thụ vs. Sự kiềm chế",
+        "description": "Sự hưởng thụ đại diện cho một xã hội cho phép thỏa mãn tương đối tự do các ham muốn cơ bản và tự nhiên của con người liên quan đến việc tận hưởng cuộc sống và vui vẻ."
+      }
+    },
+    "ctaTitle": "Khám phá Bối cảnh Văn hóa của bạn",
+    "ctaDescription": "Bản quét Văn hóa Tổ chức Hofstede chính thức yêu cầu giấy phép từ Hofstede Insights.",
+    "ctaButton": "Bắt đầu Quét",
+    "note": "(Tính năng sẽ sớm ra mắt)"
   }
 }

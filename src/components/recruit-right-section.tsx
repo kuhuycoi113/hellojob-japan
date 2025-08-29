@@ -33,7 +33,7 @@ export function RecruitRightSection() {
       description: t.recruitRight.hofstede.description,
       image: "https://picsum.photos/600/400?random=3",
       hint: "global culture map",
-      href: "#"
+      href: "/recruit-right/hofstede-scan"
     },
     {
       icon: <Compass className="h-10 w-10 text-green-500" />,

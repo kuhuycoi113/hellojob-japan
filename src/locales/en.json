@@ -243,5 +243,40 @@
     "ctaDescription": "Implementing the official CliftonStrengths assessment requires a license from Gallup.",
     "ctaButton": "Start Assessment",
     "note": "(Feature coming soon)"
+  },
+  "hofstedeTest": {
+    "title": "Hofstede's Cultural Dimensions",
+    "description": "Understand how cultural differences can impact your organization. Hofstede's 6-D Model is a framework for cross-cultural communication, which describes the effects of a society's culture on the values of its members, and how these values relate to behavior.",
+    "dimensionsTitle": "The 6 Dimensions of National Culture",
+    "dimensions": {
+      "powerDistance": {
+        "title": "Power Distance",
+        "description": "The extent to which less powerful members of organizations accept and expect that power is distributed unequally."
+      },
+      "individualism": {
+        "title": "Individualism vs. Collectivism",
+        "description": "The degree to which people are integrated into groups. Individualistic societies emphasize personal achievement, while collectivistic societies emphasize group harmony."
+      },
+      "masculinity": {
+        "title": "Masculinity vs. Femininity",
+        "description": "Masculinity represents a preference for achievement, heroism, and assertiveness. Femininity stands for a preference for cooperation, modesty, and quality of life."
+      },
+      "uncertaintyAvoidance": {
+        "title": "Uncertainty Avoidance",
+        "description": "A society's tolerance for ambiguity. It indicates to what extent a culture programs its members to feel either uncomfortable or comfortable in unstructured situations."
+      },
+      "longTermOrientation": {
+        "title": "Long-Term vs. Short-Term Orientation",
+        "description": "How every society has to maintain some links with its own past while dealing with the challenges of the present and future."
+      },
+      "indulgence": {
+        "title": "Indulgence vs. Restraint",
+        "description": "Indulgence stands for a society that allows relatively free gratification of basic and natural human drives related to enjoying life and having fun."
+      }
+    },
+    "ctaTitle": "Explore Your Cultural Landscape",
+    "ctaDescription": "The official Hofstede Organizational Culture Scan requires a license from Hofstede Insights.",
+    "ctaButton": "Start Scan",
+    "note": "(Feature coming soon)"
   }
 }
