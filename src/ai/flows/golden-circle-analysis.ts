@@ -3,24 +3,9 @@
  * @fileOverview Analyzes a company's Golden Circle (Why, How, What) to suggest an ideal candidate profile.
  *
  * - analyzeGoldenCircle - A function that provides recruitment advice based on the Golden Circle.
- * - GoldenCircleAnalysisInput - The input type for the analyzeGoldenCircle function.
- * - GoldenCircleAnalysisOutput - The return type for the analyzeGoldenCircle function.
  */
-
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
-
-export const GoldenCircleAnalysisInputSchema = z.object({
-  why: z.string().describe("The company's purpose, cause, or belief."),
-  how: z.string().describe("The specific actions the company takes to realize its 'Why'."),
-  what: z.string().describe("The products or services the company offers."),
-});
-export type GoldenCircleAnalysisInput = z.infer<typeof GoldenCircleAnalysisInputSchema>;
-
-export const GoldenCircleAnalysisOutputSchema = z.object({
-  analysis: z.string().describe("The AI's analysis and recommendation for the ideal candidate profile."),
-});
-export type GoldenCircleAnalysisOutput = z.infer<typeof GoldenCircleAnalysisOutputSchema>;
+import { GoldenCircleAnalysisInputSchema, GoldenCircleAnalysisOutputSchema, GoldenCircleAnalysisInput, GoldenCircleAnalysisOutput } from '@/ai/schemas/golden-circle-schema';
 
 export async function analyzeGoldenCircle(input: GoldenCircleAnalysisInput): Promise<GoldenCircleAnalysisOutput> {
   const prompt = ai.definePrompt({

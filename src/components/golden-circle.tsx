@@ -8,7 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/language-context';
 import { Target, HelpCircle, Settings, Heart, ArrowRight, RefreshCw, Save, Sparkles, LoaderCircle } from 'lucide-react';
 import Image from 'next/image';
-import { analyzeGoldenCircle, GoldenCircleAnalysisInput, GoldenCircleAnalysisOutput } from '@/ai/flows/golden-circle-analysis';
+import { analyzeGoldenCircle } from '@/ai/flows/golden-circle-analysis';
+import type { GoldenCircleAnalysisInput, GoldenCircleAnalysisOutput } from '@/ai/schemas/golden-circle-schema';
 
 type SessionState = 'idle' | 'in_progress' | 'completed';
 
