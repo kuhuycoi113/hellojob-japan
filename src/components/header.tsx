@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { Menu, User } from 'lucide-react';
+import { LayoutGrid, User } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -111,7 +111,7 @@ export function Header() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon">
-                <Menu className="h-5 w-5" />
+                <LayoutGrid className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
