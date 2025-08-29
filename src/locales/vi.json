@@ -91,5 +91,17 @@
     "emailPlaceholder": "Email của bạn",
     "subscribe": "Đăng ký",
     "copyright": "© {year} HelloJob. All rights reserved."
+  },
+  "elearning": {
+    "heroTitle": "E-Learning: Quản lý hiệu quả nhân sự Việt Nam",
+    "heroSubtitle": "Nâng cao năng lực quản lý, tối ưu hóa hiệu suất và xây dựng môi trường làm việc đa văn hóa thành công.",
+    "category": "Quản lý nhân sự",
+    "title": "Tuyển dụng, Quản lý & Giữ chân nhân tài Việt Nam",
+    "description": "Khóa học toàn diện trang bị cho các nhà quản lý và chuyên viên nhân sự Nhật Bản kiến thức và kỹ năng cần thiết để làm việc hiệu quả với lao động Việt Nam.",
+    "feature1": "Hiểu biết sâu sắc về luật lao động Việt Nam và Nhật Bản.",
+    "feature2": "Chiến lược tuyển dụng và phỏng vấn ứng viên hiệu quả.",
+    "feature3": "Kỹ năng quản lý, đào tạo và hội nhập văn hóa.",
+    "feature4": "Phương pháp xây dựng đội ngũ gắn kết, hiệu suất cao.",
+    "cta": "Bắt đầu học ngay"
   }
 }

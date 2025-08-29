@@ -1,4 +1,3 @@
-
 {
   "header": {
     "home": "Home",
@@ -92,5 +91,17 @@
     "emailPlaceholder": "Your Email",
     "subscribe": "Subscribe",
     "copyright": "© {year} HelloJob. All rights reserved."
+  },
+  "elearning": {
+    "heroTitle": "E-Learning: Effective Management of Vietnamese Personnel",
+    "heroSubtitle": "Enhance your management capabilities, optimize performance, and build a successful multicultural work environment.",
+    "category": "Human Resource Management",
+    "title": "Recruiting, Managing & Retaining Vietnamese Talent",
+    "description": "A comprehensive course equipping Japanese managers and HR professionals with the necessary knowledge and skills to work effectively with Vietnamese employees.",
+    "feature1": "In-depth understanding of Vietnamese and Japanese labor laws.",
+    "feature2": "Effective candidate sourcing strategies and interview techniques.",
+    "feature3": "Cultural integration, training, and management skills.",
+    "feature4": "Methods for building an engaged and high-performing team.",
+    "cta": "Start Learning Now"
   }
 }

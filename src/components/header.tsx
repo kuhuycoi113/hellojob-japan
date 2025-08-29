@@ -72,7 +72,7 @@ export function Header() {
 
         <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-sm font-medium">
           <Link
-            href="#"
+            href="/"
             className="text-foreground transition-colors hover:text-primary whitespace-nowrap"
           >
             {t.header.home}
@@ -97,7 +97,7 @@ export function Header() {
             {t.header.postJobAI}
           </Link>
           <Link
-            href="#"
+            href="/elearning"
             className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
           >
             {t.header.elearning}
