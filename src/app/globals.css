@@ -85,4 +85,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .active-link-color {
+    color: hsl(var(--chart-1));
+  }
 }

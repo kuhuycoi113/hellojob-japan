@@ -14,6 +14,8 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useLanguage } from '@/contexts/language-context';
 import { translations } from '@/locales/translations';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 const VietnamFlag = () => (
   <svg
@@ -54,12 +56,23 @@ const EnglishFlag = () => (
 export function Header() {
   const { language, setLanguage } = useLanguage();
   const t = translations[language];
+  const pathname = usePathname();
 
   const languageConfig = {
     vi: { flag: <VietnamFlag />, name: 'Tiếng Việt', short: 'VN' },
     ja: { flag: <JapanFlag />, name: 'Tiếng Nhật', short: 'JP' },
     en: { flag: <EnglishFlag />, name: 'Tiếng Anh', short: 'EN' },
   }
+
+  const navLinks = [
+    { href: "/", label: t.header.home },
+    { href: "#", label: t.header.steps },
+    { href: "#", label: t.header.recruitRight },
+    { href: "/post-job-ai", label: t.header.postJobAI, icon: <Sparkles className="h-4 w-4 text-accent" /> },
+    { href: "/elearning", label: t.header.elearning },
+    { href: "/handbook", label: t.header.handbook },
+    { href: "#", label: t.header.about },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
@@ -71,49 +84,19 @@ export function Header() {
         </div>
 
         <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-sm font-medium">
-          <Link
-            href="/"
-            className="text-foreground transition-colors hover:text-primary whitespace-nowrap"
-          >
-            {t.header.home}
-          </Link>
-          <Link
-            href="#"
-            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            {t.header.steps}
-          </Link>
-          <Link
-            href="#"
-            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            {t.header.recruitRight}
-          </Link>
-          <Link
-            href="/post-job-ai"
-            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap flex items-center gap-2"
-          >
-            <Sparkles className="h-4 w-4 text-accent" />
-            {t.header.postJobAI}
-          </Link>
-          <Link
-            href="/elearning"
-            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            {t.header.elearning}
-          </Link>
-          <Link
-            href="/handbook"
-            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            {t.header.handbook}
-          </Link>
-          <Link
-            href="#"
-            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-          >
-            {t.header.about}
-          </Link>
+          {navLinks.map(link => (
+            <Link
+              key={link.href + link.label}
+              href={link.href}
+              className={cn(
+                "transition-colors hover:text-primary whitespace-nowrap flex items-center gap-2",
+                pathname === link.href ? "text-chart-1 font-bold" : "text-foreground/80"
+              )}
+            >
+              {link.icon}
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="flex items-center gap-2">
