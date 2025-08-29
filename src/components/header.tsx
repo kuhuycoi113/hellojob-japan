@@ -103,7 +103,7 @@ export function Header() {
             {t.header.elearning}
           </Link>
           <Link
-            href="#"
+            href="/handbook"
             className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
           >
             {t.header.handbook}

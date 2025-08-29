@@ -122,5 +122,29 @@
       "title": "Create Post with Voice",
       "description": "Just click the button and describe the job, and we'll take care of the rest."
     }
+  },
+  "handbook": {
+    "featured": {
+        "category": "Specified Skilled Worker",
+        "title": "What is the Specified Skilled Worker (Tokutei Ginou) Visa? Everything You Need to Know for 2024",
+        "description": "Tokutei Ginou is a new type of work visa in Japan, opening up great opportunities for Vietnamese workers. Let's explore the conditions, benefits, and eligible industries.",
+        "link": "Read article"
+    },
+    "videoTitle": "Short Videos",
+    "videos": [
+        { "title": "3 Tips for a Successful Online Video Interview with Japanese Employers", "category": "Interview Experience" },
+        { "title": "Guide to Safely and Quickly Transferring Money from Japan to Vietnam", "category": "Life in Japan" }
+    ],
+    "newPostsTitle": "New Posts",
+    "posts": [
+        { "category": "Interview Experience", "title": "How to Write a Compelling Japanese CV that Impresses Recruiters" },
+        { "category": "Life in Japan", "title": "Exploring the Unique Work Culture in Japanese Companies" }
+    ],
+    "newsTitle": "News & Posts",
+    "articles": [
+        { "category": "Life in Japan", "title": "Work Culture in Japan: Understanding 'Hou-Ren-Sou' and What You Need to Know", "readTime": "5 min read" },
+        { "category": "Interview Experience", "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction)", "readTime": "6 min read" },
+        { "category": "Labor Law", "title": "The Latest Updates on Japanese Labor Law for Foreign Workers", "readTime": "8 min read" }
+    ]
   }
 }

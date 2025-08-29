@@ -122,5 +122,29 @@
       "title": "Tạo tin bằng giọng nói",
       "description": "Chỉ cần bấm nút và mô tả công việc, chúng tôi sẽ lo phần còn lại."
     }
+  },
+  "handbook": {
+    "featured": {
+        "category": "Kỹ năng đặc định",
+        "title": "Kỹ năng đặc định (Tokutei Ginou) là gì? Toàn bộ thông tin cần biết 2024",
+        "description": "Tokutei Ginou là một loại visa lao động mới của Nhật Bản, mở ra cơ hội lớn cho người lao động Việt Nam. Hãy cùng tìm hiểu chi tiết về điều kiện, quyền lợi và các ngành nghề tuyển dụng.",
+        "link": "Đọc bài viết"
+    },
+    "videoTitle": "Video ngắn",
+    "videos": [
+        { "title": "3 Mẹo phỏng vấn ONLINE qua video với nhà tuyển dụng Nhật", "category": "Kinh nghiệm phỏng vấn" },
+        { "title": "Hướng dẫn chuyển tiền từ Nhật về Việt Nam an toàn, nhanh chóng", "category": "Cuộc sống ở Nhật" }
+    ],
+    "newPostsTitle": "Bài viết mới",
+    "posts": [
+        { "category": "Kinh nghiệm phỏng vấn", "title": "Cách viết và trình bày CV tiếng Nhật gây ấn tượng với nhà tuyển dụng" },
+        { "category": "Cuộc sống ở Nhật", "title": "Khám phá văn hóa làm việc độc đáo tại các công ty Nhật Bản" }
+    ],
+    "newsTitle": "Tin tức & Bài đăng",
+    "articles": [
+        { "category": "Cuộc sống ở Nhật", "title": "Văn hóa làm việc tại công ty Nhật: Hou-Ren-Sou và những điều cần biết", "readTime": "5 phút đọc" },
+        { "category": "Kinh nghiệm phỏng vấn", "title": "Mẹo viết và trình bày Jikoshoukai (tự giới thiệu bản thân) ấn tượng", "readTime": "6 phút đọc" },
+        { "category": "Pháp luật lao động", "title": "Cập nhật mới nhất về luật lao động Nhật Bản dành cho người nước ngoài", "readTime": "8 phút đọc" }
+    ]
   }
 }
