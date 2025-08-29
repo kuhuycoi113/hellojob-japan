@@ -133,18 +133,22 @@
     "videoTitle": "Short Videos",
     "videos": [
         { "title": "3 Tips for a Successful Online Video Interview with Japanese Employers", "category": "Interview Experience" },
-        { "title": "Guide to Safely and Quickly Transferring Money from Japan to Vietnam", "category": "Life in Japan" }
+        { "title": "Guide to Safely and Quickly Transferring Money from Japan to Vietnam", "category": "Life in Japan" },
+        { "title": "5 Common Interview Questions & How to Answer in Japanese", "category": "Interview Experience"}
     ],
     "newPostsTitle": "New Posts",
     "posts": [
         { "category": "Interview Experience", "title": "How to Write a Compelling Japanese CV that Impresses Recruiters" },
-        { "category": "Life in Japan", "title": "Exploring the Unique Work Culture in Japanese Companies" }
+        { "category": "Life in Japan", "title": "Exploring the Unique Work Culture in Japanese Companies" },
+        { "category": "Labor Law", "title": "Changes to Labor Laws for Foreigners in Japan for 2024" },
+        { "category": "Life in Japan", "title": "What's the Cost of Living in Japan's Major Cities?" }
     ],
-    "newsTitle": "News & Posts",
+    "newsTitle": "News & Articles",
     "articles": [
         { "category": "Life in Japan", "title": "Work Culture in Japan: Understanding 'Hou-Ren-Sou' and What You Need to Know", "readTime": "5 min read" },
         { "category": "Interview Experience", "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction)", "readTime": "6 min read" },
-        { "category": "Labor Law", "title": "The Latest Updates on Japanese Labor Law for Foreign Workers", "readTime": "8 min read" }
+        { "category": "Labor Law", "title": "The Latest Updates on Japanese Labor Law for Foreign Workers", "readTime": "8 min read" },
+        { "category": "Market News", "title": "Japan Faces Critical Labor Shortage", "readTime": "4 min read" }
     ]
   },
   "howItWorks": {

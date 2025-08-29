@@ -18,14 +18,9 @@ export function HandbookSection() {
     };
 
     const shortVideos = [
-        {
-            title: t.handbook.videos[0].title,
-            category: t.handbook.videos[0].category,
-        },
-        {
-            title: t.handbook.videos[1].title,
-            category: t.handbook.videos[1].category,
-        }
+        t.handbook.videos[0],
+        t.handbook.videos[1],
+        t.handbook.videos[2],
     ];
 
     const newPosts = [
@@ -41,24 +36,25 @@ export function HandbookSection() {
             title: t.handbook.posts[1].title,
             hint: 'team collaboration',
         },
+        {
+            image: "https://picsum.photos/1200/600?random=7",
+            category: t.handbook.posts[2].category,
+            title: t.handbook.posts[2].title,
+            hint: 'legal document',
+        },
+        {
+            image: "https://picsum.photos/1200/600?random=8",
+            category: t.handbook.posts[3].category,
+            title: t.handbook.posts[3].title,
+            hint: 'city life japan',
+        },
     ];
 
     const newsAndArticles = [
-        {
-            category: t.handbook.articles[0].category,
-            title: t.handbook.articles[0].title,
-            readTime: t.handbook.articles[0].readTime,
-        },
-        {
-            category: t.handbook.articles[1].category,
-            title: t.handbook.articles[1].title,
-            readTime: t.handbook.articles[1].readTime,
-        },
-        {
-            category: t.handbook.articles[2].category,
-            title: t.handbook.articles[2].title,
-            readTime: t.handbook.articles[2].readTime,
-        },
+        t.handbook.articles[0],
+        t.handbook.articles[1],
+        t.handbook.articles[2],
+        t.handbook.articles[3],
     ];
 
   return (
