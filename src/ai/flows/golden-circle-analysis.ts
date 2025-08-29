@@ -23,14 +23,11 @@ export const GoldenCircleAnalysisOutputSchema = z.object({
 export type GoldenCircleAnalysisOutput = z.infer<typeof GoldenCircleAnalysisOutputSchema>;
 
 export async function analyzeGoldenCircle(input: GoldenCircleAnalysisInput): Promise<GoldenCircleAnalysisOutput> {
-  return goldenCircleAnalysisFlow(input);
-}
-
-const prompt = ai.definePrompt({
-  name: 'goldenCircleAnalysisPrompt',
-  input: {schema: GoldenCircleAnalysisInputSchema},
-  output: {schema: GoldenCircleAnalysisOutputSchema},
-  prompt: `You are an expert HR consultant specializing in cultural fit and value-based recruitment for Japanese companies hiring foreign talent, particularly from Vietnam.
+  const prompt = ai.definePrompt({
+    name: 'goldenCircleAnalysisPrompt',
+    input: {schema: GoldenCircleAnalysisInputSchema},
+    output: {schema: GoldenCircleAnalysisOutputSchema},
+    prompt: `You are an expert HR consultant specializing in cultural fit and value-based recruitment for Japanese companies hiring foreign talent, particularly from Vietnam.
 
 A client has provided their "Golden Circle" values (Why, How, What). Your task is to analyze these values and provide a concise, actionable conclusion about the ideal candidate profile they should look for.
 
@@ -48,16 +45,19 @@ Based on this, provide an analysis that describes the key characteristics of an 
 
 Structure your analysis as a brief report. Be encouraging and insightful.
 `,
-});
+  });
 
-const goldenCircleAnalysisFlow = ai.defineFlow(
-  {
-    name: 'goldenCircleAnalysisFlow',
-    inputSchema: GoldenCircleAnalysisInputSchema,
-    outputSchema: GoldenCircleAnalysisOutputSchema,
-  },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
-  }
-);
+  const goldenCircleAnalysisFlow = ai.defineFlow(
+    {
+      name: 'goldenCircleAnalysisFlow',
+      inputSchema: GoldenCircleAnalysisInputSchema,
+      outputSchema: GoldenCircleAnalysisOutputSchema,
+    },
+    async input => {
+      const {output} = await prompt(input);
+      return output!;
+    }
+  );
+
+  return goldenCircleAnalysisFlow(input);
+}
