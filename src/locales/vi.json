@@ -103,5 +103,24 @@
     "feature3": "Kỹ năng quản lý, đào tạo và hội nhập văn hóa.",
     "feature4": "Phương pháp xây dựng đội ngũ gắn kết, hiệu suất cao.",
     "cta": "Bắt đầu học ngay"
+  },
+  "aiJobPost": {
+    "title": "Tạo Tin Tuyển Dụng với Sức mạnh của AI",
+    "subtitle": "Mô tả công việc bạn cần, và để AI của chúng tôi tạo ra một tin tuyển dụng hấp dẫn và chuyên nghiệp chỉ trong vài giây.",
+    "placeholder": "Ví dụ: Tìm kiếm kỹ sư phần mềm có 3 năm kinh nghiệm làm việc với React, Node.js và AWS. Yêu cầu giao tiếp tiếng Nhật tốt...",
+    "submit": "Gửi",
+    "suggestionsTitle": "Hoặc thử một vài gợi ý:",
+    "describeJob": {
+      "title": "Mô tả chi tiết công việc",
+      "description": "Cung cấp các yêu cầu, kỹ năng và phúc lợi để AI tạo ra tin tuyển dụng đầy đủ nhất."
+    },
+    "uploadJob": {
+      "title": "Đăng từ mô tả có sẵn",
+      "description": "Tải lên tệp PDF hoặc Word chứa mô tả công việc để AI tự động trích xuất và tạo tin."
+    },
+    "voiceJob": {
+      "title": "Tạo tin bằng giọng nói",
+      "description": "Chỉ cần bấm nút và mô tả công việc, chúng tôi sẽ lo phần còn lại."
+    }
   }
 }

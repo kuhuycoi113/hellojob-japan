@@ -90,7 +90,7 @@ export function Header() {
             {t.header.recruitRight}
           </Link>
           <Link
-            href="#"
+            href="/post-job-ai"
             className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap flex items-center gap-2"
           >
             <Sparkles className="h-4 w-4 text-accent" />

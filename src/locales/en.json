@@ -103,5 +103,24 @@
     "feature3": "Cultural integration, training, and management skills.",
     "feature4": "Methods for building an engaged and high-performing team.",
     "cta": "Start Learning Now"
+  },
+  "aiJobPost": {
+    "title": "Create Job Postings with the Power of AI",
+    "subtitle": "Describe the job you need, and let our AI generate an engaging and professional job posting in seconds.",
+    "placeholder": "Example: Seeking a software engineer with 3 years of experience in React, Node.js, and AWS. Strong Japanese communication skills required...",
+    "submit": "Submit",
+    "suggestionsTitle": "Or try one of these suggestions:",
+    "describeJob": {
+      "title": "Describe Job Details",
+      "description": "Provide the requirements, skills, and benefits for the AI to create the most complete job posting."
+    },
+    "uploadJob": {
+      "title": "Post from an Existing File",
+      "description": "Upload a PDF or Word file with the job description for the AI to automatically extract and create the post."
+    },
+    "voiceJob": {
+      "title": "Create Post with Voice",
+      "description": "Just click the button and describe the job, and we'll take care of the rest."
+    }
   }
 }
