@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useLanguage } from '@/contexts/language-context';
 import { Target, BarChart, Globe, Compass, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function RecruitRightSection() {
   const { t } = useLanguage();
@@ -15,28 +16,32 @@ export function RecruitRightSection() {
       title: t.recruitRight.barrett.title,
       description: t.recruitRight.barrett.description,
       image: "https://picsum.photos/600/400?random=1",
-      hint: "abstract values chart"
+      hint: "abstract values chart",
+      href: "/recruit-right/barrett-test"
     },
     {
       icon: <BarChart className="h-10 w-10 text-yellow-500" />,
       title: t.recruitRight.gallup.title,
       description: t.recruitRight.gallup.description,
       image: "https://picsum.photos/600/400?random=2",
-      hint: "team strengths collaboration"
+      hint: "team strengths collaboration",
+      href: "#"
     },
     {
       icon: <Globe className="h-10 w-10 text-blue-500" />,
       title: t.recruitRight.hofstede.title,
       description: t.recruitRight.hofstede.description,
       image: "https://picsum.photos/600/400?random=3",
-      hint: "global culture map"
+      hint: "global culture map",
+      href: "#"
     },
     {
       icon: <Compass className="h-10 w-10 text-green-500" />,
       title: t.recruitRight.goldenCircle.title,
       description: t.recruitRight.goldenCircle.description,
       image: "https://picsum.photos/600/400?random=4",
-      hint: "motivational presentation why"
+      hint: "motivational presentation why",
+      href: "#"
     },
   ];
 
@@ -74,8 +79,10 @@ export function RecruitRightSection() {
                     </CardHeader>
                     <CardContent className="flex flex-col flex-grow">
                         <CardDescription className="flex-grow">{tool.description}</CardDescription>
-                        <Button className="mt-6 self-start">
+                        <Button asChild className="mt-6 self-start">
+                          <Link href={tool.href}>
                             {t.recruitRight.start} <ArrowRight className="ml-2 h-4 w-4"/>
+                          </Link>
                         </Button>
                     </CardContent>
                 </Card>

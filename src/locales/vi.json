@@ -203,5 +203,30 @@
       "title": "Golden Circle (Vòng tròn Vàng)",
       "description": "Làm rõ 'Lý do Tại sao' doanh nghiệp bạn tồn tại, truyền cảm hứng và thu hút những người cùng chung chí hướng."
     }
+  },
+  "barrettTest": {
+    "title": "Đánh giá Giá trị Barrett",
+    "subtitle": "Khám phá những giá trị cốt lõi của bạn và tổ chức của bạn.",
+    "step1Title": "Hướng dẫn",
+    "step1Content": "Chào mừng bạn đến với công cụ Đánh giá Giá trị Barrett. Công cụ này sẽ giúp bạn hiểu sâu hơn về các giá trị cá nhân và văn hóa tổ chức của mình. Bạn sẽ được hướng dẫn qua quy trình 3 bước. Nhấp vào 'Tiếp theo' để bắt đầu.",
+    "step2Title": "Bước 1: Giá trị Cá nhân",
+    "step2Content": "Từ danh sách dưới đây, hãy chọn 10 giá trị đại diện rõ nhất cho con người bạn. Đây không phải là những giá trị bạn nghĩ mình nên có, mà là những giá trị thực sự định hình bạn.",
+    "step3Title": "Bước 2: Văn hóa Hiện tại",
+    "step3Content": "Bây giờ, hãy chọn 10 giá trị mà bạn tin rằng mô tả đúng nhất văn hóa hiện tại của tổ chức bạn.",
+    "step4Title": "Bước 3: Văn hóa Mong muốn",
+    "step4Content": "Cuối cùng, hãy chọn 10 giá trị mà bạn muốn thấy trong văn hóa tương lai của tổ chức mình.",
+    "step5Title": "Kết quả của bạn",
+    "step5Content": "Cảm ơn bạn đã hoàn thành bài đánh giá. Dưới đây là tóm tắt các giá trị bạn đã chọn. Báo cáo này có thể giúp bạn và tổ chức của bạn hiểu được sự tương hợp về văn hóa và xác định các lĩnh vực cần phát triển.",
+    "personalValues": "Giá trị Cá nhân",
+    "currentCultureValues": "Giá trị Văn hóa Hiện tại",
+    "desiredCultureValues": "Giá trị Văn hóa Mong muốn",
+    "selectionsRemaining": "Còn lại {count} lựa chọn",
+    "next": "Tiếp theo",
+    "back": "Quay lại",
+    "complete": "Hoàn thành Đánh giá",
+    "startOver": "Làm lại từ đầu",
+    "values": [
+      "Trách nhiệm giải trình", "Thành tích", "Khả năng thích ứng", "Cân bằng", "Sự thuộc về", "Hợp tác", "Cam kết", "Cộng đồng", "Lòng trắc ẩn", "Năng lực", "Đóng góp", "Can đảm", "Sáng tạo", "Tò mò", "Sự hài lòng của khách hàng", "Đa dạng", "Đồng cảm", "Trao quyền", "Nhiệt tình", "Bảo vệ môi trường", "Công bằng", "Xuất sắc", "Sự công bằng", "Gia đình", "Ổn định tài chính", "Tha thứ", "Tự do", "Vui vẻ", "Hào phóng", "Lòng biết ơn", "Tăng trưởng", "Hài hòa", "Sức khỏe", "Trung thực", "Khiêm tốn", "Hài hước", "Hòa nhập", "Độc lập", "Sáng kiến", "Đổi mới", "Chính trực", "Công lý", "Tử tế", "Kiến thức", "Lãnh đạo", "Học hỏi", "Lòng trung thành", "Tạo ra sự khác biệt", "Cởi mở", "Lạc quan", "Trật tự", "Kiên nhẫn", "Lòng yêu nước", "Hòa bình", "Hiệu suất", "Kiên trì", "Sự viên mãn cá nhân", "Quyền lực", "Niềm tự hào", "Sự công nhận", "Tôn trọng", "Trách nhiệm", "Chấp nhận rủi ro", "An toàn", "An ninh", "Kỷ luật tự giác", "Phục vụ", "Đơn giản", "Tâm linh", "Ổn định", "Thành công", "Làm việc nhóm", "Lòng biết ơn", "Sự chu đáo", "Truyền thống", "Minh bạch", "Tin tưởng", "Sự thật", "Thấu hiểu", "Tính độc đáo", "Tầm nhìn", "Sự giàu có", "Hạnh phúc", "Trí tuệ"
+    ]
   }
 }

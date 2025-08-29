@@ -203,5 +203,30 @@
       "title": "The Golden Circle",
       "description": "Clarifies the 'Why' your company exists, inspiring action and attracting those who believe what you believe."
     }
+  },
+  "barrettTest": {
+    "title": "Barrett Values Assessment",
+    "subtitle": "Discover the values that drive you and your organization.",
+    "step1Title": "Instructions",
+    "step1Content": "Welcome to the Barrett Values Assessment. This tool will help you gain deeper insight into your personal values and your organization's culture. You will be guided through a 3-step process. Click 'Next' to begin.",
+    "step2Title": "Step 1: Personal Values",
+    "step2Content": "From the list below, select 10 values that most represent who you are. These are not values you think you should have, but values that truly define you.",
+    "step3Title": "Step 2: Current Culture",
+    "step3Content": "Now, select 10 values that you believe best describe your organization's current culture.",
+    "step4Title": "Step 3: Desired Culture",
+    "step4Content": "Finally, select 10 values that you would like to see in your organization's future culture.",
+    "step5Title": "Your Results",
+    "step5Content": "Thank you for completing the assessment. Below is a summary of your selected values. This report can help you and your organization understand your cultural alignment and identify areas for growth.",
+    "personalValues": "Personal Values",
+    "currentCultureValues": "Current Culture Values",
+    "desiredCultureValues": "Desired Culture Values",
+    "selectionsRemaining": "Selections remaining: {count}",
+    "next": "Next",
+    "back": "Back",
+    "complete": "Complete Assessment",
+    "startOver": "Start Over",
+    "values": [
+      "Accountability", "Achievement", "Adaptability", "Balance", "Belonging", "Collaboration", "Commitment", "Community", "Compassion", "Competence", "Contribution", "Courage", "Creativity", "Curiosity", "Customer Satisfaction", "Diversity", "Empathy", "Empowerment", "Enthusiasm", "Environmentalism", "Equity", "Excellence", "Fairness", "Family", "Financial Stability", "Forgiveness", "Freedom", "Fun", "Generosity", "Gratitude", "Growth", "Harmony", "Health", "Honesty", "Humility", "Humor", "Inclusion", "Independence", "Initiative", "Innovation", "Integrity", "Justice", "Kindness", "Knowledge", "Leadership", "Learning", "Loyalty", "Making a Difference", "Openness", "Optimism", "Order", "Patience", "Patriotism", "Peace", "Performance", "Perseverance", "Personal Fulfillment", "Power", "Pride", "Recognition", "Respect", "Responsibility", "Risk-taking", "Safety", "Security", "Self-discipline", "Service", "Simplicity", "Spirituality", "Stability", "Success", "Teamwork", "Thankfulness", "Thoughtfulness", "Tradition", "Transparency", "Trust", "Truth", "Understanding", "Uniqueness", "Vision", "Wealth", "Well-being", "Wisdom"
+    ]
   }
 }
