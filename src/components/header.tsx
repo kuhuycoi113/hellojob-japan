@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User } from 'lucide-react';
+import { LayoutGrid, User, Sparkles } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -78,8 +78,9 @@ export function Header() {
           </Link>
           <Link
             href="#"
-            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
+            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap flex items-center gap-2"
           >
+            <Sparkles className="h-4 w-4 text-accent" />
             Đăng việc làm bằng AI
           </Link>
           <Link
