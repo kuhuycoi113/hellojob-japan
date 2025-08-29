@@ -166,5 +166,17 @@
       "title": "Hire & Onboard",
       "description": "Send job offers and get support from HelloJob for legal procedures and contracts."
     }
+  },
+  "personnelTraining": {
+    "title": "What are HelloJob candidates trained in?",
+    "subtitle": "We don't just train skills; we cultivate the core values to ensure success and integration.",
+    "attitude": "Attitude",
+    "attitudeDesc": "A professional, positive work attitude and a readiness to learn.",
+    "awareness": "Awareness",
+    "awarenessDesc": "High sense of responsibility, discipline, and adherence to workplace regulations.",
+    "etiquette": "Etiquette",
+    "etiquetteDesc": "Understanding and respect for the culture and etiquette in Japanese workplaces.",
+    "dedication": "Spirit of Dedication",
+    "dedicationDesc": "Strong commitment to common goals and the company's growth."
   }
 }

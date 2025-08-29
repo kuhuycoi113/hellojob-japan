@@ -166,5 +166,17 @@
       "title": "採用とサポート",
       "description": "採用通知を送信し、HelloJobから法的手続きや契約に関するサポートを受けられます。"
     }
+  },
+  "personnelTraining": {
+    "title": "HelloJobの人材はどのような教育を受けますか？",
+    "subtitle": "私たちはスキルだけでなく、成功と融合を確実にするための中核的価値観も育成します。",
+    "attitude": "姿勢",
+    "attitudeDesc": "プロフェッショナルで前向きな仕事への姿勢と、常に学ぶ意欲。",
+    "awareness": "意識",
+    "awarenessDesc": "職場での責任感、規律、規則遵守に対する高い意識。",
+    "etiquette": "礼儀",
+    "etiquetteDesc": "日本の職場における文化や礼儀作法を理解し、尊重すること。",
+    "dedication": "貢献意欲",
+    "dedicationDesc": "共通の目標と会社の成長に対する強いコミットメント。"
   }
 }

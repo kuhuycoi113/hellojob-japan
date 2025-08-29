@@ -166,5 +166,17 @@
       "title": "Tuyển dụng & Hỗ trợ",
       "description": "Gửi lời mời làm việc và nhận hỗ trợ về thủ tục pháp lý, hợp đồng từ HelloJob."
     }
+  },
+  "personnelTraining": {
+    "title": "Người lao động qua HelloJob được đào tạo gì?",
+    "subtitle": "Chúng tôi không chỉ đào tạo kỹ năng, mà còn rèn luyện những giá trị cốt lõi để đảm bảo sự thành công và hòa nhập.",
+    "attitude": "Thái độ",
+    "attitudeDesc": "Thái độ làm việc chuyên nghiệp, tích cực và luôn sẵn sàng học hỏi.",
+    "awareness": "Ý thức",
+    "awarenessDesc": "Ý thức cao về trách nhiệm, kỷ luật và tuân thủ quy định tại nơi làm việc.",
+    "etiquette": "Lễ nghi",
+    "etiquetteDesc": "Hiểu và tôn trọng văn hóa, lễ nghi trong giao tiếp và làm việc tại Nhật Bản.",
+    "dedication": "Tinh thần cống hiến",
+    "dedicationDesc": "Nỗ lực hết mình vì mục tiêu chung và sự phát triển của công ty."
   }
 }
