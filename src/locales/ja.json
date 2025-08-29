@@ -14,5 +14,82 @@
     "candidateProfiles": "候補者プロフィール",
     "settings": "設定",
     "logout": "ログアウト"
+  },
+  "hero": {
+    "title": "ベトナム人材採用のリーディングプラットフォーム",
+    "subtitle": "貴社とベトナムの優秀な人材を繋ぎ、「技能実習」「特定技能」「技術・人文知識・国際業務」の採用ニーズにお応えします。",
+    "industry": "業種",
+    "allIndustries": "すべての業種",
+    "it": "IT",
+    "manufacturing": "製造",
+    "construction": "建設",
+    "agriculture": "農業",
+    "caregiver": "介護",
+    "workerType": "在留資格",
+    "allTypes": "すべての資格",
+    "intern": "技能実習",
+    "skilled": "特定技能",
+    "engineer": "技術・人文知識・国際業務",
+    "location": "勤務地",
+    "allJapan": "日本全国",
+    "tokyo": "東京",
+    "osaka": "大阪",
+    "nagoya": "名古屋",
+    "fukuoka": "福岡",
+    "searchCandidates": "候補者検索"
+  },
+  "whyChooseUs": {
+    "title": "HelloJobが選ばれる理由",
+    "subtitle": "採用プロセスを簡素化し、時間とコストを節約します。",
+    "searchFilter": "検索・絞り込み",
+    "searchFilterDesc": "独自の検索システムで、厳しい基準を満たす候補者を迅速に見つけます。",
+    "profileManagement": "候補者管理",
+    "profileManagementDesc": "採用プロセス全体を通じて、候補者の履歴書を簡単に管理、比較、追跡できます。",
+    "comprehensiveSupport": "全面的なサポート",
+    "comprehensiveSupportDesc": "専門家チームが、採用と法的手続きのあらゆる段階で貴社をサポートします。"
+  },
+  "candidateCategories": {
+    "title": "多様な人材層",
+    "subtitle": "あらゆるビジネスニーズに合わせた柔軟な人材ソリューションを提供します。",
+    "skillIntern": "技能実習生",
+    "skillInternDesc": "日本の実際の職場で技能や技術を習得するため、若手人材を受け入れるプログラムです。",
+    "specifiedSkill": "特定技能",
+    "specifiedSkillDesc": "特定の分野で経験と専門スキルを持つ労働者を対象とし、長期雇用が可能です。",
+    "engineerKnowledge": "技術者・専門職",
+    "engineerKnowledgeDesc": "技術・科学分野で働くための高い資格と専門学位を持つ技術者や専門家を採用します。"
+  },
+  "candidateQuality": {
+    "title": "候補者の品質へのこだわり",
+    "subtitle": "専門スキルが高いだけでなく、貴社の企業文化に適合する人材を提供することを保証します。",
+    "thoroughScreening": "徹底したスクリーニング",
+    "thoroughScreeningDesc": "各候補者は、専門的な面接、能力テスト、および態度の評価プロセスを経ています。",
+    "detailedProfiles": "詳細なプロフィール",
+    "detailedProfilesDesc": "紹介ビデオ、検証済みの証明書や学位など、完全な情報を含む候補者プロフィールを提供します。",
+    "inDepthTraining": "充実した研修",
+    "inDepthTrainingDesc": "候補者は出国前に、日本の言語、文化、および労働スキルについて徹底的に訓練されます。"
+  },
+  "cta": {
+    "title": "貴社のための人材を見つける準備はできましたか？",
+    "subtitle": "今すぐ求人を掲載して何千人もの潜在的な候補者にアプローチするか、ご相談ください。",
+    "postJob": "求人を掲載",
+    "contactUs": "お問い合わせ"
+  },
+  "footer": {
+    "about": "日本の企業とベトナムの質の高い人材を結びつける、包括的な人事ソリューション。",
+    "forEmployers": "採用ご担当者様へ",
+    "postJob": "求人掲載",
+    "searchResumes": "履歴書検索",
+    "pricing": "料金プラン",
+    "faq": "よくある質問",
+    "aboutHelloJob": "HelloJobについて",
+    "aboutUs": "会社概要",
+    "contact": "お問い合わせ",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "newsletter": "ニュースレター",
+    "newsletterDesc": "労働市場の最新情報と採用トレンドを受け取る。",
+    "emailPlaceholder": "あなたのメールアドレス",
+    "subscribe": "登録",
+    "copyright": "© {year} HelloJob. All rights reserved."
   }
 }

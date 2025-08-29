@@ -1,34 +1,39 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Search, FileText, Users } from 'lucide-react';
-
-const reasons = [
-  {
-    icon: <Search className="h-10 w-10 text-primary" />,
-    title: 'Tìm kiếm & Sàng lọc',
-    description: 'Hệ thống tìm kiếm thông minh giúp bạn nhanh chóng tìm thấy ứng viên phù hợp với các tiêu chí khắt khe nhất.',
-  },
-  {
-    icon: <FileText className="h-10 w-10 text-yellow-500" />,
-    title: 'Quản lý Hồ sơ',
-    description: 'Dễ dàng quản lý, so sánh và theo dõi hồ sơ ứng viên trong suốt quá trình tuyển dụng.',
-  },
-  {
-    icon: <Users className="h-10 w-10 text-blue-500" />,
-    title: 'Hỗ trợ Toàn diện',
-    description: 'Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ bạn trong mọi bước của quy trình tuyển dụng và pháp lý.',
-  },
-];
+import { useLanguage } from '@/contexts/language-context';
 
 export function WhyChooseUs() {
+  const { t } = useLanguage();
+
+  const reasons = [
+    {
+      icon: <Search className="h-10 w-10 text-primary" />,
+      title: t.whyChooseUs.searchFilter,
+      description: t.whyChooseUs.searchFilterDesc,
+    },
+    {
+      icon: <FileText className="h-10 w-10 text-yellow-500" />,
+      title: t.whyChooseUs.profileManagement,
+      description: t.whyChooseUs.profileManagementDesc,
+    },
+    {
+      icon: <Users className="h-10 w-10 text-blue-500" />,
+      title: t.whyChooseUs.comprehensiveSupport,
+      description: t.whyChooseUs.comprehensiveSupportDesc,
+    },
+  ];
+
   return (
     <section className="py-16 sm:py-24 bg-white -mt-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold font-headline text-gray-800">
-            Tại sao chọn HelloJob?
+            {t.whyChooseUs.title}
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
-            Chúng tôi đơn giản hóa quy trình tuyển dụng, giúp bạn tiết kiệm thời gian và chi phí.
+            {t.whyChooseUs.subtitle}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">

@@ -14,5 +14,82 @@
     "candidateProfiles": "Candidate Profiles",
     "settings": "Settings",
     "logout": "Logout"
+  },
+  "hero": {
+    "title": "Leading Vietnamese Manpower Recruitment Platform",
+    "subtitle": "Connect your business with high-quality human resources from Vietnam, meeting recruitment needs for \"Intern\", \"Specified Skilled Worker\", and \"Engineer\" programs.",
+    "industry": "Industry",
+    "allIndustries": "All Industries",
+    "it": "Information Technology",
+    "manufacturing": "Manufacturing",
+    "construction": "Construction",
+    "agriculture": "Agriculture",
+    "caregiver": "Caregiver",
+    "workerType": "Worker Type",
+    "allTypes": "All Types",
+    "intern": "Technical Intern",
+    "skilled": "Specified Skilled Worker",
+    "engineer": "Engineer, Specialist in Humanities",
+    "location": "Work Location",
+    "allJapan": "All of Japan",
+    "tokyo": "Tokyo",
+    "osaka": "Osaka",
+    "nagoya": "Nagoya",
+    "fukuoka": "Fukuoka",
+    "searchCandidates": "Search Candidates"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose HelloJob?",
+    "subtitle": "We simplify the recruitment process, saving you time and money.",
+    "searchFilter": "Search & Filter",
+    "searchFilterDesc": "Our intelligent search system helps you quickly find candidates who meet the strictest criteria.",
+    "profileManagement": "Profile Management",
+    "profileManagementDesc": "Easily manage, compare, and track candidate profiles throughout the recruitment process.",
+    "comprehensiveSupport": "Comprehensive Support",
+    "comprehensiveSupportDesc": "Our team of experts is always ready to assist you in every step of the recruitment and legal process."
+  },
+  "candidateCategories": {
+    "title": "Diverse Types of Human Resources",
+    "subtitle": "We provide flexible personnel solutions to suit all business needs.",
+    "skillIntern": "Technical Intern",
+    "skillInternDesc": "A program for young workers to receive skills and vocational training in a real work environment in Japan.",
+    "specifiedSkill": "Specified Skilled Worker",
+    "specifiedSkillDesc": "For workers with experience and specialized skills in certain fields, allowing for long-term employment.",
+    "engineerKnowledge": "Engineer, Specialist in Humanities",
+    "engineerKnowledgeDesc": "Recruiting engineers and specialists with high qualifications and professional degrees to work in technical and technological fields."
+  },
+  "candidateQuality": {
+    "title": "Commitment to Candidate Quality",
+    "subtitle": "We guarantee to provide a workforce that is not only professionally skilled but also fits your corporate culture.",
+    "thoroughScreening": "Thorough Screening",
+    "thoroughScreeningDesc": "Each candidate undergoes a professional interview, competency test, and attitude assessment process.",
+    "detailedProfiles": "Detailed Profiles",
+    "detailedProfilesDesc": "We provide complete candidate profiles with full information, introduction videos, and verified certificates and degrees.",
+    "inDepthTraining": "In-depth Training",
+    "inDepthTrainingDesc": "Candidates are thoroughly trained in Japanese language, culture, and work skills before departure."
+  },
+  "cta": {
+    "title": "Ready to find talent for your business?",
+    "subtitle": "Post a job today to reach thousands of potential candidates or contact us for a consultation.",
+    "postJob": "Post a Job",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "about": "A comprehensive HR solution, connecting Japanese enterprises with high-quality human resources from Vietnam.",
+    "forEmployers": "For Employers",
+    "postJob": "Post a Job",
+    "searchResumes": "Search Resumes",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "aboutHelloJob": "About HelloJob",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Get the latest labor market information and recruitment trends.",
+    "emailPlaceholder": "Your Email",
+    "subscribe": "Subscribe",
+    "copyright": "© {year} HelloJob. All rights reserved."
   }
 }
