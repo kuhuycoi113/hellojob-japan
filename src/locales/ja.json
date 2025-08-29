@@ -1,0 +1,18 @@
+{
+  "header": {
+    "home": "ホームページ",
+    "steps": "ステップ",
+    "recruitRight": "適切な人材の採用",
+    "postJobAI": "AIで求人掲載",
+    "elearning": "Eラーニング",
+    "handbook": "ハンドブック",
+    "about": "会社概要",
+    "myProfile": "私のプロフィール",
+    "menu": "メニュー",
+    "dashboard": "ダッシュボード",
+    "jobPostings": "求人情報",
+    "candidateProfiles": "候補者プロフィール",
+    "settings": "設定",
+    "logout": "ログアウト"
+  }
+}

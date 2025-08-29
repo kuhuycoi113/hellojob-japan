@@ -1,0 +1,18 @@
+{
+  "header": {
+    "home": "Home",
+    "steps": "Steps",
+    "recruitRight": "Recruit Right",
+    "postJobAI": "Post Job with AI",
+    "elearning": "E-learning",
+    "handbook": "Handbook",
+    "about": "About",
+    "myProfile": "My Profile",
+    "menu": "Menu",
+    "dashboard": "Dashboard",
+    "jobPostings": "Job Postings",
+    "candidateProfiles": "Candidate Profiles",
+    "settings": "Settings",
+    "logout": "Logout"
+  }
+}

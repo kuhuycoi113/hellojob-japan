@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
@@ -10,6 +12,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useLanguage } from '@/contexts/language-context';
+import { translations } from '@/locales/translations';
 
 const VietnamFlag = () => (
   <svg
@@ -48,6 +52,15 @@ const EnglishFlag = () => (
 
 
 export function Header() {
+  const { language, setLanguage } = useLanguage();
+  const t = translations[language];
+
+  const languageConfig = {
+    vi: { flag: <VietnamFlag />, name: 'Tiếng Việt', short: 'VN' },
+    ja: { flag: <JapanFlag />, name: 'Tiếng Nhật', short: 'JP' },
+    en: { flag: <EnglishFlag />, name: 'Tiếng Anh', short: 'EN' },
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
@@ -62,44 +75,44 @@ export function Header() {
             href="#"
             className="text-foreground transition-colors hover:text-primary whitespace-nowrap"
           >
-            Trang chủ
+            {t.header.home}
           </Link>
           <Link
             href="#"
             className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
           >
-            Các bước
+            {t.header.steps}
           </Link>
           <Link
             href="#"
             className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
           >
-            Tuyển đúng người
+            {t.header.recruitRight}
           </Link>
           <Link
             href="#"
             className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap flex items-center gap-2"
           >
             <Sparkles className="h-4 w-4 text-accent" />
-            Đăng việc làm bằng AI
+            {t.header.postJobAI}
           </Link>
           <Link
             href="#"
             className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
           >
-            E-learning
+            {t.header.elearning}
           </Link>
           <Link
             href="#"
             className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
           >
-            Cẩm nang
+            {t.header.handbook}
           </Link>
           <Link
             href="#"
             className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
           >
-            Giới thiệu
+            {t.header.about}
           </Link>
         </nav>
 
@@ -110,20 +123,20 @@ export function Header() {
                 variant="outline"
                 className="flex items-center gap-2"
               >
-                <VietnamFlag />
-                <span>VN</span>
+                {languageConfig[language].flag}
+                <span>{languageConfig[language].short}</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem className="flex items-center gap-2">
+              <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('vi')}>
                 <VietnamFlag />
                 <span>Tiếng Việt</span>
               </DropdownMenuItem>
-              <DropdownMenuItem className="flex items-center gap-2">
+              <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('ja')}>
                 <JapanFlag />
                 <span>Tiếng Nhật</span>
               </DropdownMenuItem>
-              <DropdownMenuItem className="flex items-center gap-2">
+              <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('en')}>
                 <EnglishFlag />
                 <span>Tiếng Anh</span>
               </DropdownMenuItem>
@@ -133,7 +146,7 @@ export function Header() {
           <Button variant="outline">
             <Link href="#" className="flex items-center gap-2">
               <User className="h-4 w-4" />
-              Hồ sơ của tôi
+              {t.header.myProfile}
             </Link>
           </Button>
 
@@ -144,14 +157,14 @@ export function Header() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>Menu</DropdownMenuLabel>
+              <DropdownMenuLabel>{t.header.menu}</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Bảng điều khiển</DropdownMenuItem>
-              <DropdownMenuItem>Tin tuyển dụng</DropdownMenuItem>
-              <DropdownMenuItem>Hồ sơ ứng viên</DropdownMenuItem>
-              <DropdownMenuItem>Cài đặt</DropdownMenuItem>
+              <DropdownMenuItem>{t.header.dashboard}</DropdownMenuItem>
+              <DropdownMenuItem>{t.header.jobPostings}</DropdownMenuItem>
+              <DropdownMenuItem>{t.header.candidateProfiles}</DropdownMenuItem>
+              <DropdownMenuItem>{t.header.settings}</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Đăng xuất</DropdownMenuItem>
+              <DropdownMenuItem>{t.header.logout}</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
