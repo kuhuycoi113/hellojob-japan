@@ -285,19 +285,28 @@
     "explanationTitle": "The Three Rings",
     "why": {
       "title": "Why",
-      "description": "This is the core belief of the business. It's not about making money—that's a result. 'Why' is the purpose, cause, or belief that inspires you to do what you do."
+      "description": "This is the core belief of the business. It's not about making money—that's a result. 'Why' is the purpose, cause, or belief that inspires you to do what you do.",
+      "formPrompt": "What is your purpose, cause, or belief? Why does your organization exist?"
     },
     "how": {
       "title": "How",
-      "description": "These are the specific actions taken to realize the 'Why'. It's your Unique Selling Proposition, the things that differentiate you from the competition."
+      "description": "These are the specific actions taken to realize the 'Why'. It's your Unique Selling Proposition, the things that differentiate you from the competition.",
+      "formPrompt": "How do you do what you do? What are the specific actions you take to realize your purpose?"
     },
     "what": {
       "title": "What",
-      "description": "This is what the company does—the products it sells or the services it offers. It's the most tangible and easiest thing to identify."
+      "description": "This is what the company does—the products it sells or the services it offers. It's the most tangible and easiest thing to identify.",
+      "formPrompt": "What do you do? What products do you sell or services do you offer?"
     },
     "ctaTitle": "Define Your Purpose",
     "ctaDescription": "Use the Golden Circle model to clarify your message and build a stronger, more authentic brand.",
     "ctaButton": "Start Brainstorming Session",
-    "note": "(This is a conceptual tool for strategic planning.)"
+    "note": "(This is a conceptual tool for strategic planning.)",
+    "formTitle": "Golden Circle Brainstorming",
+    "saveButton": "Save Results",
+    "resultsTitle": "Your Golden Circle",
+    "resultsDescription": "Here is the result of your brainstorming session. Use this to clarify your purpose and inspire action.",
+    "resetButton": "Start Over",
+    "noResult": "No input provided."
   }
 }

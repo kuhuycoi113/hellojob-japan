@@ -285,19 +285,28 @@
     "explanationTitle": "Ba Vòng tròn",
     "why": {
       "title": "Why (Tại sao)",
-      "description": "Đây là niềm tin cốt lõi của doanh nghiệp. Đó không phải là về việc kiếm tiền—đó là một kết quả. 'Tại sao' là mục đích, nguyên nhân hoặc niềm tin truyền cảm hứng cho bạn làm những gì bạn làm."
+      "description": "Đây là niềm tin cốt lõi của doanh nghiệp. Đó không phải là về việc kiếm tiền—đó là một kết quả. 'Tại sao' là mục đích, nguyên nhân hoặc niềm tin truyền cảm hứng cho bạn làm những gì bạn làm.",
+      "formPrompt": "Mục đích, lý do tồn tại, hoặc niềm tin của bạn là gì? Tại sao tổ chức của bạn tồn tại?"
     },
     "how": {
       "title": "How (Làm thế nào)",
-      "description": "Đây là những hành động cụ thể được thực hiện để hiện thực hóa 'Tại sao'. Đó là Đề xuất Bán hàng Độc nhất (USP) của bạn, những điều giúp bạn khác biệt so với đối thủ cạnh tranh."
+      "description": "Đây là những hành động cụ thể được thực hiện để hiện thực hóa 'Tại sao'. Đó là Đề xuất Bán hàng Độc nhất (USP) của bạn, những điều giúp bạn khác biệt so với đối thủ cạnh tranh.",
+      "formPrompt": "Bạn thực hiện 'điều bạn làm' như thế nào? Những hành động cụ thể nào bạn thực hiện để hiện thực hóa mục đích của mình?"
     },
     "what": {
       "title": "What (Làm gì)",
-      "description": "Đây là những gì công ty làm—sản phẩm bán ra hoặc dịch vụ cung cấp. Đó là điều hữu hình và dễ xác định nhất."
+      "description": "Đây là những gì công ty làm—sản phẩm bán ra hoặc dịch vụ cung cấp. Đó là điều hữu hình và dễ xác định nhất.",
+      "formPrompt": "Bạn làm gì? Bạn bán sản phẩm hay cung cấp dịch vụ gì?"
     },
     "ctaTitle": "Xác định Mục đích của bạn",
     "ctaDescription": "Sử dụng mô hình Vòng tròn Vàng để làm rõ thông điệp của bạn và xây dựng một thương hiệu mạnh mẽ, chân thực hơn.",
     "ctaButton": "Bắt đầu Buổi Brainstorm",
-    "note": "(Đây là một công cụ khái niệm để lập kế hoạch chiến lược.)"
+    "note": "(Đây là một công cụ khái niệm để lập kế hoạch chiến lược.)",
+    "formTitle": "Brainstorm Vòng tròn Vàng",
+    "saveButton": "Lưu kết quả",
+    "resultsTitle": "Vòng tròn Vàng của bạn",
+    "resultsDescription": "Đây là kết quả từ buổi brainstorm của bạn. Hãy sử dụng nó để làm rõ mục đích và truyền cảm hứng hành động.",
+    "resetButton": "Làm lại từ đầu",
+    "noResult": "Chưa có nội dung."
   }
 }
