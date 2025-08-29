@@ -2,7 +2,7 @@
   "header": {
     "home": "Home",
     "steps": "How it Works",
-    "recruitRight": "For Employers",
+    "recruitRight": "Recruit Right",
     "postJobAI": "Post Job with AI",
     "elearning": "E-learning",
     "handbook": "Handbook",
@@ -182,5 +182,26 @@
     "etiquetteDesc": "Understanding and respect for the culture and etiquette in Japanese workplaces.",
     "dedication": "Spirit of Dedication",
     "dedicationDesc": "Strong commitment to common goals and the company's growth."
+  },
+  "recruitRight": {
+    "title": "Corporate Culture Discovery Tools",
+    "subtitle": "Understand your company's Mission, Vision, Core Values, and Culture to find the best-fit foreign candidates.",
+    "start": "Start",
+    "barrett": {
+      "title": "Barrett Values Centre (CTT)",
+      "description": "Cultural Transformation Tools that measure personal and organizational values to identify cultural alignment."
+    },
+    "gallup": {
+      "title": "Gallup CliftonStrengths",
+      "description": "Identifies your team's dominant talents to help build a strengths-based work environment."
+    },
+    "hofstede": {
+      "title": "Hofstede Organizational Culture Scan",
+      "description": "Analyzes your organizational culture across 6 dimensions, comparing it to national standards for better integration."
+    },
+    "goldenCircle": {
+      "title": "The Golden Circle",
+      "description": "Clarifies the 'Why' your company exists, inspiring action and attracting those who believe what you believe."
+    }
   }
 }

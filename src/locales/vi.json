@@ -182,5 +182,26 @@
     "etiquetteDesc": "Hiểu và tôn trọng văn hóa, lễ nghi trong giao tiếp và làm việc tại Nhật Bản.",
     "dedication": "Tinh thần cống hiến",
     "dedicationDesc": "Nỗ lực hết mình vì mục tiêu chung và sự phát triển của công ty."
+  },
+  "recruitRight": {
+    "title": "Công cụ khám phá văn hoá doanh nghiệp",
+    "subtitle": "Hiểu rõ Sứ mệnh, Tầm nhìn, Giá trị cốt lõi và Văn hoá của doanh nghiệp bạn để tìm ra những ứng viên nước ngoài phù hợp nhất.",
+    "start": "Bắt đầu",
+    "barrett": {
+      "title": "Barrett Values Centre (CTT)",
+      "description": "Công cụ Chuyển đổi Văn hóa giúp đo lường giá trị cá nhân và tổ chức, xác định sự tương hợp văn hóa."
+    },
+    "gallup": {
+      "title": "Gallup CliftonStrengths",
+      "description": "Xác định các điểm mạnh nổi bật của đội ngũ, giúp xây dựng một môi trường làm việc dựa trên thế mạnh."
+    },
+    "hofstede": {
+      "title": "Hofstede Organizational Culture Scan",
+      "description": "Phân tích văn hóa tổ chức của bạn qua 6 chiều văn hóa, so sánh với các tiêu chuẩn quốc gia để hội nhập tốt hơn."
+    },
+    "goldenCircle": {
+      "title": "Golden Circle (Vòng tròn Vàng)",
+      "description": "Làm rõ 'Lý do Tại sao' doanh nghiệp bạn tồn tại, truyền cảm hứng và thu hút những người cùng chung chí hướng."
+    }
   }
 }

@@ -67,7 +67,7 @@ export function Header() {
   const navLinks = [
     { href: "/", label: t.header.home },
     { href: "/#how-it-works", label: t.header.steps },
-    { href: "#", label: t.header.recruitRight },
+    { href: "/recruit-right", label: t.header.recruitRight },
     { href: "/post-job-ai", label: t.header.postJobAI, icon: <Sparkles className="h-4 w-4 text-accent" /> },
     { href: "/elearning", label: t.header.elearning },
     { href: "/handbook", label: t.header.handbook },
