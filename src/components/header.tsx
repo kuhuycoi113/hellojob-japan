@@ -34,51 +34,53 @@ export function Header() {
           <Link href="/">
             <Logo />
           </Link>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <Link
-              href="#"
-              className="text-foreground transition-colors hover:text-primary whitespace-nowrap"
-            >
-              Trang chủ
-            </Link>
-            <Link
-              href="#"
-              className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-            >
-              Các bước
-            </Link>
-            <Link
-              href="#"
-              className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-            >
-              Tuyển đúng người
-            </Link>
-            <Link
-              href="#"
-              className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-            >
-              Đăng việc làm bằng AI
-            </Link>
-            <Link
-              href="#"
-              className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-            >
-              E-learning
-            </Link>
-            <Link
-              href="#"
-              className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-            >
-              Cẩm nang
-            </Link>
-            <Link
-              href="#"
-              className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
-            >
-              Giới thiệu
-            </Link>
-          </nav>
         </div>
+
+        <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-sm font-medium">
+          <Link
+            href="#"
+            className="text-foreground transition-colors hover:text-primary whitespace-nowrap"
+          >
+            Trang chủ
+          </Link>
+          <Link
+            href="#"
+            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
+          >
+            Các bước
+          </Link>
+          <Link
+            href="#"
+            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
+          >
+            Tuyển đúng người
+          </Link>
+          <Link
+            href="#"
+            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
+          >
+            Đăng việc làm bằng AI
+          </Link>
+          <Link
+            href="#"
+            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
+          >
+            E-learning
+          </Link>
+          <Link
+            href="#"
+            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
+          >
+            Cẩm nang
+          </Link>
+          <Link
+            href="#"
+            className="text-foreground/80 transition-colors hover:text-primary whitespace-nowrap"
+          >
+            Giới thiệu
+          </Link>
+        </nav>
+
         <div className="flex items-center gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
