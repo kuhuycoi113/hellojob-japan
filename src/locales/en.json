@@ -146,5 +146,25 @@
         { "category": "Interview Experience", "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction)", "readTime": "6 min read" },
         { "category": "Labor Law", "title": "The Latest Updates on Japanese Labor Law for Foreign Workers", "readTime": "8 min read" }
     ]
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "A simple 4-step process to find the perfect candidate for your business.",
+    "step1": {
+      "title": "Post a Job",
+      "description": "Create and post a detailed job listing, or use our AI to generate one quickly."
+    },
+    "step2": {
+      "title": "Search & Screen",
+      "description": "Use advanced filters to search for candidates by industry, skills, and experience."
+    },
+    "step3": {
+      "title": "Review & Interview",
+      "description": "View detailed profiles, watch introduction videos, and schedule interviews directly on the platform."
+    },
+    "step4": {
+      "title": "Hire & Onboard",
+      "description": "Send job offers and get support from HelloJob for legal procedures and contracts."
+    }
   }
 }

@@ -146,5 +146,25 @@
         { "category": "Kinh nghiệm phỏng vấn", "title": "Mẹo viết và trình bày Jikoshoukai (tự giới thiệu bản thân) ấn tượng", "readTime": "6 phút đọc" },
         { "category": "Pháp luật lao động", "title": "Cập nhật mới nhất về luật lao động Nhật Bản dành cho người nước ngoài", "readTime": "8 phút đọc" }
     ]
+  },
+  "howItWorks": {
+    "title": "Quy trình làm việc",
+    "subtitle": "Quy trình 4 bước đơn giản để tìm kiếm ứng viên phù hợp cho doanh nghiệp của bạn.",
+    "step1": {
+      "title": "Đăng tin tuyển dụng",
+      "description": "Tạo và đăng tin tuyển dụng chi tiết hoặc sử dụng AI để tạo tin một cách nhanh chóng."
+    },
+    "step2": {
+      "title": "Tìm kiếm & Sàng lọc",
+      "description": "Sử dụng bộ lọc nâng cao để tìm kiếm ứng viên theo ngành nghề, kỹ năng và kinh nghiệm."
+    },
+    "step3": {
+      "title": "Xem xét & Phỏng vấn",
+      "description": "Xem hồ sơ chi tiết, video giới thiệu và lên lịch phỏng vấn trực tiếp trên nền tảng."
+    },
+    "step4": {
+      "title": "Tuyển dụng & Hỗ trợ",
+      "description": "Gửi lời mời làm việc và nhận hỗ trợ về thủ tục pháp lý, hợp đồng từ HelloJob."
+    }
   }
 }

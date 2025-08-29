@@ -5,6 +5,7 @@ import { Cta } from '@/components/cta';
 import { WhyChooseUs } from '@/components/why-choose-us';
 import { CandidateQuality } from '@/components/candidate-quality';
 import { Footer } from '@/components/footer';
+import { HowItWorks } from '@/components/how-it-works';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <WhyChooseUs />
+        <HowItWorks />
         <CandidateCategories />
         <CandidateQuality />
         <Cta />
