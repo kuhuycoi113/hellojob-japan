@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Video, Newspaper, BookOpen } from 'lucide-react';
+import { ArrowRight, Video, Newspaper, BookOpen, PlayCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 
 export function HandbookSection() {
@@ -50,12 +50,7 @@ export function HandbookSection() {
         },
     ];
 
-    const newsAndArticles = [
-        t.handbook.articles[0],
-        t.handbook.articles[1],
-        t.handbook.articles[2],
-        t.handbook.articles[3],
-    ];
+    const newsAndArticles = t.handbook.articles;
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
@@ -111,17 +106,28 @@ export function HandbookSection() {
                 <Video className="w-6 h-6 text-primary" />
                 {t.handbook.videoTitle}
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+              <div className="space-y-4">
                 {shortVideos.map((video, index) => (
-                    <Card key={index} className="relative shadow-md rounded-xl overflow-hidden group">
-                        <Image src={`https://picsum.photos/400/600?random=${index + 5}`} alt={video.title} width={400} height={600} className="object-cover" data-ai-hint="person speaking presentation"/>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                        <div className="absolute bottom-0 left-0 p-4 text-white">
-                            <Video className="w-8 h-8 mb-2 opacity-80" />
-                            <h4 className="font-bold font-headline text-lg">{video.title}</h4>
-                            <p className="text-sm opacity-90">{video.category}</p>
+                  <Card key={index} className="shadow-sm rounded-xl overflow-hidden group hover:shadow-md transition-shadow">
+                    <div className="flex items-center">
+                      <div className="relative w-24 h-24 flex-shrink-0">
+                        <Image 
+                          src={`https://picsum.photos/200/200?random=${index + 15}`} 
+                          alt={video.title} 
+                          fill
+                          className="object-cover" 
+                          data-ai-hint="person speaking presentation"
+                        />
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                          <PlayCircle className="w-8 h-8 text-white/80" />
                         </div>
-                    </Card>
+                      </div>
+                      <div className="p-4">
+                        <Badge variant="secondary" className="mb-1 text-xs">{video.category}</Badge>
+                        <h4 className="font-semibold text-gray-800 leading-snug text-sm">{video.title}</h4>
+                      </div>
+                    </div>
+                  </Card>
                 ))}
               </div>
             </div>
