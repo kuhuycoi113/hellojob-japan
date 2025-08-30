@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/language-context';
 import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
-import type { GenerateJobPostOutput } from '@/ai/flows/generate-job-post';
+import type { GenerateJobPostOutput } from '@/ai/schemas/generate-job-post-schema';
 import { useToast } from "@/hooks/use-toast";
 
 type SessionState = 'idle' | 'loading' | 'completed';
