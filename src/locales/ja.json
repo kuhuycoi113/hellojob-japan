@@ -157,6 +157,7 @@
     }
   },
   "ai_job_post_form": {
+    "your_selections_title": "選択したビザの種類",
     "suggestions": {
       "s1": "愛知県の溶接工",
       "s2": "介護施設の介護スタッフ",

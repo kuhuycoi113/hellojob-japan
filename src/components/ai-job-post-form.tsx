@@ -104,7 +104,7 @@ export function AiJobPostForm() {
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Info className="w-5 h-5 text-blue-600"/>
-                Your Selections
+                {t.ai_job_post_form.your_selections_title}
               </CardTitle>
               <div className="flex flex-wrap gap-2 pt-2">
                 {role && <Badge variant="secondary">{role}</Badge>}

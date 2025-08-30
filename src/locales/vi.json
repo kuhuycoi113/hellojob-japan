@@ -157,6 +157,7 @@
     }
   },
   "ai_job_post_form": {
+    "your_selections_title": "Loại Visa bạn chọn",
     "suggestions": {
       "s1": "Welder in Aichi",
       "s2": "Caregiver staff for nursing home",
