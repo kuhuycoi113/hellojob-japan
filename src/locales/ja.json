@@ -246,12 +246,6 @@
         "title": "労働者向け！日本の主要都市での生活費はどのくらい？",
         "image": "https://picsum.photos/600/400?random=13",
         "hint": "city life"
-      },
-      {
-        "category": "面接のコツ",
-        "title": "好印象を与える自己紹介の書き方と伝え方",
-        "image": "https://picsum.photos/600/400?random=14",
-        "hint": "presentation speech"
       }
     ],
     "imagePosts": {
@@ -283,33 +277,27 @@
     "articles": [
       {
         "category": "日本での生活",
-        "title": "日本の会社文化：労働者のための「報・連・相」解説",
-        "readTime": "5分で読めます"
+        "title": "日本の会社文化：労働者のための「報・連・相」解説"
       },
       {
         "category": "面接のコツ",
-        "title": "労働者向け！好印象を与える自己紹介の書き方と伝え方",
-        "readTime": "6分で読めます"
+        "title": "労働者向け！好印象を与える自己紹介の書き方と伝え方"
       },
       {
         "category": "労働法",
-        "title": "外国人労働者のための日本の労働法に関する最新情報",
-        "readTime": "8分で読めます"
+        "title": "外国人労働者のための日本の労働法に関する最新情報"
       },
       {
         "category": "市場ニュース",
-        "title": "日本は深刻な労働力不足に直面している",
-        "readTime": "4分で読めます"
+        "title": "日本は深刻な労働力不足に直面している"
       },
       {
         "category": "特定技能",
-        "title": "労働者向け！建設分野の特定技能試験に関する詳細ガイド",
-        "readTime": "7分で読めます"
+        "title": "労働者向け！建設分野の特定技能試験に関する詳細ガイド"
       },
       {
         "category": "日本での生活",
-        "title": "日本で外国人労働者が手頃な価格の住居を見つける方法は？",
-        "readTime": "5分で読めます"
+        "title": "日本で外国人労働者が手頃な価格の住居を見つける方法は？"
       }
     ],
     "shareContentButton": "コンテンツを共有する",
@@ -700,7 +688,25 @@
         "text": "自己PRの部分が本当に一番難しいですね。どなたか参考になる良い例文をお持ちではありませんか？"
       }
     ]
+  },
+  "userRoles": {
+    "title": "あなたの役割を選択してください",
+    "description": "最適な体験のために、あなたの役割を教えてください。",
+    "hiringCompany": {
+      "title": "受入企業",
+      "description": "直接人材を採用する。"
+    },
+    "supportOrg": {
+      "title": "登録支援機関",
+      "description": "企業と労働者を支援する。"
+    },
+    "union": {
+      "title": "協同組合",
+      "description": "実習生を管理・支援する。"
+    },
+    "sendingCompany": {
+      "title": "送り出し機関",
+      "description": "ベトナムから労働者を募集・派遣する。"
+    }
   }
 }
-
-    

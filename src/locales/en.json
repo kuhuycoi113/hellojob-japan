@@ -242,16 +242,10 @@
         "hint": "legal document"
       },
       {
-        "category": "Life in Japan",
+        "category": "Cuộc sống ở Nhật",
         "title": "What's the Cost of Living in Japan's Major Cities for Laborers?",
         "image": "https://picsum.photos/600/400?random=13",
         "hint": "city life"
-      },
-      {
-        "category": "Interview Experience",
-        "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction)",
-        "image": "https://picsum.photos/600/400?random=14",
-        "hint": "presentation speech"
       }
     ],
     "imagePosts": {
@@ -283,33 +277,27 @@
     "articles": [
       {
         "category": "Life in Japan",
-        "title": "Work Culture in Japan: Understanding 'Hou-Ren-Sou' for Workers",
-        "readTime": "5 min read"
+        "title": "Work Culture in Japan: Understanding 'Hou-Ren-Sou' for Workers"
       },
       {
         "category": "Interview Experience",
-        "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction) for Workers",
-        "readTime": "6 min read"
+        "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction) for Workers"
       },
       {
         "category": "Labor Law",
-        "title": "The Latest Updates on Japanese Labor Law for Foreign Workers",
-        "readTime": "8 min read"
+        "title": "The Latest Updates on Japanese Labor Law for Foreign Workers"
       },
       {
         "category": "Market News",
-        "title": "Japan Faces Critical Labor Shortage",
-        "readTime": "4 min read"
+        "title": "Japan Faces Critical Labor Shortage"
       },
       {
         "category": "Specified Skilled Worker",
-        "title": "A Detailed Guide to the Specified Skilled Worker Exam for Construction for Workers",
-        "readTime": "7 min read"
+        "title": "A Detailed Guide to the Specified Skilled Worker Exam for Construction for Workers"
       },
       {
         "category": "Life in Japan",
-        "title": "How to Find Affordable Housing for Foreign Workers in Japan?",
-        "readTime": "5 min read"
+        "title": "How to Find Affordable Housing for Foreign Workers in Japan?"
       }
     ],
     "shareContentButton": "Share your content",
@@ -700,7 +688,25 @@
         "text": "The jiko PR section is indeed the hardest. Does anyone have a good template to share?"
       }
     ]
+  },
+  "userRoles": {
+    "title": "Who are you?",
+    "description": "Let us know your role for the best experience.",
+    "hiringCompany": {
+      "title": "Accepting Company (受入企業)",
+      "description": "Directly hiring personnel."
+    },
+    "supportOrg": {
+      "title": "Supporting Organization (支援機関)",
+      "description": "Supporting companies and workers."
+    },
+    "union": {
+      "title": "Cooperative Union (協同組合)",
+      "description": "Managing and supporting interns."
+    },
+    "sendingCompany": {
+      "title": "Sending Company (送り出し機関)",
+      "description": "Recruiting and dispatching workers from Vietnam."
+    }
   }
 }
-
-    
