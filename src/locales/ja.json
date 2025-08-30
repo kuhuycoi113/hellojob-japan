@@ -226,7 +226,29 @@
       }
     ],
     "imagePosts": {
-      "title": "写真の物語"
+      "title": "写真の物語",
+      "stories": [
+        {
+          "title": "工場での一日",
+          "image": "https://picsum.photos/400/533?random=50",
+          "hint": "factory worker"
+        },
+        {
+          "title": "夜の日本語教室",
+          "image": "https://picsum.photos/400/533?random=51",
+          "hint": "classroom learning night"
+        },
+        {
+          "title": "同郷の友達との夕食",
+          "image": "https://picsum.photos/400/533?random=52",
+          "hint": "people eating together"
+        },
+        {
+          "title": "美しい桜の季節",
+          "image": "https://picsum.photos/400/533?random=53",
+          "hint": "cherry blossom"
+        }
+      ]
     },
     "newsTitle": "ニュース & 投稿",
     "articles": [

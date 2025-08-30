@@ -226,7 +226,29 @@
       }
     ],
     "imagePosts": {
-      "title": "Bài đăng bằng Ảnh"
+      "title": "Câu chuyện qua ảnh",
+      "stories": [
+        {
+          "title": "Một ngày ở công xưởng",
+          "image": "https://picsum.photos/400/533?random=50",
+          "hint": "factory worker"
+        },
+        {
+          "title": "Lớp học tiếng Nhật buổi tối",
+          "image": "https://picsum.photos/400/533?random=51",
+          "hint": "classroom learning night"
+        },
+        {
+          "title": "Bữa cơm cùng đồng hương",
+          "image": "https://picsum.photos/400/533?random=52",
+          "hint": "people eating together"
+        },
+        {
+          "title": "Cảnh đẹp mùa hoa anh đào",
+          "image": "https://picsum.photos/400/533?random=53",
+          "hint": "cherry blossom"
+        }
+      ]
     },
     "newsTitle": "Tin tức & Bài viết",
     "articles": [

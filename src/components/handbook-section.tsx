@@ -43,12 +43,10 @@ export function HandbookSection() {
   };
 
   const shortVideos = t.handbook.videos;
-
   const newPosts = t.handbook.posts;
-
   const longVideos = t.handbook.longVideos;
-  
   const newsAndArticles = t.handbook.articles;
+  const imageStories = t.handbook.imagePosts.stories;
 
   const shareOptions = [
     {
@@ -156,6 +154,36 @@ export function HandbookSection() {
                         </Link>
                     ))}
                 </div>
+            </div>
+
+            <div className="mb-12">
+              <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                <ImageIcon className="w-6 h-6 text-primary" />
+                {t.handbook.imagePosts.title}
+              </h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {imageStories.map((story, index) => (
+                  <Card
+                    key={index}
+                    className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
+                  >
+                    <div className="relative aspect-[4/5]">
+                      <Image
+                        src={story.image}
+                        alt={story.title}
+                        fill
+                        className="object-cover w-full h-full"
+                        data-ai-hint={story.hint}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/80 transition-colors flex flex-col justify-end p-3">
+                        <h4 className="font-semibold text-white text-sm leading-tight drop-shadow-md">
+                          {story.title}
+                        </h4>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
             </div>
 
             <div className="mb-12">

@@ -226,7 +226,29 @@
       }
     ],
     "imagePosts": {
-      "title": "Image Posts"
+      "title": "Image Stories",
+      "stories": [
+        {
+          "title": "A Day at the Factory",
+          "image": "https://picsum.photos/400/533?random=50",
+          "hint": "factory worker"
+        },
+        {
+          "title": "Evening Japanese Class",
+          "image": "https://picsum.photos/400/533?random=51",
+          "hint": "classroom learning night"
+        },
+        {
+          "title": "Dinner with Friends from Home",
+          "image": "https://picsum.photos/400/533?random=52",
+          "hint": "people eating together"
+        },
+        {
+          "title": "Beautiful Cherry Blossom Season",
+          "image": "https://picsum.photos/400/533?random=53",
+          "hint": "cherry blossom"
+        }
+      ]
     },
     "newsTitle": "News & Articles",
     "articles": [
