@@ -1,87 +1,142 @@
 'use client';
 
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Video, Newspaper, BookOpen, PlayCircle, Send } from 'lucide-react';
+import {
+  ArrowRight,
+  Video,
+  Newspaper,
+  BookOpen,
+  PlayCircle,
+  Send,
+  FileText,
+  Image as ImageIcon,
+  Smartphone,
+} from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 export function HandbookSection() {
-    const { t } = useLanguage();
+  const { t } = useLanguage();
 
-    const featuredArticle = {
-        category: t.handbook.featured.category,
-        title: t.handbook.featured.title,
-        description: t.handbook.featured.description,
-        link: t.handbook.featured.link,
-    };
+  const featuredArticle = {
+    category: t.handbook.featured.category,
+    title: t.handbook.featured.title,
+    description: t.handbook.featured.description,
+    link: t.handbook.featured.link,
+  };
 
-    const shortVideos = [
-        t.handbook.videos[0],
-        t.handbook.videos[1],
-        t.handbook.videos[2],
-    ];
+  const shortVideos = [
+    t.handbook.videos[0],
+    t.handbook.videos[1],
+    t.handbook.videos[2],
+  ];
 
-    const newPosts = [
-        {
-            image: "https://picsum.photos/1200/600?random=3",
-            category: t.handbook.posts[0].category,
-            title: t.handbook.posts[0].title,
-            hint: 'business meeting',
-        },
-        {
-            image: "https://picsum.photos/1200/600?random=4",
-            category: t.handbook.posts[1].category,
-            title: t.handbook.posts[1].title,
-            hint: 'team collaboration',
-        },
-        {
-            image: "https://picsum.photos/1200/600?random=7",
-            category: t.handbook.posts[2].category,
-            title: t.handbook.posts[2].title,
-            hint: 'legal document',
-        },
-        {
-            image: "https://picsum.photos/1200/600?random=8",
-            category: t.handbook.posts[3].category,
-            title: t.handbook.posts[3].title,
-            hint: 'city life japan',
-        },
-    ];
+  const newPosts = [
+    {
+      image: 'https://picsum.photos/1200/600?random=3',
+      category: t.handbook.posts[0].category,
+      title: t.handbook.posts[0].title,
+      hint: 'business meeting',
+    },
+    {
+      image: 'https://picsum.photos/1200/600?random=4',
+      category: t.handbook.posts[1].category,
+      title: t.handbook.posts[1].title,
+      hint: 'team collaboration',
+    },
+    {
+      image: 'https://picsum.photos/1200/600?random=7',
+      category: t.handbook.posts[2].category,
+      title: t.handbook.posts[2].title,
+      hint: 'legal document',
+    },
+    {
+      image: 'https://picsum.photos/1200/600?random=8',
+      category: t.handbook.posts[3].category,
+      title: t.handbook.posts[3].title,
+      hint: 'city life japan',
+    },
+  ];
 
-    const longVideos = t.handbook.longVideos;
+  const longVideos = t.handbook.longVideos;
 
-    const newsAndArticles = t.handbook.articles;
+  const newsAndArticles = t.handbook.articles;
+
+  const shareOptions = [
+    {
+      icon: <FileText className="w-10 h-10 text-primary" />,
+      title: t.handbook.shareOptions.text,
+      description: t.handbook.shareOptions.textDesc,
+    },
+    {
+      icon: <ImageIcon className="w-10 h-10 text-yellow-500" />,
+      title: t.handbook.shareOptions.image,
+      description: t.handbook.shareOptions.imageDesc,
+    },
+    {
+      icon: <Smartphone className="w-10 h-10 text-green-500" />,
+      title: t.handbook.shareOptions.shortVideo,
+      description: t.handbook.shareOptions.shortVideoDesc,
+    },
+    {
+      icon: <Video className="w-10 h-10 text-red-500" />,
+      title: t.handbook.shareOptions.longVideo,
+      description: t.handbook.shareOptions.longVideoDesc,
+    },
+  ];
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Featured Article */}
             <Card className="shadow-lg rounded-xl overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                    <div className="relative h-64 md:h-auto">
-                        <Image src="https://picsum.photos/1200/600?random=1" alt={featuredArticle.title} fill className="object-cover" data-ai-hint="legal document handshake" />
-                    </div>
-                    <div className="p-8 flex flex-col justify-center">
-                        <Badge variant="secondary" className="bg-accent/20 text-accent-foreground font-semibold w-fit mb-4">{featuredArticle.category}</Badge>
-                        <h2 className="text-2xl font-bold font-headline mb-4 text-gray-800">{featuredArticle.title}</h2>
-                        <p className="text-muted-foreground mb-6">{featuredArticle.description}</p>
-                        <Button variant="link" className="p-0 self-start">
-                            {featuredArticle.link} <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                    </div>
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="relative h-64 md:h-auto">
+                  <Image
+                    src="https://picsum.photos/1200/600?random=1"
+                    alt={featuredArticle.title}
+                    fill
+                    className="object-cover"
+                    data-ai-hint="legal document handshake"
+                  />
                 </div>
+                <div className="p-8 flex flex-col justify-center">
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent/20 text-accent-foreground font-semibold w-fit mb-4"
+                  >
+                    {featuredArticle.category}
+                  </Badge>
+                  <h2 className="text-2xl font-bold font-headline mb-4 text-gray-800">
+                    {featuredArticle.title}
+                  </h2>
+                  <p className="text-muted-foreground mb-6">
+                    {featuredArticle.description}
+                  </p>
+                  <Button variant="link" className="p-0 self-start">
+                    {featuredArticle.link}{' '}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
             </Card>
 
             {/* New Posts */}
@@ -92,13 +147,27 @@ export function HandbookSection() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {newPosts.map((post, index) => (
-                  <Card key={index} className="shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
+                  <Card
+                    key={index}
+                    className="shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow"
+                  >
                     <div className="aspect-w-16 aspect-h-9">
-                        <Image src={post.image} alt={post.title} width={600} height={338} className="object-cover" data-ai-hint={post.hint} />
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        width={600}
+                        height={338}
+                        className="object-cover"
+                        data-ai-hint={post.hint}
+                      />
                     </div>
                     <CardContent className="p-6">
-                      <Badge variant="outline" className="mb-2">{post.category}</Badge>
-                      <h4 className="font-bold font-headline text-lg text-gray-800">{post.title}</h4>
+                      <Badge variant="outline" className="mb-2">
+                        {post.category}
+                      </Badge>
+                      <h4 className="font-bold font-headline text-lg text-gray-800">
+                        {post.title}
+                      </h4>
                     </CardContent>
                   </Card>
                 ))}
@@ -106,32 +175,41 @@ export function HandbookSection() {
             </div>
 
             {/* Long Videos */}
-             <div>
+            <div>
               <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
                 <Video className="w-6 h-6 text-primary" />
                 {t.handbook.longVideoTitle}
               </h3>
               <div className="space-y-6">
                 {longVideos.map((video, index) => (
-                   <Card key={index} className="overflow-hidden shadow-md rounded-xl group cursor-pointer hover:shadow-xl transition-shadow flex flex-col sm:flex-row">
-                        <div className="relative w-full sm:w-1/3 aspect-video">
-                            <Image 
-                                src={`https://picsum.photos/600/338?random=${30 + index}`}
-                                alt={video.title}
-                                fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                data-ai-hint="person talking presentation"
-                            />
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                                <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
-                            </div>
-                        </div>
-                        <CardContent className="p-4 sm:p-6 sm:w-2/3">
-                            <Badge variant="secondary" className="mb-2">{video.category}</Badge>
-                            <h3 className="font-semibold text-gray-800 leading-snug text-lg">{video.title}</h3>
-                            <p className="text-sm text-muted-foreground mt-2">{video.duration}</p>
-                        </CardContent>
-                   </Card>
+                  <Card
+                    key={index}
+                    className="overflow-hidden shadow-md rounded-xl group cursor-pointer hover:shadow-xl transition-shadow flex flex-col sm:flex-row"
+                  >
+                    <div className="relative w-full sm:w-1/3 aspect-video">
+                      <Image
+                        src={`https://picsum.photos/600/338?random=${30 + index}`}
+                        alt={video.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint="person talking presentation"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                        <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
+                      </div>
+                    </div>
+                    <CardContent className="p-4 sm:p-6 sm:w-2/3">
+                      <Badge variant="secondary" className="mb-2">
+                        {video.category}
+                      </Badge>
+                      <h3 className="font-semibold text-gray-800 leading-snug text-lg">
+                        {video.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        {video.duration}
+                      </p>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
@@ -147,18 +225,23 @@ export function HandbookSection() {
               </h3>
               <div className="grid grid-cols-3 gap-4">
                 {shortVideos.map((video, index) => (
-                  <Card key={index} className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow">
+                  <Card
+                    key={index}
+                    className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
+                  >
                     <div className="relative aspect-[9/16]">
-                      <Image 
-                        src={`https://picsum.photos/225/400?random=${index + 15}`} 
-                        alt={video.title} 
+                      <Image
+                        src={`https://picsum.photos/225/400?random=${index + 15}`}
+                        alt={video.title}
                         fill
                         className="object-cover w-full h-full"
                         data-ai-hint="person speaking presentation"
                       />
                       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors flex flex-col justify-end p-2">
                         <PlayCircle className="w-8 h-8 text-white/90 drop-shadow-lg mb-2" />
-                        <h4 className="font-semibold text-white text-xs leading-tight drop-shadow-md">{video.title}</h4>
+                        <h4 className="font-semibold text-white text-xs leading-tight drop-shadow-md">
+                          {video.title}
+                        </h4>
                       </div>
                     </div>
                   </Card>
@@ -174,11 +257,20 @@ export function HandbookSection() {
               </h3>
               <div className="space-y-4">
                 {newsAndArticles.map((article, index) => (
-                    <Card key={index} className="p-4 shadow-sm rounded-lg hover:bg-white transition-colors">
-                        <Badge variant="secondary" className="mb-2">{article.category}</Badge>
-                        <h4 className="font-semibold text-gray-800 leading-snug">{article.title}</h4>
-                        <p className="text-sm text-muted-foreground mt-1">{article.readTime}</p>
-                    </Card>
+                  <Card
+                    key={index}
+                    className="p-4 shadow-sm rounded-lg hover:bg-white transition-colors"
+                  >
+                    <Badge variant="secondary" className="mb-2">
+                      {article.category}
+                    </Badge>
+                    <h4 className="font-semibold text-gray-800 leading-snug">
+                      {article.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {article.readTime}
+                    </p>
+                  </Card>
                 ))}
               </div>
             </div>
@@ -186,19 +278,44 @@ export function HandbookSection() {
         </div>
 
         <div className="mt-16 text-center">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground text-base shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    {t.handbook.shareContentButton} <Send className="ml-2 h-5 w-5" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="w-56">
-                <DropdownMenuItem>{t.handbook.shareOptions.text}</DropdownMenuItem>
-                <DropdownMenuItem>{t.handbook.shareOptions.image}</DropdownMenuItem>
-                <DropdownMenuItem>{t.handbook.shareOptions.shortVideo}</DropdownMenuItem>
-                <DropdownMenuItem>{t.handbook.shareOptions.longVideo}</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                size="lg"
+                variant="default"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground text-base shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1"
+              >
+                {t.handbook.shareContentButton}{' '}
+                <Send className="ml-2 h-5 w-5" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-2xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">
+                  {t.handbook.shareOptions.title}
+                </DialogTitle>
+                <DialogDescription className="text-center">
+                  {t.handbook.shareOptions.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                {shareOptions.map((option) => (
+                  <Card
+                    key={option.title}
+                    className="p-6 flex flex-col items-center justify-center text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                  >
+                    <div className="mb-4">{option.icon}</div>
+                    <h3 className="font-semibold text-lg text-gray-800">
+                      {option.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {option.description}
+                    </p>
+                  </Card>
+                ))}
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
