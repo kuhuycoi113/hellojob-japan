@@ -201,11 +201,6 @@
         "title": "Live interview with the director of a construction company about recruitment needs",
         "duration": "35:10",
         "category": "Employer Interview"
-      },
-      {
-        "title": "How to Prepare for the Japanese-Language Proficiency Test (JLPT)?",
-        "duration": "18:55",
-        "category": "Japanese Learning"
       }
     ],
     "newPostsTitle": "New Posts",
@@ -233,6 +228,12 @@
         "title": "What's the Cost of Living in Japan's Major Cities for Laborers?",
         "image": "https://picsum.photos/600/400?random=13",
         "hint": "city life"
+      },
+      {
+        "category": "Interview Experience",
+        "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction)",
+        "image": "https://picsum.photos/600/400?random=14",
+        "hint": "presentation speech"
       }
     ],
     "imagePosts": {
@@ -683,3 +684,5 @@
     ]
   }
 }
+
+    

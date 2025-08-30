@@ -201,11 +201,6 @@
         "title": "建設会社の社長との採用ニーズに関するライブインタビュー",
         "duration": "35:10",
         "category": "採用担当者インタビュー"
-      },
-      {
-        "title": "日本語能力試験（JLPT）の準備方法は？",
-        "duration": "18:55",
-        "category": "日本語学習"
       }
     ],
     "newPostsTitle": "新着記事",
@@ -233,6 +228,12 @@
         "title": "労働者向け！日本の主要都市での生活費はどのくらい？",
         "image": "https://picsum.photos/600/400?random=13",
         "hint": "city life"
+      },
+      {
+        "category": "面接のコツ",
+        "title": "好印象を与える自己紹介の書き方と伝え方",
+        "image": "https://picsum.photos/600/400?random=14",
+        "hint": "presentation speech"
       }
     ],
     "imagePosts": {
@@ -683,3 +684,5 @@
     ]
   }
 }
+
+    

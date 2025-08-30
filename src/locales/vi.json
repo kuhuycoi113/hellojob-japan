@@ -201,11 +201,6 @@
         "title": "Phỏng vấn trực tiếp với giám đốc công ty xây dựng về nhu cầu tuyển dụng",
         "duration": "35:10",
         "category": "Phỏng vấn nhà tuyển dụng"
-      },
-      {
-        "title": "Làm thế nào để chuẩn bị cho kỳ thi Năng lực Tiếng Nhật JLPT?",
-        "duration": "18:55",
-        "category": "Học tiếng Nhật"
       }
     ],
     "newPostsTitle": "Bài viết mới",
@@ -233,6 +228,12 @@
         "title": "Chi phí sinh hoạt tại các thành phố lớn ở Nhật Bản là bao nhiêu dành cho người lao động?",
         "image": "https://picsum.photos/600/400?random=13",
         "hint": "city life"
+      },
+      {
+        "category": "Kinh nghiệm phỏng vấn",
+        "title": "Mẹo trình bày 'Jikoshoukai' (tự giới thiệu bản thân) ấn tượng",
+        "image": "https://picsum.photos/600/400?random=14",
+        "hint": "presentation speech"
       }
     ],
     "imagePosts": {
@@ -683,3 +684,5 @@
     ]
   }
 }
+
+    
