@@ -40,14 +40,14 @@ export function ShareLongVideoForm() {
     setVideoPreview(null);
   };
   
-  const categories = [
+  const categories = Array.from(new Set([
     t.handbook.articles[0].category,
     t.handbook.articles[1].category,
     t.handbook.articles[2].category,
     t.handbook.articles[3].category,
     t.handbook.articles[4].category,
     t.handbook.articles[5].category,
-  ];
+  ]));
 
   return (
     <section className="py-16 sm:py-24">
