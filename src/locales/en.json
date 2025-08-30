@@ -491,19 +491,19 @@
     "description": "The Golden Circle is a model by Simon Sinek that helps organizations articulate their purpose. By starting with 'Why', you can inspire action and attract employees and customers who share your core beliefs.",
     "explanationTitle": "The Three Rings",
     "why": {
-      "title": "Why",
-      "description": "This is the core belief of the business. It's not about making money—that's a result. 'Why' is the purpose, cause, or belief that inspires you to do what you do.",
-      "formPrompt": "What is your purpose, cause, or belief? Why does your organization exist?"
+      "title": "Why (Tại sao)",
+      "description": "Đây là niềm tin cốt lõi của doanh nghiệp. Đó không phải là về việc kiếm tiền—đó là một kết quả. 'Tại sao' là mục đích, nguyên nhân hoặc niềm tin truyền cảm hứng cho bạn làm những gì bạn làm.",
+      "formPrompt": "Mục đích, lý do tồn tại, hoặc niềm tin của bạn là gì? Tại sao tổ chức của bạn tồn tại?"
     },
     "how": {
-      "title": "How",
-      "description": "These are the specific actions taken to realize the 'Why'. It's your Unique Selling Proposition, the things that differentiate you from the competition.",
-      "formPrompt": "How do you do what you do? What are the specific actions you take to realize your purpose?"
+      "title": "How (Làm thế nào)",
+      "description": "Đây là những hành động cụ thể được thực hiện để hiện thực hóa 'Tại sao'. Đó là Đề xuất Bán hàng Độc nhất (USP) của bạn, những điều giúp bạn khác biệt so với đối thủ cạnh tranh.",
+      "formPrompt": "Bạn thực hiện 'điều bạn làm' như thế nào? Những hành động cụ thể nào bạn thực hiện để hiện thực hóa mục đích của mình?"
     },
     "what": {
-      "title": "What",
-      "description": "This is what the company does—the products it sells or the services it offers. It's the most tangible and easiest thing to identify.",
-      "formPrompt": "What do you do? What products do you sell or services do you offer?"
+      "title": "What (Làm gì)",
+      "description": "Đây là những gì công ty làm—sản phẩm bán ra hoặc dịch vụ cung cấp. Đó là điều hữu hình và dễ xác định nhất.",
+      "formPrompt": "Bạn làm gì? Bạn bán sản phẩm hay cung cấp dịch vụ gì?"
     },
     "ctaTitle": "Define Your Purpose",
     "ctaDescription": "Use the Golden Circle model to clarify your message and build a stronger, more authentic brand.",
