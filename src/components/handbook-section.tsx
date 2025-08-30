@@ -106,27 +106,26 @@ export function HandbookSection() {
                 <Video className="w-6 h-6 text-primary" />
                 {t.handbook.videoTitle}
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {shortVideos.map((video, index) => (
-                  <Card key={index} className="shadow-sm rounded-xl overflow-hidden group hover:shadow-md transition-shadow">
-                    <div className="flex items-center">
-                      <div className="relative w-24 h-24 flex-shrink-0">
-                        <Image 
-                          src={`https://picsum.photos/200/200?random=${index + 15}`} 
-                          alt={video.title} 
-                          fill
-                          className="object-cover" 
-                          data-ai-hint="person speaking presentation"
-                        />
-                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                          <PlayCircle className="w-8 h-8 text-white/80" />
-                        </div>
-                      </div>
-                      <div className="p-4">
-                        <Badge variant="secondary" className="mb-1 text-xs">{video.category}</Badge>
-                        <h4 className="font-semibold text-gray-800 leading-snug text-sm">{video.title}</h4>
+                  <Card key={index} className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow">
+                    <div className="relative aspect-video">
+                      <Image 
+                        src={`https://picsum.photos/400/225?random=${index + 15}`} 
+                        alt={video.title} 
+                        width={400}
+                        height={225}
+                        className="object-cover w-full"
+                        data-ai-hint="person speaking presentation"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                        <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
                       </div>
                     </div>
+                    <CardContent className="p-4">
+                      <Badge variant="secondary" className="mb-2 text-xs">{video.category}</Badge>
+                      <h4 className="font-semibold text-gray-800 leading-snug">{video.title}</h4>
+                    </CardContent>
                   </Card>
                 ))}
               </div>
