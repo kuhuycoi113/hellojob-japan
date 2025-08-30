@@ -147,7 +147,7 @@ export function HandbookSection() {
         </div>
 
         <div className="mt-16 text-center">
-            <Button size="lg" variant="outline" className="bg-white hover:bg-gray-100 text-primary border-primary">
+            <Button size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground text-base shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
                 {t.handbook.shareContentButton} <Send className="ml-2 h-5 w-5" />
             </Button>
         </div>
