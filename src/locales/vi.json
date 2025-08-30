@@ -262,6 +262,31 @@
       "shortVideoDesc": "Chia sẻ một khoảnh khắc hoặc hướng dẫn nhanh.",
       "longVideo": "Đăng video dài",
       "longVideoDesc": "Tạo một video chuyên sâu, phỏng vấn, hoặc vlog."
+    },
+    "sharePost": {
+      "title": "Chia sẻ bài viết của bạn",
+      "subtitle": "Đóng góp kiến thức và kinh nghiệm của bạn cho cộng đồng. Bài viết sẽ được kiểm duyệt trước khi đăng.",
+      "categoryLabel": "Chuyên mục",
+      "selectCategory": "Chọn một chuyên mục",
+      "titleLabel": "Tiêu đề",
+      "titlePlaceholder": "Nhập một tiêu đề hấp dẫn cho bài viết của bạn",
+      "contentLabel": "Nội dung",
+      "contentPlaceholder": "Viết câu chuyện của bạn ở đây...",
+      "submitButton": "Gửi bài viết",
+      "outlineTitle": "Bạn cần cảm hứng?",
+      "outlineSubtitle": "Dưới đây là một vài ý tưởng để bạn bắt đầu:",
+      "outline1": {
+        "title": "Chia sẻ một trải nghiệm cá nhân",
+        "description": "Kể về một thử thách bạn đã vượt qua, một câu chuyện thành công, hoặc một khoảnh khắc hài hước trong thời gian ở Nhật."
+      },
+      "outline2": {
+        "title": "Đưa ra lời khuyên",
+        "description": "Chia sẻ mẹo về việc tìm nhà, tiết kiệm tiền, học tiếng Nhật, hoặc bất cứ điều gì có thể giúp ích cho người khác."
+      },
+      "outline3": {
+        "title": "Đặt một câu hỏi",
+        "description": "Bắt đầu một cuộc thảo luận bằng cách hỏi cộng đồng về ý kiến hoặc lời khuyên của họ về một chủ đề nào đó."
+      }
     }
   },
   "howItWorks": {

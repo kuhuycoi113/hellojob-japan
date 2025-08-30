@@ -262,6 +262,31 @@
       "shortVideoDesc": "Share a moment or a quick tutorial.",
       "longVideo": "Post long video",
       "longVideoDesc": "Create an in-depth video, interview, or vlog."
+    },
+    "sharePost": {
+      "title": "Share Your Story",
+      "subtitle": "Contribute your knowledge and experience to the community. Your post will be reviewed before publication.",
+      "categoryLabel": "Category",
+      "selectCategory": "Select a category",
+      "titleLabel": "Title",
+      "titlePlaceholder": "Enter an engaging title for your post",
+      "contentLabel": "Content",
+      "contentPlaceholder": "Write your story here...",
+      "submitButton": "Submit Post",
+      "outlineTitle": "Need some inspiration?",
+      "outlineSubtitle": "Here are a few ideas to get you started:",
+      "outline1": {
+        "title": "Share a personal experience",
+        "description": "Talk about a challenge you overcame, a success story, or a funny moment during your time in Japan."
+      },
+      "outline2": {
+        "title": "Give advice",
+        "description": "Share tips on finding an apartment, saving money, learning Japanese, or anything else that could help others."
+      },
+      "outline3": {
+        "title": "Ask a question",
+        "description": "Start a discussion by asking the community for their opinions or advice on a topic."
+      }
     }
   },
   "howItWorks": {

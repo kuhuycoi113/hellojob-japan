@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -82,21 +83,25 @@ export function HandbookSection() {
       icon: <FileText className="w-10 h-10 text-primary" />,
       title: t.handbook.shareOptions.text,
       description: t.handbook.shareOptions.textDesc,
+      href: "/handbook/share-post",
     },
     {
       icon: <ImageIcon className="w-10 h-10 text-yellow-500" />,
       title: t.handbook.shareOptions.image,
       description: t.handbook.shareOptions.imageDesc,
+      href: '#',
     },
     {
       icon: <Smartphone className="w-10 h-10 text-green-500" />,
       title: t.handbook.shareOptions.shortVideo,
       description: t.handbook.shareOptions.shortVideoDesc,
+      href: '#',
     },
     {
       icon: <Video className="w-10 h-10 text-red-500" />,
       title: t.handbook.shareOptions.longVideo,
       description: t.handbook.shareOptions.longVideoDesc,
+      href: '#',
     },
   ];
 
@@ -300,18 +305,19 @@ export function HandbookSection() {
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                 {shareOptions.map((option) => (
-                  <Card
-                    key={option.title}
-                    className="p-6 flex flex-col items-center justify-center text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
-                  >
-                    <div className="mb-4">{option.icon}</div>
-                    <h3 className="font-semibold text-lg text-gray-800">
-                      {option.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {option.description}
-                    </p>
-                  </Card>
+                   <Link href={option.href} key={option.title} passHref>
+                    <Card
+                      className="p-6 flex flex-col items-center justify-center text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full"
+                    >
+                      <div className="mb-4">{option.icon}</div>
+                      <h3 className="font-semibold text-lg text-gray-800">
+                        {option.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {option.description}
+                      </p>
+                    </Card>
+                  </Link>
                 ))}
               </div>
             </DialogContent>

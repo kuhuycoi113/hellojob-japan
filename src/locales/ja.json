@@ -262,6 +262,31 @@
       "shortVideoDesc": "瞬間や簡単なチュートリアルを共有します。",
       "longVideo": "長編動画を投稿",
       "longVideoDesc": "詳細な動画、インタビュー、またはvlogを作成します。"
+    },
+    "sharePost": {
+      "title": "あなたのストーリーを共有する",
+      "subtitle": "あなたの知識と経験をコミュニティに貢献してください。投稿は公開前にレビューされます。",
+      "categoryLabel": "カテゴリー",
+      "selectCategory": "カテゴリーを選択",
+      "titleLabel": "タイトル",
+      "titlePlaceholder": "魅力的な投稿タイトルを入力してください",
+      "contentLabel": "内容",
+      "contentPlaceholder": "ここにあなたのストーリーを書いてください...",
+      "submitButton": "投稿を送信",
+      "outlineTitle": "インスピレーションが必要ですか？",
+      "outlineSubtitle": "始めるためのアイデアをいくつか紹介します：",
+      "outline1": {
+        "title": "個人的な経験を共有する",
+        "description": "日本での生活で乗り越えた困難、成功談、または面白い瞬間について話してください。"
+      },
+      "outline2": {
+        "title": "アドバイスをする",
+        "description": "アパート探し、節約、日本語学習など、他の人の助けになるようなヒントを共有してください。"
+      },
+      "outline3": {
+        "title": "質問をする",
+        "description": "あるトピックについてコミュニティに意見やアドバイスを求めることで、ディスカッションを始めましょう。"
+      }
     }
   },
   "howItWorks": {
