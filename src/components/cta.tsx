@@ -12,7 +12,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { useLanguage } from '@/contexts/language-context';
-import { Building, Handshake, Users, ChevronRight, Briefcase, GraduationCap, Star } from 'lucide-react';
+import { Building, Handshake, Users, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil } from 'lucide-react';
 import { useState } from 'react';
 
 type VisaType = 'intern' | 'skilled' | 'engineer';
@@ -22,6 +22,7 @@ export function Cta() {
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
   const [visaDialogOpen, setVisaDialogOpen] = useState(false);
   const [visaSubTypeDialogOpen, setVisaSubTypeDialogOpen] = useState(false);
+  const [postMethodDialogOpen, setPostMethodDialogOpen] = useState(false);
   const [isForContact, setIsForContact] = useState(false);
   const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
 
@@ -81,17 +82,17 @@ export function Cta() {
 
   const visaSubTypes = {
     intern: [
-      { title: t.visaSubTypes.intern.threeYear, href: "/post-job-ai"},
-      { title: t.visaSubTypes.intern.oneYear, href: "/post-job-ai"},
-      { title: t.visaSubTypes.intern.go, href: "/post-job-ai"},
+      { title: t.visaSubTypes.intern.threeYear, href: "#"},
+      { title: t.visaSubTypes.intern.oneYear, href: "#"},
+      { title: t.visaSubTypes.intern.go, href: "#"},
     ],
     skilled: [
-      { title: t.visaSubTypes.skilled.japan, href: "/post-job-ai"},
-      { title: t.visaSubTypes.skilled.vietnam, href: "/post-job-ai"},
+      { title: t.visaSubTypes.skilled.japan, href: "#"},
+      { title: t.visaSubTypes.skilled.vietnam, href: "#"},
     ],
     engineer: [
-      { title: t.visaSubTypes.engineer.japan, href: "/post-job-ai"},
-      { title: t.visaSubTypes.engineer.vietnam, href: "/post-job-ai"},
+      { title: t.visaSubTypes.engineer.japan, href: "#"},
+      { title: t.visaSubTypes.engineer.vietnam, href: "#"},
     ],
   };
 
@@ -106,6 +107,11 @@ export function Cta() {
     setSelectedVisaType(type);
     setVisaDialogOpen(false);
     setVisaSubTypeDialogOpen(true);
+  }
+
+  const handleVisaSubTypeSelect = () => {
+    setVisaSubTypeDialogOpen(false);
+    setPostMethodDialogOpen(true);
   }
 
   return (
@@ -133,7 +139,7 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                 {userRoles.map((role) => (
-                  <Link href={isForContact ? `/chat?role=${encodeURIComponent(role.title)}` : '#'} key={role.title} onClick={!isForContact ? handleRoleSelect : undefined}>
+                  <Link href={'#'} key={role.title} onClick={handleRoleSelect}>
                     <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className="bg-primary/5 p-3 rounded-lg">
@@ -232,14 +238,51 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-1 gap-4 py-4">
                 {selectedVisaType && visaSubTypes[selectedVisaType].map((subType) => (
-                  <Link href={subType.href} key={subType.title} passHref>
+                  <div onClick={handleVisaSubTypeSelect} key={subType.title}>
                     <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                       <h3 className="font-semibold text-base text-gray-800">
                         {subType.title}
                       </h3>
                     </Card>
-                  </Link>
+                  </div>
                 ))}
+              </div>
+            </DialogContent>
+        </Dialog>
+        
+        <Dialog open={postMethodDialogOpen} onOpenChange={setPostMethodDialogOpen}>
+           <DialogContent className="sm:max-w-xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
+                <DialogDescription className="text-center">{t.postMethod.description}</DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                  <Link href="/post-job-ai">
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
+                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
+                        <Brain className="h-8 w-8 text-primary" />
+                      </div>
+                      <h3 className="font-semibold text-base text-gray-800">
+                        {t.postMethod.ai.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {t.postMethod.ai.description}
+                      </p>
+                    </Card>
+                  </Link>
+                   <Link href="/">
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
+                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
+                        <Pencil className="h-8 w-8 text-yellow-500" />
+                      </div>
+                      <h3 className="font-semibold text-base text-gray-800">
+                         {t.postMethod.manual.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                         {t.postMethod.manual.description}
+                      </p>
+                    </Card>
+                  </Link>
               </div>
             </DialogContent>
         </Dialog>

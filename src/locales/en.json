@@ -755,5 +755,17 @@
       "japan": "Engineer / Specialist candidates in Japan",
       "vietnam": "Engineer / Specialist candidates from Vietnam"
     }
+  },
+  "postMethod": {
+    "title": "Choose posting method",
+    "description": "How would you like to create your job post?",
+    "ai": {
+      "title": "Post with AI",
+      "description": "Briefly describe and let AI create a professional job post."
+    },
+    "manual": {
+      "title": "Manual Entry",
+      "description": "Fill out a detailed form for full control over the listing."
+    }
   }
 }

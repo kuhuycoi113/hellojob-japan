@@ -755,5 +755,17 @@
       "japan": "Kỹ sư, tri thức đầu Nhật",
       "vietnam": "Kỹ sư, tri thức đầu Việt"
     }
+  },
+  "postMethod": {
+    "title": "Chọn phương thức đăng tin",
+    "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
+    "ai": {
+      "title": "Đăng việc làm bằng AI",
+      "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
+    },
+    "manual": {
+      "title": "Nhập liệu thủ công",
+      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
+    }
   }
 }
