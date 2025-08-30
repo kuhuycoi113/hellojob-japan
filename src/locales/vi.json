@@ -217,51 +217,6 @@
         "title": "Chi phí sinh hoạt tại các thành phố lớn ở Nhật Bản là bao nhiêu dành cho người lao động?"
       }
     ],
-    "imageStories": {
-      "title": "Câu chuyện qua ảnh",
-      "stories": [
-        {
-          "image": "https://picsum.photos/400/533?random=50",
-          "title": "Một ngày ở công xưởng",
-          "hint": "factory worker"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=51",
-          "title": "Lớp học tiếng Nhật buổi tối",
-          "hint": "classroom learning night"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=52",
-          "title": "Bữa cơm cùng đồng hương",
-          "hint": "people eating together"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=53",
-          "title": "Cảnh đẹp mùa hoa anh đào",
-          "hint": "cherry blossom"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=54",
-          "title": "Làm việc trên đồng ruộng",
-          "hint": "farm work"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=55",
-          "title": "Tan ca",
-          "hint": "commute home"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=56",
-          "title": "Gọi điện về cho gia đình",
-          "hint": "video call family"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=57",
-          "title": "Ký túc xá",
-          "hint": "dormitory room"
-        }
-      ]
-    },
     "newsTitle": "Tin tức & Bài viết",
     "articles": [
       {
