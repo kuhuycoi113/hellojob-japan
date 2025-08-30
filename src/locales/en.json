@@ -1,3 +1,4 @@
+
 {
   "header": {
     "home": "Home",
@@ -93,16 +94,16 @@
     "copyright": "© {year} HelloJob. All rights reserved."
   },
   "elearning": {
-    "heroTitle": "E-Learning: Effective Management of Vietnamese Personnel",
-    "heroSubtitle": "Enhance your management capabilities, optimize performance, and build a successful multicultural work environment.",
-    "category": "Human Resource Management",
-    "title": "Recruiting, Managing & Retaining Vietnamese Talent",
-    "description": "A comprehensive course equipping Japanese managers and HR professionals with the necessary knowledge and skills to work effectively with Vietnamese employees.",
-    "feature1": "In-depth understanding of Vietnamese and Japanese labor laws.",
-    "feature2": "Effective candidate sourcing strategies and interview techniques.",
-    "feature3": "Cultural integration, training, and management skills.",
-    "feature4": "Methods for building an engaged and high-performing team.",
-    "cta": "Start Learning Now"
+    "heroTitle": "E-Learning: Deep Dive into Vietnamese Worker Culture",
+    "heroSubtitle": "Go beyond skills and laws to truly understand your Vietnamese employees, fostering a harmonious and productive workplace.",
+    "category": "Cross-Cultural Management",
+    "title": "Understanding the Vietnamese Mindset: A Guide for Japanese Employers",
+    "description": "A practical course that decodes the everyday habits, cultural motivations, and hidden pressures of Vietnamese workers in Japan.",
+    "feature1": "Deep dive into cultural habits (karaoke, food, social media).",
+    "feature2": "Understand financial pressures (remittances, debt).",
+    "feature3": "Bridge differences in communication and work styles.",
+    "feature4": "Build genuine trust and long-term loyalty.",
+    "cta": "Explore the Course"
   },
   "aiJobPost": {
     "title": "Create Job Postings with the Power of AI",
@@ -338,27 +339,44 @@
     }
   },
   "courseDetail": {
-    "category": "Human Resource Management",
-    "title": "Recruiting, Managing & Retaining Vietnamese Talent",
-    "description": "A comprehensive course equipping Japanese managers and HR professionals with the necessary knowledge and skills to work effectively with Vietnamese employees.",
+    "category": "Cross-Cultural Understanding",
+    "title": "Understanding Vietnamese Workers: A Cultural Guide",
+    "description": "A practical course decoding the daily habits, cultural motivations, and hidden pressures of Vietnamese workers in Japan, helping you build a more harmonious and effective team.",
     "courseContent": "Course Content",
     "information": "Information",
-     "video": {
+    "video": {
       "unavailable": "Video unavailable",
       "notWorking": "This video is not working"
     },
     "lessons": [
-      { "title": "Lesson 1: Understanding Labor Laws & Visas for Vietnamese", "duration": "25:30" },
-      { "title": "Lesson 2: Building an Effective Recruitment Strategy", "duration": "30:15" },
-      { "title": "Lesson 3: Interviewing and Assessing Vietnamese Candidates", "duration": "28:40" },
-      { "title": "Lesson 4: Cultural Onboarding and Workplace Training", "duration": "35:00" },
-      { "title": "Lesson 5: Building an Engaged and High-Performing Team", "duration": "22:10" }
+      { "title": "Why do Vietnamese workers love singing karaoke at home?", "duration": "07:30" },
+      { "title": "Vietnamese cooking culture (fish sauce, shrimp paste...) and flavor conflicts in dormitories.", "duration": "08:15" },
+      { "title": "The Vietnamese habit of communal living and the difference with Japanese privacy.", "duration": "06:40" },
+      { "title": "Punctuality: Vietnamese habits vs. Japanese expectations.", "duration": "09:00" },
+      { "title": "Familiar address terms vs. Japanese Keigo.", "duration": "11:20" },
+      { "title": "Overtime (Zangyō): Why do Vietnamese workers like to work extra hours?", "duration": "10:10" },
+      { "title": "The habit of sending most of their salary home: reasons & impacts.", "duration": "12:00" },
+      { "title": "Family life in Vietnam: Why do they rely on remittances?", "duration": "10:50" },
+      { "title": "The habit of extreme frugality in Japan.", "duration": "08:55" },
+      { "title": "Community comparisons: Who sends more money, who works more hours.", "duration": "09:30" },
+      { "title": "Social media habits: livestreaming, posting photos - risks and etiquette.", "duration": "11:00" },
+      { "title": "Days off: a preference for gatherings, food, and karaoke.", "duration": "07:45" },
+      { "title": "Why do Vietnamese prefer living with compatriots? A cultural perspective.", "duration": "06:20" },
+      { "title": "The pressure to 'get rich quick' in Japan.", "duration": "10:40" },
+      { "title": "The pressure of repaying loans for going abroad to work.", "duration": "12:15" },
+      { "title": "Relationship with Japanese bosses: differences in hierarchy culture.", "duration": "09:10" },
+      { "title": "The importance of the compatriot community.", "duration": "07:00" },
+      { "title": "Health issues: working too much, neglecting self-care.", "duration": "08:00" },
+      { "title": "Prioritizing overtime over learning Japanese: long-term consequences.", "duration": "11:30" },
+      { "title": "The mindset of 'self-sacrifice for the family'.", "duration": "13:00" }
     ],
     "info": {
-      "level": { "label": "Level", "value": "Beginner - Advanced" },
-      "lessons": { "label": "Lessons", "value": "15" },
-      "students": { "label": "Students", "value": "897" },
-      "rating": { "label": "Rating", "value": "4.9 / 5" }
+      "level": { "label": "Level", "value": "All Levels" },
+      "lessons": { "label": "Lessons", "value": "20" },
+      "students": { "label": "Students", "value": "1,204" },
+      "rating": { "label": "Rating", "value": "4.8 / 5" }
     }
   }
 }
+
+    

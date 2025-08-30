@@ -1,3 +1,4 @@
+
 {
   "header": {
     "home": "Trang chủ",
@@ -93,16 +94,16 @@
     "copyright": "© {year} HelloJob. All rights reserved."
   },
   "elearning": {
-    "heroTitle": "E-Learning: Quản lý hiệu quả nhân sự Việt Nam",
-    "heroSubtitle": "Nâng cao năng lực quản lý, tối ưu hóa hiệu suất và xây dựng môi trường làm việc đa văn hóa thành công.",
-    "category": "Quản lý nhân sự",
-    "title": "Tuyển dụng, Quản lý & Giữ chân nhân tài Việt Nam",
-    "description": "Khóa học toàn diện trang bị cho các nhà quản lý và chuyên viên nhân sự Nhật Bản kiến thức và kỹ năng cần thiết để làm việc hiệu quả với lao động Việt Nam.",
-    "feature1": "Hiểu biết sâu sắc về luật lao động Việt Nam và Nhật Bản.",
-    "feature2": "Chiến lược tuyển dụng và phỏng vấn ứng viên hiệu quả.",
-    "feature3": "Kỹ năng quản lý, đào tạo và hội nhập văn hóa.",
-    "feature4": "Phương pháp xây dựng đội ngũ gắn kết, hiệu suất cao.",
-    "cta": "Bắt đầu học ngay"
+    "heroTitle": "E-Learning: Thấu hiểu văn hoá người lao động Việt Nam",
+    "heroSubtitle": "Không chỉ là kỹ năng và luật pháp, hãy thấu hiểu sâu sắc người lao động Việt để xây dựng một nơi làm việc hoà hợp và hiệu quả.",
+    "category": "Quản lý đa văn hoá",
+    "title": "Thấu hiểu người lao động Việt: Cẩm nang cho nhà tuyển dụng Nhật",
+    "description": "Một khoá học thực tế giúp giải mã những thói quen hàng ngày, động lực văn hoá và những áp lực vô hình của người lao động Việt tại Nhật.",
+    "feature1": "Tìm hiểu sâu về thói quen văn hoá (karaoke, ăn uống, mạng xã hội).",
+    "feature2": "Hiểu rõ các áp lực tài chính (gửi tiền về nhà, nợ nần).",
+    "feature3": "Thu hẹp khoảng cách trong giao tiếp và phong cách làm việc.",
+    "feature4": "Xây dựng niềm tin thực sự và sự gắn bó lâu dài.",
+    "cta": "Khám phá khoá học"
   },
   "aiJobPost": {
     "title": "Tạo Tin Tuyển Dụng với Sức mạnh của AI",
@@ -338,9 +339,9 @@
     }
   },
   "courseDetail": {
-    "category": "Quản lý nhân sự",
-    "title": "Tuyển dụng, Quản lý & Giữ chân nhân tài Việt",
-    "description": "Khóa học toàn diện trang bị cho các nhà quản lý và chuyên viên nhân sự Nhật Bản kiến thức và kỹ năng cần thiết để làm việc hiệu quả với lao động Việt Nam.",
+    "category": "Thấu hiểu đa văn hoá",
+    "title": "Thấu hiểu Người lao động Việt: Cẩm nang văn hoá",
+    "description": "Khoá học thực tế giải mã những thói quen thường ngày, động lực văn hoá và những áp lực vô hình của người lao động Việt Nam tại Nhật, giúp bạn xây dựng đội ngũ hoà hợp và hiệu quả hơn.",
     "courseContent": "Nội dung khóa học",
     "information": "Thông tin",
     "video": {
@@ -348,17 +349,34 @@
       "notWorking": "Video này không hoạt động"
     },
     "lessons": [
-      { "title": "Bài 1: Hiểu về Luật Lao động & Visa cho người Việt", "duration": "25:30" },
-      { "title": "Bài 2: Xây dựng chiến lược tuyển dụng hiệu quả", "duration": "30:15" },
-      { "title": "Bài 3: Kỹ năng phỏng vấn và đánh giá ứng viên Việt", "duration": "28:40" },
-      { "title": "Bài 4: Hội nhập văn hóa và đào tạo tại nơi làm việc", "duration": "35:00" },
-      { "title": "Bài 5: Xây dựng đội ngũ gắn kết và hiệu suất cao", "duration": "22:10" }
+        { "title": "Vì sao người lao động Việt Nam thích hát karaoke tại nhà?", "duration": "07:30" },
+        { "title": "Văn hoá nấu ăn (nước mắm, mắm tôm…) và xung đột mùi vị trong ký túc xá.", "duration": "08:15" },
+        { "title": "Văn hoá sống tập thể của người Việt và sự khác biệt với người Nhật.", "duration": "06:40" },
+        { "title": "Thói quen đúng/không đúng giờ – sự khác biệt với Nhật Bản.", "duration": "09:00" },
+        { "title": "Cách xưng hô thân mật – khác biệt với hệ thống kính ngữ (keigo) của Nhật.", "duration": "11:20" },
+        { "title": "Tăng ca (Zangyō): Vì sao người Việt thích làm thêm giờ nhiều?", "duration": "10:10" },
+        { "title": "Thói quen gửi phần lớn lương về quê – nguyên nhân & tác động.", "duration": "12:00" },
+        { "title": "Cuộc sống gia đình ở Việt Nam: Vì sao họ trông chờ tiền gửi về?", "duration": "10:50" },
+        { "title": "Thói quen sống tiết kiệm quá mức tại Nhật.", "duration": "08:55" },
+        { "title": "Văn hóa “so sánh” trong cộng đồng (ai gửi nhiều tiền, ai làm nhiều giờ).", "duration": "09:30" },
+        { "title": "Mạng xã hội: thói quen livestream, đăng ảnh – rủi ro và ứng xử.", "duration": "11:00" },
+        { "title": "Ngày nghỉ: thích tụ tập ăn uống, đá bóng, karaoke – khác biệt với người Nhật.", "duration": "07:45" },
+        { "title": "Vì sao người Việt thích ở cùng đồng hương thay vì thuê riêng?", "duration": "06:20" },
+        { "title": "Áp lực “làm giàu nhanh” khi đi Nhật.", "duration": "10:40" },
+        { "title": "Áp lực “trả nợ vay” khi đi xuất khẩu lao động.", "duration": "12:15" },
+        { "title": "Mối quan hệ với sếp Nhật – khác biệt trong văn hoá cấp trên/cấp dưới.", "duration": "09:10" },
+        { "title": "Coi trọng cộng đồng đồng hương – ít giao lưu với người Nhật.", "duration": "07:00" },
+        { "title": "Vấn đề sức khoẻ: làm quá nhiều, ít chăm sóc bản thân.", "duration": "08:00" },
+        { "title": "Bỏ qua học tiếng Nhật để ưu tiên làm thêm – hệ quả lâu dài.", "duration": "11:30" },
+        { "title": "Tư duy “hy sinh bản thân để lo cho gia đình”.", "duration": "13:00" }
     ],
     "info": {
-      "level": { "label": "Cấp độ", "value": "Cơ bản - Nâng cao" },
-      "lessons": { "label": "Số bài học", "value": "15" },
-      "students": { "label": "Học viên", "value": "897" },
-      "rating": { "label": "Đánh giá", "value": "4.9 / 5" }
+      "level": { "label": "Cấp độ", "value": "Mọi cấp độ" },
+      "lessons": { "label": "Số bài học", "value": "20" },
+      "students": { "label": "Học viên", "value": "1,204" },
+      "rating": { "label": "Đánh giá", "value": "4.8 / 5" }
     }
   }
 }
+
+    
