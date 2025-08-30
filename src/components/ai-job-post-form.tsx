@@ -133,7 +133,7 @@ export function AiJobPostForm() {
                 disabled={state === 'loading'}
               />
                <div className="mt-6">
-                  <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">Thử một vài gợi ý:</h4>
+                  <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
                   <div className="grid sm:grid-cols-3 gap-4">
                     {suggestionCards.map((card) => (
                       <Card key={card.title} className="text-center p-4 hover:shadow-md transition-shadow cursor-pointer">
@@ -151,7 +151,7 @@ export function AiJobPostForm() {
               )}
               <Button variant="outline" asChild>
                 <Link href="/">
-                    <Pencil className="mr-2" />
+                    <Pencil className="mr-2 h-4 w-4" />
                     {t.ai_job_post_form.input.manual_post}
                 </Link>
               </Button>
@@ -159,7 +159,7 @@ export function AiJobPostForm() {
                 {state === 'loading' ? (
                   <LoaderCircle className="animate-spin" />
                 ) : (
-                  <Sparkles className="mr-2" />
+                  <Sparkles className="mr-2 h-4 w-4" />
                 )}
                 {t.aiJobPost.submit}
               </Button>

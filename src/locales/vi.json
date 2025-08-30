@@ -148,20 +148,18 @@
     "title": "Tạo Tin Tuyển Dụng với Sức mạnh của AI",
     "subtitle": "Mô tả công việc bạn cần, và để AI của chúng tôi tạo ra một tin tuyển dụng hấp dẫn và chuyên nghiệp chỉ trong vài giây.",
     "placeholder": "Ví dụ: Tìm kiếm kỹ sư phần mềm có 3 năm kinh nghiệm làm việc với React, Node.js và AWS. Yêu cầu giao tiếp tiếng Nhật tốt...",
-    "submit": "Tạo tin",
-    "suggestionsTitle": "Hoặc bắt đầu với gợi ý:",
-    "suggestions": {
-      "s1": "Thợ hàn ở Aichi",
-      "s2": "Nhân viên chăm sóc viện dưỡng lão",
-      "s3": "Comtor IT ở Tokyo"
-    }
+    "submit": "Tạo tin"
   },
   "ai_job_post_form": {
     "your_selections_title": "Loại Visa bạn chọn",
     "suggestions": {
-      "s1": "Welder in Aichi",
-      "s2": "Caregiver staff for nursing home",
-      "s3": "IT Comtor in Tokyo"
+      "title": "Thử một vài gợi ý:",
+      "s1_title": "Mô tả thông tin cá nhân",
+      "s1_desc": "'Tôi là sinh viên năm cuối trường X, chuyên ngành Y, đang tìm kiếm cơ hội thực tập...'",
+      "s2_title": "Đăng từ hồ sơ có sẵn",
+      "s2_desc": "Tải lên CV file PDF hoặc Word để AI tự động trích xuất và điền thông tin.",
+      "s3_title": "Tạo hồ sơ bằng giọng nói",
+      "s3_desc": "Chỉ cần bấm nút và mô tả về bản thân, chúng tôi sẽ lo phần còn lại."
     },
     "input": {
       "title": "1. Mô tả công việc của bạn",
@@ -695,7 +693,7 @@
     "title": "Bạn là ai?",
     "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
     "hiringCompany": {
-      "title": "Công ty tiếp nhận (Ukeire Kigyou)",
+      "title": "Xí nghiệp tiếp nhận (Ukeire Kigyou)",
       "description": "Trực tiếp tuyển dụng nhân sự."
     },
     "supportOrg": {
