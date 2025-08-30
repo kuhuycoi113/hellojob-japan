@@ -221,22 +221,22 @@
       "title": "Câu chuyện qua ảnh",
       "stories": [
         {
-          "image": "https://picsum.photos/400/533?random=50",
+          "image": "https://picsum.photos/400/533?random=60",
           "title": "Một ngày ở công xưởng",
           "hint": "factory worker"
         },
         {
-          "image": "https://picsum.photos/400/533?random=51",
+          "image": "https://picsum.photos/400/533?random=61",
           "title": "Lớp học tiếng Nhật buổi tối",
           "hint": "classroom learning night"
         },
         {
-          "image": "https://picsum.photos/400/533?random=52",
+          "image": "https://picsum.photos/400/533?random=62",
           "title": "Bữa cơm cùng đồng hương",
           "hint": "people eating together"
         },
         {
-          "image": "https://picsum.photos/400/533?random=53",
+          "image": "https://picsum.photos/400/533?random=63",
           "title": "Cảnh đẹp mùa hoa anh đào",
           "hint": "cherry blossom"
         }

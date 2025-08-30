@@ -221,22 +221,22 @@
       "title": "写真で見る物語",
       "stories": [
         {
-          "image": "https://picsum.photos/400/533?random=50",
+          "image": "https://picsum.photos/400/533?random=60",
           "title": "工場での一日",
           "hint": "factory worker"
         },
         {
-          "image": "https://picsum.photos/400/533?random=51",
+          "image": "https://picsum.photos/400/533?random=61",
           "title": "夜の日本語教室",
           "hint": "classroom learning night"
         },
         {
-          "image": "https://picsum.photos/400/533?random=52",
+          "image": "https://picsum.photos/400/533?random=62",
           "title": "同郷の仲間との食事",
           "hint": "people eating together"
         },
         {
-          "image": "https://picsum.photos/400/533?random=53",
+          "image": "https://picsum.photos/400/533?random=63",
           "title": "桜の季節の風景",
           "hint": "cherry blossom"
         }

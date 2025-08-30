@@ -221,22 +221,22 @@
       "title": "Stories in Pictures",
       "stories": [
         {
-          "image": "https://picsum.photos/400/533?random=50",
+          "image": "https://picsum.photos/400/533?random=60",
           "title": "A Day at the Factory",
           "hint": "factory worker"
         },
         {
-          "image": "https://picsum.photos/400/533?random=51",
+          "image": "https://picsum.photos/400/533?random=61",
           "title": "Evening Japanese Class",
           "hint": "classroom learning night"
         },
         {
-          "image": "https://picsum.photos/400/533?random=52",
+          "image": "https://picsum.photos/400/533?random=62",
           "title": "Meal with Compatriots",
           "hint": "people eating together"
         },
         {
-          "image": "https://picsum.photos/400/533?random=53",
+          "image": "https://picsum.photos/400/533?random=63",
           "title": "Cherry Blossom Season",
           "hint": "cherry blossom"
         }
