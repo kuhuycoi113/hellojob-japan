@@ -693,19 +693,19 @@
     "title": "Bạn là ai?",
     "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
     "hiringCompany": {
-      "title": "Công ty tiếp nhận (受入企業)",
+      "title": "Công ty tiếp nhận (Ukeire Kigyou)",
       "description": "Trực tiếp tuyển dụng nhân sự."
     },
     "supportOrg": {
-      "title": "Cơ quan hỗ trợ (支援機関)",
+      "title": "Cơ quan hỗ trợ (Shien Kikan)",
       "description": "Hỗ trợ các công ty và người lao động."
     },
     "union": {
-      "title": "Nghiệp đoàn (協同組合)",
+      "title": "Nghiệp đoàn (Kyoudou Kumiai)",
       "description": "Quản lý và hỗ trợ thực tập sinh."
     },
     "sendingCompany": {
-      "title": "Công ty phái cử (送り出し機関)",
+      "title": "Công ty phái cử (Okuridashi Kikan)",
       "description": "Tuyển và phái cử lao động từ Việt Nam."
     }
   }
