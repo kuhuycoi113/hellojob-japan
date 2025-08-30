@@ -161,12 +161,12 @@ export function AiJobPostForm() {
           </Card>
           
           {/* Output Card */}
-          <Card className="shadow-lg min-h-[500px]">
+          <Card className="shadow-lg min-h-[500px] flex flex-col">
             <CardHeader>
               <CardTitle>{t.ai_job_post_form.output.title}</CardTitle>
               <CardDescription>{t.ai_job_post_form.output.description}</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex-grow">
               {state === 'loading' && (
                 <div className="flex flex-col items-center justify-center h-64 text-muted-foreground">
                   <LoaderCircle className="h-12 w-12 animate-spin text-primary mb-4" />
