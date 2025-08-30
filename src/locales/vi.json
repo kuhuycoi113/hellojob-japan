@@ -166,7 +166,8 @@
     "input": {
       "title": "1. Mô tả công việc của bạn",
       "description": "Cung cấp một vài từ khóa, một câu, hoặc thậm chí dán một mô tả công việc có sẵn. Càng chi tiết, kết quả càng tốt.",
-      "reset": "Tạo mới"
+      "reset": "Tạo mới",
+      "manual_post": "Nhập liệu thủ công"
     },
     "output": {
       "title": "2. Kết quả từ AI",

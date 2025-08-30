@@ -6,11 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/language-context';
-import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info } from 'lucide-react';
+import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
 import type { GenerateJobPostOutput } from '@/ai/schemas/generate-job-post-schema';
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
 
 type SessionState = 'idle' | 'loading' | 'completed';
 
@@ -148,6 +149,12 @@ export function AiJobPostForm() {
               {state === 'completed' && (
                   <Button variant="outline" onClick={handleReset}>{t.ai_job_post_form.input.reset}</Button>
               )}
+              <Button variant="outline" asChild>
+                <Link href="/">
+                    <Pencil className="mr-2" />
+                    {t.ai_job_post_form.input.manual_post}
+                </Link>
+              </Button>
               <Button size="lg" onClick={handleGenerate} disabled={state === 'loading'}>
                 {state === 'loading' ? (
                   <LoaderCircle className="animate-spin" />
