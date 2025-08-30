@@ -1,14 +1,37 @@
+
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
-import { PlayCircle, GraduationCap, ListVideo, Users, Star, BookOpen } from 'lucide-react';
+import { PlayCircle, GraduationCap, ListVideo, Users, Star, BookOpen, CheckCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
+const LOCAL_STORAGE_KEY = 'watched_lessons';
 
 export function CourseDetail() {
   const { t } = useLanguage();
+  const [selectedLesson, setSelectedLesson] = useState<number>(0);
+  const [watchedLessons, setWatchedLessons] = useState<Set<number>>(new Set());
+
+  // Load watched lessons from localStorage on mount
+  useEffect(() => {
+    const storedWatchedLessons = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (storedWatchedLessons) {
+      setWatchedLessons(new Set(JSON.parse(storedWatchedLessons)));
+    }
+  }, []);
+
+  // Handle lesson selection
+  const handleLessonClick = (index: number) => {
+    setSelectedLesson(index);
+    const newWatchedLessons = new Set(watchedLessons);
+    newWatchedLessons.add(index);
+    setWatchedLessons(newWatchedLessons);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(Array.from(newWatchedLessons)));
+  };
 
   const course = {
     category: t.courseDetail.category,
@@ -17,7 +40,6 @@ export function CourseDetail() {
   };
   
   const lessons = t.courseDetail.lessons;
-
   const info = t.courseDetail.info;
 
   const icons = {
@@ -61,23 +83,32 @@ export function CourseDetail() {
                     </CardHeader>
                     <CardContent>
                         <ul className="space-y-2">
-                           {lessons.map((lesson, index) => (
+                           {lessons.map((lesson, index) => {
+                                const isWatched = watchedLessons.has(index);
+                                const isSelected = selectedLesson === index;
+                                return (
                                 <li key={index}>
                                     <Button 
                                         variant="ghost" 
                                         className={cn(
                                             "w-full justify-start h-auto p-4 text-left",
-                                            index === 0 && "bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
+                                            isSelected && "bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
                                         )}
+                                        onClick={() => handleLessonClick(index)}
                                     >
-                                        <PlayCircle className="w-6 h-6 mr-4 text-primary/80"/>
+                                        {isWatched ? (
+                                            <CheckCircle className="w-6 h-6 mr-4 text-green-500"/>
+                                        ) : (
+                                            <PlayCircle className="w-6 h-6 mr-4 text-primary/80"/>
+                                        )}
+                                        
                                         <div>
                                             <p className="font-semibold">{lesson.title}</p>
                                             <p className="text-sm text-muted-foreground">{lesson.duration}</p>
                                         </div>
                                     </Button>
                                 </li>
-                            ))}
+                           )})}
                         </ul>
                     </CardContent>
                 </Card>
