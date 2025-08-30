@@ -87,7 +87,7 @@ export function AiJobPostForm() {
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-12">
           <div className="inline-block bg-primary/10 text-primary p-3 rounded-lg mb-4">
             <Sparkles className="h-8 w-8" />
@@ -117,9 +117,8 @@ export function AiJobPostForm() {
         )}
 
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Input Card */}
-          <Card className="shadow-lg sticky top-24">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 items-start">
+          <Card className="shadow-lg w-full">
             <CardHeader>
               <CardTitle>{t.ai_job_post_form.input.title}</CardTitle>
               <CardDescription>{t.ai_job_post_form.input.description}</CardDescription>
@@ -160,8 +159,7 @@ export function AiJobPostForm() {
             </CardFooter>
           </Card>
           
-          {/* Output Card */}
-          <Card className="shadow-lg min-h-[500px] flex flex-col">
+          <Card className="shadow-lg min-h-[500px] flex flex-col w-full">
             <CardHeader>
               <CardTitle>{t.ai_job_post_form.output.title}</CardTitle>
               <CardDescription>{t.ai_job_post_form.output.description}</CardDescription>
@@ -217,18 +215,24 @@ export function AiJobPostForm() {
                 </div>
               )}
             </CardContent>
-             {state === 'completed' && (
-              <CardFooter>
-                 <Button variant="outline" asChild className="w-full">
-                    <Link href="/">
-                        <Pencil className="mr-2 h-4 w-4" />
-                        {t.ai_job_post_form.input.manual_post}
-                    </Link>
-                </Button>
-              </CardFooter>
-            )}
           </Card>
         </div>
+        
+        <div className="relative my-8">
+            <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center">
+                <span className="bg-blue-50/50 px-2 text-sm text-gray-500">{t.ai_job_post_form.or_divider}</span>
+            </div>
+        </div>
+
+        <Button variant="outline" size="lg" className="w-full bg-white" asChild>
+            <Link href="/">
+                <Pencil className="mr-2 h-4 w-4" />
+                {t.ai_job_post_form.input.manual_post}
+            </Link>
+        </Button>
       </div>
     </section>
   );

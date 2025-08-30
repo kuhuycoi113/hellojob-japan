@@ -184,7 +184,8 @@
       "description": "Vui lòng cung cấp mô tả công việc trước khi tạo.",
       "apiTitle": "Đã có lỗi xảy ra",
       "apiDescription": "Đã có sự cố khi tạo tin tuyển dụng. Vui lòng thử lại."
-    }
+    },
+    "or_divider": "Hoặc"
   },
   "handbook": {
     "featured": {
