@@ -42,38 +42,9 @@ export function HandbookSection() {
     link: t.handbook.featured.link,
   };
 
-  const shortVideos = [
-    t.handbook.videos[0],
-    t.handbook.videos[1],
-    t.handbook.videos[2],
-  ];
+  const shortVideos = t.handbook.videos;
 
-  const newPosts = [
-    {
-      image: 'https://picsum.photos/1200/600?random=3',
-      category: t.handbook.posts[0].category,
-      title: t.handbook.posts[0].title,
-      hint: 'business meeting',
-    },
-    {
-      image: 'https://picsum.photos/1200/600?random=4',
-      category: t.handbook.posts[1].category,
-      title: t.handbook.posts[1].title,
-      hint: 'team collaboration',
-    },
-    {
-      image: 'https://picsum.photos/1200/600?random=7',
-      category: t.handbook.posts[2].category,
-      title: t.handbook.posts[2].title,
-      hint: 'legal document',
-    },
-    {
-      image: 'https://picsum.photos/1200/600?random=8',
-      category: t.handbook.posts[3].category,
-      title: t.handbook.posts[3].title,
-      hint: 'city life japan',
-    },
-  ];
+  const newPosts = t.handbook.posts;
 
   const longVideos = t.handbook.longVideos;
   
@@ -232,7 +203,7 @@ export function HandbookSection() {
                             <Card
                             className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
                             >
-                            <div className="relative aspect-[4/5]">
+                            <div className="relative aspect-w-4 aspect-h-5">
                                 <Image
                                 src={post.image}
                                 alt={post.title}
@@ -252,74 +223,75 @@ export function HandbookSection() {
                     </div>
                 </div>
             </div>
-        </div>
 
-        {/* Long Videos - Full Width */}
-        <div className="mt-8">
-            <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-            <Video className="w-6 h-6 text-primary" />
-            {t.handbook.longVideoTitle}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {longVideos.map((video, index) => (
-                <Card
-                key={index}
-                className="overflow-hidden shadow-md rounded-xl group cursor-pointer hover:shadow-xl transition-shadow flex flex-col sm:flex-row"
-                >
-                <div className="relative w-full sm:w-2/5 aspect-video">
-                    <Image
-                    src={`https://picsum.photos/600/338?random=${30 + index}`}
-                    alt={video.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint="person talking presentation"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                    <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
-                    </div>
-                </div>
-                <CardContent className="p-4 sm:p-6 sm:w-3/5 flex flex-col">
-                    <Badge variant="secondary" className="mb-2 w-fit">
-                    {video.category}
-                    </Badge>
-                    <h3 className="font-semibold text-gray-800 leading-snug text-lg flex-grow">
-                    {video.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-2">
-                    {video.duration}
-                    </p>
-                </CardContent>
-                </Card>
-            ))}
-            </div>
-        </div>
-        
-        {/* News & Articles */}
-        <div className="mt-8">
-              <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                <Newspaper className="w-6 h-6 text-primary" />
-                {t.handbook.newsTitle}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {newsAndArticles.map((article, index) => (
-                  <Link href="/handbook/post-detail" key={index}>
-                    <Card
-                      className="p-4 shadow-sm rounded-lg hover:bg-white transition-colors h-full"
-                    >
-                      <Badge variant="secondary" className="mb-2">
-                        {article.category}
-                      </Badge>
-                      <h4 className="font-semibold text-gray-800 leading-snug">
-                        {article.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {article.readTime}
-                      </p>
-                    </Card>
-                  </Link>
-                ))}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Long Videos */}
+              <div>
+                  <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                    <Video className="w-6 h-6 text-primary" />
+                    {t.handbook.longVideoTitle}
+                  </h3>
+                  <div className="grid grid-cols-1 gap-8">
+                    {longVideos.map((video, index) => (
+                      <Card
+                      key={index}
+                      className="overflow-hidden shadow-md rounded-xl group cursor-pointer hover:shadow-xl transition-shadow flex flex-col sm:flex-row"
+                      >
+                      <div className="relative w-full sm:w-2/5 aspect-video">
+                          <Image
+                          src={`https://picsum.photos/600/338?random=${30 + index}`}
+                          alt={video.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint="person talking presentation"
+                          />
+                          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                          <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
+                          </div>
+                      </div>
+                      <CardContent className="p-4 sm:p-6 sm:w-3/5 flex flex-col">
+                          <Badge variant="secondary" className="mb-2 w-fit">
+                          {video.category}
+                          </Badge>
+                          <h3 className="font-semibold text-gray-800 leading-snug text-lg flex-grow">
+                          {video.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mt-2">
+                          {video.duration}
+                          </p>
+                      </CardContent>
+                      </Card>
+                  ))}
+                  </div>
+              </div>
+              {/* News & Articles */}
+              <div>
+                  <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                      <Newspaper className="w-6 h-6 text-primary" />
+                      {t.handbook.newsTitle}
+                  </h3>
+                  <div className="space-y-4">
+                      {newsAndArticles.map((article, index) => (
+                      <Link href="/handbook/post-detail" key={index}>
+                          <Card
+                          className="p-4 shadow-sm rounded-lg hover:bg-white transition-colors h-full flex justify-between items-center"
+                          >
+                          <div>
+                            <Badge variant="secondary" className="mb-2">
+                                {article.category}
+                            </Badge>
+                            <h4 className="font-semibold text-gray-800 leading-snug">
+                                {article.title}
+                            </h4>
+                          </div>
+                          <ArrowRight className="w-5 h-5 text-muted-foreground ml-4" />
+                          </Card>
+                      </Link>
+                      ))}
+                  </div>
               </div>
             </div>
+        </div>
 
 
         <div className="mt-16 text-center">
