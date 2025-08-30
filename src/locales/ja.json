@@ -338,9 +338,9 @@
     }
   },
   "courseDetail": {
-    "category": "言語",
-    "title": "ビジネス日本語会話（みんなの日本語）",
-    "description": "労働者向けに特別に設計されたコースで、信頼性の高い「みんなの日本語」の教科書に沿って、日本の工場環境で一般的に使用される会話パターンと専門語彙に焦点を当てています。",
+    "category": "人事管理",
+    "title": "ベトナム人材の採用、管理、定着",
+    "description": "日本の管理者および人事担当者がベトナム人材と効果的に協働するために必要な知識とスキルを習得するための包括的なコースです。",
     "courseContent": "コース内容",
     "information": "情報",
     "video": {
@@ -348,17 +348,17 @@
       "notWorking": "このビデオは機能していません"
     },
     "lessons": [
-      { "title": "第1課：自己紹介", "duration": "15:20" },
-      { "title": "第2課：これ、それ、あれ", "duration": "18:45" },
-      { "title": "第3課：場所、ところ", "duration": "20:10" },
-      { "title": "第4課：動詞と時間", "duration": "22:55" },
-      { "title": "第5課：移動", "duration": "19:30" }
+      { "title": "第1課：ベトナム人労働者のための労働法とビザの理解", "duration": "25:30" },
+      { "title": "第2課：効果的な採用戦略の構築", "duration": "30:15" },
+      { "title": "第3課：ベトナム人候補者の面接と評価スキル", "duration": "28:40" },
+      { "title": "第4課：職場での文化統合と研修", "duration": "35:00" },
+      { "title": "第5課：エンゲージメントとパフォーマンスの高いチームの構築", "duration": "22:10" }
     ],
     "info": {
-      "level": { "label": "レベル", "value": "N5" },
-      "lessons": { "label": "レッスン数", "value": "25" },
-      "students": { "label": "受講者数", "value": "1,258" },
-      "rating": { "label": "評価", "value": "4.8 / 5" }
+      "level": { "label": "レベル", "value": "初級～上級" },
+      "lessons": { "label": "レッスン数", "value": "15" },
+      "students": { "label": "受講者数", "value": "897" },
+      "rating": { "label": "評価", "value": "4.9 / 5" }
     }
   }
 }

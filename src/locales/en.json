@@ -338,9 +338,9 @@
     }
   },
   "courseDetail": {
-    "category": "Language",
-    "title": "Japanese for Business Communication (Minna no Nihongo)",
-    "description": "A course specially designed for workers, closely following the reputable Minna no Nihongo curriculum, focusing on conversational patterns and specialized vocabulary commonly used in Japanese factory environments.",
+    "category": "Human Resource Management",
+    "title": "Recruiting, Managing & Retaining Vietnamese Talent",
+    "description": "A comprehensive course equipping Japanese managers and HR professionals with the necessary knowledge and skills to work effectively with Vietnamese employees.",
     "courseContent": "Course Content",
     "information": "Information",
      "video": {
@@ -348,17 +348,17 @@
       "notWorking": "This video is not working"
     },
     "lessons": [
-      { "title": "Lesson 1: Self-introduction", "duration": "15:20" },
-      { "title": "Lesson 2: This, That, That over there", "duration": "18:45" },
-      { "title": "Lesson 3: Place, Location", "duration": "20:10" },
-      { "title": "Lesson 4: Verbs and Time", "duration": "22:55" },
-      { "title": "Lesson 5: Movement", "duration": "19:30" }
+      { "title": "Lesson 1: Understanding Labor Laws & Visas for Vietnamese", "duration": "25:30" },
+      { "title": "Lesson 2: Building an Effective Recruitment Strategy", "duration": "30:15" },
+      { "title": "Lesson 3: Interviewing and Assessing Vietnamese Candidates", "duration": "28:40" },
+      { "title": "Lesson 4: Cultural Onboarding and Workplace Training", "duration": "35:00" },
+      { "title": "Lesson 5: Building an Engaged and High-Performing Team", "duration": "22:10" }
     ],
     "info": {
-      "level": { "label": "Level", "value": "N5" },
-      "lessons": { "label": "Lessons", "value": "25" },
-      "students": { "label": "Students", "value": "1,258" },
-      "rating": { "label": "Rating", "value": "4.8 / 5" }
+      "level": { "label": "Level", "value": "Beginner - Advanced" },
+      "lessons": { "label": "Lessons", "value": "15" },
+      "students": { "label": "Students", "value": "897" },
+      "rating": { "label": "Rating", "value": "4.9 / 5" }
     }
   }
 }

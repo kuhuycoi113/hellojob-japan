@@ -337,10 +337,10 @@
       "loading": "Đang phân tích... Vui lòng chờ trong giây lát."
     }
   },
-   "courseDetail": {
-    "category": "Ngoại ngữ",
-    "title": "Tiếng Nhật giao tiếp cho người đi làm (Minna no Nihongo)",
-    "description": "Khóa học được thiết kế đặc biệt cho người lao động, bám sát giáo trình Minna no Nihongo uy tín, tập trung vào các mẫu câu giao tiếp và từ vựng chuyên ngành thường dùng trong môi trường nhà máy Nhật Bản.",
+  "courseDetail": {
+    "category": "Quản lý nhân sự",
+    "title": "Tuyển dụng, Quản lý & Giữ chân nhân tài Việt",
+    "description": "Khóa học toàn diện trang bị cho các nhà quản lý và chuyên viên nhân sự Nhật Bản kiến thức và kỹ năng cần thiết để làm việc hiệu quả với lao động Việt Nam.",
     "courseContent": "Nội dung khóa học",
     "information": "Thông tin",
     "video": {
@@ -348,17 +348,17 @@
       "notWorking": "Video này không hoạt động"
     },
     "lessons": [
-      { "title": "Bài 1: Giới thiệu bản thân", "duration": "15:20" },
-      { "title": "Bài 2: Cái này, cái đó, cái kia", "duration": "18:45" },
-      { "title": "Bài 3: Địa điểm, nơi chốn", "duration": "20:10" },
-      { "title": "Bài 4: Động từ và thời gian", "duration": "22:55" },
-      { "title": "Bài 5: Di chuyển", "duration": "19:30" }
+      { "title": "Bài 1: Hiểu về Luật Lao động & Visa cho người Việt", "duration": "25:30" },
+      { "title": "Bài 2: Xây dựng chiến lược tuyển dụng hiệu quả", "duration": "30:15" },
+      { "title": "Bài 3: Kỹ năng phỏng vấn và đánh giá ứng viên Việt", "duration": "28:40" },
+      { "title": "Bài 4: Hội nhập văn hóa và đào tạo tại nơi làm việc", "duration": "35:00" },
+      { "title": "Bài 5: Xây dựng đội ngũ gắn kết và hiệu suất cao", "duration": "22:10" }
     ],
     "info": {
-      "level": { "label": "Cấp độ", "value": "N5" },
-      "lessons": { "label": "Số bài học", "value": "25" },
-      "students": { "label": "Học viên", "value": "1,258" },
-      "rating": { "label": "Đánh giá", "value": "4.8 / 5" }
+      "level": { "label": "Cấp độ", "value": "Cơ bản - Nâng cao" },
+      "lessons": { "label": "Số bài học", "value": "15" },
+      "students": { "label": "Học viên", "value": "897" },
+      "rating": { "label": "Đánh giá", "value": "4.9 / 5" }
     }
   }
 }
