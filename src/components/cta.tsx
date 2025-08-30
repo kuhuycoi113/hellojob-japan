@@ -16,6 +16,7 @@ import { Building, Handshake, Users, ChevronRight, Briefcase, GraduationCap, Sta
 import { useState } from 'react';
 
 type VisaType = 'intern' | 'skilled' | 'engineer';
+type Role = { title: string; description: string; icon: JSX.Element; }
 
 export function Cta() {
   const { t } = useLanguage();
@@ -24,7 +25,9 @@ export function Cta() {
   const [visaSubTypeDialogOpen, setVisaSubTypeDialogOpen] = useState(false);
   const [postMethodDialogOpen, setPostMethodDialogOpen] = useState(false);
   const [isForContact, setIsForContact] = useState(false);
+  const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
+  const [selectedVisaSubType, setSelectedVisaSubType] = useState<{title: string, href: string} | null>(null);
 
   const userRoles = [
     {
@@ -96,7 +99,8 @@ export function Cta() {
     ],
   };
 
-  const handleRoleSelect = () => {
+  const handleRoleSelect = (role: Role) => {
+    setSelectedRole(role);
     if (!isForContact) {
       setRoleDialogOpen(false);
       setVisaDialogOpen(true);
@@ -109,10 +113,24 @@ export function Cta() {
     setVisaSubTypeDialogOpen(true);
   }
 
-  const handleVisaSubTypeSelect = () => {
+  const handleVisaSubTypeSelect = (subType: {title: string, href: string}) => {
+    setSelectedVisaSubType(subType);
     setVisaSubTypeDialogOpen(false);
     setPostMethodDialogOpen(true);
   }
+  
+  const getAiPostUrl = () => {
+    const params = new URLSearchParams();
+    if(selectedRole) params.set('role', selectedRole.title);
+    if(selectedVisaType) {
+        const visa = visaTypes.find(v => v.type === selectedVisaType);
+        if(visa) params.set('visaType', visa.title);
+    }
+    if(selectedVisaSubType) params.set('visaSubType', selectedVisaSubType.title);
+
+    return `/post-job-ai?${params.toString()}`;
+  }
+
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -139,7 +157,7 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                 {userRoles.map((role) => (
-                  <Link href={'#'} key={role.title} onClick={handleRoleSelect}>
+                  <div key={role.title} onClick={() => handleRoleSelect(role)}>
                     <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className="bg-primary/5 p-3 rounded-lg">
@@ -156,7 +174,7 @@ export function Cta() {
                       </div>
                       <ChevronRight className="w-5 h-5 text-muted-foreground" />
                     </Card>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </DialogContent>
@@ -238,7 +256,7 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-1 gap-4 py-4">
                 {selectedVisaType && visaSubTypes[selectedVisaType].map((subType) => (
-                  <div onClick={handleVisaSubTypeSelect} key={subType.title}>
+                  <div onClick={() => handleVisaSubTypeSelect(subType)} key={subType.title}>
                     <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                       <h3 className="font-semibold text-base text-gray-800">
                         {subType.title}
@@ -257,7 +275,7 @@ export function Cta() {
                 <DialogDescription className="text-center">{t.postMethod.description}</DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                  <Link href="/post-job-ai">
+                  <Link href={getAiPostUrl()}>
                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
                       <div className="bg-primary/5 p-3 rounded-lg mb-4">
                         <Brain className="h-8 w-8 text-primary" />

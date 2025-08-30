@@ -1,20 +1,28 @@
 'use client';
 
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/language-context';
-import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle } from 'lucide-react';
+import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
 import type { GenerateJobPostOutput } from '@/ai/schemas/generate-job-post-schema';
 import { useToast } from "@/hooks/use-toast";
+import { Badge } from '@/components/ui/badge';
 
 type SessionState = 'idle' | 'loading' | 'completed';
 
 export function AiJobPostForm() {
   const { t } = useLanguage();
   const { toast } = useToast();
+  const searchParams = useSearchParams();
+
+  const role = searchParams.get('role');
+  const visaType = searchParams.get('visaType');
+  const visaSubType = searchParams.get('visaSubType');
+  
   const [state, setState] = useState<SessionState>('idle');
   const [description, setDescription] = useState('');
   const [jobPost, setJobPost] = useState<GenerateJobPostOutput | null>(null);
@@ -49,7 +57,12 @@ export function AiJobPostForm() {
     setState('loading');
     setJobPost(null);
     try {
-      const result = await generateJobPost({ description });
+      const result = await generateJobPost({ 
+        description,
+        role: role || undefined,
+        visaType: visaType || undefined,
+        visaSubType: visaSubType || undefined
+      });
       setJobPost(result);
       setState('completed');
     } catch (error) {
@@ -69,6 +82,8 @@ export function AiJobPostForm() {
     setJobPost(null);
   }
 
+  const hasSelections = role || visaType || visaSubType;
+
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -83,6 +98,23 @@ export function AiJobPostForm() {
             {t.aiJobPost.subtitle}
           </p>
         </div>
+        
+        {hasSelections && (
+          <Card className="mb-8 bg-blue-100/50 border-blue-200">
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center gap-2">
+                <Info className="w-5 h-5 text-blue-600"/>
+                Your Selections
+              </CardTitle>
+              <div className="flex flex-wrap gap-2 pt-2">
+                {role && <Badge variant="secondary">{role}</Badge>}
+                {visaType && <Badge variant="secondary">{visaType}</Badge>}
+                {visaSubType && <Badge variant="secondary">{visaSubType}</Badge>}
+              </div>
+            </CardHeader>
+          </Card>
+        )}
+
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Input Card */}

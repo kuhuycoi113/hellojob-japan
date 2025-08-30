@@ -13,6 +13,9 @@ export const GenerateJobPostInputSchema = z.object({
   description: z
     .string()
     .describe('A description of the job provided by the user. This can be a simple sentence or a list of requirements.'),
+  role: z.string().optional().describe('The role of the user posting the job (e.g., Hiring Company, Union).'),
+  visaType: z.string().optional().describe('The main visa category for the job (e.g., Specified Skilled Worker).'),
+  visaSubType: z.string().optional().describe('The specific sub-category of the visa (e.g., Candidates in Japan).'),
 });
 export type GenerateJobPostInput = z.infer<typeof GenerateJobPostInputSchema>;
 
