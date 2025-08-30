@@ -723,5 +723,21 @@
     "placeholder": "Nhập câu hỏi của bạn ở đây...",
     "greeting": "Xin chào quý khách hàng {role}. Tôi có thể giúp gì cho bạn hôm nay?",
     "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?"
+  },
+  "visaTypes": {
+    "title": "Bạn muốn tuyển loại Visa nào?",
+    "description": "Hãy chọn loại visa phù hợp với nhu cầu tuyển dụng của bạn.",
+    "intern": {
+      "title": "Thực tập sinh kỹ năng",
+      "description": "Chương trình đào tạo kỹ năng tại Nhật Bản."
+    },
+    "skilled": {
+      "title": "Kỹ năng đặc định",
+      "description": "Lao động có kinh nghiệm làm việc dài hạn."
+    },
+    "engineer": {
+      "title": "Kỹ sư, tri thức",
+      "description": "Chuyên gia có trình độ cao, bằng cấp chuyên ngành."
+    }
   }
 }

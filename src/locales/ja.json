@@ -723,5 +723,21 @@
     "placeholder": "ここに質問を入力してください...",
     "greeting": "こんにちは、{role}のお客様。本日はどのようなご用件でしょうか？",
     "defaultGreeting": "こんにちは。本日はどのようなご用件でしょうか？"
+  },
+  "visaTypes": {
+    "title": "どの在留資格を募集しますか？",
+    "description": "採用ニーズに合わせて適切な在留資格を選択してください。",
+    "intern": {
+      "title": "技能実習",
+      "description": "日本での技能実習プログラム。"
+    },
+    "skilled": {
+      "title": "特定技能",
+      "description": "長期就労のための経験豊富な労働者。"
+    },
+    "engineer": {
+      "title": "技術・人文知識・国際業務",
+      "description": "学位を持つ高度な専門家。"
+    }
   }
 }

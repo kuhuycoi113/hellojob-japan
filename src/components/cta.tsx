@@ -12,88 +12,75 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { useLanguage } from '@/contexts/language-context';
-import { Building, Handshake, Users, ChevronRight } from 'lucide-react';
+import { Building, Handshake, Users, ChevronRight, Briefcase, GraduationCap, Star } from 'lucide-react';
+import { useState } from 'react';
 
 export function Cta() {
   const { t } = useLanguage();
+  const [roleDialogOpen, setRoleDialogOpen] = useState(false);
+  const [visaDialogOpen, setVisaDialogOpen] = useState(false);
+  const [isForContact, setIsForContact] = useState(false);
 
   const userRoles = [
     {
       icon: <Building className="h-8 w-8 text-primary" />,
       title: t.userRoles.hiringCompany.title,
       description: t.userRoles.hiringCompany.description,
-      postHref: "/post-job-ai",
     },
     {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
       description: t.userRoles.supportOrg.description,
-      postHref: "/post-job-ai",
     },
     {
       icon: <Handshake className="h-8 w-8 text-green-500" />,
       title: t.userRoles.union.title,
       description: t.userRoles.union.description,
-      postHref: "/post-job-ai",
     },
     {
       icon: <Users className="h-8 w-8 text-red-500" />,
       title: t.userRoles.sendingCompany.title,
       description: t.userRoles.sendingCompany.description,
-      postHref: "/post-job-ai",
     },
     {
       icon: <Users className="h-8 w-8 text-blue-500" />,
       title: t.userRoles.hakenCompany.title,
       description: t.userRoles.hakenCompany.description,
-      postHref: "/post-job-ai",
     },
     {
       icon: <Users className="h-8 w-8 text-purple-500" />,
       title: t.userRoles.yuryoShokai.title,
       description: t.userRoles.yuryoShokai.description,
-      postHref: "/post-job-ai",
     },
   ];
+  
+  const visaTypes = [
+      {
+        icon: <GraduationCap className="h-8 w-8 text-primary" />,
+        title: t.visaTypes.intern.title,
+        description: t.visaTypes.intern.description,
+        href: "/post-job-ai",
+      },
+      {
+        icon: <Star className="h-8 w-8 text-yellow-500" />,
+        title: t.visaTypes.skilled.title,
+        description: t.visaTypes.skilled.description,
+        href: "/post-job-ai",
+      },
+      {
+        icon: <Briefcase className="h-8 w-8 text-green-500" />,
+        title: t.visaTypes.engineer.title,
+        description: t.visaTypes.engineer.description,
+        href: "/post-job-ai",
+      },
+  ]
 
-  const UserRoleDialogContent = ({ forContact }: { forContact?: boolean }) => (
-    <DialogContent className="sm:max-w-3xl">
-      <DialogHeader>
-        <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
-        <DialogDescription className="text-center">
-          {t.userRoles.description}
-        </DialogDescription>
-      </DialogHeader>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-        {userRoles.map((role) => {
-          const href = forContact
-            ? `/chat?role=${encodeURIComponent(role.title)}`
-            : role.postHref;
-          
-          return (
-            <Link href={href} key={role.title}>
-              <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/5 p-3 rounded-lg">
-                    {role.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-base text-gray-800">
-                      {role.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {role.description}
-                    </p>
-                  </div>
-                </div>
-                <ChevronRight className="w-5 h-5 text-muted-foreground" />
-              </Card>
-            </Link>
-          );
-        })}
-      </div>
-    </DialogContent>
-  );
+  const handleRoleSelect = () => {
+    if (!isForContact) {
+      setRoleDialogOpen(false);
+      setVisaDialogOpen(true);
+    }
+  }
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -105,24 +92,112 @@ export function Cta() {
           {t.cta.subtitle}
         </p>
         <div className="mt-8 flex justify-center gap-4">
-          <Dialog>
+          <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
             <DialogTrigger asChild>
-              <Button size="lg" className='bg-accent text-accent-foreground hover:bg-accent/90'>
+              <Button size="lg" className='bg-accent text-accent-foreground hover:bg-accent/90' onClick={() => setIsForContact(false)}>
                 {t.cta.postJob}
               </Button>
             </DialogTrigger>
-            <UserRoleDialogContent />
+            <DialogContent className="sm:max-w-3xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+                <DialogDescription className="text-center">
+                  {t.userRoles.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                {userRoles.map((role) => (
+                  <Link href={isForContact ? `/chat?role=${encodeURIComponent(role.title)}` : '#'} key={role.title} onClick={!isForContact ? handleRoleSelect : undefined}>
+                    <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="bg-primary/5 p-3 rounded-lg">
+                          {role.icon}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-base text-gray-800">
+                            {role.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {role.description}
+                          </p>
+                        </div>
+                      </div>
+                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </DialogContent>
           </Dialog>
 
           <Dialog>
             <DialogTrigger asChild>
-              <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100">
+              <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100" onClick={() => setIsForContact(true)}>
                 {t.cta.contactUs}
               </Button>
             </DialogTrigger>
-            <UserRoleDialogContent forContact={true} />
+             <DialogContent className="sm:max-w-3xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+                <DialogDescription className="text-center">
+                  {t.userRoles.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                {userRoles.map((role) => (
+                  <Link href={`/chat?role=${encodeURIComponent(role.title)}`} key={role.title}>
+                    <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="bg-primary/5 p-3 rounded-lg">
+                          {role.icon}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-base text-gray-800">
+                            {role.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {role.description}
+                          </p>
+                        </div>
+                      </div>
+                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </DialogContent>
           </Dialog>
         </div>
+
+        <Dialog open={visaDialogOpen} onOpenChange={setVisaDialogOpen}>
+           <DialogContent className="sm:max-w-3xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaTypes.title}</DialogTitle>
+                <DialogDescription className="text-center">
+                  {t.visaTypes.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
+                {visaTypes.map((visa) => (
+                  <Link href={visa.href} key={visa.title}>
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
+                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
+                        {visa.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-base text-gray-800">
+                          {visa.title}
+                        </h3>
+                         <p className="text-sm text-muted-foreground mt-1">
+                          {visa.description}
+                        </p>
+                      </div>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

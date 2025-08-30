@@ -723,5 +723,21 @@
     "placeholder": "Type your question here...",
     "greeting": "Hello {role} customer. How can I help you today?",
     "defaultGreeting": "Hello. How can I help you today?"
+  },
+  "visaTypes": {
+    "title": "Which Visa type do you want to recruit?",
+    "description": "Please select the appropriate visa type for your recruitment needs.",
+    "intern": {
+      "title": "Technical Intern Trainee",
+      "description": "A program for skill training in Japan."
+    },
+    "skilled": {
+      "title": "Specified Skilled Worker",
+      "description": "Experienced workers for long-term employment."
+    },
+    "engineer": {
+      "title": "Engineer / Specialist",
+      "description": "Highly qualified professionals with degrees."
+    }
   }
 }
