@@ -335,6 +335,21 @@
     "captionPlaceholder": "Viết chú thích cho video của bạn...",
     "submitButton": "Đăng"
   },
+  "shareLongVideo": {
+    "title": "Chia sẻ video dài",
+    "subtitle": "Đóng góp các video chuyên sâu, phỏng vấn hoặc vlog của bạn cho cộng đồng.",
+    "uploadTitle": "Kéo và thả tệp video để tải lên",
+    "uploadPrompt": "Video của bạn sẽ được hiển thị ở chế độ công khai.",
+    "uploadButton": "Chọn tệp",
+    "detailsTitle": "Chi tiết",
+    "detailsDescription": "Thêm tiêu đề và mô tả hấp dẫn để mọi người biết về video của bạn.",
+    "titleLabel": "Tiêu đề (bắt buộc)",
+    "titlePlaceholder": "Thêm tiêu đề để mô tả video của bạn",
+    "descriptionLabel": "Mô tả",
+    "descriptionPlaceholder": "Cho người xem biết về video của bạn",
+    "categoryLabel": "Danh mục",
+    "submitButton": "Đăng"
+  },
   "howItWorks": {
     "title": "Quy trình tuyển dụng chiến lược",
     "subtitle": "Lộ trình 6 bước toàn diện giúp bạn không chỉ tìm được người, mà còn tuyển đúng người.",

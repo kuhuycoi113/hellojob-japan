@@ -335,6 +335,21 @@
     "captionPlaceholder": "ビデオのキャプションを書いてください...",
     "submitButton": "投稿"
   },
+  "shareLongVideo": {
+    "title": "長編ビデオを共有",
+    "subtitle": "あなたの詳細なビデオ、インタビュー、またはVlogをコミュニティに貢献してください。",
+    "uploadTitle": "ビデオファイルをドラッグ＆ドロップしてアップロード",
+    "uploadPrompt": "あなたのビデオは公開されます。",
+    "uploadButton": "ファイルを選択",
+    "detailsTitle": "詳細",
+    "detailsDescription": "ビデオの内容がわかるように、魅力的なタイトルと説明を追加してください。",
+    "titleLabel": "タイトル（必須）",
+    "titlePlaceholder": "ビデオを説明するタイトルを追加",
+    "descriptionLabel": "説明",
+    "descriptionPlaceholder": "視聴者にビデオについて伝える",
+    "categoryLabel": "カテゴリー",
+    "submitButton": "投稿"
+  },
   "howItWorks": {
     "title": "戦略的採用プロセス",
     "subtitle": "人を見つけるだけでなく、適切な人材を採用するための包括的な6ステップのロードマップ。",

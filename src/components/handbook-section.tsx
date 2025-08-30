@@ -103,7 +103,7 @@ export function HandbookSection() {
       icon: <Video className="w-10 h-10 text-red-500" />,
       title: t.handbook.shareOptions.longVideo,
       description: t.handbook.shareOptions.longVideoDesc,
-      href: '#',
+      href: '/handbook/share-long-video',
     },
   ];
 

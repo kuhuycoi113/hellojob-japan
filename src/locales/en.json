@@ -335,6 +335,21 @@
     "captionPlaceholder": "Write a caption for your video...",
     "submitButton": "Post"
   },
+  "shareLongVideo": {
+    "title": "Share a Long Video",
+    "subtitle": "Contribute your in-depth videos, interviews, or vlogs to the community.",
+    "uploadTitle": "Drag and drop video files to upload",
+    "uploadPrompt": "Your videos will be public.",
+    "uploadButton": "Select Files",
+    "detailsTitle": "Details",
+    "detailsDescription": "Add an engaging title and description so everyone knows what your video is about.",
+    "titleLabel": "Title (required)",
+    "titlePlaceholder": "Add a title that describes your video",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Tell viewers about your video",
+    "categoryLabel": "Category",
+    "submitButton": "Post"
+  },
   "howItWorks": {
     "title": "Strategic Recruitment Process",
     "subtitle": "A comprehensive 6-step roadmap to help you not just find people, but recruit the right people.",
