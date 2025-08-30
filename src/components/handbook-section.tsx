@@ -48,8 +48,6 @@ export function HandbookSection() {
 
   const longVideos = t.handbook.longVideos;
   
-  const imagePosts = t.handbook.imagePosts.posts;
-
   const newsAndArticles = t.handbook.articles;
 
   const shareOptions = [
@@ -160,67 +158,34 @@ export function HandbookSection() {
                 </div>
             </div>
 
-            {/* Short Videos & Image Posts */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-                <div>
-                    <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                        <Video className="w-6 h-6 text-primary" />
-                        {t.handbook.videoTitle}
-                    </h4>
-                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        {shortVideos.map((video, index) => (
-                        <Card
-                            key={index}
-                            className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
-                        >
-                            <div className="relative aspect-[9/16]">
-                            <Image
-                                src={`https://picsum.photos/225/400?random=${index + 15}`}
-                                alt={video.title}
-                                fill
-                                className="object-cover w-full h-full"
-                                data-ai-hint="person speaking presentation"
-                            />
-                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors flex flex-col justify-end p-2">
-                                <PlayCircle className="w-8 h-8 text-white/90 drop-shadow-lg mb-2" />
-                                <h4 className="font-semibold text-white text-xs leading-tight drop-shadow-md">
-                                {video.title}
-                                </h4>
-                            </div>
-                            </div>
-                        </Card>
-                        ))}
-                    </div>
-                </div>
-                 <div>
-                    <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                        <ImageIcon className="w-6 h-6 text-primary" />
-                        {t.handbook.imagePosts.title}
-                    </h4>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        {imagePosts.map((post, index) => (
-                        <Link href="/handbook/post-detail" key={index}>
-                            <Card
-                            className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
-                            >
-                            <div className="relative aspect-w-4 aspect-h-5">
-                                <Image
-                                src={post.image}
-                                alt={post.title}
-                                fill
-                                className="object-cover w-full h-full"
-                                data-ai-hint={post.hint}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
-                                <h4 className="font-bold text-white text-base leading-tight drop-shadow-md">
-                                    {post.title}
-                                </h4>
-                                </div>
-                            </div>
-                            </Card>
-                        </Link>
-                        ))}
-                    </div>
+            <div className="mb-12">
+                <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                    <Video className="w-6 h-6 text-primary" />
+                    {t.handbook.videoTitle}
+                </h4>
+                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    {shortVideos.map((video, index) => (
+                    <Card
+                        key={index}
+                        className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
+                    >
+                        <div className="relative aspect-[9/16]">
+                        <Image
+                            src={`https://picsum.photos/225/400?random=${index + 15}`}
+                            alt={video.title}
+                            fill
+                            className="object-cover w-full h-full"
+                            data-ai-hint="person speaking presentation"
+                        />
+                        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors flex flex-col justify-end p-2">
+                            <PlayCircle className="w-8 h-8 text-white/90 drop-shadow-lg mb-2" />
+                            <h4 className="font-semibold text-white text-xs leading-tight drop-shadow-md">
+                            {video.title}
+                            </h4>
+                        </div>
+                        </div>
+                    </Card>
+                    ))}
                 </div>
             </div>
 

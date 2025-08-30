@@ -226,49 +226,7 @@
       }
     ],
     "imagePosts": {
-      "title": "写真の物語",
-      "posts": [
-        {
-          "image": "https://picsum.photos/400/533?random=50",
-          "title": "工場での一日",
-          "hint": "factory worker"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=51",
-          "title": "夜の日本語教室",
-          "hint": "classroom learning night"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=52",
-          "title": "同郷の仲間との夕食",
-          "hint": "people eating together"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=53",
-          "title": "桜の季節の美しい風景",
-          "hint": "cherry blossom"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=54",
-          "title": "仕事に励む",
-          "hint": "desk working"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=55",
-          "title": "週末の街歩き",
-          "hint": "city tourism"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=56",
-          "title": "友達と祝日を祝う",
-          "hint": "friends festival"
-        },
-        {
-          "image": "https://picsum.photos/400/533?random=57",
-          "title": "来週の食事の準備",
-          "hint": "meal prep"
-        }
-      ]
+      "title": "写真の物語"
     },
     "newsTitle": "ニュース & 投稿",
     "articles": [
