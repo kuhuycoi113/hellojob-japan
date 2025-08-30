@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Video, Newspaper, BookOpen, PlayCircle } from 'lucide-react';
+import { ArrowRight, Video, Newspaper, BookOpen, PlayCircle, Send } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 
 export function HandbookSection() {
@@ -144,6 +144,12 @@ export function HandbookSection() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-16 text-center">
+            <Button size="lg" variant="outline" className="bg-white hover:bg-gray-100 text-primary border-primary">
+                {t.handbook.shareContentButton} <Send className="ml-2 h-5 w-5" />
+            </Button>
         </div>
       </div>
     </section>

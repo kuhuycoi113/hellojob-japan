@@ -191,7 +191,8 @@
         { "category": "Tin tức thị trường", "title": "Nhật Bản đối mặt với tình trạng thiếu hụt lao động trầm trọng", "readTime": "4 phút đọc" },
         { "category": "Kỹ năng đặc định", "title": "Hướng dẫn chi tiết về kỳ thi Kỹ năng đặc định cho ngành Xây dựng", "readTime": "7 phút đọc" },
         { "category": "Cuộc sống ở Nhật", "title": "Làm thế nào để tìm nhà ở giá rẻ cho người nước ngoài tại Nhật?", "readTime": "5 phút đọc" }
-    ]
+    ],
+    "shareContentButton": "Chia sẻ nội dung của bạn"
   },
   "howItWorks": {
     "title": "Quy trình tuyển dụng chiến lược",

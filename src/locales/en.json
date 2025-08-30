@@ -191,7 +191,8 @@
         { "category": "Market News", "title": "Japan Faces Critical Labor Shortage", "readTime": "4 min read" },
         { "category": "Specified Skilled Worker", "title": "A Detailed Guide to the Specified Skilled Worker Exam for Construction", "readTime": "7 min read" },
         { "category": "Life in Japan", "title": "How to Find Affordable Housing for Foreigners in Japan?", "readTime": "5 min read" }
-    ]
+    ],
+    "shareContentButton": "Share your content"
   },
   "howItWorks": {
     "title": "Strategic Recruitment Process",

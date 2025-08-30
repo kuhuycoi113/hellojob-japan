@@ -191,7 +191,8 @@
         { "category": "市場ニュース", "title": "日本は深刻な労働力不足に直面している", "readTime": "4分で読めます" },
         { "category": "特定技能", "title": "建設分野の特定技能試験に関する詳細ガイド", "readTime": "7分で読めます" },
         { "category": "日本での生活", "title": "日本で外国人が手頃な価格の住居を見つける方法は？", "readTime": "5分で読めます" }
-    ]
+    ],
+    "shareContentButton": "コンテンツを共有する"
   },
   "howItWorks": {
     "title": "戦略的採用プロセス",
