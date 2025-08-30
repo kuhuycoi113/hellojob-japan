@@ -69,6 +69,29 @@
     "inDepthTraining": "Đào tạo chuyên sâu",
     "inDepthTrainingDesc": "Ứng viên được đào tạo bài bản về ngôn ngữ, văn hóa và kỹ năng làm việc tại Nhật Bản trước khi xuất cảnh."
   },
+  "featuredPartners": {
+    "title": "Các đối tác hàng đầu của chúng tôi",
+    "subtitle": "Kết nối bạn với các Cơ quan Hỗ trợ, Nghiệp đoàn và Công ty Phái cử uy tín.",
+    "viewProfile": "Xem hồ sơ",
+    "partners": [
+      {
+        "name": "Nghiệp đoàn Global Support",
+        "type": "Nghiệp đoàn (Kumiai)"
+      },
+      {
+        "name": "Tổ chức hỗ trợ Sakura",
+        "type": "Cơ quan hỗ trợ (Shien Kikan)"
+      },
+      {
+        "name": "Công ty TNHH Vietnam Link",
+        "type": "Công ty phái cử (Okuridashi Kikan)"
+      },
+      {
+        "name": "Nghiệp đoàn Future Bridge",
+        "type": "Nghiệp đoàn (Kumiai)"
+      }
+    ]
+  },
   "cta": {
     "title": "Sẵn sàng tìm kiếm nhân tài cho doanh nghiệp của bạn?",
     "subtitle": "Đăng tin tuyển dụng ngay hôm nay để tiếp cận hàng ngàn ứng viên tiềm năng hoặc liên hệ với chúng tôi để được tư vấn.",

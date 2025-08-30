@@ -69,6 +69,29 @@
     "inDepthTraining": "Pre-departure Training",
     "inDepthTrainingDesc": "Candidates are thoroughly trained in Japanese language, culture, and professional work skills before their departure."
   },
+  "featuredPartners": {
+    "title": "Our Top Partners",
+    "subtitle": "Connecting you with trusted Supporting Organizations, Unions, and Sending Companies.",
+    "viewProfile": "View Profile",
+    "partners": [
+      {
+        "name": "Global Support Union",
+        "type": "Cooperative Union"
+      },
+      {
+        "name": "Sakura Support Org.",
+        "type": "Supporting Organization (Shien Kikan)"
+      },
+      {
+        "name": "Vietnam Link Co., Ltd",
+        "type": "Sending Company (Okuridashi Kikan)"
+      },
+      {
+        "name": "Future Bridge Union",
+        "type": "Cooperative Union"
+      }
+    ]
+  },
   "cta": {
     "title": "Ready to Find the Right Talent for Your Business?",
     "subtitle": "Post a job today to reach thousands of potential candidates, or contact us for a personalized consultation.",

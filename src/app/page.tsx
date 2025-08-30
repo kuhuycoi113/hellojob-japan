@@ -6,6 +6,7 @@ import { WhyChooseUs } from '@/components/why-choose-us';
 import { CandidateQuality } from '@/components/candidate-quality';
 import { Footer } from '@/components/footer';
 import { PersonnelTraining } from '@/components/personnel-training';
+import { FeaturedPartners } from '@/components/featured-partners';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <WhyChooseUs />
         <CandidateCategories />
         <CandidateQuality />
+        <FeaturedPartners />
         <PersonnelTraining />
         <Cta />
       </main>
