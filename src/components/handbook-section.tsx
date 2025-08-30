@@ -156,64 +156,68 @@ export function HandbookSection() {
                 </div>
             </div>
 
-            <div className="mb-12">
-              <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                <ImageIcon className="w-6 h-6 text-primary" />
-                {t.handbook.imagePosts.title}
-              </h4>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {imageStories.map((story, index) => (
-                  <Card
-                    key={index}
-                    className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
-                  >
-                    <div className="relative aspect-[4/5]">
-                      <Image
-                        src={story.image}
-                        alt={story.title}
-                        fill
-                        className="object-cover w-full h-full"
-                        data-ai-hint={story.hint}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/80 transition-colors flex flex-col justify-end p-3">
-                        <h4 className="font-semibold text-white text-sm leading-tight drop-shadow-md">
-                          {story.title}
-                        </h4>
-                      </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                {/* Short Videos */}
+                <div className="lg:col-span-2">
+                    <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                        <Video className="w-6 h-6 text-primary" />
+                        {t.handbook.videoTitle}
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {shortVideos.map((video, index) => (
+                        <Card
+                            key={index}
+                            className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
+                        >
+                            <div className="relative aspect-[9/16]">
+                            <Image
+                                src={`https://picsum.photos/225/400?random=${index + 15}`}
+                                alt={video.title}
+                                fill
+                                className="object-cover w-full h-full"
+                                data-ai-hint="person speaking presentation"
+                            />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors flex flex-col justify-end p-2">
+                                <PlayCircle className="w-8 h-8 text-white/90 drop-shadow-lg mb-2" />
+                                <h4 className="font-semibold text-white text-xs leading-tight drop-shadow-md">
+                                {video.title}
+                                </h4>
+                            </div>
+                            </div>
+                        </Card>
+                        ))}
                     </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
+                </div>
 
-            <div className="mb-12">
-                <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                    <Video className="w-6 h-6 text-primary" />
-                    {t.handbook.videoTitle}
-                </h4>
-                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    {shortVideos.map((video, index) => (
-                    <Card
+                {/* Image Stories */}
+                <div className="lg:col-span-1">
+                  <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                    <ImageIcon className="w-6 h-6 text-primary" />
+                    {t.handbook.imagePosts.title}
+                  </h4>
+                  <div className="grid grid-cols-2 gap-4">
+                    {imageStories.map((story, index) => (
+                      <Card
                         key={index}
                         className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
-                    >
-                        <div className="relative aspect-[9/16]">
-                        <Image
-                            src={`https://picsum.photos/225/400?random=${index + 15}`}
-                            alt={video.title}
+                      >
+                        <div className="relative aspect-[4/5]">
+                          <Image
+                            src={story.image}
+                            alt={story.title}
                             fill
                             className="object-cover w-full h-full"
-                            data-ai-hint="person speaking presentation"
-                        />
-                        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors flex flex-col justify-end p-2">
-                            <PlayCircle className="w-8 h-8 text-white/90 drop-shadow-lg mb-2" />
-                            <h4 className="font-semibold text-white text-xs leading-tight drop-shadow-md">
-                            {video.title}
+                            data-ai-hint={story.hint}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/80 transition-colors flex flex-col justify-end p-3">
+                            <h4 className="font-semibold text-white text-sm leading-tight drop-shadow-md">
+                              {story.title}
                             </h4>
+                          </div>
                         </div>
-                        </div>
-                    </Card>
+                      </Card>
                     ))}
+                  </div>
                 </div>
             </div>
 
