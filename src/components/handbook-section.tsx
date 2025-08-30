@@ -6,6 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Video, Newspaper, BookOpen, PlayCircle, Send } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 export function HandbookSection() {
     const { t } = useLanguage();
@@ -180,9 +186,19 @@ export function HandbookSection() {
         </div>
 
         <div className="mt-16 text-center">
-            <Button size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground text-base shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                {t.handbook.shareContentButton} <Send className="ml-2 h-5 w-5" />
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground text-base shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+                    {t.handbook.shareContentButton} <Send className="ml-2 h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-56">
+                <DropdownMenuItem>{t.handbook.shareOptions.text}</DropdownMenuItem>
+                <DropdownMenuItem>{t.handbook.shareOptions.image}</DropdownMenuItem>
+                <DropdownMenuItem>{t.handbook.shareOptions.shortVideo}</DropdownMenuItem>
+                <DropdownMenuItem>{t.handbook.shareOptions.longVideo}</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
         </div>
       </div>
     </section>

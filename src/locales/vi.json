@@ -197,7 +197,13 @@
         { "category": "Kỹ năng đặc định", "title": "Hướng dẫn chi tiết về kỳ thi Kỹ năng đặc định ngành Xây dựng dành cho người lao động", "readTime": "7 phút đọc" },
         { "category": "Cuộc sống ở Nhật", "title": "Làm thế nào để tìm nhà ở giá rẻ cho người lao động nước ngoài tại Nhật?", "readTime": "5 phút đọc" }
     ],
-    "shareContentButton": "Chia sẻ nội dung của bạn"
+    "shareContentButton": "Chia sẻ nội dung của bạn",
+    "shareOptions": {
+      "text": "Đăng nội dung dạng chữ",
+      "image": "Đăng bài viết dạng ảnh",
+      "shortVideo": "Đăng nội dung dạng video ngắn",
+      "longVideo": "Đăng nội dung dạng video dài"
+    }
   },
   "howItWorks": {
     "title": "Quy trình tuyển dụng chiến lược",

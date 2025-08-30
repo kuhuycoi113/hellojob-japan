@@ -197,7 +197,13 @@
         { "category": "Specified Skilled Worker", "title": "A Detailed Guide to the Specified Skilled Worker Exam for Construction for Workers", "readTime": "7 min read" },
         { "category": "Life in Japan", "title": "How to Find Affordable Housing for Foreign Workers in Japan?", "readTime": "5 min read" }
     ],
-    "shareContentButton": "Share your content"
+    "shareContentButton": "Share your content",
+    "shareOptions": {
+      "text": "Post text content",
+      "image": "Post image article",
+      "shortVideo": "Post short video",
+      "longVideo": "Post long video"
+    }
   },
   "howItWorks": {
     "title": "Strategic Recruitment Process",
