@@ -364,27 +364,47 @@
       "unavailable": "Video unavailable",
       "notWorking": "This video is not working"
     },
-    "lessons": [
-      { "title": "Why do Vietnamese workers love singing karaoke at home?", "duration": "07:30" },
-      { "title": "Vietnamese cooking culture (fish sauce, shrimp paste...) and flavor conflicts in dormitories.", "duration": "08:15" },
-      { "title": "The Vietnamese habit of communal living and the difference with Japanese privacy.", "duration": "06:40" },
-      { "title": "Punctuality: Vietnamese habits vs. Japanese expectations.", "duration": "09:00" },
-      { "title": "Familiar address terms vs. Japanese Keigo.", "duration": "11:20" },
-      { "title": "Overtime (Zangyō): Why do Vietnamese workers like to work extra hours?", "duration": "10:10" },
-      { "title": "The habit of sending most of their salary home: reasons & impacts.", "duration": "12:00" },
-      { "title": "Family life in Vietnam: Why do they rely on remittances?", "duration": "10:50" },
-      { "title": "The habit of extreme frugality in Japan.", "duration": "08:55" },
-      { "title": "Community comparisons: Who sends more money, who works more hours.", "duration": "09:30" },
-      { "title": "Social media habits: livestreaming, posting photos - risks and etiquette.", "duration": "11:00" },
-      { "title": "Days off: a preference for gatherings, food, and karaoke.", "duration": "07:45" },
-      { "title": "Why do Vietnamese prefer living with compatriots? A cultural perspective.", "duration": "06:20" },
-      { "title": "The pressure to 'get rich quick' in Japan.", "duration": "10:40" },
-      { "title": "The pressure of repaying loans for going abroad to work.", "duration": "12:15" },
-      { "title": "Relationship with Japanese bosses: differences in hierarchy culture.", "duration": "09:10" },
-      { "title": "The importance of the compatriot community.", "duration": "07:00" },
-      { "title": "Health issues: working too much, neglecting self-care.", "duration": "08:00" },
-      { "title": "Prioritizing overtime over learning Japanese: long-term consequences.", "duration": "11:30" },
-      { "title": "The mindset of 'self-sacrifice for the family'.", "duration": "13:00" }
+    "chapters": [
+      {
+        "title": "Chapter 1: Daily Life & Social Culture",
+        "lessons": [
+          { "title": "Why do Vietnamese workers love singing karaoke at home?", "duration": "07:30" },
+          { "title": "Vietnamese cooking culture (fish sauce, etc.) and flavor conflicts in dorms.", "duration": "08:15" },
+          { "title": "The Vietnamese habit of communal living vs. Japanese privacy.", "duration": "06:40" },
+          { "title": "Social media habits: livestreaming, posting photos - risks and etiquette.", "duration": "11:00" },
+          { "title": "Days off: a preference for gatherings, food, and karaoke.", "duration": "07:45" }
+        ]
+      },
+      {
+        "title": "Chapter 2: Work Culture & Attitude",
+        "lessons": [
+          { "title": "Punctuality: Vietnamese habits vs. Japanese expectations.", "duration": "09:00" },
+          { "title": "Familiar address terms vs. Japanese Keigo (honorifics).", "duration": "11:20" },
+          { "title": "Overtime (Zangyō): Why do Vietnamese workers like to work extra hours?", "duration": "10:10" },
+          { "title": "Relationship with Japanese bosses: differences in hierarchy culture.", "duration": "09:10" }
+        ]
+      },
+      {
+        "title": "Chapter 3: Finances & Invisible Pressures",
+        "lessons": [
+          { "title": "The habit of sending most of their salary home: reasons & impacts.", "duration": "12:00" },
+          { "title": "Family life in Vietnam: Why do they rely on remittances?", "duration": "10:50" },
+          { "title": "The habit of extreme frugality in Japan.", "duration": "08:55" },
+          { "title": "Community comparisons: Who sends more money, who works more hours.", "duration": "09:30" },
+          { "title": "The pressure to 'get rich quick' in Japan.", "duration": "10:40" },
+          { "title": "The pressure of repaying loans for going abroad to work.", "duration": "12:15" }
+        ]
+      },
+      {
+        "title": "Chapter 4: Integration & The Future",
+        "lessons": [
+          { "title": "Preferring to live with compatriots: A cultural perspective.", "duration": "06:20" },
+          { "title": "The importance of the compatriot community.", "duration": "07:00" },
+          { "title": "Health issues: working too much, neglecting self-care.", "duration": "08:00" },
+          { "title": "Prioritizing overtime over learning Japanese: long-term consequences.", "duration": "11:30" },
+          { "title": "The mindset of 'self-sacrifice for the family'.", "duration": "13:00" }
+        ]
+      }
     ],
     "info": {
       "level": { "label": "Level", "value": "All Levels" },

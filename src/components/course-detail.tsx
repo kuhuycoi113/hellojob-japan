@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -8,39 +7,41 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
 import { PlayCircle, GraduationCap, ListVideo, Users, Star, BookOpen, CheckCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
-const LOCAL_STORAGE_KEY = 'watched_lessons';
+const LOCAL_STORAGE_KEY_PREFIX = 'watched_lessons_';
 
 export function CourseDetail() {
-  const { t } = useLanguage();
-  const [selectedLesson, setSelectedLesson] = useState<number>(0);
-  const [watchedLessons, setWatchedLessons] = useState<Set<number>>(new Set());
+  const { t, language } = useLanguage();
+  // Using a courseId to make localStorage key unique per course if there were multiple courses.
+  const courseId = 'vietnamese_cultural_guide';
+  const localStorageKey = `${LOCAL_STORAGE_KEY_PREFIX}${courseId}`;
 
-  // Load watched lessons from localStorage on mount
+  const [selectedLesson, setSelectedLesson] = useState<{ chapterIndex: number; lessonIndex: number } | null>(null);
+  const [watchedLessons, setWatchedLessons] = useState<Set<string>>(new Set());
+
   useEffect(() => {
-    const storedWatchedLessons = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const storedWatchedLessons = localStorage.getItem(localStorageKey);
     if (storedWatchedLessons) {
       setWatchedLessons(new Set(JSON.parse(storedWatchedLessons)));
     }
-  }, []);
+  }, [localStorageKey]);
 
-  // Handle lesson selection
-  const handleLessonClick = (index: number) => {
-    setSelectedLesson(index);
+  const handleLessonClick = (chapterIndex: number, lessonIndex: number) => {
+    const lessonId = `${chapterIndex}-${lessonIndex}`;
+    setSelectedLesson({ chapterIndex, lessonIndex });
     const newWatchedLessons = new Set(watchedLessons);
-    newWatchedLessons.add(index);
+    newWatchedLessons.add(lessonId);
     setWatchedLessons(newWatchedLessons);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(Array.from(newWatchedLessons)));
-  };
-
-  const course = {
-    category: t.courseDetail.category,
-    title: t.courseDetail.title,
-    description: t.courseDetail.description,
+    localStorage.setItem(localStorageKey, JSON.stringify(Array.from(newWatchedLessons)));
   };
   
-  const lessons = t.courseDetail.lessons;
-  const info = t.courseDetail.info;
+  const course = t.courseDetail;
 
   const icons = {
     level: <GraduationCap className="w-5 h-5 text-muted-foreground" />,
@@ -58,8 +59,8 @@ export function CourseDetail() {
                     <div className="aspect-video bg-black flex items-center justify-center text-white">
                         <div className="text-center">
                             <PlayCircle className="mx-auto h-16 w-16 text-gray-400" />
-                            <p className="mt-2 text-lg">{t.courseDetail.video.unavailable}</p>
-                            <p className="text-sm text-gray-400">{t.courseDetail.video.notWorking}</p>
+                            <p className="mt-2 text-lg">{course.video.unavailable}</p>
+                            <p className="text-sm text-gray-400">{course.video.notWorking}</p>
                         </div>
                     </div>
                 </Card>
@@ -78,65 +79,75 @@ export function CourseDetail() {
                     <CardHeader>
                         <CardTitle className="text-xl font-bold flex items-center gap-2">
                            <BookOpen className="w-6 h-6 text-primary"/>
-                           {t.courseDetail.courseContent}
+                           {course.courseContent}
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <ul className="space-y-2">
-                           {lessons.map((lesson, index) => {
-                                const isWatched = watchedLessons.has(index);
-                                const isSelected = selectedLesson === index;
-                                return (
-                                <li key={index}>
-                                    <Button 
-                                        variant="ghost" 
-                                        className={cn(
-                                            "w-full justify-start h-auto p-4 text-left",
-                                            isSelected && "bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
-                                        )}
-                                        onClick={() => handleLessonClick(index)}
-                                    >
-                                        {isWatched ? (
-                                            <CheckCircle className="w-6 h-6 mr-4 text-green-500 flex-shrink-0"/>
-                                        ) : (
-                                            <PlayCircle className="w-6 h-6 mr-4 text-primary/80 flex-shrink-0"/>
-                                        )}
-                                        
-                                        <div className="overflow-hidden">
-                                            <p className="font-semibold truncate">{lesson.title}</p>
-                                            <p className="text-sm text-muted-foreground">{lesson.duration}</p>
-                                        </div>
-                                    </Button>
-                                </li>
-                           )})}
-                        </ul>
+                        <Accordion type="multiple" defaultValue={course.chapters.map((_, index) => `item-${index}`)} className="w-full">
+                           {course.chapters.map((chapter, chapterIndex) => (
+                                <AccordionItem value={`item-${chapterIndex}`} key={chapterIndex}>
+                                    <AccordionTrigger className="font-semibold text-base hover:no-underline">{chapter.title}</AccordionTrigger>
+                                    <AccordionContent>
+                                        <ul className="space-y-2 pt-2">
+                                            {chapter.lessons.map((lesson, lessonIndex) => {
+                                                const lessonId = `${chapterIndex}-${lessonIndex}`;
+                                                const isWatched = watchedLessons.has(lessonId);
+                                                const isSelected = selectedLesson?.chapterIndex === chapterIndex && selectedLesson?.lessonIndex === lessonIndex;
+                                                return (
+                                                    <li key={lessonIndex}>
+                                                        <Button 
+                                                            variant="ghost" 
+                                                            className={cn(
+                                                                "w-full justify-start h-auto p-3 text-left text-sm",
+                                                                isSelected && "bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
+                                                            )}
+                                                            onClick={() => handleLessonClick(chapterIndex, lessonIndex)}
+                                                        >
+                                                            {isWatched ? (
+                                                                <CheckCircle className="w-5 h-5 mr-3 text-green-500 flex-shrink-0"/>
+                                                            ) : (
+                                                                <PlayCircle className="w-5 h-5 mr-3 text-primary/80 flex-shrink-0"/>
+                                                            )}
+                                                            <div className="overflow-hidden flex-1">
+                                                                <p className="font-medium truncate">{lesson.title}</p>
+                                                                <p className="text-xs text-muted-foreground">{lesson.duration}</p>
+                                                            </div>
+                                                        </Button>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul>
+                                    </AccordionContent>
+                                </AccordionItem>
+                           ))}
+                        </Accordion>
                     </CardContent>
                 </Card>
                  <Card className="shadow-lg">
                     <CardHeader>
-                        <CardTitle className="text-xl font-bold">{t.courseDetail.information}</CardTitle>
+                        <CardTitle className="text-xl font-bold">{course.information}</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <ul className="space-y-4">
                             <li className="flex items-center gap-4">
                                 {icons.level}
-                                <span className="font-medium text-gray-700">{info.level.label}:</span>
-                                <span className="text-muted-foreground">{info.level.value}</span>
+                                <span className="font-medium text-gray-700">{course.info.level.label}:</span>
+                                <span className="text-muted-foreground">{course.info.level.value}</span>
                             </li>
                              <li className="flex items-center gap-4">
                                 {icons.lessons}
-                                <span className="font-medium text-gray-700">{info.lessons.label}:</span>
-                                <span className="text-muted-foreground">{info.lessons.value}</span>
+                                <span className="font-medium text-gray-700">{course.info.lessons.label}:</span>
+                                <span className="text-muted-foreground">{course.info.lessons.value}</span>
                             </li>
                              <li className="flex items-center gap-4">
                                 {icons.students}
-                                <span className="font-medium text-gray-700">{info.students.label}:</span>
-                                <span className="text-muted-foreground">{info.students.value}</span>
+                                <span className="font-medium text-gray-700">{course.info.students.label}:</span>
+                                <span className="text-muted-foreground">{course.info.students.value}</span>
                             </li>
                              <li className="flex items-center gap-4">
                                 {icons.rating}
-                                <span className="font-medium text-gray-700">{info.rating.label}:</span>
-                                <span className="text-muted-foreground">{info.rating.value}</span>
+                                <span className="font-medium text-gray-700">{course.info.rating.label}:</span>
+                                <span className="text-muted-foreground">{course.info.rating.value}</span>
                             </li>
                         </ul>
                     </CardContent>

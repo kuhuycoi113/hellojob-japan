@@ -94,7 +94,7 @@
     "copyright": "© {year} HelloJob. All rights reserved."
   },
   "elearning": {
-    "heroTitle": "E-Learning: Nâng cao kỹ năng quản lý",
+    "heroTitle": "E-Learning: Quản lý hiệu quả nhân sự Việt Nam",
     "heroSubtitle": "Không chỉ là kỹ năng và luật pháp. Các khóa học của chúng tôi giúp bạn thấu hiểu sâu sắc người lao động Việt để xây dựng một nơi làm việc hoà hợp và hiệu quả.",
     "allCoursesTitle": "Các khóa học của chúng tôi",
     "courses": [
@@ -364,27 +364,47 @@
       "unavailable": "Video không có sẵn",
       "notWorking": "Video này không hoạt động"
     },
-    "lessons": [
-        { "title": "Vì sao người lao động Việt Nam thích hát karaoke tại nhà?", "duration": "07:30" },
-        { "title": "Văn hoá nấu ăn (nước mắm, mắm tôm…) và xung đột mùi vị trong ký túc xá.", "duration": "08:15" },
-        { "title": "Văn hoá sống tập thể của người Việt và sự khác biệt với người Nhật.", "duration": "06:40" },
-        { "title": "Thói quen đúng/không đúng giờ – sự khác biệt với Nhật Bản.", "duration": "09:00" },
-        { "title": "Cách xưng hô thân mật – khác biệt với hệ thống kính ngữ (keigo) của Nhật.", "duration": "11:20" },
-        { "title": "Tăng ca (Zangyō): Vì sao người Việt thích làm thêm giờ nhiều?", "duration": "10:10" },
-        { "title": "Thói quen gửi phần lớn lương về quê – nguyên nhân & tác động.", "duration": "12:00" },
-        { "title": "Cuộc sống gia đình ở Việt Nam: Vì sao họ trông chờ tiền gửi về?", "duration": "10:50" },
-        { "title": "Thói quen sống tiết kiệm quá mức tại Nhật.", "duration": "08:55" },
-        { "title": "Văn hóa “so sánh” trong cộng đồng (ai gửi nhiều tiền, ai làm nhiều giờ).", "duration": "09:30" },
-        { "title": "Mạng xã hội: thói quen livestream, đăng ảnh – rủi ro và ứng xử.", "duration": "11:00" },
-        { "title": "Ngày nghỉ: thích tụ tập ăn uống, đá bóng, karaoke – khác biệt với người Nhật.", "duration": "07:45" },
-        { "title": "Vì sao người Việt thích ở cùng đồng hương thay vì thuê riêng?", "duration": "06:20" },
-        { "title": "Áp lực “làm giàu nhanh” khi đi Nhật.", "duration": "10:40" },
-        { "title": "Áp lực “trả nợ vay” khi đi xuất khẩu lao động.", "duration": "12:15" },
-        { "title": "Mối quan hệ với sếp Nhật – khác biệt trong văn hoá cấp trên/cấp dưới.", "duration": "09:10" },
-        { "title": "Coi trọng cộng đồng đồng hương – ít giao lưu với người Nhật.", "duration": "07:00" },
-        { "title": "Vấn đề sức khoẻ: làm quá nhiều, ít chăm sóc bản thân.", "duration": "08:00" },
-        { "title": "Bỏ qua học tiếng Nhật để ưu tiên làm thêm – hệ quả lâu dài.", "duration": "11:30" },
-        { "title": "Tư duy “hy sinh bản thân để lo cho gia đình”.", "duration": "13:00" }
+    "chapters": [
+      {
+        "title": "Chương 1: Văn hóa Sinh hoạt & Xã hội",
+        "lessons": [
+          { "title": "Vì sao người lao động Việt Nam thích hát karaoke tại nhà?", "duration": "07:30" },
+          { "title": "Văn hoá nấu ăn (nước mắm, mắm tôm…) và xung đột mùi vị trong ký túc xá.", "duration": "08:15" },
+          { "title": "Văn hoá sống tập thể của người Việt và sự khác biệt với người Nhật.", "duration": "06:40" },
+          { "title": "Mạng xã hội: thói quen livestream, đăng ảnh – rủi ro và ứng xử.", "duration": "11:00" },
+          { "title": "Ngày nghỉ: thích tụ tập ăn uống, đá bóng, karaoke – khác biệt với người Nhật.", "duration": "07:45" }
+        ]
+      },
+      {
+        "title": "Chương 2: Văn hóa & Thái độ làm việc",
+        "lessons": [
+          { "title": "Thói quen đúng/không đúng giờ – sự khác biệt với Nhật Bản.", "duration": "09:00" },
+          { "title": "Cách xưng hô thân mật – khác biệt với hệ thống kính ngữ (keigo) của Nhật.", "duration": "11:20" },
+          { "title": "Tăng ca (Zangyō): Vì sao người Việt thích làm thêm giờ nhiều?", "duration": "10:10" },
+          { "title": "Mối quan hệ với sếp Nhật – khác biệt trong văn hoá cấp trên/cấp dưới.", "duration": "09:10" }
+        ]
+      },
+      {
+        "title": "Chương 3: Tài chính & Áp lực vô hình",
+        "lessons": [
+          { "title": "Thói quen gửi phần lớn lương về quê – nguyên nhân & tác động.", "duration": "12:00" },
+          { "title": "Cuộc sống gia đình ở Việt Nam: Vì sao họ trông chờ tiền gửi về?", "duration": "10:50" },
+          { "title": "Thói quen sống tiết kiệm quá mức tại Nhật.", "duration": "08:55" },
+          { "title": "Văn hóa “so sánh” trong cộng đồng (ai gửi nhiều tiền, ai làm nhiều giờ).", "duration": "09:30" },
+          { "title": "Áp lực “làm giàu nhanh” khi đi Nhật.", "duration": "10:40" },
+          { "title": "Áp lực “trả nợ vay” khi đi xuất khẩu lao động.", "duration": "12:15" }
+        ]
+      },
+      {
+        "title": "Chương 4: Hội nhập & Tương lai",
+        "lessons": [
+          { "title": "Thích ở cùng đồng hương thay vì thuê riêng – góc nhìn văn hoá.", "duration": "06:20" },
+          { "title": "Coi trọng cộng đồng đồng hương – ít giao lưu với người Nhật.", "duration": "07:00" },
+          { "title": "Vấn đề sức khoẻ: làm quá nhiều, ít chăm sóc bản thân.", "duration": "08:00" },
+          { "title": "Bỏ qua học tiếng Nhật để ưu tiên làm thêm – hệ quả lâu dài.", "duration": "11:30" },
+          { "title": "Tư duy “hy sinh bản thân để lo cho gia đình” – góc nhìn nhân văn & rủi ro.", "duration": "13:00" }
+        ]
+      }
     ],
     "info": {
       "level": { "label": "Cấp độ", "value": "Mọi cấp độ" },
