@@ -748,12 +748,12 @@
       "go": "No. 3 Intern"
     },
     "skilled": {
-      "japan": "In Japan",
-      "vietnam": "In Vietnam"
+      "japan": "Candidates in Japan",
+      "vietnam": "Candidates from Vietnam"
     },
     "engineer": {
-      "japan": "In Japan",
-      "vietnam": "In Vietnam"
+      "japan": "Candidates in Japan",
+      "vietnam": "Candidates from Vietnam"
     }
   }
 }
