@@ -326,6 +326,15 @@
     "contentPlaceholder": "Viết chú thích ở đây...",
     "submitButton": "Đăng bài"
   },
+  "shareShortVideo": {
+    "title": "Chia sẻ video ngắn",
+    "subtitle": "Ghi lại và chia sẻ những khoảnh khắc đáng nhớ của bạn với cộng đồng.",
+    "uploadPrompt": "Chọn video để tải lên",
+    "uploadHint": "Video dọc, tối đa 5 phút",
+    "captionLabel": "Chú thích",
+    "captionPlaceholder": "Viết chú thích cho video của bạn...",
+    "submitButton": "Đăng"
+  },
   "howItWorks": {
     "title": "Quy trình tuyển dụng chiến lược",
     "subtitle": "Lộ trình 6 bước toàn diện giúp bạn không chỉ tìm được người, mà còn tuyển đúng người.",

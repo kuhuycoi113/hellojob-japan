@@ -326,6 +326,15 @@
     "contentPlaceholder": "Write a caption here...",
     "submitButton": "Post"
   },
+  "shareShortVideo": {
+    "title": "Share a Short Video",
+    "subtitle": "Capture and share your memorable moments with the community.",
+    "uploadPrompt": "Select video to upload",
+    "uploadHint": "Vertical video, up to 5 minutes",
+    "captionLabel": "Caption",
+    "captionPlaceholder": "Write a caption for your video...",
+    "submitButton": "Post"
+  },
   "howItWorks": {
     "title": "Strategic Recruitment Process",
     "subtitle": "A comprehensive 6-step roadmap to help you not just find people, but recruit the right people.",

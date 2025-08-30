@@ -326,6 +326,15 @@
     "contentPlaceholder": "キャプションをここに書く...",
     "submitButton": "投稿する"
   },
+  "shareShortVideo": {
+    "title": "ショートビデオを共有",
+    "subtitle": "思い出に残る瞬間を撮影してコミュニティと共有しましょう。",
+    "uploadPrompt": "アップロードするビデオを選択",
+    "uploadHint": "縦型ビデオ、最大5分",
+    "captionLabel": "キャプション",
+    "captionPlaceholder": "ビデオのキャプションを書いてください...",
+    "submitButton": "投稿"
+  },
   "howItWorks": {
     "title": "戦略的採用プロセス",
     "subtitle": "人を見つけるだけでなく、適切な人材を採用するための包括的な6ステップのロードマップ。",
