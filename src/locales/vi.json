@@ -421,5 +421,37 @@
       "students": { "label": "Học viên", "value": "1,204" },
       "rating": { "label": "Đánh giá", "value": "4.8 / 5" }
     }
+  },
+   "aboutPage": {
+    "title": "Về HelloJob",
+    "subtitle": "Chúng tôi là cầu nối vững chắc giữa nguồn nhân lực chất lượng cao Việt Nam và các cơ hội việc làm tại thị trường Nhật Bản.",
+    "mission": {
+      "title": "Sứ mệnh của chúng tôi",
+      "description": "Sứ mệnh của HelloJob là định hình tư duy, nâng cao kỹ năng và xây dựng lộ trình sự nghiệp rõ ràng cho người lao động Việt Nam, đồng thời cung cấp giải pháp tuyển dụng hiệu quả, minh bạch cho các đối tác tuyển dụng Kỹ năng Đặc định (Tokutei Ginou) tại Nhật Bản."
+    },
+    "vision": {
+      "title": "Tầm nhìn",
+      "description": "Trở thành nền tảng công nghệ hàng đầu tại Việt Nam trong lĩnh vực cung ứng và phát triển nguồn nhân lực, đặc biệt là cho thị trường lao động tay nghề cao tại Nhật Bản và các quốc gia phát triển."
+    },
+    "coreValues": {
+      "title": "Giá trị cốt lõi",
+      "subtitle": "Những nguyên tắc định hướng mọi hành động và quyết định của chúng tôi.",
+      "userCentric": {
+        "title": "Lấy người dùng làm trung tâm",
+        "description": "Mọi sản phẩm, tính năng đều được xây dựng dựa trên nhu cầu và trải nghiệm của người lao động và đối tác tuyển dụng."
+      },
+      "sustainableGrowth": {
+        "title": "Tăng trưởng bền vững",
+        "description": "Chúng tôi không chỉ giúp người lao động tìm việc, mà còn xây dựng lộ trình phát triển sự nghiệp lâu dài và bền vững."
+      },
+      "trustedPartner": {
+        "title": "Đối tác tin cậy",
+        "description": "Xây dựng mối quan hệ hợp tác minh bạch, hiệu quả và cùng có lợi với các đối tác tuyển dụng và nhượng quyền."
+      }
+    },
+    "team": {
+      "title": "Đội ngũ của chúng tôi",
+      "subtitle": "Những con người tâm huyết đứng sau thành công của HelloJob, luôn nỗ lực vì sự phát triển của bạn."
+    }
   }
 }
