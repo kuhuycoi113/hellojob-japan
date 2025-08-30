@@ -50,6 +50,8 @@ export function HandbookSection() {
         },
     ];
 
+    const longVideos = t.handbook.longVideos;
+
     const newsAndArticles = t.handbook.articles;
 
   return (
@@ -93,6 +95,37 @@ export function HandbookSection() {
                       <h4 className="font-bold font-headline text-lg text-gray-800">{post.title}</h4>
                     </CardContent>
                   </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Long Videos */}
+             <div>
+              <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                <Video className="w-6 h-6 text-primary" />
+                {t.handbook.longVideoTitle}
+              </h3>
+              <div className="space-y-6">
+                {longVideos.map((video, index) => (
+                   <Card key={index} className="overflow-hidden shadow-md rounded-xl group cursor-pointer hover:shadow-xl transition-shadow flex flex-col sm:flex-row">
+                        <div className="relative w-full sm:w-1/3 aspect-video">
+                            <Image 
+                                src={`https://picsum.photos/600/338?random=${30 + index}`}
+                                alt={video.title}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                data-ai-hint="person talking presentation"
+                            />
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                                <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
+                            </div>
+                        </div>
+                        <CardContent className="p-4 sm:p-6 sm:w-2/3">
+                            <Badge variant="secondary" className="mb-2">{video.category}</Badge>
+                            <h3 className="font-semibold text-gray-800 leading-snug text-lg">{video.title}</h3>
+                            <p className="text-sm text-muted-foreground mt-2">{video.duration}</p>
+                        </CardContent>
+                   </Card>
                 ))}
               </div>
             </div>

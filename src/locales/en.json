@@ -171,10 +171,15 @@
         "link": "Read article"
     },
     "videoTitle": "Short Videos",
+    "longVideoTitle": "Long-Form Videos",
     "videos": [
         { "title": "3 Tips for a Successful Online Video Interview with Japanese Employers", "category": "Interview Experience" },
         { "title": "Guide to Safely and Quickly Transferring Money from Japan to Vietnam", "category": "Life in Japan" },
         { "title": "5 Common Interview Questions & How to Answer in Japanese", "category": "Interview Experience"}
+    ],
+    "longVideos": [
+        { "title": "A detailed discussion on the types of labor contracts in Japan", "duration": "15:20", "category": "Labor Law" },
+        { "title": "The journey from Intern to Specified Skilled Worker: An insider's story", "duration": "22:45", "category": "Experience Sharing" }
     ],
     "newPostsTitle": "New Posts",
     "posts": [

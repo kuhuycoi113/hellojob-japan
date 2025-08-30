@@ -171,10 +171,15 @@
         "link": "記事を読む"
     },
     "videoTitle": "ショート動画",
+    "longVideoTitle": "長編動画",
     "videos": [
         { "title": "日本の採用担当者とのオンライン面接の3つのヒント", "category": "面接のコツ" },
         { "title": "日本からベトナムへ安全・迅速に送金する方法", "category": "日本での生活" },
         { "title": "よくある面接質問5選と日本語での答え方", "category": "面接のコツ" }
+    ],
+    "longVideos": [
+        { "title": "日本の労働契約の種類に関する詳細な議論", "duration": "15:20", "category": "労働法" },
+        { "title": "実習生から特定技能へ：経験者からの話", "duration": "22:45", "category": "経験談" }
     ],
     "newPostsTitle": "新着記事",
     "posts": [

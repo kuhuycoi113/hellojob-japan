@@ -171,10 +171,15 @@
         "link": "Đọc bài viết"
     },
     "videoTitle": "Video ngắn",
+    "longVideoTitle": "Video dài",
     "videos": [
         { "title": "3 Mẹo phỏng vấn ONLINE qua video với nhà tuyển dụng Nhật", "category": "Kinh nghiệm phỏng vấn" },
         { "title": "Hướng dẫn chuyển tiền từ Nhật về Việt Nam an toàn, nhanh chóng", "category": "Cuộc sống ở Nhật" },
         { "title": "5 Câu hỏi phỏng vấn thường gặp và cách trả lời bằng tiếng Nhật", "category": "Kinh nghiệm phỏng vấn"}
+    ],
+    "longVideos": [
+        { "title": "Thảo luận chi tiết về các loại hợp đồng lao động tại Nhật", "duration": "15:20", "category": "Pháp luật lao động" },
+        { "title": "Hành trình từ Thực tập sinh đến Kỹ năng đặc định: Chia sẻ từ người trong cuộc", "duration": "22:45", "category": "Chia sẻ kinh nghiệm" }
     ],
     "newPostsTitle": "Bài viết mới",
     "posts": [
