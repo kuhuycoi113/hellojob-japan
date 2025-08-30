@@ -221,22 +221,22 @@
       "title": "Câu chuyện qua ảnh",
       "stories": [
         {
-          "image": "https://picsum.photos/400/533?random=60",
+          "image": "https://picsum.photos/400/533?random=50",
           "title": "Một ngày ở công xưởng",
           "hint": "factory worker"
         },
         {
-          "image": "https://picsum.photos/400/533?random=61",
+          "image": "https://picsum.photos/400/533?random=51",
           "title": "Lớp học tiếng Nhật buổi tối",
           "hint": "classroom learning night"
         },
         {
-          "image": "https://picsum.photos/400/533?random=62",
+          "image": "https://picsum.photos/400/533?random=52",
           "title": "Bữa cơm cùng đồng hương",
           "hint": "people eating together"
         },
         {
-          "image": "https://picsum.photos/400/533?random=63",
+          "image": "https://picsum.photos/400/533?random=53",
           "title": "Cảnh đẹp mùa hoa anh đào",
           "hint": "cherry blossom"
         }
@@ -612,5 +612,56 @@
       "title": "Đội ngũ của chúng tôi",
       "subtitle": "Những con người tâm huyết đứng sau thành công của HelloJob, luôn nỗ lực vì sự phát triển của bạn."
     }
+  },
+  "postDetail": {
+    "article": {
+      "category": "Kinh nghiệm phỏng vấn",
+      "title": "Cách viết CV tiếng Nhật thuyết phục để gây ấn tượng với nhà tuyển dụng",
+      "excerpt": "Một chiếc CV (履歴書 - rirekisho) được chuẩn bị kỹ lưỡng là bước đầu tiên và quan trọng nhất để bạn mở cánh cửa đến với công việc mơ ước tại Nhật Bản. Nó không chỉ là bản tóm tắt kinh nghiệm, mà còn là lời giới thiệu đầu tiên của bạn với nhà tuyển dụng.",
+      "image": {
+        "src": "https://picsum.photos/1200/675?random=100",
+        "alt": "Người đang viết CV",
+        "hint": "person writing resume"
+      },
+      "content": {
+        "p1": "Trong bối cảnh cạnh tranh, một chiếc CV chuyên nghiệp, sạch sẽ và đầy đủ thông tin sẽ giúp bạn nổi bật. Điều quan trọng là phải tuân thủ các quy tắc và chuẩn mực chung của CV tiếng Nhật, từ bố cục, cách dùng kính ngữ cho đến ảnh thẻ.",
+        "p2": "Phần tự PR bản thân (自己PR - jiko PR) là phần quan trọng nhất. Đây là nơi bạn thể hiện điểm mạnh, kỹ năng và nhiệt huyết của mình với công việc. Hãy viết một cách ngắn gọn, súc tích nhưng đủ để cho thấy bạn là ứng viên sáng giá nhất cho vị trí này.",
+        "quote": "Hãy nhớ rằng, CV của bạn là một sản phẩm marketing. Bạn đang 'bán' kỹ năng và kinh nghiệm của mình cho nhà tuyển dụng.",
+        "p3": "Cuối cùng, đừng quên kiểm tra lại lỗi chính tả và ngữ pháp nhiều lần. Một lỗi nhỏ cũng có thể khiến bạn mất điểm trong mắt nhà tuyển dụng khó tính. Bạn có thể nhờ bạn bè hoặc người có kinh nghiệm xem qua trước khi gửi đi. Chúc bạn thành công!"
+      }
+    },
+    "commentSection": {
+      "title": "Thảo luận",
+      "subtitle": "Để lại bình luận của bạn về bài viết này."
+    },
+    "commentForm": {
+      "name": {
+        "label": "Tên của bạn",
+        "placeholder": "Nhập tên của bạn"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Nhập email của bạn (sẽ không được hiển thị)"
+      },
+      "comment": {
+        "label": "Bình luận",
+        "placeholder": "Viết bình luận của bạn ở đây..."
+      },
+      "submit": "Gửi bình luận"
+    },
+    "comments": [
+      {
+        "name": "Nguyễn Văn An",
+        "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+        "time": "5 phút trước",
+        "text": "Bài viết rất hữu ích! Mình đang chuẩn bị viết CV để xin việc ở Nhật. Cảm ơn tác giả nhiều."
+      },
+      {
+        "name": "Trần Thị Bích",
+        "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+        "time": "1 giờ trước",
+        "text": "Phần jiko PR đúng là khó nhất. Có ai có mẫu nào hay để tham khảo không ạ?"
+      }
+    ]
   }
 }

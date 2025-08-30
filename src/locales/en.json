@@ -221,22 +221,22 @@
       "title": "Stories in Pictures",
       "stories": [
         {
-          "image": "https://picsum.photos/400/533?random=60",
+          "image": "https://picsum.photos/400/533?random=50",
           "title": "A Day at the Factory",
           "hint": "factory worker"
         },
         {
-          "image": "https://picsum.photos/400/533?random=61",
+          "image": "https://picsum.photos/400/533?random=51",
           "title": "Evening Japanese Class",
           "hint": "classroom learning night"
         },
         {
-          "image": "https://picsum.photos/400/533?random=62",
+          "image": "https://picsum.photos/400/533?random=52",
           "title": "Meal with Compatriots",
           "hint": "people eating together"
         },
         {
-          "image": "https://picsum.photos/400/533?random=63",
+          "image": "https://picsum.photos/400/533?random=53",
           "title": "Cherry Blossom Season",
           "hint": "cherry blossom"
         }
@@ -314,7 +314,7 @@
       "description": "Start a discussion by asking the community for their opinions or advice on a topic."
     }
   },
-   "shareImagePost": {
+  "shareImagePost": {
     "title": "Share an Image Post",
     "subtitle": "A picture is worth a thousand words. Share your moment with the community.",
     "imageLabel": "Image",
@@ -612,5 +612,56 @@
       "title": "Our Team",
       "subtitle": "The dedicated people behind HelloJob's success, always striving for your development."
     }
+  },
+  "postDetail": {
+    "article": {
+      "category": "Interview Experience",
+      "title": "How to Write a Compelling Japanese CV to Impress Recruiters",
+      "excerpt": "A well-prepared CV (履歴書 - rirekisho) is the first and most crucial step to opening the door to your dream job in Japan. It's not just a summary of experience, but your first introduction to the employer.",
+      "image": {
+        "src": "https://picsum.photos/1200/675?random=100",
+        "alt": "Person writing a CV",
+        "hint": "person writing resume"
+      },
+      "content": {
+        "p1": "In a competitive landscape, a professional, clean, and comprehensive CV will help you stand out. It's essential to adhere to the common rules and standards of a Japanese CV, from layout and use of honorifics to the profile picture.",
+        "p2": "The self-promotion section (自己PR - jiko PR) is the most critical part. This is where you showcase your strengths, skills, and enthusiasm for the job. Write concisely but compellingly enough to show you are the best candidate for the position.",
+        "quote": "Remember, your CV is a marketing product. You are 'selling' your skills and experience to the employer.",
+        "p3": "Finally, don't forget to proofread for spelling and grammar mistakes multiple times. A small error can make you lose points in the eyes of a meticulous recruiter. You can ask friends or experienced individuals to review it before sending. Good luck!"
+      }
+    },
+    "commentSection": {
+      "title": "Discussion",
+      "subtitle": "Leave your comment about this article."
+    },
+    "commentForm": {
+      "name": {
+        "label": "Your Name",
+        "placeholder": "Enter your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email (will not be displayed)"
+      },
+      "comment": {
+        "label": "Comment",
+        "placeholder": "Write your comment here..."
+      },
+      "submit": "Submit Comment"
+    },
+    "comments": [
+      {
+        "name": "An Nguyen",
+        "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+        "time": "5 minutes ago",
+        "text": "Very helpful article! I'm preparing my CV to apply for a job in Japan. Thanks to the author."
+      },
+      {
+        "name": "Bich Tran",
+        "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+        "time": "1 hour ago",
+        "text": "The jiko PR section is indeed the hardest. Does anyone have a good template to share?"
+      }
+    ]
   }
 }

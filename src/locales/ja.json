@@ -221,22 +221,22 @@
       "title": "写真で見る物語",
       "stories": [
         {
-          "image": "https://picsum.photos/400/533?random=60",
+          "image": "https://picsum.photos/400/533?random=50",
           "title": "工場での一日",
           "hint": "factory worker"
         },
         {
-          "image": "https://picsum.photos/400/533?random=61",
+          "image": "https://picsum.photos/400/533?random=51",
           "title": "夜の日本語教室",
           "hint": "classroom learning night"
         },
         {
-          "image": "https://picsum.photos/400/533?random=62",
+          "image": "https://picsum.photos/400/533?random=52",
           "title": "同郷の仲間との食事",
           "hint": "people eating together"
         },
         {
-          "image": "https://picsum.photos/400/533?random=63",
+          "image": "https://picsum.photos/400/533?random=53",
           "title": "桜の季節の風景",
           "hint": "cherry blossom"
         }
@@ -612,5 +612,56 @@
       "title": "私たちのチーム",
       "subtitle": "HelloJobの成功の陰には、常にあなたの成長のために努力する献身的な人々がいます。"
     }
+  },
+  "postDetail": {
+    "article": {
+      "category": "面接のコツ",
+      "title": "採用担当者に響く！日本語履歴書の書き方とポイント",
+      "excerpt": "よく準備された履歴書は、日本での理想の仕事への扉を開くための最初で最も重要なステップです。それは単なる経験の要約ではなく、雇用主への最初の自己紹介でもあります。",
+      "image": {
+        "src": "https://picsum.photos/1200/675?random=100",
+        "alt": "履歴書を書いている人",
+        "hint": "person writing resume"
+      },
+      "content": {
+        "p1": "競争の激しい状況では、プロフェッショナルでクリーン、かつ包括的な履歴書があなたを際立たせます。レイアウトや敬語の使い方から証明写真まで、日本の履歴書の一般的なルールや基準に従うことが不可欠です。",
+        "p2": "自己PR欄は最も重要な部分です。ここであなたの強み、スキル、仕事への熱意をアピールします。簡潔でありながら、あなたがそのポジションに最適な候補者であることを示すのに十分な説得力のある文章を書きましょう。",
+        "quote": "履歴書はマーケティングツールであることを忘れないでください。あなたは自分のスキルと経験を雇用主に『売り込んで』いるのです。",
+        "p3": "最後に、スペルや文法のミスを何度もチェックすることを忘れないでください。小さなミスでも、細心な採用担当者の目にはマイナスに映ることがあります。送る前に友人や経験のある人に見てもらうとよいでしょう。ご成功をお祈りしています！"
+      }
+    },
+    "commentSection": {
+      "title": "ディスカッション",
+      "subtitle": "この記事についてコメントを残してください。"
+    },
+    "commentForm": {
+      "name": {
+        "label": "お名前",
+        "placeholder": "名前を入力してください"
+      },
+      "email": {
+        "label": "メールアドレス",
+        "placeholder": "メールアドレスを入力してください（表示されません）"
+      },
+      "comment": {
+        "label": "コメント",
+        "placeholder": "ここにコメントを記入してください..."
+      },
+      "submit": "コメントを送信"
+    },
+    "comments": [
+      {
+        "name": "グエン・ヴァン・アン",
+        "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+        "time": "5分前",
+        "text": "非常に役立つ記事です！ちょうど日本での就職活動のために履歴書を準備しているところでした。筆者の方、ありがとうございます。"
+      },
+      {
+        "name": "チャン・ティ・ビック",
+        "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+        "time": "1時間前",
+        "text": "自己PRの部分が本当に一番難しいですね。どなたか参考になる良い例文をお持ちではありませんか？"
+      }
+    ]
   }
 }
