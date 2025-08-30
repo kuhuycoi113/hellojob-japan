@@ -87,7 +87,7 @@ export function AiJobPostForm() {
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <div className="inline-block bg-primary/10 text-primary p-3 rounded-lg mb-4">
             <Sparkles className="h-8 w-8" />
@@ -101,7 +101,7 @@ export function AiJobPostForm() {
         </div>
         
         {hasSelections && (
-          <Card className="mb-8 bg-blue-100/50 border-blue-200">
+          <Card className="mb-8 bg-blue-100/50 border-blue-200 max-w-4xl mx-auto">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Info className="w-5 h-5 text-blue-600"/>
@@ -116,9 +116,8 @@ export function AiJobPostForm() {
           </Card>
         )}
 
-
-        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 items-start">
-          <Card className="shadow-lg w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <Card className="shadow-lg w-full sticky top-24">
             <CardHeader>
               <CardTitle>{t.ai_job_post_form.input.title}</CardTitle>
               <CardDescription>{t.ai_job_post_form.input.description}</CardDescription>
@@ -126,7 +125,7 @@ export function AiJobPostForm() {
             <CardContent>
               <Textarea
                 placeholder={t.aiJobPost.placeholder}
-                className="min-h-[150px] text-base"
+                className="min-h-[200px] text-base"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 disabled={state === 'loading'}
@@ -159,80 +158,82 @@ export function AiJobPostForm() {
             </CardFooter>
           </Card>
           
-          <Card className="shadow-lg min-h-[500px] flex flex-col w-full">
-            <CardHeader>
-              <CardTitle>{t.ai_job_post_form.output.title}</CardTitle>
-              <CardDescription>{t.ai_job_post_form.output.description}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              {state === 'loading' && (
-                <div className="flex flex-col items-center justify-center h-64 text-muted-foreground">
-                  <LoaderCircle className="h-12 w-12 animate-spin text-primary mb-4" />
-                  <p className="text-lg">{t.ai_job_post_form.output.loading}</p>
-                </div>
-              )}
+          <div className="space-y-4">
+             <Card className="shadow-lg min-h-[500px] flex flex-col w-full">
+                <CardHeader>
+                  <CardTitle>{t.ai_job_post_form.output.title}</CardTitle>
+                  <CardDescription>{t.ai_job_post_form.output.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  {state === 'loading' && (
+                    <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
+                      <LoaderCircle className="h-12 w-12 animate-spin text-primary mb-4" />
+                      <p className="text-lg">{t.ai_job_post_form.output.loading}</p>
+                    </div>
+                  )}
 
-              {state === 'idle' && (
-                 <div className="flex flex-col items-center justify-center h-64 text-center text-muted-foreground bg-gray-50 rounded-lg">
-                  <Award className="h-12 w-12 text-yellow-400 mb-4" />
-                  <p className="text-lg font-medium">{t.ai_job_post_form.output.idle.title}</p>
-                  <p className="max-w-xs">{t.ai_job_post_form.output.idle.description}</p>
-                </div>
-              )}
+                  {state === 'idle' && (
+                    <div className="flex flex-col items-center justify-center h-full text-center text-muted-foreground bg-gray-50 rounded-lg">
+                      <Award className="h-12 w-12 text-yellow-400 mb-4" />
+                      <p className="text-lg font-medium">{t.ai_job_post_form.output.idle.title}</p>
+                      <p className="max-w-xs">{t.ai_job_post_form.output.idle.description}</p>
+                    </div>
+                  )}
 
-              {state === 'completed' && jobPost && (
-                <div className="space-y-6 animate-in fade-in-50">
-                  <div>
-                    <h2 className="text-2xl font-bold font-headline text-primary">{jobPost.jobTitle}</h2>
-                    <p className="text-muted-foreground font-medium">{jobPost.companyName} - {jobPost.location}</p>
+                  {state === 'completed' && jobPost && (
+                    <div className="space-y-6 animate-in fade-in-50">
+                      <div>
+                        <h2 className="text-2xl font-bold font-headline text-primary">{jobPost.jobTitle}</h2>
+                        <p className="text-muted-foreground font-medium">{jobPost.companyName} - {jobPost.location}</p>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">{t.ai_job_post_form.output.jobDescription}</h3>
+                        <p className="text-gray-700 whitespace-pre-wrap">{jobPost.jobDescription}</p>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">{t.ai_job_post_form.output.requirements}</h3>
+                        <ul className="space-y-2">
+                          {jobPost.requirements.map((req, i) => (
+                            <li key={i} className="flex items-start">
+                              <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                              <span>{req}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">{t.ai_job_post_form.output.benefits}</h3>
+                        <ul className="space-y-2">
+                          {jobPost.benefits.map((ben, i) => (
+                            <li key={i} className="flex items-start">
+                              <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                              <span>{ben}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+
+              <div className="relative">
+                  <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                      <div className="w-full border-t border-gray-300" />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.ai_job_post_form.output.jobDescription}</h3>
-                    <p className="text-gray-700 whitespace-pre-wrap">{jobPost.jobDescription}</p>
+                  <div className="relative flex justify-center">
+                      <span className="bg-blue-50/50 px-2 text-sm text-gray-500">{t.ai_job_post_form.or_divider}</span>
                   </div>
-                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.ai_job_post_form.output.requirements}</h3>
-                    <ul className="space-y-2">
-                      {jobPost.requirements.map((req, i) => (
-                        <li key={i} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>{req}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.ai_job_post_form.output.benefits}</h3>
-                    <ul className="space-y-2">
-                      {jobPost.benefits.map((ben, i) => (
-                        <li key={i} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span>{ben}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              )}
-            </CardContent>
-          </Card>
+              </div>
+
+              <Button variant="outline" size="lg" className="w-full bg-white" asChild>
+                  <Link href="/">
+                      <Pencil className="mr-2 h-4 w-4" />
+                      {t.ai_job_post_form.input.manual_post}
+                  </Link>
+              </Button>
+          </div>
         </div>
-        
-        <div className="relative my-8">
-            <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                <div className="w-full border-t border-gray-300" />
-            </div>
-            <div className="relative flex justify-center">
-                <span className="bg-blue-50/50 px-2 text-sm text-gray-500">{t.ai_job_post_form.or_divider}</span>
-            </div>
-        </div>
-
-        <Button variant="outline" size="lg" className="w-full bg-white" asChild>
-            <Link href="/">
-                <Pencil className="mr-2 h-4 w-4" />
-                {t.ai_job_post_form.input.manual_post}
-            </Link>
-        </Button>
       </div>
     </section>
   );
