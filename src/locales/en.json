@@ -178,19 +178,19 @@
     ],
     "newPostsTitle": "New Posts",
     "posts": [
-        { "category": "Interview Experience", "title": "How to Write a Compelling Japanese CV that Impresses Recruiters" },
-        { "category": "Life in Japan", "title": "Exploring the Unique Work Culture in Japanese Companies" },
-        { "category": "Labor Law", "title": "Changes to Labor Laws for Foreigners in Japan for 2024" },
-        { "category": "Life in Japan", "title": "What's the Cost of Living in Japan's Major Cities?" }
+        { "category": "Interview Experience", "title": "How to Write a Compelling Japanese CV to Impress Recruiters" },
+        { "category": "Life in Japan", "title": "Exploring the Unique Work Culture for Laborers in Japanese Companies" },
+        { "category": "Labor Law", "title": "Changes to Labor Laws for Foreign Workers in Japan for 2024" },
+        { "category": "Life in Japan", "title": "What's the Cost of Living in Japan's Major Cities for Laborers?" }
     ],
     "newsTitle": "News & Articles",
     "articles": [
-        { "category": "Life in Japan", "title": "Work Culture in Japan: Understanding 'Hou-Ren-Sou' and What You Need to Know", "readTime": "5 min read" },
-        { "category": "Interview Experience", "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction)", "readTime": "6 min read" },
+        { "category": "Life in Japan", "title": "Work Culture in Japan: Understanding 'Hou-Ren-Sou' for Workers", "readTime": "5 min read" },
+        { "category": "Interview Experience", "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction) for Workers", "readTime": "6 min read" },
         { "category": "Labor Law", "title": "The Latest Updates on Japanese Labor Law for Foreign Workers", "readTime": "8 min read" },
         { "category": "Market News", "title": "Japan Faces Critical Labor Shortage", "readTime": "4 min read" },
-        { "category": "Specified Skilled Worker", "title": "A Detailed Guide to the Specified Skilled Worker Exam for Construction", "readTime": "7 min read" },
-        { "category": "Life in Japan", "title": "How to Find Affordable Housing for Foreigners in Japan?", "readTime": "5 min read" }
+        { "category": "Specified Skilled Worker", "title": "A Detailed Guide to the Specified Skilled Worker Exam for Construction for Workers", "readTime": "7 min read" },
+        { "category": "Life in Japan", "title": "How to Find Affordable Housing for Foreign Workers in Japan?", "readTime": "5 min read" }
     ],
     "shareContentButton": "Share your content"
   },
