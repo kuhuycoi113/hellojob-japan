@@ -19,15 +19,23 @@ export function AiJobPostForm() {
   const [description, setDescription] = useState('');
   const [jobPost, setJobPost] = useState<GenerateJobPostOutput | null>(null);
 
-  const suggestions = [
-    t.aiJobPost.suggestions.s1,
-    t.ai_job_post_form.suggestions.s2,
-    t.ai_job_post_form.suggestions.s3,
+  const suggestionCards = [
+    {
+      icon: <FileText className="w-8 h-8 text-yellow-500" />,
+      title: "Mô tả thông tin cá nhân",
+      description: '"Tôi là sinh viên năm cuối trường X, chuyên ngành Y, đang tìm kiếm cơ hội thực tập..."'
+    },
+    {
+      icon: <Upload className="w-8 h-8 text-green-500" />,
+      title: "Đăng từ hồ sơ có sẵn",
+      description: "Tải lên CV file PDF hoặc Word để AI tự động trích xuất và điền thông tin."
+    },
+    {
+      icon: <Mic className="w-8 h-8 text-blue-500" />,
+      title: "Tạo hồ sơ bằng giọng nói",
+      description: "Chỉ cần bấm nút và mô tả về bản thân, chúng tôi sẽ lo phần còn lại."
+    }
   ];
-
-  const handleSuggestionClick = (suggestion: string) => {
-    setDescription(suggestion);
-  };
   
   const handleGenerate = async () => {
     if (!description.trim()) {
@@ -91,13 +99,15 @@ export function AiJobPostForm() {
                 onChange={(e) => setDescription(e.target.value)}
                 disabled={state === 'loading'}
               />
-               <div className="mt-4">
-                  <h4 className="text-sm font-medium text-muted-foreground mb-2">{t.aiJobPost.suggestionsTitle}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {suggestions.map((s) => (
-                      <Button key={s} variant="outline" size="sm" onClick={() => handleSuggestionClick(s)} disabled={state === 'loading'}>
-                        {s}
-                      </Button>
+               <div className="mt-6">
+                  <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">Thử một vài gợi ý:</h4>
+                  <div className="grid sm:grid-cols-3 gap-4">
+                    {suggestionCards.map((card) => (
+                      <Card key={card.title} className="text-center p-4 hover:shadow-md transition-shadow cursor-pointer">
+                        <div className="flex justify-center mb-3">{card.icon}</div>
+                        <h5 className="font-semibold text-sm mb-1">{card.title}</h5>
+                        <p className="text-xs text-muted-foreground">{card.description}</p>
+                      </Card>
                     ))}
                   </div>
               </div>
