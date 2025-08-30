@@ -97,13 +97,13 @@ export function CourseDetail() {
                                         onClick={() => handleLessonClick(index)}
                                     >
                                         {isWatched ? (
-                                            <CheckCircle className="w-6 h-6 mr-4 text-green-500"/>
+                                            <CheckCircle className="w-6 h-6 mr-4 text-green-500 flex-shrink-0"/>
                                         ) : (
-                                            <PlayCircle className="w-6 h-6 mr-4 text-primary/80"/>
+                                            <PlayCircle className="w-6 h-6 mr-4 text-primary/80 flex-shrink-0"/>
                                         )}
                                         
-                                        <div>
-                                            <p className="font-semibold">{lesson.title}</p>
+                                        <div className="overflow-hidden">
+                                            <p className="font-semibold truncate">{lesson.title}</p>
                                             <p className="text-sm text-muted-foreground">{lesson.duration}</p>
                                         </div>
                                     </Button>
