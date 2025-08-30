@@ -56,6 +56,39 @@ export function Cta() {
     },
   ];
 
+  const UserRoleDialogContent = () => (
+    <DialogContent className="sm:max-w-3xl">
+      <DialogHeader>
+        <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+        <DialogDescription className="text-center">
+          {t.userRoles.description}
+        </DialogDescription>
+      </DialogHeader>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+        {userRoles.map((role) => (
+          <Link href={role.href} key={role.title}>
+            <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary/5 p-3 rounded-lg">
+                  {role.icon}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-base text-gray-800">
+                    {role.title}
+                  </h3>
+                   <p className="text-sm text-muted-foreground mt-1">
+                    {role.description}
+                  </p>
+                </div>
+              </div>
+               <ChevronRight className="w-5 h-5 text-muted-foreground" />
+            </Card>
+          </Link>
+        ))}
+      </div>
+    </DialogContent>
+  );
+
   return (
     <section className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
@@ -72,41 +105,17 @@ export function Cta() {
                 {t.cta.postJob}
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-3xl">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
-                <DialogDescription className="text-center">
-                  {t.userRoles.description}
-                </DialogDescription>
-              </DialogHeader>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                {userRoles.map((role) => (
-                  <Link href={role.href} key={role.title}>
-                    <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="bg-primary/5 p-3 rounded-lg">
-                          {role.icon}
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-base text-gray-800">
-                            {role.title}
-                          </h3>
-                           <p className="text-sm text-muted-foreground mt-1">
-                            {role.description}
-                          </p>
-                        </div>
-                      </div>
-                       <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-            </DialogContent>
+            <UserRoleDialogContent />
           </Dialog>
 
-          <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100">
-            {t.cta.contactUs}
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100">
+                {t.cta.contactUs}
+              </Button>
+            </DialogTrigger>
+            <UserRoleDialogContent />
+          </Dialog>
         </div>
       </div>
     </section>
