@@ -152,11 +152,11 @@ export function HandbookSection() {
                 <BookOpen className="w-6 h-6 text-primary" />
                 {t.handbook.newPostsTitle}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {newPosts.map((post, index) => (
                    <Link href="/handbook/post-detail" key={index}>
                   <Card
-                    className="shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow h-full"
+                    className="shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col"
                   >
                     <div className="aspect-w-16 aspect-h-9">
                       <Image
@@ -168,56 +168,16 @@ export function HandbookSection() {
                         data-ai-hint={post.hint}
                       />
                     </div>
-                    <CardContent className="p-6">
-                      <Badge variant="outline" className="mb-2">
+                    <CardContent className="p-4 flex-grow flex flex-col">
+                      <Badge variant="outline" className="mb-2 w-fit">
                         {post.category}
                       </Badge>
-                      <h4 className="font-bold font-headline text-lg text-gray-800">
+                      <h4 className="font-bold font-headline text-base text-gray-800 flex-grow">
                         {post.title}
                       </h4>
                     </CardContent>
                   </Card>
                   </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Long Videos */}
-            <div>
-              <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                <Video className="w-6 h-6 text-primary" />
-                {t.handbook.longVideoTitle}
-              </h3>
-              <div className="space-y-6">
-                {longVideos.map((video, index) => (
-                  <Card
-                    key={index}
-                    className="overflow-hidden shadow-md rounded-xl group cursor-pointer hover:shadow-xl transition-shadow flex flex-col sm:flex-row"
-                  >
-                    <div className="relative w-full sm:w-1/3 aspect-video">
-                      <Image
-                        src={`https://picsum.photos/600/338?random=${30 + index}`}
-                        alt={video.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint="person talking presentation"
-                      />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                        <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
-                      </div>
-                    </div>
-                    <CardContent className="p-4 sm:p-6 sm:w-2/3">
-                      <Badge variant="secondary" className="mb-2">
-                        {video.category}
-                      </Badge>
-                      <h3 className="font-semibold text-gray-800 leading-snug text-lg">
-                        {video.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-2">
-                        {video.duration}
-                      </p>
-                    </CardContent>
-                  </Card>
                 ))}
               </div>
             </div>
@@ -231,7 +191,7 @@ export function HandbookSection() {
                 <Video className="w-6 h-6 text-primary" />
                 {t.handbook.videoTitle}
               </h3>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {shortVideos.map((video, index) => (
                   <Card
                     key={index}
@@ -256,34 +216,7 @@ export function HandbookSection() {
                 ))}
               </div>
             </div>
-
-            {/* News & Articles */}
-            <div>
-              <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                <Newspaper className="w-6 h-6 text-primary" />
-                {t.handbook.newsTitle}
-              </h3>
-              <div className="space-y-4">
-                {newsAndArticles.map((article, index) => (
-                  <Link href="/handbook/post-detail" key={index}>
-                    <Card
-                      className="p-4 shadow-sm rounded-lg hover:bg-white transition-colors"
-                    >
-                      <Badge variant="secondary" className="mb-2">
-                        {article.category}
-                      </Badge>
-                      <h4 className="font-semibold text-gray-800 leading-snug">
-                        {article.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {article.readTime}
-                      </p>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
+            
             {/* Image Posts */}
             <div>
               <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
@@ -315,8 +248,76 @@ export function HandbookSection() {
                 ))}
               </div>
             </div>
+
+            {/* News & Articles */}
+            <div>
+              <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                <Newspaper className="w-6 h-6 text-primary" />
+                {t.handbook.newsTitle}
+              </h3>
+              <div className="space-y-4">
+                {newsAndArticles.map((article, index) => (
+                  <Link href="/handbook/post-detail" key={index}>
+                    <Card
+                      className="p-4 shadow-sm rounded-lg hover:bg-white transition-colors"
+                    >
+                      <Badge variant="secondary" className="mb-2">
+                        {article.category}
+                      </Badge>
+                      <h4 className="font-semibold text-gray-800 leading-snug">
+                        {article.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {article.readTime}
+                      </p>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* Long Videos - Full Width */}
+        <div className="mt-12">
+            <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+            <Video className="w-6 h-6 text-primary" />
+            {t.handbook.longVideoTitle}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {longVideos.map((video, index) => (
+                <Card
+                key={index}
+                className="overflow-hidden shadow-md rounded-xl group cursor-pointer hover:shadow-xl transition-shadow flex flex-col sm:flex-row"
+                >
+                <div className="relative w-full sm:w-2/5 aspect-video">
+                    <Image
+                    src={`https://picsum.photos/600/338?random=${30 + index}`}
+                    alt={video.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint="person talking presentation"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                    <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
+                    </div>
+                </div>
+                <CardContent className="p-4 sm:p-6 sm:w-3/5 flex flex-col">
+                    <Badge variant="secondary" className="mb-2 w-fit">
+                    {video.category}
+                    </Badge>
+                    <h3 className="font-semibold text-gray-800 leading-snug text-lg flex-grow">
+                    {video.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-2">
+                    {video.duration}
+                    </p>
+                </CardContent>
+                </Card>
+            ))}
+            </div>
+        </div>
+
 
         <div className="mt-16 text-center">
           <Dialog>
