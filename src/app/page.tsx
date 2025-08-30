@@ -5,7 +5,6 @@ import { Cta } from '@/components/cta';
 import { WhyChooseUs } from '@/components/why-choose-us';
 import { CandidateQuality } from '@/components/candidate-quality';
 import { Footer } from '@/components/footer';
-import { HowItWorks } from '@/components/how-it-works';
 import { PersonnelTraining } from '@/components/personnel-training';
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <WhyChooseUs />
-        <HowItWorks />
         <CandidateCategories />
         <CandidateQuality />
         <PersonnelTraining />
