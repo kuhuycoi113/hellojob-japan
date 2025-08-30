@@ -1,5 +1,6 @@
 import { Header } from '@/components/header';
-import { ElearningSection } from '@/components/elearning-section';
+import { ElearningHero } from '@/components/elearning-hero';
+import { AllCoursesSection } from '@/components/all-courses-section';
 import { Footer } from '@/components/footer';
 
 export default function ElearningPage() {
@@ -7,7 +8,8 @@ export default function ElearningPage() {
     <div className="flex min-h-screen flex-col bg-white">
       <Header />
       <main className="flex-1">
-        <ElearningSection />
+        <ElearningHero />
+        <AllCoursesSection />
       </main>
       <Footer />
     </div>

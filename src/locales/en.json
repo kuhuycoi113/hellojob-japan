@@ -94,16 +94,32 @@
     "copyright": "© {year} HelloJob. All rights reserved."
   },
   "elearning": {
-    "heroTitle": "E-Learning: Deep Dive into Vietnamese Worker Culture",
-    "heroSubtitle": "Go beyond skills and laws to truly understand your Vietnamese employees, fostering a harmonious and productive workplace.",
-    "category": "Cross-Cultural Management",
-    "title": "Understanding the Vietnamese Mindset: A Guide for Japanese Employers",
-    "description": "A practical course that decodes the everyday habits, cultural motivations, and hidden pressures of Vietnamese workers in Japan.",
-    "feature1": "Deep dive into cultural habits (karaoke, food, social media).",
-    "feature2": "Understand financial pressures (remittances, debt).",
-    "feature3": "Bridge differences in communication and work styles.",
-    "feature4": "Build genuine trust and long-term loyalty.",
-    "cta": "Explore the Course"
+    "heroTitle": "E-Learning: Enhance Your Management Skills",
+    "heroSubtitle": "Go beyond skills and laws. Our courses help you truly understand your Vietnamese employees to foster a harmonious and productive workplace.",
+    "allCoursesTitle": "Our Courses",
+    "courses": [
+      {
+        "title": "Understanding Vietnamese Workers: A Cultural Guide",
+        "description": "A practical course decoding the daily habits, cultural motivations, and hidden pressures of Vietnamese workers in Japan.",
+        "hint": "vietnam japan flag"
+      },
+      {
+        "title": "Effective Recruitment Strategies for Vietnamese Talent",
+        "description": "Learn how to write effective job descriptions, conduct successful interviews, and navigate the hiring process.",
+        "hint": "job interview professional"
+      },
+      {
+        "title": "Japanese Labor Law for Foreign Employees",
+        "description": "A must-know guide to understanding visa types, labor contracts, and legal obligations for employers in Japan.",
+        "hint": "legal document law"
+      },
+      {
+        "title": "Onboarding and Team Integration",
+        "description": "Best practices for successfully onboarding new Vietnamese employees and integrating them into your existing team.",
+        "hint": "team collaboration meeting"
+      }
+    ],
+    "viewCourse": "View Course"
   },
   "aiJobPost": {
     "title": "Create Job Postings with the Power of AI",
@@ -378,5 +394,3 @@
     }
   }
 }
-
-    
