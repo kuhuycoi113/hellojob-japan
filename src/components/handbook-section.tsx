@@ -136,9 +136,11 @@ export function HandbookSection() {
                   <p className="text-muted-foreground mb-6">
                     {featuredArticle.description}
                   </p>
-                  <Button variant="link" className="p-0 self-start">
-                    {featuredArticle.link}{' '}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="link" className="p-0 self-start" asChild>
+                    <Link href="/handbook/post-detail">
+                        {featuredArticle.link}{' '}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -152,9 +154,9 @@ export function HandbookSection() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {newPosts.map((post, index) => (
+                   <Link href="/handbook/post-detail" key={index}>
                   <Card
-                    key={index}
-                    className="shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow"
+                    className="shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow h-full"
                   >
                     <div className="aspect-w-16 aspect-h-9">
                       <Image
@@ -175,37 +177,7 @@ export function HandbookSection() {
                       </h4>
                     </CardContent>
                   </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Image Posts */}
-            <div>
-              <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                <ImageIcon className="w-6 h-6 text-primary" />
-                {t.handbook.imagePosts.title}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                {t.handbook.imagePosts.posts.map((post, index) => (
-                  <Card
-                    key={index}
-                    className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
-                  >
-                    <div className="relative aspect-[3/4]">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover w-full h-full"
-                        data-ai-hint={post.hint}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
-                        <h4 className="font-bold text-white text-lg leading-tight drop-shadow-md">
-                          {post.title}
-                        </h4>
-                      </div>
-                    </div>
-                  </Card>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -293,20 +265,53 @@ export function HandbookSection() {
               </h3>
               <div className="space-y-4">
                 {newsAndArticles.map((article, index) => (
-                  <Card
-                    key={index}
-                    className="p-4 shadow-sm rounded-lg hover:bg-white transition-colors"
-                  >
-                    <Badge variant="secondary" className="mb-2">
-                      {article.category}
-                    </Badge>
-                    <h4 className="font-semibold text-gray-800 leading-snug">
-                      {article.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {article.readTime}
-                    </p>
-                  </Card>
+                  <Link href="/handbook/post-detail" key={index}>
+                    <Card
+                      className="p-4 shadow-sm rounded-lg hover:bg-white transition-colors"
+                    >
+                      <Badge variant="secondary" className="mb-2">
+                        {article.category}
+                      </Badge>
+                      <h4 className="font-semibold text-gray-800 leading-snug">
+                        {article.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {article.readTime}
+                      </p>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Image Posts */}
+            <div>
+              <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                <ImageIcon className="w-6 h-6 text-primary" />
+                {t.handbook.imagePosts.title}
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {t.handbook.imagePosts.posts.map((post, index) => (
+                   <Link href="/handbook/post-detail" key={index}>
+                    <Card
+                      className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
+                    >
+                      <div className="relative aspect-[4/5]">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover w-full h-full"
+                          data-ai-hint={post.hint}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+                          <h4 className="font-bold text-white text-lg leading-tight drop-shadow-md">
+                            {post.title}
+                          </h4>
+                        </div>
+                      </div>
+                    </Card>
+                  </Link>
                 ))}
               </div>
             </div>
