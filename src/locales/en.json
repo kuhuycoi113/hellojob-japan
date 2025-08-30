@@ -239,6 +239,26 @@
           "image": "https://picsum.photos/400/533?random=53",
           "title": "Cherry Blossom Season",
           "hint": "cherry blossom"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=54",
+          "title": "Working in the fields",
+          "hint": "farm work"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=55",
+          "title": "End of shift",
+          "hint": "commute home"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=56",
+          "title": "Calling home",
+          "hint": "video call family"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=57",
+          "title": "The dormitory",
+          "hint": "dormitory room"
         }
       ]
     },

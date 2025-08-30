@@ -239,6 +239,26 @@
           "image": "https://picsum.photos/400/533?random=53",
           "title": "桜の季節の風景",
           "hint": "cherry blossom"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=54",
+          "title": "畑仕事",
+          "hint": "farm work"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=55",
+          "title": "仕事終わり",
+          "hint": "commute home"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=56",
+          "title": "家族との電話",
+          "hint": "video call family"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=57",
+          "title": "寮の部屋",
+          "hint": "dormitory room"
         }
       ]
     },
