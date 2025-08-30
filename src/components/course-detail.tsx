@@ -1,11 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
-import { PlayCircle, GraduationCap, ListVideo, Users, Star, BookOpen, CheckCircle } from 'lucide-react';
+import { PlayCircle, GraduationCap, ListVideo, Users, Star, BookOpen, CheckCircle, Video } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   Accordion,
@@ -42,6 +43,13 @@ export function CourseDetail() {
   };
   
   const course = t.courseDetail;
+  
+  const featuredLessons = [
+    course.chapters[0].lessons[0],
+    course.chapters[1].lessons[2],
+    course.chapters[2].lessons[0],
+    course.chapters[3].lessons[4],
+  ];
 
   const icons = {
     level: <GraduationCap className="w-5 h-5 text-muted-foreground" />,
@@ -54,7 +62,7 @@ export function CourseDetail() {
     <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-8">
                 <Card className="overflow-hidden shadow-lg">
                     <div className="aspect-video bg-black flex items-center justify-center text-white">
                         <div className="text-center">
@@ -71,6 +79,35 @@ export function CourseDetail() {
                         <p className="text-muted-foreground leading-relaxed">{course.description}</p>
                     </CardContent>
                 </Card>
+
+                 <div>
+                    <h2 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-3">
+                        <Video className="w-7 h-7 text-primary"/>
+                        {course.featuredLessonsTitle}
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {featuredLessons.map((lesson, index) => (
+                           <Card key={index} className="overflow-hidden shadow-md rounded-xl group cursor-pointer hover:shadow-xl transition-shadow">
+                                <div className="relative aspect-video">
+                                    <Image 
+                                        src={`https://picsum.photos/600/338?random=${20 + index}`}
+                                        alt={lesson.title}
+                                        fill
+                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        data-ai-hint="person talking presentation"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                                        <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
+                                    </div>
+                                </div>
+                                <CardContent className="p-4">
+                                    <h3 className="font-semibold text-gray-800 leading-snug truncate" title={lesson.title}>{lesson.title}</h3>
+                                    <p className="text-sm text-muted-foreground mt-1">{lesson.duration}</p>
+                                </CardContent>
+                           </Card>
+                        ))}
+                    </div>
+                </div>
             </div>
 
             {/* Sidebar */}
@@ -109,7 +146,7 @@ export function CourseDetail() {
                                                                 <PlayCircle className="w-5 h-5 mr-3 text-primary/80 flex-shrink-0"/>
                                                             )}
                                                             <div className="overflow-hidden flex-1">
-                                                                <p className="font-medium truncate">{lesson.title}</p>
+                                                                <p className="font-medium truncate" title={lesson.title}>{lesson.title}</p>
                                                                 <p className="text-xs text-muted-foreground">{lesson.duration}</p>
                                                             </div>
                                                         </Button>
