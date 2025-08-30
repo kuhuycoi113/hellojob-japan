@@ -202,43 +202,71 @@
     "posts": [
       {
         "category": "Interview Experience",
-        "title": "How to Write a Compelling Japanese CV to Impress Recruiters"
+        "title": "How to Write a Compelling Japanese CV to Impress Recruiters",
+        "image": "https://picsum.photos/600/400?random=10",
+        "hint": "writing resume"
       },
       {
         "category": "Life in Japan",
-        "title": "Exploring the Unique Work Culture for Laborers in Japanese Companies"
+        "title": "Exploring the Unique Work Culture for Laborers in Japanese Companies",
+        "image": "https://picsum.photos/600/400?random=11",
+        "hint": "team meeting"
       },
       {
         "category": "Labor Law",
-        "title": "Changes to Labor Laws for Foreign Workers in Japan for 2024"
+        "title": "Changes to Labor Laws for Foreign Workers in Japan for 2024",
+        "image": "https://picsum.photos/600/400?random=12",
+        "hint": "legal document"
       },
       {
         "category": "Life in Japan",
-        "title": "What's the Cost of Living in Japan's Major Cities for Laborers?"
+        "title": "What's the Cost of Living in Japan's Major Cities for Laborers?",
+        "image": "https://picsum.photos/600/400?random=13",
+        "hint": "city life"
       }
     ],
     "imagePosts": {
-      "title": "Image Stories",
+      "title": "Image Posts",
       "posts": [
         {
-          "image": "https://picsum.photos/400/533?random=70",
+          "image": "https://picsum.photos/400/533?random=50",
           "title": "A day at the factory",
           "hint": "factory worker"
         },
         {
-          "image": "https://picsum.photos/400/533?random=71",
+          "image": "https://picsum.photos/400/533?random=51",
           "title": "Evening Japanese class",
           "hint": "classroom learning night"
         },
         {
-          "image": "https://picsum.photos/400/533?random=72",
+          "image": "https://picsum.photos/400/533?random=52",
           "title": "Dinner with compatriots",
           "hint": "people eating together"
         },
         {
-          "image": "https://picsum.photos/400/533?random=73",
+          "image": "https://picsum.photos/400/533?random=53",
           "title": "The beauty of cherry blossom season",
           "hint": "cherry blossom"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=54",
+          "title": "Hard at work",
+          "hint": "desk working"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=55",
+          "title": "Exploring the city on the weekend",
+          "hint": "city tourism"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=56",
+          "title": "Celebrating a holiday with friends",
+          "hint": "friends festival"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=57",
+          "title": "Meal prepping for the week",
+          "hint": "meal prep"
         }
       ]
     },

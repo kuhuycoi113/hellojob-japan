@@ -202,43 +202,71 @@
     "posts": [
       {
         "category": "Kinh nghiệm phỏng vấn",
-        "title": "Cách viết CV tiếng Nhật thuyết phục để gây ấn tượng với nhà tuyển dụng"
+        "title": "Cách viết CV tiếng Nhật thuyết phục để gây ấn tượng với nhà tuyển dụng",
+        "image": "https://picsum.photos/600/400?random=10",
+        "hint": "writing resume"
       },
       {
         "category": "Cuộc sống ở Nhật",
-        "title": "Khám phá văn hóa làm việc độc đáo dành cho người lao động tại công ty Nhật Bản"
+        "title": "Khám phá văn hóa làm việc độc đáo dành cho người lao động tại công ty Nhật Bản",
+        "image": "https://picsum.photos/600/400?random=11",
+        "hint": "team meeting"
       },
       {
         "category": "Pháp luật lao động",
-        "title": "Những thay đổi về luật lao động cho người lao động nước ngoài tại Nhật năm 2024"
+        "title": "Những thay đổi về luật lao động cho người lao động nước ngoài tại Nhật năm 2024",
+        "image": "https://picsum.photos/600/400?random=12",
+        "hint": "legal document"
       },
       {
         "category": "Cuộc sống ở Nhật",
-        "title": "Chi phí sinh hoạt tại các thành phố lớn ở Nhật Bản là bao nhiêu dành cho người lao động?"
+        "title": "Chi phí sinh hoạt tại các thành phố lớn ở Nhật Bản là bao nhiêu dành cho người lao động?",
+        "image": "https://picsum.photos/600/400?random=13",
+        "hint": "city life"
       }
     ],
     "imagePosts": {
-      "title": "Câu chuyện qua ảnh",
+      "title": "Bài đăng bằng Ảnh",
       "posts": [
         {
-          "image": "https://picsum.photos/400/533?random=70",
+          "image": "https://picsum.photos/400/533?random=50",
           "title": "Một ngày ở công xưởng",
           "hint": "factory worker"
         },
         {
-          "image": "https://picsum.photos/400/533?random=71",
+          "image": "https://picsum.photos/400/533?random=51",
           "title": "Lớp học tiếng Nhật buổi tối",
           "hint": "classroom learning night"
         },
         {
-          "image": "https://picsum.photos/400/533?random=72",
+          "image": "https://picsum.photos/400/533?random=52",
           "title": "Bữa cơm cùng đồng hương",
           "hint": "people eating together"
         },
         {
-          "image": "https://picsum.photos/400/533?random=73",
+          "image": "https://picsum.photos/400/533?random=53",
           "title": "Cảnh đẹp mùa hoa anh đào",
           "hint": "cherry blossom"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=54",
+          "title": "Góc làm việc chăm chỉ",
+          "hint": "desk working"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=55",
+          "title": "Cuối tuần khám phá thành phố",
+          "hint": "city tourism"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=56",
+          "title": "Kỷ niệm ngày lễ cùng bạn bè",
+          "hint": "friends festival"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=57",
+          "title": "Chuẩn bị bữa ăn cho tuần mới",
+          "hint": "meal prep"
         }
       ]
     },
