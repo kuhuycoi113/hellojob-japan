@@ -185,11 +185,11 @@
     ],
     "newsTitle": "Tin tức & Bài viết",
     "articles": [
-        { "category": "Cuộc sống ở Nhật", "title": "Văn hóa làm việc tại Nhật: Hiểu về 'Hou-Ren-Sou' và những điều người lao động cần biết", "readTime": "5 phút đọc" },
+        { "category": "Cuộc sống ở Nhật", "title": "Văn hóa làm việc tại Nhật: Hiểu về 'Hou-Ren-Sou' dành cho người lao động", "readTime": "5 phút đọc" },
         { "category": "Kinh nghiệm phỏng vấn", "title": "Mẹo trình bày 'Jikoshoukai' (tự giới thiệu bản thân) ấn tượng dành cho người lao động", "readTime": "6 phút đọc" },
         { "category": "Pháp luật lao động", "title": "Cập nhật mới nhất về luật lao động Nhật Bản dành cho lao động nước ngoài", "readTime": "8 phút đọc" },
         { "category": "Tin tức thị trường", "title": "Nhật Bản đối mặt với tình trạng thiếu hụt lao động trầm trọng", "readTime": "4 phút đọc" },
-        { "category": "Kỹ năng đặc định", "title": "Hướng dẫn chi tiết về kỳ thi Kỹ năng đặc định ngành Xây dựng cho người lao động", "readTime": "7 phút đọc" },
+        { "category": "Kỹ năng đặc định", "title": "Hướng dẫn chi tiết về kỳ thi Kỹ năng đặc định ngành Xây dựng dành cho người lao động", "readTime": "7 phút đọc" },
         { "category": "Cuộc sống ở Nhật", "title": "Làm thế nào để tìm nhà ở giá rẻ cho người lao động nước ngoài tại Nhật?", "readTime": "5 phút đọc" }
     ],
     "shareContentButton": "Chia sẻ nội dung của bạn"
