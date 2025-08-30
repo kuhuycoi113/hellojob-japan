@@ -213,12 +213,16 @@
       {
         "title": "労働者向けの日本の労働契約の種類に関する詳細な議論",
         "duration": "15:20",
-        "category": "労働法"
+        "category": "労働法",
+        "image": "https://picsum.photos/600/400?random=40",
+        "hint": "legal document discussion"
       },
       {
         "title": "実習生から特定技能へ：経験者からの話",
         "duration": "22:45",
-        "category": "経験談"
+        "category": "経験談",
+        "image": "https://picsum.photos/600/400?random=41",
+        "hint": "success story interview"
       }
     ],
     "newPostsTitle": "新着記事",
@@ -748,12 +752,14 @@
       "go": "技能実習3号"
     },
     "skilled": {
-      "japan": "国内試験",
-      "vietnam": "国外試験"
+      "japan": "日本国内特定技能候補者",
+      "vietnam": "ベトナムからくる特定技能候補者"
     },
     "engineer": {
-      "japan": "国内採用",
-      "vietnam": "国外採用"
+      "japan": "日本国内の技術・人文知識・国際業務候補者",
+      "vietnam": "ベトナムからくる技術・人文知識・国際業務候補者"
     }
   }
 }
+
+    
