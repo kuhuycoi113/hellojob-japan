@@ -15,11 +15,15 @@ import { useLanguage } from '@/contexts/language-context';
 import { Building, Handshake, Users, ChevronRight, Briefcase, GraduationCap, Star } from 'lucide-react';
 import { useState } from 'react';
 
+type VisaType = 'intern' | 'skilled' | 'engineer';
+
 export function Cta() {
   const { t } = useLanguage();
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
   const [visaDialogOpen, setVisaDialogOpen] = useState(false);
+  const [visaSubTypeDialogOpen, setVisaSubTypeDialogOpen] = useState(false);
   const [isForContact, setIsForContact] = useState(false);
+  const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
 
   const userRoles = [
     {
@@ -59,27 +63,49 @@ export function Cta() {
         icon: <GraduationCap className="h-8 w-8 text-primary" />,
         title: t.visaTypes.intern.title,
         description: t.visaTypes.intern.description,
-        href: "/post-job-ai",
+        type: 'intern' as VisaType,
       },
       {
         icon: <Star className="h-8 w-8 text-yellow-500" />,
         title: t.visaTypes.skilled.title,
         description: t.visaTypes.skilled.description,
-        href: "/post-job-ai",
+        type: 'skilled' as VisaType,
       },
       {
         icon: <Briefcase className="h-8 w-8 text-green-500" />,
         title: t.visaTypes.engineer.title,
         description: t.visaTypes.engineer.description,
-        href: "/post-job-ai",
+        type: 'engineer' as VisaType,
       },
   ]
+
+  const visaSubTypes = {
+    intern: [
+      { title: t.visaSubTypes.intern.threeYear, href: "/post-job-ai"},
+      { title: t.visaSubTypes.intern.oneYear, href: "/post-job-ai"},
+      { title: t.visaSubTypes.intern.go, href: "/post-job-ai"},
+    ],
+    skilled: [
+      { title: t.visaSubTypes.skilled.japan, href: "/post-job-ai"},
+      { title: t.visaSubTypes.skilled.vietnam, href: "/post-job-ai"},
+    ],
+    engineer: [
+      { title: t.visaSubTypes.engineer.japan, href: "/post-job-ai"},
+      { title: t.visaSubTypes.engineer.vietnam, href: "/post-job-ai"},
+    ],
+  };
 
   const handleRoleSelect = () => {
     if (!isForContact) {
       setRoleDialogOpen(false);
       setVisaDialogOpen(true);
     }
+  }
+
+  const handleVisaTypeSelect = (type: VisaType) => {
+    setSelectedVisaType(type);
+    setVisaDialogOpen(false);
+    setVisaSubTypeDialogOpen(true);
   }
 
   return (
@@ -179,7 +205,7 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
                 {visaTypes.map((visa) => (
-                  <Link href={visa.href} key={visa.title}>
+                  <div key={visa.title} onClick={() => handleVisaTypeSelect(visa.type)}>
                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
                       <div className="bg-primary/5 p-3 rounded-lg mb-4">
                         {visa.icon}
@@ -193,11 +219,31 @@ export function Cta() {
                         </p>
                       </div>
                     </Card>
+                  </div>
+                ))}
+              </div>
+            </DialogContent>
+        </Dialog>
+
+        <Dialog open={visaSubTypeDialogOpen} onOpenChange={setVisaSubTypeDialogOpen}>
+           <DialogContent className="sm:max-w-xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaSubTypes.title}</DialogTitle>
+              </DialogHeader>
+              <div className="grid grid-cols-1 gap-4 py-4">
+                {selectedVisaType && visaSubTypes[selectedVisaType].map((subType) => (
+                  <Link href={subType.href} key={subType.title} passHref>
+                    <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
+                      <h3 className="font-semibold text-base text-gray-800">
+                        {subType.title}
+                      </h3>
+                    </Card>
                   </Link>
                 ))}
               </div>
             </DialogContent>
         </Dialog>
+
       </div>
     </section>
   );

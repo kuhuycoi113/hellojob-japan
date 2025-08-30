@@ -739,5 +739,21 @@
       "title": "Engineer / Specialist",
       "description": "Highly qualified professionals with degrees."
     }
+  },
+  "visaSubTypes": {
+    "title": "Please select a sub-type",
+    "intern": {
+      "threeYear": "3-Year Intern",
+      "oneYear": "1-Year Intern",
+      "go": "No. 3 Intern"
+    },
+    "skilled": {
+      "japan": "In Japan",
+      "vietnam": "In Vietnam"
+    },
+    "engineer": {
+      "japan": "In Japan",
+      "vietnam": "In Vietnam"
+    }
   }
 }

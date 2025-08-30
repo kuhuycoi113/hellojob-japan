@@ -739,5 +739,21 @@
       "title": "Kỹ sư, tri thức",
       "description": "Chuyên gia có trình độ cao, bằng cấp chuyên ngành."
     }
+  },
+  "visaSubTypes": {
+    "title": "Vui lòng chọn chi tiết hơn",
+    "intern": {
+      "threeYear": "Thực tập sinh 3 năm",
+      "oneYear": "Thực tập sinh 1 năm",
+      "go": "Thực tập sinh 3 Go"
+    },
+    "skilled": {
+      "japan": "Đặc định đầu Nhật",
+      "vietnam": "Đặc định đầu Việt"
+    },
+    "engineer": {
+      "japan": "Kỹ sư, tri thức đầu Nhật",
+      "vietnam": "Kỹ sư, tri thức đầu Việt"
+    }
   }
 }

@@ -739,5 +739,21 @@
       "title": "技術・人文知識・国際業務",
       "description": "学位を持つ高度な専門家。"
     }
+  },
+  "visaSubTypes": {
+    "title": "詳細を選択してください",
+    "intern": {
+      "threeYear": "技能実習3年",
+      "oneYear": "技能実習1年",
+      "go": "技能実習3号"
+    },
+    "skilled": {
+      "japan": "国内試験",
+      "vietnam": "国外試験"
+    },
+    "engineer": {
+      "japan": "国内採用",
+      "vietnam": "国外採用"
+    }
   }
 }
