@@ -707,6 +707,14 @@
     "sendingCompany": {
       "title": "Công ty phái cử (Okuridashi Kikan)",
       "description": "Tuyển và phái cử lao động từ Việt Nam."
+    },
+    "hakenCompany": {
+      "title": "Công ty Haken (Nhân sự phái cử)",
+      "description": "Phái cử nhân viên tạm thời."
+    },
+    "yuryoShokai": {
+      "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
+      "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
     }
   }
 }

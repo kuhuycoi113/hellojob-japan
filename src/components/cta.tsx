@@ -42,6 +42,18 @@ export function Cta() {
       description: t.userRoles.sendingCompany.description,
       href: "/post-job-ai",
     },
+    {
+      icon: <Users className="h-8 w-8 text-blue-500" />,
+      title: t.userRoles.hakenCompany.title,
+      description: t.userRoles.hakenCompany.description,
+      href: "/post-job-ai",
+    },
+    {
+      icon: <Users className="h-8 w-8 text-purple-500" />,
+      title: t.userRoles.yuryoShokai.title,
+      description: t.userRoles.yuryoShokai.description,
+      href: "/post-job-ai",
+    },
   ];
 
   return (

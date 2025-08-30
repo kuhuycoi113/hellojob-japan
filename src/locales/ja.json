@@ -707,6 +707,14 @@
     "sendingCompany": {
       "title": "送り出し機関",
       "description": "ベトナムから労働者を募集・派遣する。"
+    },
+    "hakenCompany": {
+      "title": "人材派遣会社",
+      "description": "人材を派遣する。"
+    },
+    "yuryoShokai": {
+      "title": "有料職業紹介事業者",
+      "description": "有料で職業紹介を行う。"
     }
   }
 }
