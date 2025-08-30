@@ -163,7 +163,7 @@ export function HandbookSection() {
                         <Video className="w-6 h-6 text-primary" />
                         {t.handbook.videoTitle}
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                         {shortVideos.map((video, index) => (
                         <Card
                             key={index}
