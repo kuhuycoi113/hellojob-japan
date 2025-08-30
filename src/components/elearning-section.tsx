@@ -27,12 +27,14 @@ export function ElearningSection() {
     <section className="py-16 sm:py-24 bg-blue-50/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <div className="inline-block bg-primary/10 text-primary p-3 rounded-lg mb-4">
-            <BookOpen className="h-8 w-8" />
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <div className="inline-block bg-primary/10 text-primary p-3 rounded-lg">
+              <BookOpen className="h-8 w-8" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-bold font-headline text-gray-800">
+              {t.elearning.heroTitle}
+            </h1>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold font-headline text-gray-800">
-            {t.elearning.heroTitle}
-          </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
             {t.elearning.heroSubtitle}
           </p>
