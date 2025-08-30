@@ -188,7 +188,7 @@
     ],
     "longVideos": [
       {
-        "title": "Thảo luận chi tiết về các loại hợp đồng lao động tại Nhật",
+        "title": "Thảo luận chi tiết về các loại hợp đồng lao động tại Nhật dành cho người lao động",
         "duration": "15:20",
         "category": "Pháp luật lao động"
       },
@@ -217,6 +217,31 @@
         "title": "Chi phí sinh hoạt tại các thành phố lớn ở Nhật Bản là bao nhiêu dành cho người lao động?"
       }
     ],
+    "imageStories": {
+      "title": "Câu chuyện qua ảnh",
+      "stories": [
+        {
+          "image": "https://picsum.photos/400/533?random=50",
+          "title": "Một ngày ở công xưởng",
+          "hint": "factory worker"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=51",
+          "title": "Lớp học tiếng Nhật buổi tối",
+          "hint": "classroom learning night"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=52",
+          "title": "Bữa cơm cùng đồng hương",
+          "hint": "people eating together"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=53",
+          "title": "Cảnh đẹp mùa hoa anh đào",
+          "hint": "cherry blossom"
+        }
+      ]
+    },
     "newsTitle": "Tin tức & Bài viết",
     "articles": [
       {
@@ -288,6 +313,18 @@
       "title": "Đặt một câu hỏi",
       "description": "Bắt đầu một cuộc thảo luận bằng cách hỏi cộng đồng về ý kiến hoặc lời khuyên của họ về một chủ đề nào đó."
     }
+  },
+  "shareImagePost": {
+    "title": "Chia sẻ bài viết ảnh",
+    "subtitle": "Một hình ảnh đáng giá ngàn lời nói. Hãy chia sẻ khoảnh khắc của bạn với cộng đồng.",
+    "imageLabel": "Hình ảnh",
+    "uploadPrompt": "Nhấp hoặc kéo thả file vào đây để tải lên",
+    "uploadHint": "PNG, JPG, GIF lên đến 10MB",
+    "titleLabel": "Tiêu đề",
+    "titlePlaceholder": "Thêm tiêu đề cho ảnh của bạn",
+    "contentLabel": "Chú thích",
+    "contentPlaceholder": "Viết chú thích ở đây...",
+    "submitButton": "Đăng bài"
   },
   "howItWorks": {
     "title": "Quy trình tuyển dụng chiến lược",

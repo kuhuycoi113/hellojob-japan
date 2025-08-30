@@ -20,6 +20,7 @@ import {
   FileText,
   Image as ImageIcon,
   Smartphone,
+  Camera,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import {
@@ -75,6 +76,7 @@ export function HandbookSection() {
   ];
 
   const longVideos = t.handbook.longVideos;
+  const imageStories = t.handbook.imageStories;
 
   const newsAndArticles = t.handbook.articles;
 
@@ -89,7 +91,7 @@ export function HandbookSection() {
       icon: <ImageIcon className="w-10 h-10 text-yellow-500" />,
       title: t.handbook.shareOptions.image,
       description: t.handbook.shareOptions.imageDesc,
-      href: '#',
+      href: "/handbook/share-image-post",
     },
     {
       icon: <Smartphone className="w-10 h-10 text-green-500" />,
@@ -174,6 +176,32 @@ export function HandbookSection() {
                         {post.title}
                       </h4>
                     </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            
+            {/* Image Stories */}
+            <div>
+              <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                <Camera className="w-6 h-6 text-primary" />
+                {t.handbook.imageStories.title}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {imageStories.stories.map((story, index) => (
+                  <Card key={index} className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow aspect-w-3 aspect-h-4">
+                     <div className="relative w-full h-full">
+                       <Image
+                          src={story.image}
+                          alt={story.title}
+                          fill
+                          className="object-cover"
+                          data-ai-hint={story.hint}
+                        />
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                          <h4 className="font-bold text-white text-lg leading-tight drop-shadow-md">{story.title}</h4>
+                       </div>
+                     </div>
                   </Card>
                 ))}
               </div>

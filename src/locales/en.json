@@ -188,7 +188,7 @@
     ],
     "longVideos": [
       {
-        "title": "A detailed discussion on the types of labor contracts in Japan",
+        "title": "A detailed discussion on the types of labor contracts in Japan for workers",
         "duration": "15:20",
         "category": "Labor Law"
       },
@@ -217,6 +217,31 @@
         "title": "What's the Cost of Living in Japan's Major Cities for Laborers?"
       }
     ],
+    "imageStories": {
+      "title": "Stories in Pictures",
+      "stories": [
+        {
+          "image": "https://picsum.photos/400/533?random=50",
+          "title": "A Day at the Factory",
+          "hint": "factory worker"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=51",
+          "title": "Evening Japanese Class",
+          "hint": "classroom learning night"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=52",
+          "title": "Meal with Compatriots",
+          "hint": "people eating together"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=53",
+          "title": "Cherry Blossom Season",
+          "hint": "cherry blossom"
+        }
+      ]
+    },
     "newsTitle": "News & Articles",
     "articles": [
       {
@@ -288,6 +313,18 @@
       "title": "Ask a question",
       "description": "Start a discussion by asking the community for their opinions or advice on a topic."
     }
+  },
+   "shareImagePost": {
+    "title": "Share an Image Post",
+    "subtitle": "A picture is worth a thousand words. Share your moment with the community.",
+    "imageLabel": "Image",
+    "uploadPrompt": "Click or drag file to this area to upload",
+    "uploadHint": "PNG, JPG, GIF up to 10MB",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Add a title for your image",
+    "contentLabel": "Caption",
+    "contentPlaceholder": "Write a caption here...",
+    "submitButton": "Post"
   },
   "howItWorks": {
     "title": "Strategic Recruitment Process",
