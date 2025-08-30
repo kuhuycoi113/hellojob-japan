@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check, ArrowRight, BookOpen } from 'lucide-react';
@@ -60,9 +61,11 @@ export function ElearningSection() {
                   </li>
                 ))}
               </ul>
-              <Button size="lg" className="w-full md:w-auto self-start">
-                {course.cta}
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="w-full md:w-auto self-start" asChild>
+                <Link href="/elearning/course">
+                  {course.cta}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
           </div>

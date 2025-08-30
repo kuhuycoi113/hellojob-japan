@@ -118,9 +118,9 @@
   },
   "ai_job_post_form": {
     "suggestions": {
-      "s1": "Thợ hàn ở Aichi",
-      "s2": "Nhân viên chăm sóc viện dưỡng lão",
-      "s3": "Comtor IT ở Tokyo"
+      "s1": "Welder in Aichi",
+      "s2": "Caregiver staff for nursing home",
+      "s3": "IT Comtor in Tokyo"
     },
     "input": {
       "title": "1. Mô tả công việc của bạn",
@@ -249,7 +249,7 @@
     "complete": "Hoàn thành Đánh giá",
     "startOver": "Làm lại từ đầu",
     "values": [
-      "Trách nhiệm giải trình", "Thành tích", "Khả năng thích ứng", "Cân bằng", "Sự thuộc về", "Hợp tác", "Cam kết", "Cộng đồng", "Lòng trắc ẩn", "Năng lực", "Đóng góp", "Can đảm", "Sáng tạo", "Tò mò", "Sự hài lòng của khách hàng", "Đa dạng", "Đồng cảm", "Trao quyền", "Nhiệt tình", "Bảo vệ môi trường", "Công bằng", "Xuất sắc", "Sự công bằng", "Gia đình", "Ổn định tài chính", "Tha thứ", "Tự do", "Vui vẻ", "Hào phóng", "Lòng biết ơn", "Tăng trưởng", "Hài hòa", "Sức khỏe", "Trung thực", "Khiêm tốn", "Hài hước", "Hòa nhập", "Độc lập", "Sáng kiến", "Đổi mới", "Chính trực", "Công lý", "Tử tế", "Kiến thức", "Lãnh đạo", "Học hỏi", "Lòng trung thành", "Tạo ra sự khác biệt", "Cởi mở", "Lạc quan", "Trật tự", "Kiên nhẫn", "Lòng yêu nước", "Hòa bình", "Hiệu suất", "Kiên trì", "Sự viên mãn cá nhân", "Quyền lực", "Niềm tự hào", "Sự công nhận", "Tôn trọng", "Trách nhiệm", "Chấp nhận rủi ro", "An toàn", "An ninh", "Kỷ luật tự giác", "Phục vụ", "Đơn giản", "Tâm linh", "Ổn định", "Thành công", "Làm việc nhóm", "Sự chu đáo", "Truyền thống", "Minh bạch", "Tin tưởng", "Sự thật", "Thấu hiểu", "Tính độc đáo", "Tầm nhìn", "Sự giàu có", "Hạnh phúc", "Trí tuệ"
+      "Trách nhiệm giải trình", "Thành tích", "Khả năng thích ứng", "Cân bằng", "Sự thuộc về", "Hợp tác", "Cam kết", "Cộng đồng", "Lòng trắc ẩn", "Năng lực", "Đóng góp", "Can đảm", "Sáng tạo", "Tò mò", "Sự hài lòng của khách hàng", "Đa dạng", "Đồng cảm", "Trao quyền", "Nhiệt tình", "Bảo vệ môi trường", "Bình đẳng", "Xuất sắc", "Sự công bằng", "Gia đình", "Ổn định tài chính", "Tha thứ", "Tự do", "Vui vẻ", "Hào phóng", "Lòng biết ơn", "Tăng trưởng", "Hài hòa", "Sức khỏe", "Trung thực", "Khiêm tốn", "Hài hước", "Hòa nhập", "Độc lập", "Sáng kiến", "Đổi mới", "Chính trực", "Công lý", "Tử tế", "Kiến thức", "Lãnh đạo", "Học hỏi", "Lòng trung thành", "Tạo ra sự khác biệt", "Cởi mở", "Lạc quan", "Trật tự", "Kiên nhẫn", "Lòng yêu nước", "Hòa bình", "Hiệu suất", "Kiên trì", "Sự viên mãn cá nhân", "Quyền lực", "Niềm tự hào", "Sự công nhận", "Tôn trọng", "Trách nhiệm", "Chấp nhận rủi ro", "An toàn", "An ninh", "Kỷ luật tự giác", "Phục vụ", "Đơn giản", "Tâm linh", "Ổn định", "Thành công", "Làm việc nhóm", "Sự chu đáo", "Truyền thống", "Minh bạch", "Tin tưởng", "Sự thật", "Thấu hiểu", "Tính độc đáo", "Tầm nhìn", "Sự giàu có", "Hạnh phúc", "Trí tuệ"
     ]
   },
   "gallupTest": {
@@ -335,6 +335,30 @@
       "button": "Phân tích với AI",
       "title": "Phân tích & Gợi ý từ AI",
       "loading": "Đang phân tích... Vui lòng chờ trong giây lát."
+    }
+  },
+   "courseDetail": {
+    "category": "Ngoại ngữ",
+    "title": "Tiếng Nhật giao tiếp cho người đi làm (Minna no Nihongo)",
+    "description": "Khóa học được thiết kế đặc biệt cho người lao động, bám sát giáo trình Minna no Nihongo uy tín, tập trung vào các mẫu câu giao tiếp và từ vựng chuyên ngành thường dùng trong môi trường nhà máy Nhật Bản.",
+    "courseContent": "Nội dung khóa học",
+    "information": "Thông tin",
+    "video": {
+      "unavailable": "Video không có sẵn",
+      "notWorking": "Video này không hoạt động"
+    },
+    "lessons": [
+      { "title": "Bài 1: Giới thiệu bản thân", "duration": "15:20" },
+      { "title": "Bài 2: Cái này, cái đó, cái kia", "duration": "18:45" },
+      { "title": "Bài 3: Địa điểm, nơi chốn", "duration": "20:10" },
+      { "title": "Bài 4: Động từ và thời gian", "duration": "22:55" },
+      { "title": "Bài 5: Di chuyển", "duration": "19:30" }
+    ],
+    "info": {
+      "level": { "label": "Cấp độ", "value": "N5" },
+      "lessons": { "label": "Số bài học", "value": "25" },
+      "students": { "label": "Học viên", "value": "1,258" },
+      "rating": { "label": "Đánh giá", "value": "4.8 / 5" }
     }
   }
 }

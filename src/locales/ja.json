@@ -336,5 +336,29 @@
       "title": "AI分析と推奨",
       "loading": "分析中... しばらくお待ちください。"
     }
+  },
+  "courseDetail": {
+    "category": "言語",
+    "title": "ビジネス日本語会話（みんなの日本語）",
+    "description": "労働者向けに特別に設計されたコースで、信頼性の高い「みんなの日本語」の教科書に沿って、日本の工場環境で一般的に使用される会話パターンと専門語彙に焦点を当てています。",
+    "courseContent": "コース内容",
+    "information": "情報",
+    "video": {
+      "unavailable": "ビデオが利用できません",
+      "notWorking": "このビデオは機能していません"
+    },
+    "lessons": [
+      { "title": "第1課：自己紹介", "duration": "15:20" },
+      { "title": "第2課：これ、それ、あれ", "duration": "18:45" },
+      { "title": "第3課：場所、ところ", "duration": "20:10" },
+      { "title": "第4課：動詞と時間", "duration": "22:55" },
+      { "title": "第5課：移動", "duration": "19:30" }
+    ],
+    "info": {
+      "level": { "label": "レベル", "value": "N5" },
+      "lessons": { "label": "レッスン数", "value": "25" },
+      "students": { "label": "受講者数", "value": "1,258" },
+      "rating": { "label": "評価", "value": "4.8 / 5" }
+    }
   }
 }

@@ -336,5 +336,29 @@
       "title": "AI Analysis & Recommendation",
       "loading": "Analyzing... This may take a moment."
     }
+  },
+  "courseDetail": {
+    "category": "Language",
+    "title": "Japanese for Business Communication (Minna no Nihongo)",
+    "description": "A course specially designed for workers, closely following the reputable Minna no Nihongo curriculum, focusing on conversational patterns and specialized vocabulary commonly used in Japanese factory environments.",
+    "courseContent": "Course Content",
+    "information": "Information",
+     "video": {
+      "unavailable": "Video unavailable",
+      "notWorking": "This video is not working"
+    },
+    "lessons": [
+      { "title": "Lesson 1: Self-introduction", "duration": "15:20" },
+      { "title": "Lesson 2: This, That, That over there", "duration": "18:45" },
+      { "title": "Lesson 3: Place, Location", "duration": "20:10" },
+      { "title": "Lesson 4: Verbs and Time", "duration": "22:55" },
+      { "title": "Lesson 5: Movement", "duration": "19:30" }
+    ],
+    "info": {
+      "level": { "label": "Level", "value": "N5" },
+      "lessons": { "label": "Lessons", "value": "25" },
+      "students": { "label": "Students", "value": "1,258" },
+      "rating": { "label": "Rating", "value": "4.8 / 5" }
+    }
   }
 }
