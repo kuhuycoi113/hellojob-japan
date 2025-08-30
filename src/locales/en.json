@@ -192,21 +192,29 @@
     ]
   },
   "howItWorks": {
-    "title": "How It Works",
-    "subtitle": "A simple 4-step process to find the perfect candidate for your business.",
+    "title": "Strategic Recruitment Process",
+    "subtitle": "A comprehensive 6-step roadmap to help you not just find people, but recruit the right people.",
     "step1": {
+      "title": "Discover Your Culture",
+      "description": "Take tests to deeply understand your company's values and culture, forming a basis to select the right fit."
+    },
+    "step2": {
+      "title": "Equip Yourself",
+      "description": "Use E-learning and handbooks to learn how to recruit, train, and manage Vietnamese workers effectively."
+    },
+    "step3": {
       "title": "Post a Job",
       "description": "Create and post a detailed job listing, or use our AI to generate one quickly."
     },
-    "step2": {
+    "step4": {
       "title": "Search & Screen",
       "description": "Use advanced filters to search for candidates by industry, skills, and experience."
     },
-    "step3": {
+    "step5": {
       "title": "Review & Interview",
       "description": "View detailed profiles, watch introduction videos, and schedule interviews directly on the platform."
     },
-    "step4": {
+    "step6": {
       "title": "Hire & Onboard",
       "description": "Send job offers and get support from HelloJob for legal procedures and contracts."
     }
