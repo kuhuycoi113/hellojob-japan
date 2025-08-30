@@ -153,7 +153,7 @@
   "ai_job_post_form": {
     "your_selections_title": "Loại Visa bạn chọn",
     "suggestions": {
-      "title": "Thử một vài gợi ý:",
+      "title": "Hoặc bắt đầu với một vài gợi ý:",
       "s1_title": "Mô tả thông tin cá nhân",
       "s1_desc": "'Tôi là sinh viên năm cuối trường X, chuyên ngành Y, đang tìm kiếm cơ hội thực tập...'",
       "s2_title": "Đăng từ hồ sơ có sẵn",
@@ -165,7 +165,7 @@
       "title": "1. Mô tả công việc của bạn",
       "description": "Cung cấp một vài từ khóa, một câu, hoặc thậm chí dán một mô tả công việc có sẵn. Càng chi tiết, kết quả càng tốt.",
       "reset": "Tạo mới",
-      "manual_post": "Nhập liệu thủ công"
+      "manual_post": "Nhập liệu thủ công để đăng"
     },
     "output": {
       "title": "2. Kết quả từ AI",

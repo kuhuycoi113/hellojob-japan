@@ -149,12 +149,6 @@ export function AiJobPostForm() {
               {state === 'completed' && (
                   <Button variant="outline" onClick={handleReset}>{t.ai_job_post_form.input.reset}</Button>
               )}
-              <Button variant="outline" asChild>
-                <Link href="/">
-                    <Pencil className="mr-2 h-4 w-4" />
-                    {t.ai_job_post_form.input.manual_post}
-                </Link>
-              </Button>
               <Button size="lg" onClick={handleGenerate} disabled={state === 'loading'}>
                 {state === 'loading' ? (
                   <LoaderCircle className="animate-spin" />
@@ -223,6 +217,16 @@ export function AiJobPostForm() {
                 </div>
               )}
             </CardContent>
+             {state === 'completed' && (
+              <CardFooter>
+                 <Button variant="outline" asChild className="w-full">
+                    <Link href="/">
+                        <Pencil className="mr-2 h-4 w-4" />
+                        {t.ai_job_post_form.input.manual_post}
+                    </Link>
+                </Button>
+              </CardFooter>
+            )}
           </Card>
         </div>
       </div>
