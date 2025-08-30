@@ -217,6 +217,31 @@
         "title": "労働者向け！日本の主要都市での生活費はどのくらい？"
       }
     ],
+    "imagePosts": {
+      "title": "写真の物語",
+      "posts": [
+        {
+          "image": "https://picsum.photos/400/533?random=70",
+          "title": "工場での一日",
+          "hint": "factory worker"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=71",
+          "title": "夜の日本語教室",
+          "hint": "classroom learning night"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=72",
+          "title": "同郷の仲間との夕食",
+          "hint": "people eating together"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=73",
+          "title": "桜の季節の美しい風景",
+          "hint": "cherry blossom"
+        }
+      ]
+    },
     "newsTitle": "ニュース & 投稿",
     "articles": [
       {

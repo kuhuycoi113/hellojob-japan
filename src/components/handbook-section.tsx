@@ -179,6 +179,37 @@ export function HandbookSection() {
               </div>
             </div>
 
+            {/* Image Posts */}
+            <div>
+              <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                <ImageIcon className="w-6 h-6 text-primary" />
+                {t.handbook.imagePosts.title}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                {t.handbook.imagePosts.posts.map((post, index) => (
+                  <Card
+                    key={index}
+                    className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
+                  >
+                    <div className="relative aspect-[3/4]">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover w-full h-full"
+                        data-ai-hint={post.hint}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+                        <h4 className="font-bold text-white text-lg leading-tight drop-shadow-md">
+                          {post.title}
+                        </h4>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
             {/* Long Videos */}
             <div>
               <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">

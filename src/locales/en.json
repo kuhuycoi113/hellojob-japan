@@ -217,6 +217,31 @@
         "title": "What's the Cost of Living in Japan's Major Cities for Laborers?"
       }
     ],
+    "imagePosts": {
+      "title": "Image Stories",
+      "posts": [
+        {
+          "image": "https://picsum.photos/400/533?random=70",
+          "title": "A day at the factory",
+          "hint": "factory worker"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=71",
+          "title": "Evening Japanese class",
+          "hint": "classroom learning night"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=72",
+          "title": "Dinner with compatriots",
+          "hint": "people eating together"
+        },
+        {
+          "image": "https://picsum.photos/400/533?random=73",
+          "title": "The beauty of cherry blossom season",
+          "hint": "cherry blossom"
+        }
+      ]
+    },
     "newsTitle": "News & Articles",
     "articles": [
       {
