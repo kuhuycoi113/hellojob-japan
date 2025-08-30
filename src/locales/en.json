@@ -108,19 +108,42 @@
     "title": "Create Job Postings with the Power of AI",
     "subtitle": "Describe the job you need, and let our AI generate an engaging and professional job posting in seconds.",
     "placeholder": "Example: Seeking a software engineer with 3 years of experience in React, Node.js, and AWS. Strong Japanese communication skills required...",
-    "submit": "Submit",
-    "suggestionsTitle": "Or try one of these suggestions:",
-    "describeJob": {
-      "title": "Describe Job Details",
-      "description": "Provide the requirements, skills, and benefits for the AI to create the most complete job posting."
+    "submit": "Generate",
+    "suggestionsTitle": "Or start with a suggestion:",
+    "suggestions": {
+      "s1": "Welder in Aichi",
+      "s2": "Caregiver staff for nursing home",
+      "s3": "IT Comtor in Tokyo"
+    }
+  },
+  "ai_job_post_form": {
+    "suggestions": {
+      "s1": "Welder in Aichi",
+      "s2": "Caregiver staff for nursing home",
+      "s3": "IT Comtor in Tokyo"
     },
-    "uploadJob": {
-      "title": "Post from an Existing File",
-      "description": "Upload a PDF or Word file with the job description for the AI to automatically extract and create the post."
+    "input": {
+      "title": "1. Describe your job",
+      "description": "Provide a few keywords, a sentence, or even paste an existing job description. The more detail you provide, the better the result.",
+      "reset": "Create New"
     },
-    "voiceJob": {
-      "title": "Create Post with Voice",
-      "description": "Just click the button and describe the job, and we'll take care of the rest."
+    "output": {
+      "title": "2. AI-Generated Result",
+      "description": "Here is the job posting created by AI. You can copy it, or go back and refine your description.",
+      "loading": "Generating your job post...",
+      "idle": {
+        "title": "Your result will appear here",
+        "description": "Once you provide a description and click 'Generate', your professional job posting will be displayed."
+      },
+      "jobDescription": "Job Description",
+      "requirements": "Requirements",
+      "benefits": "Benefits"
+    },
+    "error": {
+      "title": "Description is empty",
+      "description": "Please provide a description of the job before generating.",
+      "apiTitle": "An error occurred",
+      "apiDescription": "There was a problem generating the job post. Please try again."
     }
   },
   "handbook": {

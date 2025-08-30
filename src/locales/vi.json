@@ -108,19 +108,42 @@
     "title": "Tạo Tin Tuyển Dụng với Sức mạnh của AI",
     "subtitle": "Mô tả công việc bạn cần, và để AI của chúng tôi tạo ra một tin tuyển dụng hấp dẫn và chuyên nghiệp chỉ trong vài giây.",
     "placeholder": "Ví dụ: Tìm kiếm kỹ sư phần mềm có 3 năm kinh nghiệm làm việc với React, Node.js và AWS. Yêu cầu giao tiếp tiếng Nhật tốt...",
-    "submit": "Gửi",
-    "suggestionsTitle": "Hoặc thử một vài gợi ý:",
-    "describeJob": {
-      "title": "Mô tả chi tiết công việc",
-      "description": "Cung cấp các yêu cầu, kỹ năng và phúc lợi để AI tạo ra tin tuyển dụng đầy đủ nhất."
+    "submit": "Tạo tin",
+    "suggestionsTitle": "Hoặc bắt đầu với gợi ý:",
+    "suggestions": {
+      "s1": "Thợ hàn ở Aichi",
+      "s2": "Nhân viên chăm sóc viện dưỡng lão",
+      "s3": "Comtor IT ở Tokyo"
+    }
+  },
+  "ai_job_post_form": {
+    "suggestions": {
+      "s1": "Thợ hàn ở Aichi",
+      "s2": "Nhân viên chăm sóc viện dưỡng lão",
+      "s3": "Comtor IT ở Tokyo"
     },
-    "uploadJob": {
-      "title": "Đăng từ mô tả có sẵn",
-      "description": "Tải lên tệp PDF hoặc Word chứa mô tả công việc để AI tự động trích xuất và tạo tin."
+    "input": {
+      "title": "1. Mô tả công việc của bạn",
+      "description": "Cung cấp một vài từ khóa, một câu, hoặc thậm chí dán một mô tả công việc có sẵn. Càng chi tiết, kết quả càng tốt.",
+      "reset": "Tạo mới"
     },
-    "voiceJob": {
-      "title": "Tạo tin bằng giọng nói",
-      "description": "Chỉ cần bấm nút và mô tả công việc, chúng tôi sẽ lo phần còn lại."
+    "output": {
+      "title": "2. Kết quả từ AI",
+      "description": "Đây là tin tuyển dụng được tạo bởi AI. Bạn có thể sao chép hoặc quay lại để tinh chỉnh mô tả của mình.",
+      "loading": "Đang tạo tin tuyển dụng của bạn...",
+      "idle": {
+        "title": "Kết quả sẽ xuất hiện ở đây",
+        "description": "Sau khi bạn cung cấp mô tả và nhấp vào 'Tạo tin', tin tuyển dụng chuyên nghiệp của bạn sẽ được hiển thị."
+      },
+      "jobDescription": "Mô tả công việc",
+      "requirements": "Yêu cầu",
+      "benefits": "Quyền lợi"
+    },
+    "error": {
+      "title": "Mô tả trống",
+      "description": "Vui lòng cung cấp mô tả công việc trước khi tạo.",
+      "apiTitle": "Đã có lỗi xảy ra",
+      "apiDescription": "Đã có sự cố khi tạo tin tuyển dụng. Vui lòng thử lại."
     }
   },
   "handbook": {
