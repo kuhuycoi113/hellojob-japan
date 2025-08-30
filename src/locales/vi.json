@@ -716,5 +716,12 @@
       "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
       "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
     }
+  },
+  "chat": {
+    "title": "Trợ lý AI HelloJob",
+    "statusOnline": "Đang hoạt động",
+    "placeholder": "Nhập câu hỏi của bạn ở đây...",
+    "greeting": "Xin chào quý khách hàng {role}. Tôi có thể giúp gì cho bạn hôm nay?",
+    "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?"
   }
 }

@@ -716,5 +716,12 @@
       "title": "有料職業紹介事業者",
       "description": "有料で職業紹介を行う。"
     }
+  },
+  "chat": {
+    "title": "HelloJob AIアシスタント",
+    "statusOnline": "オンライン",
+    "placeholder": "ここに質問を入力してください...",
+    "greeting": "こんにちは、{role}のお客様。本日はどのようなご用件でしょうか？",
+    "defaultGreeting": "こんにちは。本日はどのようなご用件でしょうか？"
   }
 }

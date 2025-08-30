@@ -716,5 +716,12 @@
       "title": "Paid Placement Agency (Yuryo Shokai)",
       "description": "Providing paid recruitment services."
     }
+  },
+  "chat": {
+    "title": "HelloJob AI Assistant",
+    "statusOnline": "Online",
+    "placeholder": "Type your question here...",
+    "greeting": "Hello {role} customer. How can I help you today?",
+    "defaultGreeting": "Hello. How can I help you today?"
   }
 }

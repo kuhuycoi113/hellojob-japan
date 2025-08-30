@@ -22,41 +22,41 @@ export function Cta() {
       icon: <Building className="h-8 w-8 text-primary" />,
       title: t.userRoles.hiringCompany.title,
       description: t.userRoles.hiringCompany.description,
-      href: "/post-job-ai",
+      postHref: "/post-job-ai",
     },
     {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
       description: t.userRoles.supportOrg.description,
-      href: "/post-job-ai",
+      postHref: "/post-job-ai",
     },
     {
       icon: <Handshake className="h-8 w-8 text-green-500" />,
       title: t.userRoles.union.title,
       description: t.userRoles.union.description,
-      href: "/post-job-ai",
+      postHref: "/post-job-ai",
     },
     {
       icon: <Users className="h-8 w-8 text-red-500" />,
       title: t.userRoles.sendingCompany.title,
       description: t.userRoles.sendingCompany.description,
-      href: "/post-job-ai",
+      postHref: "/post-job-ai",
     },
     {
       icon: <Users className="h-8 w-8 text-blue-500" />,
       title: t.userRoles.hakenCompany.title,
       description: t.userRoles.hakenCompany.description,
-      href: "/post-job-ai",
+      postHref: "/post-job-ai",
     },
     {
       icon: <Users className="h-8 w-8 text-purple-500" />,
       title: t.userRoles.yuryoShokai.title,
       description: t.userRoles.yuryoShokai.description,
-      href: "/post-job-ai",
+      postHref: "/post-job-ai",
     },
   ];
 
-  const UserRoleDialogContent = () => (
+  const UserRoleDialogContent = ({ forContact }: { forContact?: boolean }) => (
     <DialogContent className="sm:max-w-3xl">
       <DialogHeader>
         <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
@@ -65,26 +65,32 @@ export function Cta() {
         </DialogDescription>
       </DialogHeader>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-        {userRoles.map((role) => (
-          <Link href={role.href} key={role.title}>
-            <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/5 p-3 rounded-lg">
-                  {role.icon}
+        {userRoles.map((role) => {
+          const href = forContact
+            ? `/chat?role=${encodeURIComponent(role.title)}`
+            : role.postHref;
+          
+          return (
+            <Link href={href} key={role.title}>
+              <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/5 p-3 rounded-lg">
+                    {role.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-base text-gray-800">
+                      {role.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {role.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-base text-gray-800">
-                    {role.title}
-                  </h3>
-                   <p className="text-sm text-muted-foreground mt-1">
-                    {role.description}
-                  </p>
-                </div>
-              </div>
-               <ChevronRight className="w-5 h-5 text-muted-foreground" />
-            </Card>
-          </Link>
-        ))}
+                <ChevronRight className="w-5 h-5 text-muted-foreground" />
+              </Card>
+            </Link>
+          );
+        })}
       </div>
     </DialogContent>
   );
@@ -114,7 +120,7 @@ export function Cta() {
                 {t.cta.contactUs}
               </Button>
             </DialogTrigger>
-            <UserRoleDialogContent />
+            <UserRoleDialogContent forContact={true} />
           </Dialog>
         </div>
       </div>
