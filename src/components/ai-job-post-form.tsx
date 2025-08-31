@@ -356,7 +356,7 @@ function AiJobPostFormContent() {
                     <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {suggestionCards.map((card) => (
-                        <Card key={card.title} className="text-center p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={card.onClick}>
+                        <Card key={card.title} className="text-center p-4 hover:shadow-xl transition-all duration-200 cursor-pointer hover:-translate-y-1" onClick={card.onClick}>
                           <div className="flex justify-center mb-3">{card.icon}</div>
                           <h5 className="font-semibold text-sm mb-1">{card.title}</h5>
                           <p className="text-xs text-muted-foreground">{card.description}</p>
