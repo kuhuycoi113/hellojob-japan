@@ -68,9 +68,8 @@ export function CompanyProfile() {
                 objectFit="cover"
                 className="rounded-t-lg"
               />
-              <Button variant="outline" className="absolute bottom-4 right-4 bg-black/50 text-white hover:bg-black/60 hover:text-white border-white/50">
-                  <Camera className="mr-2 h-4 w-4"/>
-                  Thay đổi ảnh bìa
+              <Button size="icon" variant="outline" className="absolute bottom-4 right-4 bg-black/50 text-white hover:bg-black/60 hover:text-white border-white/50">
+                  <Camera className="h-4 w-4"/>
               </Button>
               <div className="absolute -bottom-12 left-6">
                 <div className="relative">
