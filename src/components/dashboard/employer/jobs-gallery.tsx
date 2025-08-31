@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/language-context';
 import { MapPin, DollarSign, Building } from 'lucide-react';
 import type { Job } from '@/locales/translations';
+import { cn } from '@/lib/utils';
 
 interface JobsGalleryProps {
     jobs: Job[];
@@ -15,6 +16,17 @@ interface JobsGalleryProps {
 
 export function JobsGallery({ jobs }: JobsGalleryProps) {
   const { t } = useLanguage();
+  
+  const getStatusVariant = (status: string): "secondary" | "outline" | "default" => {
+    switch (status) {
+      case 'Searching':
+        return 'secondary';
+      case 'Forwarding':
+        return 'default';
+      default:
+        return 'outline';
+    }
+  }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -31,7 +43,10 @@ export function JobsGallery({ jobs }: JobsGalleryProps) {
                 <Badge variant="secondary" className="absolute top-2 left-2">{job.id}</Badge>
             </div>
           <CardContent className="p-4 space-y-3">
-             <div className="flex flex-wrap gap-1">
+             <div className="flex flex-wrap gap-2">
+                <Badge variant={getStatusVariant(job.status)}>
+                    {job.status === 'Searching' ? t.dashboard_employer.job_status.searching : t.dashboard_employer.job_status.forwarding}
+                </Badge>
                 {job.tags?.map(tag => (
                      <Badge key={tag} variant="outline" className="font-normal">{tag}</Badge>
                 ))}
