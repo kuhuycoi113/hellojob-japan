@@ -14,7 +14,8 @@
     "jobPostings": "求人管理",
     "candidateProfiles": "候補者管理",
     "settings": "設定",
-    "logout": "ログアウト"
+    "logout": "ログアウト",
+    "postJob": "求人掲載"
   },
   "hero": {
     "title": "ベトナム人材採用のリーディングプラットフォーム",
