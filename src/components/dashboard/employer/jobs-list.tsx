@@ -100,7 +100,7 @@ export function JobsList() {
                 <List className="h-4 w-4" />
               </Button>
            </div>
-          <Button size="sm" className="h-8 gap-1">
+          <Button size="sm" className="h-8 gap-1 bg-accent text-accent-foreground hover:bg-accent/90">
             <PlusCircle className="h-3.5 w-3.5" />
             <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
               {t.dashboard_employer.jobs_list.add_job}
