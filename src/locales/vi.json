@@ -167,8 +167,7 @@
     "input": {
       "title": "1. Mô tả công việc của bạn",
       "description": "Cung cấp một vài từ khóa, một câu, hoặc tải lên một mô tả công việc có sẵn. Càng chi tiết, kết quả càng tốt.",
-      "reset": "Tạo mới",
-      "manual_post": "Nhập liệu thủ công để đăng"
+      "reset": "Tạo mới"
     },
     "output": {
       "title": "2. Kết quả từ AI",
@@ -188,8 +187,8 @@
       "apiTitle": "Đã có lỗi xảy ra",
       "apiDescription": "Đã có sự cố khi tạo tin tuyển dụng. Vui lòng thử lại."
     },
-    "or_divider": "Hoặc",
-    "analyzeButton": "Phân tích"
+    "analyzeButton": "Phân tích",
+    "postThisJob": "Đăng việc làm này"
   },
   "handbook": {
     "featured": {

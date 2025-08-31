@@ -167,8 +167,7 @@
     "input": {
       "title": "1. Describe your job",
       "description": "Provide a few keywords, a sentence, or upload an existing job description. The more detail you provide, the better the result.",
-      "reset": "Create New",
-      "manual_post": "Manual Entry"
+      "reset": "Create New"
     },
     "output": {
       "title": "2. AI-Generated Result",
@@ -188,8 +187,8 @@
       "apiTitle": "An error occurred",
       "apiDescription": "There was a problem generating the job post. Please try again."
     },
-    "or_divider": "OR",
-    "analyzeButton": "Analyze"
+    "analyzeButton": "Analyze",
+    "postThisJob": "Post this Job"
   },
   "handbook": {
     "featured": {

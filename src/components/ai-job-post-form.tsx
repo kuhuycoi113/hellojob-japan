@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/language-context';
-import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType, Brain, ChevronRight, GraduationCap, Star, Briefcase, Building, Users, Handshake } from 'lucide-react';
+import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType, Brain, ChevronRight, GraduationCap, Star, Briefcase, Building, Users, Handshake, Send } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
 import { analyzeJobDocument } from '@/ai/flows/analyze-job-document';
 import type { GenerateJobPostOutput } from '@/ai/schemas/generate-job-post-schema';
@@ -439,23 +439,15 @@ function AiJobPostFormContent() {
                     </div>
                   )}
                 </CardContent>
+                {state === 'completed' && (
+                    <CardFooter className="flex justify-end">
+                         <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                            <Send className="mr-2 h-4 w-4" />
+                            {t.ai_job_post_form.postThisJob}
+                        </Button>
+                    </CardFooter>
+                )}
               </Card>
-
-              <div className="relative">
-                  <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                      <div className="w-full border-t border-gray-300" />
-                  </div>
-                  <div className="relative flex justify-center">
-                      <span className="bg-blue-50/50 px-2 text-sm text-gray-500">{t.ai_job_post_form.or_divider}</span>
-                  </div>
-              </div>
-
-              <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
-                  <Link href="/">
-                      <Pencil className="mr-2 h-4 w-4" />
-                      {t.ai_job_post_form.input.manual_post}
-                  </Link>
-              </Button>
           </div>
         </div>
       </div>

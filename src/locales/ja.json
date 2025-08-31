@@ -167,8 +167,7 @@
     "input": {
       "title": "1. 仕事内容を記述してください",
       "description": "キーワード、一文、あるいは既存の職務記述書をアップロードしてください。詳細が多ければ多いほど、より良い結果が得られます。",
-      "reset": "新規作成",
-      "manual_post": "手動で入力して投稿"
+      "reset": "新規作成"
     },
     "output": {
       "title": "2. AIによる生成結果",
@@ -188,8 +187,8 @@
       "apiTitle": "エラーが発生しました",
       "apiDescription": "求人情報の生成中に問題が発生しました。もう一度お試しください。"
     },
-    "or_divider": "または",
-    "analyzeButton": "分析する"
+    "analyzeButton": "分析する",
+    "postThisJob": "この求人を投稿"
   },
   "handbook": {
     "featured": {
