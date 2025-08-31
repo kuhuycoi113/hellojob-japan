@@ -694,31 +694,31 @@
     ]
   },
   "userRoles": {
-    "title": "Bạn là ai?",
-    "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
+    "title": "Who are you?",
+    "description": "Tell us your role for the best experience.",
     "hiringCompany": {
-      "title": "Xí nghiệp tiếp nhận (Ukeire Kigyou)",
-      "description": "Trực tiếp tuyển dụng nhân sự."
+      "title": "Hiring Company (Ukeire Kigyou)",
+      "description": "Directly recruit personnel."
     },
     "supportOrg": {
-      "title": "Cơ quan hỗ trợ (Shien Kikan)",
-      "description": "Hỗ trợ các công ty và người lao động."
+      "title": "Support Organization (Shien Kikan)",
+      "description": "Support companies and workers."
     },
     "union": {
-      "title": "Nghiệp đoàn (Kyoudou Kumiai)",
-      "description": "Quản lý và hỗ trợ thực tập sinh."
+      "title": "Union (Kyoudou Kumiai)",
+      "description": "Manage and support interns."
     },
     "sendingCompany": {
-      "title": "Công ty phái cử (Okuridashi Kikan)",
-      "description": "Tuyển và phái cử lao động từ Việt Nam."
+      "title": "Sending Company (Okuridashi Kikan)",
+      "description": "Recruit and dispatch workers from Vietnam."
     },
     "hakenCompany": {
-      "title": "Công ty Haken (Nhân sự phái cử)",
-      "description": "Phái cử nhân viên tạm thời."
+      "title": "Haken Company (Temporary Staffing)",
+      "description": "Dispatch temporary employees."
     },
     "yuryoShokai": {
-      "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
-      "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
+      "title": "Paid Placement Agency (Yuryo Shokai)",
+      "description": "Provide paid job placement services."
     }
   },
   "chat": {
