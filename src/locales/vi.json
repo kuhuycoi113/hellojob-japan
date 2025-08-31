@@ -8,7 +8,7 @@
     "elearning": "E-learning",
     "handbook": "Cẩm nang",
     "about": "Giới thiệu",
-    "myProfile": "Hồ sơ của tôi",
+    "myProfile": "Trang quản lý",
     "menu": "Menu",
     "dashboard": "Bảng điều khiển",
     "jobPostings": "Tin tuyển dụng",
@@ -773,7 +773,108 @@
       "title": "Nhập liệu thủ công",
       "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
     }
+  },
+  "dashboard_sidebar": {
+    "overview": "Tổng quan",
+    "jobs": "Việc làm của tôi",
+    "candidates": "Ứng viên",
+    "partners": "Đối tác",
+    "assignedJobs": "Việc đã nhận",
+    "myCandidates": "Ứng viên của tôi",
+    "settings": "Cài đặt",
+    "logout": "Đăng xuất"
+  },
+  "dashboard_employer": {
+    "stats": {
+      "activeJobs": {
+        "title": "Việc làm đang đăng",
+        "value": "5",
+        "change": "+2 so với tháng trước"
+      },
+      "applications": {
+        "title": "Lượt ứng tuyển",
+        "value": "125",
+        "change": "+18.2% so với tháng trước"
+      },
+      "interviews": {
+        "title": "Phỏng vấn",
+        "value": "23",
+        "change": "+5 so với tuần trước"
+      },
+      "hires": {
+        "title": "Đã tuyển",
+        "value": "2",
+        "change": "+1 trong tháng này"
+      }
+    },
+    "activeJobs": {
+      "title": "Các tin tuyển dụng đang hoạt động",
+      "description": "Quản lý các tin tuyển dụng hiện tại và xem hiệu suất của chúng.",
+      "table": {
+        "jobTitle": "Chức danh",
+        "status": "Trạng thái",
+        "partners": "Đối tác",
+        "applications": "Ứng tuyển",
+        "actions": "Hành động",
+        "view": "Xem"
+      },
+      "jobs": [
+        {
+          "title": "Kỹ sư Hàn",
+          "location": "Aichi, Nhật Bản",
+          "status": "Searching",
+          "partners": "3",
+          "applications": "25"
+        },
+        {
+          "title": "Nhân viên chế biến thực phẩm",
+          "location": "Osaka, Nhật Bản",
+          "status": "Forwarding",
+          "partners": "5",
+          "applications": "42"
+        },
+        {
+          "title": "Công nhân xây dựng",
+          "location": "Tokyo, Nhật Bản",
+          "status": "Forwarding",
+          "partners": "8",
+          "applications": "58"
+        }
+      ]
+    },
+    "job_status": {
+        "searching": "Đang tìm đối tác",
+        "forwarding": "Đang tiến cử"
+    }
+  },
+    "dashboard_partner": {
+    "newOpportunities": {
+      "title": "Cơ hội hợp tác mới",
+      "description": "Xem xét và chấp nhận các đơn hàng tuyển dụng mới từ các xí nghiệp.",
+      "opportunities": [
+        {
+            "title": "Nhân viên hộ lý",
+            "company": "Trung tâm chăm sóc Fukushi",
+            "location": "Kanagawa",
+            "visa": "Kỹ năng đặc định",
+            "quantity": "3 người",
+            "expires": "Hết hạn trong 23 giờ"
+        },
+        {
+            "title": "Công nhân nông nghiệp",
+            "company": "Nông trang Miyazaki",
+            "location": "Miyazaki",
+            "visa": "Thực tập sinh kỹ năng",
+            "quantity": "5 người",
+            "expires": "Hết hạn trong 2 ngày"
+        }
+      ]
+    },
+    "details": "Chi tiết",
+    "location": "Địa điểm",
+    "visaType": "Loại visa",
+    "quantity": "Số lượng",
+    "accept": "Chấp nhận",
+    "decline": "Từ chối"
   }
 }
-
-    

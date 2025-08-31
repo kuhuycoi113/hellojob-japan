@@ -8,7 +8,7 @@
     "elearning": "E-learning",
     "handbook": "Handbook",
     "about": "About Us",
-    "myProfile": "My Page",
+    "myProfile": "Dashboard",
     "menu": "Menu",
     "dashboard": "Dashboard",
     "jobPostings": "Job Postings",
@@ -773,7 +773,108 @@
       "title": "Nhập liệu thủ công",
       "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
     }
+  },
+  "dashboard_sidebar": {
+    "overview": "Overview",
+    "jobs": "My Jobs",
+    "candidates": "Candidates",
+    "partners": "Partners",
+    "assignedJobs": "Assigned Jobs",
+    "myCandidates": "My Candidates",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "dashboard_employer": {
+    "stats": {
+      "activeJobs": {
+        "title": "Active Jobs",
+        "value": "5",
+        "change": "+2 from last month"
+      },
+      "applications": {
+        "title": "Applications",
+        "value": "125",
+        "change": "+18.2% from last month"
+      },
+      "interviews": {
+        "title": "Interviews",
+        "value": "23",
+        "change": "+5 since last week"
+      },
+      "hires": {
+        "title": "Hires",
+        "value": "2",
+        "change": "+1 this month"
+      }
+    },
+    "activeJobs": {
+      "title": "Active Job Postings",
+      "description": "Manage your current job openings and view their performance.",
+      "table": {
+        "jobTitle": "Job Title",
+        "status": "Status",
+        "partners": "Partners",
+        "applications": "Applications",
+        "actions": "Actions",
+        "view": "View"
+      },
+      "jobs": [
+        {
+          "title": "Welding Engineer",
+          "location": "Aichi, Japan",
+          "status": "Searching",
+          "partners": "3",
+          "applications": "25"
+        },
+        {
+          "title": "Food Processing Staff",
+          "location": "Osaka, Japan",
+          "status": "Forwarding",
+          "partners": "5",
+          "applications": "42"
+        },
+        {
+          "title": "Construction Worker",
+          "location": "Tokyo, Japan",
+          "status": "Forwarding",
+          "partners": "8",
+          "applications": "58"
+        }
+      ]
+    },
+    "job_status": {
+        "searching": "Searching Partners",
+        "forwarding": "Forwarding Candidates"
+    }
+  },
+  "dashboard_partner": {
+    "newOpportunities": {
+      "title": "New Partnership Opportunities",
+      "description": "Review and accept new job orders from hiring companies.",
+      "opportunities": [
+        {
+            "title": "Caregiver Staff",
+            "company": "Fukushi Care Center",
+            "location": "Kanagawa",
+            "visa": "Specified Skilled Worker",
+            "quantity": "3",
+            "expires": "Expires in 23 hours"
+        },
+        {
+            "title": "Agricultural Worker",
+            "company": "Miyazaki Farms",
+            "location": "Miyazaki",
+            "visa": "Technical Intern Trainee",
+            "quantity": "5",
+            "expires": "Expires in 2 days"
+        }
+      ]
+    },
+    "details": "Details",
+    "location": "Location",
+    "visaType": "Visa Type",
+    "quantity": "Quantity",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }
-
-    

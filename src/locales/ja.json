@@ -8,7 +8,7 @@
     "elearning": "Eラーニング",
     "handbook": "ハンドブック",
     "about": "HelloJobについて",
-    "myProfile": "マイページ",
+    "myProfile": "ダッシュボード",
     "menu": "メニュー",
     "dashboard": "ダッシュボード",
     "jobPostings": "求人管理",
@@ -445,7 +445,7 @@
       "title": "ゴールデン・サークル",
       "description": "貴社が存在する「なぜ」を明確にし、同じ志を持つ人々を惹きつけ、鼓舞します。"
     }
-  },
+},
   "barrettTest": {
     "title": "バレット価値観診断",
     "subtitle": "あなたとあなたの組織を動かす価値観を発見しましょう。",
@@ -777,7 +777,108 @@
       "title": "手動入力",
       "description": "詳細なフォームに記入して、リストを完全に制御します。"
     }
+  },
+  "dashboard_sidebar": {
+    "overview": "概要",
+    "jobs": "求人管理",
+    "candidates": "候補者",
+    "partners": "パートナー",
+    "assignedJobs": "担当求人",
+    "myCandidates": "私の候補者",
+    "settings": "設定",
+    "logout": "ログアウト"
+  },
+  "dashboard_employer": {
+    "stats": {
+      "activeJobs": {
+        "title": "掲載中の求人",
+        "value": "5",
+        "change": "先月比 +2"
+      },
+      "applications": {
+        "title": "応募数",
+        "value": "125",
+        "change": "先月比 +18.2%"
+      },
+      "interviews": {
+        "title": "面接数",
+        "value": "23",
+        "change": "先週比 +5"
+      },
+      "hires": {
+        "title": "採用数",
+        "value": "2",
+        "change": "今月 +1"
+      }
+    },
+    "activeJobs": {
+      "title": "掲載中の求人",
+      "description": "現在の求人案件を管理し、そのパフォーマンスを確認します。",
+      "table": {
+        "jobTitle": "職種名",
+        "status": "ステータス",
+        "partners": "パートナー",
+        "applications": "応募数",
+        "actions": "アクション",
+        "view": "詳細"
+      },
+      "jobs": [
+        {
+          "title": "溶接技術者",
+          "location": "愛知県",
+          "status": "Searching",
+          "partners": "3",
+          "applications": "25"
+        },
+        {
+          "title": "食品加工スタッフ",
+          "location": "大阪府",
+          "status": "Forwarding",
+          "partners": "5",
+          "applications": "42"
+        },
+        {
+          "title": "建設作業員",
+          "location": "東京都",
+          "status": "Forwarding",
+          "partners": "8",
+          "applications": "58"
+        }
+      ]
+    },
+    "job_status": {
+        "searching": "パートナー検索中",
+        "forwarding": "候補者推薦中"
+    }
+  },
+    "dashboard_partner": {
+    "newOpportunities": {
+      "title": "新規協力案件",
+      "description": "受入企業からの新規求人案件を確認し、受諾します。",
+      "opportunities": [
+        {
+            "title": "介護スタッフ",
+            "company": "福祉ケアセンター",
+            "location": "神奈川県",
+            "visa": "特定技能",
+            "quantity": "3名",
+            "expires": "残り23時間"
+        },
+        {
+            "title": "農業作業員",
+            "company": "宮崎農園",
+            "location": "宮崎県",
+            "visa": "技能実習",
+            "quantity": "5名",
+            "expires": "残り2日"
+        }
+      ]
+    },
+    "details": "詳細",
+    "location": "勤務地",
+    "visaType": "在留資格",
+    "quantity": "募集人数",
+    "accept": "受諾する",
+    "decline": "辞退する"
   }
 }
-
-    

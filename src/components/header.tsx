@@ -126,8 +126,8 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="outline">
-            <Link href="#" className="flex items-center gap-2">
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/employer" className="flex items-center gap-2">
               <User className="h-4 w-4" />
               {t.header.myProfile}
             </Link>
