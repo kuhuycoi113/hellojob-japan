@@ -269,7 +269,7 @@ export function Header() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-80 p-4">
-                  <Link href="/dashboard/employer" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-4 transition-colors">
+                  <Link href="/dashboard/employer/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-4 transition-colors">
                     <div className="flex items-center gap-4">
                         <Avatar className="h-12 w-12">
                             <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
