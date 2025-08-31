@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/language-context';
-import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle, Menu } from 'lucide-react';
+import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle } from 'lucide-react';
 import { Logo } from './logo';
 import Link from 'next/link';
 import { Separator } from './ui/separator';
@@ -39,7 +39,7 @@ export function MobileMenuSheet() {
     <Sheet>
       <SheetTrigger asChild>
         <button className="flex flex-col items-center justify-center gap-1 text-xs text-muted-foreground transition-colors hover:text-primary">
-            <div className="flex h-7 w-7 items-center justify-center"><Menu /></div>
+            <div className="flex h-7 w-7 items-center justify-center"><LayoutGrid /></div>
             <span>{t.mobile_footer.menu}</span>
         </button>
       </SheetTrigger>
