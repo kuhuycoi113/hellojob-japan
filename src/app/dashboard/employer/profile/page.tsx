@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import {
@@ -56,7 +57,49 @@ export default function EmployerProfilePage() {
   return (
     <div className="flex w-full flex-col p-4 md:gap-8 md:p-10">
         <div className="mx-auto grid w-full max-w-7xl gap-6">
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="shadow-sm">
+                <div className="relative h-48 w-full">
+                <Image
+                    src="https://picsum.photos/1200/300"
+                    alt="Company Banner"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-t-lg"
+                />
+                <Button size="icon" variant="outline" className="absolute bottom-4 right-4 bg-black/50 text-white hover:bg-black/60 hover:text-white border-white/50">
+                    <Camera className="h-4 w-4"/>
+                </Button>
+                <div className="absolute -bottom-12 left-6">
+                    <div className="relative">
+                        <Avatar className="h-24 w-24 border-4 border-card">
+                            <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                            <AvatarFallback>GSU</AvatarFallback>
+                        </Avatar>
+                        <Button size="icon" variant="outline" className="absolute -bottom-1 -right-1 h-7 w-7 rounded-full bg-muted">
+                            <Camera className="h-4 w-4"/>
+                        </Button>
+                    </div>
+                </div>
+                </div>
+                <div className="flex justify-between items-start pt-16 p-6">
+                    <div>
+                        <CardTitle className="text-2xl">
+                            Global Support Union
+                        </CardTitle>
+                        <CardDescription>{profile.industry}</CardDescription>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
+                            <MapPin className="h-4 w-4" />
+                            {profile.location}
+                        </div>
+                    </div>
+                    <Button variant="outline">
+                        <Edit className="mr-2 h-4 w-4" />
+                        {profile.editProfile}
+                    </Button>
+                </div>
+            </Card>
+
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
                 <div className="md:col-span-2 space-y-6">
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between">
