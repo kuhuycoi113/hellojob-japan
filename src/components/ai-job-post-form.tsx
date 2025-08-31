@@ -180,7 +180,7 @@ function AiJobPostFormContent() {
     setState('loading');
     setJobPost(null);
 
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth < 768) {
       resultCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
@@ -241,7 +241,7 @@ function AiJobPostFormContent() {
     setState('loading');
     setJobPost(null);
 
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth < 768) {
       resultCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
@@ -549,3 +549,5 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
