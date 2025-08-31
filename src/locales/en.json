@@ -158,7 +158,7 @@
       "s2_desc": "Upload a file (PDF, DOCX, image) for the AI to analyze.",
       "s3_title": "Describe with your voice",
       "s3_desc": "Speak the key details like job title, location, and required skills.",
-      "s4_title": "Manual Entry",
+      "s4_title": "Manual Entry for Posting",
       "s4_desc": "Fill out a detailed form yourself."
     },
     "upload": {
