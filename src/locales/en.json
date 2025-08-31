@@ -34,6 +34,15 @@
     "dashboard": "Dashboard",
     "menu": "Menu"
   },
+  "mobile_menu_sheet": {
+    "hello": "Hello",
+    "myProfile": "My Profile",
+    "postJob": "Post Job",
+    "dataReport": "Data & Reports",
+    "partners": "Partners in Japan",
+    "feedback": "Feedback",
+    "close": "Close"
+  },
   "hero": {
     "title": "Leading Vietnamese Manpower Recruitment Platform",
     "subtitle": "Connect your business with high-quality human resources from Vietnam, meeting recruitment needs for Technical Intern Trainees, Specified Skilled Workers, and Engineers.",
@@ -819,22 +828,6 @@
     "engineer": {
       "title": "Engineer/Specialist",
       "description": "Highly qualified professionals with degrees."
-    }
-  },
-  "visaSubTypes": {
-    "title": "Please select more details",
-    "intern": {
-      "threeYear": "3-Year Technical Intern",
-      "oneYear": "1-Year Technical Intern",
-      "go": "No. 3 Technical Intern"
-    },
-    "skilled": {
-      "japan": "Specified Skilled Worker Candidates in Japan",
-      "vietnam": "Specified Skilled Worker Candidates from Vietnam"
-    },
-    "engineer": {
-      "japan": "Engineer/Specialist Candidates in Japan",
-      "vietnam": "Engineer/Specialist Candidates from Vietnam"
     }
   },
   "postMethod": {

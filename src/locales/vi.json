@@ -34,6 +34,15 @@
     "dashboard": "Quản lý",
     "menu": "Menu"
   },
+  "mobile_menu_sheet": {
+    "hello": "Xin chào",
+    "myProfile": "Hồ sơ của tôi",
+    "postJob": "Đăng tuyển dụng",
+    "dataReport": "Dữ liệu & Báo cáo",
+    "partners": "Đối tác tại Nhật",
+    "feedback": "Góp ý",
+    "close": "Đóng"
+  },
   "hero": {
     "title": "Nền Tảng Tuyển Dụng Nhân Lực Việt Nam Hàng Đầu",
     "subtitle": "Kết nối doanh nghiệp của bạn với nguồn nhân lực chất lượng cao từ Việt Nam, đáp ứng nhu cầu tuyển dụng cho các chương trình \"Thực tập sinh\", \"Kỹ năng đặc định\" và \"Kỹ sư\".",

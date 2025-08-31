@@ -1,12 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { Home, Sparkles, User, LayoutGrid } from 'lucide-react';
+import { Home, Sparkles, User } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/contexts/language-context';
 import { cn } from '@/lib/utils';
-// We will create MobileMenuSheet in a later step
-// import { MobileMenuSheet } from './mobile-menu-sheet';
+import { MobileMenuSheet } from './mobile-menu-sheet';
 
 export function MobileFooter() {
   const pathname = usePathname();
@@ -34,11 +33,7 @@ export function MobileFooter() {
             <span>{item.label}</span>
           </Link>
         ))}
-        {/* Placeholder for the Menu Sheet Trigger */}
-        <button className="flex flex-col items-center justify-center gap-1 text-xs text-muted-foreground transition-colors hover:text-primary">
-            <div className="flex h-7 w-7 items-center justify-center"><LayoutGrid /></div>
-            <span>{t.mobile_footer.menu}</span>
-        </button>
+        <MobileMenuSheet />
       </nav>
     </footer>
   );
