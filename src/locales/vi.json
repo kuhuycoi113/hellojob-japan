@@ -173,7 +173,7 @@
     },
     "output": {
       "title": "2. Kết quả từ AI",
-      "description": "Đây là tin tuyển dụng được tạo bởi AI. Bạn có thể sao chép hoặc quay lại để tinh chỉnh mô tả của mình.",
+      "description": "Đây là tin tuyển dụng được tạo bởi AI. Bạn có thể thực hiện bước tiếp theo bên dưới.",
       "loading": "Đang tạo tin tuyển dụng của bạn...",
       "idle": {
         "title": "Kết quả sẽ xuất hiện ở đây",
@@ -190,7 +190,16 @@
       "apiDescription": "Đã có sự cố khi tạo tin tuyển dụng. Vui lòng thử lại."
     },
     "analyzeButton": "Phân tích",
-    "postThisJob": "Đăng việc làm này"
+    "findPartnersButton": "Tìm đối tác phù hợp",
+    "sendRequestsButton": "Gửi yêu cầu hợp tác",
+    "partner_matching": {
+      "title": "3. Tìm đối tác phù hợp",
+      "description": "Dựa trên tin tuyển dụng, AI đã gợi ý các đối tác phù hợp nhất. Chọn các đối tác bạn muốn gửi yêu cầu hợp tác.",
+      "loading": "Đang tìm kiếm đối tác...",
+      "partner": "Đối tác",
+      "score": "Mức độ phù hợp",
+      "reason": "Lý do"
+    }
   },
   "handbook": {
     "featured": {

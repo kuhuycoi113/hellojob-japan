@@ -173,7 +173,7 @@
     },
     "output": {
       "title": "2. AIによる生成結果",
-      "description": "こちらがAIによって作成された求人情報です。コピーしたり、戻って説明を修正したりできます。",
+      "description": "こちらがAIによって作成された求人情報です。以下の次のステップに進むことができます。",
       "loading": "求人情報を生成中...",
       "idle": {
         "title": "結果はここに表示されます",
@@ -190,7 +190,16 @@
       "apiDescription": "求人情報の生成中に問題が発生しました。もう一度お試しください。"
     },
     "analyzeButton": "分析する",
-    "postThisJob": "この求人を投稿"
+    "findPartnersButton": "最適なパートナーを探す",
+    "sendRequestsButton": "協力リクエストを送信",
+    "partner_matching": {
+      "title": "3. 最適なパートナーを探す",
+      "description": "求人情報に基づき、AIが最適なパートナーを提案しました。協力リクエストを送るパートナーを選択してください。",
+      "loading": "パートナーを検索中...",
+      "partner": "パートナー",
+      "score": "適合度",
+      "reason": "理由"
+    }
   },
   "handbook": {
     "featured": {

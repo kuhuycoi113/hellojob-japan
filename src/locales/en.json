@@ -173,7 +173,7 @@
     },
     "output": {
       "title": "2. AI-Generated Result",
-      "description": "Here is the job posting created by AI. You can copy it, or go back and refine your description.",
+      "description": "Here is the job posting created by AI. You can proceed to the next step below.",
       "loading": "Generating your job post...",
       "idle": {
         "title": "Your result will appear here",
@@ -190,7 +190,16 @@
       "apiDescription": "There was a problem generating the job post. Please try again."
     },
     "analyzeButton": "Analyze",
-    "postThisJob": "Post this Job"
+    "findPartnersButton": "Find Matching Partners",
+    "sendRequestsButton": "Send Partnership Requests",
+    "partner_matching": {
+      "title": "3. Find Matching Partners",
+      "description": "Based on the job post, our AI has suggested the best-fit partners. Select the partners you'd like to send a partnership request to.",
+      "loading": "Finding matching partners...",
+      "partner": "Partner",
+      "score": "Compatibility Score",
+      "reason": "Reason"
+    }
   },
   "handbook": {
     "featured": {
