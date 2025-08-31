@@ -1,5 +1,7 @@
-import { Overview } from '@/components/dashboard/employer/overview';
+'use client';
+
+import { CompanyProfile } from '@/components/dashboard/employer/company-profile';
 
 export default function EmployerDashboardPage() {
-  return <Overview />;
+  return <CompanyProfile />;
 }

@@ -1,5 +1,31 @@
+// This file is renamed to company-profile.tsx
 'use client';
 
+import {
+  Briefcase,
+  Building,
+  Calendar,
+  Camera,
+  ChevronDown,
+  ChevronRight,
+  Clock,
+  Edit,
+  FileText,
+  Globe,
+  Image as ImageIcon,
+  LogOut,
+  MapPin,
+  Plus,
+  Phone,
+  Sparkles,
+  Users,
+  Video,
+} from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -8,114 +34,85 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/language-context';
-import { ArrowUpRight, Search, Users } from 'lucide-react';
-import Link from 'next/link';
+import { JobsList } from './jobs-list';
 
-export function Overview() {
+export function CompanyProfile() {
   const { t } = useLanguage();
-  const jobs = t.dashboard_employer.activeJobs.jobs;
-  const stats = t.dashboard_employer.stats;
+
+  const history = [
+    {
+      year: '2015',
+      event: 'Thành lập công ty',
+      description:
+        'Bắt đầu với 5 nhân viên, tập trung vào thị trường sản xuất linh kiện ô tô.',
+    },
+    {
+      year: '2018',
+      event: 'Mở rộng nhà xưởng',
+      description:
+        'Đạt chứng nhận ISO 9001 và mở rộng quy mô sản xuất gấp đôi.',
+    },
+  ];
 
   return (
-    <div className="space-y-8">
-      <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{stats.activeJobs.title}</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats.activeJobs.value}</div>
-            <p className="text-xs text-muted-foreground">{stats.activeJobs.change}</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{stats.applications.title}</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats.applications.value}</div>
-            <p className="text-xs text-muted-foreground">{stats.applications.change}</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{stats.interviews.title}</CardTitle>
-            <Search className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats.interviews.value}</div>
-            <p className="text-xs text-muted-foreground">{stats.interviews.change}</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{stats.hires.title}</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats.hires.value}</div>
-            <p className="text-xs text-muted-foreground">{stats.hires.change}</p>
-          </CardContent>
-        </Card>
-      </div>
+    <div className="flex w-full flex-col">
+      <main className="flex flex-1 flex-col gap-4 bg-muted/40 p-4 md:gap-8 md:p-10">
+        <div className="mx-auto grid w-full max-w-6xl gap-2">
+          <h1 className="text-3xl font-semibold">Trang quản lý</h1>
+        </div>
+        <div className="mx-auto grid w-full max-w-6xl items-start gap-6 md:grid-cols-[180px_1fr] lg:grid-cols-[250px_1fr]">
+          <nav className="grid gap-4 text-sm text-muted-foreground">
+            <Link href="#" className="font-semibold text-primary">
+              Hồ sơ công ty
+            </Link>
+            <Link href="/dashboard/employer/jobs">Việc làm của tôi</Link>
+            <Link href="#">Ứng viên</Link>
+            <Link href="#">Đối tác</Link>
+            <Link href="#">Cài đặt</Link>
+          </nav>
+          <div className="grid gap-6">
+            <Card>
+              <CardHeader>
+                <div className="relative h-48 w-full">
+                  <Image
+                    src="https://picsum.photos/1200/300"
+                    alt="Company Banner"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-t-lg"
+                  />
+                  <div className="absolute -bottom-12 left-6">
+                    <Avatar className="h-24 w-24 border-4 border-white">
+                      <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                      <AvatarFallback>GSU</AvatarFallback>
+                    </Avatar>
+                  </div>
+                </div>
+                <div className="pt-16 flex justify-between items-center">
+                  <div>
+                    <CardTitle className="text-2xl">
+                      Global Support Union
+                    </CardTitle>
+                    <CardDescription>Sản xuất & Chế biến</CardDescription>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
+                      <MapPin className="h-4 w-4" />
+                      Aichi, Nhật Bản
+                    </div>
+                  </div>
+                  <Button variant="outline">
+                    <Edit className="mr-2 h-4 w-4" />
+                    Sửa hồ sơ
+                  </Button>
+                </div>
+              </CardHeader>
+            </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>{t.dashboard_employer.activeJobs.title}</CardTitle>
-          <CardDescription>{t.dashboard_employer.activeJobs.description}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>{t.dashboard_employer.activeJobs.table.jobTitle}</TableHead>
-                <TableHead className="hidden sm:table-cell">{t.dashboard_employer.activeJobs.table.status}</TableHead>
-                <TableHead className="hidden md:table-cell">{t.dashboard_employer.activeJobs.table.partners}</TableHead>
-                <TableHead className="hidden md:table-cell">{t.dashboard_employer.activeJobs.table.applications}</TableHead>
-                <TableHead>
-                  <span className="sr-only">{t.dashboard_employer.activeJobs.table.actions}</span>
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {jobs.map((job) => (
-                <TableRow key={job.title}>
-                  <TableCell>
-                    <div className="font-medium">{job.title}</div>
-                    <div className="hidden text-sm text-muted-foreground md:inline">{job.location}</div>
-                  </TableCell>
-                  <TableCell className="hidden sm:table-cell">
-                    <Badge className="text-xs" variant={job.status === 'Searching' ? 'secondary' : 'default'}>
-                      {job.status === 'Searching' ? t.dashboard_employer.job_status.searching : t.dashboard_employer.job_status.forwarding}
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="hidden md:table-cell">{job.partners}</TableCell>
-                  <TableCell className="hidden md:table-cell">{job.applications}</TableCell>
-                  <TableCell>
-                     <Button asChild size="sm" variant="outline">
-                        <Link href="#">
-                            {t.dashboard_employer.activeJobs.table.view}
-                        </Link>
-                     </Button>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
+            <JobsList />
+
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
