@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/language-context';
-import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil } from 'lucide-react';
+import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
 import type { GenerateJobPostOutput } from '@/ai/schemas/generate-job-post-schema';
 import { useToast } from "@/hooks/use-toast";
@@ -14,11 +14,19 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 
 type SessionState = 'idle' | 'loading' | 'completed';
+type UploadedFile = {
+  name: string;
+  type: string;
+  size: number;
+  dataUri: string;
+}
 
 function AiJobPostFormContent() {
   const { t } = useLanguage();
   const { toast } = useToast();
   const searchParams = useSearchParams();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
 
   const role = searchParams.get('role');
   const visaType = searchParams.get('visaType');
@@ -27,22 +35,53 @@ function AiJobPostFormContent() {
   const [state, setState] = useState<SessionState>('idle');
   const [description, setDescription] = useState('');
   const [jobPost, setJobPost] = useState<GenerateJobPostOutput | null>(null);
+  const [uploadedFile, setUploadedFile] = useState<UploadedFile | null>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setUploadedFile({
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          dataUri: reader.result as string,
+        });
+        setDescription(''); // Clear text description when a file is uploaded
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleUploadCardClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const removeFile = () => {
+    setUploadedFile(null);
+    if(fileInputRef.current) {
+        fileInputRef.current.value = "";
+    }
+  }
 
   const suggestionCards = [
     {
       icon: <Upload className="w-8 h-8 text-green-500" />,
       title: t.ai_job_post_form.suggestions.s2_title,
-      description: t.ai_job_post_form.suggestions.s2_desc
+      description: t.ai_job_post_form.suggestions.s2_desc,
+      onClick: handleUploadCardClick
     },
     {
       icon: <Mic className="w-8 h-8 text-blue-500" />,
       title: t.ai_job_post_form.suggestions.s3_title,
-      description: t.ai_job_post_form.suggestions.s3_desc
+      description: t.ai_job_post_form.suggestions.s3_desc,
+      onClick: () => {} // Placeholder for voice input
     }
   ];
   
   const handleGenerate = async () => {
-    if (!description.trim()) {
+    if (!description.trim() && !uploadedFile) {
       toast({
         title: t.ai_job_post_form.error.title,
         description: t.ai_job_post_form.error.description,
@@ -53,6 +92,8 @@ function AiJobPostFormContent() {
     setState('loading');
     setJobPost(null);
     try {
+      // Logic for handling file vs. text will go here in the future
+      // For now, we only handle text description
       const result = await generateJobPost({ 
         description,
         role: role || undefined,
@@ -76,9 +117,23 @@ function AiJobPostFormContent() {
     setState('idle');
     setDescription('');
     setJobPost(null);
+    removeFile();
   }
 
   const hasSelections = role || visaType || visaSubType;
+
+  const FileIcon = ({ type }: { type: string }) => {
+    if (type.startsWith('image/')) {
+        return <FileImage className="w-10 h-10 text-primary" />;
+    }
+    if (type === 'application/pdf') {
+        return <FileText className="w-10 h-10 text-red-500" />;
+    }
+    if (type.includes('word')) {
+        return <FileType className="w-10 h-10 text-blue-500" />;
+    }
+    return <Paperclip className="w-10 h-10 text-gray-500" />;
+  };
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
@@ -118,18 +173,37 @@ function AiJobPostFormContent() {
               <CardDescription>{t.ai_job_post_form.input.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <Textarea
-                placeholder={t.aiJobPost.placeholder}
-                className="min-h-[200px] text-base"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                disabled={state === 'loading'}
-              />
+              {uploadedFile ? (
+                 <div className="min-h-[200px] rounded-lg border-2 border-dashed border-gray-300 p-4 flex flex-col items-center justify-center text-center">
+                    <FileIcon type={uploadedFile.type} />
+                    <p className="font-semibold mt-4 break-all">{uploadedFile.name}</p>
+                    <p className="text-sm text-muted-foreground">({(uploadedFile.size / 1024).toFixed(2)} KB)</p>
+                    <div className="flex gap-2 mt-4">
+                        <Button variant="outline" size="sm" onClick={handleUploadCardClick}>{t.ai_job_post_form.upload.changeFile}</Button>
+                        <Button variant="destructive" size="sm" onClick={removeFile}>{t.ai_job_post_form.upload.removeFile}</Button>
+                    </div>
+                </div>
+              ) : (
+                <Textarea
+                  placeholder={t.aiJobPost.placeholder}
+                  className="min-h-[200px] text-base"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  disabled={state === 'loading'}
+                />
+              )}
+               <input 
+                    type="file"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                    className="hidden"
+                    accept="image/*,application/pdf,.doc,.docx"
+                />
                <div className="mt-6">
                   <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {suggestionCards.map((card) => (
-                      <Card key={card.title} className="text-center p-4 hover:shadow-md transition-shadow cursor-pointer">
+                      <Card key={card.title} className="text-center p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={card.onClick}>
                         <div className="flex justify-center mb-3">{card.icon}</div>
                         <h5 className="font-semibold text-sm mb-1">{card.title}</h5>
                         <p className="text-xs text-muted-foreground">{card.description}</p>
@@ -142,7 +216,7 @@ function AiJobPostFormContent() {
               {state === 'completed' && (
                   <Button variant="outline" onClick={handleReset}>{t.ai_job_post_form.input.reset}</Button>
               )}
-              <Button size="lg" onClick={handleGenerate} disabled={state === 'loading'}>
+              <Button size="lg" onClick={handleGenerate} disabled={state === 'loading' || !!uploadedFile}>
                 {state === 'loading' ? (
                   <LoaderCircle className="animate-spin" />
                 ) : (

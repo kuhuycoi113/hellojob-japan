@@ -146,28 +146,27 @@
   },
   "aiJobPost": {
     "title": "Create Job Postings with the Power of AI",
-    "subtitle": "Describe the job you need, and let our AI generate an engaging and professional job posting in seconds.",
+    "subtitle": "Describe the job you need, or upload an existing job description, and let our AI generate an engaging and professional job posting in seconds.",
     "placeholder": "Example: Seeking food processing staff for a factory in Aichi with a Specified Skilled Worker visa. Experience in the food industry and Japanese N4 level or higher required. Hard-working and responsible.",
-    "submit": "Generate",
-    "suggestionsTitle": "Or start with a suggestion:",
-    "suggestions": {
-      "s1": "Welder in Aichi",
-      "s2": "Caregiver staff for nursing home",
-      "s3": "IT Comtor in Tokyo"
-    }
+    "submit": "Generate"
   },
   "ai_job_post_form": {
     "your_selections_title": "Your Selections",
     "suggestions": {
       "title": "Or start with a few suggestions:",
-      "s2_title": "Paste an existing job description",
-      "s2_desc": "Paste the content of an existing job description for AI to analyze and rewrite.",
-      "s3_title": "Describe keywords",
-      "s3_desc": "List important keywords such as job title, location, required skills..."
+      "s2_title": "Upload a job description",
+      "s2_desc": "Upload a file (PDF, DOCX, image) for the AI to analyze.",
+      "s3_title": "Describe with your voice",
+      "s3_desc": "Speak the key details like job title, location, and required skills."
+    },
+    "upload": {
+      "selectedFile": "Selected File",
+      "changeFile": "Change File",
+      "removeFile": "Remove"
     },
     "input": {
       "title": "1. Describe your job",
-      "description": "Provide a few keywords, a sentence, or even paste an existing job description. The more detail you provide, the better the result.",
+      "description": "Provide a few keywords, a sentence, or upload an existing job description. The more detail you provide, the better the result.",
       "reset": "Create New",
       "manual_post": "Manual Entry"
     },

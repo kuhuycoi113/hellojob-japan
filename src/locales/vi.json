@@ -146,7 +146,7 @@
   },
   "aiJobPost": {
     "title": "Tạo Tin Tuyển Dụng với Sức mạnh của AI",
-    "subtitle": "Mô tả công việc bạn cần, và để AI của chúng tôi tạo ra một tin tuyển dụng hấp dẫn và chuyên nghiệp chỉ trong vài giây.",
+    "subtitle": "Mô tả công việc bạn cần, hoặc tải lên một bản mô tả có sẵn, và để AI của chúng tôi tạo ra một tin tuyển dụng hấp dẫn và chuyên nghiệp chỉ trong vài giây.",
     "placeholder": "Ví dụ: Tuyển nhân viên chế biến thực phẩm cho nhà máy ở Aichi, visa Đặc định. Yêu cầu kinh nghiệm làm trong ngành thực phẩm, tiếng Nhật N4 trở lên. Chăm chỉ, có trách nhiệm.",
     "submit": "Tạo tin"
   },
@@ -154,14 +154,19 @@
     "your_selections_title": "Loại Visa bạn chọn",
     "suggestions": {
       "title": "Hoặc bắt đầu với một vài gợi ý:",
-      "s2_title": "Dán một mô tả công việc có sẵn",
-      "s2_desc": "Dán nội dung của một mô tả công việc có sẵn để AI phân tích và viết lại.",
-      "s3_title": "Mô tả bằng từ khóa",
-      "s3_desc": "Liệt kê các từ khóa quan trọng như chức danh, địa điểm, kỹ năng yêu cầu..."
+      "s2_title": "Tải lên một mô tả công việc",
+      "s2_desc": "Tải lên một tệp (PDF, DOCX, ảnh) để AI phân tích.",
+      "s3_title": "Mô tả bằng giọng nói",
+      "s3_desc": "Nói các chi tiết chính như chức danh, địa điểm và kỹ năng yêu cầu."
+    },
+    "upload": {
+      "selectedFile": "Tệp đã chọn",
+      "changeFile": "Thay đổi tệp",
+      "removeFile": "Xóa"
     },
     "input": {
       "title": "1. Mô tả công việc của bạn",
-      "description": "Cung cấp một vài từ khóa, một câu, hoặc thậm chí dán một mô tả công việc có sẵn. Càng chi tiết, kết quả càng tốt.",
+      "description": "Cung cấp một vài từ khóa, một câu, hoặc tải lên một mô tả công việc có sẵn. Càng chi tiết, kết quả càng tốt.",
       "reset": "Tạo mới",
       "manual_post": "Nhập liệu thủ công để đăng"
     },
