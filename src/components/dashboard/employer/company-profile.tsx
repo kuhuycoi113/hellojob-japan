@@ -73,20 +73,22 @@ export function CompanyProfile() {
                   <AvatarFallback>GSU</AvatarFallback>
                 </Avatar>
               </div>
-              <Button variant="outline" className="absolute top-4 right-4 bg-white/80">
-                <Edit className="mr-2 h-4 w-4" />
-                Sửa hồ sơ
-              </Button>
             </div>
-            <div className="pt-16 p-6">
-              <CardTitle className="text-2xl">
-                Global Support Union
-              </CardTitle>
-              <CardDescription>Sản xuất & Chế biến</CardDescription>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
-                <MapPin className="h-4 w-4" />
-                Aichi, Nhật Bản
-              </div>
+            <div className="flex justify-between items-start pt-16 p-6">
+                <div>
+                    <CardTitle className="text-2xl">
+                        Global Support Union
+                    </CardTitle>
+                    <CardDescription>Sản xuất & Chế biến</CardDescription>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
+                        <MapPin className="h-4 w-4" />
+                        Aichi, Nhật Bản
+                    </div>
+                </div>
+                <Button variant="outline">
+                    <Edit className="mr-2 h-4 w-4" />
+                    Sửa hồ sơ
+                </Button>
             </div>
           </Card>
           
