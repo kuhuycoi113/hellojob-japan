@@ -60,7 +60,7 @@ export function JobsList() {
           </TabsTrigger>
         </TabsList>
         <div className="ml-auto flex items-center gap-2">
-           <div className="hidden sm:flex items-center gap-1 rounded-md bg-muted p-1">
+           <div className="flex items-center gap-1 rounded-md bg-muted p-1">
              <Button
                 variant={view === 'gallery' ? 'default' : 'ghost'}
                 size="icon"
