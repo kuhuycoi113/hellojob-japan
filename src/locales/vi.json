@@ -870,6 +870,10 @@
     "logout": "Đăng xuất"
   },
   "dashboard_employer": {
+    "header": {
+      "title": "Trang quản lý",
+      "subtitle": "Quản lý việc làm, ứng viên và đối tác của bạn tại một nơi duy nhất."
+    },
     "stats": {
       "activeJobs": {
         "title": "Việc làm đang đăng",

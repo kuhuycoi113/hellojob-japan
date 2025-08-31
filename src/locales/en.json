@@ -870,6 +870,10 @@
     "logout": "Logout"
   },
   "dashboard_employer": {
+    "header": {
+      "title": "Dashboard",
+      "subtitle": "Manage your jobs, candidates, and partners all in one place."
+    },
     "stats": {
       "activeJobs": {
         "title": "Active Jobs",

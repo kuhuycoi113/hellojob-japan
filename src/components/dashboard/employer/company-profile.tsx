@@ -1,43 +1,11 @@
 
 'use client';
 
-import {
-  Briefcase,
-  Building,
-  Calendar,
-  Camera,
-  ChevronDown,
-  ChevronRight,
-  Clock,
-  Edit,
-  FileText,
-  Globe,
-  Image as ImageIcon,
-  LogOut,
-  MapPin,
-  Plus,
-  Phone,
-  Sparkles,
-  Users,
-  Video,
-} from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { useLanguage } from '@/contexts/language-context';
 import { JobsList } from './jobs-list';
 import { YourCandidates } from './your-candidates';
 import { YourPartners } from './your-partners';
+import { DashboardHeader } from './dashboard-header';
 
 export function CompanyProfile() {
   const { t } = useLanguage();
@@ -45,6 +13,7 @@ export function CompanyProfile() {
 
   return (
     <div className="flex w-full flex-col">
+      <DashboardHeader />
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
         <div className="mx-auto grid w-full max-w-7xl gap-6">
           <div className="mt-4">

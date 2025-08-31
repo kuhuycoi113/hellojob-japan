@@ -874,6 +874,10 @@
     "logout": "ログアウト"
   },
   "dashboard_employer": {
+    "header": {
+      "title": "ダッシュボード",
+      "subtitle": "求人、候補者、パートナーをすべて一か所で管理します。"
+    },
     "stats": {
       "activeJobs": {
         "title": "掲載中の求人",
