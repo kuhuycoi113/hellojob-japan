@@ -658,132 +658,132 @@
   },
   "postDetail": {
     "article": {
-      "category": "Kinh nghiệm phỏng vấn",
-      "title": "Cách viết CV tiếng Nhật thuyết phục để gây ấn tượng với nhà tuyển dụng",
-      "excerpt": "Một chiếc CV (履歴書 - rirekisho) được chuẩn bị kỹ lưỡng là bước đầu tiên và quan trọng nhất để bạn mở cánh cửa đến với công việc mơ ước tại Nhật Bản. Nó không chỉ là bản tóm tắt kinh nghiệm, mà còn là lời giới thiệu đầu tiên của bạn với nhà tuyển dụng.",
+      "category": "Interview Experience",
+      "title": "How to Write a Compelling Japanese CV to Impress Recruiters",
+      "excerpt": "A well-prepared CV (履歴書 - rirekisho) is the first and most crucial step to opening the door to your dream job in Japan. It's not just a summary of your experience, but your very first introduction to a potential employer.",
       "image": {
         "src": "https://picsum.photos/1200/675?random=100",
-        "alt": "Người đang viết CV",
+        "alt": "Person writing a CV",
         "hint": "person writing resume"
       },
       "content": {
-        "p1": "Trong bối cảnh cạnh tranh, một chiếc CV chuyên nghiệp, sạch sẽ và đầy đủ thông tin sẽ giúp bạn nổi bật. Điều quan trọng là phải tuân thủ các quy tắc và chuẩn mực chung của CV tiếng Nhật, từ bố cục, cách dùng kính ngữ cho đến ảnh thẻ.",
-        "p2": "Phần tự PR bản thân (自己PR - jiko PR) là phần quan trọng nhất. Đây là nơi bạn thể hiện điểm mạnh, kỹ năng và nhiệt huyết của mình với công việc. Hãy viết một cách ngắn gọn, súc tích nhưng đủ để cho thấy bạn là ứng viên sáng giá nhất cho vị trí này.",
-        "quote": "Hãy nhớ rằng, CV của bạn là một sản phẩm marketing. Bạn đang 'bán' kỹ năng và kinh nghiệm của mình cho nhà tuyển dụng.",
-        "p3": "Cuối cùng, đừng quên kiểm tra lại lỗi chính tả và ngữ pháp nhiều lần. Một lỗi nhỏ cũng có thể khiến bạn mất điểm trong mắt nhà tuyển dụng khó tính. Bạn có thể nhờ bạn bè hoặc người có kinh nghiệm xem qua trước khi gửi đi. Chúc bạn thành công!"
+        "p1": "In a competitive landscape, a professional, clean, and comprehensive CV will make you stand out. It's essential to adhere to the common rules and standards of a Japanese CV, from the layout and use of honorifics (keigo) to the profile picture.",
+        "p2": "The self-promotion section (自己PR - jiko PR) is the most critical part. This is where you showcase your strengths, skills, and enthusiasm for the job. Write concisely but compellingly enough to show that you are the best candidate for the position.",
+        "quote": "Remember, your CV is a marketing product. You are 'selling' your skills and experience to the employer.",
+        "p3": "Finally, don't forget to double- and triple-check for spelling and grammatical errors. Even a small mistake can make a negative impression on a meticulous employer. You can ask a friend or an experienced person to review it before sending. Good luck!"
       }
     },
     "commentSection": {
-      "title": "Thảo luận",
-      "subtitle": "Để lại bình luận của bạn về bài viết này."
+      "title": "Discussion",
+      "subtitle": "Leave your comment on this article."
     },
     "commentForm": {
       "name": {
-        "label": "Tên của bạn",
-        "placeholder": "Nhập tên của bạn"
+        "label": "Your Name",
+        "placeholder": "Enter your name"
       },
       "email": {
         "label": "Email",
-        "placeholder": "Nhập email của bạn (sẽ không được hiển thị)"
+        "placeholder": "Enter your email (will not be displayed)"
       },
       "comment": {
-        "label": "Bình luận",
-        "placeholder": "Viết bình luận của bạn ở đây..."
+        "label": "Comment",
+        "placeholder": "Write your comment here..."
       },
-      "submit": "Gửi bình luận"
+      "submit": "Submit Comment"
     },
     "comments": [
       {
-        "name": "Nguyễn Văn An",
+        "name": "An Nguyen",
         "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-        "time": "5 phút trước",
-        "text": "Bài viết rất hữu ích! Mình đang chuẩn bị viết CV để xin việc ở Nhật. Cảm ơn tác giả nhiều."
+        "time": "5 minutes ago",
+        "text": "Very helpful article! I'm preparing my CV to apply for jobs in Japan. Thanks a lot to the author."
       },
       {
-        "name": "Trần Thị Bích",
+        "name": "Bich Tran",
         "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-        "time": "1 giờ trước",
-        "text": "Phần jiko PR đúng là khó nhất. Có ai có mẫu nào hay để tham khảo không ạ?"
+        "time": "1 hour ago",
+        "text": "The jiko PR part is indeed the hardest. Does anyone have a good template to share?"
       }
     ]
   },
   "userRoles": {
-    "title": "Bạn là ai?",
-    "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
+    "title": "Who are you?",
+    "description": "Tell us your role for the best experience.",
     "hiringCompany": {
-      "title": "Xí nghiệp tiếp nhận (Ukeire Kigyou)",
-      "description": "Trực tiếp tuyển dụng nhân sự."
+      "title": "Accepting Company (Ukeire Kigyou)",
+      "description": "Directly hires personnel."
     },
     "supportOrg": {
-      "title": "Cơ quan hỗ trợ (Shien Kikan)",
-      "description": "Hỗ trợ các công ty và người lao động."
+      "title": "Support Organization (Shien Kikan)",
+      "description": "Supports companies and workers."
     },
     "union": {
-      "title": "Nghiệp đoàn (Kyoudou Kumiai)",
-      "description": "Quản lý và hỗ trợ thực tập sinh."
+      "title": "Cooperative Union (Kyoudou Kumiai)",
+      "description": "Manages and supports interns."
     },
     "sendingCompany": {
-      "title": "Công ty phái cử (Okuridashi Kikan)",
-      "description": "Tuyển và phái cử lao động từ Việt Nam."
+      "title": "Sending Company (Okuridashi Kikan)",
+      "description": "Recruits and dispatches workers from Vietnam."
     },
     "hakenCompany": {
-      "title": "Công ty Haken (Nhân sự phái cử)",
-      "description": "Phái cử nhân viên tạm thời."
+      "title": "Haken Company (Temporary Staffing)",
+      "description": "Dispatches temporary staff."
     },
     "yuryoShokai": {
-      "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
-      "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
+      "title": "Paid Job Placement Service (Yuryo Shokai)",
+      "description": "Provides paid job placement services."
     }
   },
   "chat": {
-    "title": "Trợ lý AI HelloJob",
-    "statusOnline": "Đang hoạt động",
-    "placeholder": "Nhập câu hỏi của bạn ở đây...",
-    "greeting": "Xin chào quý khách hàng {role}. Tôi có thể giúp gì cho bạn hôm nay?",
-    "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?"
+    "title": "HelloJob AI Assistant",
+    "statusOnline": "Online",
+    "placeholder": "Type your question here...",
+    "greeting": "Hello, {role} client. How can I assist you today?",
+    "defaultGreeting": "Hello. How can I assist you today?"
   },
   "visaTypes": {
-    "title": "Bạn muốn tuyển loại Visa nào?",
-    "description": "Hãy chọn loại visa phù hợp với nhu cầu tuyển dụng của bạn.",
+    "title": "Which Visa type do you want to recruit?",
+    "description": "Choose the visa type that fits your recruitment needs.",
     "intern": {
-      "title": "Thực tập sinh kỹ năng",
-      "description": "Chương trình đào tạo kỹ năng tại Nhật Bản."
+      "title": "Technical Intern",
+      "description": "Skill training program in Japan."
     },
     "skilled": {
-      "title": "Kỹ năng đặc định",
-      "description": "Lao động có kinh nghiệm làm việc dài hạn."
+      "title": "Specified Skilled Worker",
+      "description": "Experienced workers for long-term employment."
     },
     "engineer": {
-      "title": "Kỹ sư, tri thức",
-      "description": "Chuyên gia có trình độ cao, bằng cấp chuyên ngành."
+      "title": "Engineer/Specialist",
+      "description": "Highly qualified professionals with degrees."
     }
   },
   "visaSubTypes": {
-    "title": "Vui lòng chọn chi tiết hơn",
+    "title": "Please select more details",
     "intern": {
-      "threeYear": "Thực tập sinh 3 năm",
-      "oneYear": "Thực tập sinh 1 năm",
-      "go": "Thực tập sinh 3 Go"
+      "threeYear": "3-Year Technical Intern",
+      "oneYear": "1-Year Technical Intern",
+      "go": "No. 3 Technical Intern"
     },
     "skilled": {
-      "japan": "Ứng viên đặc định tại Nhật",
-      "vietnam": "Ứng viên đặc định từ Việt Nam"
+      "japan": "Specified Skilled Worker Candidates in Japan",
+      "vietnam": "Specified Skilled Worker Candidates from Vietnam"
     },
     "engineer": {
-      "japan": "Ứng viên kỹ sư, tri thức tại Nhật",
-      "vietnam": "Ứng viên kỹ sư, tri thức từ Việt Nam"
+      "japan": "Engineer/Specialist Candidates in Japan",
+      "vietnam": "Engineer/Specialist Candidates from Vietnam"
     }
   },
   "postMethod": {
-    "title": "Chọn phương thức đăng tin",
-    "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
+    "title": "Choose posting method",
+    "description": "How do you want to create your job listing?",
     "ai": {
-      "title": "Đăng việc làm bằng AI",
-      "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
+      "title": "Post with AI",
+      "description": "Briefly describe and let AI create a professional job post."
     },
     "manual": {
-      "title": "Nhập liệu thủ công",
-      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
+      "title": "Manual Entry",
+      "description": "Fill out a detailed form for full control over the listing."
     }
   },
   "dashboard_sidebar": {
