@@ -1,4 +1,3 @@
-// This file is renamed to company-profile.tsx
 'use client';
 
 import {
