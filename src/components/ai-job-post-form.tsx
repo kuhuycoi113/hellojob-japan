@@ -31,11 +31,12 @@ type VisaType = 'intern' | 'skilled' | 'engineer';
 type Role = { title: string; description: string; icon: JSX.Element; }
 
 function AiJobPostFormContent() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const searchParams = useSearchParams();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const resultCardRef = useRef<HTMLDivElement>(null);
+  const actionFooterRef = useRef<HTMLDivElement>(null);
 
 
   const role = searchParams.get('role');
@@ -136,6 +137,11 @@ function AiJobPostFormContent() {
           dataUri: reader.result as string,
         });
         setDescription('');
+         if (window.innerWidth < 768) {
+          setTimeout(() => {
+            actionFooterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        }
       };
       reader.readAsDataURL(file);
     }
@@ -281,7 +287,8 @@ function AiJobPostFormContent() {
     try {
       const result = await findMatchingPartners({
         jobPost,
-        allPartners
+        allPartners,
+        language,
       });
       setMatchingPartners(result);
       setState('partners_completed');
@@ -392,7 +399,7 @@ function AiJobPostFormContent() {
                     </div>
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-end gap-2">
+              <CardFooter className="flex justify-end gap-2" ref={actionFooterRef}>
                 {(state === 'job_completed' || state === 'partners_completed') && (
                     <Button variant="outline" onClick={handleReset}>{t.ai_job_post_form.input.reset}</Button>
                 )}
@@ -420,7 +427,7 @@ function AiJobPostFormContent() {
           </div>
           
           <div className="space-y-4" ref={resultCardRef}>
-             <Card className="shadow-lg flex flex-col w-full min-h-[500px]">
+             <Card className="shadow-lg flex flex-col w-full h-full">
                 <CardHeader>
                   <CardTitle>{t.ai_job_post_form.output.title}</CardTitle>
                   <CardDescription>{t.ai_job_post_form.output.description}</CardDescription>
@@ -476,10 +483,21 @@ function AiJobPostFormContent() {
                     </div>
                   )}
                 </CardContent>
-                {state === 'job_completed' && (
-                  <CardFooter className="flex justify-end">
-                    <Button size="lg" onClick={handleFindPartners}>
-                      <Search className="mr-2 h-4 w-4" />
+                {(state === 'job_completed' || state === 'loading_partners' || state === 'partners_completed') && jobPost && (
+                  <CardFooter className="flex justify-end gap-2">
+                    <Button
+                      size="lg"
+                      className="bg-accent text-accent-foreground hover:bg-accent/90"
+                    >
+                      <Send className="mr-2 h-4 w-4" />
+                      {t.ai_job_post_form.postJobButton}
+                    </Button>
+                    <Button size="lg" onClick={handleFindPartners} disabled={state === 'loading_partners'}>
+                       {state === 'loading_partners' ? (
+                        <LoaderCircle className="animate-spin" />
+                      ) : (
+                        <Search className="mr-2 h-4 w-4" />
+                      )}
                       {t.ai_job_post_form.findPartnersButton}
                     </Button>
                   </CardFooter>

@@ -8,8 +8,11 @@ import { GenerateJobPostOutputSchema } from './generate-job-post-schema';
 export const PartnerProfileSchema = z.object({
   id: z.string().describe('A unique identifier for the partner.'),
   name: z.string().describe("The name of the partner organization (e.g., 'Global Support Union')."),
+  name_ja: z.string().describe("The Japanese name of the partner organization."),
   type: z.string().describe("The type of partner (e.g., 'Cooperative Union', 'Supporting Organization')."),
+  type_ja: z.string().describe("The Japanese type of the partner."),
   specialties: z.array(z.string()).describe('A list of industries or job types the partner specializes in (e.g., ["Construction", "Manufacturing", "Caregiving"]).'),
+  specialties_ja: z.array(z.string()).describe('A list of Japanese industries or job types the partner specializes in.'),
   locations: z.array(z.string()).describe('A list of prefectures or regions the partner operates in (e.g., ["Tokyo", "Osaka", "Aichi"]).'),
 });
 export type PartnerProfile = z.infer<typeof PartnerProfileSchema>;
@@ -17,6 +20,7 @@ export type PartnerProfile = z.infer<typeof PartnerProfileSchema>;
 export const FindMatchingPartnersInputSchema = z.object({
   jobPost: GenerateJobPostOutputSchema.describe('The generated job posting to be matched.'),
   allPartners: z.array(PartnerProfileSchema).describe('A list of all available partners in the system.'),
+  language: z.string().describe("The user's current language code (e.g., 'vi', 'en', 'ja')."),
 });
 export type FindMatchingPartnersInput = z.infer<typeof FindMatchingPartnersInputSchema>;
 

@@ -190,12 +190,14 @@
       "apiDescription": "Đã có sự cố khi tạo tin tuyển dụng. Vui lòng thử lại."
     },
     "analyzeButton": "Phân tích",
+    "postJobButton": "Đăng việc làm này",
     "findPartnersButton": "Tìm đối tác phù hợp",
     "sendRequestsButton": "Gửi yêu cầu hợp tác",
     "partner_matching": {
       "title": "3. Tìm đối tác phù hợp",
       "description": "Dựa trên tin tuyển dụng, AI đã gợi ý các đối tác phù hợp nhất. Chọn các đối tác bạn muốn gửi yêu cầu hợp tác.",
       "loading": "Đang tìm kiếm đối tác...",
+      "found_partners": "AI đã tìm thấy {count} đối tác phù hợp nhất.",
       "partner": "Đối tác",
       "score": "Mức độ phù hợp",
       "reason": "Lý do"

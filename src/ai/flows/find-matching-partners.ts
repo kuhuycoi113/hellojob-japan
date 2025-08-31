@@ -8,6 +8,7 @@
 
 import { ai } from '@/ai/genkit';
 import { FindMatchingPartnersInputSchema, FindMatchingPartnersOutputSchema, FindMatchingPartnersInput, FindMatchingPartnersOutput } from '@/ai/schemas/find-matching-partners-schema';
+import {generate} from "genkit/generate";
 
 export async function findMatchingPartners(input: FindMatchingPartnersInput): Promise<FindMatchingPartnersOutput> {
   const prompt = ai.definePrompt({
@@ -16,7 +17,7 @@ export async function findMatchingPartners(input: FindMatchingPartnersInput): Pr
     output: { schema: FindMatchingPartnersOutputSchema },
     prompt: `You are an expert AI matchmaking agent for a recruitment platform. Your task is to connect a new job posting with the most suitable support organizations or unions (partners).
 
-Analyze the provided Job Posting and the List of All Available Partners.
+Analyze the provided Job Posting and the List of All Available Partners. The user's current language is {{{language}}}. The 'reason' in your output MUST be in that language.
 
 **Job Posting Details:**
 - Job Title: {{{jobPost.jobTitle}}}

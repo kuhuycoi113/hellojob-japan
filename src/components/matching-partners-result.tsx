@@ -21,7 +21,7 @@ interface MatchingPartnersResultProps {
 }
 
 export function MatchingPartnersResult({ state, partners, matchingResult }: MatchingPartnersResultProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [selectedPartners, setSelectedPartners] = useState<Set<string>>(new Set());
 
   const handlePartnerSelect = (partnerId: string) => {
@@ -37,6 +37,8 @@ export function MatchingPartnersResult({ state, partners, matchingResult }: Matc
   const getPartnerDetails = (partnerId: string) => {
     return partners.find(p => p.id === partnerId);
   }
+
+  const isJapanese = language === 'ja';
 
   return (
     <Card className="shadow-lg animate-in fade-in-50">
@@ -55,7 +57,7 @@ export function MatchingPartnersResult({ state, partners, matchingResult }: Matc
           <div className="space-y-4">
              <div className="flex items-center text-sm text-muted-foreground mb-4">
                 <Check className="w-4 h-4 mr-2 text-green-500"/>
-                <span>{`AI đã tìm thấy ${matchingResult.recommendedPartners.length} đối tác phù hợp nhất.`}</span>
+                <span>{t.ai_job_post_form.partner_matching.found_partners.replace('{count}', matchingResult.recommendedPartners.length.toString())}</span>
             </div>
             <div className="space-y-4">
               {matchingResult.recommendedPartners.map((matchedPartner) => {
@@ -76,8 +78,8 @@ export function MatchingPartnersResult({ state, partners, matchingResult }: Matc
                        <div className="flex-1">
                             <div className="flex justify-between items-start mb-2">
                                 <div>
-                                    <label htmlFor={matchedPartner.partnerId} className="font-bold text-gray-800 cursor-pointer">{partnerDetails.name}</label>
-                                    <p className="text-sm text-muted-foreground">{partnerDetails.type}</p>
+                                    <label htmlFor={matchedPartner.partnerId} className="font-bold text-gray-800 cursor-pointer">{isJapanese ? partnerDetails.name_ja : partnerDetails.name}</label>
+                                    <p className="text-sm text-muted-foreground">{isJapanese ? partnerDetails.type_ja : partnerDetails.type}</p>
                                 </div>
                                 <div className="text-right">
                                     <div className="font-bold text-lg text-primary">{matchedPartner.compatibilityScore}%</div>
@@ -87,10 +89,10 @@ export function MatchingPartnersResult({ state, partners, matchingResult }: Matc
 
                             <Progress value={matchedPartner.compatibilityScore} className="h-2 mb-3" />
                             
-                            <p className="text-sm text-gray-700 mb-3"><strong className="font-semibold">Lý do:</strong> {matchedPartner.reason}</p>
+                            <p className="text-sm text-gray-700 mb-3"><strong className="font-semibold">{t.ai_job_post_form.partner_matching.reason}:</strong> {matchedPartner.reason}</p>
                             
                             <div className="flex flex-wrap gap-2">
-                                {partnerDetails.specialties.map(spec => <Badge key={spec} variant="secondary">{spec}</Badge>)}
+                                {(isJapanese ? partnerDetails.specialties_ja : partnerDetails.specialties).map(spec => <Badge key={spec} variant="secondary">{spec}</Badge>)}
                             </div>
                        </div>
                     </div>

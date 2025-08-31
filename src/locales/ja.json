@@ -190,12 +190,14 @@
       "apiDescription": "求人情報の生成中に問題が発生しました。もう一度お試しください。"
     },
     "analyzeButton": "分析する",
+    "postJobButton": "この求人を掲載する",
     "findPartnersButton": "最適なパートナーを探す",
     "sendRequestsButton": "協力リクエストを送信",
     "partner_matching": {
       "title": "3. 最適なパートナーを探す",
       "description": "求人情報に基づき、AIが最適なパートナーを提案しました。協力リクエストを送るパートナーを選択してください。",
       "loading": "パートナーを検索中...",
+      "found_partners": "AIが最適なパートナーを{count}件見つけました。",
       "partner": "パートナー",
       "score": "適合度",
       "reason": "理由"
