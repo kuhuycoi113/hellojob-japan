@@ -18,6 +18,7 @@
     "postJob": "求人掲載",
     "menuItems": {
       "recruiterAccount": "採用担当者アカウント",
+      "recruiterAccountType": "「{type}」アカウント",
       "postJobAI": "AIで求人作成",
       "howItWorks": "ご利用の流れ",
       "recruitRight": "採用ご担当者様へ",

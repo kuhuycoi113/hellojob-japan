@@ -276,8 +276,8 @@ export function Header() {
                             <AvatarFallback>U</AvatarFallback>
                         </Avatar>
                         <div>
-                            <p className="font-semibold text-base">HelloJob</p>
-                            <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccount}</p>
+                            <p className="font-semibold text-base">Global Support Union</p>
+                            <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.union.title)}</p>
                         </div>
                     </div>
                   </Link>
@@ -335,7 +335,7 @@ export function Header() {
                 <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaSubTypes.title}</DialogTitle>
               </DialogHeader>
               <div className="grid grid-cols-1 gap-4 py-4">
-                {selectedVisaType && visaSubTypes[selectedVisaType].map((subType) => (
+                {selectedVisaType && visaSubTypes[selectedVisaType] && visaSubTypes[selectedVisaType].map((subType) => (
                   <div onClick={() => handleVisaSubTypeSelect(subType)} key={subType.title}>
                     <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                       <h3 className="font-semibold text-base text-gray-800">

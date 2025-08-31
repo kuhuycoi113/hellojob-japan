@@ -18,6 +18,7 @@
     "postJob": "Post a Job",
     "menuItems": {
       "recruiterAccount": "Recruiter Account",
+      "recruiterAccountType": "\"{type}\" Account",
       "postJobAI": "Post with AI",
       "howItWorks": "How it Works",
       "recruitRight": "Recruit Right",

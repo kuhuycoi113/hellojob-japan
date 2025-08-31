@@ -18,6 +18,7 @@
     "postJob": "Đăng việc làm",
     "menuItems": {
       "recruiterAccount": "Tài khoản nhà tuyển dụng",
+      "recruiterAccountType": "Tài khoản \"{type}\"",
       "postJobAI": "Đăng việc AI",
       "howItWorks": "Các bước",
       "recruitRight": "Tuyển đúng người",
