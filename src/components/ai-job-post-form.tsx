@@ -319,14 +319,14 @@ function AiJobPostFormContent() {
           </Card>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-4">
-            <Card className="shadow-lg w-full">
+            <Card className="shadow-lg w-full flex flex-col">
               <CardHeader>
                 <CardTitle>{t.ai_job_post_form.input.title}</CardTitle>
                 <CardDescription>{t.ai_job_post_form.input.description}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 {uploadedFile ? (
                    <div className="min-h-[200px] rounded-lg border-2 border-dashed border-gray-300 p-4 flex flex-col items-center justify-center text-center">
                       <FileIcon type={uploadedFile.type} />
@@ -390,7 +390,7 @@ function AiJobPostFormContent() {
           </div>
           
           <div className="space-y-4" ref={resultCardRef}>
-             <Card className="shadow-lg min-h-[500px] flex flex-col w-full">
+             <Card className="shadow-lg flex flex-col w-full">
                 <CardHeader>
                   <CardTitle>{t.ai_job_post_form.output.title}</CardTitle>
                   <CardDescription>{t.ai_job_post_form.output.description}</CardDescription>
@@ -550,6 +550,8 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
 
     
 
