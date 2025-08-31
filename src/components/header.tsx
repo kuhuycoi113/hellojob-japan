@@ -243,7 +243,7 @@ export function Header() {
 
           <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline">{t.header.postJob}</Button>
+               <Button variant="outline" className='hover:bg-accent hover:text-accent-foreground'>{t.header.postJob}</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-3xl">
               <DialogHeader>
@@ -278,7 +278,7 @@ export function Header() {
           </Dialog>
 
           <Button variant="outline" asChild>
-            <Link href="/dashboard/employer" className="flex items-center gap-2">
+             <Link href="/dashboard/employer" className="flex items-center gap-2 hover:bg-secondary hover:text-secondary-foreground">
               <User className="h-4 w-4" />
               {t.header.myProfile}
             </Link>
