@@ -31,6 +31,7 @@ function AiJobPostFormContent() {
   const { toast } = useToast();
   const searchParams = useSearchParams();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const resultCardRef = useRef<HTMLDivElement>(null);
 
 
   const role = searchParams.get('role');
@@ -172,6 +173,11 @@ function AiJobPostFormContent() {
     }
     setState('loading');
     setJobPost(null);
+
+    if (window.innerWidth < 1024) {
+      resultCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
     try {
       const result = await generateJobPost({ 
         description,
@@ -228,6 +234,10 @@ function AiJobPostFormContent() {
 
     setState('loading');
     setJobPost(null);
+
+    if (window.innerWidth < 1024) {
+      resultCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
     try {
         const result = await analyzeJobDocument({
@@ -303,74 +313,76 @@ function AiJobPostFormContent() {
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <Card className="shadow-lg w-full">
-            <CardHeader>
-              <CardTitle>{t.ai_job_post_form.input.title}</CardTitle>
-              <CardDescription>{t.ai_job_post_form.input.description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              {uploadedFile ? (
-                 <div className="min-h-[200px] rounded-lg border-2 border-dashed border-gray-300 p-4 flex flex-col items-center justify-center text-center">
-                    <FileIcon type={uploadedFile.type} />
-                    <p className="font-semibold mt-4 break-all">{uploadedFile.name}</p>
-                    <p className="text-sm text-muted-foreground">({(uploadedFile.size / 1024).toFixed(2)} KB)</p>
-                    <div className="flex gap-2 mt-4">
-                        <Button variant="outline" size="sm" onClick={handleUploadCardClick}>{t.ai_job_post_form.upload.changeFile}</Button>
-                        <Button variant="destructive" size="sm" onClick={removeFile}>{t.ai_job_post_form.upload.removeFile}</Button>
+          <div className="lg:sticky lg:top-24">
+            <Card className="shadow-lg w-full">
+              <CardHeader>
+                <CardTitle>{t.ai_job_post_form.input.title}</CardTitle>
+                <CardDescription>{t.ai_job_post_form.input.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {uploadedFile ? (
+                   <div className="min-h-[200px] rounded-lg border-2 border-dashed border-gray-300 p-4 flex flex-col items-center justify-center text-center">
+                      <FileIcon type={uploadedFile.type} />
+                      <p className="font-semibold mt-4 break-all">{uploadedFile.name}</p>
+                      <p className="text-sm text-muted-foreground">({(uploadedFile.size / 1024).toFixed(2)} KB)</p>
+                      <div className="flex gap-2 mt-4">
+                          <Button variant="outline" size="sm" onClick={handleUploadCardClick}>{t.ai_job_post_form.upload.changeFile}</Button>
+                          <Button variant="destructive" size="sm" onClick={removeFile}>{t.ai_job_post_form.upload.removeFile}</Button>
+                      </div>
+                  </div>
+                ) : (
+                  <Textarea
+                    placeholder={t.aiJobPost.placeholder}
+                    className="min-h-[200px] text-base"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    disabled={state === 'loading' || !!uploadedFile}
+                  />
+                )}
+                 <input 
+                      type="file"
+                      ref={fileInputRef}
+                      onChange={handleFileChange}
+                      className="hidden"
+                      accept="image/*,application/pdf,.doc,.docx"
+                  />
+                 <div className="mt-6">
+                    <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {suggestionCards.map((card) => (
+                        <Card key={card.title} className="text-center p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={card.onClick}>
+                          <div className="flex justify-center mb-3">{card.icon}</div>
+                          <h5 className="font-semibold text-sm mb-1">{card.title}</h5>
+                          <p className="text-xs text-muted-foreground">{card.description}</p>
+                        </Card>
+                      ))}
                     </div>
                 </div>
-              ) : (
-                <Textarea
-                  placeholder={t.aiJobPost.placeholder}
-                  className="min-h-[200px] text-base"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  disabled={state === 'loading' || !!uploadedFile}
-                />
-              )}
-               <input 
-                    type="file"
-                    ref={fileInputRef}
-                    onChange={handleFileChange}
-                    className="hidden"
-                    accept="image/*,application/pdf,.doc,.docx"
-                />
-               <div className="mt-6">
-                  <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {suggestionCards.map((card) => (
-                      <Card key={card.title} className="text-center p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={card.onClick}>
-                        <div className="flex justify-center mb-3">{card.icon}</div>
-                        <h5 className="font-semibold text-sm mb-1">{card.title}</h5>
-                        <p className="text-xs text-muted-foreground">{card.description}</p>
-                      </Card>
-                    ))}
-                  </div>
-              </div>
-            </CardContent>
-            <CardFooter className="flex justify-end gap-2">
-              {state === 'completed' && (
-                  <Button variant="outline" onClick={handleReset}>{t.ai_job_post_form.input.reset}</Button>
-              )}
-              {uploadedFile ? (
-                <Button size="lg" onClick={handleStartAnalysis} disabled={state === 'loading'}>
-                    <Brain className="mr-2 h-4 w-4" />
-                    {t.ai_job_post_form.analyzeButton}
-                </Button>
-              ) : (
-                <Button size="lg" onClick={handleGenerate} disabled={state === 'loading' || !!uploadedFile}>
-                  {state === 'loading' ? (
-                    <LoaderCircle className="animate-spin" />
-                  ) : (
-                    <Sparkles className="mr-2 h-4 w-4" />
-                  )}
-                  {t.aiJobPost.submit}
-                </Button>
-              )}
-            </CardFooter>
-          </Card>
+              </CardContent>
+              <CardFooter className="flex justify-end gap-2">
+                {state === 'completed' && (
+                    <Button variant="outline" onClick={handleReset}>{t.ai_job_post_form.input.reset}</Button>
+                )}
+                {uploadedFile ? (
+                  <Button size="lg" onClick={handleStartAnalysis} disabled={state === 'loading'}>
+                      <Brain className="mr-2 h-4 w-4" />
+                      {t.ai_job_post_form.analyzeButton}
+                  </Button>
+                ) : (
+                  <Button size="lg" onClick={handleGenerate} disabled={state === 'loading' || !!uploadedFile}>
+                    {state === 'loading' ? (
+                      <LoaderCircle className="animate-spin" />
+                    ) : (
+                      <Sparkles className="mr-2 h-4 w-4" />
+                    )}
+                    {t.aiJobPost.submit}
+                  </Button>
+                )}
+              </CardFooter>
+            </Card>
+          </div>
           
-          <div className="space-y-4">
+          <div className="space-y-4" ref={resultCardRef}>
              <Card className="shadow-lg min-h-[500px] flex flex-col w-full">
                 <CardHeader>
                   <CardTitle>{t.ai_job_post_form.output.title}</CardTitle>
