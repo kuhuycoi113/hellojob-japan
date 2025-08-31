@@ -829,6 +829,22 @@
       "description": "Highly qualified professionals with degrees."
     }
   },
+  "visaSubTypes": {
+    "title": "Please select more details",
+    "intern": {
+      "threeYear": "3-Year Intern",
+      "oneYear": "1-Year Intern",
+      "go": "3 Go Intern"
+    },
+    "skilled": {
+      "japan": "Skilled candidates in Japan",
+      "vietnam": "Skilled candidates from Vietnam"
+    },
+    "engineer": {
+      "japan": "Engineer/Specialist candidates in Japan",
+      "vietnam": "Engineer/Specialist candidates from Vietnam"
+    }
+  },
   "postMethod": {
     "title": "Choose posting method",
     "description": "How do you want to create your job listing?",
@@ -998,7 +1014,11 @@
             },
             "created_date": "03/04/2025"
         }
-    ]
+    ],
+    "your_partners": {
+      "title": "Your Partners",
+      "subtitle": "Connect with trusted Support Organizations, Unions, and Sending Companies."
+    }
   },
   "dashboard_partner": {
     "newOpportunities": {

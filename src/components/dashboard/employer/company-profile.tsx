@@ -37,6 +37,7 @@ import {
 import { useLanguage } from '@/contexts/language-context';
 import { JobsList } from './jobs-list';
 import { YourCandidates } from './your-candidates';
+import { YourPartners } from './your-partners';
 
 export function CompanyProfile() {
   const { t } = useLanguage();
@@ -110,6 +111,10 @@ export function CompanyProfile() {
           <div className="mt-4">
             <h2 className="text-2xl font-semibold mb-4">Ứng viên của bạn</h2>
             <YourCandidates />
+          </div>
+
+           <div className="mt-4">
+            <YourPartners />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
