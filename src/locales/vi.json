@@ -856,7 +856,7 @@
         "forwarding": "Đang tiến cử"
     }
   },
-    "dashboard_partner": {
+  "dashboard_partner": {
     "newOpportunities": {
       "title": "Cơ hội hợp tác mới",
       "description": "Xem xét và chấp nhận các đơn hàng tuyển dụng mới từ các xí nghiệp.",
