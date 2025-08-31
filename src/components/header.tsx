@@ -217,7 +217,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 "transition-colors hover:text-secondary whitespace-nowrap flex items-center gap-2",
-                pathname === link.href ? "text-chart-1 font-bold" : "text-foreground/80"
+                pathname === link.href ? "text-primary font-bold" : "text-foreground/80"
               )}
             >
               {link.icon}
