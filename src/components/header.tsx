@@ -202,7 +202,7 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white hidden md:block">
+    <header className="sticky top-0 z-50 hidden w-full border-b bg-white md:block">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-10">
           <Link href="/">
