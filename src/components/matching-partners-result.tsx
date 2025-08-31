@@ -5,7 +5,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { LoaderCircle, Send, Users, Check, Star } from 'lucide-react';
+import { LoaderCircle, Send, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import type { PartnerProfile, FindMatchingPartnersOutput } from '@/ai/schemas/find-matching-partners-schema';
 import { Badge } from '@/components/ui/badge';
