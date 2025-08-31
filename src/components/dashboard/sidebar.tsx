@@ -90,7 +90,7 @@ export function DashboardSidebar() {
             <SidebarMenu>
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.label}>
-                  <Link href={item.href} passHref legacyBehavior>
+                  <Link href={item.href}>
                     <SidebarMenuButton
                       isActive={pathname === item.href}
                       tooltip={open ? '' : item.label}
