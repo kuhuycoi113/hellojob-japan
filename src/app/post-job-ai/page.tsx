@@ -1,3 +1,5 @@
+'use client';
+
 import { Header } from '@/components/header';
 import { AiJobPostForm } from '@/components/ai-job-post-form';
 import { Footer } from '@/components/footer';

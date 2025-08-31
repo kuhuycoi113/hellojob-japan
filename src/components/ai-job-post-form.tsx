@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
@@ -15,7 +15,7 @@ import Link from 'next/link';
 
 type SessionState = 'idle' | 'loading' | 'completed';
 
-export function AiJobPostForm() {
+function AiJobPostFormContent() {
   const { t } = useLanguage();
   const { toast } = useToast();
   const searchParams = useSearchParams();
@@ -237,4 +237,12 @@ export function AiJobPostForm() {
       </div>
     </section>
   );
+}
+
+export function AiJobPostForm() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AiJobPostFormContent />
+    </Suspense>
+  )
 }
