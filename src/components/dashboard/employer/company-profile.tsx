@@ -1,3 +1,4 @@
+
 'use client';
 
 import {
@@ -67,11 +68,20 @@ export function CompanyProfile() {
                 objectFit="cover"
                 className="rounded-t-lg"
               />
+              <Button variant="outline" className="absolute bottom-4 right-4 bg-black/50 text-white hover:bg-black/60 hover:text-white border-white/50">
+                  <Camera className="mr-2 h-4 w-4"/>
+                  Thay đổi ảnh bìa
+              </Button>
               <div className="absolute -bottom-12 left-6">
-                <Avatar className="h-24 w-24 border-4 border-card">
-                  <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                  <AvatarFallback>GSU</AvatarFallback>
-                </Avatar>
+                <div className="relative">
+                     <Avatar className="h-24 w-24 border-4 border-card">
+                        <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                        <AvatarFallback>GSU</AvatarFallback>
+                    </Avatar>
+                     <Button size="icon" variant="outline" className="absolute -bottom-1 -right-1 h-7 w-7 rounded-full bg-muted">
+                        <Camera className="h-4 w-4"/>
+                    </Button>
+                </div>
               </div>
             </div>
             <div className="flex justify-between items-start pt-16 p-6">
