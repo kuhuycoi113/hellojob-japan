@@ -154,12 +154,10 @@
     "your_selections_title": "Loại Visa bạn chọn",
     "suggestions": {
       "title": "Hoặc bắt đầu với một vài gợi ý:",
-      "s1_title": "Mô tả thông tin cá nhân",
-      "s1_desc": "'Tôi là sinh viên năm cuối trường X, chuyên ngành Y, đang tìm kiếm cơ hội thực tập...'",
-      "s2_title": "Đăng từ hồ sơ có sẵn",
-      "s2_desc": "Tải lên CV file PDF hoặc Word để AI tự động trích xuất và điền thông tin.",
-      "s3_title": "Tạo hồ sơ bằng giọng nói",
-      "s3_desc": "Chỉ cần bấm nút và mô tả về bản thân, chúng tôi sẽ lo phần còn lại."
+      "s2_title": "Dán một mô tả công việc có sẵn",
+      "s2_desc": "Dán nội dung của một mô tả công việc có sẵn để AI phân tích và viết lại.",
+      "s3_title": "Mô tả bằng từ khóa",
+      "s3_desc": "Liệt kê các từ khóa quan trọng như chức danh, địa điểm, kỹ năng yêu cầu..."
     },
     "input": {
       "title": "1. Mô tả công việc của bạn",

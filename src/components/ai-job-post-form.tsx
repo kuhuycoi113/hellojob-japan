@@ -30,11 +30,6 @@ function AiJobPostFormContent() {
 
   const suggestionCards = [
     {
-      icon: <FileText className="w-8 h-8 text-yellow-500" />,
-      title: t.ai_job_post_form.suggestions.s1_title,
-      description: t.ai_job_post_form.suggestions.s1_desc
-    },
-    {
       icon: <Upload className="w-8 h-8 text-green-500" />,
       title: t.ai_job_post_form.suggestions.s2_title,
       description: t.ai_job_post_form.suggestions.s2_desc
@@ -132,7 +127,7 @@ function AiJobPostFormContent() {
               />
                <div className="mt-6">
                   <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
-                  <div className="grid sm:grid-cols-3 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
                     {suggestionCards.map((card) => (
                       <Card key={card.title} className="text-center p-4 hover:shadow-md transition-shadow cursor-pointer">
                         <div className="flex justify-center mb-3">{card.icon}</div>
