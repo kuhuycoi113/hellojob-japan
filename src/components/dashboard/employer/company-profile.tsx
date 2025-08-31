@@ -41,19 +41,18 @@ import { YourPartners } from './your-partners';
 
 export function CompanyProfile() {
   const { t } = useLanguage();
+  const profile = t.dashboard_employer.company_profile;
 
   const history = [
     {
       year: '2015',
-      event: 'Thành lập công ty',
-      description:
-        'Bắt đầu với 5 nhân viên, tập trung vào thị trường sản xuất linh kiện ô tô.',
+      event: profile.history.event1_title,
+      description: profile.history.event1_desc,
     },
     {
       year: '2018',
-      event: 'Mở rộng nhà xưởng',
-      description:
-        'Đạt chứng nhận ISO 9001 và mở rộng quy mô sản xuất gấp đôi.',
+      event: profile.history.event2_title,
+      description: profile.history.event2_desc,
     },
   ];
 
@@ -90,26 +89,26 @@ export function CompanyProfile() {
                     <CardTitle className="text-2xl">
                         Global Support Union
                     </CardTitle>
-                    <CardDescription>Sản xuất & Chế biến</CardDescription>
+                    <CardDescription>{profile.industry}</CardDescription>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
                         <MapPin className="h-4 w-4" />
-                        Aichi, Nhật Bản
+                        {profile.location}
                     </div>
                 </div>
                 <Button variant="outline">
                     <Edit className="mr-2 h-4 w-4" />
-                    Sửa hồ sơ
+                    {profile.editProfile}
                 </Button>
             </div>
           </Card>
           
           <div className="mt-4">
-            <h2 className="text-2xl font-semibold mb-4">Việc làm của bạn</h2>
+            <h2 className="text-2xl font-semibold mb-4">{profile.yourJobs}</h2>
             <JobsList />
           </div>
 
           <div className="mt-4">
-            <h2 className="text-2xl font-semibold mb-4">Ứng viên của bạn</h2>
+            <h2 className="text-2xl font-semibold mb-4">{profile.yourCandidates}</h2>
             <YourCandidates />
           </div>
 
@@ -121,16 +120,16 @@ export function CompanyProfile() {
             <div className="md:col-span-2 space-y-6">
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between">
-                  <CardTitle>Giới thiệu doanh nghiệp</CardTitle>
+                  <CardTitle>{profile.companyIntroduction.title}</CardTitle>
                   <Button variant="ghost" size="icon"><Edit className="h-4 w-4" /></Button>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">Chưa có thông tin. Nhấn vào đây để cập nhật</p>
+                  <p className="text-muted-foreground">{profile.companyIntroduction.placeholder}</p>
                 </CardContent>
               </Card>
                <Card>
                 <CardHeader className="flex flex-row items-center justify-between">
-                  <CardTitle>Video về doanh nghiệp</CardTitle>
+                  <CardTitle>{profile.companyVideo.title}</CardTitle>
                   <Button variant="ghost" size="icon"><Plus className="h-4 w-4" /></Button>
                 </CardHeader>
                 <CardContent className="grid grid-cols-3 gap-4">
@@ -156,7 +155,7 @@ export function CompanyProfile() {
               </Card>
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between">
-                  <CardTitle>Ảnh về doanh nghiệp</CardTitle>
+                  <CardTitle>{profile.companyPhotos.title}</CardTitle>
                   <Button variant="ghost" size="icon"><Plus className="h-4 w-4" /></Button>
                 </CardHeader>
                 <CardContent className="grid grid-cols-4 gap-4">
@@ -168,7 +167,7 @@ export function CompanyProfile() {
               </Card>
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between">
-                  <CardTitle>Lịch sử & các mốc sự kiện</CardTitle>
+                  <CardTitle>{profile.history.title}</CardTitle>
                    <Button variant="ghost" size="icon"><Edit className="h-4 w-4" /></Button>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -185,13 +184,13 @@ export function CompanyProfile() {
               </Card>
                <Card>
                 <CardHeader className="flex flex-row items-center justify-between">
-                  <CardTitle>Giấy phép & Chứng nhận</CardTitle>
+                  <CardTitle>{profile.licenses.title}</CardTitle>
                    <Button variant="ghost" size="icon"><Edit className="h-4 w-4" /></Button>
                 </CardHeader>
                 <CardContent>
                    <ul className="list-disc pl-5 text-muted-foreground space-y-1">
-                      <li>Giấy phép kinh doanh số 12345-XYZ</li>
-                      <li>Chứng nhận ISO 9001:2015</li>
+                      <li>{profile.licenses.item1}</li>
+                      <li>{profile.licenses.item2}</li>
                    </ul>
                 </CardContent>
               </Card>
@@ -199,48 +198,48 @@ export function CompanyProfile() {
             <div className="md:col-span-1 space-y-6">
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between">
-                      <CardTitle>Thông tin doanh nghiệp</CardTitle>
+                      <CardTitle>{profile.companyInfo.title}</CardTitle>
                       <Button variant="ghost" size="icon"><Edit className="h-4 w-4" /></Button>
                     </CardHeader>
                     <CardContent className="space-y-2 text-sm">
-                       <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-muted-foreground"/> <span>Năm thành lập: 2015</span></div>
-                       <div className="flex items-center gap-2"><Users className="h-4 w-4 text-muted-foreground"/> <span>Quy mô: 100-500 nhân viên</span></div>
-                       <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-muted-foreground"/> <span>SĐT: 052-123-4567</span></div>
-                       <div className="flex items-center gap-2"><Globe className="h-4 w-4 text-muted-foreground"/> <span>Website: globalsupport.jp</span></div>
-                       <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-muted-foreground"/> <span>Địa chỉ: Aichi, Nhật Bản</span></div>
+                       <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-muted-foreground"/> <span>{profile.companyInfo.founded}: 2015</span></div>
+                       <div className="flex items-center gap-2"><Users className="h-4 w-4 text-muted-foreground"/> <span>{profile.companyInfo.size}: 100-500 {profile.companyInfo.employees}</span></div>
+                       <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-muted-foreground"/> <span>{profile.companyInfo.phone}: 052-123-4567</span></div>
+                       <div className="flex items-center gap-2"><Globe className="h-4 w-4 text-muted-foreground"/> <span>{profile.companyInfo.website}: globalsupport.jp</span></div>
+                       <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-muted-foreground"/> <span>{profile.companyInfo.address}: Aichi, Japan</span></div>
                     </CardContent>
                 </Card>
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between">
-                      <CardTitle>Ngành nghề & Lĩnh vực</CardTitle>
+                      <CardTitle>{profile.industryInfo.title}</CardTitle>
                       <Button variant="ghost" size="icon"><Edit className="h-4 w-4" /></Button>
                     </CardHeader>
                     <CardContent>
-                        <p className="font-semibold text-sm mb-2">Ngành nghề chính</p>
+                        <p className="font-semibold text-sm mb-2">{profile.industryInfo.mainIndustry}</p>
                         <div className="flex flex-wrap gap-2">
-                            <Badge variant="outline">Sản xuất ô tô</Badge>
-                            <Badge variant="outline">Chế biến thực phẩm</Badge>
+                            <Badge variant="outline">{profile.industryInfo.industry1}</Badge>
+                            <Badge variant="outline">{profile.industryInfo.industry2}</Badge>
                         </div>
-                         <p className="font-semibold text-sm mt-4 mb-2">Lĩnh vực hoạt động</p>
-                         <p className="text-sm text-muted-foreground">Chưa có lĩnh vực hoạt động. Nhấn vào đây để cập nhật</p>
+                         <p className="font-semibold text-sm mt-4 mb-2">{profile.industryInfo.fields}</p>
+                         <p className="text-sm text-muted-foreground">{profile.industryInfo.placeholder}</p>
                     </CardContent>
                 </Card>
                  <Card>
                     <CardHeader className="flex flex-row items-center justify-between">
-                      <CardTitle>Phúc lợi & Môi trường</CardTitle>
+                      <CardTitle>{profile.benefits.title}</CardTitle>
                       <Button variant="ghost" size="icon"><Edit className="h-4 w-4" /></Button>
                     </CardHeader>
                     <CardContent>
                         <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                            <li>Hỗ trợ nhà ở, ký túc xá</li>
-                            <li>Bảo hiểm đầy đủ theo luật pháp</li>
-                            <li>Các hoạt động ngoại khóa, du lịch công ty</li>
+                            <li>{profile.benefits.item1}</li>
+                            <li>{profile.benefits.item2}</li>
+                            <li>{profile.benefits.item3}</li>
                         </ul>
                     </CardContent>
                 </Card>
                 <Button variant="outline" className="w-full">
                     <LogOut className="mr-2 h-4 w-4"/>
-                    Đăng xuất
+                    {profile.logout}
                 </Button>
             </div>
           </div>

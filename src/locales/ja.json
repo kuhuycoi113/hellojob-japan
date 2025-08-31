@@ -26,7 +26,8 @@
       "about": "会社概要",
       "dashboard": "ダッシュボード",
       "chat": "相談する"
-    }
+    },
+    "editProfile": "プロフィール編集"
   },
   "mobile_footer": {
     "home": "ホーム",
@@ -1022,6 +1023,59 @@
     "your_partners": {
       "title": "あなたのパートナー",
       "subtitle": "信頼できる支援機関、組合、および派遣会社とつながりましょう。"
+    },
+    "company_profile": {
+      "industry": "製造・加工業",
+      "location": "愛知県",
+      "editProfile": "プロフィール編集",
+      "yourJobs": "貴社の求人",
+      "yourCandidates": "貴社の候補者",
+      "companyIntroduction": {
+        "title": "会社紹介",
+        "placeholder": "情報がありません。クリックして更新してください。"
+      },
+      "companyVideo": {
+        "title": "会社紹介動画"
+      },
+      "companyPhotos": {
+        "title": "会社の写真"
+      },
+      "history": {
+        "title": "沿革・主な出来事",
+        "event1_title": "会社設立",
+        "event1_desc": "従業員5名で自動車部品市場に特化して事業を開始。",
+        "event2_title": "工場拡張",
+        "event2_desc": "ISO 9001認証を取得し、生産規模を倍増。"
+      },
+      "licenses": {
+        "title": "許認可・認証",
+        "item1": "事業許可番号 12345-XYZ",
+        "item2": "ISO 9001:2015 認証"
+      },
+      "companyInfo": {
+        "title": "企業情報",
+        "founded": "設立年",
+        "size": "従業員数",
+        "employees": "名",
+        "phone": "電話番号",
+        "website": "ウェブサイト",
+        "address": "住所"
+      },
+      "industryInfo": {
+        "title": "業種・分野",
+        "mainIndustry": "主な業種",
+        "industry1": "自動車製造",
+        "industry2": "食品加工",
+        "fields": "事業分野",
+        "placeholder": "事業分野がありません。クリックして更新してください。"
+      },
+      "benefits": {
+        "title": "福利厚生・環境",
+        "item1": "住宅・寮の支援",
+        "item2": "法律に基づく各種保険完備",
+        "item3": "社外活動、社員旅行"
+      },
+      "logout": "ログアウト"
     }
   },
     "dashboard_partner": {

@@ -26,7 +26,8 @@
       "about": "Giới thiệu",
       "dashboard": "Quản lý",
       "chat": "Tư vấn"
-    }
+    },
+    "editProfile": "Sửa hồ sơ"
   },
   "mobile_footer": {
     "home": "Trang chủ",
@@ -1018,6 +1019,59 @@
     "your_partners": {
       "title": "Đối tác của bạn",
       "subtitle": "Kết nối bạn với các Cơ quan Hỗ trợ, Nghiệp đoàn và Công ty Phái cử uy tín."
+    },
+    "company_profile": {
+      "industry": "Sản xuất & Chế biến",
+      "location": "Aichi, Nhật Bản",
+      "editProfile": "Sửa hồ sơ",
+      "yourJobs": "Việc làm của bạn",
+      "yourCandidates": "Ứng viên của bạn",
+      "companyIntroduction": {
+        "title": "Giới thiệu doanh nghiệp",
+        "placeholder": "Chưa có thông tin. Nhấn vào đây để cập nhật."
+      },
+      "companyVideo": {
+        "title": "Video về doanh nghiệp"
+      },
+      "companyPhotos": {
+        "title": "Ảnh về doanh nghiệp"
+      },
+      "history": {
+        "title": "Lịch sử & các mốc sự kiện",
+        "event1_title": "Thành lập công ty",
+        "event1_desc": "Bắt đầu với 5 nhân viên, tập trung vào thị trường sản xuất linh kiện ô tô.",
+        "event2_title": "Mở rộng nhà xưởng",
+        "event2_desc": "Đạt chứng nhận ISO 9001 và mở rộng quy mô sản xuất gấp đôi."
+      },
+      "licenses": {
+        "title": "Giấy phép & Chứng nhận",
+        "item1": "Giấy phép kinh doanh số 12345-XYZ",
+        "item2": "Chứng nhận ISO 9001:2015"
+      },
+      "companyInfo": {
+        "title": "Thông tin doanh nghiệp",
+        "founded": "Năm thành lập",
+        "size": "Quy mô",
+        "employees": "nhân viên",
+        "phone": "SĐT",
+        "website": "Website",
+        "address": "Địa chỉ"
+      },
+      "industryInfo": {
+        "title": "Ngành nghề & Lĩnh vực",
+        "mainIndustry": "Ngành nghề chính",
+        "industry1": "Sản xuất ô tô",
+        "industry2": "Chế biến thực phẩm",
+        "fields": "Lĩnh vực hoạt động",
+        "placeholder": "Chưa có lĩnh vực hoạt động. Nhấn vào đây để cập nhật."
+      },
+      "benefits": {
+        "title": "Phúc lợi & Môi trường",
+        "item1": "Hỗ trợ nhà ở, ký túc xá",
+        "item2": "Bảo hiểm đầy đủ theo luật pháp",
+        "item3": "Các hoạt động ngoại khóa, du lịch công ty"
+      },
+      "logout": "Đăng xuất"
     }
   },
   "dashboard_partner": {

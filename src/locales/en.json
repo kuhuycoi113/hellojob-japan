@@ -26,7 +26,8 @@
       "about": "About Us",
       "dashboard": "Dashboard",
       "chat": "Chat"
-    }
+    },
+    "editProfile": "Edit Profile"
   },
   "mobile_footer": {
     "home": "Home",
@@ -1018,6 +1019,59 @@
     "your_partners": {
       "title": "Your Partners",
       "subtitle": "Connect with trusted Support Organizations, Unions, and Sending Companies."
+    },
+    "company_profile": {
+      "industry": "Manufacturing & Processing",
+      "location": "Aichi, Japan",
+      "editProfile": "Edit Profile",
+      "yourJobs": "Your Jobs",
+      "yourCandidates": "Your Candidates",
+      "companyIntroduction": {
+        "title": "Company Introduction",
+        "placeholder": "No information available. Click to update."
+      },
+      "companyVideo": {
+        "title": "Company Video"
+      },
+      "companyPhotos": {
+        "title": "Company Photos"
+      },
+      "history": {
+        "title": "History & Milestones",
+        "event1_title": "Company Established",
+        "event1_desc": "Started with 5 employees, focusing on the automotive parts market.",
+        "event2_title": "Factory Expansion",
+        "event2_desc": "Achieved ISO 9001 certification and doubled production scale."
+      },
+      "licenses": {
+        "title": "Licenses & Certifications",
+        "item1": "Business License No. 12345-XYZ",
+        "item2": "ISO 9001:2015 Certification"
+      },
+      "companyInfo": {
+        "title": "Company Information",
+        "founded": "Founded",
+        "size": "Size",
+        "employees": "employees",
+        "phone": "Phone",
+        "website": "Website",
+        "address": "Address"
+      },
+      "industryInfo": {
+        "title": "Industry & Fields",
+        "mainIndustry": "Main Industries",
+        "industry1": "Automotive Manufacturing",
+        "industry2": "Food Processing",
+        "fields": "Fields of Operation",
+        "placeholder": "No fields of operation. Click to update."
+      },
+      "benefits": {
+        "title": "Benefits & Environment",
+        "item1": "Housing/dormitory support",
+        "item2": "Full insurance coverage by law",
+        "item3": "Extracurricular activities, company trips"
+      },
+      "logout": "Logout"
     }
   },
   "dashboard_partner": {
