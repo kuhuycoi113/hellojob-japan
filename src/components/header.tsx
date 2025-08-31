@@ -254,42 +254,6 @@ export function Header() {
           </DropdownMenu>
 
           <div className="hidden md:flex items-center gap-2">
-            <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
-              <DialogTrigger asChild>
-                 <Button variant="outline" className='hover:bg-accent hover:text-accent-foreground'>{t.header.postJob}</Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-3xl">
-                <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
-                  <DialogDescription className="text-center">
-                    {t.userRoles.description}
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                  {userRoles.map((role) => (
-                    <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                      <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className="bg-primary/5 p-3 rounded-lg">
-                            {role.icon}
-                          </div>
-                          <div>
-                            <h3 className="font-semibold text-base text-gray-800">
-                              {role.title}
-                            </h3>
-                            <p className="text-sm text-muted-foreground mt-1">
-                              {role.description}
-                            </p>
-                          </div>
-                        </div>
-                        <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                      </Card>
-                    </div>
-                  ))}
-                </div>
-              </DialogContent>
-            </Dialog>
-
             <Button asChild variant="outline" className="hover:bg-secondary hover:text-secondary-foreground">
                <Link href="/dashboard/employer" className="flex items-center gap-2">
                 <User className="h-4 w-4" />
