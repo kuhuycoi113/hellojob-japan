@@ -729,47 +729,47 @@
     "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?"
   },
   "visaTypes": {
-    "title": "Bạn muốn tuyển loại Visa nào?",
-    "description": "Hãy chọn loại visa phù hợp với nhu cầu tuyển dụng của bạn.",
+    "title": "Which Visa type do you want to recruit for?",
+    "description": "Please choose the visa type that matches your recruitment needs.",
     "intern": {
-      "title": "Thực tập sinh kỹ năng",
-      "description": "Chương trình đào tạo kỹ năng tại Nhật Bản."
+      "title": "Technical Intern Trainee",
+      "description": "Skill training program in Japan."
     },
     "skilled": {
-      "title": "Kỹ năng đặc định",
-      "description": "Lao động có kinh nghiệm làm việc dài hạn."
+      "title": "Specified Skilled Worker",
+      "description": "Experienced workers for long-term employment."
     },
     "engineer": {
-      "title": "Kỹ sư, tri thức",
-      "description": "Chuyên gia có trình độ cao, bằng cấp chuyên ngành."
+      "title": "Engineer / Specialist",
+      "description": "Highly qualified specialists with professional degrees."
     }
   },
   "visaSubTypes": {
-    "title": "Vui lòng chọn chi tiết hơn",
+    "title": "Please select more details",
     "intern": {
-      "threeYear": "Thực tập sinh 3 năm",
-      "oneYear": "Thực tập sinh 1 năm",
-      "go": "Thực tập sinh 3 Go"
+      "threeYear": "3-Year Intern",
+      "oneYear": "1-Year Intern",
+      "go": "Intern #3 Go"
     },
     "skilled": {
-      "japan": "Ứng viên đặc định tại Nhật",
-      "vietnam": "Ứng viên đặc định từ Việt Nam"
+      "japan": "Skilled candidates in Japan",
+      "vietnam": "Skilled candidates from Vietnam"
     },
     "engineer": {
-      "japan": "Ứng viên kỹ sư, tri thức tại Nhật",
-      "vietnam": "Ứng viên kỹ sư, tri thức từ Việt Nam"
+      "japan": "Engineer/Specialist candidates in Japan",
+      "vietnam": "Engineer/Specialist candidates from Vietnam"
     }
   },
   "postMethod": {
-    "title": "Chọn phương thức đăng tin",
-    "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
+    "title": "Choose posting method",
+    "description": "How would you like to create your job post?",
     "ai": {
-      "title": "Đăng việc làm bằng AI",
-      "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
+      "title": "Post with AI",
+      "description": "Briefly describe and let AI create a professional job post."
     },
     "manual": {
-      "title": "Nhập liệu thủ công",
-      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
+      "title": "Manual Entry",
+      "description": "Fill out a detailed form for full control over the listing."
     }
   }
 }

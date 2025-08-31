@@ -6,12 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/language-context';
-import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType } from 'lucide-react';
+import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType, Brain, ChevronRight, GraduationCap, Star, Briefcase } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
 import type { GenerateJobPostOutput } from '@/ai/schemas/generate-job-post-schema';
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 type SessionState = 'idle' | 'loading' | 'completed';
 type UploadedFile = {
@@ -20,6 +21,8 @@ type UploadedFile = {
   size: number;
   dataUri: string;
 }
+type VisaType = 'intern' | 'skilled' | 'engineer';
+
 
 function AiJobPostFormContent() {
   const { t } = useLanguage();
@@ -29,14 +32,56 @@ function AiJobPostFormContent() {
 
 
   const role = searchParams.get('role');
-  const visaType = searchParams.get('visaType');
-  const visaSubType = searchParams.get('visaSubType');
+  const initialVisaType = searchParams.get('visaType');
+  const initialVisaSubType = searchParams.get('visaSubType');
   
   const [state, setState] = useState<SessionState>('idle');
   const [description, setDescription] = useState('');
   const [jobPost, setJobPost] = useState<GenerateJobPostOutput | null>(null);
   const [uploadedFile, setUploadedFile] = useState<UploadedFile | null>(null);
 
+  const [visaDialogOpen, setVisaDialogOpen] = useState(false);
+  const [visaSubTypeDialogOpen, setVisaSubTypeDialogOpen] = useState(false);
+  const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
+  const [selectedVisaSubType, setSelectedVisaSubType] = useState<{title: string, href: string} | null>(null);
+
+  const visaTypes = [
+      {
+        icon: <GraduationCap className="h-8 w-8 text-primary" />,
+        title: t.visaTypes.intern.title,
+        description: t.visaTypes.intern.description,
+        type: 'intern' as VisaType,
+      },
+      {
+        icon: <Star className="h-8 w-8 text-yellow-500" />,
+        title: t.visaTypes.skilled.title,
+        description: t.visaTypes.skilled.description,
+        type: 'skilled' as VisaType,
+      },
+      {
+        icon: <Briefcase className="h-8 w-8 text-green-500" />,
+        title: t.visaTypes.engineer.title,
+        description: t.visaTypes.engineer.description,
+        type: 'engineer' as VisaType,
+      },
+  ]
+
+  const visaSubTypes = {
+    intern: [
+      { title: t.visaSubTypes.intern.threeYear, href: "#"},
+      { title: t.visaSubTypes.intern.oneYear, href: "#"},
+      { title: t.visaSubTypes.intern.go, href: "#"},
+    ],
+    skilled: [
+      { title: t.visaSubTypes.skilled.japan, href: "#"},
+      { title: t.visaSubTypes.skilled.vietnam, href: "#"},
+    ],
+    engineer: [
+      { title: t.visaSubTypes.engineer.japan, href: "#"},
+      { title: t.visaSubTypes.engineer.vietnam, href: "#"},
+    ],
+  };
+  
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -49,6 +94,7 @@ function AiJobPostFormContent() {
           dataUri: reader.result as string,
         });
         setDescription(''); // Clear text description when a file is uploaded
+        setVisaDialogOpen(true); // Open visa selection dialog
       };
       reader.readAsDataURL(file);
     }
@@ -97,8 +143,8 @@ function AiJobPostFormContent() {
       const result = await generateJobPost({ 
         description,
         role: role || undefined,
-        visaType: visaType || undefined,
-        visaSubType: visaSubType || undefined
+        visaType: initialVisaType || visaTypes.find(v => v.type === selectedVisaType)?.title || undefined,
+        visaSubType: initialVisaSubType || selectedVisaSubType?.title || undefined,
       });
       setJobPost(result);
       setState('completed');
@@ -120,7 +166,18 @@ function AiJobPostFormContent() {
     removeFile();
   }
 
-  const hasSelections = role || visaType || visaSubType;
+  const handleVisaTypeSelect = (type: VisaType) => {
+    setSelectedVisaType(type);
+    setVisaDialogOpen(false);
+    setVisaSubTypeDialogOpen(true);
+  }
+
+  const handleVisaSubTypeSelect = (subType: {title: string, href: string}) => {
+    setSelectedVisaSubType(subType);
+    setVisaSubTypeDialogOpen(false);
+  }
+
+  const hasSelections = role || initialVisaType || initialVisaSubType;
 
   const FileIcon = ({ type }: { type: string }) => {
     if (type.startsWith('image/')) {
@@ -159,8 +216,8 @@ function AiJobPostFormContent() {
               </CardTitle>
               <div className="flex flex-wrap gap-2 pt-2">
                 {role && <Badge variant="secondary">{role}</Badge>}
-                {visaType && <Badge variant="secondary">{visaType}</Badge>}
-                {visaSubType && <Badge variant="secondary">{visaSubType}</Badge>}
+                {initialVisaType && <Badge variant="secondary">{initialVisaType}</Badge>}
+                {initialVisaSubType && <Badge variant="secondary">{initialVisaSubType}</Badge>}
               </div>
             </CardHeader>
           </Card>
@@ -304,6 +361,54 @@ function AiJobPostFormContent() {
           </div>
         </div>
       </div>
+       <Dialog open={visaDialogOpen} onOpenChange={setVisaDialogOpen}>
+           <DialogContent className="sm:max-w-3xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaTypes.title}</DialogTitle>
+                <DialogDescription className="text-center">
+                  {t.visaTypes.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
+                {visaTypes.map((visa) => (
+                  <div key={visa.title} onClick={() => handleVisaTypeSelect(visa.type)}>
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
+                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
+                        {visa.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-base text-gray-800">
+                          {visa.title}
+                        </h3>
+                         <p className="text-sm text-muted-foreground mt-1">
+                          {visa.description}
+                        </p>
+                      </div>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </DialogContent>
+        </Dialog>
+
+        <Dialog open={visaSubTypeDialogOpen} onOpenChange={setVisaSubTypeDialogOpen}>
+           <DialogContent className="sm:max-w-xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaSubTypes.title}</DialogTitle>
+              </DialogHeader>
+              <div className="grid grid-cols-1 gap-4 py-4">
+                {selectedVisaType && visaSubTypes[selectedVisaType].map((subType) => (
+                  <div onClick={() => handleVisaSubTypeSelect(subType)} key={subType.title}>
+                    <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
+                      <h3 className="font-semibold text-base text-gray-800">
+                        {subType.title}
+                      </h3>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </DialogContent>
+        </Dialog>
     </section>
   );
 }
