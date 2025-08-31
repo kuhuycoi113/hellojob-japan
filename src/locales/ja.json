@@ -36,7 +36,6 @@
   },
   "mobile_menu_sheet": {
     "hello": "こんにちは",
-    "myProfile": "私のプロフィール",
     "postJob": "求人を掲載",
     "dataReport": "データ・レポート",
     "partners": "日本のパートナー",
@@ -908,28 +907,43 @@
       },
       "jobs": [
         {
+          "id": "Aichi-W01",
           "title": "溶接技術者",
+          "company": "トヨタ株式会社",
           "location": "愛知県",
           "status": "Searching",
           "partners": "3",
           "applications": "25",
-          "date_posted": "2024-05-10"
+          "date_posted": "2024-05-10",
+          "salary": "手取り給与: 180,000円",
+          "image": "https://picsum.photos/400/225?random=job1",
+          "tags": ["機械", "技術者", "自動車"]
         },
         {
+          "id": "Osaka-F02",
           "title": "食品加工スタッフ",
+          "company": "大阪食品株式会社",
           "location": "大阪府",
           "status": "Forwarding",
           "partners": "5",
           "applications": "42",
-          "date_posted": "2024-05-08"
+          "date_posted": "2024-05-08",
+          "salary": "手取り給与: 165,000円",
+          "image": "https://picsum.photos/400/225?random=job2",
+          "tags": ["食品", "特定技能", "女性"]
         },
         {
+          "id": "Tokyo-C03",
           "title": "建設作業員",
+          "company": "東京建設グループ",
           "location": "東京都",
           "status": "Forwarding",
           "partners": "8",
           "applications": "58",
-          "date_posted": "2024-05-01"
+          "date_posted": "2024-05-01",
+          "salary": "手取り給与: 210,000円",
+          "image": "https://picsum.photos/400/225?random=job3",
+          "tags": ["建設", "足場"]
         }
       ]
     },

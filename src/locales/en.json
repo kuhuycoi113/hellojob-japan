@@ -36,7 +36,6 @@
   },
   "mobile_menu_sheet": {
     "hello": "Hello",
-    "myProfile": "My Profile",
     "postJob": "Post Job",
     "dataReport": "Data & Reports",
     "partners": "Partners in Japan",
@@ -888,28 +887,43 @@
       },
       "jobs": [
         {
+          "id": "Aichi-W01",
           "title": "Welding Engineer",
+          "company": "Toyota Motor Corp.",
           "location": "Aichi, Japan",
           "status": "Searching",
           "partners": "3",
           "applications": "25",
-          "date_posted": "2024-05-10"
+          "date_posted": "2024-05-10",
+          "salary": "Net Salary: 180,000 JPY",
+          "image": "https://picsum.photos/400/225?random=job1",
+          "tags": ["Mechanics", "Engineer", "Automotive"]
         },
         {
+          "id": "Osaka-F02",
           "title": "Food Processing Staff",
+          "company": "Osaka Foods Co.",
           "location": "Osaka, Japan",
           "status": "Forwarding",
           "partners": "5",
           "applications": "42",
-          "date_posted": "2024-05-08"
+          "date_posted": "2024-05-08",
+          "salary": "Net Salary: 165,000 JPY",
+          "image": "https://picsum.photos/400/225?random=job2",
+          "tags": ["Food", "Skilled Worker", "Female"]
         },
         {
+          "id": "Tokyo-C03",
           "title": "Construction Worker",
+          "company": "Tokyo Construction Group",
           "location": "Tokyo, Japan",
           "status": "Forwarding",
           "partners": "8",
           "applications": "58",
-          "date_posted": "2024-05-01"
+          "date_posted": "2024-05-01",
+          "salary": "Net Salary: 210,000 JPY",
+          "image": "https://picsum.photos/400/225?random=job3",
+          "tags": ["Construction", "Scaffolding"]
         }
       ]
     },

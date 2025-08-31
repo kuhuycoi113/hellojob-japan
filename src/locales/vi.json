@@ -36,7 +36,6 @@
   },
   "mobile_menu_sheet": {
     "hello": "Xin chào",
-    "myProfile": "Hồ sơ của tôi",
     "postJob": "Đăng tuyển dụng",
     "dataReport": "Dữ liệu & Báo cáo",
     "partners": "Đối tác tại Nhật",
@@ -904,28 +903,43 @@
       },
       "jobs": [
         {
+          "id": "Aichi-W01",
           "title": "Kỹ sư Hàn",
+          "company": "Công ty TNHH Toyota",
           "location": "Aichi, Nhật Bản",
           "status": "Searching",
           "partners": "3",
           "applications": "25",
-          "date_posted": "2024-05-10"
+          "date_posted": "2024-05-10",
+          "salary": "Lương thực lĩnh: 180,000 JPY",
+          "image": "https://picsum.photos/400/225?random=job1",
+          "tags": ["Cơ khí", "Kỹ sư", "Ô tô"]
         },
         {
+          "id": "Osaka-F02",
           "title": "Nhân viên chế biến thực phẩm",
+          "company": "Công ty CP Thực phẩm Osaka",
           "location": "Osaka, Nhật Bản",
           "status": "Forwarding",
           "partners": "5",
           "applications": "42",
-          "date_posted": "2024-05-08"
+          "date_posted": "2024-05-08",
+          "salary": "Lương thực lĩnh: 165,000 JPY",
+          "image": "https://picsum.photos/400/225?random=job2",
+          "tags": ["Thực phẩm", "Đặc định", "Nữ"]
         },
         {
+          "id": "Tokyo-C03",
           "title": "Công nhân xây dựng",
+          "company": "Tập đoàn Xây dựng Tokyo",
           "location": "Tokyo, Nhật Bản",
           "status": "Forwarding",
           "partners": "8",
           "applications": "58",
-          "date_posted": "2024-05-01"
+          "date_posted": "2024-05-01",
+          "salary": "Lương thực lĩnh: 210,000 JPY",
+          "image": "https://picsum.photos/400/225?random=job3",
+          "tags": ["Xây dựng", "Giàn giáo"]
         }
       ]
     },
