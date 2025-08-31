@@ -202,8 +202,8 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 hidden w-full border-b bg-white md:block">
-      <div className="container mx-auto flex h-20 items-center justify-between px-4">
+    <header className="fixed md:sticky top-0 z-50 w-full border-b bg-white">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-10">
           <Link href="/">
             <Logo />
@@ -234,7 +234,7 @@ export function Header() {
                 className="flex items-center gap-2"
               >
                 {languageConfig[language].flag}
-                <span>{languageConfig[language].short}</span>
+                <span className="hidden md:inline">{languageConfig[language].short}</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -253,79 +253,81 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
-            <DialogTrigger asChild>
-               <Button variant="outline" className='hover:bg-accent hover:text-accent-foreground'>{t.header.postJob}</Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-3xl">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
-                <DialogDescription className="text-center">
-                  {t.userRoles.description}
-                </DialogDescription>
-              </DialogHeader>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                {userRoles.map((role) => (
-                  <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                    <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="bg-primary/5 p-3 rounded-lg">
-                          {role.icon}
+          <div className="hidden md:flex items-center gap-2">
+            <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
+              <DialogTrigger asChild>
+                 <Button variant="outline" className='hover:bg-accent hover:text-accent-foreground'>{t.header.postJob}</Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-3xl">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+                  <DialogDescription className="text-center">
+                    {t.userRoles.description}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                  {userRoles.map((role) => (
+                    <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                      <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                          <div className="bg-primary/5 p-3 rounded-lg">
+                            {role.icon}
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-base text-gray-800">
+                              {role.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              {role.description}
+                            </p>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="font-semibold text-base text-gray-800">
-                            {role.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            {role.description}
-                          </p>
-                        </div>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                    </Card>
-                  </div>
-                ))}
-              </div>
-            </DialogContent>
-          </Dialog>
-
-          <Button asChild variant="outline" className="hover:bg-secondary hover:text-secondary-foreground">
-             <Link href="/dashboard/employer" className="flex items-center gap-2">
-              <User className="h-4 w-4" />
-              {t.header.myProfile}
-            </Link>
-          </Button>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon">
-                <LayoutGrid className="h-5 w-5" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-80 p-4">
-                <div className="flex items-center gap-4 mb-4">
-                    <Avatar className="h-12 w-12">
-                        <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                        <AvatarFallback>U</AvatarFallback>
-                    </Avatar>
-                    <div>
-                        <p className="font-semibold text-base">HelloJob</p>
-                        <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccount}</p>
+                        <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                      </Card>
                     </div>
+                  ))}
                 </div>
-                <DropdownMenuSeparator />
-                 <div className="grid grid-cols-4 gap-2 mt-4">
-                    {menuItems.map((item) => (
-                        <DropdownMenuItem key={item.href} asChild className="flex-col h-20 p-2 text-center">
-                           <Link href={item.href}>
-                            <div className="text-primary mb-1">{item.icon}</div>
-                            <span className="text-xs whitespace-normal leading-tight">{item.label}</span>
-                          </Link>
-                        </DropdownMenuItem>
-                    ))}
-                </div>
-            </DropdownMenuContent>
-          </DropdownMenu>
+              </DialogContent>
+            </Dialog>
+
+            <Button asChild variant="outline" className="hover:bg-secondary hover:text-secondary-foreground">
+               <Link href="/dashboard/employer" className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                {t.header.myProfile}
+              </Link>
+            </Button>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <LayoutGrid className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-80 p-4">
+                  <div className="flex items-center gap-4 mb-4">
+                      <Avatar className="h-12 w-12">
+                          <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                          <AvatarFallback>U</AvatarFallback>
+                      </Avatar>
+                      <div>
+                          <p className="font-semibold text-base">HelloJob</p>
+                          <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccount}</p>
+                      </div>
+                  </div>
+                  <DropdownMenuSeparator />
+                   <div className="grid grid-cols-4 gap-2 mt-4">
+                      {menuItems.map((item) => (
+                          <DropdownMenuItem key={item.href} asChild className="flex-col h-20 p-2 text-center">
+                             <Link href={item.href}>
+                              <div className="text-primary mb-1">{item.icon}</div>
+                              <span className="text-xs whitespace-normal leading-tight">{item.label}</span>
+                            </Link>
+                          </DropdownMenuItem>
+                      ))}
+                  </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </div>
       

@@ -23,7 +23,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <LanguageProvider>
-          <div className="pb-20 md:pb-0">
+          <div className="pt-16 md:pt-0 pb-20 md:pb-0">
             {children}
           </div>
           <MobileFooter />
