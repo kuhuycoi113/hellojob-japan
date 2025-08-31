@@ -170,7 +170,7 @@ function AiJobPostFormContent() {
   ];
   
   const handleGenerate = async () => {
-    if (!description.trim()) {
+    if (!description.trim() && !uploadedFile) {
       toast({
         title: t.ai_job_post_form.error.title,
         description: t.ai_job_post_form.error.description,
@@ -550,3 +550,5 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
