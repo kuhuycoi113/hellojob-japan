@@ -447,12 +447,12 @@ function AiJobPostFormContent() {
                   )}
                 </CardContent>
                 {state === 'completed' && (
-                    <CardFooter className="flex justify-end">
-                         <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                            <Send className="mr-2 h-4 w-4" />
-                            {t.ai_job_post_form.postThisJob}
-                        </Button>
-                    </CardFooter>
+                  <CardFooter className="flex justify-end">
+                    <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                      <Send className="mr-2 h-4 w-4" />
+                      {t.ai_job_post_form.postThisJob}
+                    </Button>
+                  </CardFooter>
                 )}
               </Card>
           </div>
@@ -550,5 +550,7 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
 
     
