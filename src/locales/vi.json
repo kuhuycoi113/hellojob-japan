@@ -188,7 +188,8 @@
       "apiTitle": "Đã có lỗi xảy ra",
       "apiDescription": "Đã có sự cố khi tạo tin tuyển dụng. Vui lòng thử lại."
     },
-    "or_divider": "Hoặc"
+    "or_divider": "Hoặc",
+    "analyzeButton": "Phân tích"
   },
   "handbook": {
     "featured": {

@@ -188,7 +188,8 @@
       "apiTitle": "An error occurred",
       "apiDescription": "There was a problem generating the job post. Please try again."
     },
-    "or_divider": "OR"
+    "or_divider": "OR",
+    "analyzeButton": "Analyze"
   },
   "handbook": {
     "featured": {

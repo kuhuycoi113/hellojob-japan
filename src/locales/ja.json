@@ -188,7 +188,8 @@
       "apiTitle": "エラーが発生しました",
       "apiDescription": "求人情報の生成中に問題が発生しました。もう一度お試しください。"
     },
-    "or_divider": "または"
+    "or_divider": "または",
+    "analyzeButton": "分析する"
   },
   "handbook": {
     "featured": {

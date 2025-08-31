@@ -128,8 +128,7 @@ function AiJobPostFormContent() {
           size: file.size,
           dataUri: reader.result as string,
         });
-        setDescription(''); // Clear text description when a file is uploaded
-        setRoleDialogOpen(true); // Open role selection dialog
+        setDescription('');
       };
       reader.readAsDataURL(file);
     }
@@ -162,7 +161,7 @@ function AiJobPostFormContent() {
   ];
   
   const handleGenerate = async () => {
-    if (!description.trim() && !uploadedFile) {
+    if (!description.trim()) {
       toast({
         title: t.ai_job_post_form.error.title,
         description: t.ai_job_post_form.error.description,
@@ -173,8 +172,6 @@ function AiJobPostFormContent() {
     setState('loading');
     setJobPost(null);
     try {
-      // Logic for handling file vs. text will go here in the future
-      // For now, we only handle text description
       const result = await generateJobPost({ 
         description,
         role: role || selectedRole?.title || undefined,
@@ -193,6 +190,10 @@ function AiJobPostFormContent() {
       setState('idle');
     }
   };
+
+  const handleStartAnalysis = () => {
+    setRoleDialogOpen(true);
+  }
 
   const handleReset = () => {
     setState('idle');
@@ -216,6 +217,8 @@ function AiJobPostFormContent() {
   const handleVisaSubTypeSelect = (subType: {title: string, href: string}) => {
     setSelectedVisaSubType(subType);
     setVisaSubTypeDialogOpen(false);
+    // Here you would trigger the analysis with the file and all selected options
+    // For now, it just closes the dialog
   }
 
   const hasSelections = role || initialVisaType || initialVisaSubType;
@@ -287,7 +290,7 @@ function AiJobPostFormContent() {
                   className="min-h-[200px] text-base"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  disabled={state === 'loading'}
+                  disabled={state === 'loading' || !!uploadedFile}
                 />
               )}
                <input 
@@ -314,14 +317,21 @@ function AiJobPostFormContent() {
               {state === 'completed' && (
                   <Button variant="outline" onClick={handleReset}>{t.ai_job_post_form.input.reset}</Button>
               )}
-              <Button size="lg" onClick={handleGenerate} disabled={state === 'loading' || !!uploadedFile}>
-                {state === 'loading' ? (
-                  <LoaderCircle className="animate-spin" />
-                ) : (
-                  <Sparkles className="mr-2 h-4 w-4" />
-                )}
-                {t.aiJobPost.submit}
-              </Button>
+              {uploadedFile ? (
+                <Button size="lg" onClick={handleStartAnalysis} disabled={state === 'loading'}>
+                    <Brain className="mr-2 h-4 w-4" />
+                    {t.ai_job_post_form.analyzeButton}
+                </Button>
+              ) : (
+                <Button size="lg" onClick={handleGenerate} disabled={state === 'loading'}>
+                  {state === 'loading' ? (
+                    <LoaderCircle className="animate-spin" />
+                  ) : (
+                    <Sparkles className="mr-2 h-4 w-4" />
+                  )}
+                  {t.aiJobPost.submit}
+                </Button>
+              )}
             </CardFooter>
           </Card>
           
