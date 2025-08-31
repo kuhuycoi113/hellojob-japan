@@ -102,6 +102,11 @@ export function CompanyProfile() {
             </div>
           </Card>
           
+          <div className="mt-4">
+            <h2 className="text-2xl font-semibold mb-4">Việc làm của tôi</h2>
+            <JobsList />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="md:col-span-2 space-y-6">
               <Card>
@@ -230,11 +235,6 @@ export function CompanyProfile() {
             </div>
           </div>
           
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Việc làm của tôi</h2>
-            <JobsList />
-          </div>
-
         </div>
       </main>
     </div>
