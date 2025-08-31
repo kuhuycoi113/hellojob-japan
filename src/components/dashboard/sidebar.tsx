@@ -90,16 +90,17 @@ export function DashboardSidebar() {
             <SidebarMenu>
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.label}>
-                  <Link href={item.href}>
-                    <SidebarMenuButton
+                  <SidebarMenuButton
+                      asChild
                       isActive={pathname === item.href}
                       tooltip={open ? '' : item.label}
                     >
+                    <Link href={item.href}>
                       {item.icon}
                       <span>{item.label}</span>
                        {item.badge && <Badge className="ml-auto">{item.badge}</Badge>}
-                    </SidebarMenuButton>
-                  </Link>
+                    </Link>
+                  </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>

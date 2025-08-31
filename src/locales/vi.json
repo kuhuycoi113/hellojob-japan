@@ -882,27 +882,51 @@
           "location": "Aichi, Nhật Bản",
           "status": "Searching",
           "partners": "3",
-          "applications": "25"
+          "applications": "25",
+          "date_posted": "2024-05-10"
         },
         {
           "title": "Nhân viên chế biến thực phẩm",
           "location": "Osaka, Nhật Bản",
           "status": "Forwarding",
           "partners": "5",
-          "applications": "42"
+          "applications": "42",
+          "date_posted": "2024-05-08"
         },
         {
           "title": "Công nhân xây dựng",
           "location": "Tokyo, Nhật Bản",
           "status": "Forwarding",
           "partners": "8",
-          "applications": "58"
+          "applications": "58",
+          "date_posted": "2024-05-01"
         }
       ]
     },
     "job_status": {
         "searching": "Đang tìm đối tác",
         "forwarding": "Đang tiến cử"
+    },
+    "jobs_list": {
+      "title": "Quản lý Việc làm",
+      "description": "Theo dõi và quản lý tất cả các tin tuyển dụng của bạn.",
+      "add_job": "Đăng việc làm mới",
+      "tabs": {
+        "all": "Tất cả",
+        "active": "Đang hoạt động",
+        "draft": "Bản nháp",
+        "archived": "Đã lưu trữ"
+      },
+      "table": {
+        "date_posted": "Ngày đăng",
+        "toggle_menu": "Mở menu",
+        "actions_items": {
+          "details": "Xem chi tiết",
+          "manage": "Quản lý đối tác",
+          "view_candidates": "Xem ứng viên",
+          "archive": "Lưu trữ"
+        }
+      }
     }
   },
   "dashboard_partner": {
