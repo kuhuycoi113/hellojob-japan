@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,6 +20,7 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { Building, Handshake, Users } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
 const VietnamFlag = () => (
@@ -159,6 +160,17 @@ export function Header() {
     ],
   };
 
+  const menuItems = [
+    { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
+    { href: "/how-it-works", label: t.header.menuItems.howItWorks, icon: <Compass /> },
+    { href: "/recruit-right", label: t.header.menuItems.recruitRight, icon: <Target /> },
+    { href: "/elearning", label: t.header.menuItems.elearning, icon: <BookOpen /> },
+    { href: "/dashboard/employer", label: t.header.menuItems.dashboard, icon: <Briefcase /> },
+    { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
+    { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
+    { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
+  ];
+
   const handleRoleSelect = (role: Role) => {
     setSelectedRole(role);
     setRoleDialogOpen(false);
@@ -277,8 +289,8 @@ export function Header() {
             </DialogContent>
           </Dialog>
 
-          <Button variant="outline" asChild>
-             <Link href="/dashboard/employer" className="flex items-center gap-2 hover:bg-secondary hover:text-secondary-foreground">
+          <Button variant="outline" asChild className="hover:bg-secondary hover:text-secondary-foreground">
+             <Link href="/dashboard/employer" className="flex items-center gap-2">
               <User className="h-4 w-4" />
               {t.header.myProfile}
             </Link>
@@ -290,15 +302,28 @@ export function Header() {
                 <LayoutGrid className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>{t.header.menu}</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>{t.header.dashboard}</DropdownMenuItem>
-              <DropdownMenuItem>{t.header.jobPostings}</DropdownMenuItem>
-              <DropdownMenuItem>{t.header.candidateProfiles}</DropdownMenuItem>
-              <DropdownMenuItem>{t.header.settings}</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>{t.header.logout}</DropdownMenuItem>
+            <DropdownMenuContent align="end" className="w-80 p-4">
+                <div className="flex items-center gap-4 mb-4">
+                    <Avatar className="h-12 w-12">
+                        <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                        <AvatarFallback>U</AvatarFallback>
+                    </Avatar>
+                    <div>
+                        <p className="font-semibold text-base">HelloJob</p>
+                        <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccount}</p>
+                    </div>
+                </div>
+                <DropdownMenuSeparator />
+                 <div className="grid grid-cols-4 gap-2 mt-4">
+                    {menuItems.map((item) => (
+                        <DropdownMenuItem key={item.href} asChild className="flex-col h-20 p-2 text-center">
+                           <Link href={item.href}>
+                            <div className="text-primary mb-1">{item.icon}</div>
+                            <span className="text-xs whitespace-normal leading-tight">{item.label}</span>
+                          </Link>
+                        </DropdownMenuItem>
+                    ))}
+                </div>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

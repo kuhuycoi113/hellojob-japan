@@ -15,7 +15,18 @@
     "candidateProfiles": "Candidate Profiles",
     "settings": "Settings",
     "logout": "Logout",
-    "postJob": "Post a Job"
+    "postJob": "Post a Job",
+    "menuItems": {
+      "recruiterAccount": "Recruiter Account",
+      "postJobAI": "Post with AI",
+      "howItWorks": "How it Works",
+      "recruitRight": "Recruit Right",
+      "elearning": "E-Learning",
+      "handbook": "Handbook",
+      "about": "About Us",
+      "dashboard": "Dashboard",
+      "chat": "Chat"
+    }
   },
   "hero": {
     "title": "Leading Vietnamese Manpower Recruitment Platform",

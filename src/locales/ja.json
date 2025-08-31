@@ -15,7 +15,18 @@
     "candidateProfiles": "候補者管理",
     "settings": "設定",
     "logout": "ログアウト",
-    "postJob": "求人掲載"
+    "postJob": "求人掲載",
+    "menuItems": {
+      "recruiterAccount": "採用担当者アカウント",
+      "postJobAI": "AIで求人作成",
+      "howItWorks": "ご利用の流れ",
+      "recruitRight": "採用ご担当者様へ",
+      "elearning": "Eラーニング",
+      "handbook": "ハンドブック",
+      "about": "会社概要",
+      "dashboard": "ダッシュボード",
+      "chat": "相談する"
+    }
   },
   "hero": {
     "title": "ベトナム人材採用のリーディングプラットフォーム",

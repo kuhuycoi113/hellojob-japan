@@ -15,7 +15,18 @@
     "candidateProfiles": "Hồ sơ ứng viên",
     "settings": "Cài đặt",
     "logout": "Đăng xuất",
-    "postJob": "Đăng việc làm"
+    "postJob": "Đăng việc làm",
+    "menuItems": {
+      "recruiterAccount": "Tài khoản nhà tuyển dụng",
+      "postJobAI": "Đăng việc AI",
+      "howItWorks": "Các bước",
+      "recruitRight": "Tuyển đúng người",
+      "elearning": "E-Learning",
+      "handbook": "Cẩm nang",
+      "about": "Giới thiệu",
+      "dashboard": "Quản lý",
+      "chat": "Tư vấn"
+    }
   },
   "hero": {
     "title": "Nền Tảng Tuyển Dụng Nhân Lực Việt Nam Hàng Đầu",
