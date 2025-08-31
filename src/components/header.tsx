@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -268,16 +269,18 @@ export function Header() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-80 p-4">
-                  <div className="flex items-center gap-4 mb-4">
-                      <Avatar className="h-12 w-12">
-                          <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                          <AvatarFallback>U</AvatarFallback>
-                      </Avatar>
-                      <div>
-                          <p className="font-semibold text-base">HelloJob</p>
-                          <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccount}</p>
-                      </div>
-                  </div>
+                  <Link href="/dashboard/employer" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-4 transition-colors">
+                    <div className="flex items-center gap-4">
+                        <Avatar className="h-12 w-12">
+                            <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                            <AvatarFallback>U</AvatarFallback>
+                        </Avatar>
+                        <div>
+                            <p className="font-semibold text-base">HelloJob</p>
+                            <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccount}</p>
+                        </div>
+                    </div>
+                  </Link>
                   <DropdownMenuSeparator />
                    <div className="grid grid-cols-4 gap-2 mt-4">
                       {menuItems.map((item) => (
@@ -384,3 +387,5 @@ export function Header() {
     </header>
   );
 }
+
+    
