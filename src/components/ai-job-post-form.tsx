@@ -15,6 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { cn } from '@/lib/utils';
 
 type SessionState = 'idle' | 'loading' | 'completed';
 type UploadedFile = {
@@ -549,5 +550,3 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
-
-    
