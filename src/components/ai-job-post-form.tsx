@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/language-context';
 import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType, Brain, ChevronRight, GraduationCap, Star, Briefcase, Building, Users, Handshake } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
+import { analyzeJobDocument } from '@/ai/flows/analyze-job-document';
 import type { GenerateJobPostOutput } from '@/ai/schemas/generate-job-post-schema';
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from '@/components/ui/badge';
@@ -45,8 +46,7 @@ function AiJobPostFormContent() {
   const [visaSubTypeDialogOpen, setVisaSubTypeDialogOpen] = useState(false);
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
-  const [selectedVisaSubType, setSelectedVisaSubType] = useState<{title: string, href: string} | null>(null);
-
+  
   const userRoles = [
     {
       icon: <Building className="h-8 w-8 text-primary" />,
@@ -176,7 +176,6 @@ function AiJobPostFormContent() {
         description,
         role: role || selectedRole?.title || undefined,
         visaType: initialVisaType || visaTypes.find(v => v.type === selectedVisaType)?.title || undefined,
-        visaSubType: initialVisaSubType || selectedVisaSubType?.title || undefined,
       });
       setJobPost(result);
       setState('completed');
@@ -192,6 +191,7 @@ function AiJobPostFormContent() {
   };
 
   const handleStartAnalysis = () => {
+    if(!uploadedFile) return;
     setRoleDialogOpen(true);
   }
 
@@ -214,12 +214,46 @@ function AiJobPostFormContent() {
     setVisaSubTypeDialogOpen(true);
   }
 
-  const handleVisaSubTypeSelect = (subType: {title: string, href: string}) => {
-    setSelectedVisaSubType(subType);
+  const handleVisaSubTypeSelect = async (subType: {title: string, href: string}) => {
     setVisaSubTypeDialogOpen(false);
-    // Here you would trigger the analysis with the file and all selected options
-    // For now, it just closes the dialog
+    if (!uploadedFile || !selectedRole || !selectedVisaType) {
+        toast({
+            title: "Missing Information",
+            description: "Something went wrong. Please start over.",
+            variant: "destructive",
+        });
+        return;
+    }
+
+    setState('loading');
+    setJobPost(null);
+
+    try {
+        const result = await analyzeJobDocument({
+            description: '', // Description is from the file, not the textarea
+            documentDataUri: uploadedFile.dataUri,
+            role: selectedRole.title,
+            visaType: visaTypes.find(v => v.type === selectedVisaType)?.title,
+            visaSubType: subType.title,
+        });
+        setJobPost(result);
+        setState('completed');
+    } catch (error) {
+        console.error("Error analyzing job document:", error);
+        toast({
+            title: t.ai_job_post_form.error.apiTitle,
+            description: t.ai_job_post_form.error.apiDescription,
+            variant: "destructive",
+        });
+        setState('idle');
+    } finally {
+        // Reset the form to initial state after analysis is complete or fails
+        removeFile();
+        setSelectedRole(null);
+        setSelectedVisaType(null);
+    }
   }
+
 
   const hasSelections = role || initialVisaType || initialVisaSubType;
 
@@ -323,7 +357,7 @@ function AiJobPostFormContent() {
                     {t.ai_job_post_form.analyzeButton}
                 </Button>
               ) : (
-                <Button size="lg" onClick={handleGenerate} disabled={state === 'loading'}>
+                <Button size="lg" onClick={handleGenerate} disabled={state === 'loading' || !!uploadedFile}>
                   {state === 'loading' ? (
                     <LoaderCircle className="animate-spin" />
                   ) : (
