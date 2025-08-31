@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, Suspense, useRef } from 'react';
@@ -302,7 +303,7 @@ function AiJobPostFormContent() {
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <Card className="shadow-lg w-full sticky top-24">
+          <Card className="shadow-lg w-full">
             <CardHeader>
               <CardTitle>{t.ai_job_post_form.input.title}</CardTitle>
               <CardDescription>{t.ai_job_post_form.input.description}</CardDescription>
