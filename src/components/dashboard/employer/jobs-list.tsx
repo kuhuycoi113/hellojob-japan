@@ -27,10 +27,32 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/language-context';
-import { MoreHorizontal, PlusCircle, List, LayoutGrid } from 'lucide-react';
+import { MoreHorizontal, PlusCircle, List } from 'lucide-react';
 import { useState } from 'react';
 import { JobsGallery } from './jobs-gallery';
 import { cn } from '@/lib/utils';
+
+const GalleryViewIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+      <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+      <line x1="14" x2="21" y1="5.5" y2="5.5"></line>
+      <line x1="14" x2="21" y1="10.5" y2="10.5"></line>
+      <line x1="14" x2="21" y1="15.5" y2="15.5"></line>
+      <line x1="14" x2="21" y1="20.5" y2="20.5"></line>
+    </svg>
+  );
 
 export function JobsList() {
   const { t } = useLanguage();
@@ -67,7 +89,7 @@ export function JobsList() {
                 className={cn("h-7 w-7", view === 'gallery' && "shadow-sm bg-background text-foreground")}
                 onClick={() => setView('gallery')}
               >
-                <LayoutGrid className="h-4 w-4" />
+                <GalleryViewIcon className="h-4 w-4" />
               </Button>
               <Button
                 variant={view === 'list' ? 'default' : 'ghost'}
