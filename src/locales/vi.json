@@ -147,7 +147,7 @@
   "aiJobPost": {
     "title": "Tạo Tin Tuyển Dụng với Sức mạnh của AI",
     "subtitle": "Mô tả công việc bạn cần, và để AI của chúng tôi tạo ra một tin tuyển dụng hấp dẫn và chuyên nghiệp chỉ trong vài giây.",
-    "placeholder": "Ví dụ: Tìm kiếm kỹ sư phần mềm có 3 năm kinh nghiệm làm việc với React, Node.js và AWS. Yêu cầu giao tiếp tiếng Nhật tốt...",
+    "placeholder": "Ví dụ: Tuyển nhân viên chế biến thực phẩm cho nhà máy ở Aichi, visa Đặc định. Yêu cầu kinh nghiệm làm trong ngành thực phẩm, tiếng Nhật N4 trở lên. Chăm chỉ, có trách nhiệm.",
     "submit": "Tạo tin"
   },
   "ai_job_post_form": {

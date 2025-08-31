@@ -147,7 +147,7 @@
   "aiJobPost": {
     "title": "Create Job Postings with the Power of AI",
     "subtitle": "Describe the job you need, and let our AI generate an engaging and professional job posting in seconds.",
-    "placeholder": "Example: Seeking a software engineer with 3 years of experience in React, Node.js, and AWS. Strong Japanese communication skills required...",
+    "placeholder": "Example: Seeking food processing staff for a factory in Aichi with a Specified Skilled Worker visa. Experience in the food industry and Japanese N4 level or higher required. Hard-working and responsible.",
     "submit": "Generate",
     "suggestionsTitle": "Or start with a suggestion:",
     "suggestions": {
@@ -159,14 +159,18 @@
   "ai_job_post_form": {
     "your_selections_title": "Your Selections",
     "suggestions": {
-      "s1": "Welder in Aichi",
-      "s2": "Caregiver staff for nursing home",
-      "s3": "IT Comtor in Tokyo"
+      "s1_title": "Describe personal information",
+      "s1_desc": "'I am a final year student at X University, majoring in Y, looking for an internship opportunity...'",
+      "s2_title": "Post from an existing profile",
+      "s2_desc": "Upload a PDF or Word CV for the AI to automatically extract and fill in information.",
+      "s3_title": "Create a profile with your voice",
+      "s3_desc": "Just press the button and describe yourself, we'll take care of the rest."
     },
     "input": {
       "title": "1. Describe your job",
       "description": "Provide a few keywords, a sentence, or even paste an existing job description. The more detail you provide, the better the result.",
-      "reset": "Create New"
+      "reset": "Create New",
+      "manual_post": "Manual Entry"
     },
     "output": {
       "title": "2. AI-Generated Result",
@@ -185,7 +189,8 @@
       "description": "Please provide a description of the job before generating.",
       "apiTitle": "An error occurred",
       "apiDescription": "There was a problem generating the job post. Please try again."
-    }
+    },
+    "or_divider": "OR"
   },
   "handbook": {
     "featured": {
