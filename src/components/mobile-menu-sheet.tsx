@@ -43,12 +43,12 @@ export function MobileMenuSheet() {
             <span>{t.mobile_footer.menu}</span>
         </button>
       </SheetTrigger>
-      <SheetContent side="bottom" className="h-[90vh] rounded-t-2xl p-0 flex flex-col">
-        <SheetHeader className="p-4 flex flex-row items-center justify-between">
+      <SheetContent side="right" className="p-0 flex flex-col w-full max-w-sm">
+        <SheetHeader className="p-4 flex flex-row items-center justify-between border-b">
           <SheetTitle><Logo /></SheetTitle>
         </SheetHeader>
         
-        <div className="flex-grow overflow-y-auto px-4 pb-4">
+        <div className="flex-grow overflow-y-auto px-4 pb-4 pt-4">
             <Card className="flex items-center gap-4 p-4 mb-4">
                 <Avatar className="h-12 w-12">
                     <AvatarImage src="https://i.pravatar.cc/150?u=recruiter" />
@@ -69,7 +69,7 @@ export function MobileMenuSheet() {
             <div className="grid grid-cols-4 gap-4 text-center">
                 {menuItems.map((item) => (
                     <Link href={item.href} key={item.label} className="flex flex-col items-center gap-2 text-xs font-medium text-gray-700">
-                        <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
                           {item.icon}
                         </div>
                         <span className="leading-tight">{item.label}</span>
@@ -88,4 +88,3 @@ export function MobileMenuSheet() {
     </Sheet>
   );
 }
-
