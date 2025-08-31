@@ -60,10 +60,6 @@ export function MobileMenuSheet() {
                 </div>
             </Card>
 
-            <Button variant="outline" className="w-full mb-6" asChild>
-                <Link href="/dashboard/employer">{t.mobile_menu_sheet.myProfile}</Link>
-            </Button>
-            
             <Separator className="mb-6"/>
 
             <div className="grid grid-cols-4 gap-4 text-center">
