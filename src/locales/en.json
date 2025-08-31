@@ -157,7 +157,9 @@
       "s2_title": "Upload a job description",
       "s2_desc": "Upload a file (PDF, DOCX, image) for the AI to analyze.",
       "s3_title": "Describe with your voice",
-      "s3_desc": "Speak the key details like job title, location, and required skills."
+      "s3_desc": "Speak the key details like job title, location, and required skills.",
+      "s4_title": "Manual Entry",
+      "s4_desc": "Fill out a detailed form yourself."
     },
     "upload": {
       "selectedFile": "Selected File",
@@ -694,31 +696,31 @@
     ]
   },
   "userRoles": {
-    "title": "Who are you?",
-    "description": "Tell us your role for the best experience.",
+    "title": "Bạn là ai?",
+    "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
     "hiringCompany": {
-      "title": "Hiring Company (Ukeire Kigyou)",
-      "description": "Directly recruit personnel."
+      "title": "Xí nghiệp tiếp nhận (Ukeire Kigyou)",
+      "description": "Trực tiếp tuyển dụng nhân sự."
     },
     "supportOrg": {
-      "title": "Support Organization (Shien Kikan)",
-      "description": "Support companies and workers."
+      "title": "Cơ quan hỗ trợ (Shien Kikan)",
+      "description": "Hỗ trợ các công ty và người lao động."
     },
     "union": {
-      "title": "Union (Kyoudou Kumiai)",
-      "description": "Manage and support interns."
+      "title": "Nghiệp đoàn (Kyoudou Kumiai)",
+      "description": "Quản lý và hỗ trợ thực tập sinh."
     },
     "sendingCompany": {
-      "title": "Sending Company (Okuridashi Kikan)",
-      "description": "Recruit and dispatch workers from Vietnam."
+      "title": "Công ty phái cử (Okuridashi Kikan)",
+      "description": "Tuyển và phái cử lao động từ Việt Nam."
     },
     "hakenCompany": {
-      "title": "Haken Company (Temporary Staffing)",
-      "description": "Dispatch temporary employees."
+      "title": "Công ty Haken (Nhân sự phái cử)",
+      "description": "Phái cử nhân viên tạm thời."
     },
     "yuryoShokai": {
-      "title": "Paid Placement Agency (Yuryo Shokai)",
-      "description": "Provide paid job placement services."
+      "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
+      "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
     }
   },
   "chat": {
@@ -729,47 +731,47 @@
     "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?"
   },
   "visaTypes": {
-    "title": "Which Visa type do you want to recruit for?",
-    "description": "Please choose the visa type that matches your recruitment needs.",
+    "title": "Bạn muốn tuyển loại Visa nào?",
+    "description": "Hãy chọn loại visa phù hợp với nhu cầu tuyển dụng của bạn.",
     "intern": {
-      "title": "Technical Intern Trainee",
-      "description": "Skill training program in Japan."
+      "title": "Thực tập sinh kỹ năng",
+      "description": "Chương trình đào tạo kỹ năng tại Nhật Bản."
     },
     "skilled": {
-      "title": "Specified Skilled Worker",
-      "description": "Experienced workers for long-term employment."
+      "title": "Kỹ năng đặc định",
+      "description": "Lao động có kinh nghiệm làm việc dài hạn."
     },
     "engineer": {
-      "title": "Engineer / Specialist",
-      "description": "Highly qualified specialists with professional degrees."
+      "title": "Kỹ sư, tri thức",
+      "description": "Chuyên gia có trình độ cao, bằng cấp chuyên ngành."
     }
   },
   "visaSubTypes": {
-    "title": "Please select more details",
+    "title": "Vui lòng chọn chi tiết hơn",
     "intern": {
-      "threeYear": "3-Year Intern",
-      "oneYear": "1-Year Intern",
-      "go": "Intern #3 Go"
+      "threeYear": "Thực tập sinh 3 năm",
+      "oneYear": "Thực tập sinh 1 năm",
+      "go": "Thực tập sinh 3 Go"
     },
     "skilled": {
-      "japan": "Skilled candidates in Japan",
-      "vietnam": "Skilled candidates from Vietnam"
+      "japan": "Ứng viên đặc định tại Nhật",
+      "vietnam": "Ứng viên đặc định từ Việt Nam"
     },
     "engineer": {
-      "japan": "Engineer/Specialist candidates in Japan",
-      "vietnam": "Engineer/Specialist candidates from Vietnam"
+      "japan": "Ứng viên kỹ sư, tri thức tại Nhật",
+      "vietnam": "Ứng viên kỹ sư, tri thức từ Việt Nam"
     }
   },
   "postMethod": {
-    "title": "Choose posting method",
-    "description": "How would you like to create your job post?",
+    "title": "Chọn phương thức đăng tin",
+    "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
-      "title": "Post with AI",
-      "description": "Briefly describe and let AI create a professional job post."
+      "title": "Đăng việc làm bằng AI",
+      "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
     },
     "manual": {
-      "title": "Manual Entry",
-      "description": "Fill out a detailed form for full control over the listing."
+      "title": "Nhập liệu thủ công",
+      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
     }
   }
 }

@@ -159,6 +159,12 @@ function AiJobPostFormContent() {
       title: t.ai_job_post_form.suggestions.s3_title,
       description: t.ai_job_post_form.suggestions.s3_desc,
       onClick: () => {} // Placeholder for voice input
+    },
+    {
+      icon: <Pencil className="w-8 h-8 text-orange-500" />,
+      title: t.ai_job_post_form.suggestions.s4_title,
+      description: t.ai_job_post_form.suggestions.s4_desc,
+      onClick: () => {} // Placeholder for manual entry
     }
   ];
   
@@ -313,7 +319,7 @@ function AiJobPostFormContent() {
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="lg:sticky lg:top-24">
+          <div className="space-y-4">
             <Card className="shadow-lg w-full">
               <CardHeader>
                 <CardTitle>{t.ai_job_post_form.input.title}</CardTitle>
@@ -348,7 +354,7 @@ function AiJobPostFormContent() {
                   />
                  <div className="mt-6">
                     <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {suggestionCards.map((card) => (
                         <Card key={card.title} className="text-center p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={card.onClick}>
                           <div className="flex justify-center mb-3">{card.icon}</div>

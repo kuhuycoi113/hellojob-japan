@@ -157,7 +157,9 @@
       "s2_title": "Tải lên một mô tả công việc",
       "s2_desc": "Tải lên một tệp (PDF, DOCX, ảnh) để AI phân tích.",
       "s3_title": "Mô tả bằng giọng nói",
-      "s3_desc": "Nói các chi tiết chính như chức danh, địa điểm và kỹ năng yêu cầu."
+      "s3_desc": "Nói các chi tiết chính như chức danh, địa điểm và kỹ năng yêu cầu.",
+      "s4_title": "Nhập liệu thủ công",
+      "s4_desc": "Tự điền vào biểu mẫu chi tiết."
     },
     "upload": {
       "selectedFile": "Tệp đã chọn",
