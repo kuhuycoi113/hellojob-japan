@@ -749,12 +749,12 @@
       "go": "Thực tập sinh 3 Go"
     },
     "skilled": {
-      "japan": "Đặc định đầu Nhật",
-      "vietnam": "Đặc định đầu Việt"
+      "japan": "Ứng viên đặc định tại Nhật",
+      "vietnam": "Ứng viên đặc định từ Việt Nam"
     },
     "engineer": {
-      "japan": "Kỹ sư, tri thức đầu Nhật",
-      "vietnam": "Kỹ sư, tri thức đầu Việt"
+      "japan": "Ứng viên kỹ sư, tri thức tại Nhật",
+      "vietnam": "Ứng viên kỹ sư, tri thức từ Việt Nam"
     }
   },
   "postMethod": {

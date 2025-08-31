@@ -31,18 +31,18 @@ export function AiJobPostForm() {
   const suggestionCards = [
     {
       icon: <FileText className="w-8 h-8 text-yellow-500" />,
-      title: "Mô tả thông tin cá nhân",
-      description: '"Tôi là sinh viên năm cuối trường X, chuyên ngành Y, đang tìm kiếm cơ hội thực tập..."'
+      title: t.ai_job_post_form.suggestions.s1_title,
+      description: t.ai_job_post_form.suggestions.s1_desc
     },
     {
       icon: <Upload className="w-8 h-8 text-green-500" />,
-      title: "Đăng từ hồ sơ có sẵn",
-      description: "Tải lên CV file PDF hoặc Word để AI tự động trích xuất và điền thông tin."
+      title: t.ai_job_post_form.suggestions.s2_title,
+      description: t.ai_job_post_form.suggestions.s2_desc
     },
     {
       icon: <Mic className="w-8 h-8 text-blue-500" />,
-      title: "Tạo hồ sơ bằng giọng nói",
-      description: "Chỉ cần bấm nút và mô tả về bản thân, chúng tôi sẽ lo phần còn lại."
+      title: t.ai_job_post_form.suggestions.s3_title,
+      description: t.ai_job_post_form.suggestions.s3_desc
     }
   ];
   
@@ -226,7 +226,7 @@ export function AiJobPostForm() {
                   </div>
               </div>
 
-              <Button variant="outline" size="lg" className="w-full bg-white" asChild>
+              <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
                   <Link href="/">
                       <Pencil className="mr-2 h-4 w-4" />
                       {t.ai_job_post_form.input.manual_post}
