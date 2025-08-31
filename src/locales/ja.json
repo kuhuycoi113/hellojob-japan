@@ -833,22 +833,6 @@
       "description": "学位を持つ高度な専門家。"
     }
   },
-  "visaSubTypes": {
-    "title": "詳細を選択してください",
-    "intern": {
-      "threeYear": "技能実習3年",
-      "oneYear": "技能実習1年",
-      "go": "技能実習3号"
-    },
-    "skilled": {
-      "japan": "日本国内特定技能候補者",
-      "vietnam": "ベトナム在住特定技能候補者"
-    },
-    "engineer": {
-      "japan": "日本国内の技術・人文知識・国際業務候補者",
-      "vietnam": "ベトナム在住の技術・人文知識・国際業務候補者"
-    }
-  },
   "postMethod": {
     "title": "投稿方法を選択",
     "description": "求人情報をどのように作成しますか？",
@@ -971,7 +955,54 @@
           "archive": "アーカイブ"
         }
       }
-    }
+    },
+    "candidates": [
+        {
+            "id": "VN045GUIFW",
+            "name_ja": "ラム",
+            "name_vi": "LAM",
+            "avatar": "https://i.pravatar.cc/150?u=candidate1",
+            "details": "27歳 - - - 刺青なし",
+            "visa_type": "特定技能",
+            "specialty": "工業包装",
+            "desired_salary": "紹介料",
+            "jobs": {
+                "count": 7,
+                "images": ["https://picsum.photos/50?random=j1", "https://picsum.photos/50?random=j2", "https://picsum.photos/50?random=j3"]
+            },
+            "created_date": "2025/04/04"
+        },
+        {
+            "id": "VN045JTOAQ",
+            "name_ja": "ズオン",
+            "name_vi": "UONG",
+            "avatar": "https://i.pravatar.cc/150?u=candidate2",
+            "details": "29歳 - 40 kg - 153 cm - 刺青なし",
+            "visa_type": "特定技能",
+            "specialty": "工業包装",
+            "desired_salary": "紹介料",
+            "jobs": {
+                "count": 7,
+                "images": ["https://picsum.photos/50?random=j4", "https://picsum.photos/50?random=j5", "https://picsum.photos/50?random=j6"]
+            },
+            "created_date": "2025/04/04"
+        },
+        {
+            "id": "VN045PQHEU",
+            "name_ja": "ユーン",
+            "name_vi": "TIENG N",
+            "avatar": "https://i.pravatar.cc/150?u=candidate3",
+            "details": "32歳 - 58 kg - 167 cm - 刺青なし",
+            "visa_type": "特定技能",
+            "specialty": "食品加工",
+            "desired_salary": "勤務地",
+            "jobs": {
+                "count": 4,
+                "images": ["https://picsum.photos/50?random=j7", "https://picsum.photos/50?random=j8", "https://picsum.photos/50?random=j9"]
+            },
+            "created_date": "2025/04/03"
+        }
+    ]
   },
     "dashboard_partner": {
     "newOpportunities": {

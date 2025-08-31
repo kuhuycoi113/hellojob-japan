@@ -967,7 +967,54 @@
           "archive": "Lưu trữ"
         }
       }
-    }
+    },
+    "candidates": [
+        {
+            "id": "VN045GUIFW",
+            "name_ja": "ラム",
+            "name_vi": "LAM",
+            "avatar": "https://i.pravatar.cc/150?u=candidate1",
+            "details": "27 tuổi - - - Không hình xăm",
+            "visa_type": "Kỹ năng đặc định",
+            "specialty": "Đóng gói công nghiệp",
+            "desired_salary": "Phí giới thiệu",
+            "jobs": {
+                "count": 7,
+                "images": ["https://picsum.photos/50?random=j1", "https://picsum.photos/50?random=j2", "https://picsum.photos/50?random=j3"]
+            },
+            "created_date": "04/04/2025"
+        },
+        {
+            "id": "VN045JTOAQ",
+            "name_ja": "ズオン",
+            "name_vi": "ƯƠNG",
+            "avatar": "https://i.pravatar.cc/150?u=candidate2",
+            "details": "29 tuổi - 40 kg - 153 cm - Không hình xăm",
+            "visa_type": "Kỹ năng đặc định",
+            "specialty": "Đóng gói công nghiệp",
+            "desired_salary": "Phí giới thiệu",
+            "jobs": {
+                "count": 7,
+                "images": ["https://picsum.photos/50?random=j4", "https://picsum.photos/50?random=j5", "https://picsum.photos/50?random=j6"]
+            },
+            "created_date": "04/04/2025"
+        },
+        {
+            "id": "VN045PQHEU",
+            "name_ja": "ユーン",
+            "name_vi": "TIẾNG N",
+            "avatar": "https://i.pravatar.cc/150?u=candidate3",
+            "details": "32 tuổi - 58 kg - 167 cm - Không hình xăm",
+            "visa_type": "Kỹ năng đặc định",
+            "specialty": "Gia công đồ ăn",
+            "desired_salary": "Địa điểm làm",
+            "jobs": {
+                "count": 4,
+                "images": ["https://picsum.photos/50?random=j7", "https://picsum.photos/50?random=j8", "https://picsum.photos/50?random=j9"]
+            },
+            "created_date": "03/04/2025"
+        }
+    ]
   },
   "dashboard_partner": {
     "newOpportunities": {

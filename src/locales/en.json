@@ -951,7 +951,54 @@
           "archive": "Archive"
         }
       }
-    }
+    },
+    "candidates": [
+        {
+            "id": "VN045GUIFW",
+            "name_ja": "ラム",
+            "name_vi": "LAM",
+            "avatar": "https://i.pravatar.cc/150?u=candidate1",
+            "details": "27 years old - - - No tattoo",
+            "visa_type": "Specified Skilled Worker",
+            "specialty": "Industrial Packaging",
+            "desired_salary": "Referral fee",
+            "jobs": {
+                "count": 7,
+                "images": ["https://picsum.photos/50?random=j1", "https://picsum.photos/50?random=j2", "https://picsum.photos/50?random=j3"]
+            },
+            "created_date": "04/04/2025"
+        },
+        {
+            "id": "VN045JTOAQ",
+            "name_ja": "ズオン",
+            "name_vi": "UONG",
+            "avatar": "https://i.pravatar.cc/150?u=candidate2",
+            "details": "29 years old - 40 kg - 153 cm - No tattoo",
+            "visa_type": "Specified Skilled Worker",
+            "specialty": "Industrial Packaging",
+            "desired_salary": "Referral fee",
+            "jobs": {
+                "count": 7,
+                "images": ["https://picsum.photos/50?random=j4", "https://picsum.photos/50?random=j5", "https://picsum.photos/50?random=j6"]
+            },
+            "created_date": "04/04/2025"
+        },
+        {
+            "id": "VN045PQHEU",
+            "name_ja": "ユーン",
+            "name_vi": "TIENG N",
+            "avatar": "https://i.pravatar.cc/150?u=candidate3",
+            "details": "32 years old - 58 kg - 167 cm - No tattoo",
+            "visa_type": "Specified Skilled Worker",
+            "specialty": "Food Processing",
+            "desired_salary": "Work location",
+            "jobs": {
+                "count": 4,
+                "images": ["https://picsum.photos/50?random=j7", "https://picsum.photos/50?random=j8", "https://picsum.photos/50?random=j9"]
+            },
+            "created_date": "03/04/2025"
+        }
+    ]
   },
   "dashboard_partner": {
     "newOpportunities": {

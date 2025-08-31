@@ -36,6 +36,7 @@ import {
 } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/language-context';
 import { JobsList } from './jobs-list';
+import { YourCandidates } from './your-candidates';
 
 export function CompanyProfile() {
   const { t } = useLanguage();
@@ -102,8 +103,13 @@ export function CompanyProfile() {
           </Card>
           
           <div className="mt-4">
-            <h2 className="text-2xl font-semibold mb-4">Việc làm của tôi</h2>
+            <h2 className="text-2xl font-semibold mb-4">Việc làm của bạn</h2>
             <JobsList />
+          </div>
+
+          <div className="mt-4">
+            <h2 className="text-2xl font-semibold mb-4">Ứng viên của bạn</h2>
+            <YourCandidates />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
