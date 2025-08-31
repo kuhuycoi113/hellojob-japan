@@ -28,6 +28,12 @@
       "chat": "Tư vấn"
     }
   },
+  "mobile_footer": {
+    "home": "Trang chủ",
+    "postJobAI": "Đăng việc AI",
+    "dashboard": "Quản lý",
+    "menu": "Menu"
+  },
   "hero": {
     "title": "Nền Tảng Tuyển Dụng Nhân Lực Việt Nam Hàng Đầu",
     "subtitle": "Kết nối doanh nghiệp của bạn với nguồn nhân lực chất lượng cao từ Việt Nam, đáp ứng nhu cầu tuyển dụng cho các chương trình \"Thực tập sinh\", \"Kỹ năng đặc định\" và \"Kỹ sư\".",

@@ -202,7 +202,7 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
+    <header className="sticky top-0 z-50 w-full border-b bg-white hidden md:block">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-10">
           <Link href="/">
@@ -289,7 +289,7 @@ export function Header() {
             </DialogContent>
           </Dialog>
 
-          <Button variant="outline" asChild className="hover:bg-secondary hover:text-secondary-foreground">
+          <Button asChild variant="outline" className="hover:bg-secondary hover:text-secondary-foreground">
              <Link href="/dashboard/employer" className="flex items-center gap-2">
               <User className="h-4 w-4" />
               {t.header.myProfile}
