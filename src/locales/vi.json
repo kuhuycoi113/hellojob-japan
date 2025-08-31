@@ -661,6 +661,8 @@
       "category": "Kinh nghiệm phỏng vấn",
       "title": "Cách viết CV tiếng Nhật thuyết phục để gây ấn tượng với nhà tuyển dụng",
       "excerpt": "Một chiếc CV (履歴書 - rirekisho) được chuẩn bị kỹ lưỡng là bước đầu tiên và quan trọng nhất để bạn mở cánh cửa đến với công việc mơ ước tại Nhật Bản. Nó không chỉ là bản tóm tắt kinh nghiệm, mà còn là lời giới thiệu đầu tiên của bạn với nhà tuyển dụng.",
+      "author": "Đội ngũ HelloJob",
+      "readTime": "8 phút đọc",
       "image": {
         "src": "https://picsum.photos/1200/675?random=100",
         "alt": "Người đang viết CV",
@@ -668,13 +670,14 @@
       },
       "content": {
         "p1": "Trong bối cảnh cạnh tranh, một chiếc CV chuyên nghiệp, sạch sẽ và đầy đủ thông tin sẽ giúp bạn nổi bật. Điều quan trọng là phải tuân thủ các quy tắc và chuẩn mực chung của CV tiếng Nhật, từ bố cục, cách dùng kính ngữ cho đến ảnh thẻ.",
-        "p2": "Phần tự PR bản thân (自己PR - jiko PR) là phần quan trọng nhất. Đây là nơi bạn thể hiện điểm mạnh, kỹ năng và nhiệt huyết của mình với công việc. Hãy viết một cách ngắn gọn, súc tích nhưng đủ để cho thấy bạn là ứng viên sáng giá nhất cho vị trí này.",
-        "quote": "Hãy nhớ rằng, CV của bạn là một sản phẩm marketing. Bạn đang 'bán' kỹ năng và kinh nghiệm của mình cho nhà tuyển dụng.",
-        "p3": "Cuối cùng, đừng quên kiểm tra lại lỗi chính tả và ngữ pháp nhiều lần. Một lỗi nhỏ cũng có thể khiến bạn mất điểm trong mắt nhà tuyển dụng khó tính. Bạn có thể nhờ bạn bè hoặc người có kinh nghiệm xem qua trước khi gửi đi. Chúc bạn thành công!"
+        "p2": "Visa Kỹ năng đặc định (特定技能 - Tokutei Ginou) là một loại tư cách lưu trú mới dành cho lao động người nước ngoài tại Nhật Bản, được chính phủ Nhật Bản triển khai từ tháng 4 năm 2019. Mục đích chính của chương trình này là để giải quyết tình trạng thiếu hụt lao động trầm trọng trong một số ngành công nghiệp cụ thể của Nhật Bản. Chương trình này được chia thành 2 loại chính:",
+        "listHtml": "<ul><li><strong>Kỹ năng đặc định loại 1 (Tokutei Ginou 1)</strong>: Dành cho lao động có trình độ kỹ năng và kiến thức chuyên môn nhất định, có thể làm việc ngay mà không cần qua đào tạo nhiều. Thời gian lưu trú tối đa là 5 năm và không được bảo lãnh gia đình.</li><li><strong>Kỹ năng đặc định loại 2 (Tokutei Ginou 2)</strong>: Dành cho lao động có kỹ năng tay nghề cao, chuyên nghiệp. Sau khi hoàn thành chương trình loại 1, lao động có thể thi chuyển lên được loại 2 để được ở lại Nhật Bản lâu dài, có cơ hội xin vĩnh trú và bảo lãnh người thân sang sinh sống.</li></ul>",
+        "h2": "Điều kiện tham gia chương trình",
+        "p3": "Để tham gia chương trình Kỹ năng đặc định, người lao động cần đáp ứng các điều kiện cơ bản sau: Độ tuổi từ đủ 18 tuổi trở lên, thi đỗ kỳ thi năng lực tiếng Nhật và kỳ thi kỹ năng tay nghề cho ngành nghề đăng ký."
       }
     },
     "commentSection": {
-      "title": "Thảo luận",
+      "title": "Bình luận",
       "subtitle": "Để lại bình luận của bạn về bài viết này."
     },
     "commentForm": {
@@ -688,24 +691,67 @@
       },
       "comment": {
         "label": "Bình luận",
-        "placeholder": "Viết bình luận của bạn ở đây..."
+        "placeholder": "Viết bình luận của bạn tại đây..."
       },
       "submit": "Gửi bình luận"
     },
+    "commentActions": {
+      "like": "Thích",
+      "reply": "Trả lời"
+    },
     "comments": [
       {
-        "name": "Nguyễn Văn An",
+        "name": "Hoàng Long H.",
         "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-        "time": "5 phút trước",
-        "text": "Bài viết rất hữu ích! Mình đang chuẩn bị viết CV để xin việc ở Nhật. Cảm ơn tác giả nhiều."
+        "time": "2 giờ trước",
+        "text": "Cảm ơn bài viết rất chi tiết. Công ty chúng tôi đang tuyển 5 vị trí Kỹ năng đặc định ngành thực phẩm tại Aichi, các bạn quan tâm có thể xem trên trang của công ty nhé!",
+        "likes": 2
       },
       {
-        "name": "Trần Thị Bích",
+        "name": "Lê Thu Trang",
         "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d",
         "time": "1 giờ trước",
-        "text": "Phần jiko PR đúng là khó nhất. Có ai có mẫu nào hay để tham khảo không ạ?"
+        "text": "Cho mình hỏi là kỳ thi kỹ năng có khó không ạ? Mình đang chuẩn bị thi và hơi lo lắng.",
+        "likes": 5
       }
-    ]
+    ],
+    "featuredJobs": {
+      "title": "Việc làm nổi bật",
+      "viewMore": "Xem thêm việc làm",
+      "jobs": [
+        {
+          "title": "Thực tập sinh 3 năm, Chế biến thực phẩm",
+          "company": "Nagasaki, Hoàng Long H."
+        },
+        {
+          "title": "Kỹ sư cầu nối (Bridge SE) - Đấu thầu",
+          "company": "Việc làm tại Nhật"
+        }
+      ]
+    },
+    "relatedContent": {
+      "title": "Bài viết liên quan",
+      "items": [
+        {
+          "title": "3 Mẹo phỏng vấn ONLINE qua video với nhà tuyển dụng Nhật",
+          "category": "Kinh nghiệm phỏng vấn",
+          "image": "https://picsum.photos/400/400?random=1",
+          "type": "video"
+        },
+        {
+          "title": "5 Kinh nghiệm phỏng vấn Tokutei Ginou chắc chắn đậu",
+          "category": "Kinh nghiệm phỏng vấn",
+          "image": "https://picsum.photos/400/400?random=2",
+          "type": "article"
+        },
+        {
+          "title": "Chi phí sinh hoạt ở Nhật Bản hết bao nhiêu một tháng?",
+          "category": "Cuộc sống ở Nhật",
+          "image": "https://picsum.photos/400/400?random=3",
+          "type": "article"
+        }
+      ]
+    }
   },
   "userRoles": {
     "title": "Bạn là ai?",

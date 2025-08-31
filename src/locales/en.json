@@ -661,6 +661,8 @@
       "category": "Interview Experience",
       "title": "How to Write a Compelling Japanese CV to Impress Recruiters",
       "excerpt": "A well-prepared CV (履歴書 - rirekisho) is the first and most crucial step to opening the door to your dream job in Japan. It's not just a summary of your experience, but your very first introduction to a potential employer.",
+      "author": "HelloJob Team",
+      "readTime": "8 min read",
       "image": {
         "src": "https://picsum.photos/1200/675?random=100",
         "alt": "Person writing a CV",
@@ -668,13 +670,14 @@
       },
       "content": {
         "p1": "In a competitive landscape, a professional, clean, and comprehensive CV will make you stand out. It's essential to adhere to the common rules and standards of a Japanese CV, from the layout and use of honorifics (keigo) to the profile picture.",
-        "p2": "The self-promotion section (自己PR - jiko PR) is the most critical part. This is where you showcase your strengths, skills, and enthusiasm for the job. Write concisely but compellingly enough to show that you are the best candidate for the position.",
-        "quote": "Remember, your CV is a marketing product. You are 'selling' your skills and experience to the employer.",
-        "p3": "Finally, don't forget to double- and triple-check for spelling and grammatical errors. Even a small mistake can make a negative impression on a meticulous employer. You can ask a friend or an experienced person to review it before sending. Good luck!"
+        "p2": "The Specified Skilled Worker (特定技能 - Tokutei Ginou) visa is a new residency status for foreign workers in Japan, introduced by the Japanese government in April 2019. The main purpose of this program is to address serious labor shortages in specific industrial fields in Japan. This program is divided into two main categories:",
+        "listHtml": "<ul><li><strong>Specified Skilled Worker (i) (Tokutei Ginou 1)</strong>: For workers with a certain level of skill and specialized knowledge, who can work immediately without much training. The maximum period of stay is 5 years, and family members are not allowed to accompany them.</li><li><strong>Specified Skilled Worker (ii) (Tokutei Ginou 2)</strong>: For workers with high-level skills and professional expertise. After completing the Type 1 program, workers can take an exam to advance to Type 2 to stay in Japan long-term, with opportunities to apply for permanent residency and sponsor family members.</li></ul>",
+        "h2": "Conditions for Participation",
+        "p3": "To participate in the Specified Skilled Worker program, workers need to meet basic conditions: Be 18 years of age or older, pass the Japanese-Language Proficiency Test (JLPT) at level N4 or equivalent exams like the JFT-Basic, and pass the skills proficiency test for their registered industry."
       }
     },
     "commentSection": {
-      "title": "Discussion",
+      "title": "Comments",
       "subtitle": "Leave your comment on this article."
     },
     "commentForm": {
@@ -692,20 +695,63 @@
       },
       "submit": "Submit Comment"
     },
+    "commentActions": {
+      "like": "Like",
+      "reply": "Reply"
+    },
     "comments": [
       {
-        "name": "An Nguyen",
+        "name": "Hoang Long H.",
         "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-        "time": "5 minutes ago",
-        "text": "Very helpful article! I'm preparing my CV to apply for jobs in Japan. Thanks a lot to the author."
+        "time": "2 hours ago",
+        "text": "Thank you for the detailed article! My company is currently recruiting for 5 Specified Skilled Worker positions in the food industry in Aichi. Interested candidates can check our company page!",
+        "likes": 2
       },
       {
-        "name": "Bich Tran",
+        "name": "Le Thu Trang",
         "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d",
         "time": "1 hour ago",
-        "text": "The jiko PR part is indeed the hardest. Does anyone have a good template to share?"
+        "text": "Can I ask if the skills test is difficult? I'm preparing for it and I'm a bit nervous.",
+        "likes": 5
       }
-    ]
+    ],
+    "featuredJobs": {
+      "title": "Featured Jobs",
+      "viewMore": "View more jobs",
+      "jobs": [
+        {
+          "title": "3-Year Intern, Food Processing",
+          "company": "Nagasaki, Hoang Long H."
+        },
+        {
+          "title": "Bridge Engineer (Bridge SE) - Bidding",
+          "company": "Việc làm tại Nhật"
+        }
+      ]
+    },
+    "relatedContent": {
+      "title": "Related Posts",
+      "items": [
+        {
+          "title": "3 Tips for a Successful Online Video Interview with Japanese Employers",
+          "category": "Interview Tips",
+          "image": "https://picsum.photos/400/400?random=1",
+          "type": "video"
+        },
+        {
+          "title": "5 Interview Experiences for Tokutei Ginou to Secure the Job",
+          "category": "Interview Tips",
+          "image": "https://picsum.photos/400/400?random=2",
+          "type": "article"
+        },
+        {
+          "title": "How Much is the Cost of Living in Japan per Month?",
+          "category": "Life in Japan",
+          "image": "https://picsum.photos/400/400?random=3",
+          "type": "article"
+        }
+      ]
+    }
   },
   "userRoles": {
     "title": "Who are you?",
