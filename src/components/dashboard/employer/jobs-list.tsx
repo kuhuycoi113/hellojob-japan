@@ -72,7 +72,7 @@ export function JobsList() {
 
   return (
     <Tabs defaultValue="all">
-      <div className="flex items-center">
+      <div className="flex flex-col sm:flex-row items-center gap-4">
         <TabsList>
           <TabsTrigger value="all">{t.dashboard_employer.jobs_list.tabs.all}</TabsTrigger>
           <TabsTrigger value="active">{t.dashboard_employer.jobs_list.tabs.active}</TabsTrigger>
@@ -81,7 +81,7 @@ export function JobsList() {
             {t.dashboard_employer.jobs_list.tabs.archived}
           </TabsTrigger>
         </TabsList>
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex w-full sm:w-auto items-center justify-between sm:justify-end gap-2">
            <div className="flex items-center gap-1 rounded-md bg-muted p-1">
              <Button
                 variant={view === 'gallery' ? 'default' : 'ghost'}
@@ -102,7 +102,7 @@ export function JobsList() {
            </div>
           <Button size="sm" className="h-8 gap-1 bg-accent text-accent-foreground hover:bg-accent/90">
             <PlusCircle className="h-3.5 w-3.5" />
-            <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
+            <span className="whitespace-nowrap">
               {t.dashboard_employer.jobs_list.add_job}
             </span>
           </Button>
