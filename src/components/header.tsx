@@ -243,7 +243,7 @@ export function Header() {
 
           <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
             <DialogTrigger asChild>
-              <Button variant="secondary">{t.header.postJob}</Button>
+              <Button variant="outline">{t.header.postJob}</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-3xl">
               <DialogHeader>
