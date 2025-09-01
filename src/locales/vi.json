@@ -252,6 +252,10 @@
       {
         "title": "5 Câu hỏi phỏng vấn thường gặp và cách trả lời bằng tiếng Nhật",
         "category": "Kinh nghiệm phỏng vấn"
+      },
+      {
+        "title": "Các loại thuế cần biết khi làm việc tại Nhật Bản",
+        "category": "Pháp luật lao động"
       }
     ],
     "longVideos": [
@@ -468,14 +472,6 @@
       "title": "Barrett Values Centre (CTT)",
       "description": "Công cụ Chuyển đổi Văn hóa giúp đo lường giá trị cá nhân và tổ chức, xác định sự tương hợp văn hóa."
     },
-    "gallup": {
-      "title": "Gallup CliftonStrengths",
-      "description": "Xác định các điểm mạnh nổi bật của đội ngũ, giúp xây dựng một môi trường làm việc dựa trên thế mạnh."
-    },
-    "hofstede": {
-      "title": "Hofstede Organizational Culture Scan",
-      "description": "Phân tích văn hóa tổ chức của bạn qua 6 chiều văn hóa, so sánh với các tiêu chuẩn quốc gia để hội nhập tốt hơn."
-    },
     "goldenCircle": {
       "title": "Golden Circle (Vòng tròn Vàng)",
       "description": "Làm rõ 'Lý do Tại sao' doanh nghiệp bạn tồn tại, truyền cảm hứng và thu hút những người cùng chung chí hướng."
@@ -505,56 +501,6 @@
     "values": [
       "Trách nhiệm giải trình", "Thành tích", "Khả năng thích ứng", "Cân bằng", "Sự thuộc về", "Hợp tác", "Cam kết", "Cộng đồng", "Lòng trắc ẩn", "Năng lực", "Đóng góp", "Can đảm", "Sáng tạo", "Tò mò", "Sự hài lòng của khách hàng", "Đa dạng", "Đồng cảm", "Trao quyền", "Nhiệt tình", "Bảo vệ môi trường", "Bình đẳng", "Xuất sắc", "Sự công bằng", "Gia đình", "Ổn định tài chính", "Tha thứ", "Tự do", "Vui vẻ", "Hào phóng", "Lòng biết ơn", "Tăng trưởng", "Hài hòa", "Sức khỏe", "Trung thực", "Khiêm tốn", "Hài hước", "Hòa nhập", "Độc lập", "Sáng kiến", "Đổi mới", "Chính trực", "Công lý", "Tử tế", "Kiến thức", "Lãnh đạo", "Học hỏi", "Lòng trung thành", "Tạo ra sự khác biệt", "Cởi mở", "Lạc quan", "Trật tự", "Kiên nhẫn", "Lòng yêu nước", "Hòa bình", "Hiệu suất", "Kiên trì", "Sự viên mãn cá nhân", "Quyền lực", "Niềm tự hào", "Sự công nhận", "Tôn trọng", "Trách nhiệm", "Chấp nhận rủi ro", "An toàn", "An ninh", "Kỷ luật tự giác", "Phục vụ", "Đơn giản", "Tâm linh", "Ổn định", "Thành công", "Làm việc nhóm", "Sự chu đáo", "Truyền thống", "Minh bạch", "Tin tưởng", "Sự thật", "Thấu hiểu", "Tính độc đáo", "Tầm nhìn", "Sự giàu có", "Hạnh phúc", "Trí tuệ"
     ]
-  },
-  "gallupTest": {
-    "title": "Khai phá Tiềm năng Đội ngũ",
-    "description": "Bài đánh giá Gallup CliftonStrengths là một công cụ mạnh mẽ giúp mỗi cá nhân khám phá ra tài năng bẩm sinh của mình. Bằng cách thấu hiểu những điểm mạnh độc đáo này, bạn có thể xây dựng một đội ngũ vững mạnh, gắn kết và năng suất hơn.",
-    "benefitsTitle": "Lợi ích chính cho tổ chức của bạn:",
-    "benefits": [
-      "Cải thiện hiệu suất và năng suất của đội ngũ.",
-      "Tăng cường sự gắn kết và hài lòng trong công việc của nhân viên.",
-      "Thúc đẩy giao tiếp và hợp tác tốt hơn.",
-      "Đưa ra quyết định tuyển dụng và phát triển nhân sự thông minh hơn."
-    ],
-    "ctaTitle": "Sẵn sàng khám phá điểm mạnh của đội ngũ?",
-    "ctaDescription": "Việc triển khai bài đánh giá CliftonStrengths chính thức cần có giấy phép từ Gallup.",
-    "ctaButton": "Bắt đầu Đánh giá",
-    "note": "(Tính năng sẽ sớm ra mắt)"
-  },
-  "hofstedeTest": {
-    "title": "Mô hình Văn hóa Hofstede",
-    "description": "Hiểu rõ sự khác biệt văn hóa ảnh hưởng đến tổ chức của bạn như thế nào. Mô hình 6 khía cạnh của Hofstede là một khuôn khổ cho giao tiếp đa văn hóa, mô tả ảnh hưởng của văn hóa xã hội lên giá trị của các thành viên và mối liên hệ giữa các giá trị này với hành vi.",
-    "dimensionsTitle": "6 khía cạnh của Văn hóa Quốc gia",
-    "dimensions": {
-      "powerDistance": {
-        "title": "Khoảng cách Quyền lực",
-        "description": "Mức độ mà các thành viên ít quyền lực hơn trong tổ chức chấp nhận và kỳ vọng rằng quyền lực được phân bổ không đồng đều."
-      },
-      "individualism": {
-        "title": "Chủ nghĩa Cá nhân vs. Chủ nghĩa Tập thể",
-        "description": "Mức độ hòa nhập của các cá nhân vào các nhóm. Các xã hội cá nhân chủ nghĩa nhấn mạnh thành tích cá nhân, trong khi các xã hội tập thể nhấn mạnh sự hòa hợp nhóm."
-      },
-      "masculinity": {
-        "title": "Nam tính vs. Nữ tính",
-        "description": "Nam tính đại diện cho sự ưa thích thành tích, chủ nghĩa anh hùng và sự quyết đoán. Nữ tính đại diện cho sự ưa thích hợp tác, khiêm tốn và chất lượng cuộc sống."
-      },
-      "uncertaintyAvoidance": {
-        "title": "Né tránh sự Bất định",
-        "description": "Mức độ chấp nhận sự mơ hồ của một xã hội. Nó cho thấy một nền văn hóa lập trình cho các thành viên của mình cảm thấy không thoải mái hoặc thoải mái trong các tình huống không có cấu trúc."
-      },
-      "longTermOrientation": {
-        "title": "Định hướng Dài hạn vs. Ngắn hạn",
-        "description": "Cách mỗi xã hội phải duy trì một số liên kết với quá khứ của chính mình trong khi đối phó với những thách thức của hiện tại và tương lai."
-      },
-      "indulgence": {
-        "title": "Sự hưởng thụ vs. Sự kiềm chế",
-        "description": "Sự hưởng thụ đại diện cho một xã hội cho phép thỏa mãn tương đối tự do các ham muốn cơ bản và tự nhiên của con người liên quan đến việc tận hưởng cuộc sống và vui vẻ."
-      }
-    },
-    "ctaTitle": "Khám phá Bối cảnh Văn hóa của bạn",
-    "ctaDescription": "Bản quét Văn hóa Tổ chức Hofstede chính thức yêu cầu giấy phép từ Hofstede Insights.",
-    "ctaButton": "Bắt đầu Quét",
-    "note": "(Tính năng sẽ sớm ra mắt)"
   },
   "goldenCircle": {
     "title": "Tìm ra 'Lý do Tại sao' của bạn",
