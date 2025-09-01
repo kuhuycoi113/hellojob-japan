@@ -49,16 +49,18 @@ export function MobileMenuSheet() {
         </SheetHeader>
         
         <div className="flex-grow overflow-y-auto px-4 pb-4 pt-4">
-            <Card className="flex items-center gap-4 p-4 mb-4">
-                <Avatar className="h-12 w-12">
-                    <AvatarImage src="https://i.pravatar.cc/150?u=recruiter" />
-                    <AvatarFallback>U</AvatarFallback>
-                </Avatar>
-                <div>
-                    <p className="font-semibold">{t.mobile_menu_sheet.hello} HelloJob</p>
-                    <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccount}</p>
-                </div>
-            </Card>
+            <Link href="/dashboard/profile">
+                <Card className="flex items-center gap-4 p-4 mb-4 hover:bg-accent/50 transition-colors">
+                    <Avatar className="h-12 w-12">
+                        <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                        <AvatarFallback>U</AvatarFallback>
+                    </Avatar>
+                    <div>
+                        <p className="font-semibold">Global Support Union</p>
+                        <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.union.title)}</p>
+                    </div>
+                </Card>
+            </Link>
 
             <Separator className="mb-6"/>
 
