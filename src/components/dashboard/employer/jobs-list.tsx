@@ -1,3 +1,4 @@
+
 'use client';
 
 import {
@@ -31,6 +32,7 @@ import { MoreHorizontal, PlusCircle, List, LayoutGrid } from 'lucide-react';
 import { useState } from 'react';
 import { JobsGallery } from './jobs-gallery';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export function JobsList() {
   const { t } = useLanguage();
@@ -114,12 +116,24 @@ export function JobsList() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {jobs.map((job) => (
+                  {jobs.map((job, index) => (
                     <TableRow key={job.title}>
                       <TableCell className="font-medium">
-                        <div className="font-medium">{job.title}</div>
-                        <div className="hidden text-sm text-muted-foreground md:inline">
-                          {job.location}
+                        <div className="flex items-center gap-3">
+                          <Image
+                            src={job.image || `https://picsum.photos/400/225?random=job${index}`}
+                            alt={job.title}
+                            width={64}
+                            height={36}
+                            className="object-cover rounded-md hidden sm:block"
+                            data-ai-hint="workplace factory"
+                          />
+                          <div>
+                            <div className="font-medium">{job.title}</div>
+                            <div className="text-sm text-muted-foreground">
+                              {job.location}
+                            </div>
+                          </div>
                         </div>
                       </TableCell>
                       <TableCell>
