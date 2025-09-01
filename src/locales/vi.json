@@ -186,6 +186,7 @@
       "s2_desc": "Tải lên một tệp (PDF, DOCX, ảnh) để AI phân tích.",
       "s3_title": "Mô tả bằng giọng nói",
       "s3_desc": "Nói các chi tiết chính như chức danh, địa điểm và kỹ năng yêu cầu.",
+      "s3_listening": "Đang lắng nghe... Nhấn để dừng.",
       "s4_title": "Nhập liệu thủ công để đăng",
       "s4_desc": "Tự điền vào biểu mẫu chi tiết."
     },
@@ -197,7 +198,8 @@
     "input": {
       "title": "1. Mô tả công việc của bạn",
       "description": "Cung cấp một vài từ khóa, một câu, hoặc tải lên một mô tả công việc có sẵn. Càng chi tiết, kết quả càng tốt.",
-      "reset": "Tạo mới"
+      "reset": "Tạo mới",
+      "refinePlaceholder": "Nhập yêu cầu để tinh chỉnh (ví dụ: 'thêm yêu cầu kinh nghiệm 3 năm')"
     },
     "output": {
       "title": "2. Kết quả từ AI",
@@ -218,6 +220,7 @@
       "apiDescription": "Đã có sự cố khi tạo tin tuyển dụng. Vui lòng thử lại."
     },
     "analyzeButton": "Phân tích",
+    "refineButton": "Tinh chỉnh",
     "postJobButton": "Đăng việc làm này",
     "findPartnersButton": "Tìm đối tác phù hợp",
     "sendRequestsButton": "Gửi yêu cầu hợp tác",

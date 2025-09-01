@@ -344,7 +344,7 @@ function AiJobPostFormContent() {
     {
       icon: isListening ? <MicOff className="w-8 h-8 text-red-500" /> : <Mic className="w-8 h-8 text-blue-500" />,
       title: t.ai_job_post_form.suggestions.s3_title,
-      description: isListening ? "Đang ghi âm... Nhấn để dừng." : t.ai_job_post_form.suggestions.s3_desc,
+      description: isListening ? t.ai_job_post_form.suggestions.s3_listening : t.ai_job_post_form.suggestions.s3_desc,
       onClick: handleToggleListening,
       className: isListening ? "border-red-500 bg-red-50" : ""
     },
@@ -585,7 +585,7 @@ function AiJobPostFormContent() {
                   </div>
                 ) : (
                   <Textarea
-                    placeholder={isListening ? "Đang lắng nghe..." : (jobPost ? "Nhập yêu cầu để tinh chỉnh (ví dụ: 'thêm yêu cầu kinh nghiệm 3 năm')" : t.aiJobPost.placeholder)}
+                    placeholder={isListening ? t.ai_job_post_form.suggestions.s3_listening : (jobPost ? t.ai_job_post_form.input.refinePlaceholder : t.aiJobPost.placeholder)}
                     className="min-h-[200px] text-base"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
@@ -636,7 +636,7 @@ function AiJobPostFormContent() {
                     ) : (
                       <Sparkles className="mr-2 h-4 w-4" />
                     )}
-                    {jobPost ? "Tinh chỉnh" : t.aiJobPost.submit}
+                    {jobPost ? t.ai_job_post_form.refineButton : t.aiJobPost.submit}
                   </Button>
                 )}
               </CardFooter>
