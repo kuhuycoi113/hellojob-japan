@@ -20,8 +20,8 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { allPartners } from '@/data/partners';
 import { MatchingPartnersResult } from '@/components/matching-partners-result';
 import { cn } from '@/lib/utils';
-import { Input } from '../ui/input';
-import { Label } from '../ui/label';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 
 type SessionState = 'idle' | 'loading_job' | 'job_completed' | 'loading_partners' | 'partners_completed';
