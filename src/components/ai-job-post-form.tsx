@@ -11,6 +11,7 @@ import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info
 import { generateJobPost } from '@/ai/flows/generate-job-post';
 import { analyzeJobDocument } from '@/ai/flows/analyze-job-document';
 import { findMatchingPartners } from '@/ai/flows/find-matching-partners';
+import { translateJobPost } from '@/ai/flows/translate-job-post';
 import type { GenerateJobPostOutput } from '@/ai/schemas/generate-job-post-schema';
 import type { FindMatchingPartnersOutput } from '@/ai/schemas/find-matching-partners-schema';
 import { useToast } from "@/hooks/use-toast";
@@ -24,7 +25,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 
-type SessionState = 'idle' | 'loading_job' | 'job_completed' | 'loading_partners' | 'partners_completed';
+type SessionState = 'idle' | 'loading_job' | 'job_completed' | 'loading_partners' | 'partners_completed' | 'translating';
 type UploadedFile = {
   name: string;
   type: string;
@@ -123,6 +124,36 @@ function AiJobPostFormContent() {
         setState('idle');
     }
   }
+
+  // Effect to handle translation on language change
+  useEffect(() => {
+    const handleTranslate = async () => {
+      if (jobPost && editableJobPost && (state === 'job_completed' || state === 'partners_completed')) {
+        setState('translating');
+        try {
+          const targetLanguage = language === 'vi' ? 'Vietnamese' : language === 'ja' ? 'Japanese' : 'English';
+          const translatedPost = await translateJobPost({
+            jobPost: editableJobPost,
+            targetLanguage: targetLanguage,
+          });
+          setEditableJobPost(translatedPost);
+          setJobPost(translatedPost);
+        } catch (error) {
+          console.error("Error translating job post:", error);
+          toast({
+            title: "Translation Error",
+            description: "Could not translate the job post.",
+            variant: "destructive",
+          });
+        } finally {
+          setState('job_completed');
+        }
+      }
+    };
+    handleTranslate();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [language]);
+
 
   useEffect(() => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -499,7 +530,7 @@ function AiJobPostFormContent() {
     return <Paperclip className="w-10 h-10 text-gray-500" />;
   };
 
-  const isLoading = state === 'loading_job' || state === 'loading_partners';
+  const isLoading = state === 'loading_job' || state === 'loading_partners' || state === 'translating';
   const showAnalyzeButton = uploadedFile && !jobPost;
   const showGenerateButton = !uploadedFile || jobPost;
 
@@ -623,6 +654,13 @@ function AiJobPostFormContent() {
                     <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
                       <LoaderCircle className="h-12 w-12 animate-spin text-primary mb-4" />
                       <p className="text-lg">{t.ai_job_post_form.output.loading}</p>
+                    </div>
+                  )}
+
+                  {state === 'translating' && (
+                    <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
+                      <LoaderCircle className="h-12 w-12 animate-spin text-primary mb-4" />
+                      <p className="text-lg">Translating...</p>
                     </div>
                   )}
 
