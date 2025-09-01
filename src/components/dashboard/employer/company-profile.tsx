@@ -20,15 +20,6 @@ export function CompanyProfile() {
       <DashboardHeader />
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
         <div className="mx-auto grid w-full max-w-7xl gap-6">
-          <DashboardStats />
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-             <div className="lg:col-span-2">
-                <OverviewChart />
-            </div>
-            <div className="lg:col-span-1">
-                <RecentApplications />
-            </div>
-          </div>
           <div className="mt-4">
             <h2 className="text-2xl font-semibold mb-4">{profile.yourJobs}</h2>
             <JobsList />
@@ -41,6 +32,16 @@ export function CompanyProfile() {
 
            <div className="mt-4">
             <YourPartners />
+          </div>
+
+          <DashboardStats />
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+             <div className="lg:col-span-2">
+                <OverviewChart />
+            </div>
+            <div className="lg:col-span-1">
+                <RecentApplications />
+            </div>
           </div>
         </div>
       </main>
