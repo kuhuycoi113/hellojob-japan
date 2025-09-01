@@ -115,115 +115,47 @@ export function HandbookSection() {
         </Card>
 
         {/* Unified Content Section */}
-        <div>
-            <h3 className="text-3xl font-bold font-headline text-gray-800 mb-8 text-center flex items-center justify-center gap-3">
-                <Compass className="w-8 h-8 text-primary" />
-                Khám phá nội dung
-            </h3>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
-            {/* New Posts */}
-            <div className="mb-12">
-                <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                    <BookOpen className="w-6 h-6 text-primary" />
-                    {t.handbook.newPostsTitle}
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {newPosts.map((post, index) => (
-                        <Link href="/handbook/post-detail" key={index}>
-                        <Card
-                            className="shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col"
-                        >
-                            <div className="relative w-full aspect-w-16 aspect-h-9">
-                            <Image
-                                src={post.image}
-                                alt={post.title}
-                                fill
-                                className="object-cover"
-                                data-ai-hint={post.hint}
-                            />
-                            </div>
-                            <CardContent className="p-4 flex-grow flex flex-col">
-                            <Badge variant="outline" className="mb-2 w-fit">
-                                {post.category}
-                            </Badge>
-                            <h4 className="font-bold font-headline text-base text-gray-800 flex-grow">
-                                {post.title}
-                            </h4>
-                            </CardContent>
-                        </Card>
-                        </Link>
-                    ))}
-                </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-                {/* Short Videos */}
-                <div className="lg:col-span-2">
-                    <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                        <Video className="w-6 h-6 text-primary" />
-                        {t.handbook.videoTitle}
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        {shortVideos.map((video, index) => (
-                        <Card
-                            key={index}
-                            className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
-                        >
-                            <div className="relative aspect-[9/16]">
-                            <Image
-                                src={`https://picsum.photos/225/400?random=${index + 15}`}
-                                alt={video.title}
-                                fill
-                                className="object-cover w-full h-full"
-                                data-ai-hint="person speaking presentation"
-                            />
-                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors flex flex-col justify-end p-2">
-                                <PlayCircle className="w-8 h-8 text-white/90 drop-shadow-lg mb-2" />
-                                <h4 className="font-semibold text-white text-xs leading-tight drop-shadow-md">
-                                {video.title}
+            {/* Main Content */}
+            <main className="lg:col-span-2 space-y-12">
+                 {/* New Posts */}
+                <div>
+                    <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                        <BookOpen className="w-6 h-6 text-primary" />
+                        {t.handbook.newPostsTitle}
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {newPosts.map((post, index) => (
+                            <Link href="/handbook/post-detail" key={index}>
+                            <Card
+                                className="shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col"
+                            >
+                                <div className="relative w-full aspect-w-16 aspect-h-9">
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    fill
+                                    className="object-cover"
+                                    data-ai-hint={post.hint}
+                                />
+                                </div>
+                                <CardContent className="p-4 flex-grow flex flex-col">
+                                <Badge variant="outline" className="mb-2 w-fit">
+                                    {post.category}
+                                </Badge>
+                                <h4 className="font-bold font-headline text-base text-gray-800 flex-grow">
+                                    {post.title}
                                 </h4>
-                            </div>
-                            </div>
-                        </Card>
+                                </CardContent>
+                            </Card>
+                            </Link>
                         ))}
                     </div>
                 </div>
 
-                {/* Image Stories */}
-                <div className="lg:col-span-1">
-                  <h4 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
-                    <ImageIcon className="w-6 h-6 text-primary" />
-                    {t.handbook.imagePosts.title}
-                  </h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    {imageStories.map((story, index) => (
-                      <Card
-                        key={index}
-                        className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
-                      >
-                        <div className="relative aspect-[4/5]">
-                          <Image
-                            src={story.image}
-                            alt={story.title}
-                            fill
-                            className="object-cover w-full h-full"
-                            data-ai-hint={story.hint}
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/80 transition-colors flex flex-col justify-end p-3">
-                            <h4 className="font-semibold text-white text-sm leading-tight drop-shadow-md">
-                              {story.title}
-                            </h4>
-                          </div>
-                        </div>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Long Videos */}
-              <div>
+                {/* Long Videos */}
+                <div>
                   <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
                     <Video className="w-6 h-6 text-primary" />
                     {t.handbook.longVideoTitle}
@@ -261,8 +193,9 @@ export function HandbookSection() {
                   ))}
                   </div>
               </div>
-              {/* News & Articles */}
-              <div>
+              
+              {/* Articles List */}
+               <div>
                   <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
                       <Newspaper className="w-6 h-6 text-primary" />
                       {t.handbook.newsTitle}
@@ -287,7 +220,73 @@ export function HandbookSection() {
                       ))}
                   </div>
               </div>
-            </div>
+            </main>
+
+            {/* Sidebar */}
+            <aside className="lg:col-span-1 space-y-12 lg:sticky lg:top-24">
+                {/* Short Videos */}
+                <div>
+                    <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                        <Smartphone className="w-6 h-6 text-primary" />
+                        {t.handbook.videoTitle}
+                    </h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-4">
+                        {shortVideos.map((video, index) => (
+                        <Card
+                            key={index}
+                            className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
+                        >
+                            <div className="relative aspect-[9/16]">
+                            <Image
+                                src={`https://picsum.photos/225/400?random=${index + 15}`}
+                                alt={video.title}
+                                fill
+                                className="object-cover w-full h-full"
+                                data-ai-hint="person speaking presentation"
+                            />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors flex flex-col justify-end p-2">
+                                <PlayCircle className="w-8 h-8 text-white/90 drop-shadow-lg mb-2" />
+                                <h4 className="font-semibold text-white text-xs leading-tight drop-shadow-md">
+                                {video.title}
+                                </h4>
+                            </div>
+                            </div>
+                        </Card>
+                        ))}
+                    </div>
+                </div>
+
+                 {/* Image Stories */}
+                <div>
+                  <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-2">
+                    <ImageIcon className="w-6 h-6 text-primary" />
+                    {t.handbook.imagePosts.title}
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {imageStories.map((story, index) => (
+                      <Card
+                        key={index}
+                        className="shadow-md rounded-xl overflow-hidden group hover:shadow-xl transition-shadow"
+                      >
+                        <div className="relative aspect-[4/5]">
+                          <Image
+                            src={story.image}
+                            alt={story.title}
+                            fill
+                            className="object-cover w-full h-full"
+                            data-ai-hint={story.hint}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/80 transition-colors flex flex-col justify-end p-3">
+                            <h4 className="font-semibold text-white text-sm leading-tight drop-shadow-md">
+                              {story.title}
+                            </h4>
+                          </div>
+                        </div>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+            </aside>
         </div>
 
 
