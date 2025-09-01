@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/language-context';
-import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType, Brain, ChevronRight, GraduationCap, Star, Briefcase, Building, Users, Handshake, Send, Search, MicOff } from 'lucide-react';
+import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType, Brain, ChevronRight, GraduationCap, Star, Briefcase, Building, Users, Handshake, Send, Search, MicOff, Edit } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
 import { analyzeJobDocument } from '@/ai/flows/analyze-job-document';
 import { findMatchingPartners } from '@/ai/flows/find-matching-partners';
@@ -20,6 +20,8 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { allPartners } from '@/data/partners';
 import { MatchingPartnersResult } from '@/components/matching-partners-result';
 import { cn } from '@/lib/utils';
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
 
 
 type SessionState = 'idle' | 'loading_job' | 'job_completed' | 'loading_partners' | 'partners_completed';
@@ -56,6 +58,8 @@ function AiJobPostFormContent() {
   const [state, setState] = useState<SessionState>('idle');
   const [description, setDescription] = useState('');
   const [jobPost, setJobPost] = useState<GenerateJobPostOutput | null>(null);
+  const [editableJobPost, setEditableJobPost] = useState<GenerateJobPostOutput | null>(null);
+
   const [matchingPartners, setMatchingPartners] = useState<FindMatchingPartnersOutput | null>(null);
   const [uploadedFile, setUploadedFile] = useState<UploadedFile | null>(null);
 
@@ -73,6 +77,7 @@ function AiJobPostFormContent() {
   const performAiAnalysis = async (role: string, visaType: string, visaSubType: string, description: string, documentUri?: string) => {
     setState('loading_job');
     setJobPost(null);
+    setEditableJobPost(null);
 
     if (window.innerWidth < 768) {
       resultCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -98,6 +103,7 @@ function AiJobPostFormContent() {
       }
 
       setJobPost(result);
+      setEditableJobPost(JSON.parse(JSON.stringify(result))); // Deep copy
       setState('job_completed');
     } catch (error) {
         console.error("Error analyzing job document:", error);
@@ -322,6 +328,7 @@ function AiJobPostFormContent() {
     }
     setState('loading_job');
     setJobPost(null);
+    setEditableJobPost(null);
 
     if (window.innerWidth < 768) {
       resultCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -334,6 +341,7 @@ function AiJobPostFormContent() {
         visaType: initialVisaType || visaTypes.find(v => v.type === selectedVisaType)?.title || undefined,
       });
       setJobPost(result);
+      setEditableJobPost(JSON.parse(JSON.stringify(result))); // Deep copy
       setState('job_completed');
     } catch (error) {
       console.error("Error generating job post:", error);
@@ -356,6 +364,7 @@ function AiJobPostFormContent() {
     setDescription('');
     setVoiceDescription('');
     setJobPost(null);
+    setEditableJobPost(null);
     setMatchingPartners(null);
     removeFile();
   }
@@ -402,14 +411,14 @@ function AiJobPostFormContent() {
   }
 
   const handleFindPartners = async () => {
-    if (!jobPost) return;
+    if (!editableJobPost) return;
 
     setState('loading_partners');
     setMatchingPartners(null);
 
     try {
       const result = await findMatchingPartners({
-        jobPost,
+        jobPost: editableJobPost,
         allPartners,
         language,
       });
@@ -426,6 +435,23 @@ function AiJobPostFormContent() {
     }
   }
 
+  const handleEdit = <K extends keyof GenerateJobPostOutput>(field: K, value: GenerateJobPostOutput[K]) => {
+    if (editableJobPost) {
+        setEditableJobPost({ ...editableJobPost, [field]: value });
+    }
+  };
+
+  const handleListItemEdit = (
+    field: 'requirements' | 'benefits',
+    index: number,
+    value: string
+  ) => {
+    if (editableJobPost) {
+      const newList = [...editableJobPost[field]];
+      newList[index] = value;
+      setEditableJobPost({ ...editableJobPost, [field]: newList });
+    }
+  };
 
   const hasSelections = role || initialVisaType || initialVisaSubType;
 
@@ -553,7 +579,7 @@ function AiJobPostFormContent() {
           </div>
           
           <div className="space-y-4" ref={resultCardRef}>
-             <Card className="shadow-lg flex flex-col w-full h-full">
+             <Card className="shadow-lg flex flex-col w-full min-h-[500px]">
                 <CardHeader>
                   <CardTitle>{t.ai_job_post_form.output.title}</CardTitle>
                   <CardDescription>{t.ai_job_post_form.output.description}</CardDescription>
@@ -574,42 +600,64 @@ function AiJobPostFormContent() {
                     </div>
                   )}
 
-                  {(state === 'job_completed' || state === 'loading_partners' || state === 'partners_completed') && jobPost && (
+                  {(state === 'job_completed' || state === 'loading_partners' || state === 'partners_completed') && editableJobPost && (
                     <div className="space-y-6 animate-in fade-in-50">
+                        <div className='space-y-2'>
+                           <Label htmlFor="jobTitle" className="text-lg font-semibold flex items-center gap-2">
+                             <Edit className="w-4 h-4 text-muted-foreground"/>
+                             Job Title
+                           </Label>
+                           <Input 
+                                id="jobTitle" 
+                                value={editableJobPost.jobTitle} 
+                                onChange={(e) => handleEdit('jobTitle', e.target.value)}
+                                className="text-2xl font-bold font-headline text-primary h-auto p-2"
+                            />
+                        </div>
+                        <div className='space-y-2'>
+                            <Label htmlFor="companyName" className="font-medium flex items-center gap-2">
+                                Company & Location
+                            </Label>
+                            <div className="flex gap-2">
+                                <Input id="companyName" value={editableJobPost.companyName} onChange={(e) => handleEdit('companyName', e.target.value)} />
+                                <Input id="location" value={editableJobPost.location} onChange={(e) => handleEdit('location', e.target.value)} />
+                            </div>
+                        </div>
+
                       <div>
-                        <h2 className="text-2xl font-bold font-headline text-primary">{jobPost.jobTitle}</h2>
-                        <p className="text-muted-foreground font-medium">{jobPost.companyName} - {jobPost.location}</p>
+                        <h3 className="text-lg font-semibold mb-2 flex items-center gap-2"><Edit className="w-4 h-4 text-muted-foreground"/>{t.ai_job_post_form.output.jobDescription}</h3>
+                         <Textarea 
+                            value={editableJobPost.jobDescription} 
+                            onChange={(e) => handleEdit('jobDescription', e.target.value)}
+                            className="text-gray-700 min-h-[150px]"
+                        />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold mb-2">{t.ai_job_post_form.output.jobDescription}</h3>
-                        <p className="text-gray-700 whitespace-pre-wrap">{jobPost.jobDescription}</p>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold mb-2">{t.ai_job_post_form.output.requirements}</h3>
-                        <ul className="space-y-2">
-                          {jobPost.requirements.map((req, i) => (
-                            <li key={i} className="flex items-start">
-                              <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                              <span>{req}</span>
-                            </li>
+                        <h3 className="text-lg font-semibold mb-2 flex items-center gap-2"><Edit className="w-4 h-4 text-muted-foreground"/>{t.ai_job_post_form.output.requirements}</h3>
+                        <div className="space-y-2">
+                          {editableJobPost.requirements.map((req, i) => (
+                             <div key={i} className="flex items-center gap-2">
+                                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                                <Input value={req} onChange={(e) => handleListItemEdit('requirements', i, e.target.value)} />
+                             </div>
                           ))}
-                        </ul>
+                        </div>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold mb-2">{t.ai_job_post_form.output.benefits}</h3>
-                        <ul className="space-y-2">
-                          {jobPost.benefits.map((ben, i) => (
-                            <li key={i} className="flex items-start">
-                              <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                              <span>{ben}</span>
-                            </li>
+                        <h3 className="text-lg font-semibold mb-2 flex items-center gap-2"><Edit className="w-4 h-4 text-muted-foreground"/>{t.ai_job_post_form.output.benefits}</h3>
+                        <div className="space-y-2">
+                           {editableJobPost.benefits.map((ben, i) => (
+                             <div key={i} className="flex items-center gap-2">
+                                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                                <Input value={ben} onChange={(e) => handleListItemEdit('benefits', i, e.target.value)} />
+                             </div>
                           ))}
-                        </ul>
+                        </div>
                       </div>
                     </div>
                   )}
                 </CardContent>
-                {(state === 'job_completed' || state === 'loading_partners' || state === 'partners_completed') && jobPost && (
+                {(state === 'job_completed' || state === 'loading_partners' || state === 'partners_completed') && editableJobPost && (
                   <CardFooter className="flex justify-end gap-2">
                     <Button
                       size="lg"
@@ -732,7 +780,5 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
-
-    
 
     
