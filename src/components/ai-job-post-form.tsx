@@ -64,10 +64,51 @@ function AiJobPostFormContent() {
   const [visaSubTypeDialogOpen, setVisaSubTypeDialogOpen] = useState(false);
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
+  const [voiceDescription, setVoiceDescription] = useState('');
   
   // States for Speech Recognition
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
+
+  const performAiAnalysis = async (role: string, visaType: string, visaSubType: string, description: string, documentUri?: string) => {
+    setState('loading_job');
+    setJobPost(null);
+
+    if (window.innerWidth < 768) {
+      resultCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    try {
+      let result;
+      if (documentUri) {
+        result = await analyzeJobDocument({
+            description: '',
+            documentDataUri: documentUri,
+            role: role,
+            visaType: visaType,
+            visaSubType: visaSubType,
+        });
+      } else {
+        result = await generateJobPost({
+            description: description,
+            role: role,
+            visaType: visaType,
+            visaSubType: visaSubType,
+        });
+      }
+
+      setJobPost(result);
+      setState('job_completed');
+    } catch (error) {
+        console.error("Error analyzing job document:", error);
+        toast({
+            title: t.ai_job_post_form.error.apiTitle,
+            description: t.ai_job_post_form.error.apiDescription,
+            variant: "destructive",
+        });
+        setState('idle');
+    }
+  }
 
   useEffect(() => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -81,9 +122,10 @@ function AiJobPostFormContent() {
     recognition.interimResults = true;
     recognition.lang = language === 'ja' ? 'ja-JP' : language === 'en' ? 'en-US' : 'vi-VN';
 
+    let finalTranscript = '';
     recognition.onresult = (event) => {
       let interimTranscript = '';
-      let finalTranscript = '';
+      finalTranscript = '';
       for (let i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
           finalTranscript += event.results[i][0].transcript;
@@ -91,7 +133,7 @@ function AiJobPostFormContent() {
           interimTranscript += event.results[i][0].transcript;
         }
       }
-      setDescription(prev => prev + finalTranscript);
+      setDescription(finalTranscript + interimTranscript);
     };
 
     recognition.onerror = (event) => {
@@ -108,6 +150,11 @@ function AiJobPostFormContent() {
 
     recognition.onend = () => {
         setIsListening(false);
+        if (finalTranscript.trim()) {
+            setVoiceDescription(finalTranscript.trim());
+            setDescription(finalTranscript.trim())
+            setRoleDialogOpen(true);
+        }
     }
     
     recognitionRef.current = recognition;
@@ -131,6 +178,7 @@ function AiJobPostFormContent() {
       recognitionRef.current.stop();
       setIsListening(false);
     } else {
+      setVoiceDescription('');
       setDescription(''); // Clear previous text
       recognitionRef.current.start();
       setIsListening(true);
@@ -299,13 +347,14 @@ function AiJobPostFormContent() {
   };
 
   const handleStartAnalysis = () => {
-    if(!uploadedFile) return;
+    if(!uploadedFile && !voiceDescription) return;
     setRoleDialogOpen(true);
   }
 
   const handleReset = () => {
     setState('idle');
     setDescription('');
+    setVoiceDescription('');
     setJobPost(null);
     setMatchingPartners(null);
     removeFile();
@@ -325,7 +374,7 @@ function AiJobPostFormContent() {
 
   const handleVisaSubTypeSelect = async (subType: {title: string, href: string}) => {
     setVisaSubTypeDialogOpen(false);
-    if (!uploadedFile || !selectedRole || !selectedVisaType) {
+    if (!selectedRole || !selectedVisaType) {
         toast({
             title: "Missing Information",
             description: "Something went wrong. Please start over.",
@@ -334,32 +383,22 @@ function AiJobPostFormContent() {
         return;
     }
 
-    setState('loading_job');
-    setJobPost(null);
-
-    if (window.innerWidth < 768) {
-      resultCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    try {
-        const result = await analyzeJobDocument({
-            description: '', // Description is from the file, not the textarea
-            documentDataUri: uploadedFile.dataUri,
-            role: selectedRole.title,
-            visaType: visaTypes.find(v => v.type === selectedVisaType)?.title,
-            visaSubType: subType.title,
-        });
-        setJobPost(result);
-        setState('job_completed');
-    } catch (error) {
-        console.error("Error analyzing job document:", error);
+    if (!uploadedFile && !voiceDescription) {
         toast({
-            title: t.ai_job_post_form.error.apiTitle,
-            description: t.ai_job_post_form.error.apiDescription,
-            variant: "destructive",
+            title: "Missing Content",
+            description: "No file or voice description to analyze.",
+            variant: "destructive"
         });
-        setState('idle');
+        return;
     }
+    
+    await performAiAnalysis(
+      selectedRole.title,
+      visaTypes.find(v => v.type === selectedVisaType)!.title,
+      subType.title,
+      voiceDescription,
+      uploadedFile?.dataUri,
+    );
   }
 
   const handleFindPartners = async () => {
@@ -404,6 +443,8 @@ function AiJobPostFormContent() {
   };
 
   const isLoading = state === 'loading_job' || state === 'loading_partners';
+  const showAnalyzeButton = uploadedFile && !voiceDescription;
+  const showGenerateButton = !uploadedFile && !voiceDescription;
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
@@ -487,7 +528,7 @@ function AiJobPostFormContent() {
                 {(state === 'job_completed' || state === 'partners_completed') && (
                     <Button variant="outline" onClick={handleReset}>{t.ai_job_post_form.input.reset}</Button>
                 )}
-                {uploadedFile ? (
+                {showAnalyzeButton && (
                   <Button size="lg" onClick={handleStartAnalysis} disabled={isLoading}>
                       {state === 'loading_job' ? (
                       <LoaderCircle className="animate-spin" />
@@ -496,7 +537,8 @@ function AiJobPostFormContent() {
                     )}
                       {t.ai_job_post_form.analyzeButton}
                   </Button>
-                ) : (
+                )}
+                {showGenerateButton && (
                   <Button size="lg" onClick={handleGenerate} disabled={isLoading || !!uploadedFile}>
                     {state === 'loading_job' ? (
                       <LoaderCircle className="animate-spin" />
@@ -690,5 +732,7 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
 
     
