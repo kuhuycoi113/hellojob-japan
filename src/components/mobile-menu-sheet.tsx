@@ -29,8 +29,8 @@ export function MobileMenuSheet() {
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
     { href: "/post-job-ai", label: t.mobile_menu_sheet.postJob, icon: <Plus /> },
-    { href: "/dashboard/employer/jobs", label: t.mobile_menu_sheet.dataReport, icon: <FileText /> },
-    { href: "/dashboard/employer/partners", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
+    { href: "/dashboard/jobs", label: t.mobile_menu_sheet.dataReport, icon: <FileText /> },
+    { href: "/dashboard/partners", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];

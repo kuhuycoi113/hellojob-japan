@@ -14,7 +14,7 @@ export function MobileFooter() {
   const navItems = [
     { href: '/', label: t.mobile_footer.home, icon: <Home /> },
     { href: '/post-job-ai', label: t.mobile_footer.postJobAI, icon: <Sparkles /> },
-    { href: '/dashboard/employer', label: t.mobile_footer.dashboard, icon: <User /> },
+    { href: '/dashboard', label: t.mobile_footer.dashboard, icon: <User /> },
   ];
 
   return (

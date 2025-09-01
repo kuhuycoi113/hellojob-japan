@@ -166,7 +166,7 @@ export function Header() {
     { href: "/how-it-works", label: t.header.menuItems.howItWorks, icon: <Compass /> },
     { href: "/recruit-right", label: t.header.menuItems.recruitRight, icon: <Target /> },
     { href: "/elearning", label: t.header.menuItems.elearning, icon: <BookOpen /> },
-    { href: "/dashboard/employer", label: t.header.menuItems.dashboard, icon: <Briefcase /> },
+    { href: "/dashboard", label: t.header.menuItems.dashboard, icon: <Briefcase /> },
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
@@ -256,7 +256,7 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-2">
             <Button asChild variant="outline" className="hover:bg-secondary hover:text-secondary-foreground">
-               <Link href="/dashboard/employer" className="flex items-center gap-2">
+               <Link href="/dashboard" className="flex items-center gap-2">
                 <User className="h-4 w-4" />
                 {t.header.myProfile}
               </Link>
@@ -269,7 +269,7 @@ export function Header() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-80 p-4">
-                  <Link href="/dashboard/employer/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-4 transition-colors">
+                  <Link href="/dashboard/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-4 transition-colors">
                     <div className="flex items-center gap-4">
                         <Avatar className="h-12 w-12">
                             <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
