@@ -21,12 +21,10 @@ export function CompanyProfile() {
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
         <div className="mx-auto grid w-full max-w-7xl gap-6">
           <div className="mt-4">
-            <h2 className="text-2xl font-semibold mb-4">{profile.yourJobs}</h2>
             <JobsList />
           </div>
 
           <div className="mt-4">
-            <h2 className="text-2xl font-semibold mb-4">{profile.yourCandidates}</h2>
             <YourCandidates />
           </div>
 

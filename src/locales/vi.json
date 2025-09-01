@@ -256,6 +256,10 @@
       {
         "title": "Các loại thuế cần biết khi làm việc tại Nhật Bản",
         "category": "Pháp luật lao động"
+      },
+      {
+        "title": "Văn hóa Nhật Bản: Tầm quan trọng của 'Omiyage' (Quà lưu niệm)",
+        "category": "Cuộc sống ở Nhật"
       }
     ],
     "longVideos": [
@@ -509,56 +513,6 @@
     "values": [
       "Trách nhiệm giải trình", "Thành tích", "Khả năng thích ứng", "Cân bằng", "Sự thuộc về", "Hợp tác", "Cam kết", "Cộng đồng", "Lòng trắc ẩn", "Năng lực", "Đóng góp", "Can đảm", "Sáng tạo", "Tò mò", "Sự hài lòng của khách hàng", "Đa dạng", "Đồng cảm", "Trao quyền", "Nhiệt tình", "Bảo vệ môi trường", "Bình đẳng", "Xuất sắc", "Sự công bằng", "Gia đình", "Ổn định tài chính", "Tha thứ", "Tự do", "Vui vẻ", "Hào phóng", "Lòng biết ơn", "Tăng trưởng", "Hài hòa", "Sức khỏe", "Trung thực", "Khiêm tốn", "Hài hước", "Hòa nhập", "Độc lập", "Sáng kiến", "Đổi mới", "Chính trực", "Công lý", "Tử tế", "Kiến thức", "Lãnh đạo", "Học hỏi", "Lòng trung thành", "Tạo ra sự khác biệt", "Cởi mở", "Lạc quan", "Trật tự", "Kiên nhẫn", "Lòng yêu nước", "Hòa bình", "Hiệu suất", "Kiên trì", "Sự viên mãn cá nhân", "Quyền lực", "Niềm tự hào", "Sự công nhận", "Tôn trọng", "Trách nhiệm", "Chấp nhận rủi ro", "An toàn", "An ninh", "Kỷ luật tự giác", "Phục vụ", "Đơn giản", "Tâm linh", "Ổn định", "Thành công", "Làm việc nhóm", "Sự chu đáo", "Truyền thống", "Minh bạch", "Tin tưởng", "Sự thật", "Thấu hiểu", "Tính độc đáo", "Tầm nhìn", "Sự giàu có", "Hạnh phúc", "Trí tuệ"
     ]
-  },
-  "gallupTest": {
-    "title": "Bài kiểm tra Gallup CliftonStrengths",
-    "description": "Bài kiểm tra CliftonStrengths đo lường các mẫu suy nghĩ, cảm xúc và hành vi tự nhiên của bạn. Khám phá tài năng của bạn là bước đầu tiên để tiếp cận quản lý và xây dựng đội ngũ dựa trên điểm mạnh, dẫn đến sự gắn kết và hiệu suất cao hơn.",
-    "benefitsTitle": "Tại sao sử dụng CliftonStrengths?",
-    "benefits": [
-      "Xác định tài năng cá nhân và nhóm để tận dụng điểm mạnh tự nhiên.",
-      "Cải thiện giao tiếp và hợp tác trong nhóm bằng cách hiểu nhau hơn.",
-      "Tăng cường sự gắn kết của nhân viên bằng cách tập trung vào những gì mọi người làm tốt nhất.",
-      "Tăng hiệu suất và năng suất bằng cách sắp xếp nhiệm vụ phù hợp với tài năng."
-    ],
-    "ctaTitle": "Khám phá Điểm mạnh của Nhóm bạn",
-    "ctaDescription": "Bắt đầu bài kiểm tra CliftonStrengths để khai phá toàn bộ tiềm năng của nhóm bạn.",
-    "ctaButton": "Bắt đầu Đánh giá",
-    "note": "(Đây là một bản trình diễn khái niệm. Cần tích hợp với bài kiểm tra chính thức của Gallup.)"
-  },
-  "hofstedeTest": {
-    "title": "Hofstede's Cultural Dimensions Scan",
-    "description": "Mô hình các chiều văn hóa của Geert Hofstede cung cấp một khuôn khổ để hiểu và so sánh các nền văn hóa quốc gia. Công cụ này giúp bạn phân tích văn hóa tổ chức của mình dựa trên các chiều này để cải thiện giao tiếp và quản lý đa văn hóa, đặc biệt khi làm việc với nhân viên Việt Nam.",
-    "dimensionsTitle": "6 Chiều văn hóa",
-    "dimensions": {
-      "powerDistance": {
-        "title": "Khoảng cách quyền lực",
-        "description": "Mức độ mà các thành viên ít quyền lực hơn trong xã hội chấp nhận và mong đợi rằng quyền lực được phân phối không đồng đều."
-      },
-      "individualism": {
-        "title": "Chủ nghĩa cá nhân vs. Chủ nghĩa tập thể",
-        "description": "Mức độ mà mọi người trong xã hội được hòa nhập vào các nhóm."
-      },
-      "masculinity": {
-        "title": "Nam tính vs. Nữ tính",
-        "description": "Sự ưa thích trong xã hội đối với thành tích, chủ nghĩa anh hùng, sự quyết đoán và phần thưởng vật chất cho thành công."
-      },
-      "uncertaintyAvoidance": {
-        "title": "Né tránh sự không chắc chắn",
-        "description": "Sự khoan dung của một xã hội đối với sự mơ hồ và không chắc chắn."
-      },
-      "longTermOrientation": {
-        "title": "Định hướng dài hạn vs. Ngắn hạn",
-        "description": "Cách mỗi xã hội phải duy trì một số liên kết với quá khứ của chính mình trong khi đối mặt với những thách thức của hiện tại và tương lai."
-      },
-      "indulgence": {
-        "title": "Sự thỏa mãn vs. Sự kiềm chế",
-        "description": "Mức độ mà mọi người cố gắng kiểm soát ham muốn và xung động của mình."
-      }
-    },
-    "ctaTitle": "Quét Hồ sơ văn hóa của bạn",
-    "ctaDescription": "Bắt đầu quét Hofstede để có được những hiểu biết sâu sắc về bối cảnh văn hóa của bạn.",
-    "ctaButton": "Bắt đầu Quét",
-    "note": "(Đây là một bản trình diễn khái niệm. Cần tích hợp với một công cụ chẩn đoán chính thức.)"
   },
   "goldenCircle": {
     "title": "Tìm ra 'Lý do Tại sao' của bạn",
@@ -1064,7 +1018,20 @@
     ],
     "your_partners": {
       "title": "Đối tác của bạn",
-      "subtitle": "Kết nối bạn với các Cơ quan Hỗ trợ, Nghiệp đoàn và Công ty Phái cử uy tín."
+      "subtitle": "Kết nối bạn với các Cơ quan Hỗ trợ, Nghiệp đoàn và Công ty Phái cử uy tín.",
+      "title_full": "Quản lý Đối tác",
+      "description_full": "Theo dõi và quản lý tất cả các kết nối đối tác của bạn.",
+      "add_partner": "Thêm Đối tác mới",
+      "table": {
+        "partner_name": "Tên đối tác",
+        "type": "Loại hình",
+        "specialties": "Chuyên môn",
+        "locations": "Địa điểm",
+        "actions": "Hành động",
+        "toggle_menu": "Mở menu",
+        "view_details": "Xem chi tiết",
+        "send_message": "Gửi tin nhắn"
+      }
     },
     "company_profile": {
       "industry": "Sản xuất & Chế biến",

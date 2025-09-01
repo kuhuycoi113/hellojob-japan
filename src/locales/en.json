@@ -256,6 +256,10 @@
       {
         "title": "Taxes You Need to Know When Working in Japan",
         "category": "Labor Law"
+      },
+      {
+        "title": "Japanese Culture: The Importance of 'Omiyage' (Souvenirs)",
+        "category": "Life in Japan"
       }
     ],
     "longVideos": [
@@ -509,56 +513,6 @@
     "values": [
       "Accountability", "Achievement", "Adaptability", "Balance", "Belonging", "Collaboration", "Commitment", "Community", "Compassion", "Competence", "Contribution", "Courage", "Creativity", "Curiosity", "Customer Satisfaction", "Diversity", "Empathy", "Empowerment", "Enthusiasm", "Environmentalism", "Equity", "Excellence", "Fairness", "Family", "Financial Stability", "Forgiveness", "Freedom", "Fun", "Generosity", "Gratitude", "Growth", "Harmony", "Health", "Honesty", "Humility", "Humor", "Inclusion", "Independence", "Initiative", "Innovation", "Integrity", "Justice", "Kindness", "Knowledge", "Leadership", "Learning", "Loyalty", "Making a Difference", "Openness", "Optimism", "Order", "Patience", "Patriotism", "Peace", "Performance", "Perseverance", "Personal Fulfillment", "Power", "Pride", "Recognition", "Respect", "Responsibility", "Risk-taking", "Safety", "Security", "Self-discipline", "Service", "Simplicity", "Spirituality", "Stability", "Success", "Teamwork", "Thankfulness", "Thoughtfulness", "Tradition", "Transparency", "Trust", "Truth", "Understanding", "Uniqueness", "Vision", "Wealth", "Well-being", "Wisdom"
     ]
-  },
-  "gallupTest": {
-    "title": "Gallup CliftonStrengths Assessment",
-    "description": "The CliftonStrengths assessment measures your natural patterns of thinking, feeling, and behaving. Discovering your talents is the first step to a strengths-based approach to management and team building, leading to higher engagement and performance.",
-    "benefitsTitle": "Why use CliftonStrengths?",
-    "benefits": [
-      "Identify individual and team talents to leverage natural strengths.",
-      "Improve team communication and collaboration by understanding each other better.",
-      "Increase employee engagement by focusing on what people do best.",
-      "Boost performance and productivity by aligning tasks with talents."
-    ],
-    "ctaTitle": "Discover Your Team's Strengths",
-    "ctaDescription": "Start the CliftonStrengths assessment to unlock your team's full potential.",
-    "ctaButton": "Start Assessment",
-    "note": "(This is a conceptual demonstration. Integration with the official Gallup assessment is required.)"
-  },
-  "hofstedeTest": {
-    "title": "Hofstede's Cultural Dimensions Scan",
-    "description": "Geert Hofstede's model of cultural dimensions provides a framework for understanding and comparing national cultures. This tool helps you analyze your organizational culture against these dimensions to improve cross-cultural communication and management, especially when working with Vietnamese employees.",
-    "dimensionsTitle": "The 6 Cultural Dimensions",
-    "dimensions": {
-      "powerDistance": {
-        "title": "Power Distance",
-        "description": "The degree to which less powerful members of a society accept and expect that power is distributed unequally."
-      },
-      "individualism": {
-        "title": "Individualism vs. Collectivism",
-        "description": "The degree to which people in a society are integrated into groups."
-      },
-      "masculinity": {
-        "title": "Masculinity vs. Femininity",
-        "description": "A preference in society for achievement, heroism, assertiveness, and material rewards for success."
-      },
-      "uncertaintyAvoidance": {
-        "title": "Uncertainty Avoidance",
-        "description": "A society's tolerance for ambiguity and uncertainty."
-      },
-      "longTermOrientation": {
-        "title": "Long-Term vs. Short-Term Orientation",
-        "description": "How every society has to maintain some links with its own past while dealing with the challenges of the present and future."
-      },
-      "indulgence": {
-        "title": "Indulgence vs. Restraint",
-        "description": "The extent to which people try to control their desires and impulses."
-      }
-    },
-    "ctaTitle": "Scan Your Cultural Profile",
-    "ctaDescription": "Begin the Hofstede scan to gain insights into your cultural landscape.",
-    "ctaButton": "Start Scan",
-    "note": "(This is a conceptual demonstration. Integration with an official diagnostic tool is required.)"
   },
   "goldenCircle": {
     "title": "Find Your 'Why'",
@@ -1064,7 +1018,20 @@
     ],
     "your_partners": {
       "title": "Your Partners",
-      "subtitle": "Connect with trusted Support Organizations, Unions, and Sending Companies."
+      "subtitle": "Connect with trusted Support Organizations, Unions, and Sending Companies.",
+      "title_full": "Manage Partners",
+      "description_full": "Oversee and manage all your partner connections.",
+      "add_partner": "Add New Partner",
+      "table": {
+        "partner_name": "Partner Name",
+        "type": "Type",
+        "specialties": "Specialties",
+        "locations": "Locations",
+        "actions": "Actions",
+        "toggle_menu": "Toggle menu",
+        "view_details": "View Details",
+        "send_message": "Send Message"
+      }
     },
     "company_profile": {
       "industry": "Manufacturing & Processing",
