@@ -201,7 +201,7 @@
     },
     "output": {
       "title": "2. AI-Generated Result",
-      "description": "Here is the job posting created by AI. You can proceed to the next step below.",
+      "description": "Here is the job posting created by AI. You can edit the content below before proceeding.",
       "loading": "Generating your job post...",
       "idle": {
         "title": "Your result will appear here",
@@ -259,6 +259,10 @@
       },
       {
         "title": "Japanese Culture: The Importance of 'Omiyage' (Souvenirs)",
+        "category": "Life in Japan"
+      },
+      {
+        "title": "Understanding the 'Nenmatsu Chosei' (Year-End Tax Adjustment)",
         "category": "Life in Japan"
       }
     ],
@@ -969,6 +973,11 @@
         }
       }
     },
+    "your_candidates": {
+      "title": "Manage Candidates",
+      "description": "Oversee and manage all your candidates.",
+      "add_candidate": "Add New Candidate"
+    },
     "candidates": [
         {
             "id": "VN045GUIFW",
@@ -1016,6 +1025,17 @@
             "created_date": "03/04/2025"
         }
     ],
+    "candidates_table": {
+      "candidate": "Candidate",
+      "visa_specialty": "Visa / Specialty",
+      "desired_salary": "Desired Salary",
+      "date_created": "Date Created",
+      "actions": "Actions",
+      "toggle_menu": "Toggle menu",
+      "view_profile": "View Profile",
+      "contact_line": "Contact via Line",
+      "save_to_list": "Save to List"
+    },
     "your_partners": {
       "title": "Your Partners",
       "subtitle": "Connect with trusted Support Organizations, Unions, and Sending Companies.",

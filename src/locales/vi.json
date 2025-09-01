@@ -201,7 +201,7 @@
     },
     "output": {
       "title": "2. Kết quả từ AI",
-      "description": "Đây là tin tuyển dụng được tạo bởi AI. Bạn có thể thực hiện bước tiếp theo bên dưới.",
+      "description": "Đây là tin tuyển dụng được tạo bởi AI. Bạn có thể chỉnh sửa nội dung bên dưới trước khi thực hiện bước tiếp theo.",
       "loading": "Đang tạo tin tuyển dụng của bạn...",
       "idle": {
         "title": "Kết quả sẽ xuất hiện ở đây",
@@ -259,6 +259,10 @@
       },
       {
         "title": "Văn hóa Nhật Bản: Tầm quan trọng của 'Omiyage' (Quà lưu niệm)",
+        "category": "Cuộc sống ở Nhật"
+      },
+      {
+        "title": "Hiểu về 'Nenmatsu Chosei' (Điều chỉnh thuế cuối năm)",
         "category": "Cuộc sống ở Nhật"
       }
     ],
@@ -969,6 +973,11 @@
         }
       }
     },
+    "your_candidates": {
+      "title": "Quản lý Ứng viên",
+      "description": "Theo dõi và quản lý tất cả các ứng viên của bạn.",
+      "add_candidate": "Thêm ứng viên mới"
+    },
     "candidates": [
         {
             "id": "VN045GUIFW",
@@ -1016,6 +1025,17 @@
             "created_date": "03/04/2025"
         }
     ],
+    "candidates_table": {
+      "candidate": "Ứng viên",
+      "visa_specialty": "Visa / Chuyên ngành",
+      "desired_salary": "Mức lương mong muốn",
+      "date_created": "Ngày tạo",
+      "actions": "Hành động",
+      "toggle_menu": "Mở menu",
+      "view_profile": "Xem hồ sơ",
+      "contact_line": "Liên hệ qua Line",
+      "save_to_list": "Lưu vào danh sách"
+    },
     "your_partners": {
       "title": "Đối tác của bạn",
       "subtitle": "Kết nối bạn với các Cơ quan Hỗ trợ, Nghiệp đoàn và Công ty Phái cử uy tín.",

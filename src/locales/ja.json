@@ -201,7 +201,7 @@
     },
     "output": {
       "title": "2. AIによる生成結果",
-      "description": "こちらがAIによって作成された求人情報です。以下の次のステップに進むことができます。",
+      "description": "こちらがAIによって作成された求人情報です。以下の内容を編集してから、次のステップに進むことができます。",
       "loading": "求人情報を生成中...",
       "idle": {
         "title": "結果はここに表示されます",
@@ -260,22 +260,22 @@
       {
         "title": "日本文化：『お土産』の重要性",
         "category": "日本での生活"
+      },
+      {
+        "title": "「年末調整」の理解",
+        "category": "日本での生活"
       }
     ],
     "longVideos": [
       {
         "title": "労働者向けの日本の労働契約の種類に関する詳細な議論",
         "duration": "15:20",
-        "category": "労働法",
-        "image": "https://picsum.photos/600/400?random=40",
-        "hint": "legal document discussion"
+        "category": "労働法"
       },
       {
         "title": "実習生から特定技能へ：経験者からの話",
         "duration": "22:45",
-        "category": "経験談",
-        "image": "https://picsum.photos/600/400?random=41",
-        "hint": "success story interview"
+        "category": "経験談"
       }
     ],
     "newPostsTitle": "新着記事",
@@ -973,6 +973,11 @@
         }
       }
     },
+    "your_candidates": {
+      "title": "候補者管理",
+      "description": "すべての候補者を監視および管理します。",
+      "add_candidate": "新規候補者追加"
+    },
     "candidates": [
         {
             "id": "VN045GUIFW",
@@ -1020,6 +1025,17 @@
             "created_date": "2025/04/03"
         }
     ],
+    "candidates_table": {
+      "candidate": "候補者",
+      "visa_specialty": "在留資格・専門分野",
+      "desired_salary": "希望給与",
+      "date_created": "作成日",
+      "actions": "アクション",
+      "toggle_menu": "メニュー切り替え",
+      "view_profile": "プロフィール表示",
+      "contact_line": "LINEで連絡",
+      "save_to_list": "リストに保存"
+    },
     "your_partners": {
       "title": "あなたのパートナー",
       "subtitle": "信頼できる支援機関、組合、および派遣会社とつながりましょう。",
