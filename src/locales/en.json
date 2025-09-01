@@ -480,10 +480,6 @@
       "title": "Barrett Values Centre (CTT)",
       "description": "Cultural Transformation Tools that measure personal and organizational values to identify cultural alignment."
     },
-    "gallup": {
-      "title": "Gallup CliftonStrengths",
-      "description": "Focus on what your team does best. Identify natural talents to maximize potential and engagement."
-    },
     "hofstede": {
       "title": "Hofstede Culture Scan",
       "description": "Compare your organizational culture with national cultures to improve cross-cultural collaboration."

@@ -20,14 +20,6 @@ export function RecruitRightSection() {
       href: "/recruit-right/barrett-test"
     },
     {
-      icon: <BarChart className="h-10 w-10 text-yellow-500" />,
-      title: t.recruitRight.gallup.title,
-      description: t.recruitRight.gallup.description,
-      image: "https://picsum.photos/600/400?random=2",
-      hint: "team strengths collaboration",
-      href: "/recruit-right/gallup-test"
-    },
-    {
       icon: <Globe className="h-10 w-10 text-blue-500" />,
       title: t.recruitRight.hofstede.title,
       description: t.recruitRight.hofstede.description,

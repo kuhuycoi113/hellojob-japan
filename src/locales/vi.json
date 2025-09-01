@@ -480,10 +480,6 @@
       "title": "Barrett Values Centre (CTT)",
       "description": "Công cụ Chuyển đổi Văn hóa giúp đo lường giá trị cá nhân và tổ chức, xác định sự tương hợp văn hóa."
     },
-    "gallup": {
-      "title": "Gallup CliftonStrengths",
-      "description": "Tập trung vào thế mạnh của đội ngũ. Xác định tài năng tự nhiên để tối đa hóa tiềm năng và sự gắn kết."
-    },
     "hofstede": {
       "title": "Hofstede Culture Scan",
       "description": "So sánh văn hóa tổ chức của bạn với văn hóa quốc gia để cải thiện sự hợp tác đa văn hóa."
