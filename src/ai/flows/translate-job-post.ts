@@ -42,6 +42,9 @@ Return the fully translated job posting in the structured format required.
       name: 'translateJobPostFlow',
       inputSchema: TranslateJobPostInputSchema,
       outputSchema: TranslateJobPostOutputSchema,
+        flowConfig: {
+        retries: 3,
+        },
     },
     async (input) => {
       const { output } = await prompt(input);

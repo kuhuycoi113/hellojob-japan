@@ -60,6 +60,9 @@ const matchJobsToResumeFlow = ai.defineFlow(
     name: 'matchJobsToResumeFlow',
     inputSchema: MatchJobsToResumeInputSchema,
     outputSchema: MatchJobsToResumeOutputSchema,
+    flowConfig: {
+      retries: 3,
+    },
   },
   async input => {
     const {output} = await prompt(input);

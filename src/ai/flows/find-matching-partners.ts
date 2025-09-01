@@ -53,6 +53,9 @@ For each recommended partner, provide a compatibility score from 0-100 and a bri
       name: 'findMatchingPartnersFlow',
       inputSchema: FindMatchingPartnersInputSchema,
       outputSchema: FindMatchingPartnersOutputSchema,
+        flowConfig: {
+        retries: 3,
+        },
     },
     async (input) => {
       const { output } = await prompt(input);

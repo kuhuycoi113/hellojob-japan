@@ -46,6 +46,9 @@ User's Input:
       name: 'generateJobPostFlow',
       inputSchema: GenerateJobPostInputSchema,
       outputSchema: GenerateJobPostOutputSchema,
+        flowConfig: {
+        retries: 3,
+        },
     },
     async input => {
       const {output} = await prompt(input);

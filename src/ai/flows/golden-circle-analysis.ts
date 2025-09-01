@@ -37,6 +37,9 @@ Structure your analysis as a brief report. Be encouraging and insightful.
       name: 'goldenCircleAnalysisFlow',
       inputSchema: GoldenCircleAnalysisInputSchema,
       outputSchema: GoldenCircleAnalysisOutputSchema,
+        flowConfig: {
+        retries: 3,
+        },
     },
     async input => {
       const {output} = await prompt(input);

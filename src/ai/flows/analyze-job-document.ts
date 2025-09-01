@@ -59,6 +59,9 @@ Uploaded Document:
       name: 'analyzeJobDocumentFlow',
       inputSchema: AnalyzeJobDocumentInputSchema,
       outputSchema: GenerateJobPostOutputSchema,
+        flowConfig: {
+        retries: 3,
+        },
     },
     async input => {
       const {output} = await prompt(input);
