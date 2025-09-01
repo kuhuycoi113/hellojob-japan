@@ -378,6 +378,13 @@ function AiJobPostFormContent() {
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      handleGenerate();
+    }
+  };
+  
   const handleStartAnalysis = () => {
     if(!uploadedFile && !voiceDescription) return;
     setRoleDialogOpen(true);
@@ -551,6 +558,7 @@ function AiJobPostFormContent() {
                     className="min-h-[200px] text-base"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+                    onKeyDown={handleKeyDown}
                     disabled={isLoading || !!uploadedFile || isListening}
                   />
                 )}
