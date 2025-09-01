@@ -30,7 +30,7 @@ export function MobileMenuSheet() {
     { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
     { href: "/post-job-ai", label: t.mobile_menu_sheet.postJob, icon: <Plus /> },
     { href: "/dashboard/jobs", label: t.mobile_menu_sheet.dataReport, icon: <FileText /> },
-    { href: "/dashboard/partners", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
+    { href: "/dashboard/partner", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
@@ -49,29 +49,33 @@ export function MobileMenuSheet() {
         </SheetHeader>
         
         <div className="flex-grow overflow-y-auto px-4 pb-4 pt-4">
-            <Link href="/dashboard/profile">
-                <Card className="flex items-center gap-4 p-4 mb-4 hover:bg-accent/50 transition-colors">
-                    <Avatar className="h-12 w-12">
-                        <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                        <AvatarFallback>U</AvatarFallback>
-                    </Avatar>
-                    <div>
-                        <p className="font-semibold">Global Support Union</p>
-                        <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.union.title)}</p>
-                    </div>
-                </Card>
-            </Link>
+            <SheetClose asChild>
+              <Link href="/dashboard/profile">
+                  <Card className="flex items-center gap-4 p-4 mb-4 hover:bg-accent/50 transition-colors">
+                      <Avatar className="h-12 w-12">
+                          <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                          <AvatarFallback>U</AvatarFallback>
+                      </Avatar>
+                      <div>
+                          <p className="font-semibold">Global Support Union</p>
+                          <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.union.title)}</p>
+                      </div>
+                  </Card>
+              </Link>
+            </SheetClose>
 
             <Separator className="mb-6"/>
 
             <div className="grid grid-cols-4 gap-4 text-center">
                 {menuItems.map((item) => (
-                    <Link href={item.href} key={item.label} className="flex flex-col items-center gap-2 text-xs font-medium text-gray-700">
+                  <SheetClose asChild key={item.label}>
+                    <Link href={item.href} className="flex flex-col items-center gap-2 text-xs font-medium text-gray-700">
                         <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
                           {item.icon}
                         </div>
                         <span className="leading-tight">{item.label}</span>
                     </Link>
+                  </SheetClose>
                 ))}
             </div>
         </div>
