@@ -94,8 +94,11 @@ function AiJobPostFormContent() {
             visaSubType: visaSubType,
         });
       } else {
+        // Pass existing job post for refinement
+        const refineDescription = `${JSON.stringify(editableJobPost)}\n\nUser request: ${description}`;
+
         result = await generateJobPost({
-            description: description,
+            description: jobPost ? refineDescription : description,
             role: role,
             visaType: visaType,
             visaSubType: visaSubType,
@@ -105,6 +108,11 @@ function AiJobPostFormContent() {
       setJobPost(result);
       setEditableJobPost(JSON.parse(JSON.stringify(result))); // Deep copy
       setState('job_completed');
+      if (documentUri) {
+        // After analyzing a file, clear it to allow text input for refinement
+        setUploadedFile(null);
+        setDescription('');
+      }
     } catch (error) {
         console.error("Error analyzing job document:", error);
         toast({
@@ -318,7 +326,7 @@ function AiJobPostFormContent() {
   ];
   
   const handleGenerate = async () => {
-    if (!description.trim() && !uploadedFile) {
+    if (!description.trim() && !uploadedFile && !jobPost) {
       toast({
         title: t.ai_job_post_form.error.title,
         description: t.ai_job_post_form.error.description,
@@ -326,31 +334,47 @@ function AiJobPostFormContent() {
       })
       return;
     }
-    setState('loading_job');
-    setJobPost(null);
-    setEditableJobPost(null);
+    
+    // Determine the context for the AI call
+    const currentRole = role || selectedRole?.title || '';
+    const currentVisaType = initialVisaType || visaTypes.find(v => v.type === selectedVisaType)?.title || '';
+    // For simplicity, we assume subtype is part of the initial flow and don't re-ask
+    const currentVisaSubType = initialVisaSubType || '';
 
+    let refineDescription = description;
+    if (jobPost) {
+        // If there's an existing job post, we're in a refinement loop.
+        // We combine the existing post with the new user request.
+        const currentPostState = JSON.stringify(editableJobPost);
+        refineDescription = `Given the following job post:\n${currentPostState}\n\nPlease refine it with this request: ${description}`;
+    }
+
+    setState('loading_job');
     if (window.innerWidth < 768) {
       resultCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     try {
-      const result = await generateJobPost({ 
-        description,
-        role: role || selectedRole?.title || undefined,
-        visaType: initialVisaType || visaTypes.find(v => v.type === selectedVisaType)?.title || undefined,
+      const result = await generateJobPost({
+        description: refineDescription,
+        role: currentRole,
+        visaType: currentVisaType,
+        visaSubType: currentVisaSubType,
       });
+
       setJobPost(result);
-      setEditableJobPost(JSON.parse(JSON.stringify(result))); // Deep copy
+      setEditableJobPost(JSON.parse(JSON.stringify(result)));
       setState('job_completed');
+      setDescription(''); // Clear textarea after successful refinement
     } catch (error) {
       console.error("Error generating job post:", error);
       toast({
         title: t.ai_job_post_form.error.apiTitle,
         description: t.ai_job_post_form.error.apiDescription,
         variant: "destructive",
-      })
-      setState('idle');
+      });
+      // Revert to the previous completed state on error
+      setState(jobPost ? 'job_completed' : 'idle');
     }
   };
 
@@ -469,8 +493,8 @@ function AiJobPostFormContent() {
   };
 
   const isLoading = state === 'loading_job' || state === 'loading_partners';
-  const showAnalyzeButton = uploadedFile && !voiceDescription;
-  const showGenerateButton = !uploadedFile && !voiceDescription;
+  const showAnalyzeButton = uploadedFile && !jobPost;
+  const showGenerateButton = !uploadedFile || jobPost;
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
@@ -523,7 +547,7 @@ function AiJobPostFormContent() {
                   </div>
                 ) : (
                   <Textarea
-                    placeholder={isListening ? "Đang lắng nghe..." : t.aiJobPost.placeholder}
+                    placeholder={isListening ? "Đang lắng nghe..." : (jobPost ? "Nhập yêu cầu để tinh chỉnh (ví dụ: 'thêm yêu cầu kinh nghiệm 3 năm')" : t.aiJobPost.placeholder)}
                     className="min-h-[200px] text-base"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
@@ -537,18 +561,20 @@ function AiJobPostFormContent() {
                       className="hidden"
                       accept="image/*,application/pdf,.doc,.docx"
                   />
-                 <div className="mt-6">
-                    <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                      {suggestionCards.map((card) => (
-                        <Card key={card.title} className={cn("text-center p-4 hover:shadow-xl transition-all duration-200 cursor-pointer hover:-translate-y-1", card.className)} onClick={card.onClick}>
-                          <div className="flex justify-center mb-3">{card.icon}</div>
-                          <h5 className="font-semibold text-sm mb-1">{card.title}</h5>
-                          <p className="text-xs text-muted-foreground">{card.description}</p>
-                        </Card>
-                      ))}
+                {!jobPost && (
+                    <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {suggestionCards.map((card) => (
+                            <Card key={card.title} className={cn("text-center p-4 hover:shadow-xl transition-all duration-200 cursor-pointer hover:-translate-y-1", card.className)} onClick={card.onClick}>
+                            <div className="flex justify-center mb-3">{card.icon}</div>
+                            <h5 className="font-semibold text-sm mb-1">{card.title}</h5>
+                            <p className="text-xs text-muted-foreground">{card.description}</p>
+                            </Card>
+                        ))}
+                        </div>
                     </div>
-                </div>
+                 )}
               </CardContent>
               <CardFooter className="flex justify-end gap-2" ref={actionFooterRef}>
                 {(state === 'job_completed' || state === 'partners_completed') && (
@@ -571,7 +597,7 @@ function AiJobPostFormContent() {
                     ) : (
                       <Sparkles className="mr-2 h-4 w-4" />
                     )}
-                    {t.aiJobPost.submit}
+                    {jobPost ? "Tinh chỉnh" : t.aiJobPost.submit}
                   </Button>
                 )}
               </CardFooter>
@@ -780,5 +806,3 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
-
-    
