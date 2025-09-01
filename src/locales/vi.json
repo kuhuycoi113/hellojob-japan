@@ -559,6 +559,13 @@
       "unavailable": "Video không có sẵn",
       "notWorking": "Video này không hoạt động"
     },
+    "unlock": {
+      "title": "Mở khoá toàn bộ khoá học",
+      "description": "Bạn đã hoàn thành các bài học miễn phí. Để tiếp tục, vui lòng chọn một trong các phương thức mở khoá dưới đây.",
+      "option1": "Nạp tiền để mở khoá",
+      "option2": "Nâng cấp tài khoản Premium",
+      "option3": "Giới thiệu bạn bè để nhận thưởng"
+    },
     "chapters": [
       {
         "title": "Chương 1: Văn hóa Sinh hoạt & Xã hội",

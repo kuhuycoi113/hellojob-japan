@@ -559,6 +559,13 @@
       "unavailable": "Video unavailable",
       "notWorking": "This video is not working"
     },
+     "unlock": {
+      "title": "Unlock Full Course Access",
+      "description": "You have completed the free lessons. To continue, please choose one of the unlocking methods below.",
+      "option1": "Pay to Unlock",
+      "option2": "Upgrade to Premium Account",
+      "option3": "Refer a Friend to Earn Rewards"
+    },
     "chapters": [
       {
         "title": "Chapter 1: Daily Life & Social Culture",
