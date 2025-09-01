@@ -974,9 +974,17 @@
       }
     },
     "your_candidates": {
-      "title": "Manage Candidates",
-      "description": "Oversee and manage all your candidates.",
-      "add_candidate": "Add New Candidate"
+      "title": "Quản lý Ứng viên",
+      "description": "Theo dõi và quản lý tất cả các ứng viên của bạn.",
+      "add_candidate": "Thêm ứng viên mới",
+      "tabs": {
+        "all": "Tất cả",
+        "new": "Ứng viên mới",
+        "review": "Đang xem xét",
+        "hired": "Đã tuyển",
+        "archived": "Lưu trữ",
+        "empty": "Chưa có dữ liệu"
+      }
     },
     "candidates": [
         {
@@ -984,10 +992,10 @@
             "name_ja": "ラム",
             "name_vi": "LAM",
             "avatar": "https://i.pravatar.cc/150?u=candidate1",
-            "details": "27 years old - - - No tattoo",
-            "visa_type": "Specified Skilled Worker",
-            "specialty": "Industrial Packaging",
-            "desired_salary": "Referral fee",
+            "details": "27 tuổi - - - Không hình xăm",
+            "visa_type": "Kỹ năng đặc định",
+            "specialty": "Đóng gói công nghiệp",
+            "desired_salary": "Phí giới thiệu",
             "jobs": {
                 "count": 7,
                 "images": ["https://picsum.photos/50?random=j1", "https://picsum.photos/50?random=j2", "https://picsum.photos/50?random=j3"]
@@ -997,12 +1005,12 @@
         {
             "id": "VN045JTOAQ",
             "name_ja": "ズオン",
-            "name_vi": "UONG",
+            "name_vi": "ƯƠNG",
             "avatar": "https://i.pravatar.cc/150?u=candidate2",
-            "details": "29 years old - 40 kg - 153 cm - No tattoo",
-            "visa_type": "Specified Skilled Worker",
-            "specialty": "Industrial Packaging",
-            "desired_salary": "Referral fee",
+            "details": "29 tuổi - 40 kg - 153 cm - Không hình xăm",
+            "visa_type": "Kỹ năng đặc định",
+            "specialty": "Đóng gói công nghiệp",
+            "desired_salary": "Phí giới thiệu",
             "jobs": {
                 "count": 7,
                 "images": ["https://picsum.photos/50?random=j4", "https://picsum.photos/50?random=j5", "https://picsum.photos/50?random=j6"]
@@ -1012,12 +1020,12 @@
         {
             "id": "VN045PQHEU",
             "name_ja": "ユーン",
-            "name_vi": "TIENG N",
+            "name_vi": "TIẾNG N",
             "avatar": "https://i.pravatar.cc/150?u=candidate3",
-            "details": "32 years old - 58 kg - 167 cm - No tattoo",
-            "visa_type": "Specified Skilled Worker",
-            "specialty": "Food Processing",
-            "desired_salary": "Work location",
+            "details": "32 tuổi - 58 kg - 167 cm - Không hình xăm",
+            "visa_type": "Kỹ năng đặc định",
+            "specialty": "Gia công đồ ăn",
+            "desired_salary": "Địa điểm làm",
             "jobs": {
                 "count": 4,
                 "images": ["https://picsum.photos/50?random=j7", "https://picsum.photos/50?random=j8", "https://picsum.photos/50?random=j9"]
@@ -1026,115 +1034,115 @@
         }
     ],
     "candidates_table": {
-      "candidate": "Candidate",
-      "visa_specialty": "Visa / Specialty",
-      "desired_salary": "Desired Salary",
-      "date_created": "Date Created",
-      "actions": "Actions",
-      "toggle_menu": "Toggle menu",
-      "view_profile": "View Profile",
-      "contact_line": "Contact via Line",
-      "save_to_list": "Save to List"
+      "candidate": "Ứng viên",
+      "visa_specialty": "Visa / Chuyên ngành",
+      "desired_salary": "Mức lương mong muốn",
+      "date_created": "Ngày tạo",
+      "actions": "Hành động",
+      "toggle_menu": "Mở menu",
+      "view_profile": "Xem hồ sơ",
+      "contact_line": "Liên hệ qua Line",
+      "save_to_list": "Lưu vào danh sách"
     },
     "your_partners": {
-      "title": "Your Partners",
-      "subtitle": "Connect with trusted Support Organizations, Unions, and Sending Companies.",
-      "title_full": "Manage Partners",
-      "description_full": "Oversee and manage all your partner connections.",
-      "add_partner": "Add New Partner",
+      "title": "Đối tác của bạn",
+      "subtitle": "Kết nối bạn với các Cơ quan Hỗ trợ, Nghiệp đoàn và Công ty Phái cử uy tín.",
+      "title_full": "Quản lý Đối tác",
+      "description_full": "Theo dõi và quản lý tất cả các kết nối đối tác của bạn.",
+      "add_partner": "Thêm Đối tác mới",
       "table": {
-        "partner_name": "Partner Name",
-        "type": "Type",
-        "specialties": "Specialties",
-        "locations": "Locations",
-        "actions": "Actions",
-        "toggle_menu": "Toggle menu",
-        "view_details": "View Details",
-        "send_message": "Send Message"
+        "partner_name": "Tên đối tác",
+        "type": "Loại hình",
+        "specialties": "Chuyên môn",
+        "locations": "Địa điểm",
+        "actions": "Hành động",
+        "toggle_menu": "Mở menu",
+        "view_details": "Xem chi tiết",
+        "send_message": "Gửi tin nhắn"
       }
     },
     "company_profile": {
-      "industry": "Manufacturing & Processing",
-      "location": "Aichi, Japan",
-      "editProfile": "Edit Profile",
-      "yourJobs": "Your Jobs",
-      "yourCandidates": "Your Candidates",
+      "industry": "Sản xuất & Chế biến",
+      "location": "Aichi, Nhật Bản",
+      "editProfile": "Sửa hồ sơ",
+      "yourJobs": "Việc làm của bạn",
+      "yourCandidates": "Ứng viên của bạn",
       "companyIntroduction": {
-        "title": "Company Introduction",
-        "placeholder": "No information available. Click to update."
+        "title": "Giới thiệu doanh nghiệp",
+        "placeholder": "Chưa có thông tin. Nhấn vào đây để cập nhật."
       },
       "companyVideo": {
-        "title": "Company Video"
+        "title": "Video về doanh nghiệp"
       },
       "companyPhotos": {
-        "title": "Company Photos"
+        "title": "Ảnh về doanh nghiệp"
       },
       "history": {
-        "title": "History & Milestones",
-        "event1_title": "Company Established",
-        "event1_desc": "Started with 5 employees, focusing on the automotive parts market.",
-        "event2_title": "Factory Expansion",
-        "event2_desc": "Achieved ISO 9001 certification and doubled production scale."
+        "title": "Lịch sử & các mốc sự kiện",
+        "event1_title": "Thành lập công ty",
+        "event1_desc": "Bắt đầu với 5 nhân viên, tập trung vào thị trường sản xuất linh kiện ô tô.",
+        "event2_title": "Mở rộng nhà xưởng",
+        "event2_desc": "Đạt chứng nhận ISO 9001 và mở rộng quy mô sản xuất gấp đôi."
       },
       "licenses": {
-        "title": "Licenses & Certifications",
-        "item1": "Business License No. 12345-XYZ",
-        "item2": "ISO 9001:2015 Certification"
+        "title": "Giấy phép & Chứng nhận",
+        "item1": "Giấy phép kinh doanh số 12345-XYZ",
+        "item2": "Chứng nhận ISO 9001:2015"
       },
       "companyInfo": {
-        "title": "Company Information",
-        "founded": "Founded",
-        "size": "Size",
-        "employees": "employees",
-        "phone": "Phone",
+        "title": "Thông tin doanh nghiệp",
+        "founded": "Năm thành lập",
+        "size": "Quy mô",
+        "employees": "nhân viên",
+        "phone": "SĐT",
         "website": "Website",
-        "address": "Address"
+        "address": "Địa chỉ"
       },
       "industryInfo": {
-        "title": "Industry & Fields",
-        "mainIndustry": "Main Industries",
-        "industry1": "Automotive Manufacturing",
-        "industry2": "Food Processing",
-        "fields": "Fields of Operation",
-        "placeholder": "No fields of operation. Click to update."
+        "title": "Ngành nghề & Lĩnh vực",
+        "mainIndustry": "Ngành nghề chính",
+        "industry1": "Sản xuất ô tô",
+        "industry2": "Chế biến thực phẩm",
+        "fields": "Lĩnh vực hoạt động",
+        "placeholder": "Chưa có lĩnh vực hoạt động. Nhấn vào đây để cập nhật."
       },
       "benefits": {
-        "title": "Benefits & Environment",
-        "item1": "Housing/dormitory support",
-        "item2": "Full insurance coverage by law",
-        "item3": "Extracurricular activities, company trips"
+        "title": "Phúc lợi & Môi trường",
+        "item1": "Hỗ trợ nhà ở, ký túc xá",
+        "item2": "Bảo hiểm đầy đủ theo luật pháp",
+        "item3": "Các hoạt động ngoại khóa, du lịch công ty"
       },
-      "logout": "Logout"
+      "logout": "Đăng xuất"
     }
   },
   "dashboard_partner": {
     "newOpportunities": {
-      "title": "New Partnership Opportunities",
-      "description": "Review and accept new job orders from hiring companies.",
+      "title": "Cơ hội hợp tác mới",
+      "description": "Xem xét và chấp nhận các đơn hàng tuyển dụng mới từ các xí nghiệp.",
       "opportunities": [
         {
-            "title": "Caregiver Staff",
-            "company": "Fukushi Care Center",
+            "title": "Nhân viên hộ lý",
+            "company": "Trung tâm chăm sóc Fukushi",
             "location": "Kanagawa",
-            "visa": "Specified Skilled Worker",
-            "quantity": "3",
-            "expires": "Expires in 23 hours"
+            "visa": "Kỹ năng đặc định",
+            "quantity": "3 người",
+            "expires": "Hết hạn trong 23 giờ"
         },
         {
-            "title": "Agricultural Worker",
-            "company": "Miyazaki Farms",
+            "title": "Công nhân nông nghiệp",
+            "company": "Nông trang Miyazaki",
             "location": "Miyazaki",
-            "visa": "Technical Intern Trainee",
-            "quantity": "5",
-            "expires": "Expires in 2 days"
+            "visa": "Thực tập sinh kỹ năng",
+            "quantity": "5 người",
+            "expires": "Hết hạn trong 2 ngày"
         }
       ]
     },
-    "details": "Details",
-    "location": "Location",
-    "visaType": "Visa Type",
-    "quantity": "Quantity",
-    "accept": "Accept",
-    "decline": "Decline"
+    "details": "Chi tiết",
+    "location": "Địa điểm",
+    "visaType": "Loại visa",
+    "quantity": "Số lượng",
+    "accept": "Chấp nhận",
+    "decline": "Từ chối"
   }
 }

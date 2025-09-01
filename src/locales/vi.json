@@ -976,7 +976,15 @@
     "your_candidates": {
       "title": "Quản lý Ứng viên",
       "description": "Theo dõi và quản lý tất cả các ứng viên của bạn.",
-      "add_candidate": "Thêm ứng viên mới"
+      "add_candidate": "Thêm ứng viên mới",
+      "tabs": {
+        "all": "Tất cả",
+        "new": "Ứng viên mới",
+        "review": "Đang xem xét",
+        "hired": "Đã tuyển",
+        "archived": "Lưu trữ",
+        "empty": "Chưa có dữ liệu"
+      }
     },
     "candidates": [
         {

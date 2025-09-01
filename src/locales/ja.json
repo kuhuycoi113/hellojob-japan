@@ -976,7 +976,15 @@
     "your_candidates": {
       "title": "候補者管理",
       "description": "すべての候補者を監視および管理します。",
-      "add_candidate": "新規候補者追加"
+      "add_candidate": "新規候補者追加",
+      "tabs": {
+        "all": "すべて",
+        "new": "新規候補者",
+        "review": "検討中",
+        "hired": "採用済み",
+        "archived": "アーカイブ済み",
+        "empty": "データがありません"
+      }
     },
     "candidates": [
         {
