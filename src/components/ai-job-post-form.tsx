@@ -1,13 +1,13 @@
 
 'use client';
 
-import { useState, Suspense, useRef } from 'react';
+import { useState, Suspense, useRef, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/language-context';
-import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType, Brain, ChevronRight, GraduationCap, Star, Briefcase, Building, Users, Handshake, Send, Search } from 'lucide-react';
+import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType, Brain, ChevronRight, GraduationCap, Star, Briefcase, Building, Users, Handshake, Send, Search, MicOff } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
 import { analyzeJobDocument } from '@/ai/flows/analyze-job-document';
 import { findMatchingPartners } from '@/ai/flows/find-matching-partners';
@@ -19,6 +19,8 @@ import Link from 'next/link';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { allPartners } from '@/data/partners';
 import { MatchingPartnersResult } from '@/components/matching-partners-result';
+import { cn } from '@/lib/utils';
+
 
 type SessionState = 'idle' | 'loading_job' | 'job_completed' | 'loading_partners' | 'partners_completed';
 type UploadedFile = {
@@ -29,6 +31,14 @@ type UploadedFile = {
 }
 type VisaType = 'intern' | 'skilled' | 'engineer';
 type Role = { title: string; description: string; icon: JSX.Element; }
+
+// Add SpeechRecognition types for window object
+declare global {
+  interface Window {
+    SpeechRecognition: typeof SpeechRecognition;
+    webkitSpeechRecognition: typeof SpeechRecognition;
+  }
+}
 
 function AiJobPostFormContent() {
   const { t, language } = useLanguage();
@@ -55,6 +65,79 @@ function AiJobPostFormContent() {
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
   
+  // States for Speech Recognition
+  const [isListening, setIsListening] = useState(false);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
+
+  useEffect(() => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      console.warn("Speech Recognition API is not supported in this browser.");
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = language === 'ja' ? 'ja-JP' : language === 'en' ? 'en-US' : 'vi-VN';
+
+    recognition.onresult = (event) => {
+      let interimTranscript = '';
+      let finalTranscript = '';
+      for (let i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+          finalTranscript += event.results[i][0].transcript;
+        } else {
+          interimTranscript += event.results[i][0].transcript;
+        }
+      }
+      setDescription(prev => prev + finalTranscript);
+    };
+
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error', event.error);
+        if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+            toast({
+                title: "Lỗi nhận dạng giọng nói",
+                description: "Vui lòng cấp quyền truy cập micro để sử dụng tính năng này.",
+                variant: "destructive",
+            });
+        }
+        setIsListening(false);
+    };
+
+    recognition.onend = () => {
+        setIsListening(false);
+    }
+    
+    recognitionRef.current = recognition;
+
+    return () => {
+        recognition.stop();
+    }
+  }, [language, toast]);
+
+  const handleToggleListening = () => {
+    if (!recognitionRef.current) {
+         toast({
+            title: "Tính năng không được hỗ trợ",
+            description: "Trình duyệt của bạn không hỗ trợ nhận dạng giọng nói.",
+            variant: "destructive",
+        });
+        return;
+    }
+
+    if (isListening) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    } else {
+      setDescription(''); // Clear previous text
+      recognitionRef.current.start();
+      setIsListening(true);
+    }
+  };
+
+
   const userRoles = [
     {
       icon: <Building className="h-8 w-8 text-primary" />,
@@ -166,10 +249,11 @@ function AiJobPostFormContent() {
       onClick: handleUploadCardClick
     },
     {
-      icon: <Mic className="w-8 h-8 text-blue-500" />,
+      icon: isListening ? <MicOff className="w-8 h-8 text-red-500" /> : <Mic className="w-8 h-8 text-blue-500" />,
       title: t.ai_job_post_form.suggestions.s3_title,
-      description: t.ai_job_post_form.suggestions.s3_desc,
-      onClick: () => {} // Placeholder for voice input
+      description: isListening ? "Đang ghi âm... Nhấn để dừng." : t.ai_job_post_form.suggestions.s3_desc,
+      onClick: handleToggleListening,
+      className: isListening ? "border-red-500 bg-red-50" : ""
     },
     {
       icon: <Pencil className="w-8 h-8 text-orange-500" />,
@@ -372,11 +456,11 @@ function AiJobPostFormContent() {
                   </div>
                 ) : (
                   <Textarea
-                    placeholder={t.aiJobPost.placeholder}
+                    placeholder={isListening ? "Đang lắng nghe..." : t.aiJobPost.placeholder}
                     className="min-h-[200px] text-base"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    disabled={isLoading || !!uploadedFile}
+                    disabled={isLoading || !!uploadedFile || isListening}
                   />
                 )}
                  <input 
@@ -390,7 +474,7 @@ function AiJobPostFormContent() {
                     <h4 className="text-lg font-semibold text-gray-700 mb-4 text-center">{t.ai_job_post_form.suggestions.title}</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {suggestionCards.map((card) => (
-                        <Card key={card.title} className="text-center p-4 hover:shadow-xl transition-all duration-200 cursor-pointer hover:-translate-y-1" onClick={card.onClick}>
+                        <Card key={card.title} className={cn("text-center p-4 hover:shadow-xl transition-all duration-200 cursor-pointer hover:-translate-y-1", card.className)} onClick={card.onClick}>
                           <div className="flex justify-center mb-3">{card.icon}</div>
                           <h5 className="font-semibold text-sm mb-1">{card.title}</h5>
                           <p className="text-xs text-muted-foreground">{card.description}</p>
@@ -606,3 +690,5 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
