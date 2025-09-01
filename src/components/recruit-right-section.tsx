@@ -20,14 +20,6 @@ export function RecruitRightSection() {
       href: "/recruit-right/barrett-test"
     },
     {
-      icon: <Globe className="h-10 w-10 text-blue-500" />,
-      title: t.recruitRight.hofstede.title,
-      description: t.recruitRight.hofstede.description,
-      image: "https://picsum.photos/600/400?random=3",
-      hint: "global culture map",
-      href: "/recruit-right/hofstede-scan"
-    },
-    {
       icon: <Compass className="h-10 w-10 text-green-500" />,
       title: t.recruitRight.goldenCircle.title,
       description: t.recruitRight.goldenCircle.description,

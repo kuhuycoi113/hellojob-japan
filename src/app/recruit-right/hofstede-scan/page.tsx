@@ -1,15 +1,1139 @@
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-import { HofstedeScan } from '@/components/hofstede-scan';
-
-export default function HofstedeScanPage() {
-  return (
-    <div className="flex min-h-screen flex-col bg-blue-50/50">
-      <Header />
-      <main className="flex-1">
-        <HofstedeScan />
-      </main>
-      <Footer />
-    </div>
-  );
+{
+  "header": {
+    "home": "Home",
+    "steps": "How it Works",
+    "recruitRight": "Recruit Right",
+    "postJobAI": "Post Job with AI",
+    "elearning": "E-learning",
+    "handbook": "Handbook",
+    "about": "About Us",
+    "myProfile": "Dashboard",
+    "menu": "Menu",
+    "dashboard": "Dashboard",
+    "jobPostings": "Job Postings",
+    "candidateProfiles": "Candidate Profiles",
+    "settings": "Settings",
+    "logout": "Logout",
+    "postJob": "Post a Job",
+    "menuItems": {
+      "recruiterAccount": "Recruiter Account",
+      "recruiterAccountType": "\"{type}\" Account",
+      "postJobAI": "Post with AI",
+      "howItWorks": "How it Works",
+      "recruitRight": "Recruit Right",
+      "elearning": "E-Learning",
+      "handbook": "Handbook",
+      "about": "About Us",
+      "dashboard": "Dashboard",
+      "chat": "Chat"
+    },
+    "editProfile": "Edit Profile"
+  },
+  "mobile_footer": {
+    "home": "Home",
+    "postJobAI": "Post AI",
+    "dashboard": "Dashboard",
+    "menu": "Menu"
+  },
+  "mobile_menu_sheet": {
+    "hello": "Hello",
+    "postJob": "Post Job",
+    "dataReport": "Data & Reports",
+    "partners": "Partners in Japan",
+    "feedback": "Feedback",
+    "close": "Close"
+  },
+  "hero": {
+    "title": "Leading Vietnamese Manpower Recruitment Platform",
+    "subtitle": "Connect your business with high-quality human resources from Vietnam, meeting recruitment needs for Technical Intern Trainees, Specified Skilled Workers, and Engineers.",
+    "industry": "Industry",
+    "allIndustries": "All Industries",
+    "it": "Information Technology",
+    "manufacturing": "Manufacturing",
+    "construction": "Construction",
+    "agriculture": "Agriculture",
+    "caregiver": "Caregiver",
+    "workerType": "Visa Type",
+    "allTypes": "All Visa Types",
+    "intern": "Technical Intern Trainee",
+    "skilled": "Specified Skilled Worker",
+    "engineer": "Engineer / Specialist in Humanities",
+    "location": "Work Location",
+    "allJapan": "All of Japan",
+    "tokyo": "Tokyo",
+    "osaka": "Osaka",
+    "nagoya": "Nagoya",
+    "fukuoka": "Fukuoka",
+    "searchCandidates": "Search Candidates"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose HelloJob?",
+    "subtitle": "We simplify the recruitment process, saving you time and cost.",
+    "searchFilter": "Advanced Search & Filtering",
+    "searchFilterDesc": "Our intelligent search system helps you quickly find candidates who meet the strictest criteria.",
+    "profileManagement": "Easy Profile Management",
+    "profileManagementDesc": "Easily manage, compare, and track candidate profiles throughout the entire recruitment process.",
+    "comprehensiveSupport": "Comprehensive Support",
+    "comprehensiveSupportDesc": "Our expert team is always ready to assist you at every step of the recruitment and legal procedures."
+  },
+  "candidateCategories": {
+    "title": "Diverse Talent Categories",
+    "subtitle": "We provide flexible staffing solutions to meet all business needs.",
+    "skillIntern": "Technical Intern Trainee",
+    "skillInternDesc": "A program for young talent to acquire skills and expertise in a real-world work environment in Japan.",
+    "specifiedSkill": "Specified Skilled Worker",
+    "specifiedSkillDesc": "For workers with proven experience and expertise in specific fields, enabling long-term employment.",
+    "engineerKnowledge": "Engineer / Specialist in Humanities",
+    "engineerKnowledgeDesc": "Recruiting highly qualified engineers and specialists with professional degrees to work in technical and business fields."
+  },
+  "candidateQuality": {
+    "title": "Commitment to Candidate Quality",
+    "subtitle": "We guarantee to provide a workforce that is not only professionally skilled but also a great fit for your corporate culture.",
+    "thoroughScreening": "Rigorous Screening",
+    "thoroughScreeningDesc": "Every candidate undergoes a professional interview process, skills assessment, and attitude evaluation.",
+    "detailedProfiles": "Verified & Detailed Profiles",
+    "detailedProfilesDesc": "We provide comprehensive candidate profiles with detailed information, introduction videos, and verified credentials.",
+    "inDepthTraining": "Pre-departure Training",
+    "inDepthTrainingDesc": "Candidates are thoroughly trained in Japanese language, culture, and professional work skills before their departure."
+  },
+  "featuredPartners": {
+    "title": "Our Top Partners",
+    "subtitle": "Connecting you with trusted Supporting Organizations, Unions, and Sending Companies.",
+    "viewProfile": "View Profile",
+    "partners": [
+      {
+        "name": "Global Support Union",
+        "type": "Cooperative Union"
+      },
+      {
+        "name": "Sakura Support Org.",
+        "type": "Supporting Organization (Shien Kikan)"
+      },
+      {
+        "name": "Vietnam Link Co., Ltd",
+        "type": "Sending Company (Okuridashi Kikan)"
+      },
+      {
+        "name": "Future Bridge Union",
+        "type": "Cooperative Union"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Find the Right Talent for Your Business?",
+    "subtitle": "Post a job today to reach thousands of potential candidates, or contact us for a personalized consultation.",
+    "postJob": "Post a Job",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "about": "A comprehensive HR solution connecting Japanese enterprises with high-quality human resources from Vietnam.",
+    "forEmployers": "For Employers",
+    "postJob": "Post a Job",
+    "searchResumes": "Search Resumes",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "aboutHelloJob": "About HelloJob",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Get the latest labor market information and recruitment trends.",
+    "emailPlaceholder": "Your Email",
+    "subscribe": "Subscribe",
+    "copyright": "© {year} HelloJob. All rights reserved."
+  },
+  "elearning": {
+    "heroTitle": "E-Learning: Enhance Your Management Skills",
+    "heroSubtitle": "Go beyond skills and laws. Our courses help you truly understand your Vietnamese employees to foster a harmonious and productive workplace.",
+    "allCoursesTitle": "Our Courses",
+    "courses": [
+      {
+        "title": "Understanding Vietnamese Workers: A Cultural Guide",
+        "description": "A practical course decoding the daily habits, cultural motivations, and hidden pressures of Vietnamese workers in Japan.",
+        "hint": "vietnam japan flag"
+      },
+      {
+        "title": "Effective Recruitment Strategies for Vietnamese Talent",
+        "description": "Learn how to write effective job descriptions, conduct successful interviews, and navigate the hiring process.",
+        "hint": "job interview professional"
+      },
+      {
+        "title": "Japanese Labor Law for Foreign Employees",
+        "description": "A must-know guide to understanding visa types, labor contracts, and legal obligations for employers in Japan.",
+        "hint": "legal document law"
+      },
+      {
+        "title": "Onboarding and Team Integration",
+        "description": "Best practices for successfully onboarding new Vietnamese employees and integrating them into your existing team.",
+        "hint": "team collaboration meeting"
+      }
+    ],
+    "viewCourse": "View Course"
+  },
+  "aiJobPost": {
+    "title": "Create Job Postings with the Power of AI",
+    "subtitle": "Describe the job you need, or upload an existing job description, and let our AI generate an engaging and professional job posting in seconds.",
+    "placeholder": "Example: Seeking food processing staff for a factory in Aichi with a Specified Skilled Worker visa. Experience in the food industry and Japanese N4 level or higher required. Hard-working and responsible.",
+    "submit": "Generate"
+  },
+  "ai_job_post_form": {
+    "your_selections_title": "Your Selections",
+    "suggestions": {
+      "title": "Or start with a few suggestions:",
+      "s2_title": "Upload a job description",
+      "s2_desc": "Upload a file (PDF, DOCX, image) for the AI to analyze.",
+      "s3_title": "Describe with your voice",
+      "s3_desc": "Speak the key details like job title, location, and required skills.",
+      "s4_title": "Manual Entry for Posting",
+      "s4_desc": "Fill out a detailed form yourself."
+    },
+    "upload": {
+      "selectedFile": "Selected File",
+      "changeFile": "Change File",
+      "removeFile": "Remove"
+    },
+    "input": {
+      "title": "1. Describe your job",
+      "description": "Provide a few keywords, a sentence, or upload an existing job description. The more detail you provide, the better the result.",
+      "reset": "Create New"
+    },
+    "output": {
+      "title": "2. AI-Generated Result",
+      "description": "Here is the job posting created by AI. You can edit the content below before proceeding.",
+      "loading": "Generating your job post...",
+      "idle": {
+        "title": "Your result will appear here",
+        "description": "Once you provide a description and click 'Generate', your professional job posting will be displayed."
+      },
+      "jobDescription": "Job Description",
+      "requirements": "Requirements",
+      "benefits": "Benefits"
+    },
+    "error": {
+      "title": "Description is empty",
+      "description": "Please provide a description of the job before generating.",
+      "apiTitle": "An error occurred",
+      "apiDescription": "There was a problem generating the job post. Please try again."
+    },
+    "analyzeButton": "Analyze",
+    "postJobButton": "Post this Job",
+    "findPartnersButton": "Find Matching Partners",
+    "sendRequestsButton": "Send Partnership Requests",
+    "partner_matching": {
+      "title": "3. Find Matching Partners",
+      "description": "Based on the job post, our AI has suggested the best-fit partners. Select the partners you'd like to send a partnership request to.",
+      "loading": "Finding matching partners...",
+      "found_partners": "AI has found {count} most suitable partners.",
+      "partner": "Partner",
+      "score": "Compatibility Score",
+      "reason": "Reason"
+    }
+  },
+  "handbook": {
+    "featured": {
+      "category": "Specified Skilled Worker",
+      "title": "What is the Specified Skilled Worker (Tokutei Ginou) Visa? Everything You Need to Know for 2024",
+      "description": "Tokutei Ginou is a new type of work visa in Japan, opening up great opportunities for Vietnamese workers. Let's explore the conditions, benefits, and eligible industries.",
+      "link": "Read article"
+    },
+    "videoTitle": "Short Videos",
+    "longVideoTitle": "Long-Form Videos",
+    "videos": [
+      {
+        "title": "3 Tips for a Successful Online Video Interview with Japanese Employers",
+        "category": "Interview Experience"
+      },
+      {
+        "title": "Guide to Safely and Quickly Transferring Money from Japan to Vietnam",
+        "category": "Life in Japan"
+      },
+      {
+        "title": "5 Common Interview Questions & How to Answer in Japanese",
+        "category": "Interview Experience"
+      },
+      {
+        "title": "Taxes You Need to Know When Working in Japan",
+        "category": "Labor Law"
+      },
+      {
+        "title": "Japanese Culture: The Importance of 'Omiyage' (Souvenirs)",
+        "category": "Life in Japan"
+      },
+      {
+        "title": "Understanding the 'Nenmatsu Chosei' (Year-End Tax Adjustment)",
+        "category": "Life in Japan"
+      }
+    ],
+    "longVideos": [
+      {
+        "title": "A detailed discussion on the types of labor contracts in Japan for workers",
+        "duration": "15:20",
+        "category": "Labor Law"
+      },
+      {
+        "title": "The journey from Intern to Specified Skilled Worker: An insider's story",
+        "duration": "22:45",
+        "category": "Experience Sharing"
+      }
+    ],
+    "newPostsTitle": "New Posts",
+    "posts": [
+      {
+        "category": "Interview Experience",
+        "title": "How to Write a Compelling Japanese CV to Impress Recruiters",
+        "image": "https://picsum.photos/600/400?random=10",
+        "hint": "writing resume"
+      },
+      {
+        "category": "Life in Japan",
+        "title": "Exploring the Unique Work Culture for Laborers in Japanese Companies",
+        "image": "https://picsum.photos/600/400?random=11",
+        "hint": "team meeting"
+      },
+      {
+        "category": "Labor Law",
+        "title": "Changes to Labor Laws for Foreign Workers in Japan for 2024",
+        "image": "https://picsum.photos/600/400?random=12",
+        "hint": "legal document"
+      },
+      {
+        "category": "Cuộc sống ở Nhật",
+        "title": "What's the Cost of Living in Japan's Major Cities for Laborers?",
+        "image": "https://picsum.photos/600/400?random=13",
+        "hint": "city life"
+      }
+    ],
+    "imagePosts": {
+      "title": "Image Stories",
+      "stories": [
+        {
+          "title": "A Day at the Factory",
+          "image": "https://picsum.photos/400/533?random=50",
+          "hint": "factory worker"
+        },
+        {
+          "title": "Evening Japanese Class",
+          "image": "https://picsum.photos/400/533?random=51",
+          "hint": "classroom learning night"
+        },
+        {
+          "title": "Dinner with Friends from Home",
+          "image": "https://picsum.photos/400/533?random=52",
+          "hint": "people eating together"
+        },
+        {
+          "title": "Beautiful Cherry Blossom Season",
+          "image": "https://picsum.photos/400/533?random=53",
+          "hint": "cherry blossom"
+        }
+      ]
+    },
+    "newsTitle": "News & Articles",
+    "articles": [
+      {
+        "category": "Life in Japan",
+        "title": "Work Culture in Japan: Understanding 'Hou-Ren-Sou' for Workers"
+      },
+      {
+        "category": "Interview Experience",
+        "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction) for Workers"
+      },
+      {
+        "category": "Labor Law",
+        "title": "The Latest Updates on Japanese Labor Law for Foreign Workers"
+      },
+      {
+        "category": "Market News",
+        "title": "Japan Faces Critical Labor Shortage"
+      },
+      {
+        "category": "Specified Skilled Worker",
+        "title": "A Detailed Guide to the Specified Skilled Worker Exam for Construction for Workers"
+      },
+      {
+        "category": "Life in Japan",
+        "title": "How to Find Affordable Housing for Foreign Workers in Japan?"
+      }
+    ],
+    "shareContentButton": "Share your content",
+    "shareOptions": {
+      "title": "Choose the type of content you want to share",
+      "description": "Contribute your knowledge and experience to the HelloJob community.",
+      "text": "Post text content",
+      "textDesc": "Share a story, a quick tip, or a question.",
+      "image": "Post image article",
+      "imageDesc": "Create a visually-rich article with images.",
+      "shortVideo": "Post short video",
+      "shortVideoDesc": "Share a moment or a quick tutorial.",
+      "longVideo": "Post long video",
+      "longVideoDesc": "Create an in-depth video, interview, or vlog."
+    }
+  },
+  "sharePost": {
+    "title": "Share Your Story",
+    "subtitle": "Contribute your knowledge and experience to the community. Your post will be reviewed before publication.",
+    "categoryLabel": "Category",
+    "selectCategory": "Select a category",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Enter an engaging title for your post",
+    "contentLabel": "Content",
+    "contentPlaceholder": "Write your story here...",
+    "submitButton": "Submit Post",
+    "outlineTitle": "Need some inspiration?",
+    "outlineSubtitle": "Here are a few ideas to get you started:",
+    "outline1": {
+      "title": "Share a personal experience",
+      "description": "Talk about a challenge you overcame, a success story, or a funny moment during your time in Japan."
+    },
+    "outline2": {
+      "title": "Give advice",
+      "description": "Share tips on finding an apartment, saving money, learning Japanese, or anything else that could help others."
+    },
+    "outline3": {
+      "title": "Ask a question",
+      "description": "Start a discussion by asking the community for their opinions or advice on a topic."
+    }
+  },
+  "shareImagePost": {
+    "title": "Share an Image Post",
+    "subtitle": "A picture is worth a thousand words. Share your moment with the community.",
+    "imageLabel": "Image",
+    "uploadPrompt": "Click or drag file to this area to upload",
+    "uploadHint": "PNG, JPG, GIF up to 10MB",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Add a title for your image",
+    "contentLabel": "Caption",
+    "contentPlaceholder": "Write a caption here...",
+    "submitButton": "Post"
+  },
+  "shareShortVideo": {
+    "title": "Share a Short Video",
+    "subtitle": "Capture and share your memorable moments with the community.",
+    "uploadPrompt": "Select video to upload",
+    "uploadHint": "Vertical video, up to 5 minutes",
+    "captionLabel": "Caption",
+    "captionPlaceholder": "Write a caption for your video...",
+    "submitButton": "Post"
+  },
+  "shareLongVideo": {
+    "title": "Share a Long Video",
+    "subtitle": "Contribute your in-depth videos, interviews, or vlogs to the community.",
+    "uploadTitle": "Drag and drop video files to upload",
+    "uploadPrompt": "Your videos will be public.",
+    "uploadButton": "Select Files",
+    "detailsTitle": "Details",
+    "detailsDescription": "Add an engaging title and description so everyone knows what your video is about.",
+    "titleLabel": "Title (required)",
+    "titlePlaceholder": "Add a title that describes your video",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Tell viewers about your video",
+    "categoryLabel": "Category",
+    "submitButton": "Post"
+  },
+  "howItWorks": {
+    "title": "Strategic Recruitment Process",
+    "subtitle": "A comprehensive 6-step roadmap to help you not just find people, but recruit the right people.",
+    "step1": {
+      "title": "Discover Your Culture",
+      "description": "Take tests to deeply understand your company's values and culture, forming a basis to select the right fit."
+    },
+    "step2": {
+      "title": "Equip Yourself",
+      "description": "Use E-learning and handbooks to learn how to recruit, train, and manage Vietnamese workers effectively."
+    },
+    "step3": {
+      "title": "Post a Job",
+      "description": "Create and post a detailed job listing, or use our AI to generate one quickly."
+    },
+    "step4": {
+      "title": "Search & Screen",
+      "description": "Use advanced filters to search for candidates by industry, skills, and experience."
+    },
+    "step5": {
+      "title": "Review & Interview",
+      "description": "View detailed profiles, watch introduction videos, and schedule interviews directly on the platform."
+    },
+    "step6": {
+      "title": "Hire & Onboard",
+      "description": "Send job offers and get support from HelloJob for legal procedures and contracts."
+    }
+  },
+  "personnelTraining": {
+    "title": "What are HelloJob candidates trained in?",
+    "subtitle": "We don't just train skills; we cultivate the core values to ensure success and integration.",
+    "attitude": "Attitude",
+    "attitudeDesc": "A professional, positive work attitude and a readiness to learn.",
+    "awareness": "Awareness",
+    "awarenessDesc": "High sense of responsibility, discipline, and adherence to workplace regulations.",
+    "etiquette": "Etiquette",
+    "etiquetteDesc": "Understanding and respect for the culture and etiquette in Japanese workplaces.",
+    "dedication": "Spirit of Dedication",
+    "dedicationDesc": "Strong commitment to common goals and the company's growth."
+  },
+  "recruitRight": {
+    "title": "Corporate Culture Discovery Tools",
+    "subtitle": "Understand your company's Mission, Vision, Core Values, and Culture to find the best-fit foreign candidates.",
+    "start": "Start",
+    "barrett": {
+      "title": "Barrett Values Centre (CTT)",
+      "description": "Cultural Transformation Tools that measure personal and organizational values to identify cultural alignment."
+    },
+    "goldenCircle": {
+      "title": "The Golden Circle",
+      "description": "Clarifies the 'Why' your company exists, inspiring action and attracting those who believe what you believe."
+    }
+  },
+  "barrettTest": {
+    "title": "Barrett Values Assessment",
+    "subtitle": "Discover the values that drive you and your organization.",
+    "step1Title": "Instructions",
+    "step1Content": "Welcome to the Barrett Values Assessment. This tool will help you gain deeper insight into your personal values and your organization's culture. You will be guided through a 3-step process. Click 'Next' to begin.",
+    "step2Title": "Step 1: Personal Values",
+    "step2Content": "From the list below, select 10 values that most represent who you are. These are not values you think you should have, but values that truly define you.",
+    "step3Title": "Step 2: Current Culture",
+    "step3Content": "Now, select 10 values that you believe best describe your organization's current culture.",
+    "step4Title": "Step 3: Desired Culture",
+    "step4Content": "Finally, select 10 values that you would like to see in your organization's future culture.",
+    "step5Title": "Your Results",
+    "step5Content": "Thank you for completing the assessment. Below is a summary of your selected values. This report can help you and your organization understand your cultural alignment and identify areas for growth.",
+    "personalValues": "Personal Values",
+    "currentCultureValues": "Current Culture Values",
+    "desiredCultureValues": "Desired Culture Values",
+    "selectionsRemaining": "Selections remaining: {count}",
+    "next": "Next",
+    "back": "Back",
+    "complete": "Complete Assessment",
+    "startOver": "Start Over",
+    "values": [
+      "Accountability", "Achievement", "Adaptability", "Balance", "Belonging", "Collaboration", "Commitment", "Community", "Compassion", "Competence", "Contribution", "Courage", "Creativity", "Curiosity", "Customer Satisfaction", "Diversity", "Empathy", "Empowerment", "Enthusiasm", "Environmentalism", "Equity", "Excellence", "Fairness", "Family", "Financial Stability", "Forgiveness", "Freedom", "Fun", "Generosity", "Gratitude", "Growth", "Harmony", "Health", "Honesty", "Humility", "Humor", "Inclusion", "Independence", "Initiative", "Innovation", "Integrity", "Justice", "Kindness", "Knowledge", "Leadership", "Learning", "Loyalty", "Making a Difference", "Openness", "Optimism", "Order", "Patience", "Patriotism", "Peace", "Performance", "Perseverance", "Personal Fulfillment", "Power", "Pride", "Recognition", "Respect", "Responsibility", "Risk-taking", "Safety", "Security", "Self-discipline", "Service", "Simplicity", "Spirituality", "Stability", "Success", "Teamwork", "Thankfulness", "Thoughtfulness", "Tradition", "Transparency", "Trust", "Truth", "Understanding", "Uniqueness", "Vision", "Wealth", "Well-being", "Wisdom"
+    ]
+  },
+  "goldenCircle": {
+    "title": "Find Your 'Why'",
+    "description": "The Golden Circle is a model by Simon Sinek that helps organizations articulate their purpose. By starting with 'Why', you can inspire action and attract employees and customers who share your core beliefs.",
+    "explanationTitle": "The Three Rings",
+    "why": {
+      "title": "Why",
+      "description": "This is the core belief of the business. It's not about making money—that's a result. The 'Why' is the purpose, cause, or belief that inspires you to do what you do.",
+      "formPrompt": "What is your purpose, cause, or belief? Why does your organization exist?"
+    },
+    "how": {
+      "title": "How",
+      "description": "These are the specific actions taken to realize the 'Why'. It's your Unique Selling Proposition (USP), the things that differentiate you from the competition.",
+      "formPrompt": "How do you do what you do? What specific actions do you take to realize your purpose?"
+    },
+    "what": {
+      "title": "What",
+      "description": "This is what the company does—the products it sells or the services it offers. It is the most tangible and easily identified aspect.",
+      "formPrompt": "What do you do? What products do you sell or services do you offer?"
+    },
+    "ctaTitle": "Define Your Purpose",
+    "ctaDescription": "Use the Golden Circle model to clarify your message and build a stronger, more authentic brand.",
+    "ctaButton": "Start Brainstorming Session",
+    "note": "(This is a conceptual tool for strategic planning.)",
+    "formTitle": "Golden Circle Brainstorming",
+    "saveButton": "Save Results",
+    "resultsTitle": "Your Golden Circle",
+    "resultsDescription": "Here is the result of your brainstorming session. Use this to clarify your purpose and inspire action.",
+    "resetButton": "Start Over",
+    "noResult": "No input provided.",
+    "aiAnalysis": {
+      "button": "Analyze with AI",
+      "title": "AI Analysis & Recommendation",
+      "loading": "Analyzing... This may take a moment."
+    }
+  },
+  "courseDetail": {
+    "category": "Cross-Cultural Understanding",
+    "title": "Understanding Vietnamese Workers: A Cultural Guide",
+    "description": "A practical course decoding the daily habits, cultural motivations, and hidden pressures of Vietnamese workers in Japan, helping you build a more harmonious and effective team.",
+    "featuredLessonsTitle": "Featured Lessons",
+    "courseContent": "Course Content",
+    "information": "Information",
+    "video": {
+      "unavailable": "Video unavailable",
+      "notWorking": "This video is not working"
+    },
+    "chapters": [
+      {
+        "title": "Chapter 1: Daily Life & Social Culture",
+        "lessons": [
+          { "title": "Why do Vietnamese workers love singing karaoke at home?", "duration": "07:30" },
+          { "title": "Vietnamese cooking culture (fish sauce, etc.) and flavor conflicts in dorms.", "duration": "08:15" },
+          { "title": "The Vietnamese habit of communal living vs. Japanese privacy.", "duration": "06:40" },
+          { "title": "Social media habits: livestreaming, posting photos - risks and etiquette.", "duration": "11:00" },
+          { "title": "Days off: a preference for gatherings, food, and karaoke.", "duration": "07:45" }
+        ]
+      },
+      {
+        "title": "Chapter 2: Work Culture & Attitude",
+        "lessons": [
+          { "title": "Punctuality: Vietnamese habits vs. Japanese expectations.", "duration": "09:00" },
+          { "title": "Familiar address terms vs. Japanese Keigo (honorifics).", "duration": "11:20" },
+          { "title": "Overtime (Zangyō): Why do Vietnamese workers like to work extra hours?", "duration": "10:10" },
+          { "title": "Relationship with Japanese bosses: differences in hierarchy culture.", "duration": "09:10" }
+        ]
+      },
+      {
+        "title": "Chapter 3: Finances & Invisible Pressures",
+        "lessons": [
+          { "title": "The habit of sending most of their salary home: reasons & impacts.", "duration": "12:00" },
+          { "title": "Family life in Vietnam: Why do they rely on remittances?", "duration": "10:50" },
+          { "title": "The habit of extreme frugality in Japan.", "duration": "08:55" },
+          { "title": "Community comparisons: Who sends more money, who works more hours.", "duration": "09:30" },
+          { "title": "The pressure to 'get rich quick' in Japan.", "duration": "10:40" },
+          { "title": "The pressure of repaying loans for going abroad to work.", "duration": "12:15" }
+        ]
+      },
+      {
+        "title": "Chapter 4: Integration & The Future",
+        "lessons": [
+          { "title": "Preferring to live with compatriots: A cultural perspective.", "duration": "06:20" },
+          { "title": "The importance of the compatriot community.", "duration": "07:00" },
+          { "title": "Health issues: working too much, neglecting self-care.", "duration": "08:00" },
+          { "title": "Prioritizing overtime over learning Japanese: long-term consequences.", "duration": "11:30" },
+          { "title": "The mindset of 'self-sacrifice for the family'.", "duration": "13:00" }
+        ]
+      }
+    ],
+    "info": {
+      "level": { "label": "Level", "value": "All Levels" },
+      "lessons": { "label": "Lessons", "value": "20" },
+      "students": { "label": "Students", "value": "1,204" },
+      "rating": { "label": "Rating", "value": "4.8 / 5" }
+    }
+  },
+  "aboutPage": {
+    "title": "About HelloJob",
+    "subtitle": "We are the solid bridge between high-quality Vietnamese human resources and job opportunities in the Japanese market.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "HelloJob's mission is to shape mindsets, enhance skills, and build a clear career path for Vietnamese workers, while providing an effective and transparent recruitment solution for partners hiring Specified Skilled Workers (Tokutei Ginou) in Japan."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To become the leading technology platform in Vietnam for human resource supply and development, especially for the high-skilled labor market in Japan and other developed countries."
+    },
+    "coreValues": {
+      "title": "Our Core Values",
+      "subtitle": "The principles that guide all our actions and decisions.",
+      "userCentric": {
+        "title": "User-Centric",
+        "description": "All products and features are built based on the needs and experiences of both workers and recruitment partners."
+      },
+      "sustainableGrowth": {
+        "title": "Sustainable Growth",
+        "description": "We don't just help workers find jobs; we build a long-term and sustainable career development path."
+      },
+      "trustedPartner": {
+        "title": "Trusted Partner",
+        "description": "Building transparent, effective, and mutually beneficial partnerships with recruitment and franchise partners."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "The dedicated people behind HelloJob's success, always striving for your development."
+    }
+  },
+  "postDetail": {
+    "article": {
+      "category": "Interview Experience",
+      "title": "How to Write a Compelling Japanese CV to Impress Recruiters",
+      "excerpt": "A well-prepared CV (履歴書 - rirekisho) is the first and most crucial step to opening the door to your dream job in Japan. It's not just a summary of your experience, but your very first introduction to a potential employer.",
+      "author": "HelloJob Team",
+      "readTime": "8 min read",
+      "image": {
+        "src": "https://picsum.photos/1200/675?random=100",
+        "alt": "Person writing a CV",
+        "hint": "person writing resume"
+      },
+      "content": {
+        "p1": "In a competitive landscape, a professional, clean, and comprehensive CV will make you stand out. It's essential to adhere to the common rules and standards of a Japanese CV, from the layout and use of honorifics (keigo) to the profile picture.",
+        "p2": "The Specified Skilled Worker (特定技能 - Tokutei Ginou) visa is a new residency status for foreign workers in Japan, introduced by the Japanese government in April 2019. The main purpose of this program is to address serious labor shortages in specific industrial fields in Japan. This program is divided into two main categories:",
+        "listHtml": "<ul><li><strong>Specified Skilled Worker (i) (Tokutei Ginou 1)</strong>: For workers with a certain level of skill and specialized knowledge, who can work immediately without much training. The maximum period of stay is 5 years, and family members are not allowed to accompany them.</li><li><strong>Specified Skilled Worker (ii) (Tokutei Ginou 2)</strong>: For workers with high-level skills and professional expertise. After completing the Type 1 program, workers can take an exam to advance to Type 2 to stay in Japan long-term, with opportunities to apply for permanent residency and sponsor family members.</li></ul>",
+        "h2": "Conditions for Participation",
+        "p3": "To participate in the Specified Skilled Worker program, workers need to meet basic conditions: Be 18 years of age or older, pass the Japanese-Language Proficiency Test (JLPT) at level N4 or equivalent exams like the JFT-Basic, and pass the skills proficiency test for their registered industry."
+      }
+    },
+    "commentSection": {
+      "title": "Comments",
+      "subtitle": "Leave your comment on this article."
+    },
+    "commentForm": {
+      "name": {
+        "label": "Your Name",
+        "placeholder": "Enter your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email (will not be displayed)"
+      },
+      "comment": {
+        "label": "Comment",
+        "placeholder": "Write your comment here..."
+      },
+      "submit": "Submit Comment"
+    },
+    "commentActions": {
+      "like": "Like",
+      "reply": "Reply"
+    },
+    "comments": [
+      {
+        "name": "Hoang Long H.",
+        "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+        "time": "2 hours ago",
+        "text": "Thank you for the detailed article! My company is currently recruiting for 5 Specified Skilled Worker positions in the food industry in Aichi. Interested candidates can check our company page!",
+        "likes": 2
+      },
+      {
+        "name": "Le Thu Trang",
+        "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+        "time": "1 hour ago",
+        "text": "Can I ask if the skills test is difficult? I'm preparing for it and I'm a bit nervous.",
+        "likes": 5
+      }
+    ],
+    "featuredJobs": {
+      "title": "Featured Jobs",
+      "viewMore": "View more jobs",
+      "jobs": [
+        {
+          "title": "3-Year Intern, Food Processing",
+          "company": "Nagasaki, Hoang Long H."
+        },
+        {
+          "title": "Bridge Engineer (Bridge SE) - Bidding",
+          "company": "Việc làm tại Nhật"
+        }
+      ]
+    },
+    "relatedContent": {
+      "title": "Related Posts",
+      "items": [
+        {
+          "title": "3 Tips for a Successful Online Video Interview with Japanese Employers",
+          "category": "Interview Tips",
+          "image": "https://picsum.photos/400/400?random=1",
+          "type": "video"
+        },
+        {
+          "title": "5 Interview Experiences for Tokutei Ginou to Secure the Job",
+          "category": "Interview Tips",
+          "image": "https://picsum.photos/400/400?random=2",
+          "type": "article"
+        },
+        {
+          "title": "How Much is the Cost of Living in Japan per Month?",
+          "category": "Life in Japan",
+          "image": "https://picsum.photos/400/400?random=3",
+          "type": "article"
+        }
+      ]
+    }
+  },
+  "userRoles": {
+    "title": "Who are you?",
+    "description": "Tell us your role for the best experience.",
+    "hiringCompany": {
+      "title": "Accepting Company (Ukeire Kigyou)",
+      "description": "Directly hires personnel."
+    },
+    "supportOrg": {
+      "title": "Support Organization (Shien Kikan)",
+      "description": "Supports companies and workers."
+    },
+    "union": {
+      "title": "Cooperative Union (Kyoudou Kumiai)",
+      "description": "Manages and supports interns."
+    },
+    "sendingCompany": {
+      "title": "Sending Company (Okuridashi Kikan)",
+      "description": "Recruits and dispatches workers from Vietnam."
+    },
+    "hakenCompany": {
+      "title": "Haken Company (Temporary Staffing)",
+      "description": "Dispatches temporary staff."
+    },
+    "yuryoShokai": {
+      "title": "Paid Job Placement Service (Yuryo Shokai)",
+      "description": "Provides paid job placement services."
+    }
+  },
+  "chat": {
+    "title": "HelloJob AI Assistant",
+    "statusOnline": "Online",
+    "placeholder": "Type your question here...",
+    "greeting": "Hello, {role} client. How can I assist you today?",
+    "defaultGreeting": "Hello. How can I assist you today?"
+  },
+  "visaTypes": {
+    "title": "Which Visa type do you want to recruit?",
+    "description": "Choose the visa type that fits your recruitment needs.",
+    "intern": {
+      "title": "Technical Intern",
+      "description": "Skill training program in Japan."
+    },
+    "skilled": {
+      "title": "Specified Skilled Worker",
+      "description": "Experienced workers for long-term employment."
+    },
+    "engineer": {
+      "title": "Engineer/Specialist",
+      "description": "Highly qualified professionals with degrees."
+    }
+  },
+  "visaSubTypes": {
+    "title": "Please select more details",
+    "intern": {
+      "threeYear": "3-Year Intern",
+      "oneYear": "1-Year Intern",
+      "go": "3 Go Intern"
+    },
+    "skilled": {
+      "japan": "Skilled candidates in Japan",
+      "vietnam": "Skilled candidates from Vietnam"
+    },
+    "engineer": {
+      "japan": "Engineer/Specialist candidates in Japan",
+      "vietnam": "Engineer/Specialist candidates from Vietnam"
+    }
+  },
+  "postMethod": {
+    "title": "Choose posting method",
+    "description": "How do you want to create your job listing?",
+    "ai": {
+      "title": "Post with AI",
+      "description": "Briefly describe and let AI create a professional job post."
+    },
+    "manual": {
+      "title": "Manual Entry",
+      "description": "Fill out a detailed form for full control over the listing."
+    }
+  },
+  "dashboard_sidebar": {
+    "overview": "Overview",
+    "jobs": "My Jobs",
+    "candidates": "Candidates",
+    "partners": "Partners",
+    "assignedJobs": "Assigned Jobs",
+    "myCandidates": "My Candidates",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "dashboard_employer": {
+    "header": {
+      "title": "Dashboard",
+      "subtitle": "Manage your jobs, candidates, and partners all in one place."
+    },
+    "stats": {
+      "activeJobs": {
+        "title": "Active Jobs",
+        "value": "5",
+        "change": "+2 from last month"
+      },
+      "applications": {
+        "title": "Applications",
+        "value": "125",
+        "change": "+18.2% from last month"
+      },
+      "interviews": {
+        "title": "Job Views",
+        "value": "1,230",
+        "change": "+15% from last week"
+      },
+      "hires": {
+        "title": "Hires",
+        "value": "2",
+        "change": "+1 this month"
+      }
+    },
+    "overview_chart": {
+      "title": "Monthly Overview",
+      "description": "Overview of applications and hires in the last month.",
+      "applications": "Applications",
+      "hires": "Hires"
+    },
+    "recent_applications": {
+      "title": "Recent Applications",
+      "description": "You have {count} new applications this week.",
+      "applications": [
+        {
+          "name": "Olivia Martin",
+          "email": "olivia.martin@email.com",
+          "salary": "+$1,999.00"
+        },
+        {
+          "name": "Jackson Lee",
+          "email": "jackson.lee@email.com",
+          "salary": "+$39.00"
+        },
+        {
+          "name": "Isabella Nguyen",
+          "email": "isabella.nguyen@email.com",
+          "salary": "+$299.00"
+        },
+        {
+          "name": "William Kim",
+          "email": "will@email.com",
+          "salary": "+$99.00"
+        },
+        {
+          "name": "Sofia Davis",
+          "email": "sofia.davis@email.com",
+          "salary": "+$39.00"
+        }
+      ]
+    },
+    "activeJobs": {
+      "title": "Active Job Postings",
+      "description": "Manage your current job openings and view their performance.",
+      "table": {
+        "jobTitle": "Job Title",
+        "status": "Status",
+        "partners": "Partners",
+        "applications": "Applications",
+        "actions": "Actions",
+        "view": "View"
+      },
+      "jobs": [
+        {
+          "id": "Aichi-W01",
+          "title": "Welding Engineer",
+          "company": "Toyota Motor Corp.",
+          "location": "Aichi, Japan",
+          "status": "Searching",
+          "partners": "3",
+          "applications": "25",
+          "date_posted": "2024-05-10",
+          "salary": "Net Salary: 180,000 JPY",
+          "image": "https://picsum.photos/400/225?random=job1",
+          "tags": ["Mechanics", "Engineer", "Automotive"]
+        },
+        {
+          "id": "Osaka-F02",
+          "title": "Food Processing Staff",
+          "company": "Osaka Foods Co.",
+          "location": "Osaka, Japan",
+          "status": "Forwarding",
+          "partners": "5",
+          "applications": "42",
+          "date_posted": "2024-05-08",
+          "salary": "Net Salary: 165,000 JPY",
+          "image": "https://picsum.photos/400/225?random=job2",
+          "tags": ["Food", "Skilled Worker", "Female"]
+        },
+        {
+          "id": "Tokyo-C03",
+          "title": "Construction Worker",
+          "company": "Tokyo Construction Group",
+          "location": "Tokyo, Japan",
+          "status": "Forwarding",
+          "partners": "8",
+          "applications": "58",
+          "date_posted": "2024-05-01",
+          "salary": "Net Salary: 210,000 JPY",
+          "image": "https://picsum.photos/400/225?random=job3",
+          "tags": ["Construction", "Scaffolding"]
+        }
+      ]
+    },
+    "job_status": {
+        "searching": "Searching Partners",
+        "forwarding": "Forwarding Candidates"
+    },
+    "jobs_list": {
+      "title": "Manage Jobs",
+      "description": "Oversee and manage all your job postings.",
+      "add_job": "Add New Job",
+      "tabs": {
+        "all": "All",
+        "active": "Active",
+        "draft": "Draft",
+        "archived": "Archived"
+      },
+      "table": {
+        "date_posted": "Date Posted",
+        "toggle_menu": "Toggle menu",
+        "actions_items": {
+          "details": "View Details",
+          "manage": "Manage Partners",
+          "view_candidates": "View Candidates",
+          "archive": "Archive"
+        }
+      }
+    },
+    "your_candidates": {
+      "title": "Quản lý Ứng viên",
+      "description": "Theo dõi và quản lý tất cả các ứng viên của bạn.",
+      "add_candidate": "Thêm ứng viên mới",
+      "tabs": {
+        "all": "Tất cả",
+        "new": "Ứng viên mới",
+        "review": "Đang xem xét",
+        "hired": "Đã tuyển",
+        "archived": "Lưu trữ",
+        "empty": "Chưa có dữ liệu"
+      }
+    },
+    "candidates": [
+        {
+            "id": "VN045GUIFW",
+            "name_ja": "ラム",
+            "name_vi": "LAM",
+            "avatar": "https://i.pravatar.cc/150?u=candidate1",
+            "details": "27 tuổi - - - Không hình xăm",
+            "visa_type": "Kỹ năng đặc định",
+            "specialty": "Đóng gói công nghiệp",
+            "desired_salary": "Phí giới thiệu",
+            "jobs": {
+                "count": 7,
+                "images": ["https://picsum.photos/50?random=j1", "https://picsum.photos/50?random=j2", "https://picsum.photos/50?random=j3"]
+            },
+            "created_date": "04/04/2025"
+        },
+        {
+            "id": "VN045JTOAQ",
+            "name_ja": "ズオン",
+            "name_vi": "ƯƠNG",
+            "avatar": "https://i.pravatar.cc/150?u=candidate2",
+            "details": "29 tuổi - 40 kg - 153 cm - Không hình xăm",
+            "visa_type": "Kỹ năng đặc định",
+            "specialty": "Đóng gói công nghiệp",
+            "desired_salary": "Phí giới thiệu",
+            "jobs": {
+                "count": 7,
+                "images": ["https://picsum.photos/50?random=j4", "https://picsum.photos/50?random=j5", "https://picsum.photos/50?random=j6"]
+            },
+            "created_date": "04/04/2025"
+        },
+        {
+            "id": "VN045PQHEU",
+            "name_ja": "ユーン",
+            "name_vi": "TIẾNG N",
+            "avatar": "https://i.pravatar.cc/150?u=candidate3",
+            "details": "32 tuổi - 58 kg - 167 cm - Không hình xăm",
+            "visa_type": "Kỹ năng đặc định",
+            "specialty": "Gia công đồ ăn",
+            "desired_salary": "Địa điểm làm",
+            "jobs": {
+                "count": 4,
+                "images": ["https://picsum.photos/50?random=j7", "https://picsum.photos/50?random=j8", "https://picsum.photos/50?random=j9"]
+            },
+            "created_date": "03/04/2025"
+        }
+    ],
+    "candidates_table": {
+      "candidate": "Ứng viên",
+      "visa_specialty": "Visa / Chuyên ngành",
+      "desired_salary": "Mức lương mong muốn",
+      "date_created": "Ngày tạo",
+      "actions": "Hành động",
+      "toggle_menu": "Mở menu",
+      "view_profile": "Xem hồ sơ",
+      "contact_line": "Liên hệ qua Line",
+      "save_to_list": "Lưu vào danh sách"
+    },
+    "your_partners": {
+      "title": "Đối tác của bạn",
+      "subtitle": "Kết nối bạn với các Cơ quan Hỗ trợ, Nghiệp đoàn và Công ty Phái cử uy tín.",
+      "title_full": "Quản lý Đối tác",
+      "description_full": "Theo dõi và quản lý tất cả các kết nối đối tác của bạn.",
+      "add_partner": "Thêm Đối tác mới",
+      "table": {
+        "partner_name": "Tên đối tác",
+        "type": "Loại hình",
+        "specialties": "Chuyên môn",
+        "locations": "Địa điểm",
+        "actions": "Hành động",
+        "toggle_menu": "Mở menu",
+        "view_details": "Xem chi tiết",
+        "send_message": "Gửi tin nhắn"
+      }
+    },
+    "company_profile": {
+      "industry": "Sản xuất & Chế biến",
+      "location": "Aichi, Nhật Bản",
+      "editProfile": "Sửa hồ sơ",
+      "yourJobs": "Việc làm của bạn",
+      "yourCandidates": "Ứng viên của bạn",
+      "companyIntroduction": {
+        "title": "Giới thiệu doanh nghiệp",
+        "placeholder": "Chưa có thông tin. Nhấn vào đây để cập nhật."
+      },
+      "companyVideo": {
+        "title": "Video về doanh nghiệp"
+      },
+      "companyPhotos": {
+        "title": "Ảnh về doanh nghiệp"
+      },
+      "history": {
+        "title": "Lịch sử & các mốc sự kiện",
+        "event1_title": "Thành lập công ty",
+        "event1_desc": "Bắt đầu với 5 nhân viên, tập trung vào thị trường sản xuất linh kiện ô tô.",
+        "event2_title": "Mở rộng nhà xưởng",
+        "event2_desc": "Đạt chứng nhận ISO 9001 và mở rộng quy mô sản xuất gấp đôi."
+      },
+      "licenses": {
+        "title": "Giấy phép & Chứng nhận",
+        "item1": "Giấy phép kinh doanh số 12345-XYZ",
+        "item2": "Chứng nhận ISO 9001:2015"
+      },
+      "companyInfo": {
+        "title": "Thông tin doanh nghiệp",
+        "founded": "Năm thành lập",
+        "size": "Quy mô",
+        "employees": "nhân viên",
+        "phone": "SĐT",
+        "website": "Website",
+        "address": "Địa chỉ"
+      },
+      "industryInfo": {
+        "title": "Ngành nghề & Lĩnh vực",
+        "mainIndustry": "Ngành nghề chính",
+        "industry1": "Sản xuất ô tô",
+        "industry2": "Chế biến thực phẩm",
+        "fields": "Lĩnh vực hoạt động",
+        "placeholder": "Chưa có lĩnh vực hoạt động. Nhấn vào đây để cập nhật."
+      },
+      "benefits": {
+        "title": "Phúc lợi & Môi trường",
+        "item1": "Hỗ trợ nhà ở, ký túc xá",
+        "item2": "Bảo hiểm đầy đủ theo luật pháp",
+        "item3": "Các hoạt động ngoại khóa, du lịch công ty"
+      },
+      "logout": "Đăng xuất"
+    }
+  },
+  "dashboard_partner": {
+    "newOpportunities": {
+      "title": "Cơ hội hợp tác mới",
+      "description": "Xem xét và chấp nhận các đơn hàng tuyển dụng mới từ các xí nghiệp.",
+      "opportunities": [
+        {
+            "title": "Nhân viên hộ lý",
+            "company": "Trung tâm chăm sóc Fukushi",
+            "location": "Kanagawa",
+            "visa": "Kỹ năng đặc định",
+            "quantity": "3 người",
+            "expires": "Hết hạn trong 23 giờ"
+        },
+        {
+            "title": "Công nhân nông nghiệp",
+            "company": "Nông trang Miyazaki",
+            "location": "Miyazaki",
+            "visa": "Thực tập sinh kỹ năng",
+            "quantity": "5 người",
+            "expires": "Hết hạn trong 2 ngày"
+        }
+      ]
+    },
+    "details": "Chi tiết",
+    "location": "Địa điểm",
+    "visaType": "Loại visa",
+    "quantity": "Số lượng",
+    "accept": "Chấp nhận",
+    "decline": "Từ chối"
+  }
 }
