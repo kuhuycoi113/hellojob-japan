@@ -60,30 +60,35 @@ export default function EmployerProfilePage() {
     const [isEditingBenefits, setIsEditingBenefits] = useState(false);
 
     // State for editable content
-    const [introText, setIntroText] = useState(profile.companyIntroduction.placeholder);
-    const [licensesText, setLicensesText] = useState(`${profile.licenses.item1}\n${profile.licenses.item2}`);
-    const [benefitsText, setBenefitsText] = useState(`${profile.benefits.item1}\n${profile.benefits.item2}\n${profile.benefits.item3}`);
-    const [industryFieldsText, setIndustryFieldsText] = useState(profile.industryInfo.placeholder);
+    const [introText, setIntroText] = useState("Công ty phái cử TVC là một trong những đơn vị hàng đầu tại Việt Nam trong lĩnh vực cung ứng nhân lực chất lượng cao cho thị trường Nhật Bản. Với nhiều năm kinh nghiệm, chúng tôi tự hào đã kết nối thành công hàng ngàn lao động với các doanh nghiệp uy tín tại Nhật, tập trung vào các ngành nghề như xây dựng, cơ khí, và nông nghiệp. Chúng tôi cam kết đào tạo bài bản và hỗ trợ toàn diện để đảm bảo người lao động có sự chuẩn bị tốt nhất cho công việc và cuộc sống tại Nhật.");
+    const [licensesText, setLicensesText] = useState(`Giấy phép hoạt động dịch vụ đưa người lao động đi làm việc ở nước ngoài số 999/LDTBXH-GP`);
+    const [benefitsText, setBenefitsText] = useState(`Hỗ trợ đào tạo tiếng Nhật và kỹ năng tay nghề trước khi xuất cảnh.\nChương trình hỗ trợ vay vốn cho người lao động.\nTheo dõi và hỗ trợ người lao động trong suốt quá trình làm việc tại Nhật Bản.`);
+    const [industryFieldsText, setIndustryFieldsText] = useState("Cung ứng lao động cho các ngành: xây dựng, cơ khí, nông nghiệp, chế biến thực phẩm, hộ lý.");
     
     const [companyInfo, setCompanyInfo] = useState({
-        founded: '2015',
-        size: `100-500 ${profile.companyInfo.employees}`,
-        phone: '052-123-4567',
-        website: 'globalsupport.jp',
-        address: 'Aichi, Japan'
+        founded: '2010',
+        size: `50-100 ${profile.companyInfo.employees}`,
+        phone: '024-1234-5678',
+        website: 'tvc-hr.com.vn',
+        address: 'Quận Cầu Giấy, Hà Nội, Việt Nam'
     });
 
     const [history, setHistory] = useState<HistoryItem[]>([
         {
-        year: '2015',
-        event: profile.history.event1_title,
-        description: profile.history.event1_desc,
+        year: '2010',
+        event: "Thành lập công ty",
+        description: "Bắt đầu với đội ngũ 10 nhân viên, tập trung vào thị trường Nhật Bản.",
         },
         {
-        year: '2018',
-        event: profile.history.event2_title,
-        description: profile.history.event2_desc,
+        year: '2015',
+        event: "Nhận giấy phép xuất khẩu lao động",
+        description: "Chính thức được Bộ LĐ-TB&XH cấp phép, mở rộng quy mô hoạt động.",
         },
+        {
+        year: '2019',
+        event: "Hợp tác với 50+ doanh nghiệp Nhật Bản",
+        description: "Mở rộng mạng lưới đối tác, cung ứng đa dạng ngành nghề cho người lao động.",
+        }
     ]);
 
     const handleHistoryChange = (index: number, field: keyof HistoryItem, value: string) => {
@@ -138,10 +143,10 @@ export default function EmployerProfilePage() {
                         <CardTitle className="text-2xl">
                             Công ty phái cử TVC
                         </CardTitle>
-                        <CardDescription>{profile.industry}</CardDescription>
+                        <CardDescription>Cung ứng nhân lực & Xuất khẩu lao động</CardDescription>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
                             <MapPin className="h-4 w-4" />
-                            {profile.location}
+                            Hà Nội, Việt Nam
                         </div>
                     </div>
                     <Button variant="outline">
@@ -303,8 +308,9 @@ export default function EmployerProfilePage() {
                         <CardContent>
                             <p className="font-semibold text-sm mb-2">{profile.industryInfo.mainIndustry}</p>
                             <div className="flex flex-wrap gap-2">
-                                <Badge variant="outline">{profile.industryInfo.industry1}</Badge>
-                                <Badge variant="outline">{profile.industryInfo.industry2}</Badge>
+                                <Badge variant="outline">Xây dựng</Badge>
+                                <Badge variant="outline">Cơ khí</Badge>
+                                <Badge variant="outline">Nông nghiệp</Badge>
                                 {isEditingIndustryInfo && <Button size="icon" variant="ghost" className="h-6 w-6"><PlusCircle className="w-4 h-4"/></Button>}
                             </div>
                             <p className="font-semibold text-sm mt-4 mb-2">{profile.industryInfo.fields}</p>
@@ -342,3 +348,5 @@ export default function EmployerProfilePage() {
     </div>
   );
 }
+
+    
