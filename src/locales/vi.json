@@ -1,3 +1,4 @@
+
 {
   "header": {
     "home": "Trang chủ",
@@ -31,7 +32,7 @@
   },
   "mobile_footer": {
     "home": "Trang chủ",
-    "postJobAI": "Đăng việc AI",
+    "postJobAI": "Đăng AI",
     "dashboard": "Quản lý",
     "menu": "Menu"
   },
@@ -479,7 +480,23 @@
   "recruitRight": {
     "title": "Công cụ khám phá văn hoá doanh nghiệp",
     "subtitle": "Hiểu rõ Sứ mệnh, Tầm nhìn, Giá trị cốt lõi và Văn hoá của doanh nghiệp bạn để tìm ra những ứng viên nước ngoài phù hợp nhất.",
-    "start": "Bắt đầu"
+    "start": "Bắt đầu",
+    "barrett": {
+      "title": "Đánh giá Giá trị Barrett (CTT)",
+      "description": "Công cụ Chuyển đổi Văn hóa giúp đo lường các giá trị cá nhân và tổ chức để xác định sự phù hợp về văn hóa."
+    },
+    "goldenCircle": {
+      "title": "Vòng tròn Vàng",
+      "description": "Làm rõ 'Lý do tại sao' công ty bạn tồn tại, truyền cảm hứng hành động và thu hút những người có cùng niềm tin với bạn."
+    },
+    "gallup": {
+      "title": "Bài kiểm tra CliftonStrengths (Gallup)",
+      "description": "Khám phá các tài năng bẩm sinh của bạn để hiểu rõ điểm mạnh của bản thân và xây dựng đội ngũ hiệu quả."
+    },
+    "hofstede": {
+      "title": "Quét văn hóa Hofstede",
+      "description": "So sánh văn hóa tổ chức của bạn với văn hóa quốc gia của nhân viên để quản lý hiệu quả sự khác biệt."
+    }
   },
   "barrettTest": {
     "title": "Đánh giá Giá trị Barrett",
@@ -1161,5 +1178,57 @@
       "description": "Theo dõi thu nhập, xem báo cáo chi tiết và quản lý các khoản thanh toán của bạn.",
       "placeholder": "Bảng điều khiển doanh thu và báo cáo sẽ được thiết kế ở đây."
     }
+  },
+  "gallupTest": {
+    "title": "Bài kiểm tra CliftonStrengths (Gallup)",
+    "description": "CliftonStrengths giúp bạn khám phá những tài năng bẩm sinh của mình. Bằng cách tập trung vào những gì bạn làm tốt nhất một cách tự nhiên, bạn có thể tối đa hóa tiềm năng của mình để thành công trong mọi vai trò.",
+    "benefitsTitle": "Lợi ích chính:",
+    "benefits": [
+      "Xác định 34 điểm mạnh độc đáo của bạn.",
+      "Hiểu cách tận dụng điểm mạnh của bạn trong môi trường làm việc.",
+      "Cải thiện tinh thần đồng đội và giao tiếp.",
+      "Tăng cường sự tham gia và hiệu suất."
+    ],
+    "ctaTitle": "Khám phá Điểm mạnh của bạn",
+    "ctaDescription": "Bắt đầu hành trình khám phá bản thân và khai phá toàn bộ tiềm năng của bạn.",
+    "ctaButton": "Làm bài kiểm tra ngay",
+    "note": "(Hiện tại, bài kiểm tra này được cung cấp qua trang web chính thức của Gallup.)"
+  },
+  "hofstede": {
+    "title": "Quét văn hóa Hofstede",
+    "description": "Mô hình văn hóa quốc gia của Geert Hofstede là một khuôn khổ để giao tiếp đa văn hóa, mô tả ảnh hưởng của văn hóa xã hội của một quốc gia đối với các giá trị của các thành viên, và cách những giá trị này liên quan đến hành vi.",
+    "dimensionsTitle": "6 Chiều văn hóa:",
+    "dimensions": [
+      {
+        "name": "Khoảng cách quyền lực",
+        "description": "Mức độ mà các thành viên ít quyền lực hơn trong các tổ chức và định chế (như gia đình) chấp nhận và mong đợi rằng quyền lực được phân phối không đồng đều."
+      },
+      {
+        "name": "Chủ nghĩa cá nhân so với Chủ nghĩa tập thể",
+        "description": "Mức độ mà mọi người trong xã hội được hòa nhập vào các nhóm."
+      },
+      {
+        "name": "Nam tính so với Nữ tính",
+        "description": "Sự ưu tiên trong xã hội đối với thành tích, chủ nghĩa anh hùng, sự quyết đoán và phần thưởng vật chất cho sự thành công (Nam tính) so với sự ưu tiên cho hợp tác, khiêm tốn, chăm sóc người yếu thế và chất lượng cuộc sống (Nữ tính)."
+      },
+      {
+        "name": "Tránh sự không chắc chắn",
+        "description": "Mức độ mà một xã hội đối phó với sự thật rằng tương lai không bao giờ có thể được biết đến."
+      },
+      {
+        "name": "Định hướng dài hạn so với Định hướng ngắn hạn",
+        "description": "Cách mỗi xã hội phải duy trì một số liên kết với quá khứ của chính mình trong khi đối phó với những thách thức của hiện tại và tương lai."
+      },
+      {
+        "name": "Nuông chiều so với Kiềm chế",
+        "description": "Mức độ mà mọi người cố gắng kiểm soát ham muốn và xung động của mình."
+      }
+    ],
+    "ctaTitle": "So sánh các nền văn hóa",
+    "ctaDescription": "Sử dụng các công cụ trên trang web chính thức của Hofstede Insights để so sánh các quốc gia và hiểu rõ hơn về sự khác biệt văn hóa.",
+    "ctaButton": "Bắt đầu so sánh",
+    "note": "(Công cụ này có sẵn trên trang web của Hofstede Insights.)"
   }
 }
+
+    
