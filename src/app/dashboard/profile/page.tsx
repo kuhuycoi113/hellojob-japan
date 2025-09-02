@@ -58,8 +58,22 @@ export default function EmployerProfilePage() {
     const [isEditingCompanyInfo, setIsEditingCompanyInfo] = useState(false);
     const [isEditingIndustryInfo, setIsEditingIndustryInfo] = useState(false);
     const [isEditingBenefits, setIsEditingBenefits] = useState(false);
+
+    // State for editable content
+    const [introText, setIntroText] = useState(profile.companyIntroduction.placeholder);
+    const [licensesText, setLicensesText] = useState(`${profile.licenses.item1}\n${profile.licenses.item2}`);
+    const [benefitsText, setBenefitsText] = useState(`${profile.benefits.item1}\n${profile.benefits.item2}\n${profile.benefits.item3}`);
+    const [industryFieldsText, setIndustryFieldsText] = useState(profile.industryInfo.placeholder);
     
-    const [history, setHistory] = useState([
+    const [companyInfo, setCompanyInfo] = useState({
+        founded: '2015',
+        size: `100-500 ${profile.companyInfo.employees}`,
+        phone: '052-123-4567',
+        website: 'globalsupport.jp',
+        address: 'Aichi, Japan'
+    });
+
+    const [history, setHistory] = useState<HistoryItem[]>([
         {
         year: '2015',
         event: profile.history.event1_title,
@@ -85,7 +99,11 @@ export default function EmployerProfilePage() {
     const removeHistoryItem = (index: number) => {
         const newHistory = history.filter((_, i) => i !== index);
         setHistory(newHistory);
-    }
+    };
+
+    const handleCompanyInfoChange = (field: keyof typeof companyInfo, value: string) => {
+        setCompanyInfo(prev => ({...prev, [field]: value}));
+    };
 
   return (
     <div className="flex w-full flex-col p-4 md:gap-8 md:p-10">
@@ -144,9 +162,9 @@ export default function EmployerProfilePage() {
                     </CardHeader>
                     <CardContent>
                     {isEditingIntro ? (
-                        <Textarea defaultValue={profile.companyIntroduction.placeholder} className="min-h-[120px]" />
+                        <Textarea value={introText} onChange={(e) => setIntroText(e.target.value)} className="min-h-[120px]" />
                     ) : (
-                        <p className="text-muted-foreground">{profile.companyIntroduction.placeholder}</p>
+                        <p className="text-muted-foreground whitespace-pre-wrap">{introText}</p>
                     )}
                     </CardContent>
                 </Card>
@@ -205,13 +223,13 @@ export default function EmployerProfilePage() {
                         )}
                         <div className="flex-grow border-l-2 border-primary pl-4 relative">
                             {isEditingHistory ? (
-                                <>
+                                <div className="space-y-2">
                                 <Input value={item.event} onChange={(e) => handleHistoryChange(index, 'event', e.target.value)} className="font-semibold" placeholder="Sự kiện"/>
-                                <Textarea value={item.description} onChange={(e) => handleHistoryChange(index, 'description', e.target.value)} className="text-sm mt-1" placeholder="Mô tả"/>
+                                <Textarea value={item.description} onChange={(e) => handleHistoryChange(index, 'description', e.target.value)} className="text-sm" placeholder="Mô tả"/>
                                 <Button variant="ghost" size="icon" className="absolute -top-2 -right-2 text-destructive" onClick={() => removeHistoryItem(index)}>
                                     <X className="w-4 h-4"/>
                                 </Button>
-                                </>
+                                </div>
                             ) : (
                             <>
                                 <p className="font-semibold">{item.event}</p>
@@ -235,11 +253,10 @@ export default function EmployerProfilePage() {
                     </CardHeader>
                     <CardContent>
                     {isEditingLicenses ? (
-                        <Textarea className="min-h-[100px]" defaultValue={`${profile.licenses.item1}\n${profile.licenses.item2}`} />
+                        <Textarea className="min-h-[100px]" value={licensesText} onChange={(e) => setLicensesText(e.target.value)} />
                     ) : (
-                        <ul className="list-disc pl-5 text-muted-foreground space-y-1">
-                            <li>{profile.licenses.item1}</li>
-                            <li>{profile.licenses.item2}</li>
+                        <ul className="list-disc pl-5 text-muted-foreground space-y-1 whitespace-pre-wrap">
+                            {licensesText.split('\n').map((item, index) => item.trim() && <li key={index}>{item}</li>)}
                         </ul>
                     )}
                     </CardContent>
@@ -255,24 +272,24 @@ export default function EmployerProfilePage() {
                         </CardHeader>
                         <CardContent className="space-y-3 text-sm">
                         <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-muted-foreground"/> 
-                            <span>{profile.companyInfo.founded}: </span>
-                            {isEditingCompanyInfo ? <Input defaultValue="2015" className="h-8"/> : <span>2015</span>}
+                            <span className="font-medium">{profile.companyInfo.founded}: </span>
+                            {isEditingCompanyInfo ? <Input value={companyInfo.founded} onChange={(e) => handleCompanyInfoChange('founded', e.target.value)} className="h-8"/> : <span className="text-muted-foreground">{companyInfo.founded}</span>}
                         </div>
                         <div className="flex items-center gap-2"><Users className="h-4 w-4 text-muted-foreground"/>
-                           <span>{profile.companyInfo.size}: </span>
-                           {isEditingCompanyInfo ? <Input defaultValue={`100-500 ${profile.companyInfo.employees}`} className="h-8"/> : <span>100-500 {profile.companyInfo.employees}</span>}
+                           <span className="font-medium">{profile.companyInfo.size}: </span>
+                           {isEditingCompanyInfo ? <Input value={companyInfo.size} onChange={(e) => handleCompanyInfoChange('size', e.target.value)} className="h-8"/> : <span className="text-muted-foreground">{companyInfo.size}</span>}
                         </div>
                         <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-muted-foreground"/> 
-                            <span>{profile.companyInfo.phone}: </span>
-                            {isEditingCompanyInfo ? <Input defaultValue="052-123-4567" className="h-8"/> : <span>052-123-4567</span>}
+                            <span className="font-medium">{profile.companyInfo.phone}: </span>
+                            {isEditingCompanyInfo ? <Input value={companyInfo.phone} onChange={(e) => handleCompanyInfoChange('phone', e.target.value)} className="h-8"/> : <span className="text-muted-foreground">{companyInfo.phone}</span>}
                         </div>
                         <div className="flex items-center gap-2"><Globe className="h-4 w-4 text-muted-foreground"/> 
-                            <span>{profile.companyInfo.website}: </span>
-                            {isEditingCompanyInfo ? <Input defaultValue="globalsupport.jp" className="h-8"/> : <span>globalsupport.jp</span>}
+                            <span className="font-medium">{profile.companyInfo.website}: </span>
+                            {isEditingCompanyInfo ? <Input value={companyInfo.website} onChange={(e) => handleCompanyInfoChange('website', e.target.value)} className="h-8"/> : <span className="text-muted-foreground">{companyInfo.website}</span>}
                         </div>
                         <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-muted-foreground"/> 
-                           <span>{profile.companyInfo.address}: </span>
-                           {isEditingCompanyInfo ? <Input defaultValue="Aichi, Japan" className="h-8"/> : <span>Aichi, Japan</span>}
+                           <span className="font-medium">{profile.companyInfo.address}: </span>
+                           {isEditingCompanyInfo ? <Input value={companyInfo.address} onChange={(e) => handleCompanyInfoChange('address', e.target.value)} className="h-8"/> : <span className="text-muted-foreground">{companyInfo.address}</span>}
                         </div>
                         </CardContent>
                     </Card>
@@ -292,9 +309,9 @@ export default function EmployerProfilePage() {
                             </div>
                             <p className="font-semibold text-sm mt-4 mb-2">{profile.industryInfo.fields}</p>
                             {isEditingIndustryInfo ? (
-                                <Textarea defaultValue={profile.industryInfo.placeholder} />
+                                <Textarea value={industryFieldsText} onChange={(e) => setIndustryFieldsText(e.target.value)} />
                             ) : (
-                               <p className="text-sm text-muted-foreground">{profile.industryInfo.placeholder}</p>
+                               <p className="text-sm text-muted-foreground whitespace-pre-wrap">{industryFieldsText}</p>
                             )}
                         </CardContent>
                     </Card>
@@ -307,12 +324,10 @@ export default function EmployerProfilePage() {
                         </CardHeader>
                         <CardContent>
                              {isEditingBenefits ? (
-                                <Textarea className="min-h-[100px]" defaultValue={`${profile.benefits.item1}\n${profile.benefits.item2}\n${profile.benefits.item3}`} />
+                                <Textarea className="min-h-[100px]" value={benefitsText} onChange={(e) => setBenefitsText(e.target.value)} />
                             ) : (
-                                <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                                    <li>{profile.benefits.item1}</li>
-                                    <li>{profile.benefits.item2}</li>
-                                    <li>{profile.benefits.item3}</li>
+                                <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1 whitespace-pre-wrap">
+                                    {benefitsText.split('\n').map((item, index) => item.trim() && <li key={index}>{item}</li>)}
                                 </ul>
                             )}
                         </CardContent>
