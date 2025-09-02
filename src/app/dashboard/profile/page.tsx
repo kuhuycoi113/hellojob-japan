@@ -274,9 +274,6 @@ export default function EmployerProfilePage() {
                     </div>
                     <div className="flex items-center gap-2">
                          {isTranslating && <LoaderCircle className="w-5 h-5 animate-spin"/>}
-                        <Button variant="outline" onClick={() => setLanguage('vi')} disabled={language === 'vi'}>VI</Button>
-                        <Button variant="outline" onClick={() => setLanguage('en')} disabled={language === 'en'}>EN</Button>
-                        <Button variant="outline" onClick={() => setLanguage('ja')} disabled={language === 'ja'}>JA</Button>
                     </div>
                 </div>
             </Card>
