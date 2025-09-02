@@ -16,6 +16,20 @@ export type Job = {
   tags: string[];
 };
 
+export type Opportunity = {
+    id: string;
+    profileUrl: string;
+    title: string;
+    company: string;
+    location: string;
+    visa: string;
+    quantity: string;
+    expires: string;
+    description: string;
+    requirements: string[];
+    benefits: string[];
+}
+
 export type Candidate = {
     id: string;
     name_ja: string;

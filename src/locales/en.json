@@ -1,4 +1,3 @@
-
 {
   "header": {
     "home": "Home",
@@ -1135,9 +1134,12 @@
     "newOpportunities": {
       "title": "New Partnership Opportunities",
       "description": "Review and accept new recruitment orders from companies.",
+      "all_accepted": "No New Partnership Opportunities",
+      "all_accepted_description": "All opportunities have been handled. Please check back later.",
       "opportunities": [
         {
             "id": "kanagawa-care-01",
+            "profileUrl": "/dashboard/partner/fukushi-care",
             "title": "Caregiver",
             "company": "Fukushi Care Center",
             "location": "Kanagawa",
@@ -1150,6 +1152,7 @@
         },
         {
             "id": "miyazaki-agri-01",
+            "profileUrl": "/dashboard/partner/miyazaki-farm",
             "title": "Agricultural Worker",
             "company": "Miyazaki Farm",
             "location": "Miyazaki",

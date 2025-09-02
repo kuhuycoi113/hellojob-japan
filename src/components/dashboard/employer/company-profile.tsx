@@ -1,6 +1,6 @@
-
 'use client';
 
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/language-context';
 import { JobsList } from './jobs-list';
 import { YourCandidates } from './your-candidates';
@@ -9,12 +9,43 @@ import { DashboardHeader } from './dashboard-header';
 import { DashboardStats } from './dashboard-stats';
 import { OverviewChart } from './overview-chart';
 import { RecentApplications } from './recent-applications';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Overview } from '../partner/overview';
+import type { Job } from '@/locales/translations';
 
 export function CompanyProfile() {
   const { t } = useLanguage();
-  const profile = t.dashboard_employer.company_profile;
+  
+  // Lift state up to the parent component
+  const [opportunities, setOpportunities] = useState(t.dashboard_partner.newOpportunities.opportunities);
+  const [acceptedJobs, setAcceptedJobs] = useState(t.dashboard_employer.activeJobs.jobs);
+
+  const handleAcceptJob = (jobId: string) => {
+    const jobToMove = opportunities.find(job => job.id === jobId);
+    if (jobToMove) {
+      // Map opportunity to a job format
+      const newJob: Job = {
+        id: jobToMove.id,
+        title: jobToMove.title,
+        company: jobToMove.company,
+        location: jobToMove.location,
+        status: 'Forwarding',
+        partners: "0",
+        applications: "0",
+        date_posted: new Date().toISOString().split('T')[0], // Set current date
+        salary: "N/A",
+        image: `https://picsum.photos/400/225?random=job${acceptedJobs.length + 1}`,
+        tags: [jobToMove.visa],
+      };
+      setAcceptedJobs(prev => [newJob, ...prev]);
+      setOpportunities(prev => prev.filter(job => job.id !== jobId));
+    }
+  };
+
+  const handleDeclineJob = (jobId: string) => {
+    // For now, just remove it from the list of opportunities
+    setOpportunities(prev => prev.filter(job => job.id !== jobId));
+  };
+
 
   return (
     <div className="flex w-full flex-col">
@@ -22,11 +53,15 @@ export function CompanyProfile() {
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
         <div className="mx-auto grid w-full max-w-7xl gap-6">
           <div className="mt-4">
-            <Overview />
+            <Overview 
+              opportunities={opportunities}
+              onAccept={handleAcceptJob}
+              onDecline={handleDeclineJob}
+            />
           </div>
           
           <div className="mt-4">
-            <JobsList />
+            <JobsList jobs={acceptedJobs} />
           </div>
 
           <div className="mt-4">

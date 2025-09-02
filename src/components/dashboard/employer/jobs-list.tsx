@@ -1,4 +1,3 @@
-
 'use client';
 
 import {
@@ -33,12 +32,17 @@ import { useState, useEffect } from 'react';
 import { JobsGallery } from './jobs-gallery';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import type { Job } from '@/locales/translations';
+
+
+interface JobsListProps {
+  jobs: Job[];
+}
 
 type ViewMode = 'list' | 'gallery';
 
-export function JobsList() {
+export function JobsList({ jobs }: JobsListProps) {
   const { t } = useLanguage();
-  const jobs = t.dashboard_employer.activeJobs.jobs;
   const [view, setView] = useState<ViewMode>('list');
 
   useEffect(() => {
@@ -131,7 +135,7 @@ export function JobsList() {
                 </TableHeader>
                 <TableBody>
                   {jobs.map((job, index) => (
-                    <TableRow key={job.title}>
+                    <TableRow key={job.id}>
                       <TableCell className="font-medium">
                         <div className="flex items-center gap-3">
                           <Image
