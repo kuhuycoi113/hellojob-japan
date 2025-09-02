@@ -873,29 +873,29 @@
       "description": "You have {count} new applications this week.",
       "applications": [
         {
-          "name": "Olivia Martin",
-          "email": "olivia.martin@email.com",
-          "salary": "+$1,999.00"
+          "name": "Nguyen Van An",
+          "email": "an.nguyen@email.com",
+          "salary": "+185,000 JPY"
         },
         {
-          "name": "Jackson Lee",
-          "email": "jackson.lee@email.com",
-          "salary": "+$39.00"
+          "name": "Tran Thi Binh",
+          "email": "binh.tran@email.com",
+          "salary": "+210,000 JPY"
         },
         {
-          "name": "Isabella Nguyen",
-          "email": "isabella.nguyen@email.com",
-          "salary": "+$299.00"
+          "name": "Le Hoang Long",
+          "email": "long.le@email.com",
+          "salary": "+160,000 JPY"
         },
         {
-          "name": "William Kim",
-          "email": "will@email.com",
-          "salary": "+$99.00"
+          "name": "Pham Thuy Chi",
+          "email": "chi.pham@email.com",
+          "salary": "+195,000 JPY"
         },
         {
-          "name": "Sofia Davis",
-          "email": "sofia.davis@email.com",
-          "salary": "+$39.00"
+          "name": "Vu Duc Dung",
+          "email": "dung.vu@email.com",
+          "salary": "+175,000 JPY"
         }
       ]
     },
@@ -1311,3 +1311,5 @@
     "note": "(This tool is available on the Hofstede Insights website.)"
   }
 }
+
+    
