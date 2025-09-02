@@ -488,14 +488,6 @@
     "goldenCircle": {
       "title": "Vòng tròn Vàng",
       "description": "Làm rõ 'Lý do tại sao' công ty bạn tồn tại, truyền cảm hứng hành động và thu hút những người có cùng niềm tin với bạn."
-    },
-    "gallup": {
-      "title": "Bài kiểm tra CliftonStrengths (Gallup)",
-      "description": "Khám phá các tài năng bẩm sinh của bạn để hiểu rõ điểm mạnh của bản thân và xây dựng đội ngũ hiệu quả."
-    },
-    "hofstede": {
-      "title": "Quét văn hóa Hofstede",
-      "description": "So sánh văn hóa tổ chức của bạn với văn hóa quốc gia của nhân viên để quản lý hiệu quả sự khác biệt."
     }
   },
   "barrettTest": {
@@ -1164,19 +1156,45 @@
       "revenue": "Doanh thu"
     },
     "build": {
-      "title": "Xây dựng khóa học của bạn",
-      "description": "Bắt đầu tạo khóa học của bạn bằng cách thêm tiêu đề, mô tả, và xây dựng chương trình học.",
-      "placeholder": "Nội dung chi tiết cho việc xây dựng khóa học sẽ được thiết kế ở đây."
+      "title": "Xây dựng khoá học của bạn",
+      "description": "Bắt đầu tạo khoá học bằng cách thêm tiêu đề, mô tả và xây dựng chương trình học.",
+      "info": {
+        "title": "Thông tin khoá học",
+        "courseTitleLabel": "Tên khoá học",
+        "courseTitlePlaceholder": "VD: Tiếng Nhật thương mại nâng cao",
+        "courseDescriptionLabel": "Mô tả khoá học",
+        "courseDescriptionPlaceholder": "Mô tả về khoá học, đối tượng, và những gì học viên sẽ học được."
+      },
+      "curriculum": {
+        "title": "Chương trình học",
+        "description": "Xây dựng cấu trúc khoá học bằng cách thêm các chương và bài học. Tải lên video cho mỗi bài học.",
+        "addChapter": "Thêm chương",
+        "addLesson": "Thêm bài học",
+        "lesson": "Bài học",
+        "lessonTitlePlaceholder": "VD: Kính ngữ trong email",
+        "uploadVideo": "Tải video"
+      },
+      "payment": {
+        "title": "Giá & Thanh toán",
+        "priceLabel": "Giá khoá học (VND)",
+        "payoutTitle": "Thông tin nhận tiền",
+        "payoutDescription": "HelloJob giữ lại 30% hoa hồng trên mỗi lượt bán. Bạn sẽ nhận được 70% doanh thu. Vui lòng cung cấp thông tin tài khoản ngân hàng để nhận thanh toán.",
+        "bankNameLabel": "Tên ngân hàng",
+        "bankNamePlaceholder": "VD: Vietcombank",
+        "accountNumberLabel": "Số tài khoản",
+        "accountNumberPlaceholder": "VD: 0123456789",
+        "accountNameLabel": "Tên chủ tài khoản",
+        "accountNamePlaceholder": "VD: NGUYEN VAN A"
+      },
+      "submitButton": "Xuất bản khoá học"
     },
     "promote": {
       "title": "Quảng bá khóa học của bạn",
-      "description": "Sử dụng các công cụ marketing và gợi ý của chúng tôi để tiếp cận nhiều học viên hơn.",
-      "placeholder": "Các công cụ và chiến lược quảng bá sẽ được hiển thị ở đây."
+      "description": "Sử dụng các công cụ marketing và gợi ý của chúng tôi để tiếp cận nhiều học viên hơn."
     },
     "revenue": {
       "title": "Quản lý doanh thu",
-      "description": "Theo dõi thu nhập, xem báo cáo chi tiết và quản lý các khoản thanh toán của bạn.",
-      "placeholder": "Bảng điều khiển doanh thu và báo cáo sẽ được thiết kế ở đây."
+      "description": "Theo dõi thu nhập, xem báo cáo chi tiết và quản lý các khoản thanh toán của bạn."
     }
   },
   "gallupTest": {

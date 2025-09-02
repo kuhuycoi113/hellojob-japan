@@ -19,7 +19,7 @@ export function ShareCourseForm() {
           icon: <PenSquare className="w-10 h-10 text-primary"/>,
           title: t.shareCourse.tabs.build,
           description: t.shareCourse.build.description,
-          href: "#"
+          href: "/elearning/share-course/build"
       },
       {
           icon: <Presentation className="w-10 h-10 text-yellow-500"/>,
