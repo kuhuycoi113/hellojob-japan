@@ -11,8 +11,14 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('vi');
+export const LanguageProvider = ({ 
+  children,
+  defaultLanguage = 'vi'
+}: { 
+  children: ReactNode,
+  defaultLanguage?: Language 
+}) => {
+  const [language, setLanguage] = useState<Language>(defaultLanguage);
   const t = translations[language];
 
   return (
