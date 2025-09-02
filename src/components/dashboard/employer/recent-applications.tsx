@@ -1,5 +1,4 @@
 
-// This is a new file.
 'use client';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -23,7 +22,7 @@ export function RecentApplications() {
         {applications.map((app, index) => (
             <div key={index} className="flex items-center gap-4">
                 <Avatar className="hidden h-9 w-9 sm:flex">
-                    <AvatarImage src={`https://i.pravatar.cc/150?u=a${index}`} alt="Avatar" />
+                    <AvatarImage src={`https://i.pravatar.cc/150?u=a042581f4e29026704d${index}`} alt="Avatar" />
                     <AvatarFallback>{app.name.charAt(0)}</AvatarFallback>
                 </Avatar>
                 <div className="grid gap-1">
