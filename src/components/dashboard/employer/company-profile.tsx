@@ -10,6 +10,7 @@ import { DashboardStats } from './dashboard-stats';
 import { OverviewChart } from './overview-chart';
 import { RecentApplications } from './recent-applications';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Overview } from '../partner/overview';
 
 export function CompanyProfile() {
   const { t } = useLanguage();
@@ -20,6 +21,10 @@ export function CompanyProfile() {
       <DashboardHeader />
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
         <div className="mx-auto grid w-full max-w-7xl gap-6">
+          <div className="mt-4">
+            <Overview />
+          </div>
+          
           <div className="mt-4">
             <JobsList />
           </div>
