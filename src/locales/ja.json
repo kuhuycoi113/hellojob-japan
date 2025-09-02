@@ -1066,8 +1066,8 @@
       }
     },
     "company_profile": {
-      "industry": "製造・加工業",
-      "location": "愛知県",
+      "industry": "人材派遣・労働者輸出",
+      "location": "ハノイ、ベトナム",
       "editProfile": "プロフィール編集",
       "yourJobs": "貴社の求人",
       "yourCandidates": "貴社の候補者",
@@ -1084,13 +1084,13 @@
       "history": {
         "title": "沿革・主な出来事",
         "event1_title": "会社設立",
-        "event1_desc": "従業員5名で自動車部品市場に特化して事業を開始。",
-        "event2_title": "工場拡張",
-        "event2_desc": "ISO 9001認証を取得し、生産規模を倍増。"
+        "event1_desc": "従業員10名で日本市場に特化して事業を開始。",
+        "event2_title": "労働者派遣許可を取得",
+        "event2_desc": "労働・傷病兵・社会問題省から正式に認可され、事業規模を拡大。"
       },
       "licenses": {
         "title": "許認可・認証",
-        "item1": "事業許可番号 12345-XYZ",
+        "item1": "労働者海外派遣事業許可証 第999/LDTBXH-GP号",
         "item2": "ISO 9001:2015 認証"
       },
       "companyInfo": {
@@ -1105,8 +1105,8 @@
       "industryInfo": {
         "title": "業種・分野",
         "mainIndustry": "主な業種",
-        "industry1": "自動車製造",
-        "industry2": "食品加工",
+        "industry1": "建設",
+        "industry2": "機械",
         "fields": "事業分野",
         "placeholder": "事業分野がありません。クリックして更新してください。"
       },
