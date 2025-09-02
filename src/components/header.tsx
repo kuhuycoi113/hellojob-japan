@@ -147,17 +147,17 @@ export function Header() {
 
   const visaSubTypes = {
     intern: [
-      { title: t.visaSubTypes.intern.threeYear, href: "#"},
-      { title: t.visaSubTypes.intern.oneYear, href: "#"},
-      { title: t.visaSubTypes.intern.go, href: "#"},
+      { title: t.visaSubTypes?.intern?.threeYear, href: "#"},
+      { title: t.visaSubTypes?.intern?.oneYear, href: "#"},
+      { title: t.visaSubTypes?.intern?.go, href: "#"},
     ],
     skilled: [
-      { title: t.visaSubTypes.skilled.japan, href: "#"},
-      { title: t.visaSubTypes.skilled.vietnam, href: "#"},
+      { title: t.visaSubTypes?.skilled?.japan, href: "#"},
+      { title: t.visaSubTypes?.skilled?.vietnam, href: "#"},
     ],
     engineer: [
-      { title: t.visaSubTypes.engineer.japan, href: "#"},
-      { title: t.visaSubTypes.engineer.vietnam, href: "#"},
+      { title: t.visaSubTypes?.engineer?.japan, href: "#"},
+      { title: t.visaSubTypes?.engineer?.vietnam, href: "#"},
     ],
   };
 
@@ -273,11 +273,11 @@ export function Header() {
                     <div className="flex items-center gap-4">
                         <Avatar className="h-12 w-12">
                             <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                            <AvatarFallback>U</AvatarFallback>
+                            <AvatarFallback>TVC</AvatarFallback>
                         </Avatar>
                         <div>
-                            <p className="font-semibold text-base">Global Support Union</p>
-                            <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.union.title)}</p>
+                            <p className="font-semibold text-base">Công ty cổ phần TVC</p>
+                            <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.sendingCompany.title)}</p>
                         </div>
                     </div>
                   </Link>
@@ -388,4 +388,5 @@ export function Header() {
   );
 }
 
+    
     

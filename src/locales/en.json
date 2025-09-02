@@ -18,7 +18,7 @@
     "postJob": "Post a Job",
     "menuItems": {
       "recruiterAccount": "Recruiter Account",
-      "recruiterAccountType": "\"{type}\" Account",
+      "recruiterAccountType": "{type} Account",
       "postJobAI": "Post with AI",
       "howItWorks": "How it Works",
       "recruitRight": "Recruit Right",
@@ -1084,9 +1084,7 @@
       "history": {
         "title": "History & Milestones",
         "event1_title": "Company Establishment",
-        "event1_desc": "Started with a team of 10, focusing on the Japanese market.",
-        "event2_title": "Expanded Workshop",
-        "event2_desc": "Achieved ISO 9001 certification and doubled production scale."
+        "event1_desc": "Started with a team of 10, focusing on the Japanese market."
       },
       "licenses": {
         "title": "Licenses & Certifications",

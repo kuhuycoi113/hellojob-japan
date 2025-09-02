@@ -18,7 +18,7 @@
     "postJob": "求人掲載",
     "menuItems": {
       "recruiterAccount": "採用担当者アカウント",
-      "recruiterAccountType": "「{type}」アカウント",
+      "recruiterAccountType": "アカウント{type}",
       "postJobAI": "AIで求人作成",
       "howItWorks": "ご利用の流れ",
       "recruitRight": "採用ご担当者様へ",
@@ -1066,7 +1066,7 @@
       }
     },
     "company_profile": {
-      "industry": "人材派遣・労働者輸出",
+      "industry": "派遣会社",
       "location": "ハノイ、ベトナム",
       "editProfile": "プロフィール編集",
       "yourJobs": "貴社の求人",
@@ -1084,14 +1084,11 @@
       "history": {
         "title": "沿革・主な出来事",
         "event1_title": "会社設立",
-        "event1_desc": "従業員10名で日本市場に特化して事業を開始。",
-        "event2_title": "労働者派遣許可を取得",
-        "event2_desc": "労働・傷病兵・社会問題省から正式に認可され、事業規模を拡大。"
+        "event1_desc": "従業員10名で日本市場に特化して事業を開始。"
       },
       "licenses": {
         "title": "許認可・認証",
-        "item1": "労働者海外派遣事業許可証 第999/LDTBXH-GP号",
-        "item2": "ISO 9001:2015 認証"
+        "item1": "労働者海外派遣事業許可証 第999/LDTBXH-GP号"
       },
       "companyInfo": {
         "title": "企業情報",

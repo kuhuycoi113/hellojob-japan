@@ -18,7 +18,7 @@
     "postJob": "Đăng việc làm",
     "menuItems": {
       "recruiterAccount": "Tài khoản nhà tuyển dụng",
-      "recruiterAccountType": "Tài khoản \"{type}\"",
+      "recruiterAccountType": "Tài khoản {type}",
       "postJobAI": "Đăng việc AI",
       "howItWorks": "Các bước",
       "recruitRight": "Tuyển đúng người",
@@ -762,7 +762,7 @@
       "description": "Quản lý và hỗ trợ thực tập sinh."
     },
     "sendingCompany": {
-      "title": "Công ty phái cử (Okuridashi Kikan)",
+      "title": "Công ty phái cử",
       "description": "Tuyển và phái cử lao động từ Việt Nam."
     },
     "hakenCompany": {
@@ -797,7 +797,7 @@
       "description": "Chuyên gia có trình độ cao, bằng cấp chuyên ngành."
     }
   },
-  "visaSubTypes": {
+   "visaSubTypes": {
     "title": "Vui lòng chọn chi tiết hơn",
     "intern": {
       "threeYear": "Thực tập sinh 3 năm",
@@ -805,12 +805,12 @@
       "go": "Thực tập sinh 3 Go"
     },
     "skilled": {
-      "japan": "Ứng viên đặc định tại Nhật",
-      "vietnam": "Ứng viên đặc định từ Việt Nam"
+      "japan": "Ứng viên Đặc định tại Nhật",
+      "vietnam": "Ứng viên Đặc định từ Việt Nam"
     },
     "engineer": {
-      "japan": "Ứng viên kỹ sư, tri thức tại Nhật",
-      "vietnam": "Ứng viên kỹ sư, tri thức từ Việt Nam"
+      "japan": "Ứng viên Kỹ sư/Tri thức tại Nhật",
+      "vietnam": "Ứng viên Kỹ sư/Tri thức từ Việt Nam"
     }
   },
   "postMethod": {
@@ -1066,8 +1066,8 @@
       }
     },
     "company_profile": {
-      "industry": "Sản xuất & Chế biến",
-      "location": "Aichi, Nhật Bản",
+      "industry": "Công ty phái cử",
+      "location": "Hà Nội, Việt Nam",
       "editProfile": "Sửa hồ sơ",
       "yourJobs": "Việc làm của bạn",
       "yourCandidates": "Ứng viên của bạn",
@@ -1084,13 +1084,11 @@
       "history": {
         "title": "Lịch sử & các mốc sự kiện",
         "event1_title": "Thành lập công ty",
-        "event1_desc": "Bắt đầu với 5 nhân viên, tập trung vào thị trường sản xuất linh kiện ô tô.",
-        "event2_title": "Mở rộng nhà xưởng",
-        "event2_desc": "Đạt chứng nhận ISO 9001 và mở rộng quy mô sản xuất gấp đôi."
+        "event1_desc": "Bắt đầu với đội ngũ 10 nhân viên, tập trung vào thị trường Nhật Bản."
       },
       "licenses": {
         "title": "Giấy phép & Chứng nhận",
-        "item1": "Giấy phép kinh doanh số 12345-XYZ",
+        "item1": "Giấy phép hoạt động dịch vụ đưa người lao động đi làm việc ở nước ngoài số 999/LDTBXH-GP",
         "item2": "Chứng nhận ISO 9001:2015"
       },
       "companyInfo": {
@@ -1105,8 +1103,8 @@
       "industryInfo": {
         "title": "Ngành nghề & Lĩnh vực",
         "mainIndustry": "Ngành nghề chính",
-        "industry1": "Sản xuất ô tô",
-        "industry2": "Chế biến thực phẩm",
+        "industry1": "Automotive Manufacturing",
+        "industry2": "Food Processing",
         "fields": "Lĩnh vực hoạt động",
         "placeholder": "Chưa có lĩnh vực hoạt động. Nhấn vào đây để cập nhật."
       },
@@ -1206,12 +1204,12 @@
         "title": "Tăng trưởng Doanh thu",
         "revenueLabel": "Doanh thu",
         "data": [
-            { "month": "Tháng 1", "revenue": 4000000 },
-            { "month": "Tháng 2", "revenue": 3000000 },
-            { "month": "Tháng 3", "revenue": 5000000 },
-            { "month": "Tháng 4", "revenue": 4500000 },
-            { "month": "Tháng 5", "revenue": 6000000 },
-            { "month": "Tháng 6", "revenue": 5500000 }
+          { "month": "Tháng 1", "revenue": 4000000 },
+          { "month": "Tháng 2", "revenue": 3000000 },
+          { "month": "Tháng 3", "revenue": 5000000 },
+          { "month": "Tháng 4", "revenue": 4500000 },
+          { "month": "Tháng 5", "revenue": 6000000 },
+          { "month": "Tháng 6", "revenue": 5500000 }
         ]
       },
        "payout": {
@@ -1250,10 +1248,10 @@
             "failed": "Thất bại"
         },
         "list": [
-            { "id": "TRX001", "student": "Nguyễn Văn A", "course": "Tiếng Nhật thương mại", "amount": "2,000,000đ", "status": "Thành công", "date": "2024-07-20" },
-            { "id": "TRX002", "student": "Trần Thị B", "course": "Kỹ năng phỏng vấn", "amount": "1,500,000đ", "status": "Thành công", "date": "2024-07-19" },
-            { "id": "TRX003", "student": "Lê Văn C", "course": "Tiếng Nhật thương mại", "amount": "2,000,000đ", "status": "Thất bại", "date": "2024-07-19" },
-            { "id": "TRX004", "student": "Phạm Thị D", "course": "Văn hoá công sở Nhật", "amount": "1,200,000đ", "status": "Thành công", "date": "2024-07-18" }
+            { "id": "TRX001", "student": "Nguyễn Văn A", "course": "Tiếng Nhật thương mại", "amount": "2.000.000đ", "status": "Thành công", "date": "2024-07-20" },
+            { "id": "TRX002", "student": "Trần Thị B", "course": "Kỹ năng phỏng vấn", "amount": "1.500.000đ", "status": "Thành công", "date": "2024-07-19" },
+            { "id": "TRX003", "student": "Lê Văn C", "course": "Tiếng Nhật thương mại", "amount": "2.000.000đ", "status": "Thất bại", "date": "2024-07-19" },
+            { "id": "TRX004", "student": "Phạm Thị D", "course": "Văn hoá công sở Nhật", "amount": "1.200.000đ", "status": "Thành công", "date": "2024-07-18" }
         ]
       }
     }
