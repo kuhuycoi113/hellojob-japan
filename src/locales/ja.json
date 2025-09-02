@@ -1206,23 +1206,24 @@
         "title": "収益の推移",
         "revenueLabel": "収益",
         "data": [
-            { "month": "1月", "revenue": 4000 },
-            { "month": "2月", "revenue": 3000 },
-            { "month": "3月", "revenue": 5000 },
-            { "month": "4月", "revenue": 4500 },
-            { "month": "5月", "revenue": 6000 },
-            { "month": "6月", "revenue": 5500 }
+            { "month": "1月", "revenue": 400000 },
+            { "month": "2月", "revenue": 300000 },
+            { "month": "3月", "revenue": 500000 },
+            { "month": "4月", "revenue": 450000 },
+            { "month": "5月", "revenue": 600000 },
+            { "month": "6月", "revenue": 550000 }
         ]
       },
        "payout": {
         "title": "支払い",
         "nextPayout": {
             "title": "次回の支払い",
+            "amount": "¥131,250",
             "date": "2024年8月15日に支払い予定"
         },
-        "fee": {"title": "プラットフォーム手数料"},
-        "tax": {"title": "源泉徴収税"},
-        "net": {"title": "手取り額"},
+        "fee": {"title": "プラットフォーム手数料 (30%)", "value": "-¥56,250"},
+        "tax": {"title": "源泉徴収税", "value": "-¥13,125"},
+        "net": {"title": "手取り額", "value": "¥118,125"},
         "historyButton": "支払い履歴を表示"
       },
       "funnel": {

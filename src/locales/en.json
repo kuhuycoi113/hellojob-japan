@@ -1206,23 +1206,24 @@
         "title": "Revenue Growth",
         "revenueLabel": "Revenue",
         "data": [
-            { "month": "Jan", "revenue": 4000 },
-            { "month": "Feb", "revenue": 3000 },
-            { "month": "Mar", "revenue": 5000 },
-            { "month": "Apr", "revenue": 4500 },
-            { "month": "May", "revenue": 6000 },
-            { "month": "Jun", "revenue": 5500 }
+          { "month": "Jan", "revenue": 4000000 },
+          { "month": "Feb", "revenue": 3000000 },
+          { "month": "Mar", "revenue": 5000000 },
+          { "month": "Apr", "revenue": 4500000 },
+          { "month": "May", "revenue": 6000000 },
+          { "month": "Jun", "revenue": 5500000 }
         ]
       },
        "payout": {
         "title": "Payouts",
         "nextPayout": {
             "title": "Next Payout",
+            "amount": "$877.80",
             "date": "Scheduled for Aug 15, 2024"
         },
-        "fee": {"title": "Platform Fee"},
-        "tax": {"title": "Withholding Tax"},
-        "net": {"title": "Net Payout"},
+        "fee": {"title": "Platform Fee (30%)", "value": "-$376.20"},
+        "tax": {"title": "Withholding Tax", "value": "-$87.78"},
+        "net": {"title": "Net Payout", "value": "$790.02"},
         "historyButton": "View Payout History"
       },
       "funnel": {

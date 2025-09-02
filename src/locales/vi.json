@@ -1197,32 +1197,33 @@
       "description": "Theo dõi thu nhập, xem báo cáo chi tiết và quản lý các khoản thanh toán của bạn.",
       "exportButton": "Xuất Báo cáo",
       "stats": {
-        "totalRevenue": { "title": "Tổng Doanh thu", "value": "25,080,000đ", "change": "+20.1% so với tháng trước" },
+        "totalRevenue": { "title": "Tổng Doanh thu", "value": "25.080.000đ", "change": "+20.1% so với tháng trước" },
         "paidStudents": { "title": "Học viên đã mua", "value": "415", "change": "+12 so với tuần trước" },
         "conversionRate": { "title": "Tỷ lệ chuyển đổi", "value": "8.52%", "change": "+1.2% so với tháng trước" },
-        "netRevenue": { "title": "Doanh thu ròng", "value": "15,048,000đ", "change": "Bạn nhận được 70% sau phí" }
+        "netRevenue": { "title": "Doanh thu ròng", "value": "15.048.000đ", "change": "Bạn nhận được 70% sau phí" }
       },
       "chart": {
         "title": "Tăng trưởng Doanh thu",
         "revenueLabel": "Doanh thu",
         "data": [
-            { "month": "Tháng 1", "revenue": 4000 },
-            { "month": "Tháng 2", "revenue": 3000 },
-            { "month": "Tháng 3", "revenue": 5000 },
-            { "month": "Tháng 4", "revenue": 4500 },
-            { "month": "Tháng 5", "revenue": 6000 },
-            { "month": "Tháng 6", "revenue": 5500 }
+            { "month": "Tháng 1", "revenue": 4000000 },
+            { "month": "Tháng 2", "revenue": 3000000 },
+            { "month": "Tháng 3", "revenue": 5000000 },
+            { "month": "Tháng 4", "revenue": 4500000 },
+            { "month": "Tháng 5", "revenue": 6000000 },
+            { "month": "Tháng 6", "revenue": 5500000 }
         ]
       },
        "payout": {
         "title": "Thanh toán",
         "nextPayout": {
             "title": "Kỳ thanh toán tiếp theo",
+            "amount": "12.540.000đ",
             "date": "Sẽ thanh toán vào ngày 15/08/2024"
         },
-        "fee": {"title": "Phí nền tảng"},
-        "tax": {"title": "Thuế HelloJob nộp hộ"},
-        "net": {"title": "Thực nhận"},
+        "fee": {"title": "Phí nền tảng (30%)", "value": "-7.524.000đ"},
+        "tax": {"title": "Thuế HelloJob nộp hộ", "value": "-2.508.000đ"},
+        "net": {"title": "Thực nhận", "value": "15.048.000đ"},
         "historyButton": "Xem lịch sử thanh toán"
       },
       "funnel": {

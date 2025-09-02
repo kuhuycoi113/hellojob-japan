@@ -31,16 +31,14 @@ import {
   DollarSign,
   Users,
   TrendingUp,
-  LineChart,
-  Filter,
+  Banknote,
+  Receipt,
+  Download,
   MousePointerClick,
   Eye,
   ShoppingCart,
   CheckCircle,
   XCircle,
-  Banknote,
-  Receipt,
-  Download,
 } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -55,7 +53,7 @@ const FunnelStep = ({ icon, title, value, colorClass }: { icon: React.ReactNode,
 )
 
 export function RevenueDashboard() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const revenue = t.shareCourse.revenue;
   const transactions = revenue.transactions.list;
   const chartData = revenue.chart.data;
@@ -75,6 +73,16 @@ export function RevenueDashboard() {
     { icon: <CheckCircle className="w-8 h-8 text-green-500" />, title: revenue.funnel.paidPurchases, value: "415", colorClass: "bg-green-500" },
     { icon: <XCircle className="w-8 h-8 text-red-500" />, title: revenue.funnel.abandonedCarts, value: "205", colorClass: "bg-red-500" },
   ]
+  
+  const formatCurrency = (value: number) => {
+    if (language === 'vi') {
+        return `${(value / 1000).toLocaleString('vi-VN')}kđ`;
+    }
+    if (language === 'ja') {
+        return `${(value / 1000)}k円`;
+    }
+    return `$${(value / 1000)}k`;
+  }
 
   return (
     <div className="container mx-auto px-4 max-w-7xl space-y-8">
@@ -111,12 +119,22 @@ export function RevenueDashboard() {
               <BarChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
                 <XAxis dataKey="month" stroke="#888888" fontSize={12} tickLine={false} axisLine={false}/>
-                <YAxis stroke="#888888" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `${value / 1000}k`}/>
+                <YAxis stroke="#888888" fontSize={12} tickLine={false} axisLine={false} tickFormatter={formatCurrency}/>
                 <Tooltip
+                    cursor={{fill: 'hsl(var(--muted))', radius: 'var(--radius)'}}
                     contentStyle={{
                         backgroundColor: 'hsl(var(--background))',
                         borderColor: 'hsl(var(--border))',
                         borderRadius: 'var(--radius)'
+                    }}
+                     formatter={(value: number) => {
+                         if (language === 'vi') {
+                            return `${value.toLocaleString('vi-VN')}đ`;
+                        }
+                        if (language === 'ja') {
+                            return `${value.toLocaleString('ja-JP')}円`;
+                        }
+                        return `$${value.toLocaleString('en-US')}`;
                     }}
                 />
                 <Legend iconType="circle" iconSize={8}/>
@@ -135,15 +153,15 @@ export function RevenueDashboard() {
            <CardContent className="space-y-4">
                 <div className="p-4 rounded-lg bg-green-50 border border-green-200 text-green-900">
                     <p className="text-sm font-medium">{revenue.payout.nextPayout.title}</p>
-                    <p className="text-2xl font-bold">12,540,000đ</p>
+                    <p className="text-2xl font-bold">{revenue.payout.nextPayout.amount}</p>
                     <p className="text-xs">{revenue.payout.nextPayout.date}</p>
                 </div>
                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between"><span>{revenue.stats.totalRevenue.title}</span> <span>25,080,000đ</span></div>
-                    <div className="flex justify-between"><span>{revenue.payout.fee.title} (30%)</span> <span className="text-red-600">-7,524,000đ</span></div>
-                    <div className="flex justify-between"><span>{revenue.payout.tax.title}</span> <span className="text-red-600">-2,508,000đ</span></div>
+                    <div className="flex justify-between"><span>{revenue.stats.totalRevenue.title}</span> <span>{revenue.stats.totalRevenue.value}</span></div>
+                    <div className="flex justify-between"><span>{revenue.payout.fee.title}</span> <span className="text-red-600">{revenue.payout.fee.value}</span></div>
+                    <div className="flex justify-between"><span>{revenue.payout.tax.title}</span> <span className="text-red-600">{revenue.payout.tax.value}</span></div>
                     <hr className="my-2"/>
-                    <div className="flex justify-between font-bold"><span>{revenue.payout.net.title}</span> <span>15,048,000đ</span></div>
+                    <div className="flex justify-between font-bold"><span>{revenue.payout.net.title}</span> <span>{revenue.payout.net.value}</span></div>
                  </div>
                  <Button className="w-full">{revenue.payout.historyButton}</Button>
            </CardContent>
