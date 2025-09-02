@@ -1123,20 +1123,24 @@
       "description": "Review and accept new recruitment orders from companies.",
       "opportunities": [
         {
+            "id": "kanagawa-care-01",
             "title": "Caregiver",
             "company": "Fukushi Care Center",
             "location": "Kanagawa",
             "visa": "Specified Skilled Worker",
             "quantity": "3 people",
-            "expires": "Expires in 23 hours"
+            "expires": "Expires in 23 hours",
+            "description": "Caring for the elderly at a nursing home in Kanagawa. The job includes assisting with daily activities, health care, and recreational activities. Applicants are required to have a nursing certificate and work experience."
         },
         {
+            "id": "miyazaki-agri-01",
             "title": "Agricultural Worker",
             "company": "Miyazaki Farm",
             "location": "Miyazaki",
             "visa": "Technical Intern",
             "quantity": "5 people",
-            "expires": "Expires in 2 days"
+            "expires": "Expires in 2 days",
+            "description": "Working at a farm that grows organic vegetables using Japanese technology. The work includes planting, caring for, harvesting, and packaging products. No experience required, training will be provided."
         }
       ]
     },

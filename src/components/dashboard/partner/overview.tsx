@@ -25,9 +25,11 @@ export function Overview() {
         </CardHeader>
         <CardContent className="grid gap-8 md:grid-cols-2">
             {opportunities.map((opp, index) => (
-                <Card key={index}>
+                <Card key={index} className="group hover:shadow-xl transition-shadow duration-300">
                     <CardHeader>
-                        <CardTitle>{opp.title}</CardTitle>
+                        <Link href={`/dashboard/jobs/${opp.id}`}>
+                           <CardTitle className="hover:text-primary transition-colors">{opp.title}</CardTitle>
+                        </Link>
                         <CardDescription>{opp.company}</CardDescription>
                     </CardHeader>
                     <CardContent className="grid gap-4">

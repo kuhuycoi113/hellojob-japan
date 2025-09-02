@@ -549,7 +549,7 @@
       "title": "Phân tích & Gợi ý từ AI",
       "loading": "Đang phân tích... Vui lòng chờ trong giây lát."
     }
-  },
+},
   "courseDetail": {
     "category": "Thấu hiểu đa văn hoá",
     "title": "Thấu hiểu Người lao động Việt: Cẩm nang văn hoá",
@@ -1123,20 +1123,24 @@
       "description": "Xem xét và chấp nhận các đơn hàng tuyển dụng mới từ các xí nghiệp.",
       "opportunities": [
         {
+            "id": "kanagawa-care-01",
             "title": "Nhân viên hộ lý",
             "company": "Trung tâm chăm sóc Fukushi",
             "location": "Kanagawa",
             "visa": "Kỹ năng đặc định",
             "quantity": "3 người",
-            "expires": "Hết hạn trong 23 giờ"
+            "expires": "Hết hạn trong 23 giờ",
+            "description": "Công việc chăm sóc người cao tuổi tại viện dưỡng lão ở Kanagawa. Công việc bao gồm hỗ trợ sinh hoạt hàng ngày, chăm sóc sức khỏe và các hoạt động giải trí. Yêu cầu ứng viên có chứng chỉ điều dưỡng và kinh nghiệm làm việc."
         },
         {
+            "id": "miyazaki-agri-01",
             "title": "Công nhân nông nghiệp",
             "company": "Nông trang Miyazaki",
             "location": "Miyazaki",
             "visa": "Thực tập sinh kỹ năng",
             "quantity": "5 người",
-            "expires": "Hết hạn trong 2 ngày"
+            "expires": "Hết hạn trong 2 ngày",
+            "description": "Làm việc tại nông trang trồng rau sạch theo công nghệ Nhật Bản. Công việc bao gồm gieo trồng, chăm sóc, thu hoạch và đóng gói sản phẩm. Không yêu cầu kinh nghiệm, sẽ được đào tạo."
         }
       ]
     },
