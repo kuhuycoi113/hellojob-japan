@@ -1,4 +1,4 @@
-// This is a new file.
+
 'use client';
 
 import Image from 'next/image';
@@ -8,15 +8,28 @@ import { useLanguage } from '@/contexts/language-context';
 import { ArrowRight, LayoutGrid, List, PlusCircle } from 'lucide-react';
 import { allPartners } from '@/data/partners';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { PartnersTable } from './partners-table';
+
+type ViewMode = 'list' | 'gallery';
 
 export function YourPartners() {
   const { t, language } = useLanguage();
   const partners = allPartners;
   const isJapanese = language === 'ja';
-  const [view, setView] = useState<'gallery' | 'list'>('list');
+  const [view, setView] = useState<ViewMode>('list');
+
+  useEffect(() => {
+    const savedView = localStorage.getItem('partners-view-mode') as ViewMode;
+    if (savedView) {
+      setView(savedView);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('partners-view-mode', view);
+  }, [view]);
 
   return (
     <Card>
@@ -73,8 +86,8 @@ export function YourPartners() {
                     />
                     </div>
                     <CardContent className="flex flex-col flex-grow items-center p-0">
-                    <h3 className="font-bold text-lg text-gray-800">{isJapanese ? partner.name_ja : partner.name}</h3>
-                    <p className="text-sm text-muted-foreground mt-1 mb-4 flex-grow">{isJapanese ? partner.type_ja : partner.type}</p>
+                    <h3 className="font-bold text-lg text-gray-800 flex-grow">{isJapanese ? partner.name_ja : partner.name}</h3>
+                    <p className="text-sm text-muted-foreground mt-1 mb-4">{isJapanese ? partner.type_ja : partner.type}</p>
                     <Button asChild variant="link" className="p-0 text-sm">
                         <Link href="#">
                             {t.featuredPartners.viewProfile} <ArrowRight className="ml-1 h-3 w-3" />

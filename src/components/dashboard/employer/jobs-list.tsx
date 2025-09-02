@@ -29,15 +29,29 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/language-context';
 import { MoreHorizontal, PlusCircle, List, LayoutGrid } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { JobsGallery } from './jobs-gallery';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
+type ViewMode = 'list' | 'gallery';
+
 export function JobsList() {
   const { t } = useLanguage();
   const jobs = t.dashboard_employer.activeJobs.jobs;
-  const [view, setView] = useState<'list' | 'gallery'>('list');
+  const [view, setView] = useState<ViewMode>('list');
+
+  useEffect(() => {
+    const savedView = localStorage.getItem('jobs-view-mode') as ViewMode;
+    if (savedView) {
+      setView(savedView);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('jobs-view-mode', view);
+  }, [view]);
+
 
   const getStatusVariant = (status: string): "secondary" | "outline" | "default" => {
     switch (status) {

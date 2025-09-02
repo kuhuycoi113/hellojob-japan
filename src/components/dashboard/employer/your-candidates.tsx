@@ -1,6 +1,7 @@
+
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { LayoutGrid, List, PlusCircle } from 'lucide-react';
@@ -10,10 +11,24 @@ import { CandidatesTable } from './candidates-table';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
+type ViewMode = 'list' | 'gallery';
+
 export function YourCandidates() {
   const { t } = useLanguage();
   const candidates = t.dashboard_employer.candidates;
-  const [view, setView] = useState<'gallery' | 'list'>('list');
+  const [view, setView] = useState<ViewMode>('list');
+  
+  useEffect(() => {
+    const savedView = localStorage.getItem('candidates-view-mode') as ViewMode;
+    if (savedView) {
+      setView(savedView);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('candidates-view-mode', view);
+  }, [view]);
+
 
   return (
     <Tabs defaultValue="all">
