@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  Briefcase,
   Building,
   Calendar,
   Camera,
@@ -11,6 +10,8 @@ import {
   Users,
   Video,
   FileText,
+  MessageSquare,
+  Mail,
 } from 'lucide-react';
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/language-context';
@@ -25,6 +26,30 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+
+const LineIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21.0001 0H3.00006C1.34319 0 0 1.34314 0 3V21C0 22.6569 1.34319 24 3.00006 24H21.0001C22.6569 24 24.0001 22.6569 24.0001 21V3C24.0001 1.34314 22.6569 0 21.0001 0Z" fill="#06C755"/>
+        <path d="M10.3341 17.3333H8.00078V10.8333H10.3341V17.3333Z" fill="white"/>
+        <path d="M12.8334 10.8333C12.0417 10.8333 11.5 11.2917 11.5 12.0833V17.3333H9.16669V7.5H11.5V8.5C11.9167 7.83334 12.6667 7.5 13.5 7.5C15.5 7.5 16 9 16 10.5833V17.3333H13.6667V11.5C13.6667 11.0833 13.5 10.8333 12.8334 10.8333Z" fill="white"/>
+        <path d="M8.58341 7.16667C7.66675 7.16667 7.00008 7.83334 7.00008 8.75C7.00008 9.66667 7.66675 10.3333 8.58341 10.3333C9.50008 10.3333 10.1667 9.66667 10.1667 8.75C10.1667 7.83334 9.50008 7.16667 8.58341 7.16667Z" fill="white"/>
+        <path d="M17.0001 13.5833C17.0001 12.6667 17.6668 12 18.5834 12C19.5001 12 20.1668 12.6667 20.1668 13.5833C20.1668 14.5 19.5001 15.1667 18.5834 15.1667V17.3333H16.1668V16C16.1668 15 17.0001 14.5 17.0001 13.5833Z" fill="white"/>
+    </svg>
+)
+
+const FacebookMessengerIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 16.0395 3.966 19.467 7.5 21.165V22.5L10.0035 20.628C10.659 20.7495 11.3265 20.8125 12 20.8125" fill="url(#paint0_linear_1_2)"/>
+        <path d="M7.788 8.71047L12.333 13.2555L16.212 8.71047L18.468 10.3755L13.788 15.0555L9.243 10.5105L7.002 12.1605L11.667 16.8255L16.212 12.2805L18.468 13.9455L12.003 20.4105L5.523 13.9455L7.788 8.71047Z" fill="white"/>
+        <defs>
+        <linearGradient id="paint0_linear_1_2" x1="12" y1="1.5" x2="12" y2="22.5" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#00B2FF"/>
+        <stop offset="1" stopColor="#006AFF"/>
+        </linearGradient>
+        </defs>
+    </svg>
+)
+
 
 export function PartnerProfile() {
     const { t, language } = useLanguage();
@@ -210,6 +235,34 @@ export function PartnerProfile() {
                 </Card>
                 </div>
                 <div className="md:col-span-1 space-y-6">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Liên hệ</CardTitle>
+                        </CardHeader>
+                        <CardContent className="grid grid-cols-2 gap-2">
+                           <Button variant="outline" className="w-full flex items-center justify-center gap-2">
+                                <FacebookMessengerIcon/>
+                                Messenger
+                           </Button>
+                           <Button variant="outline" className="w-full flex items-center justify-center gap-2">
+                                <LineIcon/>
+                                Line
+                           </Button>
+                           <Button variant="outline" className="w-full flex items-center justify-center gap-2">
+                                <MessageSquare className="w-5 h-5"/>
+                                Chat
+                           </Button>
+                           <Button variant="outline" className="w-full flex items-center justify-center gap-2">
+                                <Phone className="w-5 h-5"/>
+                                Gọi
+                           </Button>
+                            <Button variant="outline" className="w-full col-span-2 flex items-center justify-center gap-2">
+                                <Mail className="w-5 h-5"/>
+                                Gửi Email
+                           </Button>
+                        </CardContent>
+                    </Card>
+
                     <Card>
                         <CardHeader>
                             <CardTitle>{t.dashboard_employer.company_profile.companyInfo.title}</CardTitle>
