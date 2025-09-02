@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import {
@@ -56,7 +57,7 @@ type HistoryItem = {
 const initialProfileData: Record<Language, ProfileData> = {
     vi: {
         companyName: 'Công ty phái cử TVC',
-        tagline: 'Cung ứng nhân lực & Xuất khẩu lao động',
+        tagline: 'Công ty phái cử',
         location: 'Hà Nội, Việt Nam',
         introduction: "Công ty phái cử TVC là một trong những đơn vị hàng đầu tại Việt Nam trong lĩnh vực cung ứng nhân lực chất lượng cao cho thị trường Nhật Bản. Với nhiều năm kinh nghiệm, chúng tôi tự hào đã kết nối thành công hàng ngàn lao động với các doanh nghiệp uy tín tại Nhật, tập trung vào các ngành nghề như xây dựng, cơ khí, và nông nghiệp. Chúng tôi cam kết đào tạo bài bản và hỗ trợ toàn diện để đảm bảo người lao động có sự chuẩn bị tốt nhất cho công việc và cuộc sống tại Nhật.",
         history: [
