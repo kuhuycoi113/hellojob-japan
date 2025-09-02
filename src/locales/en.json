@@ -1251,52 +1251,52 @@
   },
   "gallupTest": {
     "title": "Bài kiểm tra CliftonStrengths (Gallup)",
-    "description": "CliftonStrengths helps you discover your innate talents. By focusing on what you naturally do best, you can maximize your potential for success in any role.",
-    "benefitsTitle": "Key Benefits:",
+    "description": "CliftonStrengths giúp bạn khám phá những tài năng bẩm sinh của mình. Bằng cách tập trung vào những gì bạn làm tốt nhất một cách tự nhiên, bạn có thể tối đa hóa tiềm năng của mình để thành công trong mọi vai trò.",
+    "benefitsTitle": "Lợi ích chính:",
     "benefits": [
-      "Identify your 34 unique strengths.",
-      "Understand how to leverage your strengths in a work environment.",
-      "Improve teamwork and communication.",
-      "Boost engagement and performance."
+      "Xác định 34 điểm mạnh độc đáo của bạn.",
+      "Hiểu cách tận dụng điểm mạnh của bạn trong môi trường làm việc.",
+      "Cải thiện tinh thần đồng đội và giao tiếp.",
+      "Tăng cường sự tham gia và hiệu suất."
     ],
-    "ctaTitle": "Discover Your Strengths",
-    "ctaDescription": "Start your journey of self-discovery and unlock your full potential.",
-    "ctaButton": "Take the Test Now",
-    "note": "(This test is currently offered through the official Gallup website.)"
+    "ctaTitle": "Khám phá Điểm mạnh của bạn",
+    "ctaDescription": "Bắt đầu hành trình khám phá bản thân và khai phá toàn bộ tiềm năng của bạn.",
+    "ctaButton": "Làm bài kiểm tra ngay",
+    "note": "(Hiện tại, bài kiểm tra này được cung cấp qua trang web chính thức của Gallup.)"
   },
   "hofstede": {
-    "title": "Hofstede's Culture Scan",
-    "description": "Geert Hofstede's model of national culture is a framework for cross-cultural communication, describing the effects of a society's culture on the values of its members, and how these values relate to behavior.",
-    "dimensionsTitle": "The 6 Cultural Dimensions:",
+    "title": "Quét văn hóa Hofstede",
+    "description": "Mô hình văn hóa quốc gia của Geert Hofstede là một khuôn khổ để giao tiếp đa văn hóa, mô tả ảnh hưởng của văn hóa xã hội của một quốc gia đối với các giá trị của các thành viên, và cách những giá trị này liên quan đến hành vi.",
+    "dimensionsTitle": "6 Chiều văn hóa:",
     "dimensions": [
       {
-        "name": "Power Distance",
-        "description": "The extent to which the less powerful members of organizations and institutions (like the family) accept and expect that power is distributed unequally."
+        "name": "Khoảng cách quyền lực",
+        "description": "Mức độ mà các thành viên ít quyền lực hơn trong các tổ chức và định chế (như gia đình) chấp nhận và mong đợi rằng quyền lực được phân phối không đồng đều."
       },
       {
-        "name": "Individualism vs. Collectivism",
-        "description": "The degree to which people in a society are integrated into groups."
+        "name": "Chủ nghĩa cá nhân so với Chủ nghĩa tập thể",
+        "description": "Mức độ mà mọi người trong xã hội được hòa nhập vào các nhóm."
       },
       {
-        "name": "Masculinity vs. Femininity",
-        "description": "A preference in society for achievement, heroism, assertiveness and material rewards for success (Masculinity) versus a preference for cooperation, modesty, caring for the weak and quality of life (Femininity)."
+        "name": "Nam tính so với Nữ tính",
+        "description": "Sự ưu tiên trong xã hội đối với thành tích, chủ nghĩa anh hùng, sự quyết đoán và phần thưởng vật chất cho sự thành công (Nam tính) so với sự ưu tiên cho hợp tác, khiêm tốn, chăm sóc người yếu thế và chất lượng cuộc sống (Nữ tính)."
       },
       {
-        "name": "Uncertainty Avoidance",
-        "description": "The degree to which a society deals with the fact that the future can never be known."
+        "name": "Tránh sự không chắc chắn",
+        "description": "Mức độ mà một xã hội đối phó với sự thật rằng tương lai không bao giờ có thể được biết đến."
       },
       {
-        "name": "Long-Term vs. Short-Term Orientation",
-        "description": "How every society has to maintain some links with its own past while dealing with the challenges of the present and future."
+        "name": "Định hướng dài hạn so với Định hướng ngắn hạn",
+        "description": "Cách mỗi xã hội phải duy trì một số liên kết với quá khứ của chính mình trong khi đối phó với những thách thức của hiện tại và tương lai."
       },
       {
-        "name": "Indulgence vs. Restraint",
-        "description": "The extent to which people try to control their desires and impulses."
+        "name": "Nuông chiều so với Kiềm chế",
+        "description": "Mức độ mà mọi người cố gắng kiểm soát ham muốn và xung động của mình."
       }
     ],
-    "ctaTitle": "Compare Cultures",
-    "ctaDescription": "Use the tools on the official Hofstede Insights website to compare countries and better understand cultural differences.",
-    "ctaButton": "Start Comparing",
-    "note": "(This tool is available on the Hofstede Insights website.)"
+    "ctaTitle": "So sánh các nền văn hóa",
+    "ctaDescription": "Sử dụng các công cụ trên trang web chính thức của Hofstede Insights để so sánh các quốc gia và hiểu rõ hơn về sự khác biệt văn hóa.",
+    "ctaButton": "Bắt đầu so sánh",
+    "note": "(Công cụ này có sẵn trên trang web của Hofstede Insights.)"
   }
 }
