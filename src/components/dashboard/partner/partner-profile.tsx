@@ -27,7 +27,7 @@ import {
 } from '@/components/ui/card';
 
 export function PartnerProfile() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     // This data would eventually come from a backend based on partner ID
     const profileData = {
         vi: {
@@ -53,10 +53,58 @@ export function PartnerProfile() {
                 fields: "Cung ứng lao động cho đa dạng các ngành nghề: xây dựng, cơ khí, nông nghiệp, chế biến thực phẩm, hộ lý, dệt may..."
             },
             benefits: "Hệ thống trung tâm đào tạo hiện đại trên toàn quốc.\nQuy trình tuyển chọn và đào tạo chuyên nghiệp theo tiêu chuẩn Nhật Bản.\nHỗ trợ toàn diện người lao động từ quá trình học tập đến khi làm việc tại Nhật."
+        },
+        ja: {
+            companyName: 'ベットプラウド人材株式会社',
+            tagline: '送り出し機関',
+            location: 'ハノイ、ベトナム',
+            introduction: "ベットプラウド人材株式会社は、日本市場向けのベトナム人材の供給と管理分野における先駆的企業の一つです。ベトナムの才能を日本のトップ企業と結びつけるという使命のもと、包括的で効果的かつ信頼性の高い人材ソリューションを提供することをお約束します。私たちは、高いスキルを持つ労働者を提供するだけでなく、言語、文化、専門的な職業スキルのトレーニングにも重点を置き、労働者が迅速に溶け込み、成功することを保証します。",
+            history: [
+                { year: '2012年', event: "会社設立", description: "前身は日本語センターで、研修活動の基盤を築きました。" },
+                { year: '2016年', event: "労働者派遣許可を取得", description: "労働・傷病兵・社会省から正式に認可され、人材供給の新たな章を開きました。" },
+                { year: '2020年', event: "1000人の労働者派遣を達成", description: "日本への労働者派遣市場での地位と信頼性を確立しました。" }
+            ],
+            licenses: "労働者海外派遣事業許可証 第888/LDTBXH-GP号",
+            companyInfo: {
+                founded: '2012年',
+                size: '100-200名',
+                phone: '024-8888-9999',
+                website: 'vietproud-hr.com.vn',
+                address: 'ベトナム、ハノイ市、ドンダー区'
+            },
+            industryInfo: {
+                mainIndustries: ["建設", "機械", "食品加工", "農業", "介護"],
+                fields: "多様な産業への労働者供給：建設、機械、農業、食品加工、介護、繊維..."
+            },
+            benefits: "全国に最新のトレーニングセンターシステム。\n日本の基準に準拠した専門的な選考・研修プロセス。\n学習過程から日本での就労まで、労働者を包括的にサポートします。"
+        },
+        en: {
+            companyName: 'Vietproud Manpower JSC',
+            tagline: 'Sending Company',
+            location: 'Hanoi, Vietnam',
+            introduction: "Vietproud Manpower Joint Stock Company is one of the pioneers in supplying and managing Vietnamese human resources for the Japanese market. With the mission of connecting Vietnamese talent with leading Japanese enterprises, we are committed to providing comprehensive, effective, and reliable human resource solutions. We not only provide highly skilled labor but also focus on training in language, culture, and professional work skills to ensure that workers integrate quickly and succeed.",
+            history: [
+                { year: '2012', event: "Company Establishment", description: "Its predecessor was a Japanese language center, laying the foundation for training activities." },
+                { year: '2016', event: "Received Labor Dispatch License", description: "Officially licensed by the Ministry of Labour, Invalids and Social Affairs, opening a new chapter in human resource supply." },
+                { year: '2020', event: "Reached the milestone of 1000 exported workers", description: "Affirming its position and reputation in the labor dispatch market to Japan." }
+            ],
+            licenses: "License for the service of sending workers abroad No. 888/LDTBXH-GP",
+            companyInfo: {
+                founded: '2012',
+                size: '100-200 employees',
+                phone: '024-8888-9999',
+                website: 'vietproud-hr.com.vn',
+                address: 'Dong Da District, Hanoi, Vietnam'
+            },
+            industryInfo: {
+                mainIndustries: ["Construction", "Mechanics", "Food Processing", "Agriculture", "Caregiving"],
+                fields: "Supplying labor for various industries: construction, mechanics, agriculture, food processing, caregiving, textiles..."
+            },
+            benefits: "A nationwide network of modern training centers.\nA professional selection and training process according to Japanese standards.\nComprehensive support for workers from the learning process to working in Japan."
         }
     };
     
-    const profile = profileData.vi;
+    const profile = profileData[language as keyof typeof profileData] || profileData.vi;
 
   return (
     <div className="flex w-full flex-col p-4 md:gap-8 md:p-10 bg-blue-50/50">
