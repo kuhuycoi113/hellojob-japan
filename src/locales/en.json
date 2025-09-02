@@ -480,7 +480,15 @@
   "recruitRight": {
     "title": "Corporate Culture Discovery Tools",
     "subtitle": "Understand your company's Mission, Vision, Core Values, and Culture to find the best-fit foreign candidates.",
-    "start": "Start"
+    "start": "Start",
+    "barrett": {
+      "title": "Barrett Values Centre (CTT)",
+      "description": "Cultural Transformation Tools that measure personal and organizational values to identify cultural alignment."
+    },
+    "goldenCircle": {
+      "title": "The Golden Circle",
+      "description": "Clarifies the 'Why' your company exists, inspiring action and attracting those who believe what you believe."
+    }
   },
   "barrettTest": {
     "title": "Barrett Values Assessment",
@@ -1164,3 +1172,5 @@
     }
   }
 }
+
+    
