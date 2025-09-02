@@ -1204,7 +1204,15 @@
       },
       "chart": {
         "title": "Tăng trưởng Doanh thu",
-        "revenueLabel": "Doanh thu"
+        "revenueLabel": "Doanh thu",
+        "data": [
+            { "month": "Tháng 1", "revenue": 4000 },
+            { "month": "Tháng 2", "revenue": 3000 },
+            { "month": "Tháng 3", "revenue": 5000 },
+            { "month": "Tháng 4", "revenue": 4500 },
+            { "month": "Tháng 5", "revenue": 6000 },
+            { "month": "Tháng 6", "revenue": 5500 }
+        ]
       },
        "payout": {
         "title": "Thanh toán",

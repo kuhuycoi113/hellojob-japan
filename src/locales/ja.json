@@ -1204,7 +1204,15 @@
       },
       "chart": {
         "title": "収益の推移",
-        "revenueLabel": "収益"
+        "revenueLabel": "収益",
+        "data": [
+            { "month": "1月", "revenue": 4000 },
+            { "month": "2月", "revenue": 3000 },
+            { "month": "3月", "revenue": 5000 },
+            { "month": "4月", "revenue": 4500 },
+            { "month": "5月", "revenue": 6000 },
+            { "month": "6月", "revenue": 5500 }
+        ]
       },
        "payout": {
         "title": "支払い",

@@ -44,15 +44,6 @@ import {
 } from 'lucide-react';
 import { Button } from './ui/button';
 
-const chartData = [
-  { month: 'Jan', revenue: 4000 },
-  { month: 'Feb', revenue: 3000 },
-  { month: 'Mar', revenue: 5000 },
-  { month: 'Apr', revenue: 4500 },
-  { month: 'May', revenue: 6000 },
-  { month: 'Jun', revenue: 5500 },
-];
-
 const FunnelStep = ({ icon, title, value, colorClass }: { icon: React.ReactNode, title: string, value: string, colorClass: string }) => (
     <div className={`flex items-center p-4 rounded-lg bg-opacity-10 ${colorClass}`}>
         <div className={`mr-4 p-3 rounded-full bg-opacity-20 ${colorClass}`}>{icon}</div>
@@ -67,6 +58,8 @@ export function RevenueDashboard() {
   const { t } = useLanguage();
   const revenue = t.shareCourse.revenue;
   const transactions = revenue.transactions.list;
+  const chartData = revenue.chart.data;
+
 
   const statCards = [
     { title: revenue.stats.totalRevenue.title, value: revenue.stats.totalRevenue.value, change: revenue.stats.totalRevenue.change, icon: <DollarSign className="h-5 w-5 text-muted-foreground" /> },
@@ -192,7 +185,7 @@ export function RevenueDashboard() {
                   <TableCell>{trx.course}</TableCell>
                   <TableCell className="text-right">{trx.amount}</TableCell>
                   <TableCell className="text-center">
-                    <Badge variant={trx.status === revenue.transactions.status.success ? 'default' : 'destructive'} className={trx.status === revenue.transactions.status.success ? 'bg-green-600' : ''}>
+                    <Badge variant={trx.status === t.shareCourse.revenue.transactions.status.success ? 'default' : 'destructive'} className={trx.status === t.shareCourse.revenue.transactions.status.success ? 'bg-green-600' : ''}>
                       {trx.status}
                     </Badge>
                   </TableCell>
