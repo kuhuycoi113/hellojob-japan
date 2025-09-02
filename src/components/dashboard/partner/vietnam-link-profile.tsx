@@ -1,3 +1,4 @@
+
 // This is a new file.
 'use client';
 
@@ -29,7 +30,7 @@ export function VietnamLinkProfile() {
     const profileData = {
         vi: {
             companyName: 'Công ty TNHH Vietnam Link',
-            tagline: 'Công ty phái cử (Okuridashi Kikan)',
+            tagline: 'Công ty phái cử',
             location: 'Hồ Chí Minh, Việt Nam',
             introduction: "Công ty TNHH Vietnam Link tự hào là một trong những công ty phái cử hàng đầu Việt Nam, chuyên cung ứng nguồn nhân lực dồi dào và chất lượng cho thị trường Nhật Bản. Chúng tôi có một quy trình tuyển chọn và đào tạo nghiêm ngặt, đảm bảo người lao động không chỉ có tay nghề tốt mà còn có ý thức kỷ luật và khả năng thích ứng cao với văn hóa Nhật Bản. Đối tác của chúng tôi là các nghiệp đoàn và xí nghiệp lớn trên khắp Nhật Bản.",
             history: [

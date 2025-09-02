@@ -112,7 +112,7 @@
       },
       {
         "name": "Công ty TNHH Vietnam Link",
-        "type": "Công ty phái cử (Okuridashi Kikan)"
+        "type": "Công ty phái cử"
       },
       {
         "name": "Công ty cổ phần Nhân lực Vietproud",
@@ -750,15 +750,15 @@
     "title": "Bạn là ai?",
     "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
     "hiringCompany": {
-      "title": "Xí nghiệp tiếp nhận (Ukeire Kigyou)",
+      "title": "Xí nghiệp tiếp nhận",
       "description": "Trực tiếp tuyển dụng nhân sự."
     },
     "supportOrg": {
-      "title": "Cơ quan hỗ trợ (Shien Kikan)",
+      "title": "Cơ quan hỗ trợ",
       "description": "Hỗ trợ các công ty và người lao động."
     },
     "union": {
-      "title": "Nghiệp đoàn (Kyoudou Kumiai)",
+      "title": "Nghiệp đoàn",
       "description": "Quản lý và hỗ trợ thực tập sinh."
     },
     "sendingCompany": {
@@ -1103,8 +1103,8 @@
       "industryInfo": {
         "title": "Ngành nghề & Lĩnh vực",
         "mainIndustry": "Ngành nghề chính",
-        "industry1": "Automotive Manufacturing",
-        "industry2": "Food Processing",
+        "industry1": "Construction",
+        "industry2": "Mechanics",
         "fields": "Lĩnh vực hoạt động",
         "placeholder": "Chưa có lĩnh vực hoạt động. Nhấn vào đây để cập nhật."
       },
@@ -1156,7 +1156,7 @@
     "build": {
       "title": "Xây dựng khoá học của bạn",
       "description": "Bắt đầu tạo khoá học bằng cách thêm tiêu đề, mô tả và xây dựng chương trình học.",
-      "info": {
+       "info": {
         "title": "Thông tin khoá học",
         "courseTitleLabel": "Tên khoá học",
         "courseTitlePlaceholder": "VD: Tiếng Nhật thương mại nâng cao",
