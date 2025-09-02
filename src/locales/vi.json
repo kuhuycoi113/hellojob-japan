@@ -1206,7 +1206,7 @@
         "title": "Tăng trưởng Doanh thu",
         "revenueLabel": "Doanh thu"
       },
-      "payout": {
+       "payout": {
         "title": "Thanh toán",
         "nextPayout": {
             "title": "Kỳ thanh toán tiếp theo",
@@ -1235,7 +1235,17 @@
             "amount": "Số tiền",
             "status": "Trạng thái",
             "date": "Ngày"
-        }
+        },
+        "status": {
+            "success": "Thành công",
+            "failed": "Thất bại"
+        },
+        "list": [
+            { "id": "TRX001", "student": "Nguyễn Văn A", "course": "Tiếng Nhật thương mại", "amount": "2,000,000đ", "status": "Thành công", "date": "2024-07-20" },
+            { "id": "TRX002", "student": "Trần Thị B", "course": "Kỹ năng phỏng vấn", "amount": "1,500,000đ", "status": "Thành công", "date": "2024-07-19" },
+            { "id": "TRX003", "student": "Lê Văn C", "course": "Tiếng Nhật thương mại", "amount": "2,000,000đ", "status": "Thất bại", "date": "2024-07-19" },
+            { "id": "TRX004", "student": "Phạm Thị D", "course": "Văn hoá công sở Nhật", "amount": "1,200,000đ", "status": "Thành công", "date": "2024-07-18" }
+        ]
       }
     }
   },

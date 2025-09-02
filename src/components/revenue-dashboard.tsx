@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import {
@@ -54,13 +53,6 @@ const chartData = [
   { month: 'Jun', revenue: 5500 },
 ];
 
-const transactions = [
-  { id: 'TRX001', student: 'Nguyễn Văn A', course: 'Tiếng Nhật thương mại', amount: '2,000,000đ', status: 'Thành công', date: '2024-07-20' },
-  { id: 'TRX002', student: 'Trần Thị B', course: 'Kỹ năng phỏng vấn', amount: '1,500,000đ', status: 'Thành công', date: '2024-07-19' },
-  { id: 'TRX003', student: 'Lê Văn C', course: 'Tiếng Nhật thương mại', amount: '2,000,000đ', status: 'Thất bại', date: '2024-07-19' },
-  { id: 'TRX004', student: 'Phạm Thị D', course: 'Văn hoá công sở Nhật', amount: '1,200,000đ', status: 'Thành công', date: '2024-07-18' },
-];
-
 const FunnelStep = ({ icon, title, value, colorClass }: { icon: React.ReactNode, title: string, value: string, colorClass: string }) => (
     <div className={`flex items-center p-4 rounded-lg bg-opacity-10 ${colorClass}`}>
         <div className={`mr-4 p-3 rounded-full bg-opacity-20 ${colorClass}`}>{icon}</div>
@@ -74,6 +66,7 @@ const FunnelStep = ({ icon, title, value, colorClass }: { icon: React.ReactNode,
 export function RevenueDashboard() {
   const { t } = useLanguage();
   const revenue = t.shareCourse.revenue;
+  const transactions = revenue.transactions.list;
 
   const statCards = [
     { title: revenue.stats.totalRevenue.title, value: revenue.stats.totalRevenue.value, change: revenue.stats.totalRevenue.change, icon: <DollarSign className="h-5 w-5 text-muted-foreground" /> },
@@ -199,7 +192,7 @@ export function RevenueDashboard() {
                   <TableCell>{trx.course}</TableCell>
                   <TableCell className="text-right">{trx.amount}</TableCell>
                   <TableCell className="text-center">
-                    <Badge variant={trx.status === 'Thành công' ? 'default' : 'destructive'} className={trx.status === 'Thành công' ? 'bg-green-600' : ''}>
+                    <Badge variant={trx.status === revenue.transactions.status.success ? 'default' : 'destructive'} className={trx.status === revenue.transactions.status.success ? 'bg-green-600' : ''}>
                       {trx.status}
                     </Badge>
                   </TableCell>

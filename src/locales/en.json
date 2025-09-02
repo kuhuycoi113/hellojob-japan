@@ -1235,7 +1235,17 @@
             "amount": "Amount",
             "status": "Status",
             "date": "Date"
-        }
+        },
+        "status": {
+            "success": "Success",
+            "failed": "Failed"
+        },
+        "list": [
+            { "id": "TRX001", "student": "Alex Johnson", "course": "Business Japanese", "amount": "$99.00", "status": "Success", "date": "2024-07-20" },
+            { "id": "TRX002", "student": "Maria Garcia", "course": "Interview Skills", "amount": "$75.00", "status": "Success", "date": "2024-07-19" },
+            { "id": "TRX003", "student": "Chris Lee", "course": "Business Japanese", "amount": "$99.00", "status": "Failed", "date": "2024-07-19" },
+            { "id": "TRX004", "student": "Samantha Chen", "course": "Japanese Office Etiquette", "amount": "$60.00", "status": "Success", "date": "2024-07-18" }
+        ]
       }
     }
   },
