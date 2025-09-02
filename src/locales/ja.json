@@ -1,3 +1,4 @@
+
 {
   "header": {
     "home": "ホームページ",
@@ -1113,6 +1114,20 @@
         "item3": "社外活動、社員旅行"
       },
       "logout": "ログアウト"
+    },
+    "job_detail": {
+      "backButton": "リストに戻る",
+      "location": "勤務地",
+      "quantity": "募集人数",
+      "visaType": "在留資格",
+      "deadline": "応募締切",
+      "jobDescription": "仕事内容",
+      "requirements": "応募要件",
+      "benefits": "福利厚生",
+      "moreInfo": {
+        "title": "追加情報",
+        "content": "この協力案件を受諾する前に、応募要件と福利厚生をよくご確認ください。ご不明な点がございましたら、直接パートナーにお問い合わせください。"
+      }
     }
   },
   "dashboard_partner": {
@@ -1152,22 +1167,6 @@
     "quantity": "募集人数",
     "accept": "受諾する",
     "decline": "辞退する"
-  },
-  "dashboard_employer": {
-    "job_detail": {
-      "backButton": "リストに戻る",
-      "location": "勤務地",
-      "quantity": "募集人数",
-      "visaType": "在留資格",
-      "deadline": "応募締切",
-      "jobDescription": "仕事内容",
-      "requirements": "応募要件",
-      "benefits": "福利厚生",
-      "moreInfo": {
-          "title": "追加情報",
-          "content": "この協力案件を受諾する前に、応募要件と福利厚生をよくご確認ください。ご不明な点がございましたら、直接パートナーにお問い合わせください。"
-      }
-    }
   },
   "shareCourse": {
     "tabs": {

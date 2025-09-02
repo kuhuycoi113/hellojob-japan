@@ -1,3 +1,4 @@
+
 {
   "header": {
     "home": "Trang chủ",
@@ -1114,6 +1115,20 @@
         "item3": "Các hoạt động ngoại khóa, du lịch công ty"
       },
       "logout": "Đăng xuất"
+    },
+    "job_detail": {
+        "backButton": "Quay lại danh sách",
+        "location": "Địa điểm",
+        "quantity": "Số lượng",
+        "visaType": "Loại visa",
+        "deadline": "Hạn chót",
+        "jobDescription": "Mô tả công việc",
+        "requirements": "Yêu cầu công việc",
+        "benefits": "Phúc lợi",
+        "moreInfo": {
+            "title": "Thông tin thêm",
+            "content": "Vui lòng xem kỹ các yêu cầu và phúc lợi trước khi chấp nhận cơ hội hợp tác này. Nếu có bất kỳ câu hỏi nào, vui lòng liên hệ trực tiếp với đối tác."
+        }
     }
   },
   "dashboard_partner": {
