@@ -16,7 +16,7 @@ export function YourPartners() {
   const { t, language } = useLanguage();
   const partners = allPartners;
   const isJapanese = language === 'ja';
-  const [view, setView] = useState<'gallery' | 'list'>('gallery');
+  const [view, setView] = useState<'gallery' | 'list'>('list');
 
   return (
     <Card>

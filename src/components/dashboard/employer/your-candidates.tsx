@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 export function YourCandidates() {
   const { t } = useLanguage();
   const candidates = t.dashboard_employer.candidates;
-  const [view, setView] = useState<'gallery' | 'list'>('gallery');
+  const [view, setView] = useState<'gallery' | 'list'>('list');
 
   return (
     <Tabs defaultValue="all">
