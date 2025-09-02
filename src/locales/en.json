@@ -115,8 +115,8 @@
         "type": "Sending Company (Okuridashi Kikan)"
       },
       {
-        "name": "Future Bridge Union",
-        "type": "Cooperative Union"
+        "name": "Vietproud Manpower JSC",
+        "type": "Sending Company"
       }
     ]
   },
@@ -1066,7 +1066,7 @@
       }
     },
     "company_profile": {
-      "industry": "Dispatch & Labor Export",
+      "industry": "Dispatch Company",
       "location": "Hanoi, Vietnam",
       "editProfile": "Edit Profile",
       "yourJobs": "Your Jobs",
@@ -1088,7 +1088,7 @@
       },
       "licenses": {
         "title": "Licenses & Certifications",
-        "item1": "Business License No. 12345-XYZ",
+        "item1": "License for the service of sending workers abroad No. 999/LDTBXH-GP",
         "item2": "ISO 9001:2015 Certification"
       },
       "companyInfo": {
@@ -1103,8 +1103,8 @@
       "industryInfo": {
         "title": "Industries & Fields",
         "mainIndustry": "Main Industries",
-        "industry1": "Automotive Manufacturing",
-        "industry2": "Food Processing",
+        "industry1": "Construction",
+        "industry2": "Mechanics",
         "fields": "Fields of Operation",
         "placeholder": "No fields of operation yet. Click here to update."
       },

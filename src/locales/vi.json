@@ -115,8 +115,8 @@
         "type": "Công ty phái cử (Okuridashi Kikan)"
       },
       {
-        "name": "Nghiệp đoàn Future Bridge",
-        "type": "Nghiệp đoàn (Kumiai)"
+        "name": "Công ty cổ phần Nhân lực Vietproud",
+        "type": "Công ty phái cử"
       }
     ]
   },
@@ -1195,10 +1195,10 @@
       "description": "Theo dõi thu nhập, xem báo cáo chi tiết và quản lý các khoản thanh toán của bạn.",
       "exportButton": "Xuất Báo cáo",
       "stats": {
-        "totalRevenue": { "title": "Tổng Doanh thu", "value": "25.080.000đ", "change": "+20.1% so với tháng trước" },
+        "totalRevenue": { "title": "Tổng Doanh thu", "value": "25,080,000đ", "change": "+20.1% so với tháng trước" },
         "paidStudents": { "title": "Học viên đã mua", "value": "415", "change": "+12 so với tuần trước" },
         "conversionRate": { "title": "Tỷ lệ chuyển đổi", "value": "8.52%", "change": "+1.2% so với tháng trước" },
-        "netRevenue": { "title": "Doanh thu ròng", "value": "15.048.000đ", "change": "Bạn nhận được 70% sau phí" }
+        "netRevenue": { "title": "Doanh thu ròng", "value": "15,048,000đ", "change": "Bạn nhận được 70% sau phí" }
       },
       "chart": {
         "title": "Tăng trưởng Doanh thu",
