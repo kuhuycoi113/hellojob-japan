@@ -1,3 +1,4 @@
+
 {
   "header": {
     "home": "Home",
@@ -1114,219 +1115,217 @@
         "item3": "Extracurricular activities, company trips"
       },
       "logout": "Logout"
+    },
+    "job_detail": {
+      "backButton": "Back to list",
+      "location": "Location",
+      "quantity": "Quantity",
+      "visaType": "Visa Type",
+      "deadline": "Deadline",
+      "jobDescription": "Job Description",
+      "requirements": "Job Requirements",
+      "benefits": "Benefits",
+      "moreInfo": {
+        "title": "More Information",
+        "content": "Please review the requirements and benefits carefully before accepting this partnership opportunity. If you have any questions, please contact the partner directly."
+      }
     }
   },
   "dashboard_partner": {
     "newOpportunities": {
-      "title": "Cơ hội hợp tác mới",
-      "description": "Xem xét và chấp nhận các đơn hàng tuyển dụng mới từ các xí nghiệp.",
+      "title": "New Partnership Opportunities",
+      "description": "Review and accept new recruitment orders from companies.",
       "opportunities": [
         {
             "id": "kanagawa-care-01",
-            "title": "Nhân viên hộ lý",
-            "company": "Trung tâm chăm sóc Fukushi",
+            "title": "Caregiver",
+            "company": "Fukushi Care Center",
             "location": "Kanagawa",
-            "visa": "Kỹ năng đặc định",
-            "quantity": "3 người",
-            "expires": "Hết hạn trong 23 giờ",
-            "description": "Công việc chăm sóc người cao tuổi tại viện dưỡng lão ở Kanagawa. Công việc bao gồm hỗ trợ sinh hoạt hàng ngày, chăm sóc sức khỏe và các hoạt động giải trí. Yêu cầu ứng viên có chứng chỉ điều dưỡng và kinh nghiệm làm việc.",
-            "requirements": ["Có kinh nghiệm làm việc trong ngành hộ lý ít nhất 1 năm.", "Trình độ tiếng Nhật tương đương N4 trở lên.", "Có sức khỏe tốt, không mắc các bệnh truyền nhiễm.", "Có tinh thần trách nhiệm, yêu thích công việc chăm sóc người cao tuổi."],
-            "benefits": ["Lương cơ bản từ 180,000 JPY/tháng, chưa tính tăng ca.", "Hỗ trợ nhà ở, ký túc xá gần nơi làm việc.", "Đóng bảo hiểm đầy đủ theo quy định của pháp luật Nhật Bản.", "Có cơ hội được đào tạo nâng cao tay nghề và gia hạn visa."]
+            "visa": "Specified Skilled Worker",
+            "quantity": "3 people",
+            "expires": "Expires in 23 hours",
+            "description": "Caring for the elderly at a nursing home in Kanagawa. The job includes assisting with daily living activities, health care, and recreational activities. Applicants are required to have a nursing certificate and work experience.",
+            "requirements": ["At least 1 year of experience in the caregiving industry.", "Japanese language proficiency equivalent to N4 or higher.", "Good health, free from infectious diseases.", "Responsible and passionate about caring for the elderly."],
+            "benefits": ["Basic salary from 180,000 JPY/month, excluding overtime.", "Support for housing, dormitory near the workplace.", "Full insurance coverage according to Japanese law.", "Opportunities for advanced training and visa renewal."]
         },
         {
             "id": "miyazaki-agri-01",
-            "title": "Công nhân nông nghiệp",
-            "company": "Nông trang Miyazaki",
+            "title": "Agricultural Worker",
+            "company": "Miyazaki Farm",
             "location": "Miyazaki",
-            "visa": "Thực tập sinh kỹ năng",
-            "quantity": "5 người",
-            "expires": "Hết hạn trong 2 ngày",
-            "description": "Làm việc tại nông trang trồng rau sạch theo công nghệ Nhật Bản. Công việc bao gồm gieo trồng, chăm sóc, thu hoạch và đóng gói sản phẩm. Không yêu cầu kinh nghiệm, sẽ được đào tạo.",
-            "requirements": ["Có sức khỏe tốt để làm việc nông nghiệp.", "Chăm chỉ, chịu khó và có tinh thần học hỏi.", "Không yêu cầu kinh nghiệm, sẽ được đào tạo từ đầu.", "Ưu tiên ứng viên có thể làm việc lâu dài."],
-            "benefits": ["Lương theo giờ, mức lương cạnh tranh.", "Hỗ trợ chỗ ở và phương tiện đi lại.", "Môi trường làm việc trong lành, thân thiện.", "Cơ hội học hỏi kỹ thuật nông nghiệp tiên tiến của Nhật Bản."]
+            "visa": "Technical Intern Trainee",
+            "quantity": "5 people",
+            "expires": "Expires in 2 days",
+            "description": "Working at a farm that grows organic vegetables using Japanese technology. The work includes planting, caring for, harvesting, and packaging products. No experience is required; training will be provided.",
+            "requirements": ["Good health for agricultural work.", "Hardworking, diligent, and willing to learn.", "No experience required, training will be provided from the beginning.", "Long-term commitment is preferred."],
+            "benefits": ["Competitive hourly wage.", "Support for accommodation and transportation.", "Clean and friendly working environment.", "Opportunity to learn advanced Japanese agricultural techniques."]
         }
       ]
     },
-    "details": "Chi tiết",
-    "location": "Địa điểm",
-    "visaType": "Loại visa",
-    "quantity": "Số lượng",
-    "accept": "Chấp nhận",
-    "decline": "Từ chối"
-  },
-   "dashboard_employer": {
-    "job_detail": {
-      "backButton": "Quay lại danh sách",
-      "location": "Địa điểm",
-      "quantity": "Số lượng",
-      "visaType": "Loại visa",
-      "deadline": "Hạn nộp",
-      "jobDescription": "Mô tả công việc",
-      "requirements": "Yêu cầu công việc",
-      "benefits": "Phúc lợi",
-      "moreInfo": {
-          "title": "Thông tin thêm",
-          "content": "Vui lòng xem xét kỹ các yêu cầu và phúc lợi trước khi chấp nhận cơ hội hợp tác này. Nếu có bất kỳ câu hỏi nào, xin vui lòng liên hệ trực tiếp với đối tác."
-      }
-    }
+    "details": "Details",
+    "location": "Location",
+    "visaType": "Visa Type",
+    "quantity": "Quantity",
+    "accept": "Accept",
+    "decline": "Decline"
   },
   "shareCourse": {
     "tabs": {
-      "build": "Xây dựng",
-      "promote": "Quảng bá",
-      "revenue": "Doanh thu"
+      "build": "Build",
+      "promote": "Promote",
+      "revenue": "Revenue"
     },
     "build": {
-      "title": "Xây dựng khoá học của bạn",
-      "description": "Bắt đầu tạo khoá học bằng cách thêm tiêu đề, mô tả và xây dựng chương trình học.",
+      "title": "Build Your Course",
+      "description": "Start creating your course by adding a title, description, and building your curriculum.",
        "info": {
-        "title": "Thông tin khoá học",
-        "courseTitleLabel": "Tên khoá học",
-        "courseTitlePlaceholder": "VD: Tiếng Nhật thương mại nâng cao",
-        "courseDescriptionLabel": "Mô tả khoá học",
-        "courseDescriptionPlaceholder": "Mô tả về khoá học, đối tượng, và những gì học viên sẽ học được."
+        "title": "Course Information",
+        "courseTitleLabel": "Course Title",
+        "courseTitlePlaceholder": "e.g., Advanced Business Japanese",
+        "courseDescriptionLabel": "Course Description",
+        "courseDescriptionPlaceholder": "Describe your course, who it's for, and what students will learn."
       },
       "curriculum": {
-        "title": "Chương trình học",
-        "description": "Xây dựng cấu trúc khoá học bằng cách thêm các chương và bài học. Tải lên video cho mỗi bài học.",
-        "addChapter": "Thêm chương",
-        "addLesson": "Thêm bài học",
-        "lesson": "Bài học",
-        "lessonTitlePlaceholder": "VD: Kính ngữ trong email",
-        "uploadVideo": "Tải video"
+        "title": "Curriculum",
+        "description": "Structure your course by adding chapters and lessons. Upload a video for each lesson.",
+        "addChapter": "Add Chapter",
+        "addLesson": "Add Lesson",
+        "lesson": "Lesson",
+        "lessonTitlePlaceholder": "e.g., Keigo in Emails",
+        "uploadVideo": "Upload Video"
       },
       "payment": {
-        "title": "Giá & Thanh toán",
-        "priceLabel": "Giá khoá học (VND)",
-        "payoutTitle": "Thông tin nhận tiền",
-        "payoutDescription": "HelloJob giữ lại 30% hoa hồng trên mỗi lượt bán. Bạn sẽ nhận được 70% doanh thu. Vui lòng cung cấp thông tin tài khoản ngân hàng để nhận thanh toán.",
-        "bankNameLabel": "Tên ngân hàng",
-        "bankNamePlaceholder": "VD: Vietcombank",
-        "accountNumberLabel": "Số tài khoản",
-        "accountNumberPlaceholder": "VD: 0123456789",
-        "accountNameLabel": "Tên chủ tài khoản",
-        "accountNamePlaceholder": "VD: NGUYEN VAN A"
+        "title": "Pricing & Payout",
+        "priceLabel": "Course Price ($)",
+        "payoutTitle": "Payout Information",
+        "payoutDescription": "HelloJob retains a 30% commission on each sale. You will receive 70% of the revenue. Please provide your bank account details for payouts.",
+        "bankNameLabel": "Bank Name",
+        "bankNamePlaceholder": "e.g., Bank of America",
+        "accountNumberLabel": "Account Number",
+        "accountNumberPlaceholder": "e.g., 0123456789",
+        "accountNameLabel": "Account Holder Name",
+        "accountNamePlaceholder": "e.g., JOHN DOE"
       },
-      "submitButton": "Xuất bản khoá học"
+      "submitButton": "Publish Course"
     },
     "promote": {
-      "title": "Quảng bá khóa học của bạn",
-      "description": "Sử dụng các công cụ marketing và gợi ý của chúng tôi để tiếp cận nhiều học viên hơn."
+      "title": "Promote your course",
+      "description": "Use our marketing tools and suggestions to reach more students."
     },
     "revenue": {
-      "title": "Báo cáo Doanh thu & Phân tích",
-      "description": "Theo dõi thu nhập, xem báo cáo chi tiết và quản lý các khoản thanh toán của bạn.",
-      "exportButton": "Xuất Báo cáo",
+      "title": "Revenue & Analytics Dashboard",
+      "description": "Track your earnings, view detailed reports, and manage your payouts.",
+      "exportButton": "Export Report",
       "stats": {
-        "totalRevenue": { "title": "Tổng Doanh thu", "value": "25,080,000đ", "change": "+20.1% so với tháng trước" },
-        "paidStudents": { "title": "Học viên đã mua", "value": "415", "change": "+12 so với tuần trước" },
-        "conversionRate": { "title": "Tỷ lệ chuyển đổi", "value": "8.52%", "change": "+1.2% so với tháng trước" },
-        "netRevenue": { "title": "Doanh thu ròng", "value": "15,048,000đ", "change": "Bạn nhận được 70% sau phí" }
+        "totalRevenue": { "title": "Total Revenue", "value": "$1,672.00", "change": "+20.1% from last month" },
+        "paidStudents": { "title": "Paid Students", "value": "415", "change": "+12 from last week" },
+        "conversionRate": { "title": "Conversion Rate", "value": "8.52%", "change": "+1.2% from last month" },
+        "netRevenue": { "title": "Net Revenue", "value": "$1,170.40", "change": "You receive 70% after fees" }
       },
       "chart": {
-        "title": "Tăng trưởng Doanh thu",
-        "revenueLabel": "Doanh thu",
+        "title": "Revenue Growth",
+        "revenueLabel": "Revenue",
         "data": [
-          { "month": "Tháng 1", "revenue": 4000000 },
-          { "month": "Tháng 2", "revenue": 3000000 },
-          { "month": "Tháng 3", "revenue": 5000000 },
-          { "month": "Tháng 4", "revenue": 4500000 },
-          { "month": "Tháng 5", "revenue": 6000000 },
-          { "month": "Tháng 6", "revenue": 5500000 }
+          { "month": "Jan", "revenue": 400 },
+          { "month": "Feb", "revenue": 300 },
+          { "month": "Mar", "revenue": 500 },
+          { "month": "Apr", "revenue": 450 },
+          { "month": "May", "revenue": 600 },
+          { "month": "Jun", "revenue": 550 }
         ]
       },
        "payout": {
-        "title": "Thanh toán",
+        "title": "Payouts",
         "nextPayout": {
-            "title": "Kỳ thanh toán tiếp theo",
-            "amount": "12.540.000đ",
-            "date": "Sẽ thanh toán vào ngày 15/08/2024"
+            "title": "Next Payout",
+            "amount": "$835.50",
+            "date": "Scheduled for Aug 15, 2024"
         },
-        "fee": {"title": "Phí nền tảng (30%)", "value": "-7.524.000đ"},
-        "tax": {"title": "Thuế HelloJob nộp hộ", "value": "-2.508.000đ"},
-        "net": {"title": "Thực nhận", "value": "15.048.000đ"},
-        "historyButton": "Xem lịch sử thanh toán"
+        "fee": {"title": "Platform Fee (30%)", "value": "-$501.60"},
+        "tax": {"title": "Taxes Withheld", "value": "-$167.20"},
+        "net": {"title": "Net Payout", "value": "$1,170.40"},
+        "historyButton": "View Payout History"
       },
       "funnel": {
-        "title": "Phễu chuyển đổi",
-        "description": "Hành trình của người dùng từ khi truy cập đến khi thanh toán thành công.",
-        "visits": "Số lượt truy cập",
-        "freeViews": "Xem bài miễn phí",
-        "clicksToPay": "Click thanh toán",
-        "paidPurchases": "Mua hàng trả phí",
-        "abandonedCarts": "Bỏ thanh toán"
+        "title": "Conversion Funnel",
+        "description": "The user's journey from visit to successful payment.",
+        "visits": "Visits",
+        "freeViews": "Free Views",
+        "clicksToPay": "Clicks to Pay",
+        "paidPurchases": "Paid Purchases",
+        "abandonedCarts": "Abandoned Carts"
       },
       "transactions": {
-        "title": "Giao dịch gần đây",
-        "description": "Danh sách các giao dịch mua khoá học gần đây nhất.",
+        "title": "Recent Transactions",
+        "description": "A list of the most recent course purchases.",
         "headers": {
-            "student": "Học viên",
-            "course": "Khoá học",
-            "amount": "Số tiền",
-            "status": "Trạng thái",
-            "date": "Ngày"
+            "student": "Student",
+            "course": "Course",
+            "amount": "Amount",
+            "status": "Status",
+            "date": "Date"
         },
         "status": {
-            "success": "Thành công",
-            "failed": "Thất bại"
+            "success": "Success",
+            "failed": "Failed"
         },
         "list": [
-            { "id": "TRX001", "student": "Nguyễn Văn A", "course": "Tiếng Nhật thương mại", "amount": "2.000.000đ", "status": "Thành công", "date": "2024-07-20" },
-            { "id": "TRX002", "student": "Trần Thị B", "course": "Kỹ năng phỏng vấn", "amount": "1.500.000đ", "status": "Thành công", "date": "2024-07-19" },
-            { "id": "TRX003", "student": "Lê Văn C", "course": "Tiếng Nhật thương mại", "amount": "2.000.000đ", "status": "Thất bại", "date": "2024-07-19" },
-            { "id": "TRX004", "student": "Phạm Thị D", "course": "Văn hoá công sở Nhật", "amount": "1.200.000đ", "status": "Thành công", "date": "2024-07-18" }
+            { "id": "TRX001", "student": "John Doe", "course": "Business Japanese", "amount": "$100.00", "status": "Success", "date": "2024-07-20" },
+            { "id": "TRX002", "student": "Jane Smith", "course": "Interview Skills", "amount": "$75.00", "status": "Success", "date": "2024-07-19" },
+            { "id": "TRX003", "student": "Mike Johnson", "course": "Business Japanese", "amount": "$100.00", "status": "Failed", "date": "2024-07-19" },
+            { "id": "TRX004", "student": "Emily Davis", "course": "Japanese Office Culture", "amount": "$60.00", "status": "Success", "date": "2024-07-18" }
         ]
       }
     }
   },
   "gallupTest": {
-    "title": "Bài kiểm tra CliftonStrengths (Gallup)",
-    "description": "CliftonStrengths giúp bạn khám phá những tài năng bẩm sinh của mình. Bằng cách tập trung vào những gì bạn làm tốt nhất một cách tự nhiên, bạn có thể tối đa hóa tiềm năng của mình để thành công trong mọi vai trò.",
-    "benefitsTitle": "Lợi ích chính:",
+    "title": "CliftonStrengths (Gallup) Test",
+    "description": "CliftonStrengths helps you discover your innate talents. By focusing on what you naturally do best, you can maximize your potential to succeed in any role.",
+    "benefitsTitle": "Key Benefits:",
     "benefits": [
-      "Xác định 34 điểm mạnh độc đáo của bạn.",
-      "Hiểu cách tận dụng điểm mạnh của bạn trong môi trường làm việc.",
-      "Cải thiện tinh thần đồng đội và giao tiếp.",
-      "Tăng cường sự tham gia và hiệu suất."
+      "Identify your 34 unique strengths.",
+      "Understand how to leverage your strengths in a work environment.",
+      "Improve teamwork and communication.",
+      "Boost engagement and performance."
     ],
-    "ctaTitle": "Khám phá Điểm mạnh của bạn",
-    "ctaDescription": "Bắt đầu hành trình khám phá bản thân và khai phá toàn bộ tiềm năng của bạn.",
-    "ctaButton": "Làm bài kiểm tra ngay",
-    "note": "(Hiện tại, bài kiểm tra này được cung cấp qua trang web chính thức của Gallup.)"
+    "ctaTitle": "Discover Your Strengths",
+    "ctaDescription": "Embark on a journey of self-discovery and unlock your full potential.",
+    "ctaButton": "Take the Test Now",
+    "note": "(This test is currently offered through Gallup's official website.)"
   },
   "hofstede": {
-    "title": "Quét văn hóa Hofstede",
-    "description": "Mô hình văn hóa quốc gia của Geert Hofstede là một khuôn khổ để giao tiếp đa văn hóa, mô tả ảnh hưởng của văn hóa xã hội của một quốc gia đối với các giá trị của các thành viên, và cách những giá trị này liên quan đến hành vi.",
-    "dimensionsTitle": "6 Chiều văn hóa:",
+    "title": "Hofstede Culture Scan",
+    "description": "Geert Hofstede's model of national culture is a framework for cross-cultural communication, describing the effects of a society's culture on the values of its members, and how these values relate to behavior.",
+    "dimensionsTitle": "The 6-D Model of National Culture:",
     "dimensions": [
       {
-        "name": "Khoảng cách quyền lực",
-        "description": "Mức độ mà các thành viên ít quyền lực hơn trong các tổ chức và định chế (như gia đình) chấp nhận và mong đợi rằng quyền lực được phân phối không đồng đều."
+        "name": "Power Distance",
+        "description": "The extent to which the less powerful members of organizations and institutions (like the family) accept and expect that power is distributed unequally."
       },
       {
-        "name": "Chủ nghĩa cá nhân so với Chủ nghĩa tập thể",
-        "description": "Mức độ mà mọi người trong xã hội được hòa nhập vào các nhóm."
+        "name": "Individualism vs. Collectivism",
+        "description": "The degree to which people in a society are integrated into groups."
       },
       {
-        "name": "Nam tính so với Nữ tính",
-        "description": "Sự ưu tiên trong xã hội đối với thành tích, chủ nghĩa anh hùng, sự quyết đoán và phần thưởng vật chất cho sự thành công (Nam tính) so với sự ưu tiên cho hợp tác, khiêm tốn, chăm sóc người yếu thế và chất lượng cuộc sống (Nữ tính)."
+        "name": "Masculinity vs. Femininity",
+        "description": "A preference in society for achievement, heroism, assertiveness and material rewards for success (Masculinity) versus a preference for cooperation, modesty, caring for the weak and quality of life (Femininity)."
       },
       {
-        "name": "Tránh sự không chắc chắn",
-        "description": "Mức độ mà một xã hội đối phó với sự thật rằng tương lai không bao giờ có thể được biết đến."
+        "name": "Uncertainty Avoidance",
+        "description": "The extent to which a society deals with the fact that the future can never be known."
       },
       {
-        "name": "Định hướng dài hạn so với Định hướng ngắn hạn",
-        "description": "Cách mỗi xã hội phải duy trì một số liên kết với quá khứ của chính mình trong khi đối phó với những thách thức của hiện tại và tương lai."
+        "name": "Long-Term vs. Short-Term Orientation",
+        "description": "How every society has to maintain some links with its own past while dealing with the challenges of the present and future."
       },
       {
-        "name": "Nuông chiều so với Kiềm chế",
-        "description": "Mức độ mà mọi người cố gắng kiểm soát ham muốn và xung động của mình."
+        "name": "Indulgence vs. Restraint",
+        "description": "The extent to which people try to control their desires and impulses."
       }
     ],
-    "ctaTitle": "So sánh các nền văn hóa",
-    "ctaDescription": "Sử dụng các công cụ trên trang web chính thức của Hofstede Insights để so sánh các quốc gia và hiểu rõ hơn về sự khác biệt văn hóa.",
-    "ctaButton": "Bắt đầu so sánh",
-    "note": "(Công cụ này có sẵn trên trang web của Hofstede Insights.)"
+    "ctaTitle": "Compare Cultures",
+    "ctaDescription": "Use the tools on the official Hofstede Insights website to compare countries and better understand cultural differences.",
+    "ctaButton": "Start Comparing",
+    "note": "(This tool is available on the Hofstede Insights website.)"
   }
 }
