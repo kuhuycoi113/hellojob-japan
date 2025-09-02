@@ -480,15 +480,7 @@
   "recruitRight": {
     "title": "Corporate Culture Discovery Tools",
     "subtitle": "Understand your company's Mission, Vision, Core Values, and Culture to find the best-fit foreign candidates.",
-    "start": "Start",
-    "barrett": {
-      "title": "Barrett Values Centre (CTT)",
-      "description": "Cultural Transformation Tools that measure personal and organizational values to identify cultural alignment."
-    },
-    "goldenCircle": {
-      "title": "The Golden Circle",
-      "description": "Clarifies the 'Why' your company exists, inspiring action and attracting those who believe what you believe."
-    }
+    "start": "Start"
   },
   "barrettTest": {
     "title": "Barrett Values Assessment",
@@ -1148,5 +1140,27 @@
     "quantity": "Số lượng",
     "accept": "Chấp nhận",
     "decline": "Từ chối"
+  },
+  "shareCourse": {
+    "tabs": {
+      "build": "Build",
+      "promote": "Promote",
+      "revenue": "Revenue"
+    },
+    "build": {
+      "title": "Build Your Course",
+      "description": "Start creating your course by adding a title, description, and building your curriculum.",
+      "placeholder": "Detailed content for building the course will be designed here."
+    },
+    "promote": {
+      "title": "Promote Your Course",
+      "description": "Use our marketing tools and suggestions to reach more students.",
+      "placeholder": "Promotional tools and strategies will be displayed here."
+    },
+    "revenue": {
+      "title": "Manage Revenue",
+      "description": "Track your income, view detailed reports, and manage your payouts.",
+      "placeholder": "Revenue dashboard and reports will be designed here."
+    }
   }
 }

@@ -1,4 +1,3 @@
-
 {
   "header": {
     "home": "Trang chủ",
@@ -480,15 +479,7 @@
   "recruitRight": {
     "title": "Công cụ khám phá văn hoá doanh nghiệp",
     "subtitle": "Hiểu rõ Sứ mệnh, Tầm nhìn, Giá trị cốt lõi và Văn hoá của doanh nghiệp bạn để tìm ra những ứng viên nước ngoài phù hợp nhất.",
-    "start": "Bắt đầu",
-    "barrett": {
-      "title": "Barrett Values Centre (CTT)",
-      "description": "Công cụ Chuyển đổi Văn hóa giúp đo lường giá trị cá nhân và tổ chức, xác định sự tương hợp văn hóa."
-    },
-    "goldenCircle": {
-      "title": "Golden Circle (Vòng tròn Vàng)",
-      "description": "Làm rõ 'Lý do Tại sao' doanh nghiệp bạn tồn tại, truyền cảm hứng và thu hút những người cùng chung chí hướng."
-    }
+    "start": "Bắt đầu"
   },
   "barrettTest": {
     "title": "Đánh giá Giá trị Barrett",
@@ -1148,5 +1139,27 @@
     "quantity": "Số lượng",
     "accept": "Chấp nhận",
     "decline": "Từ chối"
+  },
+  "shareCourse": {
+    "tabs": {
+      "build": "Xây dựng",
+      "promote": "Quảng bá",
+      "revenue": "Doanh thu"
+    },
+    "build": {
+      "title": "Xây dựng khóa học của bạn",
+      "description": "Bắt đầu tạo khóa học của bạn bằng cách thêm tiêu đề, mô tả, và xây dựng chương trình học.",
+      "placeholder": "Nội dung chi tiết cho việc xây dựng khóa học sẽ được thiết kế ở đây."
+    },
+    "promote": {
+      "title": "Quảng bá khóa học của bạn",
+      "description": "Sử dụng các công cụ marketing và gợi ý của chúng tôi để tiếp cận nhiều học viên hơn.",
+      "placeholder": "Các công cụ và chiến lược quảng bá sẽ được hiển thị ở đây."
+    },
+    "revenue": {
+      "title": "Quản lý doanh thu",
+      "description": "Theo dõi thu nhập, xem báo cáo chi tiết và quản lý các khoản thanh toán của bạn.",
+      "placeholder": "Bảng điều khiển doanh thu và báo cáo sẽ được thiết kế ở đây."
+    }
   }
 }
