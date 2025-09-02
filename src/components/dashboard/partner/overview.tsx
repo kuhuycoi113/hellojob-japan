@@ -33,21 +33,23 @@ export function Overview() {
                         <CardDescription>{opp.company}</CardDescription>
                     </CardHeader>
                     <CardContent className="grid gap-4">
-                        <div className="grid gap-2">
-                            <div className="font-semibold">{t.dashboard_partner.details}</div>
-                            <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-                                <dt className="text-muted-foreground">{t.dashboard_partner.location}</dt>
-                                <dd>{opp.location}</dd>
-                                <dt className="text-muted-foreground">{t.dashboard_partner.visaType}</dt>
-                                <dd>{opp.visa}</dd>
-                                <dt className="text-muted-foreground">{t.dashboard_partner.quantity}</dt>
-                                <dd>{opp.quantity}</dd>
-                            </dl>
-                        </div>
-                         <div className="flex items-center text-sm text-muted-foreground">
-                            <Clock className="mr-2 h-4 w-4" />
-                            <span>{opp.expires}</span>
-                        </div>
+                        <Link href={`/dashboard/jobs/${opp.id}`} className="block hover:bg-gray-50/50 p-4 rounded-lg -m-4">
+                            <div className="grid gap-2">
+                                <div className="font-semibold">{t.dashboard_partner.details}</div>
+                                <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                                    <dt className="text-muted-foreground">{t.dashboard_partner.location}</dt>
+                                    <dd>{opp.location}</dd>
+                                    <dt className="text-muted-foreground">{t.dashboard_partner.visaType}</dt>
+                                    <dd>{opp.visa}</dd>
+                                    <dt className="text-muted-foreground">{t.dashboard_partner.quantity}</dt>
+                                    <dd>{opp.quantity}</dd>
+                                </dl>
+                            </div>
+                            <div className="flex items-center text-sm text-muted-foreground mt-4">
+                                <Clock className="mr-2 h-4 w-4" />
+                                <span>{opp.expires}</span>
+                            </div>
+                        </Link>
                         <div className="flex gap-2">
                             <Button className="w-full bg-green-600 hover:bg-green-700">
                                 <Check className="mr-2 h-4 w-4" />

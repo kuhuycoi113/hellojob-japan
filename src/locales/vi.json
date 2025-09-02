@@ -1,4 +1,3 @@
-
 {
   "header": {
     "home": "Trang chủ",
@@ -1130,7 +1129,9 @@
             "visa": "Kỹ năng đặc định",
             "quantity": "3 người",
             "expires": "Hết hạn trong 23 giờ",
-            "description": "Công việc chăm sóc người cao tuổi tại viện dưỡng lão ở Kanagawa. Công việc bao gồm hỗ trợ sinh hoạt hàng ngày, chăm sóc sức khỏe và các hoạt động giải trí. Yêu cầu ứng viên có chứng chỉ điều dưỡng và kinh nghiệm làm việc."
+            "description": "Công việc chăm sóc người cao tuổi tại viện dưỡng lão ở Kanagawa. Công việc bao gồm hỗ trợ sinh hoạt hàng ngày, chăm sóc sức khỏe và các hoạt động giải trí. Yêu cầu ứng viên có chứng chỉ điều dưỡng và kinh nghiệm làm việc.",
+            "requirements": ["Có kinh nghiệm làm việc trong ngành hộ lý ít nhất 1 năm.", "Trình độ tiếng Nhật tương đương N4 trở lên.", "Có sức khỏe tốt, không mắc các bệnh truyền nhiễm.", "Có tinh thần trách nhiệm, yêu thích công việc chăm sóc người cao tuổi."],
+            "benefits": ["Lương cơ bản từ 180,000 JPY/tháng, chưa tính tăng ca.", "Hỗ trợ nhà ở, ký túc xá gần nơi làm việc.", "Đóng bảo hiểm đầy đủ theo quy định của pháp luật Nhật Bản.", "Có cơ hội được đào tạo nâng cao tay nghề và gia hạn visa."]
         },
         {
             "id": "miyazaki-agri-01",
@@ -1140,7 +1141,9 @@
             "visa": "Thực tập sinh kỹ năng",
             "quantity": "5 người",
             "expires": "Hết hạn trong 2 ngày",
-            "description": "Làm việc tại nông trang trồng rau sạch theo công nghệ Nhật Bản. Công việc bao gồm gieo trồng, chăm sóc, thu hoạch và đóng gói sản phẩm. Không yêu cầu kinh nghiệm, sẽ được đào tạo."
+            "description": "Làm việc tại nông trang trồng rau sạch theo công nghệ Nhật Bản. Công việc bao gồm gieo trồng, chăm sóc, thu hoạch và đóng gói sản phẩm. Không yêu cầu kinh nghiệm, sẽ được đào tạo.",
+            "requirements": ["Có sức khỏe tốt để làm việc nông nghiệp.", "Chăm chỉ, chịu khó và có tinh thần học hỏi.", "Không yêu cầu kinh nghiệm, sẽ được đào tạo từ đầu.", "Ưu tiên ứng viên có thể làm việc lâu dài."],
+            "benefits": ["Lương theo giờ, mức lương cạnh tranh.", "Hỗ trợ chỗ ở và phương tiện đi lại.", "Môi trường làm việc trong lành, thân thiện.", "Cơ hội học hỏi kỹ thuật nông nghiệp tiên tiến của Nhật Bản."]
         }
       ]
     },
@@ -1311,5 +1314,3 @@
     "note": "(Công cụ này có sẵn trên trang web của Hofstede Insights.)"
   }
 }
-
-    
