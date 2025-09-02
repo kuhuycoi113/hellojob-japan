@@ -54,14 +54,17 @@ export function AllCoursesSection() {
           ))}
         </div>
         <div className="mt-16 text-center">
-            <Button
-                size="lg"
-                variant="default"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground text-base shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1"
-            >
-                {t.elearning.shareCourseButton}{' '}
-                <Send className="ml-2 h-5 w-5" />
-            </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="default"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground text-base shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1"
+          >
+            <Link href="/elearning/share-course">
+              {t.elearning.shareCourseButton}{' '}
+              <Send className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
