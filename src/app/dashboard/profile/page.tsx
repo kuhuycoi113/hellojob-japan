@@ -80,8 +80,8 @@ const initialProfileData: Record<Language, ProfileData> = {
         benefits: "Hỗ trợ đào tạo tiếng Nhật và kỹ năng tay nghề trước khi xuất cảnh.\nChương trình hỗ trợ vay vốn cho người lao động.\nTheo dõi và hỗ trợ người lao động trong suốt quá trình làm việc tại Nhật Bản."
     },
     en: {
-        companyName: 'TVC Dispatch Company',
-        tagline: 'Manpower Supply & Labor Export',
+        companyName: 'TVC Corporation',
+        tagline: 'Dispatch Company',
         location: 'Hanoi, Vietnam',
         introduction: "TVC Dispatch Company is one of the leading units in Vietnam in providing high-quality human resources for the Japanese market. With many years of experience, we are proud to have successfully connected thousands of workers with reputable enterprises in Japan, focusing on industries such as construction, mechanics, and agriculture. We are committed to providing thorough training and comprehensive support to ensure that workers are best prepared for work and life in Japan.",
         history: [
@@ -104,8 +104,8 @@ const initialProfileData: Record<Language, ProfileData> = {
         benefits: "Support for Japanese language and skills training before departure.\nLoan support program for workers.\nMonitoring and supporting workers throughout their working process in Japan."
     },
     ja: {
-        companyName: 'TVC派遣会社',
-        tagline: '人材供給・労働者派遣',
+        companyName: 'TVC株式会社',
+        tagline: '派遣会社',
         location: 'ハノイ、ベトナム',
         introduction: "TVC派遣会社は、日本市場向けに質の高い人材を供給するベトナムのリーディングカンパニーの一つです。長年の経験を持ち、建設、機械、農業などの業界を中心に、数千人の労働者を日本の優良企業と成功裏に結びつけてきたことを誇りに思っています。私たちは、労働者が日本での仕事と生活に最善の準備ができるよう、徹底した研修と包括的なサポートを提供することをお約束します。",
         history: [
@@ -135,6 +135,7 @@ export default function EmployerProfilePage() {
     const { toast } = useToast();
     const profile = t.dashboard_employer.company_profile;
 
+    const [isEditingHeader, setIsEditingHeader] = useState(false);
     const [isEditingIntro, setIsEditingIntro] = useState(false);
     const [isEditingHistory, setIsEditingHistory] = useState(false);
     const [isEditingLicenses, setIsEditingLicenses] = useState(false);
@@ -183,6 +184,7 @@ export default function EmployerProfilePage() {
 
     const handleSave = async (field: keyof typeof editStates) => {
         const editStates = {
+            header: setIsEditingHeader,
             intro: setIsEditingIntro,
             history: setIsEditingHistory,
             licenses: setIsEditingLicenses,
@@ -264,17 +266,33 @@ export default function EmployerProfilePage() {
                 </div>
                 <div className="flex justify-between items-start pt-16 p-6">
                     <div>
-                        <CardTitle className="text-2xl">
-                            {activeProfile.companyName}
-                        </CardTitle>
-                        <CardDescription>{activeProfile.tagline}</CardDescription>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
-                            <MapPin className="h-4 w-4" />
-                            {activeProfile.location}
-                        </div>
+                        {isEditingHeader ? (
+                            <div className="space-y-2">
+                                <Input className="text-2xl font-bold h-auto" value={activeProfile.companyName} onChange={(e) => handleProfileChange('companyName', e.target.value)} />
+                                <Input value={activeProfile.tagline} onChange={(e) => handleProfileChange('tagline', e.target.value)} />
+                                <div className="flex items-center gap-2">
+                                    <MapPin className="h-4 w-4 text-muted-foreground" />
+                                    <Input value={activeProfile.location} onChange={(e) => handleProfileChange('location', e.target.value)} />
+                                </div>
+                            </div>
+                        ) : (
+                             <>
+                                <CardTitle className="text-2xl">
+                                    {activeProfile.companyName}
+                                </CardTitle>
+                                <CardDescription>{activeProfile.tagline}</CardDescription>
+                                <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
+                                    <MapPin className="h-4 w-4" />
+                                    {activeProfile.location}
+                                </div>
+                             </>
+                        )}
                     </div>
                     <div className="flex items-center gap-2">
                          {isTranslating && <LoaderCircle className="w-5 h-5 animate-spin"/>}
+                         <Button variant="ghost" size="icon" onClick={() => isEditingHeader ? handleSave('header') : setIsEditingHeader(true)}>
+                           {isEditingHeader ? <Save className="h-4 w-4" /> : <Edit className="h-4 w-4" />}
+                        </Button>
                     </div>
                 </div>
             </Card>
