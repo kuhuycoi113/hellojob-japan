@@ -1193,8 +1193,50 @@
       "description": "Sử dụng các công cụ marketing và gợi ý của chúng tôi để tiếp cận nhiều học viên hơn."
     },
     "revenue": {
-      "title": "Quản lý doanh thu",
-      "description": "Theo dõi thu nhập, xem báo cáo chi tiết và quản lý các khoản thanh toán của bạn."
+      "title": "Báo cáo Doanh thu & Phân tích",
+      "description": "Theo dõi thu nhập, xem báo cáo chi tiết và quản lý các khoản thanh toán của bạn.",
+      "exportButton": "Xuất Báo cáo",
+      "stats": {
+        "totalRevenue": { "title": "Tổng Doanh thu", "value": "25,080,000đ", "change": "+20.1% so với tháng trước" },
+        "paidStudents": { "title": "Học viên đã mua", "value": "415", "change": "+12 so với tuần trước" },
+        "conversionRate": { "title": "Tỷ lệ chuyển đổi", "value": "8.52%", "change": "+1.2% so với tháng trước" },
+        "netRevenue": { "title": "Doanh thu ròng", "value": "15,048,000đ", "change": "Bạn nhận được 70% sau phí" }
+      },
+      "chart": {
+        "title": "Tăng trưởng Doanh thu",
+        "revenueLabel": "Doanh thu"
+      },
+      "payout": {
+        "title": "Thanh toán",
+        "nextPayout": {
+            "title": "Kỳ thanh toán tiếp theo",
+            "date": "Sẽ thanh toán vào ngày 15/08/2024"
+        },
+        "fee": {"title": "Phí nền tảng"},
+        "tax": {"title": "Thuế HelloJob nộp hộ"},
+        "net": {"title": "Thực nhận"},
+        "historyButton": "Xem lịch sử thanh toán"
+      },
+      "funnel": {
+        "title": "Phễu chuyển đổi",
+        "description": "Hành trình của người dùng từ khi truy cập đến khi thanh toán thành công.",
+        "visits": "Số lượt truy cập",
+        "freeViews": "Xem bài miễn phí",
+        "clicksToPay": "Click thanh toán",
+        "paidPurchases": "Mua hàng trả phí",
+        "abandonedCarts": "Bỏ thanh toán"
+      },
+      "transactions": {
+        "title": "Giao dịch gần đây",
+        "description": "Danh sách các giao dịch mua khoá học gần đây nhất.",
+        "headers": {
+            "student": "Học viên",
+            "course": "Khoá học",
+            "amount": "Số tiền",
+            "status": "Trạng thái",
+            "date": "Ngày"
+        }
+      }
     }
   },
   "gallupTest": {
@@ -1248,5 +1290,3 @@
     "note": "(Công cụ này có sẵn trên trang web của Hofstede Insights.)"
   }
 }
-
-    

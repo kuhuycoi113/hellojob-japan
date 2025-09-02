@@ -1193,8 +1193,50 @@
       "description": "マーケティングツールと提案を活用して、より多くの学生にリーチしましょう。"
     },
     "revenue": {
-      "title": "収益管理",
-      "description": "収益を追跡し、詳細なレポートを表示し、支払いを管理します。"
+      "title": "収益・分析レポート",
+      "description": "収益の追跡、詳細なレポートの表示、支払いの管理を行います。",
+      "exportButton": "レポートをエクスポート",
+      "stats": {
+        "totalRevenue": { "title": "総収益", "value": "¥187,500", "change": "先月比+20.1%" },
+        "paidStudents": { "title": "購入した学生", "value": "415", "change": "先週比+12" },
+        "conversionRate": { "title": "コンバージョン率", "value": "8.52%", "change": "先月比+1.2%" },
+        "netRevenue": { "title": "純収益", "value": "¥131,250", "change": "手数料後の70%を受け取ります" }
+      },
+      "chart": {
+        "title": "収益の推移",
+        "revenueLabel": "収益"
+      },
+       "payout": {
+        "title": "支払い",
+        "nextPayout": {
+            "title": "次回の支払い",
+            "date": "2024年8月15日に支払い予定"
+        },
+        "fee": {"title": "プラットフォーム手数料"},
+        "tax": {"title": "源泉徴収税"},
+        "net": {"title": "手取り額"},
+        "historyButton": "支払い履歴を表示"
+      },
+      "funnel": {
+        "title": "コンバージョンファネル",
+        "description": "訪問から支払い成功までのユーザーの道のり。",
+        "visits": "訪問数",
+        "freeViews": "無料視聴",
+        "clicksToPay": "支払いクリック",
+        "paidPurchases": "有料購入",
+        "abandonedCarts": "かご落ち"
+      },
+      "transactions": {
+        "title": "最近の取引",
+        "description": "最新のコース購入取引のリスト。",
+        "headers": {
+            "student": "学生",
+            "course": "コース",
+            "amount": "金額",
+            "status": "ステータス",
+            "date": "日付"
+        }
+      }
     }
   },
   "gallupTest": {
@@ -1248,5 +1290,3 @@
     "note": "（このツールはホフステード・インサイツのウェブサイトで利用できます。）"
   }
 }
-
-    

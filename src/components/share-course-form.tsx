@@ -31,7 +31,7 @@ export function ShareCourseForm() {
           icon: <DollarSign className="w-10 h-10 text-green-500"/>,
           title: t.shareCourse.tabs.revenue,
           description: t.shareCourse.revenue.description,
-          href: "#"
+          href: "/elearning/share-course/revenue"
       }
   ]
 
