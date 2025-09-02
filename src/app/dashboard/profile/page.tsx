@@ -125,7 +125,7 @@ export default function EmployerProfilePage() {
                     <div className="relative">
                         <Avatar className="h-24 w-24 border-4 border-card">
                             <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                            <AvatarFallback>GSU</AvatarFallback>
+                            <AvatarFallback>TVC</AvatarFallback>
                         </Avatar>
                         <Button size="icon" variant="outline" className="absolute -bottom-1 -right-1 h-7 w-7 rounded-full bg-muted">
                             <Camera className="h-4 w-4"/>
@@ -136,7 +136,7 @@ export default function EmployerProfilePage() {
                 <div className="flex justify-between items-start pt-16 p-6">
                     <div>
                         <CardTitle className="text-2xl">
-                            Global Support Union
+                            Công ty phái cử TVC
                         </CardTitle>
                         <CardDescription>{profile.industry}</CardDescription>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
