@@ -515,18 +515,18 @@
     ]
   },
   "goldenCircle": {
-    "title": "Find Your 'Why'",
-    "description": "The Golden Circle is a model by Simon Sinek that helps organizations articulate their purpose. By starting with 'Why', you can inspire action and attract employees and customers who share your core beliefs.",
-    "explanationTitle": "The Three Rings",
+    "title": "ゴールデンサークルで「Why」を見つける",
+    "description": "ゴールデンサークルはサイモン・シネック氏が提唱する、組織の存在意義を明確にするためのモデルです。「Why（なぜ）」から始めることで、行動を喚起し、企業の核となる信念を共有する従業員や顧客を引きつけます。",
+    "explanationTitle": "3つの輪",
     "why": {
       "title": "Why（なぜ）",
-      "description": "これはビジネスの核となる信念です。お金を稼ぐことではありません。それは結果です。「なぜ」とは、あなたが行うことをするようにあなたを鼓舞する目的、原因、または信念です。",
+      "description": "これはビジネスの核となる信念です。お金儲けが目的ではありません。それは結果です。「Why」とは、あなたを行動に駆り立てる目的、理念、信念のことです。",
       "formPrompt": "あなたの目的、理念、信念は何ですか？なぜあなたの組織は存在するのですか？"
     },
     "how": {
       "title": "How（どうやって）",
-      "description": "これらは「なぜ」を実現するためにとられる具体的な行動です。これはあなたの独自のセールスポイントであり、あなたを競合他社と差別化するものです。",
-      "formPrompt": "あなたは「何」を「どのよう」に行いますか？目的を実現するためにどのような具体的な行動を取りますか？"
+      "description": "これらは「Why」を実現するためにとられる具体的な行動です。これはあなたのUSP（独自のセールスポイント）であり、競合他社との差別化要因です。",
+      "formPrompt": "あなたは「何を」「どのように」行いますか？目的を実現するために、どのような具体的な行動をとりますか？"
     },
     "what": {
       "title": "What（何を）",
@@ -552,7 +552,7 @@
   "courseDetail": {
     "category": "異文化理解",
     "title": "ベトナム人労働者を理解する：文化ガイド",
-    "description": "日本で働くベトナム人労働者の日常的な習慣、文化的動機、隠れたプレッシャーを読み解き、より調 harmoniousで効果的なチームを構築するのに役立つ実践的なコースです。",
+    "description": "日本で働くベトナム人労働者の日常的な習慣、文化的動機、隠れたプレッシャーを読み解き、より調和のとれた効果的なチームを構築するのに役立つ実践的なコースです。",
     "featuredLessonsTitle": "注目のレッスン",
     "courseContent": "コース内容",
     "information": "情報",
