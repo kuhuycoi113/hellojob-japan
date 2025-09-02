@@ -11,6 +11,21 @@ export function FeaturedPartners() {
   const { t } = useLanguage();
 
   const partners = t.featuredPartners.partners;
+  
+  const partnerLinks: Record<string, string> = {
+    "Nghiệp đoàn Global Support": "/dashboard/partner/global-support",
+    "Global Support Union": "/dashboard/partner/global-support",
+    "グローバルサポート協同組合": "/dashboard/partner/global-support",
+    "Tổ chức hỗ trợ Sakura": "/dashboard/partner/sakura-support",
+    "Sakura Support Org.": "/dashboard/partner/sakura-support",
+    "登録支援機関さくら": "/dashboard/partner/sakura-support",
+    "Công ty TNHH Vietnam Link": "/dashboard/partner/vietnam-link",
+    "Vietnam Link Co., Ltd": "/dashboard/partner/vietnam-link",
+    "ベトナムリンク有限会社": "/dashboard/partner/vietnam-link",
+    "Công ty cổ phần Nhân lực Vietproud": "/dashboard/partner-profile",
+    "Vietproud Manpower JSC": "/dashboard/partner-profile",
+    "ベットプラウド人材株式会社": "/dashboard/partner-profile",
+  };
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
@@ -25,6 +40,8 @@ export function FeaturedPartners() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {partners.map((partner, index) => {
+            const partnerLink = partnerLinks[partner.name] || "#";
+            
             const partnerCard = (
               <Card
                 className="flex flex-col text-center items-center p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full"
@@ -50,15 +67,11 @@ export function FeaturedPartners() {
               </Card>
             );
 
-            if (partner.name === "Công ty cổ phần Nhân lực Vietproud" || partner.name === "Vietproud Manpower JSC" || partner.name === "ベットプラウド人材株式会社") {
-                 return (
-                    <Link href="/dashboard/partner-profile" key={index} className="group">
-                        {partnerCard}
-                    </Link>
-                 )
-            }
-            
-            return <div key={index}>{partnerCard}</div>;
+            return (
+              <Link href={partnerLink} key={partner.name} className="group">
+                  {partnerCard}
+              </Link>
+            )
           })}
         </div>
       </div>
