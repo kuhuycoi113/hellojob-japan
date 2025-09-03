@@ -30,22 +30,6 @@ export type Opportunity = {
     benefits: string[];
 }
 
-export type Candidate = {
-    id: string;
-    name_ja: string;
-    name_vi: string;
-    avatar: string;
-    details: string;
-    visa_type: string;
-    specialty: string;
-    desired_salary: string;
-    jobs: {
-        count: number;
-        images: string[];
-    };
-    created_date: string;
-}
-
 
 export const translations = {
   vi,

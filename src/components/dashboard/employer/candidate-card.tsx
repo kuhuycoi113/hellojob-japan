@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import Image from 'next/image';
@@ -6,7 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Heart } from 'lucide-react';
-import type { Candidate } from '@/locales/translations';
+import type { Candidate } from '@/data/candidates';
+import { useLanguage } from '@/contexts/language-context';
 
 const LineIcon = () => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,6 +34,8 @@ interface CandidateCardProps {
 }
 
 export function CandidateCard({ candidate }: CandidateCardProps) {
+  const { language } = useLanguage();
+
   return (
     <Card className="p-4 shadow-sm hover:shadow-md transition-shadow">
       <div className="flex items-start gap-4">
@@ -59,7 +61,7 @@ export function CandidateCard({ candidate }: CandidateCardProps) {
                   <VietnamFlagIcon /> {candidate.id}
                 </span>
               </h3>
-              <p className="text-sm text-muted-foreground">{candidate.details}</p>
+              <p className="text-sm text-muted-foreground">{candidate.details[language]}</p>
             </div>
             <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-red-500">
               <Heart />
@@ -68,13 +70,13 @@ export function CandidateCard({ candidate }: CandidateCardProps) {
 
           <div className="mt-2 space-y-1 text-sm">
             <p>
-              <span className="font-semibold text-accent">{candidate.visa_type}</span>
+              <span className="font-semibold text-accent">{candidate.visa_type[language]}</span>
               <span className="mx-1">•</span>
-              <span className="font-bold">{candidate.specialty}</span>
+              <span className="font-bold">{candidate.specialty[language]}</span>
             </p>
             <p className="text-muted-foreground">
               <span className="font-semibold text-gray-700">Mức lương mong muốn:</span>
-              <span> {candidate.desired_salary}</span>
+              <span> {candidate.desired_salary[language]}</span>
             </p>
           </div>
 

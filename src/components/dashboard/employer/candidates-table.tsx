@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import Image from 'next/image';
@@ -21,7 +20,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/language-context';
 import { MoreHorizontal } from 'lucide-react';
-import type { Candidate } from '@/locales/translations';
+import type { Candidate } from '@/data/candidates';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 interface CandidatesTableProps {
@@ -56,15 +55,15 @@ export function CandidatesTable({ candidates }: CandidatesTableProps) {
                 </Avatar>
                 <div>
                   <div className="font-medium text-gray-800">{isJapanese ? candidate.name_ja : candidate.name_vi}</div>
-                  <div className="text-sm text-muted-foreground">{candidate.details}</div>
+                  <div className="text-sm text-muted-foreground">{candidate.details[language]}</div>
                 </div>
               </div>
             </TableCell>
             <TableCell className="hidden md:table-cell">
-              <div>{candidate.visa_type}</div>
-              <div className="font-semibold text-gray-700">{candidate.specialty}</div>
+              <div>{candidate.visa_type[language]}</div>
+              <div className="font-semibold text-gray-700">{candidate.specialty[language]}</div>
             </TableCell>
-            <TableCell className="hidden sm:table-cell">{candidate.desired_salary}</TableCell>
+            <TableCell className="hidden sm:table-cell">{candidate.desired_salary[language]}</TableCell>
             <TableCell className="hidden lg:table-cell">{candidate.created_date}</TableCell>
             <TableCell>
               <DropdownMenu>
