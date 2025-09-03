@@ -1136,6 +1136,13 @@
       "description": "Review and accept new recruitment orders from companies.",
       "all_accepted": "No New Partnership Opportunities",
       "all_accepted_description": "All opportunities have been handled. Please check back later.",
+      "table": {
+        "jobTitle": "Job Title",
+        "location": "Location",
+        "quantity": "Quantity",
+        "expires": "Expires",
+        "actions": "Actions"
+      },
       "opportunities": [
         {
             "id": "kanagawa-care-01",

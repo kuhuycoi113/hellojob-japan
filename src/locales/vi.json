@@ -1116,18 +1116,18 @@
       "logout": "Đăng xuất"
     },
     "job_detail": {
-        "backButton": "Quay lại danh sách",
-        "location": "Địa điểm",
-        "quantity": "Số lượng",
-        "visaType": "Loại visa",
-        "deadline": "Hạn chót",
-        "jobDescription": "Mô tả công việc",
-        "requirements": "Yêu cầu công việc",
-        "benefits": "Phúc lợi",
-        "moreInfo": {
-            "title": "Thông tin thêm",
-            "content": "Vui lòng xem kỹ các yêu cầu và phúc lợi trước khi chấp nhận cơ hội hợp tác này. Nếu có bất kỳ câu hỏi nào, vui lòng liên hệ trực tiếp với đối tác."
-        }
+      "backButton": "Quay lại danh sách",
+      "location": "Địa điểm",
+      "quantity": "Số lượng",
+      "visaType": "Loại visa",
+      "deadline": "Hạn chót",
+      "jobDescription": "Mô tả công việc",
+      "requirements": "Yêu cầu công việc",
+      "benefits": "Phúc lợi",
+      "moreInfo": {
+        "title": "Thông tin thêm",
+        "content": "Vui lòng xem kỹ các yêu cầu và phúc lợi trước khi chấp nhận cơ hội hợp tác này. Nếu có bất kỳ câu hỏi nào, vui lòng liên hệ trực tiếp với đối tác."
+      }
     }
   },
   "dashboard_partner": {
@@ -1136,32 +1136,39 @@
       "description": "Xem xét và chấp nhận các đơn hàng tuyển dụng mới từ các xí nghiệp.",
       "all_accepted": "Không có cơ hội hợp tác mới",
       "all_accepted_description": "Tất cả các cơ hội đã được xử lý. Hãy kiểm tra lại sau.",
+      "table": {
+        "jobTitle": "Chức danh",
+        "location": "Địa điểm",
+        "quantity": "Số lượng",
+        "expires": "Hạn chót",
+        "actions": "Hành động"
+      },
       "opportunities": [
         {
-            "id": "kanagawa-care-01",
-            "profileUrl": "/dashboard/partner/fukushi-care",
-            "title": "Nhân viên hộ lý",
-            "company": "Trung tâm chăm sóc Fukushi",
-            "location": "Kanagawa",
-            "visa": "Kỹ năng đặc định",
-            "quantity": "3 người",
-            "expires": "Hết hạn trong 23 giờ",
-            "description": "Công việc chăm sóc người cao tuổi tại viện dưỡng lão ở Kanagawa. Công việc bao gồm hỗ trợ sinh hoạt hàng ngày, chăm sóc sức khỏe và các hoạt động giải trí. Yêu cầu ứng viên có chứng chỉ điều dưỡng và kinh nghiệm làm việc.",
-            "requirements": ["Có kinh nghiệm làm việc trong ngành hộ lý ít nhất 1 năm.", "Trình độ tiếng Nhật tương đương N4 trở lên.", "Có sức khỏe tốt, không mắc các bệnh truyền nhiễm.", "Có tinh thần trách nhiệm, yêu thích công việc chăm sóc người cao tuổi."],
-            "benefits": ["Lương cơ bản từ 180,000 JPY/tháng, chưa tính tăng ca.", "Hỗ trợ nhà ở, ký túc xá gần nơi làm việc.", "Đóng bảo hiểm đầy đủ theo quy định của pháp luật Nhật Bản.", "Có cơ hội được đào tạo nâng cao tay nghề và gia hạn visa."]
+          "id": "kanagawa-care-01",
+          "profileUrl": "/dashboard/partner/fukushi-care",
+          "title": "Nhân viên hộ lý",
+          "company": "Trung tâm chăm sóc Fukushi",
+          "location": "Kanagawa",
+          "visa": "Kỹ năng đặc định",
+          "quantity": "3 người",
+          "expires": "Hết hạn trong 23 giờ",
+          "description": "Công việc chăm sóc người cao tuổi tại viện dưỡng lão ở Kanagawa. Công việc bao gồm hỗ trợ sinh hoạt hàng ngày, chăm sóc sức khỏe và các hoạt động giải trí. Yêu cầu ứng viên có chứng chỉ điều dưỡng và kinh nghiệm làm việc.",
+          "requirements": ["Có kinh nghiệm làm việc trong ngành hộ lý ít nhất 1 năm.", "Trình độ tiếng Nhật tương đương N4 trở lên.", "Có sức khỏe tốt, không mắc các bệnh truyền nhiễm.", "Có tinh thần trách nhiệm, yêu thích công việc chăm sóc người cao tuổi."],
+          "benefits": ["Lương cơ bản từ 180,000 JPY/tháng, chưa tính tăng ca.", "Hỗ trợ nhà ở, ký túc xá gần nơi làm việc.", "Đóng bảo hiểm đầy đủ theo quy định của pháp luật Nhật Bản.", "Có cơ hội được đào tạo nâng cao tay nghề và gia hạn visa."]
         },
         {
-            "id": "miyazaki-agri-01",
-            "profileUrl": "/dashboard/partner/miyazaki-farm",
-            "title": "Công nhân nông nghiệp",
-            "company": "Nông trang Miyazaki",
-            "location": "Miyazaki",
-            "visa": "Thực tập sinh kỹ năng",
-            "quantity": "5 người",
-            "expires": "Hết hạn trong 2 ngày",
-            "description": "Làm việc tại nông trang trồng rau sạch theo công nghệ Nhật Bản. Công việc bao gồm gieo trồng, chăm sóc, thu hoạch và đóng gói sản phẩm. Không yêu cầu kinh nghiệm, sẽ được đào tạo.",
-            "requirements": ["Có sức khỏe tốt để làm việc nông nghiệp.", "Chăm chỉ, chịu khó và có tinh thần học hỏi.", "Không yêu cầu kinh nghiệm, sẽ được đào tạo từ đầu.", "Ưu tiên ứng viên có thể làm việc lâu dài."],
-            "benefits": ["Lương theo giờ, mức lương cạnh tranh.", "Hỗ trợ chỗ ở và phương tiện đi lại.", "Môi trường làm việc trong lành, thân thiện.", "Cơ hội học hỏi kỹ thuật nông nghiệp tiên tiến của Nhật Bản."]
+          "id": "miyazaki-agri-01",
+          "profileUrl": "/dashboard/partner/miyazaki-farm",
+          "title": "Công nhân nông nghiệp",
+          "company": "Nông trang Miyazaki",
+          "location": "Miyazaki",
+          "visa": "Thực tập sinh kỹ năng",
+          "quantity": "5 người",
+          "expires": "Hết hạn trong 2 ngày",
+          "description": "Làm việc tại nông trang trồng rau sạch theo công nghệ Nhật Bản. Công việc bao gồm gieo trồng, chăm sóc, thu hoạch và đóng gói sản phẩm. Không yêu cầu kinh nghiệm, sẽ được đào tạo.",
+          "requirements": ["Có sức khỏe tốt để làm việc nông nghiệp.", "Chăm chỉ, chịu khó và có tinh thần học hỏi.", "Không yêu cầu kinh nghiệm, sẽ được đào tạo từ đầu.", "Ưu tiên ứng viên có thể làm việc lâu dài."],
+          "benefits": ["Lương theo giờ, mức lương cạnh tranh.", "Hỗ trợ chỗ ở và phương tiện đi lại.", "Môi trường làm việc trong lành, thân thiện.", "Cơ hội học hỏi kỹ thuật nông nghiệp tiên tiến của Nhật Bản."]
         }
       ]
     },
