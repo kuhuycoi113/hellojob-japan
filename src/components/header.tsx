@@ -89,7 +89,6 @@ export function Header() {
     { href: "/elearning", label: t.header.elearning },
     { href: "/handbook", label: t.header.handbook },
     { href: "/about", label: t.header.about },
-    { href: "/advisors", label: t.header.advisors },
   ];
   
     const userRoles = [
@@ -171,6 +170,7 @@ export function Header() {
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
+    { href: "/advisors", label: t.header.advisors, icon: <UsersIcon /> },
   ];
 
   const handleRoleSelect = (role: Role) => {
