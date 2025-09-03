@@ -10,19 +10,19 @@ import { DashboardStats } from './dashboard-stats';
 import { OverviewChart } from './overview-chart';
 import { RecentApplications } from './recent-applications';
 import { Overview } from '../partner/overview';
-import type { Job } from '@/locales/translations';
+import type { Job, Opportunity } from '@/locales/translations';
 
 export function CompanyProfile() {
   const { t } = useLanguage();
   
-  // Lift state up to the parent component
-  const [opportunities, setOpportunities] = useState(t.dashboard_partner.newOpportunities.opportunities);
-  const [acceptedJobs, setAcceptedJobs] = useState(t.dashboard_employer.activeJobs.jobs);
+  const [opportunities, setOpportunities] = useState<Opportunity[]>(t.dashboard_partner.newOpportunities.opportunities);
+  const [acceptedJobs, setAcceptedJobs] = useState<Job[]>(t.dashboard_employer.activeJobs.jobs);
+  const [declinedJobs, setDeclinedJobs] = useState<Opportunity[]>([]);
+
 
   const handleAcceptJob = (jobId: string) => {
     const jobToMove = opportunities.find(job => job.id === jobId);
     if (jobToMove) {
-      // Map opportunity to a job format
       const newJob: Job = {
         id: jobToMove.id,
         title: jobToMove.title,
@@ -31,7 +31,7 @@ export function CompanyProfile() {
         status: 'Forwarding',
         partners: "0",
         applications: "0",
-        date_posted: new Date().toISOString().split('T')[0], // Set current date
+        date_posted: new Date().toISOString().split('T')[0],
         salary: "N/A",
         image: `https://picsum.photos/400/225?random=job${acceptedJobs.length + 1}`,
         tags: [jobToMove.visa],
@@ -42,8 +42,11 @@ export function CompanyProfile() {
   };
 
   const handleDeclineJob = (jobId: string) => {
-    // For now, just remove it from the list of opportunities
-    setOpportunities(prev => prev.filter(job => job.id !== jobId));
+    const jobToDecline = opportunities.find(job => job.id === jobId);
+    if (jobToDecline) {
+      setDeclinedJobs(prev => [jobToDecline, ...prev]);
+      setOpportunities(prev => prev.filter(job => job.id !== jobId));
+    }
   };
 
 
@@ -54,7 +57,8 @@ export function CompanyProfile() {
         <div className="mx-auto grid w-full max-w-7xl gap-6">
           <div className="mt-4">
             <Overview 
-              opportunities={opportunities}
+              pendingOpportunities={opportunities}
+              declinedOpportunities={declinedJobs}
               onAccept={handleAcceptJob}
               onDecline={handleDeclineJob}
             />
