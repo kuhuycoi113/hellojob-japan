@@ -1143,6 +1143,12 @@
         "expires": "Hạn chót",
         "actions": "Hành động"
       },
+       "tabs": {
+        "all": "Tất cả",
+        "pending": "Chờ chấp nhận",
+        "declined": "Đã từ chối",
+        "archived": "Đã lưu trữ"
+      },
       "opportunities": [
         {
           "id": "kanagawa-care-01",

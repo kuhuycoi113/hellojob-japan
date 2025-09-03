@@ -1143,6 +1143,12 @@
         "expires": "Expires",
         "actions": "Actions"
       },
+       "tabs": {
+        "all": "All",
+        "pending": "Pending",
+        "declined": "Declined",
+        "archived": "Archived"
+      },
       "opportunities": [
         {
             "id": "kanagawa-care-01",

@@ -1142,6 +1142,12 @@
         "expires": "応募締切",
         "actions": "アクション"
       },
+       "tabs": {
+        "all": "すべて",
+        "pending": "承認待ち",
+        "declined": "辞退済み",
+        "archived": "アーカイブ済み"
+      },
       "opportunities": [
         {
           "id": "kanagawa-care-01",
