@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import {
@@ -19,10 +18,9 @@ interface OpportunitiesTableProps {
   opportunities: Opportunity[];
   onAccept: (jobId: string) => void;
   onDecline: (jobId: string) => void;
-  declinedJobs: Set<string>;
 }
 
-export function OpportunitiesTable({ opportunities, onAccept, onDecline, declinedJobs }: OpportunitiesTableProps) {
+export function OpportunitiesTable({ opportunities, onAccept, onDecline }: OpportunitiesTableProps) {
   const { t } = useLanguage();
 
   return (
@@ -38,11 +36,13 @@ export function OpportunitiesTable({ opportunities, onAccept, onDecline, decline
       </TableHeader>
       <TableBody>
         {opportunities.map((opp) => (
-          <TableRow key={opp.id} className={`transition-opacity duration-300 ${declinedJobs.has(opp.id) ? 'opacity-0' : 'opacity-100'}`}>
+          <TableRow key={opp.id}>
             <TableCell>
               <Link href={`/dashboard/jobs/${opp.id}`} className="hover:underline">
                 <div className="font-medium text-gray-800">{opp.title}</div>
-                <div className="text-sm text-muted-foreground">{opp.company}</div>
+                 <Link href={opp.profileUrl || '#'} className="w-fit">
+                    <div className="text-sm text-muted-foreground hover:text-primary">{opp.company}</div>
+                </Link>
               </Link>
             </TableCell>
             <TableCell className="hidden md:table-cell">{opp.location}</TableCell>
@@ -54,7 +54,8 @@ export function OpportunitiesTable({ opportunities, onAccept, onDecline, decline
                 </div>
             </TableCell>
             <TableCell className="text-right">
-                <div className="flex justify-end gap-2">
+               {onAccept && onDecline && (
+                 <div className="flex justify-end gap-2">
                     <Button onClick={() => onDecline(opp.id)} variant="outline" size="sm">
                         <X className="mr-2 h-4 w-4" />
                         {t.dashboard_partner.decline}
@@ -64,6 +65,7 @@ export function OpportunitiesTable({ opportunities, onAccept, onDecline, decline
                         {t.dashboard_partner.accept}
                     </Button>
                 </div>
+               )}
             </TableCell>
           </TableRow>
         ))}

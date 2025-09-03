@@ -12,7 +12,7 @@ import {
 import { useLanguage } from '@/contexts/language-context';
 import { Check, Clock, Copy, X, LayoutGrid, List } from 'lucide-react';
 import Link from 'next/link';
-import type { Opportunity } from '@/locales/translations';
+import type { Opportunity, Job } from '@/locales/translations';
 import { OpportunitiesTable } from './opportunities-table';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -20,6 +20,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface OverviewProps {
     pendingOpportunities: Opportunity[];
+    acceptedOpportunities: Job[];
     declinedOpportunities: Opportunity[];
     onAccept: (jobId: string) => void;
     onDecline: (jobId: string) => void;
@@ -28,13 +29,8 @@ interface OverviewProps {
 type ViewMode = 'list' | 'gallery';
 
 
-const OpportunityList = ({ opportunities, onAccept, onDecline, declinedJobs, view }: { opportunities: Opportunity[], onAccept: (jobId: string) => void, onDecline: (jobId: string) => void, declinedJobs: Set<string>, view: ViewMode }) => {
-    const { t } = useLanguage();
+const OpportunityList = ({ opportunities, onAccept, onDecline, view, t }: { opportunities: (Opportunity | Job)[], onAccept?: (jobId: string) => void, onDecline?: (jobId: string) => void, view: ViewMode, t: any }) => {
     
-    const handleDecline = (jobId: string) => {
-        onDecline(jobId);
-    };
-
     if (opportunities.length === 0) {
         return (
             <div className="text-center py-12 text-muted-foreground">
@@ -48,12 +44,12 @@ const OpportunityList = ({ opportunities, onAccept, onDecline, declinedJobs, vie
         return (
             <div className="grid gap-8 md:grid-cols-2">
                 {opportunities.map((opp) => (
-                    <Card key={opp.id} className={`group hover:shadow-xl transition-all duration-300 ${declinedJobs.has(opp.id) ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+                    <Card key={opp.id} className='group hover:shadow-xl transition-all duration-300'>
                         <CardHeader>
-                            <CardTitle>{opp.title}</CardTitle>
-                            <Link href={opp.profileUrl || '#'} className="w-fit">
+                             <Link href={(opp as Opportunity).profileUrl || '#'} className="w-fit">
                                 <CardDescription className="hover:underline">{opp.company}</CardDescription>
                             </Link>
+                            <CardTitle>{opp.title}</CardTitle>
                         </CardHeader>
                         <CardContent className="grid gap-4">
                             <div className="grid gap-2">
@@ -62,25 +58,29 @@ const OpportunityList = ({ opportunities, onAccept, onDecline, declinedJobs, vie
                                     <dt className="text-muted-foreground">{t.dashboard_partner.location}</dt>
                                     <dd>{opp.location}</dd>
                                     <dt className="text-muted-foreground">{t.dashboard_partner.visaType}</dt>
-                                    <dd>{opp.visa}</dd>
-                                    <dt className="text-muted-foreground">{t.dashboard_partner.quantity}</dt>
-                                    <dd>{opp.quantity}</dd>
+                                    <dd>{(opp as Opportunity).visa || (opp as Job).tags.join(', ')}</dd>
+                                     <dt className="text-muted-foreground">{t.dashboard_partner.quantity}</dt>
+                                    <dd>{(opp as Opportunity).quantity}</dd>
                                 </dl>
                             </div>
-                            <div className="flex items-center text-sm text-muted-foreground">
+                           {'expires' in opp && (
+                                <div className="flex items-center text-sm text-muted-foreground">
                                 <Clock className="mr-2 h-4 w-4" />
-                                <span>{opp.expires}</span>
+                                <span>{(opp as Opportunity).expires}</span>
                             </div>
-                            <div className="flex gap-2">
+                           )}
+                           {onAccept && onDecline && (
+                             <div className="flex gap-2">
                                  <Button onClick={() => onAccept(opp.id)} className="w-full bg-green-600 hover:bg-green-700">
                                     <Check className="mr-2 h-4 w-4" />
                                     {t.dashboard_partner.accept}
                                 </Button>
-                                <Button onClick={() => handleDecline(opp.id)} variant="outline" className="w-full">
+                                <Button onClick={() => onDecline(opp.id)} variant="outline" className="w-full">
                                     <X className="mr-2 h-4 w-4" />
                                     {t.dashboard_partner.decline}
                                 </Button>
                             </div>
+                           )}
                         </CardContent>
                     </Card>
                 ))}
@@ -90,19 +90,17 @@ const OpportunityList = ({ opportunities, onAccept, onDecline, declinedJobs, vie
 
     return (
         <OpportunitiesTable 
-            opportunities={opportunities} 
-            onAccept={onAccept}
-            onDecline={handleDecline}
-            declinedJobs={declinedJobs}
+            opportunities={opportunities as Opportunity[]} 
+            onAccept={onAccept!}
+            onDecline={onDecline!}
         />
     )
 }
 
-export function Overview({ pendingOpportunities, declinedOpportunities, onAccept, onDecline }: OverviewProps) {
+export function Overview({ pendingOpportunities, acceptedOpportunities, declinedOpportunities, onAccept, onDecline }: OverviewProps) {
   const { t } = useLanguage();
   const [view, setView] = useState<ViewMode>('gallery');
-  const [declinedJobs, setDeclinedJobs] = useState<Set<string>>(new Set());
-
+  
   useEffect(() => {
     const savedView = localStorage.getItem('opportunities-view-mode') as ViewMode;
     if (savedView) {
@@ -114,17 +112,6 @@ export function Overview({ pendingOpportunities, declinedOpportunities, onAccept
     localStorage.setItem('opportunities-view-mode', view);
   }, [view]);
 
-  const handleDecline = (jobId: string) => {
-    setDeclinedJobs(prev => new Set(prev).add(jobId));
-    setTimeout(() => {
-        onDecline(jobId);
-        setDeclinedJobs(prev => {
-            const newSet = new Set(prev);
-            newSet.delete(jobId);
-            return newSet;
-        });
-    }, 300);
-  };
   
   const hasOpportunities = pendingOpportunities.length > 0 || declinedOpportunities.length > 0;
   
@@ -189,18 +176,16 @@ export function Overview({ pendingOpportunities, declinedOpportunities, onAccept
                 <OpportunityList
                     opportunities={pendingOpportunities}
                     onAccept={onAccept}
-                    onDecline={handleDecline}
-                    declinedJobs={declinedJobs}
+                    onDecline={onDecline}
                     view={view}
+                    t={t}
                 />
               </TabsContent>
                <TabsContent value="declined">
                 <OpportunityList
                     opportunities={declinedOpportunities}
-                    onAccept={onAccept}
-                    onDecline={() => {}}
-                    declinedJobs={declinedJobs}
                     view={view}
+                    t={t}
                 />
                </TabsContent>
                 <TabsContent value="archived" className="mt-4 text-center text-muted-foreground py-12">

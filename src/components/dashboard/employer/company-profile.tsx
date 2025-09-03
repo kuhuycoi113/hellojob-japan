@@ -58,6 +58,7 @@ export function CompanyProfile() {
           <div className="mt-4">
             <Overview 
               pendingOpportunities={opportunities}
+              acceptedOpportunities={acceptedJobs}
               declinedOpportunities={declinedJobs}
               onAccept={handleAcceptJob}
               onDecline={handleDeclineJob}
