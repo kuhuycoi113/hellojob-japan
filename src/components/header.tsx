@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -85,6 +85,7 @@ export function Header() {
     { href: "/", label: t.header.home },
     { href: "/how-it-works", label: t.header.steps },
     { href: "/recruit-right", label: t.header.recruitRight },
+    { href: "/advisors", label: t.header.advisors },
     { href: "/post-job-ai", label: t.header.postJobAI, icon: <Sparkles className="h-4 w-4 text-accent" /> },
     { href: "/elearning", label: t.header.elearning },
     { href: "/handbook", label: t.header.handbook },
@@ -389,4 +390,6 @@ export function Header() {
 }
 
     
+    
+
     

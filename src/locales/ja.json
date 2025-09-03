@@ -1,8 +1,10 @@
+
 {
   "header": {
     "home": "ホームページ",
     "steps": "ご利用の流れ",
     "recruitRight": "採用ご担当者様へ",
+    "advisors": "相談員",
     "postJobAI": "AI求人作成",
     "elearning": "Eラーニング",
     "handbook": "ハンドブック",
@@ -116,6 +118,37 @@
       {
         "name": "ベットプラウド人材株式会社",
         "type": "送り出し機関"
+      }
+    ]
+  },
+  "advisors": {
+    "title": "相談員チームのご紹介",
+    "subtitle": "経験豊富な人事・法務の専門家が、あなたをサポートします。",
+    "viewProfile": "プロフィールを見る",
+    "advisorsList": [
+      {
+        "name": "中村 さくら",
+        "title": "シニアHRコンサルタント",
+        "avatar": "https://i.pravatar.cc/150?u=advisor1",
+        "skills": ["採用", "候補者評価", "日本市場"]
+      },
+      {
+        "name": "佐藤 大輔",
+        "title": "法務・ビザ専門家",
+        "avatar": "https://i.pravatar.cc/150?u=advisor2",
+        "skills": ["労働法", "ビザ手続き", "契約"]
+      },
+      {
+        "name": "鈴木 恵子",
+        "title": "研修・育成担当",
+        "avatar": "https://i.pravatar.cc/150?u=advisor3",
+        "skills": ["文化研修", "スキル開発", "定着支援"]
+      },
+      {
+        "name": "高橋 健太",
+        "title": "パートナーシップ担当",
+        "avatar": "https://i.pravatar.cc/150?u=advisor4",
+        "skills": ["企業連携", "パートナー開拓", "交渉"]
       }
     ]
   },
@@ -1344,3 +1377,5 @@
     "note": "（このツールはホフステード・インサイツのウェブサイトで利用できます。）"
   }
 }
+
+    

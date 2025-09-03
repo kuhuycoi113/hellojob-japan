@@ -1,8 +1,10 @@
+
 {
   "header": {
     "home": "Home",
     "steps": "How it Works",
     "recruitRight": "Recruit Right",
+    "advisors": "Advisors",
     "postJobAI": "Post Job with AI",
     "elearning": "E-learning",
     "handbook": "Handbook",
@@ -116,6 +118,37 @@
       {
         "name": "Vietproud Manpower JSC",
         "type": "Sending Company"
+      }
+    ]
+  },
+   "advisors": {
+    "title": "Meet Our Advisors",
+    "subtitle": "Our experienced HR and legal experts are here to support you.",
+    "viewProfile": "View Profile",
+    "advisorsList": [
+      {
+        "name": "Minh Anh Bui",
+        "title": "Senior HR Consultant",
+        "avatar": "https://i.pravatar.cc/150?u=advisor1",
+        "skills": ["Recruitment", "Candidate Assessment", "Japan Market"]
+      },
+      {
+        "name": "Thu Ha Nguyen",
+        "title": "Legal & Visa Specialist",
+        "avatar": "https://i.pravatar.cc/150?u=advisor2",
+        "skills": ["Labor Law", "Visa Procedures", "Contracts"]
+      },
+      {
+        "name": "Quang Huy Le",
+        "title": "Training & Development Expert",
+        "avatar": "https://i.pravatar.cc/150?u=advisor3",
+        "skills": ["Cultural Training", "Skill Development", "Onboarding"]
+      },
+      {
+        "name": "Lan Phuong Pham",
+        "title": "Partnership Relations Manager",
+        "avatar": "https://i.pravatar.cc/150?u=advisor4",
+        "skills": ["Corporate Relations", "Partner Networking", "Negotiation"]
       }
     ]
   },
@@ -1151,30 +1184,30 @@
       },
       "opportunities": [
         {
-            "id": "kanagawa-care-01",
-            "profileUrl": "/dashboard/partner/fukushi-care",
-            "title": "Caregiver",
-            "company": "Fukushi Care Center",
-            "location": "Kanagawa",
-            "visa": "Specified Skilled Worker",
-            "quantity": "3 people",
-            "expires": "Expires in 23 hours",
-            "description": "Caring for the elderly at a nursing home in Kanagawa. The job includes assisting with daily living activities, health care, and recreational activities. Applicants are required to have a nursing certificate and work experience.",
-            "requirements": ["At least 1 year of experience in the caregiving industry.", "Japanese language proficiency equivalent to N4 or higher.", "Good health, free from infectious diseases.", "Responsible and passionate about caring for the elderly."],
-            "benefits": ["Basic salary from 180,000 JPY/month, excluding overtime.", "Support for housing, dormitory near the workplace.", "Full insurance coverage according to Japanese law.", "Opportunities for advanced training and visa renewal."]
+          "id": "kanagawa-care-01",
+          "profileUrl": "/dashboard/partner/fukushi-care",
+          "title": "Caregiver",
+          "company": "Fukushi Care Center",
+          "location": "Kanagawa",
+          "visa": "Specified Skilled Worker",
+          "quantity": "3 people",
+          "expires": "Expires in 23 hours",
+          "description": "Caring for the elderly at a nursing home in Kanagawa. The job includes assisting with daily living activities, health care, and recreational activities. Applicants are required to have a nursing certificate and work experience.",
+          "requirements": ["At least 1 year of experience in the caregiving industry.", "Japanese language proficiency equivalent to N4 or higher.", "Good health, free from infectious diseases.", "Responsible and passionate about caring for the elderly."],
+          "benefits": ["Basic salary from 180,000 JPY/month, excluding overtime.", "Support for housing, dormitory near the workplace.", "Full insurance coverage according to Japanese law.", "Opportunities for advanced training and visa renewal."]
         },
         {
-            "id": "miyazaki-agri-01",
-            "profileUrl": "/dashboard/partner/miyazaki-farm",
-            "title": "Agricultural Worker",
-            "company": "Miyazaki Farm",
-            "location": "Miyazaki",
-            "visa": "Technical Intern Trainee",
-            "quantity": "5 people",
-            "expires": "Expires in 2 days",
-            "description": "Working at a farm that grows organic vegetables using Japanese technology. The work includes planting, caring for, harvesting, and packaging products. No experience is required; training will be provided.",
-            "requirements": ["Good health for agricultural work.", "Hardworking, diligent, and willing to learn.", "No experience required, training will be provided from the beginning.", "Long-term commitment is preferred."],
-            "benefits": ["Competitive hourly wage.", "Support for accommodation and transportation.", "Clean and friendly working environment.", "Opportunity to learn advanced Japanese agricultural techniques."]
+          "id": "miyazaki-agri-01",
+          "profileUrl": "/dashboard/partner/miyazaki-farm",
+          "title": "Agricultural Worker",
+          "company": "Miyazaki Farm",
+          "location": "Miyazaki",
+          "visa": "Technical Intern Trainee",
+          "quantity": "5 people",
+          "expires": "Expires in 2 days",
+          "description": "Working at a farm that grows organic vegetables using Japanese technology. The work includes planting, caring for, harvesting, and packaging products. No experience is required; training will be provided.",
+          "requirements": ["Good health for agricultural work.", "Hardworking, diligent, and willing to learn.", "No experience required, training will be provided from the beginning.", "Long-term commitment is preferred."],
+          "benefits": ["Competitive hourly wage.", "Support for accommodation and transportation.", "Clean and friendly working environment.", "Opportunity to learn advanced Japanese agricultural techniques."]
         }
       ]
     },
@@ -1345,3 +1378,5 @@
     "note": "(This tool is available on the Hofstede Insights website.)"
   }
 }
+
+    

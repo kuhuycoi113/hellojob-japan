@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/language-context';
-import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle } from 'lucide-react';
+import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle, Users } from 'lucide-react';
 import { Logo } from './logo';
 import Link from 'next/link';
 import { Separator } from './ui/separator';
@@ -24,15 +24,16 @@ export function MobileMenuSheet() {
   const menuItems = [
     { href: "/how-it-works", label: t.header.menuItems.howItWorks, icon: <Compass /> },
     { href: "/recruit-right", label: t.header.menuItems.recruitRight, icon: <Target /> },
+    { href: "/advisors", label: t.header.advisors, icon: <Users /> },
     { href: "/elearning", label: t.header.menuItems.elearning, icon: <BookOpen /> },
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
-    { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
     { href: "/post-job-ai", label: t.mobile_menu_sheet.postJob, icon: <Plus /> },
     { href: "/dashboard/jobs", label: t.mobile_menu_sheet.dataReport, icon: <FileText /> },
     { href: "/dashboard/partner", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
+    { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
   ];
 
   return (
@@ -90,3 +91,5 @@ export function MobileMenuSheet() {
     </Sheet>
   );
 }
+
+    

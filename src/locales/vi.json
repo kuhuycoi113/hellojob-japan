@@ -1,8 +1,10 @@
+
 {
   "header": {
     "home": "Trang chủ",
     "steps": "Các bước",
     "recruitRight": "Tuyển đúng người",
+    "advisors": "Tư vấn viên",
     "postJobAI": "Đăng việc làm bằng AI",
     "elearning": "E-learning",
     "handbook": "Cẩm nang",
@@ -116,6 +118,37 @@
       {
         "name": "Công ty cổ phần Nhân lực Vietproud",
         "type": "Công ty phái cử"
+      }
+    ]
+  },
+  "advisors": {
+    "title": "Gặp gỡ đội ngũ tư vấn viên",
+    "subtitle": "Các chuyên gia nhân sự và pháp lý giàu kinh nghiệm của chúng tôi luôn sẵn sàng hỗ trợ bạn.",
+    "viewProfile": "Xem hồ sơ",
+    "advisorsList": [
+      {
+        "name": "Bùi Minh Anh",
+        "title": "Chuyên viên tư vấn nhân sự cấp cao",
+        "avatar": "https://i.pravatar.cc/150?u=advisor1",
+        "skills": ["Tuyển dụng", "Đánh giá ứng viên", "Thị trường Nhật Bản"]
+      },
+      {
+        "name": "Nguyễn Thị Thu Hà",
+        "title": "Chuyên viên pháp lý & Visa",
+        "avatar": "https://i.pravatar.cc/150?u=advisor2",
+        "skills": ["Luật lao động", "Thủ tục Visa", "Hợp đồng"]
+      },
+      {
+        "name": "Lê Quang Huy",
+        "title": "Chuyên gia đào tạo & phát triển",
+        "avatar": "https://i.pravatar.cc/150?u=advisor3",
+        "skills": ["Đào tạo văn hoá", "Phát triển kỹ năng", "Hội nhập"]
+      },
+      {
+        "name": "Phạm Lan Phương",
+        "title": "Chuyên viên quan hệ đối tác",
+        "avatar": "https://i.pravatar.cc/150?u=advisor4",
+        "skills": ["Quan hệ doanh nghiệp", "Kết nối đối tác", "Đàm phán"]
       }
     ]
   },
@@ -1345,3 +1378,5 @@
     "note": "(Công cụ này có sẵn trên trang web của Hofstede Insights.)"
   }
 }
+
+    
