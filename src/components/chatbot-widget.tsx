@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -72,7 +71,7 @@ export function ChatbotWidget() {
           className="rounded-full h-16 w-16 shadow-lg bg-primary hover:bg-primary/90"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X className="h-7 w-7" /> : <MessageSquare className="h-7 w-7" />}
+           <MessageSquare className="h-7 w-7" />
         </Button>
       </div>
 
@@ -92,6 +91,14 @@ export function ChatbotWidget() {
                 <p className="text-sm text-muted-foreground">{t.chat.statusOnline}</p>
               </div>
             </div>
+             <Button
+                variant="ghost"
+                size="icon"
+                className="ml-auto h-8 w-8 rounded-full"
+                onClick={() => setIsOpen(false)}
+            >
+                <X className="h-5 w-5" />
+            </Button>
           </CardHeader>
           <CardContent className="flex-1 overflow-y-auto p-4 border-y space-y-6">
             {messages.map((msg, index) => (
