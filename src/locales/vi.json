@@ -1428,7 +1428,12 @@
       "title": "Hồ sơ Tư vấn viên",
       "subtitle": "Thông tin chi tiết về chuyên gia của chúng tôi."
     },
-    "contactButton": "Liên hệ tư vấn viên",
+    "contactActions": {
+      "messenger": "Mở Messenger",
+      "call": "Gọi điện thoại",
+      "zalo": "Nhắn Zalo",
+      "chat": "Chat trên hệ thống"
+    },
     "professionalInfo": {
       "title": "Thông tin chuyên môn",
       "experience": { "label": "Kinh nghiệm" },
@@ -1460,6 +1465,7 @@
 }
 
     
+
 
 
 

@@ -1428,7 +1428,12 @@
       "title": "Advisor Profile",
       "subtitle": "Detailed information about our expert."
     },
-    "contactButton": "Contact Advisor",
+    "contactActions": {
+      "messenger": "Open Messenger",
+      "call": "Call Phone",
+      "zalo": "Chat on Zalo",
+      "chat": "Chat on System"
+    },
     "professionalInfo": {
       "title": "Professional Information",
       "experience": { "label": "Experience" },
@@ -1460,6 +1465,7 @@
 }
 
     
+
 
 
 

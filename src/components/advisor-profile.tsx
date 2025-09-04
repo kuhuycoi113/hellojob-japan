@@ -15,6 +15,8 @@ import { Clock, Star, Briefcase, Sparkles, User, Send, Target, HelpCircle, Shiel
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { translations } from '@/locales/translations';
 import { Button } from './ui/button';
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from './ui/tooltip';
+import Link from 'next/link';
 
 const ZaloIcon = () => (
     <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,6 +58,29 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
 
   const systemAdvantages = advisor_t.systemAdvantages;
   const addedValue = advisor_t.addedValue;
+
+  const contactOptions = [
+    {
+        name: advisor_t.contactActions.messenger,
+        icon: <MessengerIcon />,
+        href: 'https://m.me/your-page-id'
+    },
+    {
+        name: advisor_t.contactActions.call,
+        icon: <Phone className="w-6 h-6 text-green-500"/>,
+        href: 'tel:+84123456789'
+    },
+    {
+        name: advisor_t.contactActions.zalo,
+        icon: <ZaloIcon />,
+        href: 'https://zalo.me/your-zalo-id'
+    },
+    {
+        name: advisor_t.contactActions.chat,
+        icon: <MessageSquare className="w-6 h-6 text-blue-500" />,
+        href: '/chat'
+    }
+  ]
 
   return (
     <>
@@ -187,17 +212,26 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
       </div>
     </section>
 
-    {/* Floating Contact Button */}
+    {/* Floating Contact Buttons */}
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-        <Button className="h-14 pl-2 pr-6 rounded-full shadow-2xl bg-sky-500 hover:bg-sky-600 text-white text-lg flex items-center gap-3">
-            <div className="flex items-center gap-1">
-                <span className="bg-white rounded-full p-1.5 h-10 w-10 flex items-center justify-center"><ZaloIcon /></span>
-                <span className="bg-white rounded-full p-1.5 h-10 w-10 flex items-center justify-center"><Phone className="w-6 h-6 text-green-500" /></span>
-                <span className="bg-white rounded-full p-1.5 h-10 w-10 flex items-center justify-center"><MessengerIcon /></span>
-                <span className="bg-white rounded-full p-1.5 h-10 w-10 flex items-center justify-center"><MessageSquare className="w-6 h-6 text-blue-500" /></span>
-            </div>
-            <span>{advisor_t.contactButton}</span>
-        </Button>
+        <div className="flex items-center gap-2 p-2 rounded-full shadow-2xl bg-background/80 backdrop-blur-sm border">
+            <TooltipProvider>
+                {contactOptions.map(option => (
+                     <Tooltip key={option.name}>
+                        <TooltipTrigger asChild>
+                            <Button asChild variant="ghost" size="icon" className="h-12 w-12 rounded-full">
+                                <Link href={option.href} target="_blank" rel="noopener noreferrer">
+                                   {option.icon}
+                                </Link>
+                            </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                           <p>{option.name}</p>
+                        </TooltipContent>
+                    </Tooltip>
+                ))}
+            </TooltipProvider>
+        </div>
     </div>
     </>
   );
