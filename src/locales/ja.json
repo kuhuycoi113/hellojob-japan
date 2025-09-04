@@ -1427,6 +1427,7 @@
       "title": "相談員プロフィール",
       "subtitle": "私たちの専門家の詳細情報"
     },
+    "contactButton": "相談員に連絡",
     "contactActions": {
       "messenger": "Messengerを開く",
       "call": "電話をかける",
@@ -1464,6 +1465,7 @@
 }
 
     
+
 
 
 

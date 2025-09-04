@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import Image from 'next/image';
@@ -214,23 +213,26 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
 
     {/* Floating Contact Buttons */}
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-        <div className="flex items-center gap-2 p-2 rounded-full shadow-2xl bg-background/80 backdrop-blur-sm border">
-            <TooltipProvider>
-                {contactOptions.map(option => (
-                     <Tooltip key={option.name}>
-                        <TooltipTrigger asChild>
-                            <Button asChild variant="ghost" size="icon" className="h-12 w-12 rounded-full">
-                                <Link href={option.href} target="_blank" rel="noopener noreferrer">
-                                   {option.icon}
-                                </Link>
-                            </Button>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                           <p>{option.name}</p>
-                        </TooltipContent>
-                    </Tooltip>
-                ))}
-            </TooltipProvider>
+        <div className="flex items-center gap-4 p-2 pl-6 rounded-full shadow-2xl bg-background/80 backdrop-blur-sm border">
+            <span className="font-semibold text-primary whitespace-nowrap">{t.advisorProfile.contactButton}</span>
+            <div className="flex items-center gap-1">
+                <TooltipProvider>
+                    {contactOptions.map(option => (
+                        <Tooltip key={option.name}>
+                            <TooltipTrigger asChild>
+                                <Button asChild variant="ghost" size="icon" className="h-10 w-10 rounded-full">
+                                    <Link href={option.href} target={option.href === '/chat' ? '_self' : '_blank'} rel="noopener noreferrer">
+                                    {option.icon}
+                                    </Link>
+                                </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                            <p>{option.name}</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    ))}
+                </TooltipProvider>
+            </div>
         </div>
     </div>
     </>
