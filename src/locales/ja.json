@@ -648,6 +648,21 @@
       "option4": "ギフトコードを入力",
       "price": "わずか7,500円"
     },
+    "unlock2": {
+      "title": "コースのロックを解除",
+      "description": "すべてのコンテンツを表示するには、以下の支払い方法のいずれかを選択してください。",
+      "tab1": "直接支払い",
+      "tab2": "その他のゲートウェイ",
+      "cardNumber": "カード番号",
+      "expiryDate": "有効期限",
+      "cvc": "CVC",
+      "cardName": "カード名義人",
+      "payButton": "{amount}を支払う",
+      "or": "または",
+      "premiumButton": "プレミアムに登録",
+      "referButton": "他の候補者を紹介",
+      "securePayment": "支払いは安全です"
+    },
     "chapters": [
       {
         "title": "第1章：日常生活と社会文化",
@@ -1468,6 +1483,7 @@
 }
 
     
+
 
 
 

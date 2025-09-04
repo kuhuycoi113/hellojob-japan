@@ -21,6 +21,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
+import { UnlockDialog2 } from './unlock-dialog-2';
 
 
 const LOCAL_STORAGE_KEY_PREFIX = 'watched_lessons_';
@@ -33,6 +34,8 @@ export function CourseDetail() {
   const [selectedLesson, setSelectedLesson] = useState<{ chapterIndex: number; lessonIndex: number } | null>(null);
   const [watchedLessons, setWatchedLessons] = useState<Set<string>>(new Set());
   const [isUnlockDialogOpen, setIsUnlockDialogOpen] = useState(false);
+  const [isUnlockDialog2Open, setIsUnlockDialog2Open] = useState(false);
+
 
   useEffect(() => {
     const storedWatchedLessons = localStorage.getItem(localStorageKey);
@@ -94,6 +97,7 @@ export function CourseDetail() {
                           <Badge className="mb-4 bg-accent/20 text-accent-foreground font-semibold">{course.category}</Badge>
                           <h1 className="text-3xl font-bold font-headline text-gray-800 mb-3">{course.title}</h1>
                           <p className="text-muted-foreground leading-relaxed">{course.description}</p>
+                          <Button onClick={() => setIsUnlockDialog2Open(true)} className="mt-4">Test Unlock Dialog 2</Button>
                       </CardContent>
                   </Card>
 
@@ -230,7 +234,7 @@ export function CourseDetail() {
                 </DialogDescription>
             </DialogHeader>
             <div className="space-y-4 pt-4">
-                <Button size="lg" className="w-full h-auto flex flex-col items-center py-3">
+                <Button size="lg" className="w-full h-auto flex flex-col items-center py-3" onClick={() => { setIsUnlockDialogOpen(false); setIsUnlockDialog2Open(true); }}>
                     <div className="flex items-center gap-2">
                        <CreditCard className="mr-2 h-5 w-5"/>
                        <span className="text-base font-semibold">{t.courseDetail.unlock.option1}</span>
@@ -255,6 +259,8 @@ export function CourseDetail() {
             </div>
         </DialogContent>
       </Dialog>
+
+      <UnlockDialog2 open={isUnlockDialog2Open} onOpenChange={setIsUnlockDialog2Open} />
     </>
   );
 }

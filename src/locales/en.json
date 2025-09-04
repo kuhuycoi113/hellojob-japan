@@ -648,6 +648,21 @@
       "option4": "Enter a gift code",
       "price": "Only $49"
     },
+    "unlock2": {
+      "title": "Unlock full course",
+      "description": "To view all content, please choose one of the payment methods below.",
+      "tab1": "Direct Payment",
+      "tab2": "Other Gateways",
+      "cardNumber": "Card Number",
+      "expiryDate": "Expiry Date",
+      "cvc": "CVC",
+      "cardName": "Cardholder Name",
+      "payButton": "Pay {amount}",
+      "or": "OR",
+      "premiumButton": "Sign up for Premium",
+      "referButton": "Refer another candidate",
+      "securePayment": "Payment is secure"
+    },
     "chapters": [
       {
         "title": "Chapter 1: Daily Life & Social Culture",
@@ -1469,6 +1484,7 @@
 }
 
     
+
 
 
 

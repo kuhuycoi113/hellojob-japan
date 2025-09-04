@@ -648,6 +648,21 @@
       "option4": "Nhập mã giảm giá",
       "price": "Giá chỉ 1,200,000đ"
     },
+    "unlock2": {
+      "title": "Mở khóa toàn bộ khóa học",
+      "description": "Để xem toàn bộ nội dung, vui lòng chọn một trong các phương thức dưới đây.",
+      "tab1": "Thanh toán trực tiếp",
+      "tab2": "Cổng khác",
+      "cardNumber": "Số thẻ",
+      "expiryDate": "Ngày hết hạn",
+      "cvc": "CVC",
+      "cardName": "Tên chủ thẻ",
+      "payButton": "Thanh toán {amount}",
+      "or": "HOẶC",
+      "premiumButton": "Đăng ký tài khoản Premium",
+      "referButton": "Giới thiệu ứng viên khác",
+      "securePayment": "Thanh toán được bảo mật"
+    },
     "chapters": [
       {
         "title": "Chương 1: Văn hóa Sinh hoạt & Xã hội",
@@ -1469,6 +1484,7 @@
 }
 
     
+
 
 
 
