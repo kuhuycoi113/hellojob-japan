@@ -24,6 +24,7 @@ import {
   SendHorizonal,
   Video,
   X,
+  MessageSquareText,
 } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { CallScreen } from './call-screen';
@@ -115,22 +116,14 @@ function ChatbotWidgetContent() {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-50 flex items-center gap-4">
-        <Button
-            size="lg"
-            className="rounded-full h-16 w-16 shadow-lg bg-green-500 hover:bg-green-600"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Chat 2"
-        >
-            <MessageSquare className="h-8 w-8" />
-        </Button>
+      <div className="fixed bottom-6 right-6 z-50">
         <Button
           size="lg"
           className="rounded-full h-16 w-16 shadow-lg bg-primary hover:bg-primary/90"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle chat"
         >
-          <MessageSquare className="h-8 w-8" />
+          <MessageSquareText className="h-8 w-8" />
         </Button>
       </div>
 
