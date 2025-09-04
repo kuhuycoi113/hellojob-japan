@@ -127,28 +127,34 @@
     "viewProfile": "プロフィールを見る",
     "advisorsList": [
       {
-        "name": "中村 さくら",
+        "name": "タイン・タム",
         "title": "シニアHRコンサルタント",
         "avatar": "https://i.pravatar.cc/150?u=advisor1",
         "skills": ["採用", "候補者評価", "日本市場"]
       },
       {
-        "name": "佐藤 大輔",
+        "name": "ホアイ・アイン",
         "title": "法務・ビザ専門家",
         "avatar": "https://i.pravatar.cc/150?u=advisor2",
         "skills": ["労働法", "ビザ手続き", "契約"]
       },
       {
-        "name": "鈴木 恵子",
+        "name": "クオック・ベト",
         "title": "研修・育成担当",
         "avatar": "https://i.pravatar.cc/150?u=advisor3",
         "skills": ["文化研修", "スキル開発", "定着支援"]
       },
       {
-        "name": "高橋 健太",
+        "name": "ゴック・オアイン",
         "title": "パートナーシップ担当",
         "avatar": "https://i.pravatar.cc/150?u=advisor4",
         "skills": ["企業連携", "パートナー開拓", "交渉"]
+      },
+      {
+        "name": "ファム・ハ",
+        "title": "相談員",
+        "avatar": "https://i.pravatar.cc/150?u=advisor5",
+        "skills": ["候補者支援", "キャリア相談", "労働市場"]
       }
     ]
   },

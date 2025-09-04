@@ -127,28 +127,34 @@
     "viewProfile": "View Profile",
     "advisorsList": [
       {
-        "name": "Minh Anh Bui",
+        "name": "Thanh Tam",
         "title": "Senior HR Consultant",
         "avatar": "https://i.pravatar.cc/150?u=advisor1",
         "skills": ["Recruitment", "Candidate Assessment", "Japan Market"]
       },
       {
-        "name": "Thu Ha Nguyen",
+        "name": "Hoai Anh",
         "title": "Legal & Visa Specialist",
         "avatar": "https://i.pravatar.cc/150?u=advisor2",
         "skills": ["Labor Law", "Visa Procedures", "Contracts"]
       },
       {
-        "name": "Quang Huy Le",
+        "name": "Quoc Viet",
         "title": "Training & Development Expert",
         "avatar": "https://i.pravatar.cc/150?u=advisor3",
         "skills": ["Cultural Training", "Skill Development", "Onboarding"]
       },
       {
-        "name": "Lan Phuong Pham",
+        "name": "Ngoc Oanh",
         "title": "Partnership Relations Manager",
         "avatar": "https://i.pravatar.cc/150?u=advisor4",
         "skills": ["Corporate Relations", "Partner Networking", "Negotiation"]
+      },
+      {
+        "name": "Pham Ha",
+        "title": "Advisor",
+        "avatar": "https://i.pravatar.cc/150?u=advisor5",
+        "skills": ["Candidate Support", "Career Consulting", "Labor Market"]
       }
     ]
   },
