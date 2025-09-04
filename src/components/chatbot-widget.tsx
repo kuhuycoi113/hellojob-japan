@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { SendHorizonal, Bot, X, LoaderCircle, MessageCircle } from 'lucide-react';
+import { SendHorizonal, Bot, X, LoaderCircle, MessageSquareText } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { chatWithBot } from '@/ai/flows/ai-chatbot';
 import { cn } from '@/lib/utils';
@@ -94,7 +94,7 @@ export function ChatbotWidget() {
             setIsOpen(!isOpen)
           }}
         >
-           <MessageCircle className="h-8 w-8" />
+           <MessageSquareText className="h-8 w-8" />
         </Button>
       </div>
 
