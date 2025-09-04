@@ -213,8 +213,7 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
 
     {/* Floating Contact Buttons */}
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-        <div className="flex items-center gap-4 p-2 pl-6 rounded-full shadow-2xl bg-background/80 backdrop-blur-sm border">
-            <span className="font-semibold text-primary whitespace-nowrap">{t.advisorProfile.contactButton}</span>
+        <div className="flex items-center gap-4 p-2 pl-4 pr-6 rounded-full shadow-2xl bg-background/80 backdrop-blur-sm border">
             <div className="flex items-center gap-1">
                 <TooltipProvider>
                     {contactOptions.map(option => (
@@ -233,6 +232,7 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
                     ))}
                 </TooltipProvider>
             </div>
+            <span className="font-semibold text-primary whitespace-nowrap">{t.advisorProfile.contactButton}</span>
         </div>
     </div>
     </>
