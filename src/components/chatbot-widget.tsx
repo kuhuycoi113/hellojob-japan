@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { SendHorizonal, Bot, X, LoaderCircle, MessageSquare } from 'lucide-react';
+import { SendHorizonal, Bot, X, LoaderCircle, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { chatWithBot } from '@/ai/flows/ai-chatbot';
 import { cn } from '@/lib/utils';
@@ -24,14 +24,6 @@ type GenkitMessage = {
     toolResponse?: any;
   }[];
 }
-
-const virtualAdvisors = [
-  { name: 'Thanh Tâm', avatar: 'https://i.pravatar.cc/150?u=advisor1' },
-  { name: 'Hoài Anh', avatar: 'https://i.pravatar.cc/150?u=advisor2' },
-  { name: 'Quốc Việt', avatar: 'https://i.pravatar.cc/150?u=advisor3' },
-  { name: 'Ngọc Oanh', avatar: 'https://i.pravatar.cc/150?u=advisor4' },
-  { name: 'Phạm Hà', avatar: 'https://i.pravatar.cc/150?u=advisor5' },
-];
 
 export function ChatbotWidget() {
   const { t } = useLanguage();
@@ -99,15 +91,10 @@ export function ChatbotWidget() {
           size="lg"
           className="rounded-full h-16 w-16 shadow-lg bg-primary hover:bg-primary/90"
           onClick={() => {
-            if (isOpen) {
-              setIsOpen(false);
-            } else {
-              setMessages([]); // Reset chat on open
-              setIsOpen(true);
-            }
+            setIsOpen(!isOpen)
           }}
         >
-           <MessageSquare className="h-7 w-7" />
+           <MessageCircle className="h-8 w-8" />
         </Button>
       </div>
 
