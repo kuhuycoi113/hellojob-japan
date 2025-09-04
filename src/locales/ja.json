@@ -1423,6 +1423,10 @@
     "note": "（このツールはホフステード・インサイツのウェブサイトで利用できます。）"
   },
   "advisorProfile": {
+    "header": {
+      "title": "相談員プロフィール",
+      "subtitle": "私たちの専門家の詳細情報"
+    },
     "professionalInfo": {
       "title": "専門情報",
       "experience": { "label": "経験" },
@@ -1454,4 +1458,5 @@
 }
 
     
+
 

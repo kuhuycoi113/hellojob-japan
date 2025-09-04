@@ -1424,6 +1424,10 @@
     "note": "(Công cụ này có sẵn trên trang web của Hofstede Insights.)"
   },
   "advisorProfile": {
+    "header": {
+      "title": "Hồ sơ Tư vấn viên",
+      "subtitle": "Thông tin chi tiết về chuyên gia của chúng tôi."
+    },
     "professionalInfo": {
       "title": "Thông tin chuyên môn",
       "experience": { "label": "Kinh nghiệm" },
@@ -1455,4 +1459,5 @@
 }
 
     
+
 

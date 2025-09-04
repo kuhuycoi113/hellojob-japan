@@ -1424,6 +1424,10 @@
     "note": "(This tool is available on the Hofstede Insights website.)"
   },
   "advisorProfile": {
+    "header": {
+      "title": "Advisor Profile",
+      "subtitle": "Detailed information about our expert."
+    },
     "professionalInfo": {
       "title": "Professional Information",
       "experience": { "label": "Experience" },
@@ -1455,4 +1459,5 @@
 }
 
     
+
 
