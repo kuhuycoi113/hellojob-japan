@@ -188,7 +188,7 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
     </section>
 
     {/* Floating Contact Button */}
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
         <Button className="h-14 pl-2 pr-6 rounded-full shadow-2xl bg-sky-500 hover:bg-sky-600 text-white text-lg flex items-center gap-3">
             <div className="flex items-center gap-1">
                 <span className="bg-white rounded-full p-1.5 h-10 w-10 flex items-center justify-center"><ZaloIcon /></span>
