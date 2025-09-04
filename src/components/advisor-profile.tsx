@@ -213,13 +213,13 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
 
     {/* Floating Contact Buttons */}
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-        <div className="flex items-center gap-4 p-2 pl-4 pr-6 rounded-full shadow-2xl bg-primary backdrop-blur-sm border border-primary/20">
+        <div className="flex items-center gap-3 p-2 rounded-full shadow-2xl bg-sky-500 hover:bg-sky-600/90 backdrop-blur-sm border border-sky-400/30">
             <div className="flex items-center gap-1">
                 <TooltipProvider>
                     {contactOptions.map(option => (
                         <Tooltip key={option.name}>
                             <TooltipTrigger asChild>
-                                <Button asChild variant="ghost" size="icon" className="h-10 w-10 rounded-full hover:bg-primary-foreground/10">
+                                <Button asChild variant="ghost" size="icon" className="h-10 w-10 rounded-full hover:bg-black/10">
                                     <Link href={option.href} target={option.href === '/chat' ? '_self' : '_blank'} rel="noopener noreferrer">
                                     {option.icon}
                                     </Link>
@@ -232,7 +232,7 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
                     ))}
                 </TooltipProvider>
             </div>
-            <span className="font-semibold text-primary-foreground whitespace-nowrap">{t.advisorProfile.contactButton}</span>
+            <span className="font-semibold text-white whitespace-nowrap pr-4">{t.advisorProfile.contactButton}</span>
         </div>
     </div>
     </>
