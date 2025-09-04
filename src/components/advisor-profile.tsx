@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/language-context';
-import { Clock, Star, Briefcase, Sparkles, User, Send, Target, HelpCircle, ShieldCheck, UserCircle, Phone } from 'lucide-react';
+import { Clock, Star, Briefcase, Sparkles, User, Send, Target, HelpCircle, ShieldCheck, UserCircle, Phone, MessageSquare } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { translations } from '@/locales/translations';
 import { Button } from './ui/button';
@@ -194,6 +194,7 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
                 <span className="bg-white rounded-full p-1.5 h-10 w-10 flex items-center justify-center"><ZaloIcon /></span>
                 <span className="bg-white rounded-full p-1.5 h-10 w-10 flex items-center justify-center"><Phone className="w-6 h-6 text-green-500" /></span>
                 <span className="bg-white rounded-full p-1.5 h-10 w-10 flex items-center justify-center"><MessengerIcon /></span>
+                <span className="bg-white rounded-full p-1.5 h-10 w-10 flex items-center justify-center"><MessageSquare className="w-6 h-6 text-blue-500" /></span>
             </div>
             <span>{advisor_t.contactButton}</span>
         </Button>
