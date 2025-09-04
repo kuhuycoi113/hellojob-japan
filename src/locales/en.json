@@ -1428,6 +1428,7 @@
       "title": "Advisor Profile",
       "subtitle": "Detailed information about our expert."
     },
+    "contactButton": "Contact Advisor",
     "professionalInfo": {
       "title": "Professional Information",
       "experience": { "label": "Experience" },
@@ -1459,5 +1460,6 @@
 }
 
     
+
 
 

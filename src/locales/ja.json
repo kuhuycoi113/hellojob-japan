@@ -1427,6 +1427,7 @@
       "title": "相談員プロフィール",
       "subtitle": "私たちの専門家の詳細情報"
     },
+    "contactButton": "相談員に連絡",
     "professionalInfo": {
       "title": "専門情報",
       "experience": { "label": "経験" },
@@ -1458,5 +1459,6 @@
 }
 
     
+
 
 
