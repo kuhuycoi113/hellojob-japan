@@ -639,15 +639,6 @@
       "unavailable": "Video unavailable",
       "notWorking": "This video is not working"
     },
-     "unlock": {
-      "title": "Unlock Full Course Access",
-      "description": "You have completed the free lessons. To continue, please choose one of the unlocking methods below.",
-      "option1": "Pay with Card",
-      "option2": "Upgrade to Premium Account",
-      "option3": "Refer a Friend to Earn Rewards",
-      "option4": "Enter a gift code",
-      "price": "Only $49"
-    },
     "unlock2": {
       "title": "Unlock full course",
       "description": "To view all content, please choose one of the payment methods below.",
@@ -1484,6 +1475,7 @@
 }
 
     
+
 
 
 

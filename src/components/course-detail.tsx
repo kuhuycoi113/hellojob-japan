@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
-import { PlayCircle, GraduationCap, ListVideo, Users, Star, BookOpen, CheckCircle, Video, Lock, Gem, UserPlus, Wallet, CreditCard, Gift } from 'lucide-react';
+import { PlayCircle, GraduationCap, ListVideo, Users, Star, BookOpen, CheckCircle, Video, Lock } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   Accordion,
@@ -14,13 +14,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
 import { UnlockDialog2 } from './unlock-dialog-2';
 
 
@@ -33,7 +26,6 @@ export function CourseDetail() {
 
   const [selectedLesson, setSelectedLesson] = useState<{ chapterIndex: number; lessonIndex: number } | null>(null);
   const [watchedLessons, setWatchedLessons] = useState<Set<string>>(new Set());
-  const [isUnlockDialogOpen, setIsUnlockDialogOpen] = useState(false);
   const [isUnlockDialog2Open, setIsUnlockDialog2Open] = useState(false);
 
 
@@ -52,7 +44,7 @@ export function CourseDetail() {
 
   const handleLessonClick = (chapterIndex: number, lessonIndex: number, isLocked: boolean) => {
     if (isLocked) {
-      setIsUnlockDialogOpen(true);
+      setIsUnlockDialog2Open(true);
       return;
     }
     const lessonId = `${chapterIndex}-${lessonIndex}`;
@@ -221,44 +213,6 @@ export function CourseDetail() {
               </div>
           </div>
       </div>
-      <Dialog open={isUnlockDialogOpen} onOpenChange={setIsUnlockDialogOpen}>
-        <DialogContent>
-            <DialogHeader className="text-center">
-                <div className="mx-auto bg-primary/10 p-3 rounded-full w-fit mb-4">
-                    <Lock className="w-8 h-8 text-primary"/>
-                </div>
-                <DialogTitle className="text-2xl font-bold font-headline">{t.courseDetail.unlock.title}</DialogTitle>
-                <DialogDescription>
-                    {t.courseDetail.unlock.description}
-                </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-4 pt-4">
-                <Button size="lg" className="w-full h-auto flex flex-col items-center py-3" onClick={() => { setIsUnlockDialogOpen(false); setIsUnlockDialog2Open(true); }}>
-                    <div className="flex items-center gap-2">
-                       <CreditCard className="mr-2 h-5 w-5"/>
-                       <span className="text-base font-semibold">{t.courseDetail.unlock.option1}</span>
-                    </div>
-                    <span className="text-xs opacity-80 mt-1">{t.courseDetail.unlock.price}</span>
-                </Button>
-                 <Button size="lg" variant="link" className="w-full text-muted-foreground">
-                    <Gift className="mr-2 h-4 w-4"/>
-                    {t.courseDetail.unlock.option4}
-                </Button>
-            </div>
-            <hr className="my-4"/>
-            <div className="space-y-4">
-                <Button size="lg" variant="secondary" className="w-full">
-                    <Gem className="mr-2 h-5 w-5"/>
-                    {t.courseDetail.unlock.option2}
-                </Button>
-                 <Button size="lg" variant="outline" className="w-full">
-                    <UserPlus className="mr-2 h-5 w-5"/>
-                    {t.courseDetail.unlock.option3}
-                </Button>
-            </div>
-        </DialogContent>
-      </Dialog>
-
       <UnlockDialog2 open={isUnlockDialog2Open} onOpenChange={setIsUnlockDialog2Open} />
     </>
   );
