@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
-import { PlayCircle, GraduationCap, ListVideo, Users, Star, BookOpen, CheckCircle, Video, Lock, Gem, UserPlus, Wallet } from 'lucide-react';
+import { PlayCircle, GraduationCap, ListVideo, Users, Star, BookOpen, CheckCircle, Video, Lock, Gem, UserPlus, Wallet, CreditCard, Gift } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   Accordion,
@@ -229,11 +229,21 @@ export function CourseDetail() {
                     {t.courseDetail.unlock.description}
                 </DialogDescription>
             </DialogHeader>
-            <div className="space-y-4 py-4">
-                <Button size="lg" className="w-full">
-                    <Wallet className="mr-2 h-5 w-5"/>
-                    {t.courseDetail.unlock.option1}
+            <div className="space-y-4 pt-4">
+                <Button size="lg" className="w-full h-auto flex flex-col items-center py-3">
+                    <div className="flex items-center gap-2">
+                       <CreditCard className="mr-2 h-5 w-5"/>
+                       <span className="text-base font-semibold">{t.courseDetail.unlock.option1}</span>
+                    </div>
+                    <span className="text-xs opacity-80 mt-1">{t.courseDetail.unlock.price}</span>
                 </Button>
+                 <Button size="lg" variant="link" className="w-full text-muted-foreground">
+                    <Gift className="mr-2 h-4 w-4"/>
+                    {t.courseDetail.unlock.option4}
+                </Button>
+            </div>
+            <hr className="my-4"/>
+            <div className="space-y-4">
                 <Button size="lg" variant="secondary" className="w-full">
                     <Gem className="mr-2 h-5 w-5"/>
                     {t.courseDetail.unlock.option2}

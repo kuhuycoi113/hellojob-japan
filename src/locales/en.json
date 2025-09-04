@@ -642,9 +642,11 @@
      "unlock": {
       "title": "Unlock Full Course Access",
       "description": "You have completed the free lessons. To continue, please choose one of the unlocking methods below.",
-      "option1": "Pay to Unlock",
+      "option1": "Pay with Card",
       "option2": "Upgrade to Premium Account",
-      "option3": "Refer a Friend to Earn Rewards"
+      "option3": "Refer a Friend to Earn Rewards",
+      "option4": "Enter a gift code",
+      "price": "Only $49"
     },
     "chapters": [
       {
@@ -1467,6 +1469,7 @@
 }
 
     
+
 
 
 

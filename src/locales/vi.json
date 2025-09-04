@@ -642,9 +642,11 @@
     "unlock": {
       "title": "Mở khoá toàn bộ khoá học",
       "description": "Bạn đã hoàn thành các bài học miễn phí. Để tiếp tục, vui lòng chọn một trong các phương thức mở khoá dưới đây.",
-      "option1": "Nạp tiền để mở khoá",
+      "option1": "Thanh toán qua thẻ",
       "option2": "Nâng cấp tài khoản Premium",
-      "option3": "Giới thiệu bạn bè để nhận thưởng"
+      "option3": "Giới thiệu bạn bè để nhận thưởng",
+      "option4": "Nhập mã giảm giá",
+      "price": "Giá chỉ 1,200,000đ"
     },
     "chapters": [
       {
@@ -1429,7 +1431,7 @@
       "title": "Hồ sơ Tư vấn viên",
       "subtitle": "Thông tin chi tiết về chuyên gia của chúng tôi."
     },
-    "contactButton": "Liên hệ Tư vấn viên",
+    "contactButton": "Liên hệ tư vấn viên",
     "contactActions": {
       "messenger": "Mở Messenger",
       "call": "Gọi điện thoại",
@@ -1467,6 +1469,7 @@
 }
 
     
+
 
 
 
