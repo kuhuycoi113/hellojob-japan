@@ -857,7 +857,8 @@
     "statusOnline": "Đang hoạt động",
     "placeholder": "Nhập câu hỏi của bạn ở đây...",
     "greeting": "Xin chào quý khách hàng {role}. Tôi có thể giúp gì cho bạn hôm nay?",
-    "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?"
+    "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?",
+    "error": "Xin lỗi, tôi đang gặp sự cố kết nối. Vui lòng thử lại sau."
   },
   "visaTypes": {
     "title": "Bạn muốn tuyển loại Visa nào?",
@@ -1466,6 +1467,7 @@
 }
 
     
+
 
 
 

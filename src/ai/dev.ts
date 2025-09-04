@@ -10,3 +10,4 @@ import '@/ai/flows/analyze-job-document.ts';
 import '@/ai/flows/find-matching-partners.ts';
 import '@/ai/flows/translate-job-post.ts';
 import '@/ai/flows/translate-profile.ts';
+import '@/ai/flows/ai-chatbot.ts';

@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from '@/contexts/language-context';
 import { MobileFooter } from '@/components/mobile-footer';
+import { ChatbotWidget } from '@/components/chatbot-widget';
 
 export const metadata: Metadata = {
   title: 'HelloJob Recommender',
@@ -27,6 +28,7 @@ export default function RootLayout({
             {children}
           </div>
           <MobileFooter />
+          <ChatbotWidget />
         </LanguageProvider>
         <Toaster />
       </body>

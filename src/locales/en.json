@@ -857,7 +857,8 @@
     "statusOnline": "Online",
     "placeholder": "Type your question here...",
     "greeting": "Hello, {role} client. How can I assist you today?",
-    "defaultGreeting": "Hello. How can I assist you today?"
+    "defaultGreeting": "Hello. How can I assist you today?",
+    "error": "Sorry, I'm having trouble connecting. Please try again later."
   },
   "visaTypes": {
     "title": "Which Visa type do you want to recruit?",
@@ -1466,6 +1467,7 @@
 }
 
     
+
 
 
 

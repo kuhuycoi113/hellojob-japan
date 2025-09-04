@@ -857,7 +857,8 @@
     "statusOnline": "オンライン",
     "placeholder": "ここに質問を入力してください...",
     "greeting": "こんにちは、{role}のお客様。本日はどのようなご用件でしょうか？",
-    "defaultGreeting": "こんにちは。本日はどのようなご用件でしょうか？"
+    "defaultGreeting": "こんにちは。本日はどのようなご用件でしょうか？",
+    "error": "申し訳ありませんが、接続に問題が発生しました。後でもう一度お試しください。"
   },
   "visaTypes": {
     "title": "どの在留資格を募集しますか？",
@@ -875,7 +876,7 @@
       "description": "学位を持つ高度な専門家。"
     }
   },
-  "visaSubTypes": {
+   "visaSubTypes": {
     "title": "詳細を選択してください",
     "intern": {
       "threeYear": "技能実習3年",
@@ -1465,6 +1466,7 @@
 }
 
     
+
 
 
 
