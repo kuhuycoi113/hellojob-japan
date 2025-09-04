@@ -14,7 +14,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { UnlockDialog1 } from './unlock-dialog-1';
 import { UnlockDialog2 } from './unlock-dialog-2';
 
 
@@ -27,7 +26,6 @@ export function CourseDetail() {
 
   const [selectedLesson, setSelectedLesson] = useState<{ chapterIndex: number; lessonIndex: number } | null>(null);
   const [watchedLessons, setWatchedLessons] = useState<Set<string>>(new Set());
-  const [isUnlockDialog1Open, setIsUnlockDialog1Open] = useState(false);
   const [isUnlockDialog2Open, setIsUnlockDialog2Open] = useState(false);
 
 
@@ -46,7 +44,7 @@ export function CourseDetail() {
 
   const handleLessonClick = (chapterIndex: number, lessonIndex: number, isLocked: boolean) => {
     if (isLocked) {
-      setIsUnlockDialog1Open(true);
+      setIsUnlockDialog2Open(true);
       return;
     }
     const lessonId = `${chapterIndex}-${lessonIndex}`;
@@ -57,11 +55,6 @@ export function CourseDetail() {
     localStorage.setItem(localStorageKey, JSON.stringify(Array.from(newWatchedLessons)));
   };
   
-  const handleOpenPaymentDialog = () => {
-    setIsUnlockDialog1Open(false);
-    setIsUnlockDialog2Open(true);
-  }
-
   const featuredLessons = [
     course.chapters[0].lessons[0],
     course.chapters[1].lessons[2],
@@ -220,7 +213,6 @@ export function CourseDetail() {
               </div>
           </div>
       </div>
-      <UnlockDialog1 open={isUnlockDialog1Open} onOpenChange={setIsUnlockDialog1Open} onPayClick={handleOpenPaymentDialog}/>
       <UnlockDialog2 open={isUnlockDialog2Open} onOpenChange={setIsUnlockDialog2Open} />
     </>
   );
