@@ -6,12 +6,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
 import { ArrowRight, Send } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 
 export function AllCoursesSection() {
   const { t } = useLanguage();
   const courses = t.elearning.courses;
 
   return (
+    <>
     <section className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
@@ -53,20 +55,26 @@ export function AllCoursesSection() {
             </Card>
           ))}
         </div>
-        <div className="mt-16 text-center">
-          <Button
-            asChild
-            size="lg"
-            variant="default"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground text-base shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1"
-          >
-            <Link href="/elearning/share-course">
-              {t.elearning.shareCourseButton}{' '}
-              <Send className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
       </div>
     </section>
+    
+    {/* Floating Action Button */}
+     <div className="fixed bottom-24 right-6 z-50 md:bottom-6">
+       <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+              <Button asChild size="lg" className="rounded-full h-14 w-14 shadow-lg bg-accent hover:bg-accent/90">
+                  <Link href="/elearning/share-course">
+                      <Send className="h-6 w-6" />
+                  </Link>
+              </Button>
+          </TooltipTrigger>
+          <TooltipContent side="left">
+            <p>{t.elearning.shareCourseButton}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </div>
+    </>
   );
 }
