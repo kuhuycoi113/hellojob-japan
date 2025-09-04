@@ -877,6 +877,13 @@
     "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?",
     "error": "Xin lỗi, tôi đang gặp sự cố kết nối. Vui lòng thử lại sau."
   },
+  "callScreen": {
+    "connecting": "Đang kết nối...",
+    "permissionError": {
+        "title": "Yêu cầu quyền truy cập",
+        "description": "Vui lòng cấp quyền truy cập máy ảnh và micro trong trình duyệt của bạn để sử dụng tính năng này."
+    }
+  },
   "visaTypes": {
     "title": "Bạn muốn tuyển loại Visa nào?",
     "description": "Hãy chọn loại visa phù hợp với nhu cầu tuyển dụng của bạn.",
@@ -1484,6 +1491,7 @@
 }
 
     
+
 
 
 

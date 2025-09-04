@@ -877,6 +877,13 @@
     "defaultGreeting": "Hello. How can I assist you today?",
     "error": "Sorry, I'm having trouble connecting. Please try again later."
   },
+  "callScreen": {
+    "connecting": "Connecting...",
+    "permissionError": {
+        "title": "Permission Required",
+        "description": "Please grant access to your camera and microphone in your browser to use this feature."
+    }
+  },
   "visaTypes": {
     "title": "Which Visa type do you want to recruit?",
     "description": "Choose the visa type that fits your recruitment needs.",
@@ -1484,6 +1491,7 @@
 }
 
     
+
 
 
 
