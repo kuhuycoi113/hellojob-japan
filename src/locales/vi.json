@@ -130,31 +130,71 @@
         "name": "Thanh Tâm",
         "title": "Chuyên viên tư vấn nhân sự cấp cao",
         "avatar": "https://i.pravatar.cc/150?u=advisor1",
-        "skills": ["Tuyển dụng", "Đánh giá ứng viên", "Thị trường Nhật Bản"]
+        "skills": ["Tuyển dụng", "Đánh giá ứng viên", "Thị trường Nhật Bản"],
+        "tags": ["Thân thiện", "Hỗ trợ 24/7", "Kinh nghiệm"],
+        "experience": "5 năm 4 tháng",
+        "mainField": "Tư vấn việc làm Kỹ năng đặc định (Tokutei) 2 đầu Nhật Việt.",
+        "subField": "Tư vấn việc làm Thực tập sinh Nhật Bản.",
+         "stats": {
+            "successfulCandidates": "521",
+            "managedJobs": "250"
+        }
       },
       {
         "name": "Hoài Anh",
         "title": "Chuyên viên pháp lý & Visa",
         "avatar": "https://i.pravatar.cc/150?u=advisor2",
-        "skills": ["Luật lao động", "Thủ tục Visa", "Hợp đồng"]
+        "skills": ["Luật lao động", "Thủ tục Visa", "Hợp đồng"],
+        "tags": ["Chi tiết", "Tin cậy", "Am hiểu"],
+        "experience": "7 năm 1 tháng",
+        "mainField": "Hỗ trợ pháp lý cho mọi loại visa lao động tại Nhật Bản.",
+        "subField": "Tư vấn hợp đồng lao động và tranh chấp.",
+         "stats": {
+            "successfulCandidates": "480",
+            "managedJobs": "300"
+        }
       },
       {
         "name": "Quốc Việt",
         "title": "Chuyên gia đào tạo & phát triển",
         "avatar": "https://i.pravatar.cc/150?u=advisor3",
-        "skills": ["Đào tạo văn hoá", "Phát triển kỹ năng", "Hội nhập"]
+        "skills": ["Đào tạo văn hoá", "Phát triển kỹ năng", "Hội nhập"],
+        "tags": ["Nhiệt tình", "Hỗ trợ", "Kiên nhẫn"],
+        "experience": "6 năm 8 tháng",
+        "mainField": "Đào tạo định hướng và hòa nhập văn hóa trước khi xuất cảnh.",
+        "subField": "Phát triển các chương trình nâng cao kỹ năng cho người lao động.",
+         "stats": {
+            "successfulCandidates": "650",
+            "managedJobs": "180"
+        }
       },
       {
         "name": "Ngọc Oanh",
         "title": "Chuyên viên quan hệ đối tác",
         "avatar": "https://i.pravatar.cc/150?u=advisor4",
-        "skills": ["Quan hệ doanh nghiệp", "Kết nối đối tác", "Đàm phán"]
+        "skills": ["Quan hệ doanh nghiệp", "Kết nối đối tác", "Đàm phán"],
+        "tags": ["Giao tiếp tốt", "Chủ động", "Chiến lược"],
+        "experience": "8 năm",
+        "mainField": "Xây dựng và duy trì mối quan hệ với các công ty và nghiệp đoàn Nhật Bản.",
+        "subField": "Đàm phán các thỏa thuận hợp tác.",
+         "stats": {
+            "successfulCandidates": "300",
+            "managedJobs": "400"
+        }
       },
       {
         "name": "Phạm Hà",
         "title": "Tư vấn viên",
         "avatar": "https://i.pravatar.cc/150?u=advisor5",
-        "skills": ["Hỗ trợ ứng viên", "Tư vấn nghề nghiệp", "Thị trường LĐ"]
+        "skills": ["Hỗ trợ ứng viên", "Tư vấn nghề nghiệp", "Thị trường LĐ"],
+        "tags": ["Đồng cảm", "Hữu ích", "Sâu sắc"],
+        "experience": "4 năm 5 tháng",
+        "mainField": "Tư vấn định hướng nghề nghiệp cho lao động Việt tại Nhật.",
+        "subField": "Hỗ trợ và giải quyết các vấn đề cho người lao động trong quá trình lưu trú.",
+         "stats": {
+            "successfulCandidates": "410",
+            "managedJobs": "220"
+        }
       }
     ]
   },
@@ -1382,7 +1422,37 @@
     "ctaDescription": "Sử dụng các công cụ trên trang web chính thức của Hofstede Insights để so sánh các quốc gia và hiểu rõ hơn về sự khác biệt văn hóa.",
     "ctaButton": "Bắt đầu so sánh",
     "note": "(Công cụ này có sẵn trên trang web của Hofstede Insights.)"
+  },
+  "advisorProfile": {
+    "professionalInfo": {
+      "title": "Thông tin chuyên môn",
+      "experience": { "label": "Kinh nghiệm" },
+      "mainField": { "label": "Lĩnh vực chính" },
+      "subField": { "label": "Lĩnh vực phụ" }
+    },
+    "achievements": {
+      "title": "Thành tích nổi bật",
+      "successfulCandidates": "Ứng viên thành công",
+      "managedJobs": "Việc làm đang quản lý"
+    },
+    "systemAdvantages": {
+      "title": "Ưu điểm hệ thống",
+      "items": [
+        { "title": "Ưu điểm hệ thống", "description": "Áp dụng công nghệ vào tìm đơn nên sẽ có hệ thống đơn rất nhiều, cho các bạn được nhiều lựa chọn và so sánh hơn thị trường." },
+        { "title": "Đội ngũ hỗ trợ tận tâm", "description": "Có đội ngũ Sale và công nghệ nên luôn care giúp bạn đến lúc tìm được đơn." },
+        { "title": "Cập nhật thông tin liên tục", "description": "Có hạ tầng MKT để bạn thường xuyên nhận được thông tin đơn và thông tin về TKT, thông tin về làm việc tại Nhật hữu ích nhất." }
+      ]
+    },
+    "addedValue": {
+      "title": "Giá trị gia tăng khi sử dụng dịch vụ",
+      "items": [
+        { "title": "Đào tạo phỏng vấn chuyên sâu", "description": "Tăng tỷ lệ đỗ phỏng vấn lên đến 90%." },
+        { "title": "Hỗ trợ phát triển tư duy và sự nghiệp", "description": "Giúp bạn biết cần gì để có thể lên Ginou 2, ở lại Nhật lâu dài và có thăng tiến trong công việc, thu nhập tốt hơn." },
+        { "title": "Đồng hành và giải quyết vấn đề", "description": "Tư vấn giải quyết các vấn đề thắc mắc về tư duy, những khúc mắc, ứng xử, văn hoá trong cuộc sống tại Nhật." }
+      ]
+    }
   }
 }
 
     
+

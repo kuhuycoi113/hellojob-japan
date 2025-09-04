@@ -130,31 +130,71 @@
         "name": "タイン・タム",
         "title": "シニアHRコンサルタント",
         "avatar": "https://i.pravatar.cc/150?u=advisor1",
-        "skills": ["採用", "候補者評価", "日本市場"]
+        "skills": ["採用", "候補者評価", "日本市場"],
+        "tags": ["親しみやすい", "24時間サポート", "経験豊富"],
+        "experience": "5年4ヶ月",
+        "mainField": "日越間の特定技能ビザに関するコンサルティング",
+        "subField": "技能実習ビザに関するコンサルティング",
+        "stats": {
+            "successfulCandidates": "521",
+            "managedJobs": "250"
+        }
       },
       {
         "name": "ホアイ・アイン",
         "title": "法務・ビザ専門家",
         "avatar": "https://i.pravatar.cc/150?u=advisor2",
-        "skills": ["労働法", "ビザ手続き", "契約"]
+        "skills": ["労働法", "ビザ手続き", "契約"],
+        "tags": ["丁寧", "信頼できる", "知識豊富"],
+        "experience": "7年1ヶ月",
+        "mainField": "日本の全種類の就労ビザに関する法務サポート",
+        "subField": "労働契約および紛争に関するコンサルティング",
+         "stats": {
+            "successfulCandidates": "480",
+            "managedJobs": "300"
+        }
       },
       {
         "name": "クオック・ベト",
         "title": "研修・育成担当",
         "avatar": "https://i.pravatar.cc/150?u=advisor3",
-        "skills": ["文化研修", "スキル開発", "定着支援"]
+        "skills": ["文化研修", "スキル開発", "定着支援"],
+        "tags": ["熱心", "協力的", "忍耐強い"],
+        "experience": "6年8ヶ月",
+        "mainField": "来日前のオリエンテーションおよび文化適応研修",
+        "subField": "労働者向けスキルアッププログラムの開発",
+         "stats": {
+            "successfulCandidates": "650",
+            "managedJobs": "180"
+        }
       },
       {
         "name": "ゴック・オアイン",
         "title": "パートナーシップ担当",
         "avatar": "https://i.pravatar.cc/150?u=advisor4",
-        "skills": ["企業連携", "パートナー開拓", "交渉"]
+        "skills": ["企業連携", "パートナー開拓", "交渉"],
+        "tags": ["コミュニケーション上手", "積極的", "戦略的"],
+        "experience": "8年",
+        "mainField": "日本の企業や組合との関係構築および維持",
+        "subField": "パートナーシップ契約の交渉",
+         "stats": {
+            "successfulCandidates": "300",
+            "managedJobs": "400"
+        }
       },
       {
         "name": "ファム・ハ",
         "title": "相談員",
         "avatar": "https://i.pravatar.cc/150?u=advisor5",
-        "skills": ["候補者支援", "キャリア相談", "労働市場"]
+        "skills": ["候補者支援", "キャリア相談", "労働市場"],
+        "tags": ["共感的", "親切", "洞察力がある"],
+        "experience": "4年5ヶ月",
+        "mainField": "ベトナム人労働者の日本でのキャリアパス相談",
+        "subField": "滞在中の労働者の問題解決およびサポート",
+         "stats": {
+            "successfulCandidates": "410",
+            "managedJobs": "220"
+        }
       }
     ]
   },
@@ -1381,7 +1421,37 @@
     "ctaDescription": "ホフステード・インサイツの公式サイトのツールを使用して国を比較し、文化の違いをよりよく理解してください。",
     "ctaButton": "比較を開始",
     "note": "（このツールはホフステード・インサイツのウェブサイトで利用できます。）"
+  },
+  "advisorProfile": {
+    "professionalInfo": {
+      "title": "専門情報",
+      "experience": { "label": "経験" },
+      "mainField": { "label": "主要分野" },
+      "subField": { "label": "副次分野" }
+    },
+    "achievements": {
+      "title": "主な実績",
+      "successfulCandidates": "成功した候補者",
+      "managedJobs": "管理した求人"
+    },
+    "systemAdvantages": {
+      "title": "システムの利点",
+      "items": [
+        { "title": "先進的なシステム", "description": "求人検索に技術を応用することで、豊富な求人情報システムが実現し、市場よりも多くの選択肢と比較を提供します。" },
+        { "title": "献身的なサポートチーム", "description": "営業と技術の専門家チームが、適切な求人が見つかるまで常にサポートし、ケアします。" },
+        { "title": "継続的な情報更新", "description": "当社のMKTインフラにより、求人情報、TKT情報、日本での就労に関する最も役立つ情報を定期的に受け取ることができます。" }
+      ]
+    },
+    "addedValue": {
+      "title": "付加価値サービス",
+      "items": [
+        { "title": "徹底的な面接トレーニング", "description": "面接合格率を最大90%まで向上させます。" },
+        { "title": "思考力とキャリア開発のサポート", "description": "技能実習2号へ進むために何が必要か、日本に長期滞在し、より良い収入でキャリアアップするために必要なことを理解するのに役立ちます。" },
+        { "title": "同行と問題解決", "description": "日本での生活における思考、困難、行動、文化に関する問題の解決をコンサルティングします。" }
+      ]
+    }
   }
 }
 
     
+

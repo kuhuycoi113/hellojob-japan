@@ -130,31 +130,71 @@
         "name": "Thanh Tam",
         "title": "Senior HR Consultant",
         "avatar": "https://i.pravatar.cc/150?u=advisor1",
-        "skills": ["Recruitment", "Candidate Assessment", "Japan Market"]
+        "skills": ["Recruitment", "Candidate Assessment", "Japan Market"],
+        "tags": ["Friendly", "24/7 Support", "Experienced"],
+        "experience": "5 years 4 months",
+        "mainField": "Consulting for Specified Skilled Worker (Tokutei) visas for Japan-Vietnam.",
+        "subField": "Consulting for Technical Intern Trainee visas.",
+        "stats": {
+            "successfulCandidates": "521",
+            "managedJobs": "250"
+        }
       },
       {
         "name": "Hoai Anh",
         "title": "Legal & Visa Specialist",
         "avatar": "https://i.pravatar.cc/150?u=advisor2",
-        "skills": ["Labor Law", "Visa Procedures", "Contracts"]
+        "skills": ["Labor Law", "Visa Procedures", "Contracts"],
+        "tags": ["Detail-oriented", "Reliable", "Knowledgeable"],
+        "experience": "7 years 1 month",
+        "mainField": "Legal support for all types of work visas in Japan.",
+        "subField": "Consulting on labor contracts and disputes.",
+         "stats": {
+            "successfulCandidates": "480",
+            "managedJobs": "300"
+        }
       },
       {
         "name": "Quoc Viet",
         "title": "Training & Development Expert",
         "avatar": "https://i.pravatar.cc/150?u=advisor3",
-        "skills": ["Cultural Training", "Skill Development", "Onboarding"]
+        "skills": ["Cultural Training", "Skill Development", "Onboarding"],
+        "tags": ["Enthusiastic", "Supportive", "Patient"],
+        "experience": "6 years 8 months",
+        "mainField": "Pre-departure orientation and cultural integration training.",
+        "subField": "Developing skill enhancement programs for workers.",
+         "stats": {
+            "successfulCandidates": "650",
+            "managedJobs": "180"
+        }
       },
       {
         "name": "Ngoc Oanh",
         "title": "Partnership Relations Manager",
         "avatar": "https://i.pravatar.cc/150?u=advisor4",
-        "skills": ["Corporate Relations", "Partner Networking", "Negotiation"]
+        "skills": ["Corporate Relations", "Partner Networking", "Negotiation"],
+        "tags": ["Communicative", "Proactive", "Strategic"],
+        "experience": "8 years",
+        "mainField": "Building and maintaining relationships with Japanese companies and unions.",
+        "subField": "Negotiating partnership agreements.",
+         "stats": {
+            "successfulCandidates": "300",
+            "managedJobs": "400"
+        }
       },
       {
         "name": "Pham Ha",
         "title": "Advisor",
         "avatar": "https://i.pravatar.cc/150?u=advisor5",
-        "skills": ["Candidate Support", "Career Consulting", "Labor Market"]
+        "skills": ["Candidate Support", "Career Consulting", "Labor Market"],
+        "tags": ["Empathetic", "Helpful", "Insightful"],
+        "experience": "4 years 5 months",
+        "mainField": "Career path consulting for Vietnamese workers in Japan.",
+        "subField": "Providing support and resolving issues for workers during their stay.",
+         "stats": {
+            "successfulCandidates": "410",
+            "managedJobs": "220"
+        }
       }
     ]
   },
@@ -1382,7 +1422,37 @@
     "ctaDescription": "Use the tools on the official Hofstede Insights website to compare countries and better understand cultural differences.",
     "ctaButton": "Start Comparing",
     "note": "(This tool is available on the Hofstede Insights website.)"
+  },
+  "advisorProfile": {
+    "professionalInfo": {
+      "title": "Professional Information",
+      "experience": { "label": "Experience" },
+      "mainField": { "label": "Main Field" },
+      "subField": { "label": "Secondary Field" }
+    },
+    "achievements": {
+      "title": "Outstanding Achievements",
+      "successfulCandidates": "Successful Candidates",
+      "managedJobs": "Managed Jobs"
+    },
+    "systemAdvantages": {
+      "title": "System Advantages",
+      "items": [
+        { "title": "Advanced System", "description": "Applying technology to the job search process results in a rich system of job listings, giving you more choices and better comparisons than the market." },
+        { "title": "Dedicated Support Team", "description": "With a team of sales and technology professionals, we are always here to care for and assist you until you find the right job." },
+        { "title": "Continuous Information Updates", "description": "Our MKT infrastructure ensures you regularly receive job updates, TKT information, and the most useful information about working in Japan." }
+      ]
+    },
+    "addedValue": {
+      "title": "Value-Added Services",
+      "items": [
+        { "title": "In-depth Interview Training", "description": "Increase interview success rate up to 90%." },
+        { "title": "Support for Mindset and Career Development", "description": "Helps you know what is needed to advance to Ginou 2, stay in Japan long-term, and achieve career progression with better income." },
+        { "title": "Guidance and Problem Solving", "description": "Consulting on mindset issues, difficulties, behavior, and cultural aspects of life in Japan." }
+      ]
+    }
   }
 }
 
     
+
