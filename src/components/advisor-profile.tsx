@@ -66,7 +66,7 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
     },
     {
         name: advisor_t.contactActions.call,
-        icon: <Phone className="w-6 h-6 text-white"/>,
+        icon: <Phone className="w-6 h-6 text-primary"/>,
         href: 'tel:+84123456789'
     },
     {
@@ -76,7 +76,7 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
     },
     {
         name: advisor_t.contactActions.chat,
-        icon: <MessageSquare className="w-6 h-6 text-white" />,
+        icon: <MessageSquare className="w-6 h-6 text-primary" />,
         href: '/chat'
     }
   ]
@@ -219,7 +219,7 @@ export function AdvisorProfile({ advisorSlug }: { advisorSlug: string }) {
                     {contactOptions.map(option => (
                         <Tooltip key={option.name}>
                             <TooltipTrigger asChild>
-                                <Button asChild variant="ghost" size="icon" className="h-10 w-10 rounded-full hover:bg-black/10">
+                                <Button asChild size="icon" className="h-10 w-10 rounded-full bg-white hover:bg-white/90">
                                     <Link href={option.href} target={option.href === '/chat' ? '_self' : '_blank'} rel="noopener noreferrer">
                                     {option.icon}
                                     </Link>
