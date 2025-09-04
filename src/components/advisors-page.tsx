@@ -54,8 +54,8 @@ export function AdvisorsPage() {
                   </CardContent>
                   <CardFooter className="flex flex-col w-full gap-2 mt-auto pt-4">
                     <Button className="w-full">
-                        {t.advisors.viewProfile}
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        {t.advisorProfile.contactButton}
+                        <Phone className="ml-2 h-4 w-4" />
                     </Button>
                   </CardFooter>
                 </Card>
