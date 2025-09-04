@@ -1,15 +1,16 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { SendHorizonal, Bot, X, LoaderCircle, MessageSquareText } from 'lucide-react';
+import { SendHorizonal, Bot, X, LoaderCircle, MessageSquareText, Phone, Video, Paperclip, Image as ImageIcon } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 import { chatWithBot } from '@/ai/flows/ai-chatbot';
 import { cn } from '@/lib/utils';
 import { useSearchParams } from 'next/navigation';
+import { Logo } from './logo';
 
 type Message = {
   role: 'user' | 'model';
@@ -25,7 +26,7 @@ type GenkitMessage = {
   }[];
 }
 
-export function ChatbotWidget() {
+function ChatbotWidgetContent() {
   const { t } = useLanguage();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
@@ -42,13 +43,12 @@ export function ChatbotWidget() {
   useEffect(scrollToBottom, [messages]);
 
   useEffect(() => {
-    // Add initial greeting when chat opens for the first time
     if (isOpen && messages.length === 0) {
       setMessages([
-        { role: 'model', content: t.chat.defaultGreeting }
+        { role: 'model', content: t.chat.greeting }
       ]);
     }
-  }, [isOpen, messages.length, t.chat.defaultGreeting]);
+  }, [isOpen, messages.length, t.chat.greeting]);
 
 
   const handleSend = async () => {
@@ -90,9 +90,8 @@ export function ChatbotWidget() {
         <Button
           size="lg"
           className="rounded-full h-16 w-16 shadow-lg bg-primary hover:bg-primary/90"
-          onClick={() => {
-            setIsOpen(!isOpen)
-          }}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle chat"
         >
            <MessageSquareText className="h-8 w-8" />
         </Button>
@@ -102,40 +101,46 @@ export function ChatbotWidget() {
         "fixed bottom-24 right-6 z-50 transition-all duration-300 ease-in-out",
         isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       )}>
-        <Card className="w-[380px] h-[500px] shadow-2xl rounded-2xl flex flex-col">
-          <CardHeader className="flex flex-row items-center gap-4">
-            <Avatar>
-              <AvatarFallback className="bg-primary/10 text-primary"><Bot size={24}/></AvatarFallback>
-            </Avatar>
+        <Card className="w-[380px] h-[600px] shadow-2xl rounded-2xl flex flex-col bg-white">
+          <CardHeader className="flex flex-row items-center justify-between gap-4 bg-primary text-primary-foreground p-4">
             <div>
-              <CardTitle className="font-headline text-xl text-gray-800">{t.chat.title}</CardTitle>
+              <Logo className="text-white"/>
               <div className="flex items-center gap-2 mt-1">
-                <div className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></div>
-                <p className="text-sm text-muted-foreground">{t.chat.statusOnline}</p>
+                <div className="h-2.5 w-2.5 rounded-full bg-green-400"></div>
+                <p className="text-sm text-primary-foreground/90">{t.chat.statusOnline}</p>
               </div>
             </div>
-             <Button
-                variant="ghost"
-                size="icon"
-                className="ml-auto h-8 w-8 rounded-full"
-                onClick={() => setIsOpen(false)}
-            >
-                <X className="h-5 w-5" />
-            </Button>
+            <div className="flex items-center gap-1">
+                <Button variant="ghost" size="icon" className="h-9 w-9 text-primary-foreground/80 hover:bg-white/20 hover:text-white rounded-full">
+                    <Phone className="h-5 w-5"/>
+                </Button>
+                 <Button variant="ghost" size="icon" className="h-9 w-9 text-primary-foreground/80 hover:bg-white/20 hover:text-white rounded-full">
+                    <Video className="h-5 w-5"/>
+                </Button>
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-9 w-9 text-primary-foreground/80 hover:bg-white/20 hover:text-white rounded-full"
+                    onClick={() => setIsOpen(false)}
+                >
+                    <X className="h-5 w-5" />
+                </Button>
+            </div>
           </CardHeader>
-          <CardContent className="flex-1 overflow-y-auto p-4 border-y space-y-6">
+          <CardContent className="flex-1 overflow-y-auto p-4 space-y-6">
             {messages.map((msg, index) => (
-              <div key={index} className={cn("flex items-start gap-3", msg.role === 'user' && 'justify-end')}>
+              <div key={index} className={cn("flex items-end gap-3", msg.role === 'user' && 'justify-end')}>
                 {msg.role === 'model' && (
-                   <Avatar className="h-9 w-9 border">
-                     <AvatarFallback className="bg-primary/10 text-primary"><Bot size={20}/></AvatarFallback>
+                   <Avatar className="h-9 w-9 border shrink-0">
+                     <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                     <AvatarFallback>TV</AvatarFallback>
                    </Avatar>
                 )}
-                <div className={cn("max-w-xs rounded-lg p-3", msg.role === 'model' ? 'bg-muted' : 'bg-primary text-primary-foreground')}>
+                <div className={cn("max-w-xs rounded-lg p-3", msg.role === 'model' ? 'bg-muted rounded-bl-none' : 'bg-primary text-primary-foreground rounded-br-none')}>
                   <p className="text-sm">{msg.content}</p>
                 </div>
                  {msg.role === 'user' && (
-                   <Avatar className="h-9 w-9 border">
+                   <Avatar className="h-9 w-9 border shrink-0">
                      <AvatarFallback>You</AvatarFallback>
                    </Avatar>
                 )}
@@ -153,19 +158,21 @@ export function ChatbotWidget() {
             )}
             <div ref={messagesEndRef} />
           </CardContent>
-          <CardFooter className="p-4">
-            <div className="flex w-full items-center space-x-2">
-              <Input
-                type="text"
-                placeholder={t.chat.placeholder}
-                className="flex-1 text-base"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                disabled={isLoading}
-              />
-              <Button type="submit" onClick={handleSend} disabled={isLoading}>
-                <SendHorizonal className="h-5 w-5" />
+          <CardFooter className="p-2 border-t">
+            <div className="flex w-full items-center space-x-1">
+                <Button variant="ghost" size="icon"><Paperclip className="h-5 w-5 text-muted-foreground"/></Button>
+                <Button variant="ghost" size="icon"><ImageIcon className="h-5 w-5 text-muted-foreground"/></Button>
+                <Input
+                    type="text"
+                    placeholder={t.chat.placeholder}
+                    className="flex-1 text-base border-none focus-visible:ring-0 shadow-none"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                    disabled={isLoading}
+                />
+              <Button type="submit" onClick={handleSend} disabled={isLoading} size="icon" variant="ghost">
+                {isLoading ? <LoaderCircle className="h-5 w-5 animate-spin"/> : <SendHorizonal className="h-5 w-5 text-primary" />}
                 <span className="sr-only">Send</span>
               </Button>
             </div>
@@ -174,4 +181,13 @@ export function ChatbotWidget() {
       </div>
     </>
   );
+}
+
+
+export function ChatbotWidget() {
+    return (
+        <Suspense>
+            <ChatbotWidgetContent />
+        </Suspense>
+    )
 }

@@ -639,6 +639,15 @@
       "unavailable": "Video unavailable",
       "notWorking": "This video is not working"
     },
+     "unlock1": {
+        "title": "Unlock full course",
+        "description": "You have completed the free lessons. To continue, please choose one of the unlocking methods below.",
+        "payButton": "Pay by Card",
+        "payNote": "Only $50.00",
+        "promoButton": "Enter promo code",
+        "premiumButton": "Upgrade to Premium",
+        "referButton": "Refer friends for rewards"
+    },
     "unlock2": {
       "title": "Unlock full course",
       "description": "To view all content, please choose one of the payment methods below.",
@@ -861,10 +870,10 @@
     }
   },
   "chat": {
-    "title": "HelloJob AI Assistant",
+    "title": "Advisor Tran Thi Bich",
     "statusOnline": "Online",
     "placeholder": "Type your question here...",
-    "greeting": "Hello, {role} client. How can I assist you today?",
+    "greeting": "Hello, I am Tran Thi Bich. How can I help you?",
     "defaultGreeting": "Hello. How can I assist you today?",
     "error": "Sorry, I'm having trouble connecting. Please try again later."
   },
@@ -884,7 +893,7 @@
       "description": "Highly qualified professionals with degrees."
     }
   },
-  "visaSubTypes": {
+   "visaSubTypes": {
     "title": "Please select more details",
     "intern": {
       "threeYear": "3-Year Intern",
@@ -1475,6 +1484,7 @@
 }
 
     
+
 
 
 

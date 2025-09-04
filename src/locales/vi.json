@@ -639,6 +639,15 @@
       "unavailable": "Video không có sẵn",
       "notWorking": "Video này không hoạt động"
     },
+    "unlock1": {
+        "title": "Mở khoá toàn bộ khoá học",
+        "description": "Bạn đã hoàn thành các bài học miễn phí. Để tiếp tục, vui lòng chọn một trong các phương thức mở khoá dưới đây.",
+        "payButton": "Thanh toán qua thẻ",
+        "payNote": "Giá chỉ 1,200,000đ",
+        "promoButton": "Nhập mã giảm giá",
+        "premiumButton": "Nâng cấp tài khoản Premium",
+        "referButton": "Giới thiệu bạn bè để nhận thưởng"
+    },
     "unlock2": {
       "title": "Mở khóa toàn bộ khóa học",
       "description": "Để xem toàn bộ nội dung, vui lòng chọn một trong các phương thức dưới đây.",
@@ -861,10 +870,10 @@
     }
   },
   "chat": {
-    "title": "Trợ lý AI HelloJob",
+    "title": "Tư vấn viên Trần Thị Bích",
     "statusOnline": "Đang hoạt động",
     "placeholder": "Nhập câu hỏi của bạn ở đây...",
-    "greeting": "Xin chào quý khách hàng {role}. Tôi có thể giúp gì cho bạn hôm nay?",
+    "greeting": "Xin chào, tôi là Trần Thị Bích. Tôi có thể giúp gì cho bạn?",
     "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?",
     "error": "Xin lỗi, tôi đang gặp sự cố kết nối. Vui lòng thử lại sau."
   },
@@ -1475,6 +1484,7 @@
 }
 
     
+
 
 
 
