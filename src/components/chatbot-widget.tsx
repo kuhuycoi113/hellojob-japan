@@ -9,19 +9,40 @@ import { SendHorizonal, Bot, X, LoaderCircle, MessageSquare } from 'lucide-react
 import { useLanguage } from '@/contexts/language-context';
 import { chatWithBot } from '@/ai/flows/ai-chatbot';
 import { cn } from '@/lib/utils';
+import { useSearchParams } from 'next/navigation';
 
 type Message = {
   role: 'user' | 'model';
   content: string;
 };
 
+type GenkitMessage = {
+  role: 'user' | 'model' | 'tool';
+  content: {
+    text?: string;
+    toolRequest?: any;
+    toolResponse?: any;
+  }[];
+}
+
+const virtualAdvisors = [
+  { name: 'Thanh Tâm', avatar: 'https://i.pravatar.cc/150?u=advisor1' },
+  { name: 'Hoài Anh', avatar: 'https://i.pravatar.cc/150?u=advisor2' },
+  { name: 'Quốc Việt', avatar: 'https://i.pravatar.cc/150?u=advisor3' },
+  { name: 'Ngọc Oanh', avatar: 'https://i.pravatar.cc/150?u=advisor4' },
+  { name: 'Phạm Hà', avatar: 'https://i.pravatar.cc/150?u=advisor5' },
+];
+
 export function ChatbotWidget() {
   const { t } = useLanguage();
+  const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [currentAdvisor, setCurrentAdvisor] = useState(virtualAdvisors[0]);
+  const userRole = searchParams.get('role') || 'Hiring Company';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -30,13 +51,20 @@ export function ChatbotWidget() {
   useEffect(scrollToBottom, [messages]);
   
   useEffect(() => {
+    // Select a random advisor when the widget is opened
+    if (isOpen) {
+      setCurrentAdvisor(virtualAdvisors[Math.floor(Math.random() * virtualAdvisors.length)]);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     // Add initial greeting when chat opens for the first time
     if (isOpen && messages.length === 0) {
       setMessages([
-        { role: 'model', content: t.chat.defaultGreeting }
+        { role: 'model', content: `Xin chào, tôi là ${currentAdvisor.name}, trợ lý AI của HelloJob. Tôi có thể giúp gì cho bạn hôm nay?` }
       ]);
     }
-  }, [isOpen, messages.length, t.chat.defaultGreeting]);
+  }, [isOpen, messages.length, t.chat.defaultGreeting, currentAdvisor]);
 
 
   const handleSend = async () => {
@@ -44,14 +72,23 @@ export function ChatbotWidget() {
 
     const userMessage: Message = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
+    const currentInput = input;
     setInput('');
     setIsLoading(true);
 
     try {
+      const genkitHistory: GenkitMessage[] = messages.map(msg => ({
+        role: msg.role,
+        content: [{ text: msg.content }],
+      }));
+
       const response = await chatWithBot({ 
-        question: input,
-        history: messages
+        question: currentInput,
+        history: genkitHistory,
+        userRole,
+        advisorName: currentAdvisor.name,
       });
+
       const botMessage: Message = { role: 'model', content: response.answer };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
@@ -69,7 +106,14 @@ export function ChatbotWidget() {
         <Button
           size="lg"
           className="rounded-full h-16 w-16 shadow-lg bg-primary hover:bg-primary/90"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            if (isOpen) {
+              setIsOpen(false);
+            } else {
+              setMessages([]); // Reset chat on open
+              setIsOpen(true);
+            }
+          }}
         >
            <MessageSquare className="h-7 w-7" />
         </Button>
@@ -82,10 +126,11 @@ export function ChatbotWidget() {
         <Card className="w-[380px] h-[500px] shadow-2xl rounded-2xl flex flex-col">
           <CardHeader className="flex flex-row items-center gap-4">
             <Avatar>
-              <AvatarFallback>AI</AvatarFallback>
+              <AvatarImage src={currentAdvisor.avatar} alt={currentAdvisor.name} />
+              <AvatarFallback>{currentAdvisor.name.charAt(0)}</AvatarFallback>
             </Avatar>
             <div>
-              <CardTitle className="font-headline text-xl text-gray-800">{t.chat.title}</CardTitle>
+              <CardTitle className="font-headline text-xl text-gray-800">{currentAdvisor.name}</CardTitle>
               <div className="flex items-center gap-2 mt-1">
                 <div className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></div>
                 <p className="text-sm text-muted-foreground">{t.chat.statusOnline}</p>
@@ -105,6 +150,7 @@ export function ChatbotWidget() {
               <div key={index} className={cn("flex items-start gap-3", msg.role === 'user' && 'justify-end')}>
                 {msg.role === 'model' && (
                    <Avatar className="h-9 w-9 border">
+                     <AvatarImage src={currentAdvisor.avatar} alt={currentAdvisor.name} />
                      <AvatarFallback><Bot size={20}/></AvatarFallback>
                    </Avatar>
                 )}
@@ -121,6 +167,7 @@ export function ChatbotWidget() {
             {isLoading && (
                <div className="flex items-start gap-3">
                  <Avatar className="h-9 w-9 border">
+                   <AvatarImage src={currentAdvisor.avatar} alt={currentAdvisor.name} />
                    <AvatarFallback><Bot size={20}/></AvatarFallback>
                  </Avatar>
                  <div className="max-w-xs rounded-lg p-3 bg-muted flex items-center justify-center">
