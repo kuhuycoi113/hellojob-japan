@@ -7,7 +7,7 @@ export default function AdvisorProfilePage({ params }: { params: { slug: string 
   
   // Find the advisor data by slug (which is derived from the English name)
   const advisorData = translations.vi.advisors.advisorsList.find(
-    (advisor, index) => advisorsList[index].name.toLowerCase().replace(' ', '-') === params.slug
+    (advisor, index) => advisorsList[index].name.toLowerCase().replace(/\s+/g, '-') === params.slug
   );
   
   if (!advisorData) {
@@ -17,9 +17,9 @@ export default function AdvisorProfilePage({ params }: { params: { slug: string 
   return <AdvisorProfile advisorSlug={params.slug} />;
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   const { advisorsList } = translations.en.advisors;
   return advisorsList.map(advisor => ({
-    slug: advisor.name.toLowerCase().replace(' ', '-'),
+    slug: advisor.name.toLowerCase().replace(/\s+/g, '-'),
   }));
 }

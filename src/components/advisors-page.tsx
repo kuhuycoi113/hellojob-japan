@@ -33,33 +33,33 @@ export function AdvisorsPage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {advisors.map((advisor, index) => {
-            const advisorSlug = englishAdvisors[index].name.toLowerCase().replace(' ', '-');
+            const advisorSlug = englishAdvisors[index].name.toLowerCase().replace(/\s+/g, '-');
             return (
-              <Card key={index} className="flex flex-col text-center items-center p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <Avatar className="h-32 w-32 border-4 border-white shadow-lg">
-                  <AvatarImage src={advisor.avatar} alt={advisor.name} />
-                  <AvatarFallback>{advisor.name.charAt(0)}</AvatarFallback>
-                </Avatar>
-                <CardHeader className="p-4">
-                  <h3 className="text-xl font-bold text-gray-800">{advisor.name}</h3>
-                  <p className="text-sm text-primary font-medium">{advisor.title}</p>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                   <div className="flex flex-wrap justify-center gap-2">
-                    {advisor.skills.map((skill, i) => (
-                      <Badge key={i} variant="secondary">{skill}</Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex flex-col w-full gap-2">
-                   <Button asChild className="w-full">
-                     <Link href={`/advisors/${advisorSlug}`}>
+              <Link href={`/advisors/${advisorSlug}`} key={index} className="group">
+                <Card className="flex flex-col text-center items-center p-6 rounded-xl shadow-lg h-full group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-300">
+                  <Avatar className="h-32 w-32 border-4 border-white shadow-lg">
+                    <AvatarImage src={advisor.avatar} alt={advisor.name} />
+                    <AvatarFallback>{advisor.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <CardHeader className="p-4">
+                    <h3 className="text-xl font-bold text-gray-800">{advisor.name}</h3>
+                    <p className="text-sm text-primary font-medium">{advisor.title}</p>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {advisor.skills.map((skill, i) => (
+                        <Badge key={i} variant="secondary">{skill}</Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex flex-col w-full gap-2 mt-auto pt-4">
+                    <Button className="w-full">
                         {t.advisors.viewProfile}
                         <ArrowRight className="ml-2 h-4 w-4" />
-                     </Link>
-                   </Button>
-                </CardFooter>
-              </Card>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </Link>
             )
           })}
         </div>
