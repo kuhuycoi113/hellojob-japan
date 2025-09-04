@@ -97,7 +97,6 @@ export function CourseDetail() {
                           <Badge className="mb-4 bg-accent/20 text-accent-foreground font-semibold">{course.category}</Badge>
                           <h1 className="text-3xl font-bold font-headline text-gray-800 mb-3">{course.title}</h1>
                           <p className="text-muted-foreground leading-relaxed">{course.description}</p>
-                          <Button onClick={() => setIsUnlockDialog2Open(true)} className="mt-4">Test Unlock Dialog 2</Button>
                       </CardContent>
                   </Card>
 
@@ -157,7 +156,7 @@ export function CourseDetail() {
                                                 className={cn(
                                                     "w-full justify-start h-auto p-3 text-left text-sm",
                                                     isSelected && "bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary",
-                                                    isLocked && "text-muted-foreground hover:bg-gray-100 cursor-not-allowed"
+                                                    isLocked && "text-muted-foreground hover:bg-gray-100 cursor-pointer"
                                                 )}
                                                 onClick={() => handleLessonClick(chapterIndex, lessonIndex, isLocked)}
                                             >
