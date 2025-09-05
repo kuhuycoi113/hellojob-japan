@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import Image from 'next/image';
@@ -59,7 +58,7 @@ export function SearchResultCard({ candidate }: { candidate: Candidate }) {
                     <div className="flex justify-between items-start">
                         <div>
                             <h3 className="text-xl font-bold text-gray-800">
-                                {language === 'ja' ? candidate.name_ja : candidate.name_vi}
+                                {language === 'ja' ? `${candidate.name_ja} (${candidate.name_vi})` : candidate.name_vi}
                             </h3>
                             <p className="text-sm text-muted-foreground">{candidate.details[language]}</p>
                         </div>
