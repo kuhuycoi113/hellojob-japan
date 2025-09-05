@@ -1,3 +1,5 @@
+'use client';
+
 import { Header } from '@/components/header';
 import { ElearningHero } from '@/components/elearning-hero';
 import { AllCoursesSection } from '@/components/all-courses-section';
