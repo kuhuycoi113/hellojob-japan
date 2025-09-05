@@ -55,26 +55,23 @@ export function AllCoursesSection() {
             </Card>
           ))}
         </div>
+        <div className="mt-20 text-center">
+            <Card className="max-w-2xl mx-auto p-8 bg-blue-50/50 border-primary/20 shadow-lg">
+                <h3 className="text-2xl font-bold font-headline text-gray-800">
+                    {t.elearning.shareCourseButton}
+                </h3>
+                <p className="text-muted-foreground mt-2 mb-6">
+                    {t.elearning.shareCourseSubtitle}
+                </p>
+                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                    <Link href="/elearning/share-course">
+                        Bắt đầu ngay <Send className="ml-2 h-4 w-4" />
+                    </Link>
+                </Button>
+            </Card>
+        </div>
       </div>
     </section>
-    
-    {/* Floating Action Button */}
-     <div className="fixed bottom-24 right-6 z-50 md:bottom-6">
-       <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-              <Button asChild size="lg" className="rounded-full h-14 w-14 shadow-lg bg-accent hover:bg-accent/90">
-                  <Link href="/elearning/share-course">
-                      <Send className="h-6 w-6" />
-                  </Link>
-              </Button>
-          </TooltipTrigger>
-          <TooltipContent side="left">
-            <p>{t.elearning.shareCourseButton}</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-    </div>
     </>
   );
 }
