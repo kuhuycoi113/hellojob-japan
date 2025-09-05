@@ -3,13 +3,20 @@
 import { Hero } from '@/components/hero';
 import { CandidateFilterSidebar } from './candidate-filter-sidebar';
 import { useLanguage } from '@/contexts/language-context';
-import { allCandidates } from '@/data/candidates';
+import { allCandidates, type Candidate } from '@/data/candidates';
 import { SearchResultCard } from './search-result-card';
 import { Button } from './ui/button';
+import { useEffect, useState } from 'react';
 
 export function CandidateSearchPage() {
   const { t } = useLanguage();
-  const candidates = allCandidates.slice(0, 10); // Show first 10 for example
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
+
+  useEffect(() => {
+    // Set candidates on the client side to avoid hydration mismatch
+    setCandidates(allCandidates.slice(0, 10));
+  }, []);
+
 
   return (
     <div>
