@@ -19,8 +19,9 @@ export type Candidate = {
 const firstNames_vi = ["An", "Bình", "Chí", "Dũng", "Giang", "Hải", "Khánh", "Linh", "Minh", "Nam", "Oanh", "Phúc", "Quân", "Sơn", "Tâm", "Uyên", "Vân", "Xuân", "Yến"];
 const lastNames_vi = ["Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Huỳnh", "Phan", "Vũ", "Võ", "Đặng", "Bùi", "Đỗ", "Hồ", "Ngô", "Dương"];
 
-const firstNames_ja = ["愛", "美", "千尋", "大輔", "学", "隼人", "健太", "凛", "実", "直樹", "薫", "福", "健", "聡", "心", "優", "花", "春", "恵"];
-const lastNames_ja = ["佐藤", "鈴木", "高橋", "田中", "渡辺", "伊藤", "山本", "中村", "小林", "加藤", "吉田", "山田", "佐々木", "山口", "松本"];
+const katakanaLastNames = ["グエン", "チャン", "レー", "ファム", "ホアン", "フィン", "ファン", "ヴー", "ヴォー", "ダン", "ブイ", "ドー", "ホー", "ゴー", "ズオン"];
+const katakanaFirstNames = ["アン", "ビン", "チー", "ズン", "ザン", "ハイ", "カイン", "リン", "ミン", "ナム", "オアイン", "フック", "クアン", "ソン", "タム", "ウイエン", "ヴァン", "スアン", "イエン"];
+
 
 const specialties = [
     { vi: "Đóng gói công nghiệp", en: "Industrial Packaging", ja: "工業包装" },
@@ -96,7 +97,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const randomVisaSubtypeIndex = Math.floor(Math.random() * visaInfo.subtypes.vi.length);
     
     const name_vi = `${getRandomElement(lastNames_vi)} ${getRandomElement(firstNames_vi)}`;
-    const name_ja = `${getRandomElement(lastNames_ja)} ${getRandomElement(firstNames_ja)}`;
+    const name_ja = `${getRandomElement(katakanaLastNames)} ${getRandomElement(katakanaFirstNames)}`;
 
     const age = Math.floor(Math.random() * 20) + 20; // 20-39
     const height = Math.floor(Math.random() * 30) + 150; // 150-179 cm
