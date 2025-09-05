@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select"
 import { Search } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
+import Link from 'next/link';
 
 export function Hero() {
   const { t } = useLanguage();
@@ -24,7 +25,7 @@ export function Hero() {
           {t.hero.subtitle}
         </p>
         <div className="mt-10 max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-          <form className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr_auto] gap-4 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr_auto] gap-4 items-center">
             <div className="text-left text-gray-500">
               <label className="text-sm font-medium">{t.hero.industry}</label>
               <Select>
@@ -67,11 +68,13 @@ export function Hero() {
                 </SelectContent>
               </Select>
             </div>
-            <Button type="submit" size="lg" className="h-12 w-full sm:w-auto text-base">
-              <Search className="mr-2 h-5 w-5" />
-              {t.hero.searchCandidates}
+            <Button asChild type="submit" size="lg" className="h-12 w-full sm:w-auto text-base">
+              <Link href="/candidates">
+                <Search className="mr-2 h-5 w-5" />
+                {t.hero.searchCandidates}
+              </Link>
             </Button>
-          </form>
+          </div>
         </div>
       </div>
     </section>

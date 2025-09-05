@@ -68,6 +68,31 @@
     "fukuoka": "福岡県",
     "searchCandidates": "人材を探す"
   },
+  "candidateSearch": {
+    "title": "検索結果",
+    "candidates": "名の候補者",
+    "loadMore": "さらに読み込む",
+    "filters": {
+      "title": "検索フィルター",
+      "apply": "適用する",
+      "visa": {
+        "title": "在留資格"
+      },
+      "industry": {
+        "title": "業種"
+      },
+      "salary": {
+        "title": "給与範囲（円）"
+      },
+      "age": {
+        "title": "年齢"
+      },
+      "other": {
+        "title": "その他の要件",
+        "tattoo": "刺青OK"
+      }
+    }
+  },
   "whyChooseUs": {
     "title": "HelloJobが選ばれる理由",
     "subtitle": "採用プロセスをシンプルにし、時間とコストを削減します。",
@@ -1431,7 +1456,7 @@
       },
       {
         "name": "不確実性の回避",
-        "description": "未来が決して知ることができないという事実に対して社会がどのように対処するかの度合い。"
+        "description": "未来が決して知することができないという事実に対して社会がどのように対処するかの度合い。"
       },
       {
         "name": "長期的志向 vs. 短期的志向",

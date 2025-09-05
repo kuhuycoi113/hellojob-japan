@@ -68,6 +68,31 @@
     "fukuoka": "Fukuoka",
     "searchCandidates": "Search Candidates"
   },
+  "candidateSearch": {
+    "title": "Search Results",
+    "candidates": "candidates",
+    "loadMore": "Load more candidates",
+    "filters": {
+      "title": "Search Filters",
+      "apply": "Apply Filters",
+      "visa": {
+        "title": "Visa Type"
+      },
+      "industry": {
+        "title": "Industry"
+      },
+      "salary": {
+        "title": "Salary Range (JPY)"
+      },
+      "age": {
+        "title": "Age"
+      },
+      "other": {
+        "title": "Other requirements",
+        "tattoo": "Accepts tattoos"
+      }
+    }
+  },
   "whyChooseUs": {
     "title": "Why Choose HelloJob?",
     "subtitle": "We simplify the recruitment process, saving you time and cost.",

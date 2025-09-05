@@ -68,6 +68,31 @@
     "fukuoka": "Fukuoka",
     "searchCandidates": "Tìm ứng viên"
   },
+  "candidateSearch": {
+    "title": "Kết quả tìm kiếm",
+    "candidates": "ứng viên",
+    "loadMore": "Xem thêm ứng viên",
+    "filters": {
+      "title": "Bộ lọc tìm kiếm",
+      "apply": "Áp dụng",
+      "visa": {
+        "title": "Loại hình lao động"
+      },
+      "industry": {
+        "title": "Ngành nghề"
+      },
+      "salary": {
+        "title": "Mức lương (vạn JPY)"
+      },
+      "age": {
+        "title": "Độ tuổi"
+      },
+      "other": {
+        "title": "Yêu cầu khác",
+        "tattoo": "Chấp nhận hình xăm"
+      }
+    }
+  },
   "whyChooseUs": {
     "title": "Tại sao chọn HelloJob?",
     "subtitle": "Chúng tôi đơn giản hóa quy trình tuyển dụng, giúp bạn tiết kiệm thời gian và chi phí.",
