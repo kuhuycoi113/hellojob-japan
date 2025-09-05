@@ -38,12 +38,14 @@ export function OpportunitiesTable({ opportunities, onAccept, onDecline }: Oppor
         {opportunities.map((opp) => (
           <TableRow key={opp.id}>
             <TableCell>
-              <Link href={`/dashboard/jobs/${opp.id}`} className="hover:underline">
-                <div className="font-medium text-gray-800">{opp.title}</div>
-                 <Link href={opp.profileUrl || '#'} className="w-fit">
+              <div>
+                <Link href={`/dashboard/jobs/${opp.id}`} className="hover:underline">
+                  <div className="font-medium text-gray-800">{opp.title}</div>
+                </Link>
+                <Link href={opp.profileUrl || '#'} className="w-fit">
                     <div className="text-sm text-muted-foreground hover:text-primary">{opp.company}</div>
                 </Link>
-              </Link>
+              </div>
             </TableCell>
             <TableCell className="hidden md:table-cell">{opp.location}</TableCell>
             <TableCell className="hidden sm:table-cell">{opp.quantity}</TableCell>
