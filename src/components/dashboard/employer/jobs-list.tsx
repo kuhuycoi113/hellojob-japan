@@ -33,6 +33,7 @@ import { JobsGallery } from './jobs-gallery';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import type { Job } from '@/locales/translations';
+import Link from 'next/link';
 
 
 interface JobsListProps {
@@ -86,22 +87,24 @@ const JobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: any }) =>
           {jobs.map((job, index) => (
             <TableRow key={job.id}>
               <TableCell className="font-medium">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src={job.image || `https://picsum.photos/400/225?random=job${index}`}
-                    alt={job.title}
-                    width={64}
-                    height={36}
-                    className="object-cover rounded-md hidden sm:block"
-                    data-ai-hint="workplace factory"
-                  />
-                  <div>
-                    <div className="font-medium">{job.title}</div>
-                    <div className="text-sm text-muted-foreground">
-                      {job.location}
+                <Link href={`/dashboard/jobs/${job.id}`} className="hover:underline">
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src={job.image || `https://picsum.photos/400/225?random=job${index}`}
+                      alt={job.title}
+                      width={64}
+                      height={36}
+                      className="object-cover rounded-md hidden sm:block"
+                      data-ai-hint="workplace factory"
+                    />
+                    <div>
+                      <div className="font-medium">{job.title}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {job.location}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </TableCell>
               <TableCell>
                 <Badge variant={getStatusVariant(job.status)}>
@@ -123,7 +126,9 @@ const JobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: any }) =>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuLabel>{t.dashboard_employer.activeJobs.table.actions}</DropdownMenuLabel>
-                    <DropdownMenuItem>{t.dashboard_employer.jobs_list.table.actions_items.details}</DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href={`/dashboard/jobs/${job.id}`}>{t.dashboard_employer.jobs_list.table.actions_items.details}</Link>
+                    </DropdownMenuItem>
                     <DropdownMenuItem>{t.dashboard_employer.jobs_list.table.actions_items.manage}</DropdownMenuItem>
                     <DropdownMenuItem>{t.dashboard_employer.jobs_list.table.actions_items.view_candidates}</DropdownMenuItem>
                     <DropdownMenuSeparator />

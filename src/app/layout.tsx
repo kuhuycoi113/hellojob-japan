@@ -9,7 +9,9 @@ export const metadata: Metadata = {
   title: 'HelloJob Recommender',
   description: 'AI-powered job matching to help you find your dream job.',
   icons: {
-    icon: '/img/favi2.ico',
+    icon: '/metadata/favicon.ico',
+    shortcut: '/metadata/favicon.ico',
+    apple: '/metadata/apple-touch-icon.png',
   },
 };
 
