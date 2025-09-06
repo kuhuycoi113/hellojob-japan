@@ -141,7 +141,7 @@ const PaginatedOpportunityList = ({ opportunities, onAccept, onDecline, view, t 
 
 export function Overview({ pendingOpportunities, acceptedOpportunities, declinedOpportunities, onAccept, onDecline }: OverviewProps) {
   const { t } = useLanguage();
-  const [view, setView] = useState<ViewMode>('gallery');
+  const [view, setView] = useState<ViewMode>('list');
   
   useEffect(() => {
     const savedView = localStorage.getItem('opportunities-view-mode') as ViewMode;
