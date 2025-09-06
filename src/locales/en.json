@@ -1324,6 +1324,7 @@
     }
   },
   "shareCourse": {
+    "start_button": "Start",
     "tabs": {
       "build": "Build",
       "promote": "Promote",

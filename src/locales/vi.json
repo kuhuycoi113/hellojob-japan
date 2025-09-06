@@ -1324,6 +1324,7 @@
     }
   },
   "shareCourse": {
+    "start_button": "Bắt đầu",
     "tabs": {
       "build": "Xây dựng",
       "promote": "Quảng bá",

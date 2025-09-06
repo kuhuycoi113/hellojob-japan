@@ -63,7 +63,7 @@ export function ShareCourseForm() {
                             <CardTitle className="text-xl font-headline text-gray-800 mb-3">{option.title}</CardTitle>
                             <CardDescription className="text-muted-foreground mb-4 h-20">{option.description}</CardDescription>
                             <span className="font-semibold text-primary inline-flex items-center">
-                                Bắt đầu <ArrowRight className="ml-2 h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+                                {t.shareCourse.start_button} <ArrowRight className="ml-2 h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
                             </span>
                         </CardContent>
                     </Card>
