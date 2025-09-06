@@ -1358,7 +1358,16 @@
         "accountNumberLabel": "Số tài khoản",
         "accountNumberPlaceholder": "VD: 0123456789",
         "accountNameLabel": "Tên chủ tài khoản",
-        "accountNamePlaceholder": "VD: NGUYEN VAN A"
+        "accountNamePlaceholder": "VD: NGUYEN VAN A",
+        "revenue_share": {
+            "title": "Mô hình chia sẻ doanh thu",
+            "description": "Với mỗi khoá học được bán, người tạo nhận 70% và HelloJob nhận 30% phí dịch vụ."
+        },
+        "premium_offer": {
+            "title": "Ưu đãi đặc biệt",
+            "description": "Nâng cấp lên gói Premium để giảm phí dịch vụ xuống chỉ còn 25%!",
+            "learn_more": "Tìm hiểu thêm"
+        }
       },
       "submitButton": "Xuất bản khoá học"
     },

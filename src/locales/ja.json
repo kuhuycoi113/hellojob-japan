@@ -1357,7 +1357,16 @@
         "accountNumberLabel": "口座番号",
         "accountNumberPlaceholder": "例：0123456789",
         "accountNameLabel": "口座名義人",
-        "accountNamePlaceholder": "例：グエン・ヴァン・A"
+        "accountNamePlaceholder": "例：グエン・ヴァン・A",
+        "revenue_share": {
+          "title": "収益分配モデル",
+          "description": "販売された各コースについて、作成者は70％、HelloJobはサービス手数料の30％を受け取ります。"
+        },
+        "premium_offer": {
+          "title": "特別オファー",
+          "description": "プレミアムアカウントにアップグレードすると、サービス手数料がわずか25％に削減されます！",
+          "learn_more": "詳細を見る"
+        }
       },
       "submitButton": "コースを公開"
     },

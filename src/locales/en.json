@@ -1358,7 +1358,16 @@
         "accountNumberLabel": "Account Number",
         "accountNumberPlaceholder": "e.g., 0123456789",
         "accountNameLabel": "Account Holder Name",
-        "accountNamePlaceholder": "e.g., JOHN DOE"
+        "accountNamePlaceholder": "e.g., JOHN DOE",
+        "revenue_share": {
+          "title": "Revenue Sharing Model",
+          "description": "For each course sold, the creator receives 70% and HelloJob receives 30% of the service fee."
+        },
+        "premium_offer": {
+          "title": "Special Offer",
+          "description": "Upgrade to a Premium account to reduce the service fee to just 25%!",
+          "learn_more": "Learn more"
+        }
       },
       "submitButton": "Publish Course"
     },
