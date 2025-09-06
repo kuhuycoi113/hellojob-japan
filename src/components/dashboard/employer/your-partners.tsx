@@ -11,14 +11,18 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { PartnersTable } from './partners-table';
+import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext } from '@/components/ui/pagination';
+
 
 type ViewMode = 'list' | 'gallery';
+const ITEMS_PER_PAGE = 8;
 
 export function YourPartners() {
   const { t, language } = useLanguage();
   const partners = allPartners;
   const isJapanese = language === 'ja';
   const [view, setView] = useState<ViewMode>('list');
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const savedView = localStorage.getItem('partners-view-mode') as ViewMode;
@@ -30,6 +34,18 @@ export function YourPartners() {
   useEffect(() => {
     localStorage.setItem('partners-view-mode', view);
   }, [view]);
+
+  const totalPages = Math.ceil(partners.length / ITEMS_PER_PAGE);
+  const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
+  const currentPartners = partners.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
 
   return (
     <Card>
@@ -71,7 +87,7 @@ export function YourPartners() {
       <CardContent>
         {view === 'gallery' ? (
              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {partners.slice(0,4).map((partner, index) => (
+                {currentPartners.map((partner, index) => (
                 <Card
                     key={index}
                     className="flex flex-col text-center items-center p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
@@ -98,7 +114,26 @@ export function YourPartners() {
                 ))}
             </div>
         ) : (
-            <PartnersTable partners={partners} />
+            <PartnersTable partners={currentPartners} />
+        )}
+        {totalPages > 1 && (
+            <Pagination className="mt-6">
+                <PaginationContent>
+                <PaginationItem>
+                    <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1} />
+                </PaginationItem>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                    <PaginationItem key={page}>
+                        <PaginationLink href="#" onClick={(e) => { e.preventDefault(); handlePageChange(page); }} isActive={currentPage === page}>
+                            {page}
+                        </PaginationLink>
+                    </PaginationItem>
+                ))}
+                <PaginationItem>
+                    <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages} />
+                </PaginationItem>
+                </PaginationContent>
+            </Pagination>
         )}
       </CardContent>
     </Card>

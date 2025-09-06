@@ -34,6 +34,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import type { Job } from '@/locales/translations';
 import Link from 'next/link';
+import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext } from '@/components/ui/pagination';
 
 
 interface JobsListProps {
@@ -41,6 +42,7 @@ interface JobsListProps {
 }
 
 type ViewMode = 'list' | 'gallery';
+const ITEMS_PER_PAGE = 5;
 
 const JobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: any }) => {
   const getStatusVariant = (status: string): "secondary" | "outline" | "default" => {
@@ -146,6 +148,46 @@ const JobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: any }) =>
   return <JobsGallery jobs={jobs} />;
 };
 
+const PaginatedJobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: any }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(jobs.length / ITEMS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
+  const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
+  const currentJobs = jobs.slice(indexOfFirstItem, indexOfLastItem);
+
+  return (
+    <>
+      <JobsView jobs={currentJobs} view={view} t={t} />
+      {totalPages > 1 && (
+        <Pagination className="mt-6">
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1} />
+            </PaginationItem>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+              <PaginationItem key={page}>
+                <PaginationLink href="#" onClick={(e) => { e.preventDefault(); handlePageChange(page); }} isActive={currentPage === page}>
+                  {page}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+            <PaginationItem>
+              <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages} />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      )}
+    </>
+  );
+};
+
 
 export function JobsList({ jobs }: JobsListProps) {
   const { t } = useLanguage();
@@ -211,16 +253,16 @@ export function JobsList({ jobs }: JobsListProps) {
                 </div>
               </div>
               <TabsContent value="all" className="mt-4">
-                 <JobsView jobs={jobs} view={view} t={t} />
+                 <PaginatedJobsView jobs={jobs} view={view} t={t} />
               </TabsContent>
                <TabsContent value="active" className="mt-4">
-                 <JobsView jobs={activeJobs} view={view} t={t} />
+                 <PaginatedJobsView jobs={activeJobs} view={view} t={t} />
               </TabsContent>
                <TabsContent value="draft" className="mt-4">
-                 <JobsView jobs={draftJobs} view={view} t={t} />
+                 <PaginatedJobsView jobs={draftJobs} view={view} t={t} />
               </TabsContent>
                <TabsContent value="archived" className="mt-4">
-                 <JobsView jobs={archivedJobs} view={view} t={t} />
+                 <PaginatedJobsView jobs={archivedJobs} view={view} t={t} />
               </TabsContent>
             </Tabs>
         </CardContent>
