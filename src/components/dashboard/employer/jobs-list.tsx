@@ -42,7 +42,7 @@ interface JobsListProps {
 }
 
 type ViewMode = 'list' | 'gallery';
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 6;
 
 const JobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: any }) => {
   const getStatusVariant = (status: string): "secondary" | "outline" | "default" => {

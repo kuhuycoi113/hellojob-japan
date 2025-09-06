@@ -16,7 +16,7 @@ import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, Pagi
 type ViewMode = 'list' | 'gallery';
 type CandidateStatus = 'all' | 'new' | 'review' | 'hired' | 'archived';
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 6;
 
 const PaginatedCandidateView = ({ candidates, view, t }: { candidates: Candidate[]; view: ViewMode; t: any }) => {
   const [currentPage, setCurrentPage] = useState(1);
