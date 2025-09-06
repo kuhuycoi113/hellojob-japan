@@ -81,8 +81,8 @@ The user is a: {{{userRole}}}. Tailor your response to their perspective.`,
 export async function chatWithBot(input: ChatbotInput): Promise<ChatbotOutput> {
   const { history, ...rest } = input;
   const llmResponse = await ai.generate({
-    prompt: input.question,
     model: prompt,
+    prompt: input.question,
     history: history as any, // Cast to any to match Genkit's expected history type
     context: rest,
   });
@@ -92,6 +92,7 @@ export async function chatWithBot(input: ChatbotInput): Promise<ChatbotOutput> {
   if (choice.toolRequest) {
     const toolResponse = await choice.toolRequest.call();
     const finalAnswer = await ai.generate({
+        model: prompt,
         prompt: {
             text: input.question,
             history: [
@@ -100,7 +101,6 @@ export async function chatWithBot(input: ChatbotInput): Promise<ChatbotOutput> {
                 { role: 'tool', content: [{ toolResponse }] },
             ]
         },
-        model: prompt,
         context: rest,
     });
     return { answer: finalAnswer.text! };
