@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import {
@@ -36,10 +35,13 @@ import {
   Star,
 } from 'lucide-react';
 import Image from 'next/image';
+import { useState } from 'react';
+import { PremiumCheckoutDialog } from './premium-checkout-dialog';
 
 export function UpgradePage() {
   const { t, language } = useLanguage();
   const upgrade = t.upgrade_page;
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   const features = [
     {
@@ -169,7 +171,7 @@ export function UpgradePage() {
                         <p className="text-5xl font-bold text-primary">{upgrade.pricing.price}</p>
                         <p className="text-muted-foreground">{upgrade.pricing.per_year}</p>
                     </div>
-                    <Button size="lg" className="w-full text-lg h-14">
+                    <Button size="lg" className="w-full text-lg h-14" onClick={() => setIsCheckoutOpen(true)}>
                         <Gem className="mr-2 h-5 w-5"/>
                         {upgrade.pricing.cta}
                     </Button>
@@ -197,6 +199,7 @@ export function UpgradePage() {
           </div>
         </div>
       </section>
+      <PremiumCheckoutDialog open={isCheckoutOpen} onOpenChange={setIsCheckoutOpen} />
     </div>
   );
 }

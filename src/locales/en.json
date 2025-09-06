@@ -1565,6 +1565,7 @@
       "title": "Upgrade to Premium Today",
       "subtitle": "Unlock all premium features with one simple plan.",
       "price": "$99",
+      "per_month_unit": "",
       "per_year": "per month, billed annually",
       "cta": "Upgrade to Premium Now",
       "note": "You can cancel anytime. Billed annually."
@@ -1589,6 +1590,16 @@
           "answer": "The 'Trusted Partner' badge appears next to your profile across the platform, increasing trust and visibility with potential partners and candidates."
         }
       ]
+    },
+     "checkout": {
+      "title": "Complete Upgrade",
+      "description": "You're about to unlock the full potential of HelloJob. Please enter your payment information.",
+      "cardNumber": "Card Number",
+      "expiryDate": "Expiry Date",
+      "cvc": "CVC",
+      "cardName": "Cardholder Name",
+      "payButton": "Pay {amount}",
+      "securePayment": "Secure payment by Stripe."
     }
   }
 }

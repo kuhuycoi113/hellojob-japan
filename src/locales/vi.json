@@ -895,10 +895,10 @@
     }
   },
   "chat": {
-    "title": "Tư vấn viên Trần Thị Bích",
+    "title": "Trợ lý AI HelloJob",
     "statusOnline": "Đang hoạt động",
     "placeholder": "Nhập câu hỏi của bạn ở đây...",
-    "greeting": "Xin chào, tôi là Trần Thị Bích. Tôi có thể giúp gì cho bạn?",
+    "greeting": "Xin chào quý khách {role}. Tôi có thể giúp gì cho bạn hôm nay?",
     "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?",
     "error": "Xin lỗi, tôi đang gặp sự cố kết nối. Vui lòng thử lại sau."
   },
@@ -1564,7 +1564,8 @@
     "pricing": {
       "title": "Nâng Cấp Lên Premium Ngay Hôm Nay",
       "subtitle": "Mở khóa toàn bộ tính năng cao cấp với một gói duy nhất.",
-      "price": "2.000.000đ",
+      "price": "2.000.000",
+      "per_month_unit": "đ",
       "per_year": "/tháng, thanh toán theo năm",
       "cta": "Nâng Cấp Lên Premium Ngay",
       "note": "Bạn có thể hủy bất cứ lúc nào. Thanh toán theo chu kỳ hàng năm."
@@ -1589,6 +1590,16 @@
           "answer": "Huy hiệu 'Đối tác Tin cậy' xuất hiện bên cạnh hồ sơ của bạn trên toàn bộ nền tảng, giúp tăng cường sự tin tưởng và khả năng hiển thị với các đối tác và ứng viên tiềm năng."
         }
       ]
+    },
+     "checkout": {
+      "title": "Hoàn tất nâng cấp",
+      "description": "Bạn sắp mở khóa toàn bộ tiềm năng của HelloJob. Vui lòng nhập thông tin thanh toán của bạn.",
+      "cardNumber": "Số thẻ",
+      "expiryDate": "Ngày hết hạn",
+      "cvc": "CVC",
+      "cardName": "Tên chủ thẻ",
+      "payButton": "Thanh toán {amount}",
+      "securePayment": "Thanh toán an toàn qua Stripe."
     }
   }
 }
