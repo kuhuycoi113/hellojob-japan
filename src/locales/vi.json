@@ -1369,6 +1369,11 @@
             "title": "Ưu đãi đặc biệt",
             "description": "Nâng cấp lên gói Premium để giảm phí dịch vụ xuống chỉ còn 25%!",
             "learn_more": "Tìm hiểu thêm"
+        },
+        "tax_option": {
+          "title": "Nghĩa vụ thuế",
+          "option1": "Tôi sẽ tự đóng thuế thu nhập cá nhân.",
+          "option2": "Nhờ HelloJob hỗ trợ đóng thuế và khấu trừ tại nguồn."
         }
       },
       "submitButton": "Xuất bản khoá học"

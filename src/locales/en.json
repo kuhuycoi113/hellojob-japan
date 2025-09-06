@@ -1369,6 +1369,11 @@
           "title": "Special Offer",
           "description": "Upgrade to a Premium account to reduce the service fee to just 25%!",
           "learn_more": "Learn more"
+        },
+        "tax_option": {
+          "title": "Tax Obligation",
+          "option1": "I will pay my personal income tax myself.",
+          "option2": "Request HelloJob to handle tax payments and deduct at source."
         }
       },
       "submitButton": "Publish Course"

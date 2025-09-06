@@ -30,6 +30,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 import Link from 'next/link';
+import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 
 interface Lesson {
     id: number;
@@ -179,7 +180,7 @@ export function BuildCourseForm() {
         <CardHeader>
           <CardTitle>{t.shareCourse.build.payment.title}</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-6">
            <div className="space-y-2">
                 <Label htmlFor="course-price">{t.shareCourse.build.payment.priceLabel}</Label>
                 <div className="relative">
@@ -232,6 +233,19 @@ export function BuildCourseForm() {
                         <Label htmlFor="account-name">{t.shareCourse.build.payment.accountNameLabel}</Label>
                         <Input id="account-name" placeholder={t.shareCourse.build.payment.accountNamePlaceholder} />
                     </div>
+                </div>
+                <div className="mt-6">
+                    <Label className="font-medium">{t.shareCourse.build.payment.tax_option.title}</Label>
+                    <RadioGroup defaultValue="self_pay" className="mt-2 space-y-2">
+                        <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="self_pay" id="tax_self_pay" />
+                            <Label htmlFor="tax_self_pay" className="font-normal">{t.shareCourse.build.payment.tax_option.option1}</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="deduct" id="tax_deduct" />
+                            <Label htmlFor="tax_deduct" className="font-normal">{t.shareCourse.build.payment.tax_option.option2}</Label>
+                        </div>
+                    </RadioGroup>
                 </div>
             </div>
 
