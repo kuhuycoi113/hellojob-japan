@@ -59,12 +59,12 @@ export function OpportunitiesTable({ opportunities, onAccept, onDecline }: Oppor
                {onAccept && onDecline && (
                  <div className="flex justify-end gap-2">
                     <Button onClick={() => onDecline(opp.id)} variant="outline" size="sm">
-                        <X className="mr-2 h-4 w-4" />
-                        {t.dashboard_partner.decline}
+                        <X className="mr-0 md:mr-2 h-4 w-4" />
+                        <span className="hidden md:inline">{t.dashboard_partner.decline}</span>
                     </Button>
                     <Button onClick={() => onAccept(opp.id)} size="sm" className="bg-green-600 hover:bg-green-700">
-                        <Check className="mr-2 h-4 w-4" />
-                        {t.dashboard_partner.accept}
+                        <Check className="mr-0 md:mr-2 h-4 w-4" />
+                        <span className="hidden md:inline">{t.dashboard_partner.accept}</span>
                     </Button>
                 </div>
                )}

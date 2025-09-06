@@ -144,9 +144,11 @@ export function Overview({ pendingOpportunities, acceptedOpportunities, declined
   const [view, setView] = useState<ViewMode>('list');
   
   useEffect(() => {
-    const savedView = localStorage.getItem('opportunities-view-mode') as ViewMode;
-    if (savedView) {
-      setView(savedView);
+    const savedView = localStorage.getItem('opportunities-view-mode');
+    if (savedView === 'gallery') {
+      setView('gallery');
+    } else {
+        setView('list');
     }
   }, []);
 

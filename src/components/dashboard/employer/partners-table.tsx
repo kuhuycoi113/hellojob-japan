@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -54,12 +53,12 @@ export function PartnersTable({ partners }: PartnersTableProps) {
                     alt={isJapanese ? partner.name_ja : partner.name}
                     width={60}
                     height={30}
-                    className="object-contain rounded-sm"
+                    className="object-contain rounded-sm hidden sm:block"
                     data-ai-hint="company logo"
                 />
                 <div>
                     <div className="font-medium">{isJapanese ? partner.name_ja : partner.name}</div>
-                    <div className="text-sm text-muted-foreground md:hidden">
+                    <div className="text-sm text-muted-foreground sm:hidden">
                         {isJapanese ? partner.type_ja : partner.type}
                     </div>
                 </div>

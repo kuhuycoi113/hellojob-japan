@@ -70,14 +70,14 @@ const JobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: any }) =>
         <TableHeader>
           <TableRow>
             <TableHead>{t.dashboard_employer.activeJobs.table.jobTitle}</TableHead>
-            <TableHead>{t.dashboard_employer.activeJobs.table.status}</TableHead>
+            <TableHead className="hidden sm:table-cell">{t.dashboard_employer.activeJobs.table.status}</TableHead>
             <TableHead className="hidden md:table-cell">
               {t.dashboard_employer.activeJobs.table.partners}
             </TableHead>
             <TableHead className="hidden md:table-cell">
               {t.dashboard_employer.activeJobs.table.applications}
             </TableHead>
-            <TableHead className="hidden md:table-cell">
+            <TableHead className="hidden lg:table-cell">
               {t.dashboard_employer.jobs_list.table.date_posted}
             </TableHead>
             <TableHead>
@@ -108,14 +108,14 @@ const JobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: any }) =>
                   </div>
                 </Link>
               </TableCell>
-              <TableCell>
+              <TableCell className="hidden sm:table-cell">
                 <Badge variant={getStatusVariant(job.status)}>
                   {job.status === 'Searching' ? t.dashboard_employer.job_status.searching : t.dashboard_employer.job_status.forwarding}
                 </Badge>
               </TableCell>
               <TableCell className="hidden md:table-cell">{job.partners}</TableCell>
               <TableCell className="hidden md:table-cell">{job.applications}</TableCell>
-              <TableCell className="hidden md:table-cell">
+              <TableCell className="hidden lg:table-cell">
                 {job.date_posted}
               </TableCell>
               <TableCell>

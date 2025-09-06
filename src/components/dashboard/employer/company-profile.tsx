@@ -59,7 +59,7 @@ export function CompanyProfile() {
     <div className="flex w-full flex-col">
       <DashboardHeader />
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
-        <div className="mx-auto grid w-full max-w-7xl gap-6">
+        <div className="mx-auto grid w-full max-w-7xl gap-4 md:gap-6">
           <div className="mt-4">
             <Overview 
               pendingOpportunities={opportunities}
@@ -83,7 +83,7 @@ export function CompanyProfile() {
           </div>
 
           <DashboardStats />
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:gap-6 lg:grid-cols-3">
              <div className="lg:col-span-2">
                 <OverviewChart />
             </div>
