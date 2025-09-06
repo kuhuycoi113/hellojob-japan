@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/language-context';
 import { JobsList } from './jobs-list';
 import { YourCandidates } from './your-candidates';
@@ -15,9 +15,14 @@ import type { Job, Opportunity } from '@/locales/translations';
 export function CompanyProfile() {
   const { t } = useLanguage();
   
-  const [opportunities, setOpportunities] = useState<Opportunity[]>(t.dashboard_partner.newOpportunities.opportunities);
-  const [acceptedJobs, setAcceptedJobs] = useState<Job[]>(t.dashboard_employer.activeJobs.jobs);
+  const [opportunities, setOpportunities] = useState<Opportunity[]>([]);
+  const [acceptedJobs, setAcceptedJobs] = useState<Job[]>([]);
   const [declinedJobs, setDeclinedJobs] = useState<Opportunity[]>([]);
+
+  useEffect(() => {
+    setOpportunities(t.dashboard_partner.newOpportunities.opportunities);
+    setAcceptedJobs(t.dashboard_employer.activeJobs.jobs);
+  }, [t]);
 
 
   const handleAcceptJob = (jobId: string) => {
