@@ -57,8 +57,15 @@ export function SearchResultCard({ candidate }: { candidate: Candidate }) {
                 <div className="flex-1">
                     <div className="flex justify-between items-start">
                         <div>
-                            <h3 className="text-xl font-bold text-gray-800">
-                                {language === 'ja' ? `${candidate.name_ja} (${candidate.name_vi})` : candidate.name_vi}
+                            <h3 className="text-xl font-bold text-gray-800 flex items-baseline">
+                                {language === 'ja' ? (
+                                    <>
+                                        <span>{candidate.name_ja}</span>
+                                        <span className="text-sm font-normal text-muted-foreground ml-2">({candidate.name_vi})</span>
+                                    </>
+                                ) : (
+                                    candidate.name_vi
+                                )}
                             </h3>
                             <p className="text-sm text-muted-foreground">{candidate.details[language]}</p>
                         </div>
