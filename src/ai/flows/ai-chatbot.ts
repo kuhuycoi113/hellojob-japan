@@ -8,6 +8,7 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
+import { getExchangeRate } from '@/ai/tools/exchange-rate-tool';
 
 // Mock function to simulate calling an external CRM API
 async function notifyCRM(payload: { conversation: any; reason: string }) {
@@ -64,13 +65,14 @@ type ChatbotOutput = z.infer<typeof ChatbotOutputSchema>;
 
 const prompt = ai.definePrompt({
     name: 'chatbotPrompt',
-    tools: [notifyHumanAdvisor],
+    tools: [notifyHumanAdvisor, getExchangeRate],
     system: `You are an AI assistant for HelloJob, a platform connecting Japanese companies with Vietnamese workers.
 Your name is HelloJob AI, and you are a friendly and helpful assistant.
 Your primary role is to be a triage agent.
 1. For simple, factual questions (e.g., "Do you have construction candidates?", "What is a Specified Skilled Worker visa?"), provide a concise and helpful answer.
-2. For complex, detailed, or strategic questions that require human expertise (e.g., "Can you find me 5 candidates for...", "Advise me on my hiring strategy", "Is this contract legal?"), you MUST use the 'notifyHumanAdvisor' tool.
-3. After using the tool, you MUST inform the user that a human advisor has been notified and will contact them shortly. Do not attempt to answer the complex question yourself.
+2. For questions involving currency conversion (e.g., "How much is 180,000 JPY in VND?", "What is 20 man yen in Vietnamese dong?"), you MUST use the 'getExchangeRate' tool to get the latest rate and provide the calculated answer. 1 man = 10,000.
+3. For complex, detailed, or strategic questions that require human expertise (e.g., "Can you find me 5 candidates for...", "Advise me on my hiring strategy", "Is this contract legal?"), you MUST use the 'notifyHumanAdvisor' tool.
+4. After using the 'notifyHumanAdvisor' tool, you MUST inform the user that a human advisor has been notified and will contact them shortly. Do not attempt to answer the complex question yourself.
 
 The user is a: {{{userRole}}}. Tailor your response to their perspective.`,
 });

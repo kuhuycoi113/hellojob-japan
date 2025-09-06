@@ -1,5 +1,3 @@
-// This is a new file.
-'use server';
 /**
  * @fileOverview A tool for fetching real-time currency exchange rates.
  */
