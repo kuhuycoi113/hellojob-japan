@@ -173,7 +173,6 @@ export function Header() {
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/advisors", label: t.header.advisors, icon: <UsersIcon /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
-    { href: "/post-job-ai", label: t.mobile_menu_sheet.postJob, icon: <PlusCircle /> },
     { href: "/dashboard/partner", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
@@ -260,7 +259,7 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-           <Button size="icon" className="md:hidden" onClick={toggleChat}>
+           <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleChat}>
              <MessageSquareText className="h-6 w-6" />
            </Button>
 
@@ -402,6 +401,7 @@ export function Header() {
     
 
     
+
 
 
 
