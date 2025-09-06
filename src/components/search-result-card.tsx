@@ -23,6 +23,21 @@ export function SearchResultCard({ candidate }: { candidate: Candidate }) {
     en: ["3 Yrs Exp", "Japanese N3", "Hardworking", "Good Health"],
     ja: ["経験3年", "日本語N3", "勤勉", "健康"],
   }
+  
+  const getDisplayName = () => {
+    if (language === 'ja') {
+      return (
+        <>
+          <span>{candidate.name_ja}</span>
+          <span className="text-sm font-normal text-muted-foreground ml-2">({candidate.name_vi})</span>
+        </>
+      )
+    }
+    if (language === 'en') {
+      return candidate.name_en;
+    }
+    return candidate.name_vi;
+  }
 
   return (
     <Card className="shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -58,14 +73,7 @@ export function SearchResultCard({ candidate }: { candidate: Candidate }) {
                     <div className="flex justify-between items-start">
                         <div>
                             <h3 className="text-xl font-bold text-gray-800 flex items-baseline">
-                                {language === 'ja' ? (
-                                    <>
-                                        <span>{candidate.name_ja}</span>
-                                        <span className="text-sm font-normal text-muted-foreground ml-2">({candidate.name_vi})</span>
-                                    </>
-                                ) : (
-                                    candidate.name_vi
-                                )}
+                                {getDisplayName()}
                             </h3>
                             <p className="text-sm text-muted-foreground">{candidate.details[language]}</p>
                         </div>

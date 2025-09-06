@@ -4,6 +4,7 @@ export type Candidate = {
     id: string;
     name_ja: string;
     name_vi: string;
+    name_en: string;
     avatar: string;
     details: Record<Language, string>;
     visa_type: Record<Language, string>;
@@ -17,43 +18,43 @@ export type Candidate = {
 }
 
 const lastNames = [
-    { vi: "Nguyễn", ja: "グエン" },
-    { vi: "Trần", ja: "チャン" },
-    { vi: "Lê", ja: "レー" },
-    { vi: "Phạm", ja: "ファム" },
-    { vi: "Hoàng", ja: "ホアン" },
-    { vi: "Huỳnh", ja: "フィン" },
-    { vi: "Phan", ja: "ファン" },
-    { vi: "Vũ", ja: "ヴー" },
-    { vi: "Võ", ja: "ヴォー" },
-    { vi: "Đặng", ja: "ダン" },
-    { vi: "Bùi", ja: "ブイ" },
-    { vi: "Đỗ", ja: "ドー" },
-    { vi: "Hồ", ja: "ホー" },
-    { vi: "Ngô", ja: "ゴー" },
-    { vi: "Dương", ja: "ズオン" },
+    { vi: "Nguyễn", en: "Nguyen", ja: "グエン" },
+    { vi: "Trần", en: "Tran", ja: "チャン" },
+    { vi: "Lê", en: "Le", ja: "レー" },
+    { vi: "Phạm", en: "Pham", ja: "ファム" },
+    { vi: "Hoàng", en: "Hoang", ja: "ホアン" },
+    { vi: "Huỳnh", en: "Huynh", ja: "フィン" },
+    { vi: "Phan", en: "Phan", ja: "ファン" },
+    { vi: "Vũ", en: "Vu", ja: "ヴー" },
+    { vi: "Võ", en: "Vo", ja: "ヴォー" },
+    { vi: "Đặng", en: "Dang", ja: "ダン" },
+    { vi: "Bùi", en: "Bui", ja: "ブイ" },
+    { vi: "Đỗ", en: "Do", ja: "ドー" },
+    { vi: "Hồ", en: "Ho", ja: "ホー" },
+    { vi: "Ngô", en: "Ngo", ja: "ゴー" },
+    { vi: "Dương", en: "Duong", ja: "ズオン" },
 ];
 
 const firstNames = [
-    { vi: "An", ja: "アン" },
-    { vi: "Bình", ja: "ビン" },
-    { vi: "Chí", ja: "チー" },
-    { vi: "Dũng", ja: "ズン" },
-    { vi: "Giang", ja: "ザン" },
-    { vi: "Hải", ja: "ハイ" },
-    { vi: "Khánh", ja: "カイン" },
-    { vi: "Linh", ja: "リン" },
-    { vi: "Minh", ja: "ミン" },
-    { vi: "Nam", ja: "ナム" },
-    { vi: "Oanh", ja: "オアイン" },
-    { vi: "Phúc", ja: "フック" },
-    { vi: "Quân", ja: "クアン" },
-    { vi: "Sơn", ja: "ソン" },
-    { vi: "Tâm", ja: "タム" },
-    { vi: "Uyên", ja: "ウイエン" },
-    { vi: "Vân", ja: "ヴァン" },
-    { vi: "Xuân", ja: "スアン" },
-    { vi: "Yến", ja: "イエン" },
+    { vi: "An", en: "An", ja: "アン" },
+    { vi: "Bình", en: "Binh", ja: "ビン" },
+    { vi: "Chí", en: "Chi", ja: "チー" },
+    { vi: "Dũng", en: "Dung", ja: "ズン" },
+    { vi: "Giang", en: "Giang", ja: "ザン" },
+    { vi: "Hải", en: "Hai", ja: "ハイ" },
+    { vi: "Khánh", en: "Khanh", ja: "カイン" },
+    { vi: "Linh", en: "Linh", ja: "リン" },
+    { vi: "Minh", en: "Minh", ja: "ミン" },
+    { vi: "Nam", en: "Nam", ja: "ナム" },
+    { vi: "Oanh", en: "Oanh", ja: "オアイン" },
+    { vi: "Phúc", en: "Phuc", ja: "フック" },
+    { vi: "Quân", en: "Quan", ja: "クアン" },
+    { vi: "Sơn", en: "Son", ja: "ソン" },
+    { vi: "Tâm", en: "Tam", ja: "タム" },
+    { vi: "Uyên", en: "Uyen", ja: "ウイエン" },
+    { vi: "Vân", en: "Van", ja: "ヴァン" },
+    { vi: "Xuân", en: "Xuan", ja: "スアン" },
+    { vi: "Yến", en: "Yen", ja: "イエン" },
 ];
 
 
@@ -134,6 +135,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const randomFirstName = getRandomElement(firstNames);
 
     const name_vi = `${randomLastName.vi} ${randomFirstName.vi}`;
+    const name_en = `${randomLastName.en} ${randomFirstName.en}`;
     const name_ja = `${randomLastName.ja} ${randomFirstName.ja}`;
 
     const age = Math.floor(Math.random() * 20) + 20; // 20-39
@@ -145,6 +147,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         id,
         name_ja,
         name_vi,
+        name_en,
         avatar,
         details: {
             vi: `${age} tuổi - ${height} cm - ${weight} kg - ${hasTattoo ? "Có hình xăm" : "Không hình xăm"}`,
