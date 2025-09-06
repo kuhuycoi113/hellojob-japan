@@ -10,16 +10,19 @@ import { CandidatesTable } from './candidates-table';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { allCandidates, type Candidate } from '@/data/candidates';
+import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext, PaginationEllipsis } from '@/components/ui/pagination';
+
 
 type ViewMode = 'list' | 'gallery';
+const ITEMS_PER_PAGE = 10;
 
 export function YourCandidates() {
   const { t } = useLanguage();
   const [view, setView] = useState<ViewMode>('list');
   const [candidates, setCandidates] = useState<Candidate[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    // Set candidates on the client side to avoid hydration mismatch from random data generation
     setCandidates(allCandidates);
   }, []);
   
@@ -33,6 +36,17 @@ export function YourCandidates() {
   useEffect(() => {
     localStorage.setItem('candidates-view-mode', view);
   }, [view]);
+
+  const totalPages = Math.ceil(candidates.length / ITEMS_PER_PAGE);
+  const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
+  const currentCandidates = candidates.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
 
 
   return (
@@ -80,16 +94,35 @@ export function YourCandidates() {
           </div>
 
           <TabsContent value="all" className="mt-4">
-            {candidates.length > 0 ? (
-                view === 'gallery' ? (
-                <div className="space-y-4">
-                    {candidates.map((candidate, index) => (
-                        <CandidateCard key={index} candidate={candidate} />
+            {currentCandidates.length > 0 ? (
+              <>
+                {view === 'gallery' ? (
+                  <div className="space-y-4">
+                      {currentCandidates.map((candidate, index) => (
+                          <CandidateCard key={index} candidate={candidate} />
+                      ))}
+                  </div>
+                  ) : (
+                  <CandidatesTable candidates={currentCandidates} />
+                )}
+                <Pagination className="mt-6">
+                  <PaginationContent>
+                    <PaginationItem>
+                      <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1} />
+                    </PaginationItem>
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                        <PaginationItem key={page}>
+                            <PaginationLink href="#" onClick={(e) => { e.preventDefault(); handlePageChange(page); }} isActive={currentPage === page}>
+                                {page}
+                            </PaginationLink>
+                        </PaginationItem>
                     ))}
-                </div>
-                ) : (
-                <CandidatesTable candidates={candidates} />
-                )
+                    <PaginationItem>
+                      <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages} />
+                    </PaginationItem>
+                  </PaginationContent>
+                </Pagination>
+              </>
             ) : (
                  <div className="text-center py-16 text-muted-foreground">
                     <p>{t.dashboard_employer.your_candidates.tabs.empty}</p>
