@@ -260,7 +260,7 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-           <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleChat}>
+           <Button size="icon" className="md:hidden" onClick={toggleChat}>
              <MessageSquareText className="h-6 w-6" />
            </Button>
 
@@ -402,3 +402,4 @@ export function Header() {
     
 
     
+
