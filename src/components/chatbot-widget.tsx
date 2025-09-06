@@ -132,7 +132,7 @@ function ChatbotWidgetContent() {
           size="lg"
           className={cn(
               "rounded-full h-16 w-16 shadow-lg transition-colors",
-              isOpen ? "bg-secondary text-primary-foreground hover:bg-secondary/90" : "bg-primary text-primary-foreground hover:bg-primary/90"
+              isOpen ? "bg-secondary text-secondary-foreground hover:bg-secondary/90" : "bg-primary text-primary-foreground hover:bg-primary/90"
           )}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle chat"
