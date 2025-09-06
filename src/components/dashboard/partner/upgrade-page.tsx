@@ -168,7 +168,7 @@ export function UpgradePage() {
                     <h3 className="text-2xl font-bold font-headline mb-2">{upgrade.pricing.title}</h3>
                     <p className="text-muted-foreground mb-6">{upgrade.pricing.subtitle}</p>
                     <div className="my-8">
-                        <p className="text-5xl font-bold text-primary">{upgrade.pricing.price}</p>
+                        <p className="text-5xl font-bold text-primary">{upgrade.pricing.price}<span className="text-2xl font-semibold ml-1">{upgrade.pricing.per_month_unit}</span></p>
                         <p className="text-muted-foreground">{upgrade.pricing.per_year}</p>
                     </div>
                     <Button size="lg" className="w-full text-lg h-14" onClick={() => setIsCheckoutOpen(true)}>
