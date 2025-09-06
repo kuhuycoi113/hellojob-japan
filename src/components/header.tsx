@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, Plus, AlertCircle } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, PlusCircle, AlertCircle } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -173,7 +173,7 @@ export function Header() {
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/advisors", label: t.header.advisors, icon: <UsersIcon /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
-    { href: "/post-job-ai", label: t.mobile_menu_sheet.postJob, icon: <Plus /> },
+    { href: "/post-job-ai", label: t.mobile_menu_sheet.postJob, icon: <PlusCircle /> },
     { href: "/dashboard/partner", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
@@ -402,5 +402,6 @@ export function Header() {
     
 
     
+
 
 
