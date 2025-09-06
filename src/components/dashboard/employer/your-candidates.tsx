@@ -57,15 +57,15 @@ export function YourCandidates() {
           <CardDescription>{t.dashboard_employer.your_candidates.description}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-              <TabsList className="w-full sm:w-auto overflow-x-auto justify-start">
+          <div className="flex flex-wrap items-center gap-4">
+              <TabsList>
                   <TabsTrigger value="all">{t.dashboard_employer.your_candidates.tabs.all} ({candidates.length})</TabsTrigger>
                   <TabsTrigger value="new">{t.dashboard_employer.your_candidates.tabs.new}</TabsTrigger>
                   <TabsTrigger value="review">{t.dashboard_employer.your_candidates.tabs.review}</TabsTrigger>
                   <TabsTrigger value="hired">{t.dashboard_employer.your_candidates.tabs.hired}</TabsTrigger>
                   <TabsTrigger value="archived">{t.dashboard_employer.your_candidates.tabs.archived}</TabsTrigger>
               </TabsList>
-              <div className="ml-auto flex w-full sm:w-auto items-center justify-end gap-2">
+              <div className="ml-auto flex items-center justify-end gap-2">
                   <div className="flex items-center gap-1 rounded-md bg-muted p-1">
                       <Button
                           variant={view === 'gallery' ? 'default' : 'ghost'}

@@ -216,8 +216,8 @@ export function JobsList({ jobs }: JobsListProps) {
         </CardHeader>
         <CardContent>
             <Tabs defaultValue="all">
-              <div className="flex flex-col sm:flex-row items-center gap-4">
-                <TabsList className="w-full sm:w-auto overflow-x-auto justify-start">
+              <div className="flex flex-wrap items-center gap-4">
+                <TabsList>
                   <TabsTrigger value="all">{t.dashboard_employer.jobs_list.tabs.all}</TabsTrigger>
                   <TabsTrigger value="active">{t.dashboard_employer.jobs_list.tabs.active}</TabsTrigger>
                   <TabsTrigger value="draft">{t.dashboard_employer.jobs_list.tabs.draft}</TabsTrigger>
@@ -225,7 +225,7 @@ export function JobsList({ jobs }: JobsListProps) {
                     {t.dashboard_employer.jobs_list.tabs.archived}
                   </TabsTrigger>
                 </TabsList>
-                <div className="ml-auto flex w-full sm:w-auto items-center justify-end gap-2">
+                <div className="ml-auto flex items-center justify-end gap-2">
                    <div className="flex items-center gap-1 rounded-md bg-muted p-1">
                      <Button
                         variant={view === 'gallery' ? 'default' : 'ghost'}

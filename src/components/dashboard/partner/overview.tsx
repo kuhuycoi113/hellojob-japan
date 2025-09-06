@@ -145,10 +145,14 @@ export function Overview({ pendingOpportunities, acceptedOpportunities, declined
   
   useEffect(() => {
     const savedView = localStorage.getItem('opportunities-view-mode');
-    if (savedView === 'gallery') {
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      setView('gallery');
+    } else if (savedView === 'gallery') {
       setView('gallery');
     } else {
-        setView('list');
+      setView('list');
     }
   }, []);
 
@@ -209,13 +213,13 @@ export function Overview({ pendingOpportunities, acceptedOpportunities, declined
                     </AlertDescription>
                 </Alert>
               </div>
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-                  <TabsList className="w-full sm:w-auto overflow-x-auto justify-start">
+              <div className="flex flex-wrap items-center gap-4 pt-4">
+                  <TabsList>
                       <TabsTrigger value="pending">{t.dashboard_partner.newOpportunities.tabs.pending} ({pendingOpportunities.length})</TabsTrigger>
                       <TabsTrigger value="declined">{t.dashboard_partner.newOpportunities.tabs.declined} ({declinedOpportunities.length})</TabsTrigger>
                       <TabsTrigger value="archived">{t.dashboard_partner.newOpportunities.tabs.archived}</TabsTrigger>
                   </TabsList>
-                  <div className="ml-auto flex w-full sm:w-auto items-center justify-end gap-2">
+                  <div className="ml-auto flex items-center justify-end gap-2">
                     <div className="flex items-center gap-1 rounded-md bg-muted p-1">
                       <Button
                         variant={view === 'gallery' ? 'default' : 'ghost'}
