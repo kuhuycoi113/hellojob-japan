@@ -158,7 +158,7 @@ export function Overview({ pendingOpportunities, acceptedOpportunities, declined
                     <AlertDescription className="flex justify-between items-center">
                       <span>{t.dashboard_partner.premium_offer.description}</span>
                        <Button asChild variant="link" className="p-0 h-auto text-green-800 font-semibold">
-                          <Link href="#">
+                          <Link href="/dashboard/partner/upgrade">
                               {t.dashboard_partner.premium_offer.learn_more}
                               <ArrowRight className="ml-1 h-4 w-4"/>
                           </Link>

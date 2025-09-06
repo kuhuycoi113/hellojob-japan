@@ -1521,5 +1521,74 @@
         { "title": "Đồng hành và giải quyết vấn đề", "description": "Tư vấn giải quyết các vấn đề thắc mắc về tư duy, những khúc mắc, ứng xử, văn hoá trong cuộc sống tại Nhật." }
       ]
     }
+  },
+  "upgrade_page": {
+    "hero": {
+      "title": "Tối Ưu Hóa Doanh Thu Với Gói Premium",
+      "subtitle": "Giảm phí dịch vụ, tăng cường hiển thị và nhận các công cụ độc quyền để phát triển kinh doanh."
+    },
+    "comparison": {
+      "title": "So Sánh Các Gói",
+      "subtitle": "Xem sự khác biệt rõ ràng giữa gói Cơ bản và gói Premium.",
+      "headers": {
+        "feature": "Tính năng",
+        "basic": "Cơ bản",
+        "premium": "Premium"
+      },
+      "features": {
+        "fee": {
+          "name": "Phí dịch vụ mỗi đơn hàng",
+          "basic": "30%",
+          "premium": "25%"
+        },
+        "badge": {
+          "name": "Huy hiệu 'Đối tác Tin cậy'"
+        },
+        "priority": {
+          "name": "Ưu tiên hiển thị đơn hàng",
+          "basic": "Tiêu chuẩn",
+          "premium": "Cao"
+        },
+        "analytics": {
+          "name": "Báo cáo phân tích chuyên sâu",
+          "basic": "Giới hạn",
+          "premium": "Toàn quyền truy cập"
+        },
+        "support": {
+          "name": "Hỗ trợ ưu tiên",
+          "basic": "Giờ hành chính",
+          "premium": "24/7"
+        }
+      }
+    },
+    "pricing": {
+      "title": "Nâng Cấp Lên Premium Ngay Hôm Nay",
+      "subtitle": "Mở khóa toàn bộ tính năng cao cấp với một gói duy nhất.",
+      "price": "2.000.000đ",
+      "per_year": "/tháng, thanh toán theo năm",
+      "cta": "Nâng Cấp Lên Premium Ngay",
+      "note": "Bạn có thể hủy bất cứ lúc nào. Thanh toán theo chu kỳ hàng năm."
+    },
+    "faq": {
+      "title": "Câu Hỏi Thường Gặp",
+      "questions": [
+        {
+          "question": "Tôi có thể hủy đăng ký bất cứ lúc nào không?",
+          "answer": "Có, bạn có thể hủy đăng ký gói Premium của mình bất cứ lúc nào. Quyền truy cập của bạn sẽ vẫn còn cho đến khi kết thúc chu kỳ thanh toán hiện tại."
+        },
+        {
+          "question": "Chấp nhận những phương thức thanh toán nào?",
+          "answer": "Chúng tôi chấp nhận tất cả các loại thẻ tín dụng chính, bao gồm Visa, Mastercard và American Express."
+        },
+        {
+          "question": "Phí dịch vụ mới có được áp dụng ngay lập tức không?",
+          "answer": "Có, mức phí dịch vụ giảm còn 25% sẽ được áp dụng cho tất cả các đơn hàng mới mà bạn chấp nhận sau khi nâng cấp lên gói Premium."
+        },
+        {
+          "question": "Huy hiệu 'Đối tác Tin cậy' có tác dụng gì?",
+          "answer": "Huy hiệu 'Đối tác Tin cậy' xuất hiện bên cạnh hồ sơ của bạn trên toàn bộ nền tảng, giúp tăng cường sự tin tưởng và khả năng hiển thị với các đối tác và ứng viên tiềm năng."
+        }
+      ]
+    }
   }
 }
