@@ -1316,6 +1316,11 @@
     "revenue_share": {
       "title": "Revenue Sharing Model",
       "description": "For each accepted opportunity, the partner receives 70% and HelloJob receives 30% of the service fee after costs."
+    },
+    "premium_offer": {
+        "title": "Special Offer",
+        "description": "Upgrade to Premium to reduce the service fee to just 25%!",
+        "learn_more": "Learn more"
     }
   },
   "shareCourse": {
@@ -1518,5 +1523,3 @@
     }
   }
 }
-
-    

@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/language-context';
-import { Check, Clock, Copy, X, LayoutGrid, List, DollarSign } from 'lucide-react';
+import { Check, Clock, Copy, X, LayoutGrid, List, DollarSign, Gem, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Opportunity, Job } from '@/locales/translations';
 import { OpportunitiesTable } from './opportunities-table';
@@ -144,13 +144,28 @@ export function Overview({ pendingOpportunities, acceptedOpportunities, declined
                   <CardDescription>{t.dashboard_partner.newOpportunities.description}</CardDescription>
                 </div>
               </div>
-              <Alert className="mt-4 bg-yellow-50 border-yellow-200 text-yellow-800">
-                  <DollarSign className="h-4 w-4 !text-yellow-700" />
-                  <AlertTitle className="font-semibold">{t.dashboard_partner.revenue_share.title}</AlertTitle>
-                  <AlertDescription>
-                    {t.dashboard_partner.revenue_share.description}
-                  </AlertDescription>
-              </Alert>
+              <div className="mt-4 space-y-2">
+                <Alert className="bg-yellow-50 border-yellow-200 text-yellow-800">
+                    <DollarSign className="h-4 w-4 !text-yellow-700" />
+                    <AlertTitle className="font-semibold">{t.dashboard_partner.revenue_share.title}</AlertTitle>
+                    <AlertDescription>
+                      {t.dashboard_partner.revenue_share.description}
+                    </AlertDescription>
+                </Alert>
+                <Alert className="bg-green-50 border-green-200 text-green-900">
+                    <Gem className="h-4 w-4 !text-green-700" />
+                    <AlertTitle className="font-semibold">{t.dashboard_partner.premium_offer.title}</AlertTitle>
+                    <AlertDescription className="flex justify-between items-center">
+                      <span>{t.dashboard_partner.premium_offer.description}</span>
+                       <Button asChild variant="link" className="p-0 h-auto text-green-800 font-semibold">
+                          <Link href="#">
+                              {t.dashboard_partner.premium_offer.learn_more}
+                              <ArrowRight className="ml-1 h-4 w-4"/>
+                          </Link>
+                       </Button>
+                    </AlertDescription>
+                </Alert>
+              </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
                   <TabsList className="w-full sm:w-auto overflow-x-auto justify-start">
                       <TabsTrigger value="pending">{t.dashboard_partner.newOpportunities.tabs.pending} ({pendingOpportunities.length})</TabsTrigger>
