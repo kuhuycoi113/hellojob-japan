@@ -1352,7 +1352,7 @@
         "title": "価格設定と支払い",
         "priceLabel": "コース価格（円）",
         "payoutTitle": "支払い情報",
-        "payoutDescription": "HelloJobは各販売に対して30％の手数料を保持します。収益の70％を受け取ります。支払いのために銀行口座の詳細を提供してください。",
+        "payoutDescription": "支払いのために銀行口座の詳細を提供してください。",
         "bankNameLabel": "銀行名",
         "bankNamePlaceholder": "例：三菱UFJ銀行",
         "accountNumberLabel": "口座番号",

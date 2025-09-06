@@ -1353,7 +1353,7 @@
         "title": "Giá & Thanh toán",
         "priceLabel": "Giá khoá học (VND)",
         "payoutTitle": "Thông tin nhận tiền",
-        "payoutDescription": "HelloJob giữ lại 30% hoa hồng trên mỗi lượt bán. Bạn sẽ nhận được 70% doanh thu. Vui lòng cung cấp thông tin tài khoản ngân hàng để nhận thanh toán.",
+        "payoutDescription": "Vui lòng cung cấp thông tin tài khoản ngân hàng của bạn để nhận thanh toán.",
         "bankNameLabel": "Tên ngân hàng",
         "bankNamePlaceholder": "VD: Vietcombank",
         "accountNumberLabel": "Số tài khoản",

@@ -1353,7 +1353,7 @@
         "title": "Pricing & Payout",
         "priceLabel": "Course Price ($)",
         "payoutTitle": "Payout Information",
-        "payoutDescription": "HelloJob retains a 30% commission on each sale. You will receive 70% of the revenue. Please provide your bank account details for payouts.",
+        "payoutDescription": "Please provide your bank account details for payouts.",
         "bankNameLabel": "Bank Name",
         "bankNamePlaceholder": "e.g., Bank of America",
         "accountNumberLabel": "Account Number",
