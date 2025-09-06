@@ -1347,7 +1347,8 @@
         "addLesson": "Thêm bài học",
         "lesson": "Bài học",
         "lessonTitlePlaceholder": "VD: Kính ngữ trong email",
-        "uploadVideo": "Tải video"
+        "uploadVideo": "Tải video",
+        "chapter_template": "Chương {number}"
       },
       "payment": {
         "title": "Giá & Thanh toán",

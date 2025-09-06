@@ -1346,7 +1346,8 @@
         "addLesson": "レッスンを追加",
         "lesson": "レッスン",
         "lessonTitlePlaceholder": "例：メールのための敬語",
-        "uploadVideo": "ビデオをアップロード"
+        "uploadVideo": "ビデオをアップロード",
+        "chapter_template": "第{number}章"
       },
       "payment": {
         "title": "価格設定と支払い",
@@ -1475,7 +1476,7 @@
       },
       {
         "name": "不確実性の回避",
-        "description": "未来が決して知ることができないという事実に対して社会がどのように対処するかの度合い。"
+        "description": "未来が決して知することができないという事実に対して社会がどのように対処するかの度合い。"
       },
       {
         "name": "長期的志向 vs. 短期的志向",

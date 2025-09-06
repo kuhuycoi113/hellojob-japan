@@ -1,7 +1,7 @@
 // This is a new file.
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -45,15 +45,18 @@ interface Chapter {
 
 export function BuildCourseForm() {
   const { t } = useLanguage();
-  const [chapters, setChapters] = useState<Chapter[]>([
-    { id: 1, title: 'Chương 1: Giới thiệu', lessons: [{ id: 1, title: '', videoFile: null }] },
-  ]);
+  const [chapters, setChapters] = useState<Chapter[]>([]);
+
+  useEffect(() => {
+    setChapters([{ id: 1, title: t.shareCourse.build.curriculum.chapter_template.replace('{number}', '1'), lessons: [{ id: 1, title: '', videoFile: null }] }]);
+  }, [t]);
+
 
   const addChapter = () => {
     const newChapterId = chapters.length > 0 ? Math.max(...chapters.map(c => c.id)) + 1 : 1;
     setChapters([
       ...chapters,
-      { id: newChapterId, title: `Chương ${chapters.length + 1}`, lessons: [{ id: 1, title: '', videoFile: null }] },
+      { id: newChapterId, title: t.shareCourse.build.curriculum.chapter_template.replace('{number}', (chapters.length + 1).toString()), lessons: [{ id: 1, title: '', videoFile: null }] },
     ]);
   };
   
