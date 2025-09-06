@@ -16,11 +16,45 @@ export type Candidate = {
     created_date: string;
 }
 
-const firstNames_vi = ["An", "Bình", "Chí", "Dũng", "Giang", "Hải", "Khánh", "Linh", "Minh", "Nam", "Oanh", "Phúc", "Quân", "Sơn", "Tâm", "Uyên", "Vân", "Xuân", "Yến"];
-const lastNames_vi = ["Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Huỳnh", "Phan", "Vũ", "Võ", "Đặng", "Bùi", "Đỗ", "Hồ", "Ngô", "Dương"];
+const lastNames = [
+    { vi: "Nguyễn", ja: "グエン" },
+    { vi: "Trần", ja: "チャン" },
+    { vi: "Lê", ja: "レー" },
+    { vi: "Phạm", ja: "ファム" },
+    { vi: "Hoàng", ja: "ホアン" },
+    { vi: "Huỳnh", ja: "フィン" },
+    { vi: "Phan", ja: "ファン" },
+    { vi: "Vũ", ja: "ヴー" },
+    { vi: "Võ", ja: "ヴォー" },
+    { vi: "Đặng", ja: "ダン" },
+    { vi: "Bùi", ja: "ブイ" },
+    { vi: "Đỗ", ja: "ドー" },
+    { vi: "Hồ", ja: "ホー" },
+    { vi: "Ngô", ja: "ゴー" },
+    { vi: "Dương", ja: "ズオン" },
+];
 
-const katakanaLastNames = ["グエン", "チャン", "レー", "ファム", "ホアン", "フィン", "ファン", "ヴー", "ヴォー", "ダン", "ブイ", "ドー", "ホー", "ゴー", "ズオン"];
-const katakanaFirstNames = ["アン", "ビン", "チー", "ズン", "ザン", "ハイ", "カイン", "リン", "ミン", "ナム", "オアイン", "フック", "クアン", "ソン", "タム", "ウイエン", "ヴァン", "スアン", "イエン"];
+const firstNames = [
+    { vi: "An", ja: "アン" },
+    { vi: "Bình", ja: "ビン" },
+    { vi: "Chí", ja: "チー" },
+    { vi: "Dũng", ja: "ズン" },
+    { vi: "Giang", ja: "ザン" },
+    { vi: "Hải", ja: "ハイ" },
+    { vi: "Khánh", ja: "カイン" },
+    { vi: "Linh", ja: "リン" },
+    { vi: "Minh", ja: "ミン" },
+    { vi: "Nam", ja: "ナム" },
+    { vi: "Oanh", ja: "オアイン" },
+    { vi: "Phúc", ja: "フック" },
+    { vi: "Quân", ja: "クアン" },
+    { vi: "Sơn", ja: "ソン" },
+    { vi: "Tâm", ja: "タム" },
+    { vi: "Uyên", ja: "ウイエン" },
+    { vi: "Vân", ja: "ヴァン" },
+    { vi: "Xuân", ja: "スアン" },
+    { vi: "Yến", ja: "イエン" },
+];
 
 
 const specialties = [
@@ -96,8 +130,11 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const visaInfo = visaTypes[randomVisaKey];
     const randomVisaSubtypeIndex = Math.floor(Math.random() * visaInfo.subtypes.vi.length);
     
-    const name_vi = `${getRandomElement(lastNames_vi)} ${getRandomElement(firstNames_vi)}`;
-    const name_ja = `${getRandomElement(katakanaLastNames)} ${getRandomElement(katakanaFirstNames)}`;
+    const randomLastName = getRandomElement(lastNames);
+    const randomFirstName = getRandomElement(firstNames);
+
+    const name_vi = `${randomLastName.vi} ${randomFirstName.vi}`;
+    const name_ja = `${randomLastName.ja} ${randomFirstName.ja}`;
 
     const age = Math.floor(Math.random() * 20) + 20; // 20-39
     const height = Math.floor(Math.random() * 30) + 150; // 150-179 cm
