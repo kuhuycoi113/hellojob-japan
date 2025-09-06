@@ -64,9 +64,10 @@ function ChatbotWidgetContent() {
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      setMessages([{ role: 'model', content: t.chat.greeting }]);
+      const greeting = userRole ? t.chat.greeting.replace('{role}', userRole) : t.chat.defaultGreeting;
+      setMessages([{ role: 'model', content: greeting }]);
     }
-  }, [isOpen, messages.length, t.chat.greeting]);
+  }, [isOpen, messages.length, t.chat.greeting, t.chat.defaultGreeting, userRole]);
 
   const handleSend = async () => {
     if (input.trim() === '' || isLoading) return;
@@ -103,7 +104,7 @@ function ChatbotWidgetContent() {
       setIsLoading(false);
     }
   };
-
+  
   const startCall = (type: 'video' | 'voice') => {
     setCallType(type);
     setInCall(true);
@@ -123,7 +124,7 @@ function ChatbotWidgetContent() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle chat"
         >
-          <MessageSquareText className="h-8 w-8" />
+          {isOpen ? <X className="h-8 w-8"/> : <MessageSquareText className="h-8 w-8" />}
         </Button>
       </div>
 
