@@ -54,6 +54,11 @@ function ChatbotWidgetContent() {
   const userRole = searchParams.get('role') || 'Hiring Company';
   const [inCall, setInCall] = useState(false);
   const [callType, setCallType] = useState<'video' | 'voice'>('video');
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
 
   const scrollToBottom = () => {
@@ -112,6 +117,10 @@ function ChatbotWidgetContent() {
 
   const endCall = () => {
     setInCall(false);
+  }
+
+  if (!isMounted) {
+    return null;
   }
 
 
