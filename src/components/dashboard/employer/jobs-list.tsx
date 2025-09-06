@@ -152,6 +152,10 @@ const PaginatedJobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: 
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(jobs.length / ITEMS_PER_PAGE);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [jobs]);
+
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
@@ -192,6 +196,7 @@ const PaginatedJobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: 
 export function JobsList({ jobs }: JobsListProps) {
   const { t } = useLanguage();
   const [view, setView] = useState<ViewMode>('list');
+  const [activeTab, setActiveTab] = useState('all');
 
   useEffect(() => {
     const savedView = localStorage.getItem('jobs-view-mode') as ViewMode;
@@ -205,9 +210,25 @@ export function JobsList({ jobs }: JobsListProps) {
   }, [view]);
 
   const activeJobs = jobs.filter(job => job.status === 'Forwarding');
-  const draftJobs: Job[] = []; // Placeholder
-  const archivedJobs: Job[] = []; // Placeholder
+  const draftJobs: Job[] = []; // Placeholder for draft logic
+  const archivedJobs: Job[] = []; // Placeholder for archived logic
   
+  const getJobsByTab = () => {
+    switch(activeTab) {
+      case 'active':
+        return activeJobs;
+      case 'draft':
+        return draftJobs;
+      case 'archived':
+        return archivedJobs;
+      case 'all':
+      default:
+        return jobs;
+    }
+  }
+
+  const jobsToDisplay = getJobsByTab();
+
   return (
      <Card>
         <CardHeader>
@@ -215,17 +236,17 @@ export function JobsList({ jobs }: JobsListProps) {
             <CardDescription>{t.dashboard_employer.jobs_list.description}</CardDescription>
         </CardHeader>
         <CardContent>
-            <Tabs defaultValue="all">
-              <div className="flex flex-wrap items-center gap-4">
-                <TabsList>
-                  <TabsTrigger value="all">{t.dashboard_employer.jobs_list.tabs.all}</TabsTrigger>
-                  <TabsTrigger value="active">{t.dashboard_employer.jobs_list.tabs.active}</TabsTrigger>
-                  <TabsTrigger value="draft">{t.dashboard_employer.jobs_list.tabs.draft}</TabsTrigger>
+            <Tabs defaultValue="all" onValueChange={(value) => setActiveTab(value)}>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <TabsList className="flex-wrap sm:flex-nowrap h-auto sm:h-10">
+                  <TabsTrigger value="all">{t.dashboard_employer.jobs_list.tabs.all} ({jobs.length})</TabsTrigger>
+                  <TabsTrigger value="active">{t.dashboard_employer.jobs_list.tabs.active} ({activeJobs.length})</TabsTrigger>
+                  <TabsTrigger value="draft">{t.dashboard_employer.jobs_list.tabs.draft} ({draftJobs.length})</TabsTrigger>
                   <TabsTrigger value="archived">
-                    {t.dashboard_employer.jobs_list.tabs.archived}
+                    {t.dashboard_employer.jobs_list.tabs.archived} ({archivedJobs.length})
                   </TabsTrigger>
                 </TabsList>
-                <div className="ml-auto flex items-center justify-end gap-2">
+                <div className="ml-auto flex items-center justify-end gap-2 w-full sm:w-auto">
                    <div className="flex items-center gap-1 rounded-md bg-muted p-1">
                      <Button
                         variant={view === 'gallery' ? 'default' : 'ghost'}
@@ -252,18 +273,9 @@ export function JobsList({ jobs }: JobsListProps) {
                   </Button>
                 </div>
               </div>
-              <TabsContent value="all" className="mt-4">
-                 <PaginatedJobsView jobs={jobs} view={view} t={t} />
-              </TabsContent>
-               <TabsContent value="active" className="mt-4">
-                 <PaginatedJobsView jobs={activeJobs} view={view} t={t} />
-              </TabsContent>
-               <TabsContent value="draft" className="mt-4">
-                 <PaginatedJobsView jobs={draftJobs} view={view} t={t} />
-              </TabsContent>
-               <TabsContent value="archived" className="mt-4">
-                 <PaginatedJobsView jobs={archivedJobs} view={view} t={t} />
-              </TabsContent>
+              <div className="mt-4">
+                <PaginatedJobsView jobs={jobsToDisplay} view={view} t={t} />
+              </div>
             </Tabs>
         </CardContent>
     </Card>
