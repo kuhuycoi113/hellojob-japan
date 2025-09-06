@@ -136,7 +136,7 @@ function ChatbotWidgetContent() {
             : 'opacity-0 translate-y-4 pointer-events-none'
         )}
       >
-        <Card className="w-[380px] h-[600px] shadow-2xl rounded-2xl flex flex-col bg-white">
+        <Card className="w-[380px] h-[550px] shadow-2xl rounded-2xl flex flex-col bg-white">
           {inCall ? (
             <CallScreen onEndCall={endCall} callType={callType} />
           ) : (
