@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, Plus, AlertCircle } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,6 +22,7 @@ import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { Building, Handshake, Users } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useChat } from '@/contexts/chat-context';
 
 
 const VietnamFlag = () => (
@@ -64,6 +65,7 @@ type Role = { title: string; description: string; icon: JSX.Element; }
 
 export function Header() {
   const { language, setLanguage, t } = useLanguage();
+  const { toggleChat } = useChat();
   const pathname = usePathname();
 
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
@@ -169,8 +171,11 @@ export function Header() {
     { href: "/dashboard", label: t.header.menuItems.dashboard, icon: <Briefcase /> },
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
-    { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "/advisors", label: t.header.advisors, icon: <UsersIcon /> },
+    { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
+    { href: "/post-job-ai", label: t.mobile_menu_sheet.postJob, icon: <Plus /> },
+    { href: "/dashboard/partner", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
+    { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
 
   const handleRoleSelect = (role: Role) => {
@@ -254,6 +259,10 @@ export function Header() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+
+           <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleChat}>
+             <MessageSquareText className="h-6 w-6" />
+           </Button>
 
           <div className="hidden md:flex items-center gap-2">
             <Button asChild variant="outline" className="hover:bg-secondary hover:text-secondary-foreground">

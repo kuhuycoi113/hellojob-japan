@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from '@/contexts/language-context';
 import { MobileFooter } from '@/components/mobile-footer';
 import { ChatbotWidget } from '@/components/chatbot-widget';
+import { ChatProvider } from '@/contexts/chat-context';
 
 export const metadata: Metadata = {
   title: 'HelloJob Recommender',
@@ -29,11 +30,13 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <LanguageProvider defaultLanguage="vi">
-          <div className="pt-16 md:pt-0 pb-20 md:pb-0">
-            {children}
-          </div>
-          <MobileFooter />
-          <ChatbotWidget />
+          <ChatProvider>
+            <div className="pt-16 md:pt-0 pb-20 md:pb-0">
+              {children}
+            </div>
+            <MobileFooter />
+            <ChatbotWidget />
+          </ChatProvider>
         </LanguageProvider>
         <Toaster />
       </body>

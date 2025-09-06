@@ -28,6 +28,7 @@ import {
 } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { CallScreen } from './call-screen';
+import { useChat } from '@/contexts/chat-context';
 
 type Message = {
   role: 'user' | 'model';
@@ -46,7 +47,7 @@ type GenkitMessage = {
 function ChatbotWidgetContent() {
   const { t } = useLanguage();
   const searchParams = useSearchParams();
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useChat();
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -126,7 +127,7 @@ function ChatbotWidgetContent() {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-6 right-6 z-50 hidden md:block">
         <Button
           size="lg"
           className="rounded-full h-16 w-16 shadow-lg bg-primary hover:bg-primary/90"
