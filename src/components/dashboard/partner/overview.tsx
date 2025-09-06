@@ -87,13 +87,13 @@ const PaginatedOpportunityList = ({ opportunities, onAccept, onDecline, view, t 
                             )}
                             {onAccept && onDecline && (
                                 <div className="flex gap-2">
-                                    <Button onClick={() => onAccept(opp.id)} className="w-full bg-green-600 hover:bg-green-700">
-                                        <Check className="mr-2 h-4 w-4" />
-                                        {t.dashboard_partner.accept}
-                                    </Button>
                                     <Button onClick={() => onDecline(opp.id)} variant="outline" className="w-full">
                                         <X className="mr-2 h-4 w-4" />
                                         {t.dashboard_partner.decline}
+                                    </Button>
+                                    <Button onClick={() => onAccept(opp.id)} className="w-full bg-green-600 hover:bg-green-700">
+                                        <Check className="mr-2 h-4 w-4" />
+                                        {t.dashboard_partner.accept}
                                     </Button>
                                 </div>
                             )}
@@ -214,7 +214,7 @@ export function Overview({ pendingOpportunities, acceptedOpportunities, declined
                 </Alert>
               </div>
               <div className="flex flex-wrap items-center gap-4 pt-4">
-                  <TabsList>
+                  <TabsList className="flex-wrap h-auto">
                       <TabsTrigger value="pending">{t.dashboard_partner.newOpportunities.tabs.pending} ({pendingOpportunities.length})</TabsTrigger>
                       <TabsTrigger value="declined">{t.dashboard_partner.newOpportunities.tabs.declined} ({declinedOpportunities.length})</TabsTrigger>
                       <TabsTrigger value="archived">{t.dashboard_partner.newOpportunities.tabs.archived}</TabsTrigger>
