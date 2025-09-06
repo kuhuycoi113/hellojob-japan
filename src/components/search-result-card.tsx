@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/tooltip"
 
 export function SearchResultCard({ candidate }: { candidate: Candidate }) {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
 
   const skills = {
     vi: ["Kinh nghiệm 3 năm", "Tiếng Nhật N3", "Chăm chỉ", "Sức khoẻ tốt"],
@@ -40,7 +40,7 @@ export function SearchResultCard({ candidate }: { candidate: Candidate }) {
                                 <Button variant="outline" size="icon" className="h-9 w-9"><FileText className="w-4 h-4"/></Button>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>Xem CV</p>
+                                <p>{t.dashboard_employer.candidates_table.view_profile}</p>
                             </TooltipContent>
                         </Tooltip>
                         <Tooltip>
@@ -80,12 +80,12 @@ export function SearchResultCard({ candidate }: { candidate: Candidate }) {
 
                      <div className="mt-4 border-t pt-4 flex items-center justify-between">
                          <div>
-                            <p className="text-sm font-semibold text-gray-700">Mức lương mong muốn</p>
+                            <p className="text-sm font-semibold text-gray-700">{t.dashboard_employer.candidates_table.desired_salary}</p>
                             <p className="text-sm text-muted-foreground">{candidate.desired_salary[language]}</p>
                          </div>
                         <div className="flex gap-2">
-                            <Button variant="outline">Gửi tin nhắn</Button>
-                            <Button>Xem hồ sơ</Button>
+                            <Button variant="outline">{t.dashboard_employer.your_partners.table.send_message}</Button>
+                            <Button>{t.dashboard_employer.candidates_table.view_profile}</Button>
                         </div>
                     </div>
                 </div>
