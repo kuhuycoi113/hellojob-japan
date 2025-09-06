@@ -17,6 +17,7 @@ import { OpportunitiesTable } from './opportunities-table';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
 
 
 interface OverviewProps {
@@ -28,9 +29,22 @@ interface OverviewProps {
 }
 
 type ViewMode = 'list' | 'gallery';
+const ITEMS_PER_PAGE = 6;
 
 
-const OpportunityList = ({ opportunities, onAccept, onDecline, view, t }: { opportunities: (Opportunity | Job)[], onAccept?: (jobId: string) => void, onDecline?: (jobId: string) => void, view: ViewMode, t: any }) => {
+const PaginatedOpportunityList = ({ opportunities, onAccept, onDecline, view, t }: { opportunities: (Opportunity | Job)[], onAccept?: (jobId: string) => void, onDecline?: (jobId: string) => void, view: ViewMode, t: any }) => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const totalPages = Math.ceil(opportunities.length / ITEMS_PER_PAGE);
+
+    const handlePageChange = (page: number) => {
+        if (page >= 1 && page <= totalPages) {
+        setCurrentPage(page);
+        }
+    };
+
+    const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
+    const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
+    const currentItems = opportunities.slice(indexOfFirstItem, indexOfLastItem);
     
     if (opportunities.length === 0) {
         return (
@@ -41,61 +55,88 @@ const OpportunityList = ({ opportunities, onAccept, onDecline, view, t }: { oppo
         );
     }
     
-    if (view === 'gallery') {
+    const OpportunityList = () => {
+        if (view === 'gallery') {
+            return (
+                <div className="grid gap-8 md:grid-cols-2">
+                    {currentItems.map((opp) => (
+                        <Card key={opp.id} className='group hover:shadow-xl transition-all duration-300'>
+                            <CardHeader>
+                                <Link href={(opp as Opportunity).profileUrl || '#'} className="w-fit">
+                                    <CardDescription className="hover:underline">{opp.company}</CardDescription>
+                                </Link>
+                                <CardTitle>{opp.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="grid gap-4">
+                                <div className="grid gap-2">
+                                    <div className="font-semibold">{t.dashboard_partner.details}</div>
+                                    <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                                        <dt className="text-muted-foreground">{t.dashboard_partner.location}</dt>
+                                        <dd>{opp.location}</dd>
+                                        <dt className="text-muted-foreground">{t.dashboard_partner.visaType}</dt>
+                                        <dd>{(opp as Opportunity).visa || (opp as Job).tags.join(', ')}</dd>
+                                        <dt className="text-muted-foreground">{t.dashboard_partner.quantity}</dt>
+                                        <dd>{(opp as Opportunity).quantity}</dd>
+                                    </dl>
+                                </div>
+                            {'expires' in opp && (
+                                    <div className="flex items-center text-sm text-muted-foreground">
+                                    <Clock className="mr-2 h-4 w-4" />
+                                    <span>{(opp as Opportunity).expires}</span>
+                                </div>
+                            )}
+                            {onAccept && onDecline && (
+                                <div className="flex gap-2">
+                                    <Button onClick={() => onAccept(opp.id)} className="w-full bg-green-600 hover:bg-green-700">
+                                        <Check className="mr-2 h-4 w-4" />
+                                        {t.dashboard_partner.accept}
+                                    </Button>
+                                    <Button onClick={() => onDecline(opp.id)} variant="outline" className="w-full">
+                                        <X className="mr-2 h-4 w-4" />
+                                        {t.dashboard_partner.decline}
+                                    </Button>
+                                </div>
+                            )}
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+            )
+        }
+
         return (
-            <div className="grid gap-8 md:grid-cols-2">
-                {opportunities.map((opp) => (
-                    <Card key={opp.id} className='group hover:shadow-xl transition-all duration-300'>
-                        <CardHeader>
-                             <Link href={(opp as Opportunity).profileUrl || '#'} className="w-fit">
-                                <CardDescription className="hover:underline">{opp.company}</CardDescription>
-                            </Link>
-                            <CardTitle>{opp.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="grid gap-4">
-                            <div className="grid gap-2">
-                                <div className="font-semibold">{t.dashboard_partner.details}</div>
-                                <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-                                    <dt className="text-muted-foreground">{t.dashboard_partner.location}</dt>
-                                    <dd>{opp.location}</dd>
-                                    <dt className="text-muted-foreground">{t.dashboard_partner.visaType}</dt>
-                                    <dd>{(opp as Opportunity).visa || (opp as Job).tags.join(', ')}</dd>
-                                     <dt className="text-muted-foreground">{t.dashboard_partner.quantity}</dt>
-                                    <dd>{(opp as Opportunity).quantity}</dd>
-                                </dl>
-                            </div>
-                           {'expires' in opp && (
-                                <div className="flex items-center text-sm text-muted-foreground">
-                                <Clock className="mr-2 h-4 w-4" />
-                                <span>{(opp as Opportunity).expires}</span>
-                            </div>
-                           )}
-                           {onAccept && onDecline && (
-                             <div className="flex gap-2">
-                                 <Button onClick={() => onAccept(opp.id)} className="w-full bg-green-600 hover:bg-green-700">
-                                    <Check className="mr-2 h-4 w-4" />
-                                    {t.dashboard_partner.accept}
-                                </Button>
-                                <Button onClick={() => onDecline(opp.id)} variant="outline" className="w-full">
-                                    <X className="mr-2 h-4 w-4" />
-                                    {t.dashboard_partner.decline}
-                                </Button>
-                            </div>
-                           )}
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+            <OpportunitiesTable 
+                opportunities={currentItems as Opportunity[]} 
+                onAccept={onAccept!}
+                onDecline={onDecline!}
+            />
         )
     }
-
+    
     return (
-        <OpportunitiesTable 
-            opportunities={opportunities as Opportunity[]} 
-            onAccept={onAccept!}
-            onDecline={onDecline!}
-        />
-    )
+      <>
+        <OpportunityList />
+        {totalPages > 1 && (
+          <Pagination className="mt-6">
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1} />
+              </PaginationItem>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                <PaginationItem key={page}>
+                  <PaginationLink href="#" onClick={(e) => { e.preventDefault(); handlePageChange(page); }} isActive={currentPage === page}>
+                    {page}
+                  </PaginationLink>
+                </PaginationItem>
+              ))}
+              <PaginationItem>
+                <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages} />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        )}
+      </>
+    );
 }
 
 export function Overview({ pendingOpportunities, acceptedOpportunities, declinedOpportunities, onAccept, onDecline }: OverviewProps) {
@@ -196,7 +237,7 @@ export function Overview({ pendingOpportunities, acceptedOpportunities, declined
             </CardHeader>
             <CardContent>
               <TabsContent value="pending">
-                <OpportunityList
+                <PaginatedOpportunityList
                     opportunities={pendingOpportunities}
                     onAccept={onAccept}
                     onDecline={onDecline}
@@ -205,7 +246,7 @@ export function Overview({ pendingOpportunities, acceptedOpportunities, declined
                 />
               </TabsContent>
                <TabsContent value="declined">
-                <OpportunityList
+                <PaginatedOpportunityList
                     opportunities={declinedOpportunities}
                     view={view}
                     t={t}
