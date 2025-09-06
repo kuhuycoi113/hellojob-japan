@@ -1312,7 +1312,11 @@
     "visaType": "Loại visa",
     "quantity": "Số lượng",
     "accept": "Chấp nhận",
-    "decline": "Từ chối"
+    "decline": "Từ chối",
+    "revenue_share": {
+      "title": "Mô hình chia sẻ doanh thu",
+      "description": "Với mỗi cơ hội được chấp nhận, đối tác sẽ nhận 70% và HelloJob nhận 30% phí dịch vụ sau khi trừ các chi phí."
+    }
   },
   "shareCourse": {
     "tabs": {

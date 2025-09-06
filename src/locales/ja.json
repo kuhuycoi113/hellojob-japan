@@ -1311,7 +1311,11 @@
     "visaType": "在留資格",
     "quantity": "募集人数",
     "accept": "受諾する",
-    "decline": "辞退する"
+    "decline": "辞退する",
+    "revenue_share": {
+      "title": "収益分配モデル",
+      "description": "承認された各案件について、パートナーはサービス料の70％を受け取り、HelloJobは費用を差し引いた後の30％を受け取ります。"
+    }
   },
   "shareCourse": {
     "tabs": {
