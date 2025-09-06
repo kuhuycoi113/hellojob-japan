@@ -130,11 +130,14 @@ function ChatbotWidgetContent() {
       <div className="fixed bottom-6 right-6 z-50 hidden md:block">
         <Button
           size="lg"
-          className="rounded-full h-16 w-16 shadow-lg bg-primary hover:bg-primary/90"
+          className={cn(
+              "rounded-full h-16 w-16 shadow-lg transition-colors",
+              isOpen ? "bg-secondary text-secondary-foreground hover:bg-secondary/90" : "bg-primary text-primary-foreground hover:bg-primary/90"
+          )}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle chat"
         >
-          {isOpen ? <X className="h-8 w-8"/> : <MessageSquareText className="h-8 w-8" />}
+          <MessageSquareText className="h-8 w-8" />
         </Button>
       </div>
 
