@@ -1412,8 +1412,8 @@
             "date": "Scheduled for Aug 15, 2024"
         },
         "fee": {"title": "Platform Fee (30%)", "value": "-$501.60"},
-        "tax": {"title": "Taxes Withheld", "value": "-$167.20"},
-        "net": {"title": "Net Payout", "value": "$1,170.40"},
+        "tax": {"title": "Taxes Withheld", "value": "-$167.20", "toggle": "HelloJob handles taxes"},
+        "net": {"title": "Net Payout", "valueWithTax": "$1,003.20", "valueWithoutTax": "$1,170.40"},
         "historyButton": "View Payout History"
       },
       "funnel": {

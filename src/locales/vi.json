@@ -1412,8 +1412,8 @@
             "date": "Sẽ thanh toán vào ngày 15/08/2024"
         },
         "fee": {"title": "Phí nền tảng (30%)", "value": "-7.524.000đ"},
-        "tax": {"title": "Thuế HelloJob nộp hộ", "value": "-2.508.000đ"},
-        "net": {"title": "Thực nhận", "value": "15.048.000đ"},
+        "tax": {"title": "Thuế HelloJob nộp hộ", "value": "-2.508.000đ", "toggle": "HelloJob xử lý thuế"},
+        "net": {"title": "Thực nhận", "valueWithTax": "15.048.000đ", "valueWithoutTax": "17.556.000đ"},
         "historyButton": "Xem lịch sử thanh toán"
       },
       "funnel": {

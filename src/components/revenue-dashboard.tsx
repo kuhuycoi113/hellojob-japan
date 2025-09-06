@@ -41,6 +41,9 @@ import {
   XCircle,
 } from 'lucide-react';
 import { Button } from './ui/button';
+import { useState } from 'react';
+import { Label } from './ui/label';
+import { Switch } from './ui/switch';
 
 const FunnelStep = ({ icon, title, value, colorClass }: { icon: React.ReactNode, title: string, value: string, colorClass: string }) => (
     <div className={`flex items-center p-4 rounded-lg bg-opacity-10 ${colorClass}`}>
@@ -57,6 +60,7 @@ export function RevenueDashboard() {
   const revenue = t.shareCourse.revenue;
   const transactions = revenue.transactions.list;
   const chartData = revenue.chart.data;
+  const [isTaxHandledByPlatform, setIsTaxHandledByPlatform] = useState(true);
 
 
   const statCards = [
@@ -83,6 +87,8 @@ export function RevenueDashboard() {
     }
     return `$${(value / 1000)}k`;
   }
+
+  const netPayout = isTaxHandledByPlatform ? revenue.payout.net.valueWithTax : revenue.payout.net.valueWithoutTax;
 
   return (
     <div className="container mx-auto px-4 max-w-7xl space-y-8">
@@ -151,17 +157,23 @@ export function RevenueDashboard() {
             </CardTitle>
           </CardHeader>
            <CardContent className="space-y-4">
+                <div className="flex items-center space-x-2 p-2 rounded-md bg-muted">
+                  <Switch id="tax-handling" checked={isTaxHandledByPlatform} onCheckedChange={setIsTaxHandledByPlatform} />
+                  <Label htmlFor="tax-handling" className="text-sm cursor-pointer">{revenue.payout.tax.toggle}</Label>
+                </div>
                 <div className="p-4 rounded-lg bg-green-50 border border-green-200 text-green-900">
                     <p className="text-sm font-medium">{revenue.payout.nextPayout.title}</p>
-                    <p className="text-2xl font-bold">{revenue.payout.nextPayout.amount}</p>
+                    <p className="text-2xl font-bold">{netPayout}</p>
                     <p className="text-xs">{revenue.payout.nextPayout.date}</p>
                 </div>
                  <div className="space-y-2 text-sm">
                     <div className="flex justify-between"><span>{revenue.stats.totalRevenue.title}</span> <span>{revenue.stats.totalRevenue.value}</span></div>
                     <div className="flex justify-between"><span>{revenue.payout.fee.title}</span> <span className="text-red-600">{revenue.payout.fee.value}</span></div>
-                    <div className="flex justify-between"><span>{revenue.payout.tax.title}</span> <span className="text-red-600">{revenue.payout.tax.value}</span></div>
+                    {isTaxHandledByPlatform && (
+                      <div className="flex justify-between"><span>{revenue.payout.tax.title}</span> <span className="text-red-600">{revenue.payout.tax.value}</span></div>
+                    )}
                     <hr className="my-2"/>
-                    <div className="flex justify-between font-bold"><span>{revenue.payout.net.title}</span> <span>{revenue.payout.net.value}</span></div>
+                    <div className="flex justify-between font-bold"><span>{revenue.payout.net.title}</span> <span>{netPayout}</span></div>
                  </div>
                  <Button className="w-full">{revenue.payout.historyButton}</Button>
            </CardContent>

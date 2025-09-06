@@ -1411,8 +1411,8 @@
             "date": "2024年8月15日に支払い予定"
         },
         "fee": {"title": "プラットフォーム手数料 (30%)", "value": "-¥56,250"},
-        "tax": {"title": "源泉徴収税", "value": "-¥13,125"},
-        "net": {"title": "手取り額", "value": "¥118,125"},
+        "tax": {"title": "源泉徴収税", "value": "-¥13,125", "toggle": "HelloJobが税金を処理"},
+        "net": {"title": "手取り額", "valueWithTax": "¥118,125", "valueWithoutTax": "¥131,250"},
         "historyButton": "支払い履歴を表示"
       },
       "funnel": {
