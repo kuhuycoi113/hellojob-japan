@@ -9,13 +9,19 @@ import { CandidateCard } from './candidate-card';
 import { CandidatesTable } from './candidates-table';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { allCandidates } from '@/data/candidates';
+import { allCandidates, type Candidate } from '@/data/candidates';
 
 type ViewMode = 'list' | 'gallery';
 
 export function YourCandidates() {
   const { t } = useLanguage();
   const [view, setView] = useState<ViewMode>('list');
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
+
+  useEffect(() => {
+    // Set candidates on the client side to avoid hydration mismatch from random data generation
+    setCandidates(allCandidates);
+  }, []);
   
   useEffect(() => {
     const savedView = localStorage.getItem('candidates-view-mode') as ViewMode;
@@ -39,7 +45,7 @@ export function YourCandidates() {
         <CardContent>
           <div className="flex flex-col sm:flex-row items-center gap-4">
               <TabsList className="w-full sm:w-auto overflow-x-auto justify-start">
-                  <TabsTrigger value="all">{t.dashboard_employer.your_candidates.tabs.all} ({allCandidates.length})</TabsTrigger>
+                  <TabsTrigger value="all">{t.dashboard_employer.your_candidates.tabs.all} ({candidates.length})</TabsTrigger>
                   <TabsTrigger value="new">{t.dashboard_employer.your_candidates.tabs.new}</TabsTrigger>
                   <TabsTrigger value="review">{t.dashboard_employer.your_candidates.tabs.review}</TabsTrigger>
                   <TabsTrigger value="hired">{t.dashboard_employer.your_candidates.tabs.hired}</TabsTrigger>
@@ -74,14 +80,20 @@ export function YourCandidates() {
           </div>
 
           <TabsContent value="all" className="mt-4">
-            {view === 'gallery' ? (
-              <div className="space-y-4">
-                {allCandidates.map((candidate, index) => (
-                    <CandidateCard key={index} candidate={candidate} />
-                ))}
-              </div>
+            {candidates.length > 0 ? (
+                view === 'gallery' ? (
+                <div className="space-y-4">
+                    {candidates.map((candidate, index) => (
+                        <CandidateCard key={index} candidate={candidate} />
+                    ))}
+                </div>
+                ) : (
+                <CandidatesTable candidates={candidates} />
+                )
             ) : (
-              <CandidatesTable candidates={allCandidates} />
+                 <div className="text-center py-16 text-muted-foreground">
+                    <p>{t.dashboard_employer.your_candidates.tabs.empty}</p>
+                 </div>
             )}
           </TabsContent>
           <TabsContent value="new" className="mt-4 text-center text-muted-foreground py-12">
