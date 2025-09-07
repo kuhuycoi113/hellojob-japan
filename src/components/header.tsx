@@ -257,12 +257,6 @@ export function Header() {
            </Button>
 
           <div className="hidden md:flex items-center gap-2">
-             <Button asChild>
-               <Link href="/dashboard/jobs" className="flex items-center gap-2">
-                <Settings className="h-4 w-4" />
-                {t.header.manage}
-              </Link>
-            </Button>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

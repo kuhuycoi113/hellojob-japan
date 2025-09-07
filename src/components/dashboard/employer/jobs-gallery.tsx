@@ -1,75 +1,99 @@
+import type {Config} from 'tailwindcss';
 
-'use client';
-
-import type { Job } from '@/locales/translations';
-import { useLanguage } from '@/contexts/language-context';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Users } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-
-
-interface JobsGalleryProps {
-  jobs: Job[];
-}
-
-export function JobsGallery({ jobs }: JobsGalleryProps) {
-  const { t } = useLanguage();
-
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {jobs.map((job, index) => (
-        <Card key={job.id} className="overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-          <CardHeader className="p-4">
-             <div className="relative aspect-video">
-                <Link href={`/dashboard/jobs/${job.id}`}>
-                    <Image
-                        src={job.image || `https://picsum.photos/400/225?random=job${index}`}
-                        alt={job.title || 'Job image'}
-                        fill
-                        className="object-cover rounded-t-lg"
-                    />
-                </Link>
-            </div>
-          </CardHeader>
-          <CardContent className="p-4 flex-grow">
-            <div className="flex justify-between items-start">
-              <Link href={`/dashboard/jobs/${job.id}`} className="hover:underline">
-                <CardTitle className="text-lg font-bold leading-tight">{job.title}</CardTitle>
-              </Link>
-              <Badge variant={job.status === 'Searching' ? 'default' : 'secondary'}>
-                  {job.status === 'Searching' ? t.dashboard_employer.jobs_list.table.status_searching : job.status}
-              </Badge>
-            </div>
-            <CardDescription className="mt-1">{job.location}</CardDescription>
-            
-            <div className="mt-4 pt-4 border-t">
-                <div className="text-sm font-semibold mb-2">{t.dashboard_employer.candidates_table.title} ({job.applications})</div>
-                <div className="flex items-center">
-                    <div className="flex -space-x-2 mr-2">
-                        {Array.from({ length: Math.min(Number(job.applications), 3) }).map((_, i) => (
-                           <Avatar key={i} className="h-8 w-8 border-2 border-white">
-                                <AvatarImage src={`https://i.pravatar.cc/40?u=app${job.id}${i}`} />
-                                <AvatarFallback>A</AvatarFallback>
-                            </Avatar>
-                        ))}
-                    </div>
-                </div>
-            </div>
-          </CardContent>
-          <CardFooter className="p-4 bg-gray-50">
-             <Button asChild className="w-full" variant="default">
-                <Link href={`/dashboard/jobs/${job.id}/find-candidates`} className="flex items-center gap-2">
-                  <Users className="h-4 w-4" />
-                  {t.dashboard_employer.jobs_list.table.actions_items.view_candidates}
-                </Link>
-            </Button>
-          </CardFooter>
-        </Card>
-      ))}
-    </div>
-  );
-}
+export default {
+  darkMode: ['class'],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        body: ['"PT Sans"', 'sans-serif'],
+        headline: ['"Space Grotesk"', 'sans-serif'],
+      },
+      colors: {
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        'active-link': 'hsl(var(--chart-1))',
+        chart: {
+          '1': 'hsl(var(--chart-1))',
+          '2': 'hsl(var(--chart-2))',
+          '3': 'hsl(var(--chart-3))',
+          '4': 'hsl(var(--chart-4))',
+          '5': 'hsl(var(--chart-5))',
+        },
+        sidebar: {
+          DEFAULT: 'hsl(var(--sidebar-background))',
+          foreground: 'hsl(var(--sidebar-foreground))',
+          primary: 'hsl(var(--sidebar-primary))',
+          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+          accent: 'hsl(var(--sidebar-accent))',
+          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+          border: 'hsl(var(--sidebar-border))',
+          ring: 'hsl(var(--sidebar-ring))',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
+  },
+  plugins: [require('tailwindcss-animate')],
+} satisfies Config;
