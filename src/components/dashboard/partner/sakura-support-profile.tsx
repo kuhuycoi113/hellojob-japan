@@ -1,4 +1,4 @@
-// This is a new file.
+
 'use client';
 
 import {
@@ -119,7 +119,7 @@ export function SakuraSupportProfile() {
                 <div className="absolute -bottom-12 left-6">
                     <div className="relative">
                         <Avatar className="h-24 w-24 border-4 border-card">
-                            <AvatarImage src="https://picsum.photos/150/150?random=ss" />
+                            <AvatarImage src="https://picsum.photos/150/150?random=ss" alt={profile.companyName} />
                             <AvatarFallback>{profile.companyName.substring(0, 2)}</AvatarFallback>
                         </Avatar>
                     </div>
