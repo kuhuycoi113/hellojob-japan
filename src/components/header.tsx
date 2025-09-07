@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, PlusCircle, AlertCircle } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, PlusCircle, AlertCircle, Settings } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -261,6 +261,12 @@ export function Header() {
                <Link href="/candidates" className="flex items-center gap-2">
                 <User className="h-4 w-4" />
                 {t.hero.searchCandidates}
+              </Link>
+            </Button>
+             <Button asChild>
+               <Link href="/dashboard/jobs" className="flex items-center gap-2">
+                <Settings className="h-4 w-4" />
+                {t.header.manage}
               </Link>
             </Button>
 
