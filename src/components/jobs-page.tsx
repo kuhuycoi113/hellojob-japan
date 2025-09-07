@@ -30,8 +30,10 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/language-context';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-is-mobile';
 import { mockJobs, type MockJob } from '@/data/mock-jobs';
+import Image from 'next/image';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 const statusStyles: Record<string, string> = {
   Active: 'bg-green-100 text-green-800',
@@ -73,7 +75,16 @@ export function JobsPage() {
   const JobsGridView = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredJobs.map((job) => (
-            <Card key={job.id} className="flex flex-col">
+            <Card key={job.id} className="flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                <div className="relative aspect-video">
+                  <Image
+                    src={job.image}
+                    alt={job.title}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={job.imageHint}
+                  />
+                </div>
                 <CardHeader>
                     <CardTitle className="font-headline text-lg">{job.title}</CardTitle>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -119,8 +130,16 @@ export function JobsPage() {
                 {filteredJobs.map((job) => (
                     <TableRow key={job.id}>
                         <TableCell>
-                            <div className="font-medium font-headline">{job.title}</div>
-                            <div className="text-sm text-muted-foreground md:hidden">{job.applicants} {t.jobsPage.applicants}</div>
+                            <div className="flex items-center gap-3">
+                                <Avatar className="hidden h-10 w-10 sm:flex rounded-md">
+                                    <AvatarImage src={job.image} alt={job.title} className="object-cover" />
+                                    <AvatarFallback className="rounded-md">{job.company.charAt(0)}</AvatarFallback>
+                                </Avatar>
+                                <div>
+                                    <div className="font-medium font-headline">{job.title}</div>
+                                    <div className="text-sm text-muted-foreground">{job.company}</div>
+                                </div>
+                            </div>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">{job.applicants}</TableCell>
                         <TableCell className="hidden sm:table-cell">

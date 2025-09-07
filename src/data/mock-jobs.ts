@@ -6,6 +6,8 @@ export type MockJob = {
   applicants: number;
   status: 'Active' | 'Awaiting Approval' | 'Closed';
   postedDate: string;
+  image: string;
+  imageHint: string;
 };
 
 export const mockJobs: MockJob[] = [
@@ -16,6 +18,8 @@ export const mockJobs: MockJob[] = [
     applicants: 12,
     status: 'Active',
     postedDate: '2024-05-20',
+    image: 'https://picsum.photos/400/225?random=1',
+    imageHint: 'food factory',
   },
   {
     id: 'JOB002',
@@ -24,6 +28,8 @@ export const mockJobs: MockJob[] = [
     applicants: 5,
     status: 'Active',
     postedDate: '2024-05-18',
+    image: 'https://picsum.photos/400/225?random=2',
+    imageHint: 'welder construction',
   },
   {
     id: 'JOB003',
@@ -32,6 +38,8 @@ export const mockJobs: MockJob[] = [
     applicants: 25,
     status: 'Awaiting Approval',
     postedDate: '2024-05-22',
+    image: 'https://picsum.photos/400/225?random=3',
+    imageHint: 'caregiver elderly',
   },
   {
     id: 'JOB004',
@@ -40,6 +48,8 @@ export const mockJobs: MockJob[] = [
     applicants: 8,
     status: 'Closed',
     postedDate: '2024-04-15',
+    image: 'https://picsum.photos/400/225?random=4',
+    imageHint: 'electronics factory',
   },
   {
     id: 'JOB005',
@@ -48,6 +58,8 @@ export const mockJobs: MockJob[] = [
     applicants: 15,
     status: 'Active',
     postedDate: '2024-05-19',
+    image: 'https://picsum.photos/400/225?random=5',
+    imageHint: 'farm vegetables',
   },
   {
     id: 'JOB006',
@@ -56,6 +68,8 @@ export const mockJobs: MockJob[] = [
     applicants: 7,
     status: 'Active',
     postedDate: '2024-05-15',
+    image: 'https://picsum.photos/400/225?random=6',
+    imageHint: 'cnc machine',
   },
   {
     id: 'JOB007',
@@ -64,6 +78,8 @@ export const mockJobs: MockJob[] = [
     applicants: 30,
     status: 'Awaiting Approval',
     postedDate: '2024-05-21',
+    image: 'https://picsum.photos/400/225?random=7',
+    imageHint: 'hotel room',
   },
   {
     id: 'JOB008',
@@ -72,6 +88,8 @@ export const mockJobs: MockJob[] = [
     applicants: 18,
     status: 'Active',
     postedDate: '2024-05-12',
+    image: 'https://picsum.photos/400/225?random=8',
+    imageHint: 'seafood market',
   },
   {
     id: 'JOB009',
@@ -80,6 +98,8 @@ export const mockJobs: MockJob[] = [
     applicants: 10,
     status: 'Closed',
     postedDate: '2024-03-28',
+    image: 'https://picsum.photos/400/225?random=9',
+    imageHint: 'scaffolding construction',
   },
   {
     id: 'JOB010',
@@ -88,6 +108,8 @@ export const mockJobs: MockJob[] = [
     applicants: 6,
     status: 'Active',
     postedDate: '2024-05-16',
+    image: 'https://picsum.photos/400/225?random=10',
+    imageHint: 'textile factory',
   },
   {
     id: 'JOB011',
@@ -96,6 +118,8 @@ export const mockJobs: MockJob[] = [
     applicants: 22,
     status: 'Active',
     postedDate: '2024-05-20',
+    image: 'https://picsum.photos/400/225?random=11',
+    imageHint: 'ramen kitchen',
   },
   {
     id: 'JOB012',
@@ -104,6 +128,8 @@ export const mockJobs: MockJob[] = [
     applicants: 4,
     status: 'Awaiting Approval',
     postedDate: '2024-05-23',
+    image: 'https://picsum.photos/400/225?random=12',
+    imageHint: 'industrial painting',
   },
   {
     id: 'JOB013',
@@ -112,6 +138,8 @@ export const mockJobs: MockJob[] = [
     applicants: 11,
     status: 'Active',
     postedDate: '2024-05-10',
+    image: 'https://picsum.photos/400/225?random=13',
+    imageHint: 'cows farm',
   },
   {
     id: 'JOB014',
@@ -120,6 +148,8 @@ export const mockJobs: MockJob[] = [
     applicants: 19,
     status: 'Closed',
     postedDate: '2024-04-30',
+    image: 'https://picsum.photos/400/225?random=14',
+    imageHint: 'bakery bread',
   },
   {
     id: 'JOB015',
@@ -128,6 +158,8 @@ export const mockJobs: MockJob[] = [
     applicants: 28,
     status: 'Active',
     postedDate: '2024-05-17',
+    image: 'https://picsum.photos/400/225?random=15',
+    imageHint: 'office cleaning',
   },
   {
     id: 'JOB016',
@@ -136,6 +168,8 @@ export const mockJobs: MockJob[] = [
     applicants: 9,
     status: 'Active',
     postedDate: '2024-05-14',
+    image: 'https://picsum.photos/400/225?random=16',
+    imageHint: 'plastic factory',
   },
   {
     id: 'JOB017',
@@ -144,6 +178,8 @@ export const mockJobs: MockJob[] = [
     applicants: 14,
     status: 'Awaiting Approval',
     postedDate: '2024-05-22',
+    image: 'https://picsum.photos/400/225?random=17',
+    imageHint: 'caregiver support',
   },
   {
     id: 'JOB018',
@@ -152,6 +188,8 @@ export const mockJobs: MockJob[] = [
     applicants: 20,
     status: 'Active',
     postedDate: '2024-05-18',
+    image: 'https://picsum.photos/400/225?random=18',
+    imageHint: 'packaging line',
   },
   {
     id: 'JOB019',
@@ -160,6 +198,8 @@ export const mockJobs: MockJob[] = [
     applicants: 3,
     status: 'Closed',
     postedDate: '2024-05-01',
+    image: 'https://picsum.photos/400/225?random=19',
+    imageHint: 'auto parts',
   },
   {
     id: 'JOB020',
@@ -168,5 +208,7 @@ export const mockJobs: MockJob[] = [
     applicants: 13,
     status: 'Active',
     postedDate: '2024-05-11',
+    image: 'https://picsum.photos/400/225?random=20',
+    imageHint: 'bridge construction',
   },
 ];
