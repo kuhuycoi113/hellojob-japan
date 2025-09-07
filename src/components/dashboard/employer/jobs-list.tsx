@@ -93,7 +93,7 @@ const JobsView = ({ jobs, view, t }: { jobs: Job[]; view: ViewMode; t: any }) =>
                   <div className="flex items-center gap-3">
                     <Image
                       src={job.image || `https://picsum.photos/400/225?random=job${index}`}
-                      alt={job.title}
+                      alt={job.title || 'Job image'}
                       width={64}
                       height={36}
                       className="object-cover rounded-md hidden sm:block"
