@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { PartnersTable } from './partners-table';
 import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext } from '@/components/ui/pagination';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
 type ViewMode = 'list' | 'gallery';
@@ -91,15 +92,10 @@ export function YourPartners() {
                     key={index}
                     className="flex flex-col text-center items-center p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
                 >
-                    <div className="relative h-20 w-40 mb-4">
-                    <Image
-                        src={`https://picsum.photos/300/150?random=${50 + index}`}
-                        alt={isJapanese ? partner.name_ja : partner.name}
-                        fill
-                        className="object-contain"
-                        data-ai-hint="company logo"
-                    />
-                    </div>
+                    <Avatar className="h-20 w-20 border mb-4">
+                        <AvatarImage src={`https://picsum.photos/200?random=${partner.id}`} alt={isJapanese ? partner.name_ja : partner.name}/>
+                        <AvatarFallback>{partner.name.substring(0,2)}</AvatarFallback>
+                    </Avatar>
                     <CardContent className="flex flex-col flex-grow items-center p-0">
                     <h3 className="font-bold text-lg text-gray-800 flex-grow">{isJapanese ? partner.name_ja : partner.name}</h3>
                     <p className="text-sm text-muted-foreground mt-1 mb-4">{isJapanese ? partner.type_ja : partner.type}</p>
