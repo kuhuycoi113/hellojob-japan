@@ -16,18 +16,9 @@ import { mockJobs } from '@/data/jobs'; // Import mock data
 export function JobsList() {
   const { t } = useLanguage();
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
+  const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
   const [activeTab, setActiveTab] = useState('all');
   const isMobile = useIsMobile();
-
-  useEffect(() => {
-    // On mobile, default to grid view
-    if (isMobile) {
-      setViewMode('grid');
-    } else {
-      setViewMode('list');
-    }
-  }, [isMobile]);
 
   useEffect(() => {
     // Set mock jobs data on component mount
@@ -90,24 +81,22 @@ export function JobsList() {
                 </TabsTrigger>
             ))}
           </TabsList>
-          {!isMobile && (
-            <div className="flex items-center gap-2">
-              <Button
-                variant={viewMode === 'list' ? 'secondary' : 'ghost'}
-                size="icon"
-                onClick={() => setViewMode('list')}
-              >
-                <List className="h-5 w-5" />
-              </Button>
-              <Button
-                variant={viewMode === 'grid' ? 'secondary' : 'ghost'}
-                size="icon"
-                onClick={() => setViewMode('grid')}
-              >
-                <LayoutGrid className="h-5 w-5" />
-              </Button>
-            </div>
-          )}
+          <div className="flex items-center gap-2">
+            <Button
+              variant={viewMode === 'list' ? 'secondary' : 'ghost'}
+              size="icon"
+              onClick={() => setViewMode('list')}
+            >
+              <List className="h-5 w-5" />
+            </Button>
+            <Button
+              variant={viewMode === 'grid' ? 'secondary' : 'ghost'}
+              size="icon"
+              onClick={() => setViewMode('grid')}
+            >
+              <LayoutGrid className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
         
         <div className="mt-4">
