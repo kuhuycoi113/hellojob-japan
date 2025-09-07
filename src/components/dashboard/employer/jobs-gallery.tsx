@@ -84,8 +84,9 @@ export function JobsGallery({ jobs }: JobsGalleryProps) {
                         </Avatar>
                     </div>
                  </div>
-                 <Button asChild variant="outline" className="w-full mt-3">
+                 <Button asChild className="w-full mt-3">
                     <Link href={`/dashboard/jobs/${job.id}/find-candidates`}>
+                        <Users className="mr-2 h-4 w-4" />
                         {t.dashboard_employer.jobs_list.table.actions_items.view_candidates}
                     </Link>
                 </Button>
