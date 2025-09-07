@@ -1,3 +1,4 @@
+
 {
   "header": {
     "home": "Home",
@@ -2027,8 +2028,8 @@
     "pricing": {
       "title": "Upgrade to Premium Today",
       "subtitle": "Unlock all premium features with a single package.",
-      "price": "$150",
-      "per_month_unit": "/mo",
+      "price": "150",
+      "per_month_unit": "USD/mo",
       "per_year": "Billed annually",
       "cta": "Upgrade to Premium Now",
       "note": "You can cancel at any time. Billed on a yearly cycle."
