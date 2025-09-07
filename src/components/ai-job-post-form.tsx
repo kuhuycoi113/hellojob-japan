@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, Suspense, useRef, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
@@ -47,6 +47,7 @@ function AiJobPostFormContent() {
   const { t, language } = useLanguage();
   const { toast } = useToast();
   const searchParams = useSearchParams();
+  const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const resultCardRef = useRef<HTMLDivElement>(null);
   const actionFooterRef = useRef<HTMLDivElement>(null);
@@ -74,6 +75,44 @@ function AiJobPostFormContent() {
   // States for Speech Recognition
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
+
+
+  // New function to check for the special flow condition
+  const shouldRedirectToCandidateSearch = (currentRole: string, currentVisaSubType: string) => {
+    const isMatchingRole = currentRole === t.userRoles.supportOrg.title || currentRole === t.userRoles.union.title;
+    const isMatchingVisa = currentVisaSubType === t.visaSubTypes.skilled.japan || currentVisaSubType === t.visaSubTypes.engineer.japan;
+    return isMatchingRole && isMatchingVisa;
+  }
+  
+  const handleJobCreationSuccess = (result: GenerateJobPostOutput) => {
+    const currentRole = role || selectedRole?.title || '';
+    const currentVisaSubType = initialVisaSubType || ''; // Assuming this state is managed
+
+    if (shouldRedirectToCandidateSearch(currentRole, currentVisaSubType)) {
+        try {
+            localStorage.setItem('latestJobPost', JSON.stringify(result));
+            // Simulate a job ID for the URL, in a real app this would come from the backend.
+            const pseudoJobId = `job-${Date.now()}`;
+            router.push(`/dashboard/jobs/${pseudoJobId}/find-candidates`);
+        } catch (error) {
+             console.error("Failed to save job post to localStorage", error);
+             toast({
+                title: "Lỗi điều hướng",
+                description: "Không thể lưu thông tin việc làm để chuyển trang. Vui lòng thử lại.",
+                variant: "destructive"
+             })
+             // Fallback to normal flow if localStorage fails
+             setJobPost(result);
+             setEditableJobPost(JSON.parse(JSON.stringify(result)));
+             setState('job_completed');
+        }
+    } else {
+        setJobPost(result);
+        setEditableJobPost(JSON.parse(JSON.stringify(result)));
+        setState('job_completed');
+    }
+  }
+
 
   const performAiAnalysis = async (role: string, visaType: string, visaSubType: string, description: string, documentUri?: string) => {
     setState('loading_job');
@@ -105,10 +144,9 @@ function AiJobPostFormContent() {
             visaSubType: visaSubType,
         });
       }
+      
+      handleJobCreationSuccess(result);
 
-      setJobPost(result);
-      setEditableJobPost(JSON.parse(JSON.stringify(result))); // Deep copy
-      setState('job_completed');
       if (documentUri) {
         // After analyzing a file, clear it to allow text input for refinement
         setUploadedFile(null);
@@ -393,9 +431,7 @@ function AiJobPostFormContent() {
         visaSubType: currentVisaSubType,
       });
 
-      setJobPost(result);
-      setEditableJobPost(JSON.parse(JSON.stringify(result)));
-      setState('job_completed');
+      handleJobCreationSuccess(result);
       setDescription(''); // Clear textarea after successful refinement
     } catch (error) {
       console.error("Error generating job post:", error);
