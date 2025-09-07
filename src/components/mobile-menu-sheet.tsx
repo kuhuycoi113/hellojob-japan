@@ -23,15 +23,10 @@ export function MobileMenuSheet() {
   const menuItems = [
     { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
     { href: "/how-it-works", label: t.header.menuItems.howItWorks, icon: <Compass /> },
-    { href: "/recruit-right", label: t.header.menuItems.recruitRight, icon: <Target /> },
-    { href: "/elearning", label: t.header.menuItems.elearning, icon: <BookOpen /> },
-    { href: "/dashboard", label: t.header.menuItems.dashboard, icon: <FileText /> },
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/advisors", label: t.header.advisors, icon: <Users /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
-    { href: "/post-job-ai", label: t.mobile_menu_sheet.postJob, icon: <Plus /> },
-    { href: "/dashboard/partner", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
 

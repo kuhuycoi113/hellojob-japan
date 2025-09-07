@@ -255,7 +255,7 @@ export function Cta() {
                 <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaSubTypes.title}</DialogTitle>
               </DialogHeader>
               <div className="grid grid-cols-1 gap-4 py-4">
-                {selectedVisaType && visaSubTypes[selectedVisaType].map((subType) => (
+                {selectedVisaType && visaSubTypes[selectedVisaType] && visaSubTypes[selectedVisaType].map((subType) => (
                   <div onClick={() => handleVisaSubTypeSelect(subType)} key={subType.title}>
                     <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                       <h3 className="font-semibold text-base text-gray-800">

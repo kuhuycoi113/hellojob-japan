@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -86,9 +85,7 @@ export function Header() {
   const navLinks = [
     { href: "/", label: t.header.home },
     { href: "/how-it-works", label: t.header.steps },
-    { href: "/recruit-right", label: t.header.recruitRight },
     { href: "/post-job-ai", label: t.header.postJobAI, icon: <Sparkles className="h-4 w-4 text-accent" /> },
-    { href: "/elearning", label: t.header.elearning },
     { href: "/handbook", label: t.header.handbook },
     { href: "/about", label: t.header.about },
   ];
@@ -166,14 +163,10 @@ export function Header() {
   const menuItems = [
     { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
     { href: "/how-it-works", label: t.header.menuItems.howItWorks, icon: <Compass /> },
-    { href: "/recruit-right", label: t.header.menuItems.recruitRight, icon: <Target /> },
-    { href: "/elearning", label: t.header.menuItems.elearning, icon: <BookOpen /> },
-    { href: "/dashboard", label: t.header.menuItems.dashboard, icon: <Briefcase /> },
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/advisors", label: t.header.advisors, icon: <UsersIcon /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
-    { href: "/dashboard/partner", label: t.mobile_menu_sheet.partners, icon: <Handshake /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
 
@@ -265,9 +258,9 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-2">
             <Button asChild variant="outline" className="hover:bg-secondary hover:text-secondary-foreground">
-               <Link href="/dashboard" className="flex items-center gap-2">
+               <Link href="/candidates" className="flex items-center gap-2">
                 <User className="h-4 w-4" />
-                {t.header.myProfile}
+                {t.hero.searchCandidates}
               </Link>
             </Button>
 
@@ -293,7 +286,7 @@ export function Header() {
                   <DropdownMenuSeparator />
                    <div className="grid grid-cols-4 gap-2 mt-4">
                       {menuItems.map((item) => (
-                          <DropdownMenuItem key={item.href} asChild className="flex-col h-20 p-2 text-center">
+                          <DropdownMenuItem key={item.label} asChild className="flex-col h-20 p-2 text-center">
                              <Link href={item.href}>
                               <div className="text-primary mb-1">{item.icon}</div>
                               <span className="text-xs whitespace-normal leading-tight">{item.label}</span>
@@ -396,12 +389,3 @@ export function Header() {
     </header>
   );
 }
-
-    
-    
-
-    
-
-
-
-

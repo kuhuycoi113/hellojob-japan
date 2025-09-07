@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Home, Sparkles, User } from 'lucide-react';
+import { Home, Sparkles, User, Search } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/contexts/language-context';
 import { cn } from '@/lib/utils';
@@ -14,7 +14,7 @@ export function MobileFooter() {
   const navItems = [
     { href: '/', label: t.mobile_footer.home, icon: <Home /> },
     { href: '/post-job-ai', label: t.mobile_footer.postJobAI, icon: <Sparkles /> },
-    { href: '/dashboard', label: t.mobile_footer.dashboard, icon: <User /> },
+    { href: '/candidates', label: t.hero.searchCandidates, icon: <Search /> },
   ];
 
   return (
