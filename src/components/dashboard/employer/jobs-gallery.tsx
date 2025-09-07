@@ -37,7 +37,7 @@ export function JobsGallery({ jobs }: JobsGalleryProps) {
                 <Link href={`/dashboard/jobs/${job.id}`}>
                     <Image
                         src={job.image || `https://picsum.photos/400/225?random=job${index}`}
-                        alt={job.title}
+                        alt={job.title || 'Job image'}
                         fill
                         className="object-cover"
                         data-ai-hint="workplace factory"
