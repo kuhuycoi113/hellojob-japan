@@ -50,10 +50,7 @@ export function JobsPage() {
 
   useEffect(() => {
     setJobs(mockJobs);
-    if (isMobile) {
-        setViewMode('grid');
-    }
-  }, [isMobile]);
+  }, []);
 
   const filteredJobs = jobs.filter((job) => {
     if (activeTab === 'all') return true;
@@ -202,7 +199,7 @@ export function JobsPage() {
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="hidden sm:flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <Button
               variant={viewMode === 'list' ? 'secondary' : 'ghost'}
               size="icon"
