@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -26,6 +25,16 @@ import {
   Users,
   Briefcase,
 } from 'lucide-react';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import Link from 'next/link';
@@ -41,12 +50,15 @@ const statusStyles: Record<string, string> = {
   Closed: 'bg-red-100 text-red-800',
 };
 
+const JOBS_PER_PAGE = 9;
+
 export function JobsPage() {
   const { t } = useLanguage();
   const [jobs, setJobs] = useState<MockJob[]>([]);
   const isMobile = useIsMobile();
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
   const [activeTab, setActiveTab] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     setJobs(mockJobs);
@@ -56,6 +68,18 @@ export function JobsPage() {
     if (activeTab === 'all') return true;
     return job.status.toLowerCase().replace(/\s/g, '-') === activeTab;
   });
+
+  const totalPages = Math.ceil(filteredJobs.length / JOBS_PER_PAGE);
+  const paginatedJobs = filteredJobs.slice(
+    (currentPage - 1) * JOBS_PER_PAGE,
+    currentPage * JOBS_PER_PAGE
+  );
+
+  const handlePageChange = (page: number) => {
+    if (page > 0 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
 
   const TABS = [
     { value: 'all', label: t.jobsPage.tabs.all },
@@ -71,7 +95,7 @@ export function JobsPage() {
 
   const JobsGridView = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredJobs.map((job) => (
+        {paginatedJobs.map((job) => (
             <Link href={`/dashboard/jobs/${job.id}`} key={job.id} className="group">
                 <Card className="flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-shadow h-full">
                     <div className="relative aspect-video">
@@ -126,7 +150,7 @@ export function JobsPage() {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {filteredJobs.map((job) => (
+                {paginatedJobs.map((job) => (
                     <TableRow key={job.id} className="hover:bg-muted/50 cursor-pointer" onClick={() => window.location.href = `/dashboard/jobs/${job.id}`}>
                         <TableCell>
                             <div className="flex items-center gap-3">
@@ -190,7 +214,7 @@ export function JobsPage() {
         </Button>
       </div>
 
-      <Tabs value={activeTab} onValueChange={setActiveTab}>
+      <Tabs value={activeTab} onValueChange={(value) => { setActiveTab(value); setCurrentPage(1); }}>
         <div className="flex items-center justify-between">
           <TabsList className="flex-wrap h-auto">
             {TABS.map((tab) => (
@@ -220,6 +244,44 @@ export function JobsPage() {
             {viewMode === 'list' ? <JobsListView /> : <JobsGridView />}
         </div>
       </Tabs>
+      
+      {totalPages > 1 && (
+        <Pagination className="mt-8">
+            <PaginationContent>
+                <PaginationItem>
+                <PaginationPrevious 
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }}
+                    aria-disabled={currentPage <= 1}
+                    className={currentPage <= 1 ? "pointer-events-none opacity-50" : ""}
+                >
+                  {t.pagination.previous}
+                </PaginationPrevious>
+                </PaginationItem>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                    <PaginationItem key={page}>
+                        <PaginationLink 
+                            href="#"
+                            onClick={(e) => { e.preventDefault(); handlePageChange(page); }}
+                            isActive={currentPage === page}
+                        >
+                            {page}
+                        </PaginationLink>
+                    </PaginationItem>
+                ))}
+                <PaginationItem>
+                <PaginationNext 
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }}
+                    aria-disabled={currentPage >= totalPages}
+                    className={currentPage >= totalPages ? "pointer-events-none opacity-50" : ""}
+                >
+                   {t.pagination.next}
+                </PaginationNext>
+                </PaginationItem>
+            </PaginationContent>
+        </Pagination>
+      )}
     </div>
   );
 }
