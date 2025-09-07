@@ -36,6 +36,12 @@
     "previous": "Previous",
     "next": "Next"
   },
+  "common": {
+    "viewProfile": "View Profile",
+    "watchIntroVideo": "Watch intro video",
+    "sendMessage": "Send Message",
+    "desiredSalary": "Desired Salary"
+  },
   "mobile_footer": {
     "home": "Home",
     "postJobAI": "Post AI",

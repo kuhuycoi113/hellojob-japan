@@ -36,6 +36,12 @@
     "previous": "Trang trước",
     "next": "Trang sau"
   },
+  "common": {
+    "viewProfile": "Xem hồ sơ",
+    "watchIntroVideo": "Xem video giới thiệu",
+    "sendMessage": "Gửi tin nhắn",
+    "desiredSalary": "Lương mong muốn"
+  },
   "mobile_footer": {
     "home": "Trang chủ",
     "postJobAI": "Đăng việc AI",

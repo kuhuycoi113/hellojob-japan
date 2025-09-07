@@ -36,6 +36,12 @@
     "previous": "前へ",
     "next": "次へ"
   },
+  "common": {
+    "viewProfile": "プロフィールを見る",
+    "watchIntroVideo": "紹介動画を見る",
+    "sendMessage": "メッセージを送る",
+    "desiredSalary": "希望給与"
+  },
   "mobile_footer": {
     "home": "ホーム",
     "postJobAI": "AIで投稿",

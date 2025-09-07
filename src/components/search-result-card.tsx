@@ -55,7 +55,7 @@ export function SearchResultCard({ candidate }: { candidate: Candidate }) {
                                 <Button variant="outline" size="icon" className="h-9 w-9"><FileText className="w-4 h-4"/></Button>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>{t.dashboard_employer.candidates_table.view_profile}</p>
+                                <p>{t.common.viewProfile}</p>
                             </TooltipContent>
                         </Tooltip>
                         <Tooltip>
@@ -63,7 +63,7 @@ export function SearchResultCard({ candidate }: { candidate: Candidate }) {
                                 <Button variant="outline" size="icon" className="h-9 w-9"><Video className="w-4 h-4"/></Button>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>Xem video giới thiệu</p>
+                                <p>{t.common.watchIntroVideo}</p>
                             </TooltipContent>
                         </Tooltip>
                        </TooltipProvider>
@@ -95,12 +95,12 @@ export function SearchResultCard({ candidate }: { candidate: Candidate }) {
 
                      <div className="mt-4 border-t pt-4 flex items-center justify-between">
                          <div>
-                            <p className="text-sm font-semibold text-gray-700">{t.dashboard_employer.candidates_table.desired_salary}</p>
+                            <p className="text-sm font-semibold text-gray-700">{t.common.desiredSalary}</p>
                             <p className="text-sm text-muted-foreground">{candidate.desired_salary[language]}</p>
                          </div>
                         <div className="flex gap-2">
-                            <Button variant="outline">{t.dashboard_employer.your_partners.table.send_message}</Button>
-                            <Button>{t.dashboard_employer.candidates_table.view_profile}</Button>
+                            <Button variant="outline">{t.common.sendMessage}</Button>
+                            <Button>{t.common.viewProfile}</Button>
                         </div>
                     </div>
                 </div>
