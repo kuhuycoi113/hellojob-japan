@@ -777,6 +777,39 @@
       "description": "Fill out a detailed form for full control over the listing."
     }
   },
+  "dashboard_employer": {
+    "jobs_list": {
+      "title": "Manage Jobs",
+      "subtitle": "View, edit, and manage all your job postings.",
+      "post_job_button": "Post a New Job",
+      "tabs": {
+        "all": "All",
+        "searching": "Searching",
+        "completed": "Completed"
+      },
+      "table": {
+        "job_title": "Job Title",
+        "status": "Status",
+        "partners": "Partners",
+        "applications": "Applications",
+        "date_posted": "Date Posted",
+        "actions": "Actions",
+        "status_searching": "Searching",
+        "no_jobs_title": "No Jobs Posted Yet",
+        "no_jobs_description": "Start by posting your first job to find qualified candidates.",
+        "post_job_button": "Post a Job",
+        "actions_items": {
+            "view_details": "View Details",
+            "view_candidates": "View Candidates",
+            "delete": "Delete"
+        }
+      }
+    },
+    "candidates_table": {
+      "title": "Candidates",
+      "view_profile": "View Profile"
+    }
+  },
   "job_detail": {
     "backButton": "Back to list",
     "location": "Location",

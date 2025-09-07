@@ -777,6 +777,39 @@
       "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
     }
   },
+  "dashboard_employer": {
+    "jobs_list": {
+      "title": "Quản lý việc làm",
+      "subtitle": "Xem, chỉnh sửa và quản lý tất cả các tin tuyển dụng của bạn.",
+      "post_job_button": "Đăng việc làm mới",
+      "tabs": {
+        "all": "Tất cả",
+        "searching": "Đang tìm kiếm",
+        "completed": "Đã hoàn thành"
+      },
+      "table": {
+        "job_title": "Chức danh công việc",
+        "status": "Trạng thái",
+        "partners": "Đối tác",
+        "applications": "Ứng viên",
+        "date_posted": "Ngày đăng",
+        "actions": "Hành động",
+        "status_searching": "Đang tìm",
+        "no_jobs_title": "Chưa có việc làm nào được đăng",
+        "no_jobs_description": "Hãy bắt đầu bằng cách đăng công việc đầu tiên của bạn để tìm kiếm ứng viên đủ điều kiện.",
+        "post_job_button": "Đăng việc làm",
+        "actions_items": {
+            "view_details": "Xem chi tiết",
+            "view_candidates": "Xem ứng viên",
+            "delete": "Xóa"
+        }
+      }
+    },
+    "candidates_table": {
+      "title": "Ứng viên",
+      "view_profile": "Xem hồ sơ"
+    }
+  },
   "job_detail": {
     "backButton": "Quay lại danh sách",
     "location": "Địa điểm",
