@@ -561,8 +561,8 @@ function AiJobPostFormContent() {
         description: "Bạn có thể xem việc làm mới trong Trang quản lý.",
       });
 
-      // Redirect to the dashboard
-      router.push('/dashboard');
+      // Redirect to the newly created job's detail page
+      router.push(`/dashboard/jobs/${newJob.id}`);
 
     } catch (error) {
       console.error("Failed to save job post to localStorage", error);
@@ -930,3 +930,5 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
