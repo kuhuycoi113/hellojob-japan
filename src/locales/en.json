@@ -803,7 +803,7 @@
       "archive": "Archive"
     }
   },
-   "jobDetail": {
+  "jobDetail": {
       "backButton": "Back to List",
       "findCandidates": "Find Candidates",
       "location": "Location",
@@ -811,6 +811,12 @@
       "postedDate": "Posted Date",
       "jobDescription": "Job Description",
       "requirements": "Requirements",
-      "benefits": "Benefits"
+      "benefits": "Benefits",
+      "jobInformation": "Job Information",
+      "salary": "Salary",
+      "visaType": "Visa Type",
+      "contractType": "Contract Type",
+      "workingHours": "Working Hours",
+      "holidays": "Holidays"
   }
 }

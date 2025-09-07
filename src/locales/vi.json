@@ -811,6 +811,12 @@
       "postedDate": "Ngày đăng",
       "jobDescription": "Mô tả công việc",
       "requirements": "Yêu cầu",
-      "benefits": "Quyền lợi"
+      "benefits": "Quyền lợi",
+      "jobInformation": "Thông tin công việc",
+      "salary": "Mức lương",
+      "visaType": "Loại Visa",
+      "contractType": "Loại hợp đồng",
+      "workingHours": "Giờ làm việc",
+      "holidays": "Ngày nghỉ"
   }
 }

@@ -8,6 +8,15 @@ export type MockJob = {
   postedDate: string;
   image: string;
   imageHint: string;
+  location: string;
+  visaType: string;
+  salary: string;
+  contractType: string;
+  workingHours: string;
+  holidays: string;
+  description: string;
+  requirements: string[];
+  benefits: string[];
 };
 
 export const mockJobs: MockJob[] = [
@@ -20,6 +29,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-20',
     image: 'https://picsum.photos/400/225?random=1',
     imageHint: 'food factory',
+    location: 'Aichi Prefecture',
+    visaType: 'Specified Skilled Worker (i)',
+    salary: '¥180,000 - ¥220,000/month',
+    contractType: 'Full-time',
+    workingHours: '08:00 - 17:00 (8 hours)',
+    holidays: 'Weekends and national holidays',
+    description: 'Responsible for processing and packaging food products in a clean and safe factory environment. This includes operating machinery, quality checking, and maintaining hygiene standards.',
+    requirements: ['Experience in food industry preferred', 'Basic Japanese communication skills (N4 level)', 'Ability to work in a team', 'Good physical health'],
+    benefits: ['Social insurance provided', 'Overtime pay available', 'Housing support available', 'Annual bonus based on performance']
   },
   {
     id: 'JOB002',
@@ -30,6 +48,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-18',
     image: 'https://picsum.photos/400/225?random=2',
     imageHint: 'welder construction',
+    location: 'Tokyo',
+    visaType: 'Technical Intern Trainee',
+    salary: '¥170,000/month',
+    contractType: '3-Year Internship',
+    workingHours: '08:00 - 17:30',
+    holidays: 'Sundays, 2 Saturdays per month',
+    description: 'Perform welding duties on various construction sites. Responsibilities include interpreting blueprints, setting up welding equipment, and ensuring all welds meet safety and quality standards.',
+    requirements: ['Welding certification or experience', 'Must be under 30 years old', 'Eager to learn new skills'],
+    benefits: ['Training program provided', 'All necessary equipment and safety gear provided', 'Dormitory available']
   },
   {
     id: 'JOB003',
@@ -40,6 +67,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-22',
     image: 'https://picsum.photos/400/225?random=3',
     imageHint: 'caregiver elderly',
+    location: 'Osaka',
+    visaType: 'Specified Skilled Worker (i) - Caregiver',
+    salary: '¥190,000/month + night shift allowance',
+    contractType: 'Full-time',
+    workingHours: 'Shift-based (Day/Evening/Night)',
+    holidays: '4 days off per 4-week period (rotating)',
+    description: 'Provide daily care and support to elderly residents, including assistance with bathing, meals, and mobility. Create a comfortable and safe living environment for all residents.',
+    requirements: ['Certified Care Worker (Kaigo Fukushi Shi) or completed Technical Intern training in caregiving', 'JLPT N3 or higher', 'A compassionate and patient personality'],
+    benefits: ['Full social insurance', 'Transportation allowance', 'Uniform provided', 'Opportunities for skill-up training']
   },
   {
     id: 'JOB004',
@@ -50,6 +86,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-04-15',
     image: 'https://picsum.photos/400/225?random=4',
     imageHint: 'electronics factory',
+    location: 'Kyoto Prefecture',
+    visaType: 'Engineer/Specialist in Humanities/Int\'l Services',
+    salary: '¥250,000/month',
+    contractType: 'Full-time',
+    workingHours: '09:00 - 18:00',
+    holidays: 'Weekends, National Holidays, Summer/Winter vacation',
+    description: 'Assemble and test electronic components and circuits. Requires precision and attention to detail to ensure product quality.',
+    requirements: ['University degree in Electrical Engineering or related field', 'Business level Japanese (N2 or above)', 'Experience with PCB assembly is a plus'],
+    benefits: ['Annual salary increase', 'Twice-yearly bonus', 'Full social insurance package', 'Support for visa renewal']
   },
   {
     id: 'JOB005',
@@ -60,6 +105,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-19',
     image: 'https://picsum.photos/400/225?random=5',
     imageHint: 'farm vegetables',
+    location: 'Hokkaido',
+    visaType: 'Specified Skilled Worker (i)',
+    salary: '¥165,000/month',
+    contractType: 'Full-time (seasonal variations)',
+    workingHours: '07:00 - 16:00 (subject to change based on season)',
+    holidays: 'Varies by season, typically 1 day per week',
+    description: 'Cultivate, harvest, and package vegetables such as lettuce and tomatoes. Work is primarily outdoors and requires physical stamina.',
+    requirements: ['Experience in agriculture', 'Ability to work outdoors in various weather conditions', 'No allergies to pollen'],
+    benefits: ['Accommodation provided', 'Some produce available for personal consumption', 'Social insurance']
   },
   {
     id: 'JOB006',
@@ -70,6 +124,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-15',
     image: 'https://picsum.photos/400/225?random=6',
     imageHint: 'cnc machine',
+    location: 'Osaka',
+    visaType: 'Technical Intern Trainee',
+    salary: '¥175,000/month',
+    contractType: '3-Year Internship',
+    workingHours: '08:30 - 17:30',
+    holidays: 'Weekends',
+    description: 'Operate CNC machines to produce precision metal parts. Involves setting up the machine, monitoring operations, and conducting quality checks.',
+    requirements: ['Interest in machinery and manufacturing', 'Basic math skills', 'Good eyesight'],
+    benefits: ['Dormitory provided', 'Comprehensive training program', 'Overtime pay']
   },
   {
     id: 'JOB007',
@@ -80,6 +143,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-21',
     image: 'https://picsum.photos/400/225?random=7',
     imageHint: 'hotel room',
+    location: 'Tokyo',
+    visaType: 'Specified Skilled Worker (i) - Hospitality',
+    salary: '¥200,000/month',
+    contractType: 'Full-time',
+    workingHours: 'Shift-based',
+    holidays: '8-9 days per month',
+    description: 'Responsible for cleaning and maintaining guest rooms to the highest standard of cleanliness and presentation. Includes making beds, cleaning bathrooms, and replenishing amenities.',
+    requirements: ['Experience in hotel housekeeping or cleaning services', 'Good communication skills in Japanese (N3 level)', 'Attention to detail'],
+    benefits: ['Uniform provided', 'Staff meals available', 'Transportation allowance', 'Social insurance']
   },
   {
     id: 'JOB008',
@@ -90,6 +162,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-12',
     image: 'https://picsum.photos/400/225?random=8',
     imageHint: 'seafood market',
+    location: 'Okinawa',
+    visaType: 'Technical Intern Trainee',
+    salary: '¥160,000/month',
+    contractType: '3-Year Internship',
+    workingHours: '07:00 - 16:00',
+    holidays: 'Irregular (based on fishing schedule)',
+    description: 'Processing fresh fish, including cutting, gutting, and packaging. Work in a refrigerated environment.',
+    requirements: ['Not allergic to seafood', 'Good physical condition', 'Ability to handle knives safely'],
+    benefits: ['Accommodation provided', 'Health insurance', 'Work clothes provided']
   },
   {
     id: 'JOB009',
@@ -100,6 +181,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-03-28',
     image: 'https://picsum.photos/400/225?random=9',
     imageHint: 'scaffolding construction',
+    location: 'Kanagawa',
+    visaType: 'Specified Skilled Worker (i) - Construction',
+    salary: '¥250,000 - ¥350,000/month depending on experience',
+    contractType: 'Full-time',
+    workingHours: '08:00 - 17:00',
+    holidays: 'Sundays',
+    description: 'Erect and dismantle scaffolding on construction sites. This is a physically demanding job that requires a strong sense of safety.',
+    requirements: ['Scaffolding work experience is mandatory', 'Physically fit and comfortable with heights', 'Japanese N4 level'],
+    benefits: ['Safety training and certifications provided', 'Social insurance', 'Bonus twice a year']
   },
   {
     id: 'JOB010',
@@ -110,6 +200,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-16',
     image: 'https://picsum.photos/400/225?random=10',
     imageHint: 'textile factory',
+    location: 'Gifu',
+    visaType: 'Technical Intern Trainee',
+    salary: '¥168,000/month',
+    contractType: '3-Year Internship',
+    workingHours: '08:00 - 17:00',
+    holidays: 'Company calendar (approx. 105 days/year)',
+    description: 'Operate industrial weaving machines to produce high-quality fabrics. Monitor machines for errors and perform basic maintenance.',
+    requirements: ['Good eyesight', 'Attention to detail', 'Ability to stand for long periods'],
+    benefits: ['Dormitory available', 'Social insurance', 'Training provided']
   },
   {
     id: 'JOB011',
@@ -120,6 +219,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-20',
     image: 'https://picsum.photos/400/225?random=11',
     imageHint: 'ramen kitchen',
+    location: 'Fukuoka',
+    visaType: 'Specified Skilled Worker (i) - Food Service',
+    salary: '¥195,000/month',
+    contractType: 'Full-time',
+    workingHours: '10:00 - 22:00 (with break)',
+    holidays: 'Shift-based, 6-7 days off per month',
+    description: 'Assist in a busy ramen shop kitchen. Responsibilities include food preparation (cutting vegetables, preparing toppings), cooking side dishes, and maintaining kitchen cleanliness.',
+    requirements: ['Experience working in a restaurant kitchen', 'Ability to work in a fast-paced environment', 'Japanese N3 level'],
+    benefits: ['Staff meals provided', 'Transportation allowance', 'Social insurance']
   },
   {
     id: 'JOB012',
@@ -130,6 +238,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-23',
     image: 'https://picsum.photos/400/225?random=12',
     imageHint: 'industrial painting',
+    location: 'Aichi',
+    visaType: 'Technical Intern Trainee',
+    salary: '¥172,000/month',
+    contractType: '3-Year Internship',
+    workingHours: '08:30 - 17:30',
+    holidays: 'Weekends, GW, Obon, New Year',
+    description: 'Perform industrial painting and coating on automotive parts using spray guns and other equipment.',
+    requirements: ['No allergies to paint or thinners', 'Willing to learn and follow safety procedures', 'Good physical condition'],
+    benefits: ['Dormitory provided', 'Safety equipment provided', 'Social insurance']
   },
   {
     id: 'JOB013',
@@ -140,6 +257,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-10',
     image: 'https://picsum.photos/400/225?random=13',
     imageHint: 'cows farm',
+    location: 'Kumamoto',
+    visaType: 'Specified Skilled Worker (i)',
+    salary: '¥185,000/month',
+    contractType: 'Full-time',
+    workingHours: '06:00 - 17:00 (with long break)',
+    holidays: '4-5 days per month',
+    description: 'Responsible for the daily care of cattle, including feeding, cleaning barns, and monitoring health. This is a physically demanding job.',
+    requirements: ['Experience with large animals is a plus', 'Not afraid of animals', 'Must have a driver\'s license (or be willing to obtain one in Japan)'],
+    benefits: ['Housing provided', 'Social insurance', 'Bonus depending on performance']
   },
   {
     id: 'JOB014',
@@ -150,6 +276,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-04-30',
     image: 'https://picsum.photos/400/225?random=14',
     imageHint: 'bakery bread',
+    location: 'Hyogo',
+    visaType: 'Specified Skilled Worker (i) - Food Service',
+    salary: '¥180,000/month',
+    contractType: 'Full-time',
+    workingHours: '05:00 - 14:00',
+    holidays: 'Tuesdays, plus 2 other days per month',
+    description: 'Assist with bread and pastry production, including dough preparation, baking, and finishing. Also includes customer service and store cleaning.',
+    requirements: ['Passion for baking', 'Early riser', 'Japanese N3 level'],
+    benefits: ['Staff discount on products', 'Uniform provided', 'Social insurance']
   },
   {
     id: 'JOB015',
@@ -160,6 +295,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-17',
     image: 'https://picsum.photos/400/225?random=15',
     imageHint: 'office cleaning',
+    location: 'Saitama',
+    visaType: 'Specified Skilled Worker (i)',
+    salary: '¥1,200/hour',
+    contractType: 'Full-time',
+    workingHours: '08:00 - 17:00',
+    holidays: 'Weekends',
+    description: 'Professional cleaning of office buildings, including floors, windows, and restrooms. Requires use of various cleaning equipment.',
+    requirements: ['Experience in professional cleaning is a plus', 'Punctual and reliable', 'Basic Japanese is sufficient'],
+    benefits: ['Transportation fully covered', 'Social insurance', 'Paid vacation']
   },
   {
     id: 'JOB016',
@@ -170,6 +314,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-14',
     image: 'https://picsum.photos/400/225?random=16',
     imageHint: 'plastic factory',
+    location: 'Saitama',
+    visaType: 'Technical Intern Trainee',
+    salary: '¥170,000/month',
+    contractType: '3-Year Internship',
+    workingHours: '08:15 - 17:15',
+    holidays: 'Company calendar (approx. 110 days/year)',
+    description: 'Operate plastic injection molding machines. Includes setting molds, inspecting products for defects, and packing finished goods.',
+    requirements: ['Good concentration', 'Ability to perform repetitive tasks', 'Willingness to learn'],
+    benefits: ['Dormitory available', 'Social insurance', 'Overtime available']
   },
   {
     id: 'JOB017',
@@ -180,6 +333,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-22',
     image: 'https://picsum.photos/400/225?random=17',
     imageHint: 'caregiver support',
+    location: 'Aichi',
+    visaType: 'Specified Skilled Worker (i) - Caregiver',
+    salary: '¥195,000/month',
+    contractType: 'Full-time',
+    workingHours: 'Shift-based',
+    holidays: '8 days per month',
+    description: 'Provide daily living support for individuals with disabilities in a group home setting. Includes personal care, meal support, and recreational activities.',
+    requirements: ['Experience in caregiving', 'JLPT N3 or higher', 'Strong sense of responsibility and empathy'],
+    benefits: ['Qualification acquisition support system', 'Full social insurance', 'Night shift allowance']
   },
   {
     id: 'JOB018',
@@ -190,6 +352,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-18',
     image: 'https://picsum.photos/400/225?random=18',
     imageHint: 'packaging line',
+    location: 'Kanagawa',
+    visaType: 'Technical Intern Trainee',
+    salary: '¥165,000/month',
+    contractType: '3-Year Internship',
+    workingHours: '09:00 - 18:00',
+    holidays: 'Sundays and 2 Saturdays per month',
+    description: 'Work on a packaging line for frozen food products. Fast-paced environment requiring good teamwork.',
+    requirements: ['Ability to work quickly and accurately', 'Good physical health', 'Team player'],
+    benefits: ['Dormitory provided', 'Staff discount', 'Social insurance']
   },
   {
     id: 'JOB019',
@@ -200,6 +371,15 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-01',
     image: 'https://picsum.photos/400/225?random=19',
     imageHint: 'auto parts',
+    location: 'Hiroshima',
+    visaType: 'Engineer/Specialist in Humanities/Int\'l Services',
+    salary: '¥240,000/month',
+    contractType: 'Full-time',
+    workingHours: '08:00 - 17:00',
+    holidays: 'Weekends, long vacations (GW, Obon, New Year)',
+    description: 'Conduct quality inspection of automobile parts using various measuring instruments. Requires high precision and ability to read technical drawings.',
+    requirements: ['Degree in Mechanical Engineering or similar', 'Experience with quality control', 'Business level Japanese (N2)'],
+    benefits: ['Bonus twice a year', 'Housing allowance', 'Full social insurance']
   },
   {
     id: 'JOB020',
@@ -210,5 +390,14 @@ export const mockJobs: MockJob[] = [
     postedDate: '2024-05-11',
     image: 'https://picsum.photos/400/225?random=20',
     imageHint: 'bridge construction',
+    location: 'Ehime',
+    visaType: 'Specified Skilled Worker (i) - Construction',
+    salary: '¥260,000/month',
+    contractType: 'Full-time',
+    workingHours: '08:00 - 17:00',
+    holidays: 'Sundays, national holidays',
+    description: 'Involved in the construction and maintenance of bridges. Work includes formwork, rebar assembly, and concrete pouring.',
+    requirements: ['Experience in civil engineering or construction', 'Not afraid of heights', 'Physically strong'],
+    benefits: ['Dormitory available', 'Social insurance', 'Skill-up training available']
   },
 ];

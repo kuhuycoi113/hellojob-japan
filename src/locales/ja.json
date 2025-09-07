@@ -811,6 +811,12 @@
       "postedDate": "掲載日",
       "jobDescription": "職務内容",
       "requirements": "応募要件",
-      "benefits": "福利厚生"
+      "benefits": "福利厚生",
+      "jobInformation": "求人情報",
+      "salary": "給与",
+      "visaType": "在留資格",
+      "contractType": "雇用形態",
+      "workingHours": "勤務時間",
+      "holidays": "休日"
   }
 }
