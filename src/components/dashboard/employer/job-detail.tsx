@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useLanguage } from '@/contexts/language-context';
@@ -9,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Building, MapPin, Users, Calendar, DollarSign, Briefcase, FileText, CheckCircle, ArrowLeft, Send, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { mockJobs } from '@/data/jobs';
 
 type CombinedJob = Partial<Job> & Partial<Opportunity>;
 
@@ -36,8 +38,16 @@ export function JobDetail({ jobId }: { jobId: string }) {
       setIsOpportunity(false);
       return;
     }
+    
+    // 3. Check mock jobs
+    const mockJob = mockJobs.find(j => j.id === jobId);
+    if(mockJob) {
+        setJob(mockJob);
+        setIsOpportunity(false);
+        return;
+    }
 
-    // 3. Check jobs from localStorage
+    // 4. Check jobs from localStorage
     const storedJobsRaw = localStorage.getItem('postedJobs');
     if (storedJobsRaw) {
       try {
@@ -53,26 +63,16 @@ export function JobDetail({ jobId }: { jobId: string }) {
       }
     }
     
-    // 4. If not found, return null to trigger notFound()
+    // 5. If not found, return null to trigger notFound()
     setJob(null);
 
   }, [jobId, t]);
 
   if (job === null) {
       // Temporary state while loading, or permanent if not found
-      const storedJobsRaw = typeof window !== 'undefined' ? localStorage.getItem('postedJobs') : null;
-      if (storedJobsRaw) {
-        try {
-            const storedJobs = JSON.parse(storedJobsRaw);
-            if (storedJobs.find((j: Job) => j.id === jobId)) {
-                 // It exists, so we're just waiting for useEffect to set it.
-                 return null; // or a loading spinner
-            }
-        } catch(e) {}
-      }
-      // If it's not in localStorage and not in translations, it's a 404
-      if(!job) return notFound();
+      return null; // or a loading spinner
   }
+   if (!job) return notFound();
 
   // Define properties based on type for cleaner access
   const title = job.title || '';

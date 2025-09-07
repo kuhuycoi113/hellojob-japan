@@ -11,6 +11,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { JobsTable } from './jobs-table';
 import { JobsGallery } from './jobs-gallery';
 import Link from 'next/link';
+import { mockJobs } from '@/data/jobs'; // Import mock data
 
 export function JobsList() {
   const { t } = useLanguage();
@@ -29,14 +30,18 @@ export function JobsList() {
   }, [isMobile]);
 
   useEffect(() => {
-    try {
-      const storedJobsRaw = localStorage.getItem('postedJobs');
-      const storedJobs: Job[] = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
-      setJobs(storedJobs);
-    } catch (error) {
-      console.error("Failed to parse jobs from localStorage", error);
-      setJobs([]);
-    }
+    // Set mock jobs data on component mount
+    const storedJobsRaw = localStorage.getItem('postedJobs');
+    const storedJobs: Job[] = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
+    const allJobs = [...storedJobs, ...mockJobs].slice(0, 20); // Combine and limit to 20
+     // Remove duplicates by id, giving priority to storedJobs
+    const uniqueJobs = allJobs.filter((job, index, self) =>
+        index === self.findIndex((j) => (
+            j.id === job.id
+        ))
+    );
+
+    setJobs(uniqueJobs);
   }, []);
 
   const filteredJobs = jobs.filter(job => {
@@ -51,6 +56,11 @@ export function JobsList() {
     { value: 'searching', label: t.dashboard_employer.jobs_list.tabs.searching },
     { value: 'completed', label: t.dashboard_employer.jobs_list.tabs.completed },
   ];
+  
+  const getTabCount = (tabValue: string) => {
+    if (tabValue === 'all') return jobs.length;
+    return jobs.filter(j => j.status.toLowerCase() === tabValue).length;
+  }
 
   return (
     <div className="space-y-6">
@@ -76,7 +86,7 @@ export function JobsList() {
           <TabsList>
             {TABS.map(tab => (
                  <TabsTrigger key={tab.value} value={tab.value}>
-                    {tab.label} ({tab.value === 'all' ? jobs.length : jobs.filter(j => j.status.toLowerCase() === tab.value).length})
+                    {tab.label} ({getTabCount(tab.value)})
                 </TabsTrigger>
             ))}
           </TabsList>
