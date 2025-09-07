@@ -18,7 +18,7 @@
     "logout": "Logout",
     "postJob": "Post a Job",
     "manage": "Manage",
-    "x_function": "X",
+    "x_function": "Jobs",
     "menuItems": {
       "recruiterAccount": "Recruiter Account",
       "recruiterAccountType": "{type} Account",
@@ -776,6 +776,31 @@
     "manual": {
       "title": "Manual Entry",
       "description": "Fill out a detailed form for full control over the listing."
+    }
+  },
+  "jobsPage": {
+    "title": "Job Management",
+    "subtitle": "Manage your job postings here.",
+    "postNewJob": "Post New Job",
+    "applicants": "applicants",
+    "postedOn": "Posted on",
+    "viewDetails": "View Details",
+    "tabs": {
+      "all": "All",
+      "active": "Active",
+      "awaiting": "Awaiting Approval",
+      "closed": "Closed"
+    },
+    "table": {
+      "jobTitle": "Job Title",
+      "applicants": "Applicants",
+      "status": "Status",
+      "postedDate": "Posted Date",
+      "actions": "Actions",
+      "toggleMenu": "Toggle menu",
+      "viewDetails": "View details",
+      "edit": "Edit",
+      "archive": "Archive"
     }
   }
 }

@@ -18,7 +18,7 @@
     "logout": "ログアウト",
     "postJob": "求人掲載",
     "manage": "管理",
-    "x_function": "X",
+    "x_function": "求人管理",
     "menuItems": {
       "recruiterAccount": "採用担当者アカウント",
       "recruiterAccountType": "アカウント{type}",
@@ -776,6 +776,31 @@
     "manual": {
       "title": "手動入力",
       "description": "詳細なフォームに記入して、リストを完全に制御します。"
+    }
+  },
+  "jobsPage": {
+    "title": "求人管理",
+    "subtitle": "こちらで求人情報を管理します。",
+    "postNewJob": "新規求人作成",
+    "applicants": "応募者",
+    "postedOn": "掲載日",
+    "viewDetails": "詳細を見る",
+    "tabs": {
+      "all": "すべて",
+      "active": "募集中",
+      "awaiting": "承認待ち",
+      "closed": "募集終了"
+    },
+    "table": {
+      "jobTitle": "役職",
+      "applicants": "応募者数",
+      "status": "ステータス",
+      "postedDate": "掲載日",
+      "actions": "操作",
+      "toggleMenu": "メニューを開閉",
+      "viewDetails": "詳細を見る",
+      "edit": "編集",
+      "archive": "アーカイブ"
     }
   }
 }

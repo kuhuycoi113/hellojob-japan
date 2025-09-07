@@ -18,7 +18,7 @@
     "logout": "Đăng xuất",
     "postJob": "Đăng việc làm",
     "manage": "Quản lý",
-    "x_function": "X",
+    "x_function": "Việc làm",
     "menuItems": {
       "recruiterAccount": "Tài khoản nhà tuyển dụng",
       "recruiterAccountType": "Tài khoản {type}",
@@ -776,6 +776,31 @@
     "manual": {
       "title": "Nhập liệu thủ công",
       "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
+    }
+  },
+   "jobsPage": {
+    "title": "Quản lý việc làm",
+    "subtitle": "Quản lý các tin tuyển dụng của bạn tại đây.",
+    "postNewJob": "Đăng việc làm mới",
+    "applicants": "ứng viên",
+    "postedOn": "Đăng ngày",
+    "viewDetails": "Xem chi tiết",
+    "tabs": {
+      "all": "Tất cả",
+      "active": "Đang tuyển",
+      "awaiting": "Chờ duyệt",
+      "closed": "Đã đóng"
+    },
+    "table": {
+      "jobTitle": "Chức danh",
+      "applicants": "Ứng viên",
+      "status": "Trạng thái",
+      "postedDate": "Ngày đăng",
+      "actions": "Hành động",
+      "toggleMenu": "Mở menu",
+      "viewDetails": "Xem chi tiết",
+      "edit": "Chỉnh sửa",
+      "archive": "Lưu trữ"
     }
   }
 }
