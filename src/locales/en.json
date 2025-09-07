@@ -1067,7 +1067,10 @@
           "date_posted": "2024-05-08",
           "salary": "Net Salary: 165,000 JPY",
           "image": "https://picsum.photos/400/225?random=job2",
-          "tags": ["Food", "Skilled Worker", "Female"]
+          "tags": ["Food", "Skilled Worker", "Female"],
+          "description": "Responsible for preparing and processing food products in a factory setting. This includes operating machinery, monitoring production lines, and ensuring quality standards are met.",
+          "requirements": ["Previous experience in food processing is preferred.", "Ability to work in a fast-paced environment.", "Good hygiene practices.", "Basic understanding of food safety regulations."],
+          "benefits": ["Competitive hourly wage.", "Health insurance and other benefits.", "Opportunities for overtime.", "Clean and safe working environment."]
         },
         {
           "id": "Tokyo-C03",
@@ -1480,7 +1483,8 @@
       "benefits": "Benefits",
       "moreInfo": {
         "title": "More Information",
-        "content": "Please review the requirements and benefits carefully before accepting this partnership opportunity. If you have any questions, please contact the partner directly."
+        "content": "Please review the requirements and benefits carefully before accepting this partnership opportunity. If you have any questions, please contact the partner directly.",
+        "content_employer": "This is a job you've posted. You can find suitable candidates, or edit the job details."
       }
     }
   },
@@ -1798,7 +1802,7 @@
       },
       "payment": {
         "title": "Pricing & Payout",
-        "priceLabel": "Course Price ($)",
+        "priceLabel": "Course Price (USD)",
         "payoutTitle": "Payout Information",
         "payoutDescription": "Please provide your bank account details for payouts.",
         "bankNameLabel": "Bank Name",
@@ -2028,8 +2032,8 @@
     "pricing": {
       "title": "Upgrade to Premium Today",
       "subtitle": "Unlock all premium features with a single package.",
-      "price": "150",
-      "per_month_unit": "USD/mo",
+      "price": "150 USD",
+      "per_month_unit": "/mo",
       "per_year": "Billed annually",
       "cta": "Upgrade to Premium Now",
       "note": "You can cancel at any time. Billed on a yearly cycle."
