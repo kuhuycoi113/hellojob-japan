@@ -75,41 +75,43 @@ export function JobsPage() {
   const JobsGridView = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredJobs.map((job) => (
-            <Card key={job.id} className="flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-                <div className="relative aspect-video">
-                  <Image
-                    src={job.image}
-                    alt={job.title}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={job.imageHint}
-                  />
-                </div>
-                <CardHeader>
-                    <CardTitle className="font-headline text-lg">{job.title}</CardTitle>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Briefcase className="w-4 h-4" />
-                        <span>{job.company}</span>
+            <Link href={`/dashboard/jobs/${job.id}`} key={job.id} className="group">
+                <Card className="flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-shadow h-full">
+                    <div className="relative aspect-video">
+                    <Image
+                        src={job.image}
+                        alt={job.title}
+                        fill
+                        className="object-cover"
+                        data-ai-hint={job.imageHint}
+                    />
                     </div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                     <Badge className={statusStyles[job.status]}>{job.status}</Badge>
-                     <div className="flex items-center gap-4 mt-4 text-sm">
-                        <div className="flex items-center gap-2">
-                            <Users className="w-4 h-4 text-muted-foreground" />
-                            <span>{job.applicants} {t.jobsPage.applicants}</span>
+                    <CardHeader>
+                        <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{job.title}</CardTitle>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Briefcase className="w-4 h-4" />
+                            <span>{job.company}</span>
                         </div>
-                     </div>
-                </CardContent>
-                <CardFooter className="border-t pt-4">
-                     <div className="w-full flex justify-between items-center">
-                        <span className="text-xs text-muted-foreground">{t.jobsPage.postedOn} {job.postedDate}</span>
-                         <Button variant="outline" size="sm">
-                           {t.jobsPage.viewDetails}
-                        </Button>
-                     </div>
-                </CardFooter>
-            </Card>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                        <Badge className={statusStyles[job.status]}>{job.status}</Badge>
+                        <div className="flex items-center gap-4 mt-4 text-sm">
+                            <div className="flex items-center gap-2">
+                                <Users className="w-4 h-4 text-muted-foreground" />
+                                <span>{job.applicants} {t.jobsPage.applicants}</span>
+                            </div>
+                        </div>
+                    </CardContent>
+                    <CardFooter className="border-t pt-4">
+                        <div className="w-full flex justify-between items-center">
+                            <span className="text-xs text-muted-foreground">{t.jobsPage.postedOn} {job.postedDate}</span>
+                            <Button variant="outline" size="sm" asChild>
+                                <div className="group-hover:text-primary transition-colors">{t.jobsPage.viewDetails}</div>
+                            </Button>
+                        </div>
+                    </CardFooter>
+                </Card>
+            </Link>
         ))}
     </div>
   );
@@ -128,7 +130,7 @@ export function JobsPage() {
             </TableHeader>
             <TableBody>
                 {filteredJobs.map((job) => (
-                    <TableRow key={job.id}>
+                    <TableRow key={job.id} className="hover:bg-muted/50 cursor-pointer" onClick={() => window.location.href = `/dashboard/jobs/${job.id}`}>
                         <TableCell>
                             <div className="flex items-center gap-3">
                                 <Avatar className="hidden h-10 w-10 sm:flex rounded-md">

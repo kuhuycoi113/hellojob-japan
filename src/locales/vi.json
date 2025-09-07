@@ -802,5 +802,15 @@
       "edit": "Chỉnh sửa",
       "archive": "Lưu trữ"
     }
+  },
+  "jobDetail": {
+      "backButton": "Quay lại danh sách",
+      "findCandidates": "Tìm ứng viên",
+      "location": "Địa điểm",
+      "applicants": "Ứng viên",
+      "postedDate": "Ngày đăng",
+      "jobDescription": "Mô tả công việc",
+      "requirements": "Yêu cầu",
+      "benefits": "Quyền lợi"
   }
 }

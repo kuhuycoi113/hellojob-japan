@@ -778,7 +778,7 @@
       "description": "詳細なフォームに記入して、リストを完全に制御します。"
     }
   },
-  "jobsPage": {
+   "jobsPage": {
     "title": "求人管理",
     "subtitle": "こちらで求人情報を管理します。",
     "postNewJob": "新規求人作成",
@@ -802,5 +802,15 @@
       "edit": "編集",
       "archive": "アーカイブ"
     }
+  },
+  "jobDetail": {
+      "backButton": "求人一覧に戻る",
+      "findCandidates": "候補者を探す",
+      "location": "勤務地",
+      "applicants": "応募者数",
+      "postedDate": "掲載日",
+      "jobDescription": "職務内容",
+      "requirements": "応募要件",
+      "benefits": "福利厚生"
   }
 }

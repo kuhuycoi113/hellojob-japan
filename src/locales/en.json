@@ -802,5 +802,15 @@
       "edit": "Edit",
       "archive": "Archive"
     }
+  },
+   "jobDetail": {
+      "backButton": "Back to List",
+      "findCandidates": "Find Candidates",
+      "location": "Location",
+      "applicants": "Applicants",
+      "postedDate": "Posted Date",
+      "jobDescription": "Job Description",
+      "requirements": "Requirements",
+      "benefits": "Benefits"
   }
 }
