@@ -257,12 +257,6 @@ export function Header() {
            </Button>
 
           <div className="hidden md:flex items-center gap-2">
-            <Button asChild variant="outline" className="hover:bg-secondary hover:text-secondary-foreground">
-               <Link href="/candidates" className="flex items-center gap-2">
-                <User className="h-4 w-4" />
-                {t.hero.searchCandidates}
-              </Link>
-            </Button>
              <Button asChild>
                <Link href="/dashboard/jobs" className="flex items-center gap-2">
                 <Settings className="h-4 w-4" />
