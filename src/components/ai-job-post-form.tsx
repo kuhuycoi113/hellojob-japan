@@ -533,6 +533,47 @@ function AiJobPostFormContent() {
     }
   }
 
+  const handlePostJob = () => {
+    if (!editableJobPost) return;
+    try {
+      // Get existing jobs or initialize an empty array
+      const existingJobsRaw = localStorage.getItem('postedJobs');
+      const existingJobs = existingJobsRaw ? JSON.parse(existingJobsRaw) : [];
+      
+      // Create a new job object with a unique ID and current date
+      const newJob = {
+        ...editableJobPost,
+        id: `job-${Date.now()}`,
+        status: 'Searching', // Default status for a new job
+        partners: '0',
+        applications: '0',
+        date_posted: new Date().toLocaleDateString('en-CA'), // YYYY-MM-DD
+      };
+
+      // Add the new job to the beginning of the list
+      const updatedJobs = [newJob, ...existingJobs];
+      
+      // Save back to localStorage
+      localStorage.setItem('postedJobs', JSON.stringify(updatedJobs));
+
+      toast({
+        title: "Đã đăng việc làm thành công!",
+        description: "Bạn có thể xem việc làm mới trong Trang quản lý.",
+      });
+
+      // Redirect to the dashboard
+      router.push('/dashboard');
+
+    } catch (error) {
+      console.error("Failed to save job post to localStorage", error);
+      toast({
+        title: "Lỗi",
+        description: "Không thể lưu việc làm. Vui lòng thử lại.",
+        variant: "destructive",
+      });
+    }
+  };
+
   const handleEdit = <K extends keyof GenerateJobPostOutput>(field: K, value: GenerateJobPostOutput[K]) => {
     if (editableJobPost) {
         setEditableJobPost({ ...editableJobPost, [field]: value });
@@ -770,6 +811,7 @@ function AiJobPostFormContent() {
                     <Button
                       size="lg"
                       className="bg-accent text-accent-foreground hover:bg-accent/90"
+                      onClick={handlePostJob}
                     >
                       <Send className="mr-2 h-4 w-4" />
                       {t.ai_job_post_form.postJobButton}

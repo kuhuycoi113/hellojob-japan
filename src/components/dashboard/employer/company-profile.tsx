@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -20,8 +21,33 @@ export function CompanyProfile() {
   const [declinedJobs, setDeclinedJobs] = useState<Opportunity[]>([]);
 
   useEffect(() => {
+    // Set initial data from translations
+    const initialJobs = t.dashboard_employer.activeJobs.jobs;
+
+    // Check localStorage for newly posted jobs
+    const newJobsRaw = localStorage.getItem('postedJobs');
+    if (newJobsRaw) {
+      try {
+        const newJobs = JSON.parse(newJobsRaw);
+        // Combine new jobs with existing ones, ensuring no duplicates if the page is reloaded
+        const allJobs = [...newJobs, ...initialJobs];
+        const uniqueJobs = allJobs.filter((job, index, self) =>
+            index === self.findIndex((j) => (
+                j.id === job.id
+            ))
+        );
+        setAcceptedJobs(uniqueJobs);
+        // Optionally clear the new jobs from localStorage after adding them to state
+        // localStorage.removeItem('newlyPostedJobs');
+      } catch (error) {
+        console.error("Failed to parse jobs from localStorage", error);
+        setAcceptedJobs(initialJobs);
+      }
+    } else {
+      setAcceptedJobs(initialJobs);
+    }
+    
     setOpportunities(t.dashboard_partner.newOpportunities.opportunities);
-    setAcceptedJobs(t.dashboard_employer.activeJobs.jobs);
   }, [t]);
 
 
