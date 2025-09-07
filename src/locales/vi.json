@@ -1,3 +1,4 @@
+
 {
   "header": {
     "home": "Trang chủ",
@@ -2026,8 +2027,8 @@
       "title": "Nâng Cấp Lên Premium Ngay Hôm Nay",
       "subtitle": "Mở khóa toàn bộ tính năng cao cấp với một gói duy nhất.",
       "price": "3.599.820",
-      "per_month_unit": "đ",
-      "per_year": "/tháng, thanh toán theo năm",
+      "per_month_unit": "đ/tháng",
+      "per_year": "Thanh toán theo năm",
       "cta": "Nâng Cấp Lên Premium Ngay",
       "note": "Bạn có thể hủy bất cứ lúc nào. Thanh toán theo chu kỳ hàng năm."
     },
