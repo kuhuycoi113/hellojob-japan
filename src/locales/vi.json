@@ -1,4 +1,3 @@
-
 {
   "header": {
     "home": "Trang chủ",
@@ -30,6 +29,10 @@
       "chat": "Tư vấn"
     },
     "editProfile": "Sửa hồ sơ"
+  },
+  "pagination": {
+    "previous": "Trang trước",
+    "next": "Trang sau"
   },
   "mobile_footer": {
     "home": "Trang chủ",

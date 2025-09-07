@@ -87,13 +87,13 @@ const PaginatedOpportunityList = ({ opportunities, onAccept, onDecline, view, t 
                             )}
                             {onAccept && onDecline && (
                                 <div className="flex gap-2">
-                                    <Button onClick={() => onDecline(opp.id)} variant="outline" className="w-full">
-                                        <X className="mr-2 h-4 w-4" />
-                                        {t.dashboard_partner.decline}
-                                    </Button>
                                     <Button onClick={() => onAccept(opp.id)} className="w-full bg-green-600 hover:bg-green-700">
                                         <Check className="mr-2 h-4 w-4" />
                                         {t.dashboard_partner.accept}
+                                    </Button>
+                                    <Button onClick={() => onDecline(opp.id)} variant="outline" className="w-full">
+                                        <X className="mr-2 h-4 w-4" />
+                                        {t.dashboard_partner.decline}
                                     </Button>
                                 </div>
                             )}
@@ -120,7 +120,9 @@ const PaginatedOpportunityList = ({ opportunities, onAccept, onDecline, view, t 
           <Pagination className="mt-6">
             <PaginationContent>
               <PaginationItem>
-                <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1} />
+                <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1}>
+                    {t.pagination.previous}
+                </PaginationPrevious>
               </PaginationItem>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                 <PaginationItem key={page}>
@@ -130,7 +132,9 @@ const PaginatedOpportunityList = ({ opportunities, onAccept, onDecline, view, t 
                 </PaginationItem>
               ))}
               <PaginationItem>
-                <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages} />
+                <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages}>
+                    {t.pagination.next}
+                </PaginationNext>
               </PaginationItem>
             </PaginationContent>
           </Pagination>

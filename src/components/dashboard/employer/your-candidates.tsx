@@ -59,7 +59,9 @@ const PaginatedCandidateView = ({ candidates, view, t }: { candidates: Candidate
         <Pagination className="mt-6">
           <PaginationContent>
             <PaginationItem>
-              <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1} />
+              <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1}>
+                {t.pagination.previous}
+              </PaginationPrevious>
             </PaginationItem>
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
               <PaginationItem key={page}>
@@ -69,7 +71,9 @@ const PaginatedCandidateView = ({ candidates, view, t }: { candidates: Candidate
               </PaginationItem>
             ))}
             <PaginationItem>
-              <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages} />
+              <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages}>
+                {t.pagination.next}
+              </PaginationNext>
             </PaginationItem>
           </PaginationContent>
         </Pagination>
@@ -165,22 +169,9 @@ export function YourCandidates() {
               </div>
           </div>
 
-          <TabsContent value="all" className="mt-4">
-             <PaginatedCandidateView candidates={currentCandidates} view={view} t={t} />
-          </TabsContent>
-          <TabsContent value="new" className="mt-4">
-             <PaginatedCandidateView candidates={currentCandidates} view={view} t={t} />
-          </TabsContent>
-           <TabsContent value="review" className="mt-4">
-             <PaginatedCandidateView candidates={currentCandidates} view={view} t={t} />
-          </TabsContent>
-           <TabsContent value="hired" className="mt-4">
-             <PaginatedCandidateView candidates={currentCandidates} view={view} t={t} />
-          </TabsContent>
-           <TabsContent value="archived" className="mt-4">
-             <PaginatedCandidateView candidates={currentCandidates} view={view} t={t} />
-          </TabsContent>
-
+          <div className="mt-4">
+            <PaginatedCandidateView candidates={currentCandidates} view={view} t={t} />
+          </div>
         </CardContent>
       </Card>
     </Tabs>

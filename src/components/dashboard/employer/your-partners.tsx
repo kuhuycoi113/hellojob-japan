@@ -119,7 +119,9 @@ export function YourPartners() {
             <Pagination className="mt-6">
                 <PaginationContent>
                 <PaginationItem>
-                    <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1} />
+                    <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} aria-disabled={currentPage === 1}>
+                        {t.pagination.previous}
+                    </PaginationPrevious>
                 </PaginationItem>
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                     <PaginationItem key={page}>
@@ -129,7 +131,9 @@ export function YourPartners() {
                     </PaginationItem>
                 ))}
                 <PaginationItem>
-                    <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages} />
+                    <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} aria-disabled={currentPage === totalPages}>
+                        {t.pagination.next}
+                    </PaginationNext>
                 </PaginationItem>
                 </PaginationContent>
             </Pagination>
