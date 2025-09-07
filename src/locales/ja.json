@@ -17,7 +17,6 @@
     "settings": "設定",
     "logout": "ログアウト",
     "postJob": "求人掲載",
-    "manage": "管理",
     "x_function": "求人管理",
     "menuItems": {
       "recruiterAccount": "採用担当者アカウント",
@@ -817,6 +816,11 @@
       "visaType": "在留資格",
       "contractType": "雇用形態",
       "workingHours": "勤務時間",
-      "holidays": "休日"
+      "holidays": "休日",
+      "suitableCandidates": {
+        "title": "適合する候補者",
+        "description": "職務要件に基づき、適合する可能性のある候補者です。"
+      },
+      "invite": "応募を依頼"
   }
 }

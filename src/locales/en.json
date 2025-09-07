@@ -17,7 +17,6 @@
     "settings": "Settings",
     "logout": "Logout",
     "postJob": "Post a Job",
-    "manage": "Manage",
     "x_function": "Jobs",
     "menuItems": {
       "recruiterAccount": "Recruiter Account",
@@ -817,6 +816,11 @@
       "visaType": "Visa Type",
       "contractType": "Contract Type",
       "workingHours": "Working Hours",
-      "holidays": "Holidays"
+      "holidays": "Holidays",
+      "suitableCandidates": {
+        "title": "Suitable Candidates",
+        "description": "Based on the job requirements, here are some potentially suitable candidates."
+      },
+      "invite": "Invite to Apply"
   }
 }

@@ -10,6 +10,7 @@ import { Building, MapPin, Users, Calendar, DollarSign, Briefcase, FileText, Che
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { mockJobs, type MockJob } from '@/data/mock-jobs';
+import { SuitableCandidates } from './suitable-candidates';
 
 export function JobDetail({ jobId }: { jobId: string }) {
   const { t, language } = useLanguage();
@@ -52,12 +53,12 @@ export function JobDetail({ jobId }: { jobId: string }) {
    if (!job) return notFound();
 
   // Define properties based on type for cleaner access
-  const title = job.title || '';
-  const company = job.company || '';
+  const title = job.jobTitle || job.title || '';
+  const company = job.companyName || job.company || '';
   const location = job.location || 'Japan';
   const applicants = job.applicants || 0;
   const postedDate = job.postedDate || job.date_posted;
-  const description = job.description || 'Chưa có mô tả chi tiết.';
+  const description = job.jobDescription || job.description || 'Chưa có mô tả chi tiết.';
   const requirements = job.requirements || [];
   const benefits = job.benefits || [];
   const status = job.status || 'N/A';
@@ -77,7 +78,7 @@ export function JobDetail({ jobId }: { jobId: string }) {
             </Button>
         </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         <div className="lg:col-span-2 space-y-8">
           <Card className="shadow-lg">
             <CardHeader>
@@ -128,6 +129,7 @@ export function JobDetail({ jobId }: { jobId: string }) {
                 )}
             </CardContent>
           </Card>
+           <SuitableCandidates />
         </div>
 
         <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-24">

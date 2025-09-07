@@ -17,7 +17,6 @@
     "settings": "Cài đặt",
     "logout": "Đăng xuất",
     "postJob": "Đăng việc làm",
-    "manage": "Quản lý",
     "x_function": "Việc làm",
     "menuItems": {
       "recruiterAccount": "Tài khoản nhà tuyển dụng",
@@ -817,6 +816,11 @@
       "visaType": "Loại Visa",
       "contractType": "Loại hợp đồng",
       "workingHours": "Giờ làm việc",
-      "holidays": "Ngày nghỉ"
+      "holidays": "Ngày nghỉ",
+      "suitableCandidates": {
+        "title": "Ứng viên phù hợp",
+        "description": "Dựa trên yêu cầu công việc, đây là những ứng viên có thể phù hợp."
+      },
+      "invite": "Mời ứng tuyển"
   }
 }
