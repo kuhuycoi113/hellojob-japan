@@ -18,6 +18,7 @@
     "logout": "ログアウト",
     "postJob": "求人掲載",
     "manage": "管理",
+    "x_function": "X",
     "menuItems": {
       "recruiterAccount": "採用担当者アカウント",
       "recruiterAccountType": "アカウント{type}",
@@ -775,54 +776,6 @@
     "manual": {
       "title": "手動入力",
       "description": "詳細なフォームに記入して、リストを完全に制御します。"
-    }
-  },
-  "dashboard_employer": {
-    "jobs_list": {
-      "title": "求人管理",
-      "subtitle": "すべての求人情報を表示、編集、管理します。",
-      "post_job_button": "新しい求人を掲載",
-      "tabs": {
-        "all": "すべて",
-        "searching": "募集中",
-        "completed": "完了"
-      },
-      "table": {
-        "job_title": "職種",
-        "status": "ステータス",
-        "partners": "パートナー",
-        "applications": "応募者",
-        "date_posted": "掲載日",
-        "actions": "操作",
-        "status_searching": "募集中",
-        "no_jobs_title": "まだ求人がありません",
-        "no_jobs_description": "最初の求人を掲載して、適格な候補者を見つけましょう。",
-        "post_job_button": "求人を掲載",
-        "actions_items": {
-            "view_details": "詳細を見る",
-            "view_candidates": "候補者を見る",
-            "delete": "削除"
-        }
-      }
-    },
-     "candidates_table": {
-      "title": "候補者",
-      "view_profile": "プロフィールを見る"
-    }
-  },
-  "job_detail": {
-    "backButton": "リストに戻る",
-    "location": "勤務地",
-    "quantity": "募集人数",
-    "visaType": "在留資格",
-    "deadline": "応募締切",
-    "jobDescription": "仕事内容",
-    "requirements": "応募要件",
-    "benefits": "福利厚生",
-    "moreInfo": {
-      "title": "追加情報",
-      "content": "この協力案件を受諾する前に、応募要件と福利厚生をよくご確認ください。ご不明な点がございましたら、直接パートナーにお問い合わせください。",
-      "content_employer": "これはあなたが投稿した求人です。適切な候補者を見つけたり、求人詳細を編集したりできます。"
     }
   }
 }

@@ -18,6 +18,7 @@
     "logout": "Logout",
     "postJob": "Post a Job",
     "manage": "Manage",
+    "x_function": "X",
     "menuItems": {
       "recruiterAccount": "Recruiter Account",
       "recruiterAccountType": "{type} Account",

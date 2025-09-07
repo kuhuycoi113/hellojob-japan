@@ -88,6 +88,7 @@ export function Header() {
     { href: "/post-job-ai", label: t.header.postJobAI, icon: <Sparkles className="h-4 w-4 text-accent" /> },
     { href: "/handbook", label: t.header.handbook },
     { href: "/about", label: t.header.about },
+    { href: "#", label: t.header.x_function }
   ];
   
     const userRoles = [
