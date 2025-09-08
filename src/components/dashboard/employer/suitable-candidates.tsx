@@ -6,11 +6,17 @@ import { allCandidates } from '@/data/candidates';
 import { CandidateCard } from './candidate-card';
 import { Users } from 'lucide-react';
 
-export function SuitableCandidates() {
+interface SuitableCandidatesProps {
+    jobId: string;
+}
+
+export function SuitableCandidates({ jobId }: SuitableCandidatesProps) {
   const { t } = useLanguage();
+
   // For demonstration, we'll just take the first few candidates.
   // In a real app, this would involve a matching algorithm.
-  const suitableCandidates = allCandidates.slice(0, 6);
+  const candidateCount = jobId === 'JOB001' ? 30 : 6;
+  const suitableCandidates = allCandidates.slice(0, candidateCount);
 
   return (
     <Card className="shadow-lg">
