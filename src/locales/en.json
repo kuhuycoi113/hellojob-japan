@@ -779,93 +779,92 @@
     }
   },
    "jobsPage": {
-    "title": "Quản lý việc làm",
-    "subtitle": "Quản lý các tin tuyển dụng và cơ hội hợp tác của bạn tại đây.",
-    "postNewJob": "Đăng việc làm mới",
-    "applicants": "ứng viên",
-    "postedOn": "Đăng ngày",
-    "viewDetails": "Xem chi tiết",
+    "title": "Manage Jobs",
+    "subtitle": "Manage your job postings and partnership opportunities here.",
+    "postNewJob": "Post New Job",
+    "applicants": "applicants",
+    "postedOn": "Posted on",
+    "viewDetails": "View Details",
     "tabs": {
-      "all": "Tất cả",
-      "active": "Đang tuyển",
-      "searching": "Đang tìm kiếm",
-      "awaiting": "Chờ duyệt",
-      "completed": "Đã hoàn thành",
-      "closed": "Đã đóng"
+      "all": "All",
+      "active": "Active",
+      "searching": "Searching",
+      "awaiting": "Awaiting Approval",
+      "completed": "Completed",
+      "closed": "Closed"
     },
     "table": {
-      "jobTitle": "Chức danh",
-      "applicants": "Ứng viên",
-      "status": "Trạng thái",
-      "postedDate": "Ngày đăng",
-      "actions": "Hành động",
-      "toggleMenu": "Mở menu",
-      "viewDetails": "Xem chi tiết",
-      "edit": "Chỉnh sửa",
-      "archive": "Lưu trữ"
+      "jobTitle": "Job Title",
+      "applicants": "Applicants",
+      "status": "Status",
+      "postedDate": "Date Posted",
+      "actions": "Actions"
     }
   },
   "jobDetail": {
-      "backButton": "Quay lại danh sách",
-      "findCandidates": "Tìm ứng viên",
-      "location": "Địa điểm",
-      "applicants": "Ứng viên",
-      "postedDate": "Ngày đăng",
-      "jobDescription": "Mô tả công việc",
-      "requirements": "Yêu cầu",
-      "benefits": "Quyền lợi",
-      "jobInformation": "Thông tin công việc",
-      "salary": "Mức lương",
-      "visaType": "Loại Visa",
-      "contractType": "Loại hợp đồng",
-      "workingHours": "Giờ làm việc",
-      "holidays": "Ngày nghỉ",
+      "backButton": "Back to list",
+      "findCandidates": "Find Candidates",
+      "location": "Location",
+      "applicants": "Applicants",
+      "postedDate": "Posted Date",
+      "jobDescription": "Job Description",
+      "requirements": "Requirements",
+      "benefits": "Benefits",
+      "jobInformation": "Job Information",
+      "salary": "Salary",
+      "visaType": "Visa Type",
+      "contractType": "Contract Type",
+      "workingHours": "Working Hours",
+      "holidays": "Holidays",
       "suitableCandidates": {
-        "title": "Ứng viên phù hợp",
-        "description": "Dựa trên yêu cầu công việc, đây là những ứng viên có thể phù hợp.",
-        "loadMore": "Xem thêm {count} ứng viên khác"
+        "title": "Suitable Candidates",
+        "description": "Based on the job requirements, here are some potentially suitable candidates.",
+        "loadMore": "View {count} more candidates"
       },
-      "invite": "Mời ứng tuyển"
+      "invite": "Invite to Apply"
   },
   "unlockCandidates": {
-    "title": "Mở khóa hồ sơ ứng viên",
-    "description": "Để xem toàn bộ hồ sơ, vui lòng chọn một trong các phương thức dưới đây.",
-    "buttonText": "Mở khóa ngay",
-    "or": "HOẶC",
-    "premiumButton": "Đăng ký Premium",
-    "referButton": "Giới thiệu người dùng khác",
+    "title": "Unlock Candidate Profile",
+    "description": "To view the full profile, please choose one of the options below.",
+    "buttonText": "Unlock Now",
+    "or": "OR",
+    "premiumButton": "Sign up for Premium",
+    "referButton": "Refer another user",
     "payment": {
-      "direct": "Thanh toán trực tiếp",
-      "gateway": "Cổng khác",
-      "cardNumber": "Số thẻ",
-      "expiryDate": "Ngày hết hạn",
+      "direct": "Direct Payment",
+      "gateway": "Other Gateway",
+      "cardNumber": "Card Number",
+      "expiryDate": "Expiry Date",
       "cvc": "CVC",
-      "cardName": "Tên chủ thẻ",
-      "payButton": "Thanh toán {amount} JPY",
-      "secure": "Thanh toán được bảo mật"
+      "cardName": "Name on Card",
+      "payButton": "Pay {amount} JPY",
+      "secure": "Secure Payment"
     }
   },
     "partnershipOpportunities": {
-    "title": "Cơ hội hợp tác mới",
-    "from": "Từ: {company}",
-    "expiresIn": "Hết hạn sau",
-    "requirements": "Yêu cầu chính",
-    "accept": "Chấp nhận",
-    "decline": "Từ chối"
+    "title": "New Partnership Opportunities",
+    "from": "From: {company}",
+    "expiresIn": "Expires in",
+    "requirements": "Key Requirements",
+    "accept": "Accept",
+    "decline": "Decline",
+    "table": {
+      "opportunity": "Opportunity",
+      "company": "Company",
+      "visaType": "Visa Type",
+      "expires": "Expires",
+      "actions": "Actions"
+    }
   },
   "partnershipInfo": {
     "revenueShare": {
-      "title": "Mô hình chia sẻ doanh thu",
-      "description": "Với mỗi cơ hội được chấp nhận, đối tác sẽ nhận 70% và HelloJob nhận 30% phí dịch vụ sau khi trừ các chi phí."
+      "title": "Revenue Share Model",
+      "description": "For each accepted opportunity, the partner will receive 70% and HelloJob will receive 30% of the service fee after deducting costs."
     },
     "specialOffer": {
-      "title": "Ưu đãi đặc biệt",
-      "description": "Nâng cấp lên gói Premium để giảm phí dịch vụ xuống chỉ còn 25%!",
-      "learnMore": "Tìm hiểu thêm"
+      "title": "Special Offer",
+      "description": "Upgrade to the Premium package to reduce the service fee to just 25%!",
+      "learnMore": "Learn more"
     }
   }
 }
-
-    
-
-    

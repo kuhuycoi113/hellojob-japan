@@ -779,7 +779,7 @@
     }
   },
    "jobsPage": {
-    "title": "Việc làm",
+    "title": "Quản lý việc làm",
     "subtitle": "Quản lý các tin tuyển dụng và cơ hội hợp tác của bạn tại đây.",
     "postNewJob": "Đăng việc làm mới",
     "applicants": "ứng viên",
@@ -798,11 +798,7 @@
       "applicants": "Ứng viên",
       "status": "Trạng thái",
       "postedDate": "Ngày đăng",
-      "actions": "Hành động",
-      "toggleMenu": "Mở menu",
-      "viewDetails": "Xem chi tiết",
-      "edit": "Chỉnh sửa",
-      "archive": "Lưu trữ"
+      "actions": "Hành động"
     }
   },
   "jobDetail": {
@@ -851,7 +847,14 @@
     "expiresIn": "Hết hạn sau",
     "requirements": "Yêu cầu chính",
     "accept": "Chấp nhận",
-    "decline": "Từ chối"
+    "decline": "Từ chối",
+    "table": {
+        "opportunity": "Cơ hội",
+        "company": "Công ty",
+        "visaType": "Loại Visa",
+        "expires": "Hết hạn",
+        "actions": "Hành động"
+      }
   },
   "partnershipInfo": {
     "revenueShare": {
@@ -865,8 +868,3 @@
     }
   }
 }
-
-    
-
-    
-

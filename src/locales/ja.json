@@ -798,11 +798,7 @@
       "applicants": "応募者数",
       "status": "ステータス",
       "postedDate": "掲載日",
-      "actions": "操作",
-      "toggleMenu": "メニューを開閉",
-      "viewDetails": "詳細を見る",
-      "edit": "編集",
-      "archive": "アーカイブ"
+      "actions": "操作"
     }
   },
   "jobDetail": {
@@ -851,7 +847,14 @@
     "expiresIn": "残り時間",
     "requirements": "主な要件",
     "accept": "受託する",
-    "decline": "辞退する"
+    "decline": "辞退する",
+    "table": {
+        "opportunity": "案件",
+        "company": "企業",
+        "visaType": "在留資格",
+        "expires": "期限",
+        "actions": "操作"
+      }
   },
   "partnershipInfo": {
     "revenueShare": {
@@ -865,7 +868,3 @@
     }
   }
 }
-
-    
-
-    
