@@ -98,6 +98,14 @@ export function PartnershipOpportunities() {
     const FeeDetails = ({ opportunity }: { opportunity: Opportunity }) => {
         const feeString = opportunity.referralFee[language];
         const feeValue = parseInt(feeString.replace(/[^0-9]/g, ''), 10);
+
+        // Simulate that some companies are referred by support organizations
+        const isReferred = opportunity.id === 'OPP001' || opportunity.id === 'OPP003';
+        
+        let platformFeeRate = 0.30; // Default 30%
+        if (isReferred) {
+            platformFeeRate -= 0.05; // Reduced by 5% if referred
+        }
         
         if (isNaN(feeValue)) {
             return (
@@ -108,11 +116,11 @@ export function PartnershipOpportunities() {
             );
         }
 
-        const platformFee = feeValue * 0.3;
-        const partnerReceives = feeValue * 0.7;
+        const platformFee = feeValue * platformFeeRate;
+        const partnerReceives = feeValue * (1 - platformFeeRate);
 
         const formatCurrency = (value: number) => {
-            return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', currencyDisplay: 'code' }).format(value).replace('JPY', 'JPY');
+            return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', currencyDisplay: 'code' }).format(value).replace('JPY', ' JPY');
         };
         
         return (
@@ -126,7 +134,7 @@ export function PartnershipOpportunities() {
                     <span className="font-medium text-muted-foreground">{formatCurrency(feeValue)}</span>
                 </div>
                  <div className="flex justify-between items-baseline text-xs">
-                    <span className="text-muted-foreground">{t_opp.platformFee} (30%):</span>
+                    <span className="text-muted-foreground">{t_opp.platformFee} ({platformFeeRate * 100}%):</span>
                     <span className="font-medium text-muted-foreground">{formatCurrency(platformFee)}</span>
                 </div>
                 {opportunity.visaType.en !== 'Engineer' && (
