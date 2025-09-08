@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -45,6 +45,9 @@ import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import dynamic from 'next/dynamic';
 import { Skeleton } from './ui/skeleton';
+import { cn } from '@/lib/utils';
+import { Opportunity, opportunities as initialOpportunities } from '@/data/opportunities';
+
 
 const PartnershipOpportunities = dynamic(
   () => import('./partnership-opportunities').then(mod => mod.PartnershipOpportunities),
@@ -68,6 +71,8 @@ const statusStyles: Record<string, string> = {
   Active: 'bg-green-100 text-green-800',
   'Awaiting Approval': 'bg-yellow-100 text-yellow-800',
   Closed: 'bg-red-100 text-red-800',
+  'Searching': 'bg-blue-100 text-blue-800',
+  'Completed': 'bg-gray-100 text-gray-800'
 };
 
 const JOBS_PER_PAGE = 9;
@@ -76,18 +81,54 @@ export function JobsPage() {
   const { t, language } = useLanguage();
   const [jobs, setJobs] = useState<MockJob[]>([]);
   const isMobile = useIsMobile();
-  const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
+  const [viewMode, setViewMode] = useState<'list' | 'grid' | null>(null);
   const [activeTab, setActiveTab] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [userRole, setUserRole] = useState('union'); // 'union', 'support_org', or 'company'
+  const jobsListRef = useRef<HTMLDivElement>(null);
+  const [highlightedJobId, setHighlightedJobId] = useState<string | null>(null);
 
   useEffect(() => {
-    setJobs(mockJobs);
+    setViewMode(isMobile ? 'list' : 'grid');
+  }, [isMobile]);
+
+  const loadJobs = () => {
+    const storedJobsRaw = localStorage.getItem('postedJobs');
+    const storedJobs = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
+    const allJobs = [...storedJobs, ...mockJobs].filter(
+      (job, index, self) => index === self.findIndex(j => j.id === job.id)
+    );
+    setJobs(allJobs);
+  };
+  
+  useEffect(() => {
+    loadJobs();
+
+    const handleJobsUpdated = (event: Event) => {
+        loadJobs();
+        const customEvent = event as CustomEvent;
+        if (customEvent.detail?.jobId) {
+            setHighlightedJobId(customEvent.detail.jobId);
+            setTimeout(() => {
+                jobsListRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+            setTimeout(() => {
+                setHighlightedJobId(null);
+            }, 3000); // Highlight for 3 seconds
+        }
+    };
+
+    window.addEventListener('jobsUpdated', handleJobsUpdated);
+
+    return () => {
+      window.removeEventListener('jobsUpdated', handleJobsUpdated);
+    };
   }, []);
 
   const filteredJobs = jobs.filter((job) => {
     if (activeTab === 'all') return true;
-    return job.status.toLowerCase().replace(/\s/g, '-') === activeTab;
+    const jobStatus = (job.status || '').toLowerCase().replace(/\s/g, '-');
+    return jobStatus === activeTab;
   });
 
   const totalPages = Math.ceil(filteredJobs.length / JOBS_PER_PAGE);
@@ -105,38 +146,44 @@ export function JobsPage() {
   const TABS = [
     { value: 'all', label: t.jobsPage.tabs.all },
     { value: 'active', label: t.jobsPage.tabs.active },
+    { value: 'searching', label: t.dashboard_employer.jobs_list.tabs.searching },
     { value: 'awaiting-approval', label: t.jobsPage.tabs.awaiting },
+    { value: 'completed', label: t.dashboard_employer.jobs_list.tabs.completed },
     { value: 'closed', label: t.jobsPage.tabs.closed },
   ];
   
   const getTabCount = (tabValue: string) => {
     if (tabValue === 'all') return jobs.length;
-    return jobs.filter(j => j.status.toLowerCase().replace(/\s/g, '-') === tabValue).length;
+    return jobs.filter(j => (j.status || '').toLowerCase().replace(/\s/g, '-') === tabValue).length;
   }
 
   const JobsGridView = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {paginatedJobs.map((job) => (
+        {paginatedJobs.map((job) => {
+            const isHighlighted = job.id === highlightedJobId;
+            return (
             <Link href={`/dashboard/jobs/${job.id}`} key={job.id} className="group">
-                <Card className="flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-shadow h-full">
+                <Card className={cn("flex flex-col overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full",
+                    isHighlighted && "border-2 border-accent shadow-lg animate-pulse-once"
+                )}>
                     <div className="relative aspect-video">
                     <Image
                         src={job.image}
-                        alt={job.title[language]}
+                        alt={job.title?.[language] || ''}
                         fill
                         className="object-cover"
                         data-ai-hint={job.imageHint}
                     />
                     </div>
                     <CardHeader>
-                        <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{job.title[language]}</CardTitle>
+                        <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{job.title?.[language]}</CardTitle>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                             <Briefcase className="w-4 h-4" />
-                            <span>{job.company[language]}</span>
+                            <span>{job.company?.[language]}</span>
                         </div>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                        <Badge className={statusStyles[job.status]}>{job.status}</Badge>
+                        <Badge className={cn(statusStyles[job.status], 'bg-opacity-80')}>{job.status}</Badge>
                         <div className="flex items-center gap-4 mt-4 text-sm">
                             <div className="flex items-center gap-2">
                                 <Users className="w-4 h-4 text-muted-foreground" />
@@ -154,7 +201,7 @@ export function JobsPage() {
                     </CardFooter>
                 </Card>
             </Link>
-        ))}
+        )})}
     </div>
   );
 
@@ -171,23 +218,27 @@ export function JobsPage() {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {paginatedJobs.map((job) => (
-                    <TableRow key={job.id} className="hover:bg-muted/50 cursor-pointer" onClick={() => window.location.href = `/dashboard/jobs/${job.id}`}>
+                {paginatedJobs.map((job) => {
+                  const isHighlighted = job.id === highlightedJobId;
+                  return (
+                    <TableRow key={job.id} 
+                      className={cn("hover:bg-muted/50 cursor-pointer", isHighlighted && "bg-accent/10 animate-pulse-once")} 
+                      onClick={() => window.location.href = `/dashboard/jobs/${job.id}`}>
                         <TableCell>
                             <div className="flex items-center gap-3">
                                 <Avatar className="hidden h-10 w-10 sm:flex rounded-md">
-                                    <AvatarImage src={job.image} alt={job.title[language]} className="object-cover" />
-                                    <AvatarFallback className="rounded-md">{job.company[language].charAt(0)}</AvatarFallback>
+                                    <AvatarImage src={job.image} alt={job.title?.[language]} className="object-cover" />
+                                    <AvatarFallback className="rounded-md">{job.company?.[language]?.charAt(0)}</AvatarFallback>
                                 </Avatar>
                                 <div>
-                                    <div className="font-medium font-headline">{job.title[language]}</div>
-                                    <div className="text-sm text-muted-foreground">{job.company[language]}</div>
+                                    <div className="font-medium font-headline">{job.title?.[language]}</div>
+                                    <div className="text-sm text-muted-foreground">{job.company?.[language]}</div>
                                 </div>
                             </div>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">{job.applicants}</TableCell>
                         <TableCell className="hidden sm:table-cell">
-                            <Badge className={statusStyles[job.status]}>{job.status}</Badge>
+                            <Badge className={cn(statusStyles[job.status], 'bg-opacity-80')}>{job.status}</Badge>
                         </TableCell>
                         <TableCell className="hidden lg:table-cell">{job.postedDate}</TableCell>
                         <TableCell>
@@ -210,7 +261,7 @@ export function JobsPage() {
                             </DropdownMenu>
                         </TableCell>
                     </TableRow>
-                ))}
+                )})}
             </TableBody>
         </Table>
      </Card>
@@ -221,7 +272,7 @@ export function JobsPage() {
       { (userRole === 'union' || userRole === 'support_org') && (
         <PartnershipOpportunities />
       )}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" ref={jobsListRef}>
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold font-headline">
             {t.jobsPage.title}
@@ -230,7 +281,7 @@ export function JobsPage() {
             {t.jobsPage.subtitle}
           </p>
         </div>
-        <Button asChild size="lg">
+        <Button asChild size="lg" variant="secondary">
           <Link href="/post-job-ai">
             <PlusCircle className="mr-2 h-5 w-5" />
             {t.jobsPage.postNewJob}
@@ -252,6 +303,7 @@ export function JobsPage() {
               variant={viewMode === 'list' ? 'secondary' : 'ghost'}
               size="icon"
               onClick={() => setViewMode('list')}
+              disabled={!viewMode}
             >
               <List className="h-5 w-5" />
             </Button>
@@ -259,13 +311,18 @@ export function JobsPage() {
               variant={viewMode === 'grid' ? 'secondary' : 'ghost'}
               size="icon"
               onClick={() => setViewMode('grid')}
+              disabled={!viewMode}
             >
               <LayoutGrid className="h-5 w-5" />
             </Button>
           </div>
         </div>
         <div className="mt-4">
-            {viewMode === 'list' ? <JobsListView /> : <JobsGridView />}
+            {viewMode === 'list' ? <JobsListView /> : viewMode === 'grid' ? <JobsGridView /> : 
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {Array.from({ length: 9 }).map((_, i) => <Skeleton key={i} className="h-80 w-full" />)}
+            </div>
+            }
         </div>
       </Tabs>
       
