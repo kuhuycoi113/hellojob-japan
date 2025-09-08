@@ -91,8 +91,6 @@ export function MobileMenuSheet() {
               {t.header.menuItems.signUpForPremium}
             </Button>
             
-            <RoleSwitcher inMenu={true} />
-
             <Separator className="mb-6"/>
 
             <div className="grid grid-cols-4 gap-4 text-center">
@@ -107,6 +105,10 @@ export function MobileMenuSheet() {
                   </SheetClose>
                 ))}
             </div>
+
+            <Separator className="my-6"/>
+
+            <RoleSwitcher inMenu={true} />
         </div>
         
         <div className="p-4 border-t">

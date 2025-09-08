@@ -205,7 +205,7 @@ export function Header() {
   }
 
   const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => (
-    <div className={cn(!inMenu && "hidden lg:block w-48 ml-4")}>
+    <div className={cn(!inMenu && "hidden lg:block w-48 ml-4", inMenu && "px-2")}>
       <Label htmlFor="role-switcher" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
       <Select value={userRole} onValueChange={setUserRole}>
         <SelectTrigger id="role-switcher" className={cn("h-8", inMenu && "bg-muted")}>
@@ -312,15 +312,13 @@ export function Header() {
                       </div>
                     </Link>
                     <DropdownMenuSeparator />
-                    <div className="my-2">
-                      <RoleSwitcher inMenu={true} />
-                    </div>
-                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mb-4">
+                    
+                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 my-2">
                       <Diamond className="mr-2 h-4 w-4" />
                       {t.header.menuItems.signUpForPremium}
                     </Button>
-                    <DropdownMenuSeparator />
-                    <div className="grid grid-cols-4 gap-2 mt-4">
+
+                    <div className="grid grid-cols-4 gap-2 my-4">
                         {menuItems.map((item) => (
                             <DropdownMenuItem key={item.href} asChild className="flex-col h-20 p-2 text-center">
                               <Link href={item.href}>
@@ -329,6 +327,10 @@ export function Header() {
                               </Link>
                             </DropdownMenuItem>
                         ))}
+                    </div>
+                    <DropdownMenuSeparator />
+                    <div className="mt-2">
+                      <RoleSwitcher inMenu={true} />
                     </div>
                 </DropdownMenuContent>
               </DropdownMenu>
