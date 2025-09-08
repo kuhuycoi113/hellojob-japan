@@ -31,15 +31,15 @@ const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
   return (
     <div className={cn(inMenu ? "my-4" : "hidden")}>
       <Label htmlFor="role-switcher-mobile" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
-      <Select value={userRole} onValueChange={setUserRole}>
+      <Select value={userRole} onValueChange={(value) => setUserRole(value as any)}>
         <SelectTrigger id="role-switcher-mobile" className="h-10 bg-muted">
           <SelectValue placeholder="Select a role" />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
-          <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
-          <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
           <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
+          <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
+          <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
           <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
           <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
         </SelectContent>

@@ -71,17 +71,17 @@ const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
   const { userRole, setUserRole } = useRole();
 
   return (
-    <div className={cn(!inMenu && "hidden lg:block w-48 ml-4", inMenu && "px-2")}>
-      <Label htmlFor="role-switcher" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
-      <Select value={userRole} onValueChange={setUserRole}>
-        <SelectTrigger id="role-switcher" className={cn("h-8", inMenu && "bg-muted")}>
+    <div className={cn(inMenu ? "my-4" : "hidden")}>
+      <Label htmlFor="role-switcher-desktop" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
+      <Select value={userRole} onValueChange={(value) => setUserRole(value as any)}>
+        <SelectTrigger id="role-switcher-desktop" className="h-10 bg-muted">
           <SelectValue placeholder="Select a role" />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
-          <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
-          <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
           <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
+          <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
+          <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
           <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
           <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
         </SelectContent>
@@ -335,9 +335,7 @@ export function Header() {
                         ))}
                     </div>
                     <DropdownMenuSeparator />
-                    <div className="mt-2">
-                      <RoleSwitcher inMenu={true} />
-                    </div>
+                    <RoleSwitcher inMenu={true} />
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
