@@ -863,12 +863,16 @@
     "from": "From: {company}",
     "expiresIn": "Expires in",
     "requirements": "Key Requirements",
+    "fees": "Fee Information",
+    "referralFee": "Referral Fee",
+    "managementFee": "Management Fee",
     "accept": "Accept",
     "decline": "Decline",
     "table": {
         "opportunity": "Opportunity",
         "company": "Company",
         "visaType": "Visa Type",
+        "fees": "Fee Information",
         "expires": "Expires",
         "actions": "Actions"
       }

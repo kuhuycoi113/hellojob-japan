@@ -20,6 +20,8 @@ export type Opportunity = {
     requirements: Record<Language, string[]>;
     benefits: Record<Language, string[]>;
     expires: string;
+    referralFee: Record<Language, string>;
+    managementFee: Record<Language, string>;
 };
 
 // Set expiry time to 15 minutes from now for all opportunities
@@ -65,6 +67,8 @@ export const opportunities: Opportunity[] = [
             { vi: 'Hỗ trợ nhà ở', en: 'Housing support', ja: '住宅手当' }
         ],
         expires: expiryDate.toISOString(),
+        referralFee: { vi: '80,000 JPY/người', en: '80,000 JPY/person', ja: '80,000円/人' },
+        managementFee: { vi: '30,000 JPY/người/tháng', en: '30,000 JPY/person/month', ja: '30,000円/人/月' },
     },
     {
         id: 'OPP002',
@@ -104,6 +108,8 @@ export const opportunities: Opportunity[] = [
             { vi: 'Đào tạo tại chỗ', en: 'On-the-job training', ja: 'OJT研修あり' }
         ],
         expires: expiryDate.toISOString(),
+        referralFee: { vi: '75,000 JPY/người', en: '75,000 JPY/person', ja: '75,000円/人' },
+        managementFee: { vi: '25,000 JPY/người/tháng', en: '25,000 JPY/person/month', ja: '25,000円/人/月' },
     },
     {
         id: 'OPP003',
@@ -143,6 +149,8 @@ export const opportunities: Opportunity[] = [
             { vi: 'Hỗ trợ đi lại', en: 'Transportation support', ja: '交通費支給' }
         ],
         expires: expiryDate.toISOString(),
+        referralFee: { vi: '90,000 JPY/người', en: '90,000 JPY/person', ja: '90,000円/人' },
+        managementFee: { vi: '35,000 JPY/người/tháng', en: '35,000 JPY/person/month', ja: '35,000円/人/月' },
     },
     {
         id: 'OPP004',
@@ -174,6 +182,8 @@ export const opportunities: Opportunity[] = [
             { vi: 'Bảo hiểm lao động', en: 'Labor insurance', ja: '労働保険' }
         ],
         expires: expiryDate.toISOString(),
+        referralFee: { vi: '70,000 JPY/người', en: '70,000 JPY/person', ja: '70,000円/人' },
+        managementFee: { vi: '25,000 JPY/người/tháng', en: '25,000 JPY/person/month', ja: '25,000円/人/月' },
     },
     {
         id: 'OPP005',
@@ -204,6 +214,8 @@ export const opportunities: Opportunity[] = [
             { vi: 'Cung cấp sản phẩm nông sản của trang trại', en: 'Provided with farm products', ja: '自社農産物の支給あり' }
         ],
         expires: expiryDate.toISOString(),
+        referralFee: { vi: '70,000 JPY/người', en: '70,000 JPY/person', ja: '70,000円/人' },
+        managementFee: { vi: '20,000 JPY/người/tháng', en: '20,000 JPY/person/month', ja: '20,000円/人/月' },
     },
     {
         id: 'OPP006',
@@ -234,6 +246,8 @@ export const opportunities: Opportunity[] = [
             { vi: 'Cấp phát đồng phục', en: 'Uniform provided', ja: '制服貸与' }
         ],
         expires: expiryDate.toISOString(),
+        referralFee: { vi: '65,000 JPY/người', en: '65,000 JPY/person', ja: '65,000円/人' },
+        managementFee: { vi: '20,000 JPY/người/tháng', en: '20,000 JPY/person/month', ja: '20,000円/人/月' },
     },
     {
         id: 'OPP007',
@@ -264,6 +278,8 @@ export const opportunities: Opportunity[] = [
             { vi: 'Môi trường làm việc quốc tế', en: 'International working environment', ja: '国際的な職場環境' }
         ],
         expires: expiryDate.toISOString(),
+        referralFee: { vi: '100,000 JPY/người', en: '100,000 JPY/person', ja: '100,000円/人' },
+        managementFee: { vi: '40,000 JPY/người/tháng', en: '40,000 JPY/person/month', ja: '40,000円/人/月' },
     },
     {
         id: 'OPP008',
@@ -294,5 +310,7 @@ export const opportunities: Opportunity[] = [
             { vi: 'Trợ cấp ăn trưa', en: 'Lunch allowance', ja: '昼食手当あり' }
         ],
         expires: expiryDate.toISOString(),
+        referralFee: { vi: '70,000 JPY/người', en: '70,000 JPY/person', ja: '70,000円/人' },
+        managementFee: { vi: '25,000 JPY/người/tháng', en: '25,000 JPY/person/month', ja: '25,000円/人/月' },
     }
 ];

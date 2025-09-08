@@ -6,12 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { useLanguage } from '@/contexts/language-context';
 import { opportunities as initialOpportunities, type Opportunity } from '@/data/opportunities';
-import { CheckCircle, XCircle, List, LayoutGrid, MoreHorizontal } from 'lucide-react';
+import { CheckCircle, XCircle, List, LayoutGrid, MoreHorizontal, HandCoins, FileText } from 'lucide-react';
 import { Badge } from './ui/badge';
 import type { MockJob } from '@/data/mock-jobs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
 import { cn } from '@/lib/utils';
+import { Separator } from './ui/separator';
 
 export function PartnershipOpportunities() {
     const { t, language } = useLanguage();
@@ -115,10 +116,18 @@ export function PartnershipOpportunities() {
                                         <CountdownTimer expiryTimestamp={new Date(opp.expires).getTime()} />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold mb-2">{t_opp.requirements}</h4>
+                                        <h4 className="font-semibold mb-2 flex items-center gap-2"><FileText className="w-4 h-4 text-muted-foreground" /> {t_opp.requirements}</h4>
                                         <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                                             {opp.requirements.map((req, i) => <li key={i}>{req[language]}</li>)}
                                         </ul>
+                                    </div>
+                                    <Separator />
+                                     <div>
+                                        <h4 className="font-semibold mb-2 flex items-center gap-2"><HandCoins className="w-4 h-4 text-muted-foreground" /> {t_opp.fees}</h4>
+                                        <div className="space-y-1 text-muted-foreground">
+                                            <div className="flex justify-between"><span>{t_opp.referralFee}:</span> <span className="font-medium text-foreground">{opp.referralFee[language]}</span></div>
+                                            <div className="flex justify-between"><span>{t_opp.managementFee}:</span> <span className="font-medium text-foreground">{opp.managementFee[language]}</span></div>
+                                        </div>
                                     </div>
                                 </CardContent>
                                     <CardFooter className="flex gap-2">
@@ -146,11 +155,11 @@ export function PartnershipOpportunities() {
             <Table>
                 <TableHeader>
                     <TableRow>
-                        <TableHead>{t.partnershipOpportunities.table.opportunity}</TableHead>
-                        <TableHead className="hidden md:table-cell">{t.partnershipOpportunities.table.company}</TableHead>
-                        <TableHead className="hidden sm:table-cell">{t.partnershipOpportunities.table.visaType}</TableHead>
-                        <TableHead className="text-right">{t.partnershipOpportunities.table.expires}</TableHead>
-                        <TableHead><span className="sr-only">{t.partnershipOpportunities.table.actions}</span></TableHead>
+                        <TableHead>{t_opp.table.opportunity}</TableHead>
+                        <TableHead className="hidden lg:table-cell">{t_opp.table.company}</TableHead>
+                        <TableHead className="hidden md:table-cell">{t_opp.table.fees}</TableHead>
+                        <TableHead className="text-right">{t_opp.table.expires}</TableHead>
+                        <TableHead><span className="sr-only">{t_opp.table.actions}</span></TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -158,10 +167,12 @@ export function PartnershipOpportunities() {
                         <TableRow key={opp.id}>
                             <TableCell>
                                 <div className="font-medium font-headline">{opp.title[language]}</div>
+                                <Badge variant="secondary" className="bg-primary/20 text-primary-foreground font-normal mt-1">{opp.visaType[language]}</Badge>
                             </TableCell>
-                            <TableCell className="hidden md:table-cell">{opp.company[language]}</TableCell>
-                            <TableCell className="hidden sm:table-cell">
-                                <Badge variant="secondary" className="bg-primary/20 text-primary-foreground">{opp.visaType[language]}</Badge>
+                             <TableCell className="hidden lg:table-cell">{opp.company[language]}</TableCell>
+                            <TableCell className="hidden md:table-cell text-xs">
+                                <div>{t_opp.referralFee}: {opp.referralFee[language]}</div>
+                                <div>{t_opp.managementFee}: {opp.managementFee[language]}</div>
                             </TableCell>
                             <TableCell className="text-right">
                                 <CountdownTimer expiryTimestamp={new Date(opp.expires).getTime()} />

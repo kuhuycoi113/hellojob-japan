@@ -684,8 +684,8 @@
           "type": "article"
         },
         {
-          "title": "日本での1ヶ月の生活費はいくら？",
-          "category": "日本での生活",
+          "title": "How Much is the Cost of Living in Japan per Month?",
+          "category": "Life in Japan",
           "image": "https://picsum.photos/400/400?random=3",
           "type": "article"
         }
@@ -863,12 +863,16 @@
     "from": "依頼元: {company}",
     "expiresIn": "残り時間",
     "requirements": "主な要件",
+    "fees": "手数料情報",
+    "referralFee": "紹介手数料",
+    "managementFee": "管理手数料",
     "accept": "受託する",
     "decline": "辞退する",
     "table": {
         "opportunity": "案件",
         "company": "企業",
         "visaType": "在留資格",
+        "fees": "手数料情報",
         "expires": "期限",
         "actions": "操作"
       }

@@ -863,12 +863,16 @@
     "from": "Từ: {company}",
     "expiresIn": "Hết hạn sau",
     "requirements": "Yêu cầu chính",
+    "fees": "Thông tin phí",
+    "referralFee": "Phí giới thiệu",
+    "managementFee": "Phí quản lý",
     "accept": "Chấp nhận",
     "decline": "Từ chối",
     "table": {
         "opportunity": "Cơ hội",
         "company": "Công ty",
         "visaType": "Loại Visa",
+        "fees": "Thông tin phí",
         "expires": "Hết hạn",
         "actions": "Hành động"
       }
