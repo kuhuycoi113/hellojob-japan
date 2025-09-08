@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -129,10 +130,12 @@ export function PartnershipOpportunities() {
                                                 <span className="text-muted-foreground">{t_opp.referralFee}:</span>
                                                 <span className="font-bold text-lg text-primary">{opp.referralFee[language]}</span>
                                             </div>
-                                            <div className="flex justify-between items-baseline">
-                                                <span className="text-muted-foreground">{t_opp.managementFee}:</span>
-                                                <span className="font-medium text-foreground">{opp.managementFee[language]}</span>
-                                            </div>
+                                            {opp.visaType.en !== 'Engineer' && (
+                                              <div className="flex justify-between items-baseline">
+                                                  <span className="text-muted-foreground">{t_opp.managementFee}:</span>
+                                                  <span className="font-medium text-foreground">{opp.managementFee[language]}</span>
+                                              </div>
+                                            )}
                                         </div>
                                     </div>
                                 </CardContent>
@@ -181,10 +184,12 @@ export function PartnershipOpportunities() {
                                     <span>{t_opp.referralFee}:</span>
                                     <span className="font-semibold text-primary ml-1">{opp.referralFee[language]}</span>
                                 </div>
-                                <div>
-                                    <span>{t_opp.managementFee}:</span>
-                                    <span className="font-medium ml-1">{opp.managementFee[language]}</span>
-                                </div>
+                                {opp.visaType.en !== 'Engineer' && (
+                                  <div>
+                                      <span>{t_opp.managementFee}:</span>
+                                      <span className="font-medium ml-1">{opp.managementFee[language]}</span>
+                                  </div>
+                                )}
                             </TableCell>
                             <TableCell className="text-right">
                                 <CountdownTimer expiryTimestamp={new Date(opp.expires).getTime()} />
