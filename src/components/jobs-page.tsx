@@ -42,13 +42,11 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/language-context';
-import { useIsMobile } from '@/hooks/use-mobile';
 import { mockJobs, type MockJob } from '@/data/mock-jobs';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Skeleton } from './ui/skeleton';
 import { cn } from '@/lib/utils';
-import { Opportunity, opportunities as initialOpportunities } from '@/data/opportunities';
 import { PartnershipOpportunities } from './partnership-opportunities';
 
 
@@ -104,7 +102,7 @@ export function JobsPage() {
 
    useEffect(() => {
     // Only set viewMode on client-side to avoid hydration mismatch
-    setViewMode(window.innerWidth < 768 ? 'list' : 'grid');
+    setViewMode(window.innerWidth < 768 ? 'grid' : 'grid');
   }, []);
 
   const loadJobs = () => {
@@ -129,7 +127,7 @@ export function JobsPage() {
             }, 100);
             setTimeout(() => {
                 setHighlightedJobId(null);
-            }, 3000); // Highlight for 3 seconds
+            }, 5000); // Highlight for 5 seconds
         }
     };
 
@@ -173,7 +171,7 @@ export function JobsPage() {
   }
   
   const getTranslatedStatus = (status: string) => {
-    const key = status.toLowerCase().replace(/\s/g, '-') as keyof typeof t.jobsPage.tabs;
+    const key = (status || '').toLowerCase().replace(/\s/g, '-') as keyof typeof t.jobsPage.tabs;
     return t.jobsPage.tabs[key] || status;
   }
 
@@ -343,7 +341,7 @@ export function JobsPage() {
         <div className="mt-4">
             {viewMode === 'list' ? <JobsListView /> : viewMode === 'grid' ? <JobsGridView /> : 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Array.from({ length: 9 }).map((_, i) => <Skeleton key={i} className="h-80 w-full" />)}
+                {Array.from({ length: 9 }).map((_, i) => <Skeleton key={i} className="h-[420px] w-full" />)}
             </div>
             }
         </div>
@@ -389,6 +387,3 @@ export function JobsPage() {
     </div>
   );
 }
-
-    
-    
