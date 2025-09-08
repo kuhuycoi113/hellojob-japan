@@ -859,7 +859,7 @@
       "secure": "Thanh toán được bảo mật"
     }
   },
-  "partnershipOpportunities": {
+    "partnershipOpportunities": {
     "title": "Cơ hội hợp tác mới",
     "from": "Từ: {company}",
     "expiresIn": "Hết hạn sau",
@@ -873,13 +873,13 @@
     "decline": "Từ chối",
     "referredByYou": "Do bạn giới thiệu",
     "table": {
-      "opportunity": "Cơ hội",
-      "company": "Công ty",
-      "visaType": "Loại Visa",
-      "fees": "Thông tin phí",
-      "expires": "Hết hạn",
-      "actions": "Hành động"
-    }
+        "opportunity": "Cơ hội",
+        "company": "Công ty",
+        "visaType": "Loại Visa",
+        "fees": "Thông tin phí",
+        "expires": "Hết hạn",
+        "actions": "Hành động"
+      }
   },
   "partnershipInfo": {
     "revenueShare": {

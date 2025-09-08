@@ -86,8 +86,8 @@ function PartnershipInfo() {
                  <div className="flex-grow">
                     <h3 className="font-bold text-green-800">{t_info.specialOffer.title}</h3>
                     <p className="text-sm text-green-700 mb-2">{t_info.specialOffer.description}</p>
-                    <p className="text-sm text-green-700 font-semibold">{t_info.systemPartnerOffer.description}</p>
-                    <p className="text-sm text-green-700 font-semibold mt-1">{t_info.supportOrgReferral.description}</p>
+                    <p className="text-sm text-green-700 font-semibold">{t.partnershipInfo.systemPartnerOffer.description}</p>
+                    <p className="text-sm text-green-700 font-semibold mt-1">{t.partnershipInfo.supportOrgReferral.description}</p>
                  </div>
                  <Button variant="link" className="p-0 text-green-800 self-end">
                     {t_info.specialOffer.learnMore} <ArrowRight className="w-4 h-4 ml-1" />
@@ -220,11 +220,18 @@ export function JobsPage() {
                         </div>
                     </CardContent>
                     <CardFooter className="border-t pt-4">
-                        <div className="w-full flex justify-between items-center">
+                        <div className="w-full flex justify-between items-center gap-2">
                             <span className="text-xs text-muted-foreground">{t.jobsPage.postedOn} {job.postedDate}</span>
-                            <Button variant="outline" size="sm" asChild>
-                                <div className="group-hover:text-primary transition-colors">{t.jobsPage.viewDetails}</div>
-                            </Button>
+                             <div className="flex gap-2">
+                                {userRole === 'support_org' && (
+                                    <Button variant="secondary" size="sm" onClick={(e) => e.preventDefault()}>
+                                        {t.jobsPage.inviteSendingCompany}
+                                    </Button>
+                                )}
+                                <Button variant="outline" size="sm">
+                                    <span className="group-hover:text-primary transition-colors">{t.jobsPage.viewDetails}</span>
+                                </Button>
+                            </div>
                         </div>
                     </CardFooter>
                 </Card>
@@ -297,23 +304,22 @@ export function JobsPage() {
 
   return (
     <div className="space-y-6">
-      { (userRole === 'union' || userRole === 'support_org') && !isGuest && (
-        <>
-          <PartnershipOpportunities />
-          <PartnershipInfo />
-        </>
-      )}
+        { (userRole === 'union' || userRole === 'support_org') && !isGuest && (
+            <>
+            <PartnershipOpportunities />
+            <PartnershipInfo />
+            </>
+        )}
 
-      {isGuest && (
-          <Card className="bg-blue-50 border-blue-200">
-              <CardContent className="p-4 flex items-center gap-4">
-                  <Info className="w-6 h-6 text-blue-600 flex-shrink-0"/>
-                  <p className="text-sm text-blue-800">{t.jobsPage.guestCta}</p>
-                   <Button>{t.cta.postJob}</Button>
-              </CardContent>
-          </Card>
-      )}
-
+        {isGuest && (
+            <Card className="bg-blue-50 border-blue-200">
+                <CardContent className="p-4 flex items-center gap-4">
+                    <Info className="w-6 h-6 text-blue-600 flex-shrink-0"/>
+                    <p className="text-sm text-blue-800">{t.jobsPage.guestCta}</p>
+                    <Button>{t.cta.postJob}</Button>
+                </CardContent>
+            </Card>
+        )}
       <div className="space-y-4" ref={jobsListRef}>
         <div className="mb-4">
             <h1 className="text-2xl sm:text-3xl font-bold font-headline">
