@@ -13,15 +13,18 @@ interface SuitableCandidatesProps {
 }
 
 const FREE_DISPLAY_COUNT = 3;
+const INITIAL_DISPLAY_COUNT = 8;
+
 
 export function SuitableCandidates({ jobId }: SuitableCandidatesProps) {
   const { t } = useLanguage();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const candidateCount = jobId === 'JOB001' ? 30 : 6;
   const suitableCandidates = allCandidates.slice(0, candidateCount);
 
-  const freeCandidates = suitableCandidates.slice(0, FREE_DISPLAY_COUNT);
-  const lockedCandidates = suitableCandidates.slice(FREE_DISPLAY_COUNT);
+  const displayedCandidates = isExpanded ? suitableCandidates : suitableCandidates.slice(0, INITIAL_DISPLAY_COUNT);
+  const remainingCount = suitableCandidates.length - displayedCandidates.length;
   
   return (
     <Card className="shadow-lg">
@@ -36,14 +39,21 @@ export function SuitableCandidates({ jobId }: SuitableCandidatesProps) {
         </CardHeader>
         <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {freeCandidates.map(candidate => (
-                    <CandidateCard key={candidate.id} candidate={candidate} />
-                ))}
-
-                {lockedCandidates.map(candidate => (
-                    <CandidateCard key={candidate.id} candidate={candidate} isLocked={true} />
+                {displayedCandidates.map((candidate, index) => (
+                    <CandidateCard 
+                        key={candidate.id} 
+                        candidate={candidate} 
+                        isLocked={index >= FREE_DISPLAY_COUNT}
+                    />
                 ))}
             </div>
+            {!isExpanded && remainingCount > 0 && (
+                 <div className="text-center mt-6">
+                    <Button variant="outline" onClick={() => setIsExpanded(true)}>
+                       {t.jobDetail.suitableCandidates.loadMore.replace('{count}', remainingCount.toString())}
+                    </Button>
+                </div>
+            )}
         </CardContent>
     </Card>
   )
