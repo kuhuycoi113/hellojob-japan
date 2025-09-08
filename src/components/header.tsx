@@ -23,6 +23,8 @@ import { useState } from 'react';
 import { Building, Handshake, Users } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useChat } from '@/contexts/chat-context';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { Label } from './ui/label';
 
 
 const VietnamFlag = () => (
@@ -205,13 +207,13 @@ export function Header() {
     <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
       <header className="fixed md:sticky top-0 z-50 w-full border-b bg-white">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-10">
+          <div className="flex items-center gap-4">
             <Link href="/">
               <Logo />
             </Link>
           </div>
 
-          <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-sm font-medium">
+          <nav className="hidden md:flex flex-1 justify-center items-center gap-6 text-sm font-medium">
             {navLinks.map(link => (
               <Link
                 key={link.href + link.label}

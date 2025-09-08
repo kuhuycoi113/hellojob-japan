@@ -303,22 +303,6 @@ export function JobsPage() {
           </p>
         </div>
         <div className="flex gap-4 items-center">
-            <div className="w-48">
-              <Label htmlFor="role-switcher" className="text-xs font-medium text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
-              <Select value={userRole} onValueChange={setUserRole}>
-                <SelectTrigger id="role-switcher" className="h-9">
-                  <SelectValue placeholder="Select role" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
-                  <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
-                  <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
-                  <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
-                  <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
-                  <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
             {!isGuest && (
               <Button asChild size="lg" variant="accent">
                 <Link href="/post-job-ai">
