@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useLanguage } from '@/contexts/language-context';
 import { allCandidates } from '@/data/candidates';
 import { CandidateCard } from './candidate-card';
-import { Users, ChevronDown } from 'lucide-react';
+import { Users, Lock } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -12,20 +12,17 @@ interface SuitableCandidatesProps {
     jobId: string;
 }
 
-const INITIAL_DISPLAY_COUNT = 6;
+const FREE_DISPLAY_COUNT = 3;
 
 export function SuitableCandidates({ jobId }: SuitableCandidatesProps) {
   const { t } = useLanguage();
-  const [showAll, setShowAll] = useState(false);
 
-  // For demonstration, we'll just take the a slice of candidates.
-  // In a real app, this would involve a matching algorithm.
   const candidateCount = jobId === 'JOB001' ? 30 : 6;
   const suitableCandidates = allCandidates.slice(0, candidateCount);
 
-  const candidatesToShow = showAll ? suitableCandidates : suitableCandidates.slice(0, INITIAL_DISPLAY_COUNT);
-  const remainingCount = suitableCandidates.length - candidatesToShow.length;
-
+  const freeCandidates = suitableCandidates.slice(0, FREE_DISPLAY_COUNT);
+  const lockedCandidates = suitableCandidates.slice(FREE_DISPLAY_COUNT);
+  
   return (
     <Card className="shadow-lg">
         <CardHeader>
@@ -39,19 +36,26 @@ export function SuitableCandidates({ jobId }: SuitableCandidatesProps) {
         </CardHeader>
         <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {candidatesToShow.map(candidate => (
+                {freeCandidates.map(candidate => (
                     <CandidateCard key={candidate.id} candidate={candidate} />
                 ))}
-            </div>
 
-             {!showAll && remainingCount > 0 && (
-                <div className="text-center mt-6">
-                    <Button variant="outline" onClick={() => setShowAll(true)}>
-                        <ChevronDown className="mr-2 h-4 w-4" />
-                        {t.jobDetail.suitableCandidates.loadMore.replace('{count}', remainingCount.toString())}
-                    </Button>
-                </div>
-            )}
+                {lockedCandidates.length > 0 && (
+                    <div className="relative md:col-span-2">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 blur-sm pointer-events-none">
+                            {lockedCandidates.slice(0, 4).map(candidate => (
+                                <CandidateCard key={candidate.id} candidate={candidate} />
+                            ))}
+                        </div>
+                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 rounded-lg">
+                            <Lock className="w-12 h-12 text-gray-700 mb-4" />
+                            <h4 className="text-lg font-bold text-gray-800">{t.unlockCandidates.title}</h4>
+                            <p className="text-muted-foreground mb-4">{t.unlockCandidates.description.replace('{count}', (candidateCount - FREE_DISPLAY_COUNT).toString())}</p>
+                            <Button size="lg">{t.unlockCandidates.buttonText}</Button>
+                        </div>
+                    </div>
+                )}
+            </div>
         </CardContent>
     </Card>
   )

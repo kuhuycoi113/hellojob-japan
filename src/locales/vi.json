@@ -823,5 +823,10 @@
         "loadMore": "Xem thêm {count} ứng viên khác"
       },
       "invite": "Mời ứng tuyển"
+  },
+  "unlockCandidates": {
+    "title": "Mở khóa để xem thêm",
+    "description": "Xem thêm {count} ứng viên khác bằng cách nâng cấp tài khoản của bạn.",
+    "buttonText": "Mở khóa ngay"
   }
 }

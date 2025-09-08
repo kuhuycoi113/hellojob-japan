@@ -823,5 +823,10 @@
         "loadMore": "さらに{count}名の候補者を見る"
       },
       "invite": "応募を依頼"
+  },
+  "unlockCandidates": {
+    "title": "ロック解除して続きを見る",
+    "description": "アカウントをアップグレードして、さらに{count}人の候補者を表示します。",
+    "buttonText": "今すぐロック解除"
   }
 }

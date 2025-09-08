@@ -823,5 +823,10 @@
         "loadMore": "Load {count} more candidates"
       },
       "invite": "Invite to Apply"
+  },
+  "unlockCandidates": {
+    "title": "Unlock to see more",
+    "description": "See {count} more candidates by upgrading your account.",
+    "buttonText": "Unlock Now"
   }
 }
