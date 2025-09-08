@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -40,11 +39,11 @@ export function CandidateCard({ candidate }: CandidateCardProps) {
             {candidate.specialty[language]}
           </p>
           <div className="flex items-center gap-2 pt-2">
-             <Button size="sm" variant="outline">
+             <Button size="xs" variant="outline">
                 <Eye className="w-4 h-4 mr-2" />
                 {t.common.viewProfile}
             </Button>
-             <Button size="sm">
+             <Button size="xs">
                 <UserCheck className="w-4 h-4 mr-2" />
                 {t.jobDetail.invite}
             </Button>
