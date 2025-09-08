@@ -1,403 +1,214 @@
 // This is a new file.
+import type { Language } from "@/locales/translations";
+
 export type MockJob = {
   id: string;
-  title: string;
-  company: string;
+  title: Record<Language, string>;
+  company: Record<Language, string>;
   applicants: number;
   status: 'Active' | 'Awaiting Approval' | 'Closed';
   postedDate: string;
   image: string;
   imageHint: string;
-  location: string;
-  visaType: string;
-  salary: string;
-  contractType: string;
-  workingHours: string;
-  holidays: string;
-  description: string;
-  requirements: string[];
-  benefits: string[];
+  location: Record<Language, string>;
+  visaType: Record<Language, string>;
+  salary: Record<Language, string>;
+  contractType: Record<Language, string>;
+  workingHours: Record<Language, string>;
+  holidays: Record<Language, string>;
+  description: Record<Language, string>;
+  requirements: Record<Language, string[]>;
+  benefits: Record<Language, string[]>;
 };
 
 export const mockJobs: MockJob[] = [
   {
     id: 'JOB001',
-    title: 'Food Processing Staff',
-    company: 'Sasaki Foods Co., Ltd.',
+    title: {
+      vi: 'Nhân viên Chế biến Thực phẩm',
+      en: 'Food Processing Staff',
+      ja: '食品加工スタッフ'
+    },
+    company: {
+      vi: 'Công ty TNHH Thực phẩm Sasaki',
+      en: 'Sasaki Foods Co., Ltd.',
+      ja: '佐々木食品株式会社'
+    },
     applicants: 12,
     status: 'Active',
     postedDate: '2024-05-20',
     image: 'https://picsum.photos/400/225?random=1',
     imageHint: 'food factory',
-    location: 'Aichi Prefecture',
-    visaType: 'Specified Skilled Worker (i)',
-    salary: '¥180,000 - ¥220,000/month',
-    contractType: 'Full-time',
-    workingHours: '08:00 - 17:00 (8 hours)',
-    holidays: 'Weekends and national holidays',
-    description: 'Responsible for processing and packaging food products in a clean and safe factory environment. This includes operating machinery, quality checking, and maintaining hygiene standards.',
-    requirements: ['Experience in food industry preferred', 'Basic Japanese communication skills (N4 level)', 'Ability to work in a team', 'Good physical health'],
-    benefits: ['Social insurance provided', 'Overtime pay available', 'Housing support available', 'Annual bonus based on performance']
+    location: {
+      vi: 'Tỉnh Aichi',
+      en: 'Aichi Prefecture',
+      ja: '愛知県'
+    },
+    visaType: {
+      vi: 'Kỹ năng đặc định (i)',
+      en: 'Specified Skilled Worker (i)',
+      ja: '特定技能1号'
+    },
+    salary: {
+      vi: '180.000 - 220.000 JPY/tháng',
+      en: '¥180,000 - ¥220,000/month',
+      ja: '月給18万～22万円'
+    },
+    contractType: {
+      vi: 'Toàn thời gian',
+      en: 'Full-time',
+      ja: '正社員'
+    },
+    workingHours: {
+      vi: '08:00 - 17:00 (8 tiếng)',
+      en: '08:00 - 17:00 (8 hours)',
+      ja: '08:00～17:00（実働8時間）'
+    },
+    holidays: {
+      vi: 'Cuối tuần và ngày lễ quốc gia',
+      en: 'Weekends and national holidays',
+      ja: '土日祝'
+    },
+    description: {
+      vi: 'Chịu trách nhiệm chế biến và đóng gói sản phẩm thực phẩm trong môi trường nhà máy sạch sẽ và an toàn. Công việc bao gồm vận hành máy móc, kiểm tra chất lượng và duy trì các tiêu chuẩn vệ sinh.',
+      en: 'Responsible for processing and packaging food products in a clean and safe factory environment. This includes operating machinery, quality checking, and maintaining hygiene standards.',
+      ja: '清潔で安全な工場環境で食品の加工および包装を担当します。機械の操作、品質チェック、衛生基準の維持などが含まれます。'
+    },
+    requirements: {
+      vi: ['Ưu tiên có kinh nghiệm trong ngành thực phẩm', 'Kỹ năng giao tiếp tiếng Nhật cơ bản (trình độ N4)', 'Có khả năng làm việc nhóm', 'Sức khỏe tốt'],
+      en: ['Experience in food industry preferred', 'Basic Japanese communication skills (N4 level)', 'Ability to work in a team', 'Good physical health'],
+      ja: ['食品業界での経験者優遇', '基本的な日本語コミュニケーション能力（N4レベル）', 'チームで働く能力', '良好な健康状態']
+    },
+    benefits: {
+      vi: ['Cung cấp bảo hiểm xã hội', 'Có trả lương làm thêm giờ', 'Hỗ trợ nhà ở', 'Thưởng hàng năm dựa trên hiệu suất'],
+      en: ['Social insurance provided', 'Overtime pay available', 'Housing support available', 'Annual bonus based on performance'],
+      ja: ['社会保険完備', '残業代支給', '住宅支援あり', '業績に応じた年次賞与']
+    }
   },
   {
     id: 'JOB002',
-    title: 'Construction Welder',
-    company: 'Takahashi Construction',
+    title: {
+      vi: 'Thợ hàn xây dựng',
+      en: 'Construction Welder',
+      ja: '建設溶接工'
+    },
+    company: {
+      vi: 'Công ty Xây dựng Takahashi',
+      en: 'Takahashi Construction',
+      ja: '高橋建設'
+    },
     applicants: 5,
     status: 'Active',
     postedDate: '2024-05-18',
     image: 'https://picsum.photos/400/225?random=2',
     imageHint: 'welder construction',
-    location: 'Tokyo',
-    visaType: 'Technical Intern Trainee',
-    salary: '¥170,000/month',
-    contractType: '3-Year Internship',
-    workingHours: '08:00 - 17:30',
-    holidays: 'Sundays, 2 Saturdays per month',
-    description: 'Perform welding duties on various construction sites. Responsibilities include interpreting blueprints, setting up welding equipment, and ensuring all welds meet safety and quality standards.',
-    requirements: ['Welding certification or experience', 'Must be under 30 years old', 'Eager to learn new skills'],
-    benefits: ['Training program provided', 'All necessary equipment and safety gear provided', 'Dormitory available']
+    location: {
+      vi: 'Tokyo',
+      en: 'Tokyo',
+      ja: '東京'
+    },
+    visaType: {
+      vi: 'Thực tập sinh kỹ năng',
+      en: 'Technical Intern Trainee',
+      ja: '技能実習生'
+    },
+    salary: {
+      vi: '170.000 JPY/tháng',
+      en: '¥170,000/month',
+      ja: '月給17万円'
+    },
+    contractType: {
+      vi: 'Thực tập 3 năm',
+      en: '3-Year Internship',
+      ja: '3年間の実習'
+    },
+    workingHours: {
+      vi: '08:00 - 17:30',
+      en: '08:00 - 17:30',
+      ja: '08:00～17:30'
+    },
+    holidays: {
+      vi: 'Chủ nhật, 2 ngày thứ Bảy mỗi tháng',
+      en: 'Sundays, 2 Saturdays per month',
+      ja: '日曜、月2回土曜'
+    },
+    description: {
+      vi: 'Thực hiện các công việc hàn tại các công trường xây dựng khác nhau. Trách nhiệm bao gồm đọc bản vẽ, lắp đặt thiết bị hàn và đảm bảo tất cả các mối hàn đều đạt tiêu chuẩn an toàn và chất lượng.',
+      en: 'Perform welding duties on various construction sites. Responsibilities include interpreting blueprints, setting up welding equipment, and ensuring all welds meet safety and quality standards.',
+      ja: '様々な建設現場で溶接業務を行います。図面の解釈、溶接設備の設置、すべての溶接が安全性と品質基準を満たしていることの確認などが含まれます。'
+    },
+    requirements: {
+      vi: ['Có chứng chỉ hoặc kinh nghiệm hàn', 'Dưới 30 tuổi', 'Ham học hỏi kỹ năng mới'],
+      en: ['Welding certification or experience', 'Must be under 30 years old', 'Eager to learn new skills'],
+      ja: ['溶接資格または経験', '30歳未満であること', '新しいスキルを学ぶ意欲があること']
+    },
+    benefits: {
+      vi: ['Cung cấp chương trình đào tạo', 'Cung cấp tất cả các thiết bị và đồ bảo hộ cần thiết', 'Có ký túc xá'],
+      en: ['Training program provided', 'All necessary equipment and safety gear provided', 'Dormitory available'],
+      ja: ['研修プログラム提供', '必要なすべての機器と安全具を提供', '寮あり']
+    }
   },
   {
     id: 'JOB003',
-    title: 'Elderly Caregiver',
-    company: 'Sakura Nursing Home',
+    title: {
+      vi: 'Hộ lý chăm sóc người cao tuổi',
+      en: 'Elderly Caregiver',
+      ja: '高齢者介護士'
+    },
+    company: {
+      vi: 'Viện dưỡng lão Sakura',
+      en: 'Sakura Nursing Home',
+      ja: 'さくら介護施設'
+    },
     applicants: 25,
     status: 'Awaiting Approval',
     postedDate: '2024-05-22',
     image: 'https://picsum.photos/400/225?random=3',
     imageHint: 'caregiver elderly',
-    location: 'Osaka',
-    visaType: 'Specified Skilled Worker (i) - Caregiver',
-    salary: '¥190,000/month + night shift allowance',
-    contractType: 'Full-time',
-    workingHours: 'Shift-based (Day/Evening/Night)',
-    holidays: '4 days off per 4-week period (rotating)',
-    description: 'Provide daily care and support to elderly residents, including assistance with bathing, meals, and mobility. Create a comfortable and safe living environment for all residents.',
-    requirements: ['Certified Care Worker (Kaigo Fukushi Shi) or completed Technical Intern training in caregiving', 'JLPT N3 or higher', 'A compassionate and patient personality'],
-    benefits: ['Full social insurance', 'Transportation allowance', 'Uniform provided', 'Opportunities for skill-up training']
-  },
-  {
-    id: 'JOB004',
-    title: 'Electronics Assembly Technician',
-    company: 'Kyoto Electronics',
-    applicants: 8,
-    status: 'Closed',
-    postedDate: '2024-04-15',
-    image: 'https://picsum.photos/400/225?random=4',
-    imageHint: 'electronics factory',
-    location: 'Kyoto Prefecture',
-    visaType: 'Engineer/Specialist in Humanities/Int\'l Services',
-    salary: '¥250,000/month',
-    contractType: 'Full-time',
-    workingHours: '09:00 - 18:00',
-    holidays: 'Weekends, National Holidays, Summer/Winter vacation',
-    description: 'Assemble and test electronic components and circuits. Requires precision and attention to detail to ensure product quality.',
-    requirements: ['University degree in Electrical Engineering or related field', 'Business level Japanese (N2 or above)', 'Experience with PCB assembly is a plus'],
-    benefits: ['Annual salary increase', 'Twice-yearly bonus', 'Full social insurance package', 'Support for visa renewal']
-  },
-  {
-    id: 'JOB005',
-    title: 'Agricultural Worker (Vegetables)',
-    company: 'Hokkaido Farms',
-    applicants: 15,
-    status: 'Active',
-    postedDate: '2024-05-19',
-    image: 'https://picsum.photos/400/225?random=5',
-    imageHint: 'farm vegetables',
-    location: 'Hokkaido',
-    visaType: 'Specified Skilled Worker (i)',
-    salary: '¥165,000/month',
-    contractType: 'Full-time (seasonal variations)',
-    workingHours: '07:00 - 16:00 (subject to change based on season)',
-    holidays: 'Varies by season, typically 1 day per week',
-    description: 'Cultivate, harvest, and package vegetables such as lettuce and tomatoes. Work is primarily outdoors and requires physical stamina.',
-    requirements: ['Experience in agriculture', 'Ability to work outdoors in various weather conditions', 'No allergies to pollen'],
-    benefits: ['Accommodation provided', 'Some produce available for personal consumption', 'Social insurance']
-  },
-  {
-    id: 'JOB006',
-    title: 'CNC Machine Operator',
-    company: 'Osaka Precision Machinery',
-    applicants: 7,
-    status: 'Active',
-    postedDate: '2024-05-15',
-    image: 'https://picsum.photos/400/225?random=6',
-    imageHint: 'cnc machine',
-    location: 'Osaka',
-    visaType: 'Technical Intern Trainee',
-    salary: '¥175,000/month',
-    contractType: '3-Year Internship',
-    workingHours: '08:30 - 17:30',
-    holidays: 'Weekends',
-    description: 'Operate CNC machines to produce precision metal parts. Involves setting up the machine, monitoring operations, and conducting quality checks.',
-    requirements: ['Interest in machinery and manufacturing', 'Basic math skills', 'Good eyesight'],
-    benefits: ['Dormitory provided', 'Comprehensive training program', 'Overtime pay']
-  },
-  {
-    id: 'JOB007',
-    title: 'Hotel Housekeeping Staff',
-    company: 'Grand Tokyo Hotel',
-    applicants: 30,
-    status: 'Awaiting Approval',
-    postedDate: '2024-05-21',
-    image: 'https://picsum.photos/400/225?random=7',
-    imageHint: 'hotel room',
-    location: 'Tokyo',
-    visaType: 'Specified Skilled Worker (i) - Hospitality',
-    salary: '¥200,000/month',
-    contractType: 'Full-time',
-    workingHours: 'Shift-based',
-    holidays: '8-9 days per month',
-    description: 'Responsible for cleaning and maintaining guest rooms to the highest standard of cleanliness and presentation. Includes making beds, cleaning bathrooms, and replenishing amenities.',
-    requirements: ['Experience in hotel housekeeping or cleaning services', 'Good communication skills in Japanese (N3 level)', 'Attention to detail'],
-    benefits: ['Uniform provided', 'Staff meals available', 'Transportation allowance', 'Social insurance']
-  },
-  {
-    id: 'JOB008',
-    title: 'Seafood Processing Worker',
-    company: 'Okinawa Fisheries',
-    applicants: 18,
-    status: 'Active',
-    postedDate: '2024-05-12',
-    image: 'https://picsum.photos/400/225?random=8',
-    imageHint: 'seafood market',
-    location: 'Okinawa',
-    visaType: 'Technical Intern Trainee',
-    salary: '¥160,000/month',
-    contractType: '3-Year Internship',
-    workingHours: '07:00 - 16:00',
-    holidays: 'Irregular (based on fishing schedule)',
-    description: 'Processing fresh fish, including cutting, gutting, and packaging. Work in a refrigerated environment.',
-    requirements: ['Not allergic to seafood', 'Good physical condition', 'Ability to handle knives safely'],
-    benefits: ['Accommodation provided', 'Health insurance', 'Work clothes provided']
-  },
-  {
-    id: 'JOB009',
-    title: 'Building Scaffolder',
-    company: 'Fuji Construction Group',
-    applicants: 10,
-    status: 'Closed',
-    postedDate: '2024-03-28',
-    image: 'https://picsum.photos/400/225?random=9',
-    imageHint: 'scaffolding construction',
-    location: 'Kanagawa',
-    visaType: 'Specified Skilled Worker (i) - Construction',
-    salary: '¥250,000 - ¥350,000/month depending on experience',
-    contractType: 'Full-time',
-    workingHours: '08:00 - 17:00',
-    holidays: 'Sundays',
-    description: 'Erect and dismantle scaffolding on construction sites. This is a physically demanding job that requires a strong sense of safety.',
-    requirements: ['Scaffolding work experience is mandatory', 'Physically fit and comfortable with heights', 'Japanese N4 level'],
-    benefits: ['Safety training and certifications provided', 'Social insurance', 'Bonus twice a year']
-  },
-  {
-    id: 'JOB010',
-    title: 'Textile Machine Operator',
-    company: 'Gifu Weaving Co.',
-    applicants: 6,
-    status: 'Active',
-    postedDate: '2024-05-16',
-    image: 'https://picsum.photos/400/225?random=10',
-    imageHint: 'textile factory',
-    location: 'Gifu',
-    visaType: 'Technical Intern Trainee',
-    salary: '¥168,000/month',
-    contractType: '3-Year Internship',
-    workingHours: '08:00 - 17:00',
-    holidays: 'Company calendar (approx. 105 days/year)',
-    description: 'Operate industrial weaving machines to produce high-quality fabrics. Monitor machines for errors and perform basic maintenance.',
-    requirements: ['Good eyesight', 'Attention to detail', 'Ability to stand for long periods'],
-    benefits: ['Dormitory available', 'Social insurance', 'Training provided']
-  },
-  {
-    id: 'JOB011',
-    title: 'Restaurant Kitchen Staff',
-    company: 'Ramen Ichiban',
-    applicants: 22,
-    status: 'Active',
-    postedDate: '2024-05-20',
-    image: 'https://picsum.photos/400/225?random=11',
-    imageHint: 'ramen kitchen',
-    location: 'Fukuoka',
-    visaType: 'Specified Skilled Worker (i) - Food Service',
-    salary: '¥195,000/month',
-    contractType: 'Full-time',
-    workingHours: '10:00 - 22:00 (with break)',
-    holidays: 'Shift-based, 6-7 days off per month',
-    description: 'Assist in a busy ramen shop kitchen. Responsibilities include food preparation (cutting vegetables, preparing toppings), cooking side dishes, and maintaining kitchen cleanliness.',
-    requirements: ['Experience working in a restaurant kitchen', 'Ability to work in a fast-paced environment', 'Japanese N3 level'],
-    benefits: ['Staff meals provided', 'Transportation allowance', 'Social insurance']
-  },
-  {
-    id: 'JOB012',
-    title: 'Industrial Painter',
-    company: 'Nagoya Auto Parts',
-    applicants: 4,
-    status: 'Awaiting Approval',
-    postedDate: '2024-05-23',
-    image: 'https://picsum.photos/400/225?random=12',
-    imageHint: 'industrial painting',
-    location: 'Aichi',
-    visaType: 'Technical Intern Trainee',
-    salary: '¥172,000/month',
-    contractType: '3-Year Internship',
-    workingHours: '08:30 - 17:30',
-    holidays: 'Weekends, GW, Obon, New Year',
-    description: 'Perform industrial painting and coating on automotive parts using spray guns and other equipment.',
-    requirements: ['No allergies to paint or thinners', 'Willing to learn and follow safety procedures', 'Good physical condition'],
-    benefits: ['Dormitory provided', 'Safety equipment provided', 'Social insurance']
-  },
-  {
-    id: 'JOB013',
-    title: 'Livestock Farm Worker',
-    company: 'Kyushu Livestock',
-    applicants: 11,
-    status: 'Active',
-    postedDate: '2024-05-10',
-    image: 'https://picsum.photos/400/225?random=13',
-    imageHint: 'cows farm',
-    location: 'Kumamoto',
-    visaType: 'Specified Skilled Worker (i)',
-    salary: '¥185,000/month',
-    contractType: 'Full-time',
-    workingHours: '06:00 - 17:00 (with long break)',
-    holidays: '4-5 days per month',
-    description: 'Responsible for the daily care of cattle, including feeding, cleaning barns, and monitoring health. This is a physically demanding job.',
-    requirements: ['Experience with large animals is a plus', 'Not afraid of animals', 'Must have a driver\'s license (or be willing to obtain one in Japan)'],
-    benefits: ['Housing provided', 'Social insurance', 'Bonus depending on performance']
-  },
-  {
-    id: 'JOB014',
-    title: 'Bakery Assistant',
-    company: 'Kobe Boulangerie',
-    applicants: 19,
-    status: 'Closed',
-    postedDate: '2024-04-30',
-    image: 'https://picsum.photos/400/225?random=14',
-    imageHint: 'bakery bread',
-    location: 'Hyogo',
-    visaType: 'Specified Skilled Worker (i) - Food Service',
-    salary: '¥180,000/month',
-    contractType: 'Full-time',
-    workingHours: '05:00 - 14:00',
-    holidays: 'Tuesdays, plus 2 other days per month',
-    description: 'Assist with bread and pastry production, including dough preparation, baking, and finishing. Also includes customer service and store cleaning.',
-    requirements: ['Passion for baking', 'Early riser', 'Japanese N3 level'],
-    benefits: ['Staff discount on products', 'Uniform provided', 'Social insurance']
-  },
-  {
-    id: 'JOB015',
-    title: 'Building Cleaning Staff',
-    company: 'Clean Japan Inc.',
-    applicants: 28,
-    status: 'Active',
-    postedDate: '2024-05-17',
-    image: 'https://picsum.photos/400/225?random=15',
-    imageHint: 'office cleaning',
-    location: 'Saitama',
-    visaType: 'Specified Skilled Worker (i)',
-    salary: '¥1,200/hour',
-    contractType: 'Full-time',
-    workingHours: '08:00 - 17:00',
-    holidays: 'Weekends',
-    description: 'Professional cleaning of office buildings, including floors, windows, and restrooms. Requires use of various cleaning equipment.',
-    requirements: ['Experience in professional cleaning is a plus', 'Punctual and reliable', 'Basic Japanese is sufficient'],
-    benefits: ['Transportation fully covered', 'Social insurance', 'Paid vacation']
-  },
-  {
-    id: 'JOB016',
-    title: 'Plastic Molding Operator',
-    company: 'Saitama Plastics',
-    applicants: 9,
-    status: 'Active',
-    postedDate: '2024-05-14',
-    image: 'https://picsum.photos/400/225?random=16',
-    imageHint: 'plastic factory',
-    location: 'Saitama',
-    visaType: 'Technical Intern Trainee',
-    salary: '¥170,000/month',
-    contractType: '3-Year Internship',
-    workingHours: '08:15 - 17:15',
-    holidays: 'Company calendar (approx. 110 days/year)',
-    description: 'Operate plastic injection molding machines. Includes setting molds, inspecting products for defects, and packing finished goods.',
-    requirements: ['Good concentration', 'Ability to perform repetitive tasks', 'Willingness to learn'],
-    benefits: ['Dormitory available', 'Social insurance', 'Overtime available']
-  },
-  {
-    id: 'JOB017',
-    title: 'Caregiver for Disabled Persons',
-    company: 'Aichi Support Center',
-    applicants: 14,
-    status: 'Awaiting Approval',
-    postedDate: '2024-05-22',
-    image: 'https://picsum.photos/400/225?random=17',
-    imageHint: 'caregiver support',
-    location: 'Aichi',
-    visaType: 'Specified Skilled Worker (i) - Caregiver',
-    salary: '¥195,000/month',
-    contractType: 'Full-time',
-    workingHours: 'Shift-based',
-    holidays: '8 days per month',
-    description: 'Provide daily living support for individuals with disabilities in a group home setting. Includes personal care, meal support, and recreational activities.',
-    requirements: ['Experience in caregiving', 'JLPT N3 or higher', 'Strong sense of responsibility and empathy'],
-    benefits: ['Qualification acquisition support system', 'Full social insurance', 'Night shift allowance']
-  },
-  {
-    id: 'JOB018',
-    title: 'Food Packaging Line Worker',
-    company: 'Yokohama Foods',
-    applicants: 20,
-    status: 'Active',
-    postedDate: '2024-05-18',
-    image: 'https://picsum.photos/400/225?random=18',
-    imageHint: 'packaging line',
-    location: 'Kanagawa',
-    visaType: 'Technical Intern Trainee',
-    salary: '¥165,000/month',
-    contractType: '3-Year Internship',
-    workingHours: '09:00 - 18:00',
-    holidays: 'Sundays and 2 Saturdays per month',
-    description: 'Work on a packaging line for frozen food products. Fast-paced environment requiring good teamwork.',
-    requirements: ['Ability to work quickly and accurately', 'Good physical health', 'Team player'],
-    benefits: ['Dormitory provided', 'Staff discount', 'Social insurance']
-  },
-  {
-    id: 'JOB019',
-    title: 'Automobile Parts Inspector',
-    company: 'Hiroshima Automotive',
-    applicants: 3,
-    status: 'Closed',
-    postedDate: '2024-05-01',
-    image: 'https://picsum.photos/400/225?random=19',
-    imageHint: 'auto parts',
-    location: 'Hiroshima',
-    visaType: 'Engineer/Specialist in Humanities/Int\'l Services',
-    salary: '¥240,000/month',
-    contractType: 'Full-time',
-    workingHours: '08:00 - 17:00',
-    holidays: 'Weekends, long vacations (GW, Obon, New Year)',
-    description: 'Conduct quality inspection of automobile parts using various measuring instruments. Requires high precision and ability to read technical drawings.',
-    requirements: ['Degree in Mechanical Engineering or similar', 'Experience with quality control', 'Business level Japanese (N2)'],
-    benefits: ['Bonus twice a year', 'Housing allowance', 'Full social insurance']
-  },
-  {
-    id: 'JOB020',
-    title: 'Bridge Construction Worker',
-    company: 'Shikoku Bridge Builders',
-    applicants: 13,
-    status: 'Active',
-    postedDate: '2024-05-11',
-    image: 'https://picsum.photos/400/225?random=20',
-    imageHint: 'bridge construction',
-    location: 'Ehime',
-    visaType: 'Specified Skilled Worker (i) - Construction',
-    salary: '¥260,000/month',
-    contractType: 'Full-time',
-    workingHours: '08:00 - 17:00',
-    holidays: 'Sundays, national holidays',
-    description: 'Involved in the construction and maintenance of bridges. Work includes formwork, rebar assembly, and concrete pouring.',
-    requirements: ['Experience in civil engineering or construction', 'Not afraid of heights', 'Physically strong'],
-    benefits: ['Dormitory available', 'Social insurance', 'Skill-up training available']
-  },
-];
+    location: {
+      vi: 'Osaka',
+      en: 'Osaka',
+      ja: '大阪'
+    },
+    visaType: {
+      vi: 'Kỹ năng đặc định (i) - Hộ lý',
+      en: 'Specified Skilled Worker (i) - Caregiver',
+      ja: '特定技能1号（介護）'
+    },
+    salary: {
+      vi: '190.000 JPY/tháng + phụ cấp ca đêm',
+      en: '¥190,000/month + night shift allowance',
+      ja: '月給19万円＋夜勤手当'
+    },
+    contractType: {
+      vi: 'Toàn thời gian',
+      en: 'Full-time',
+      ja: '正社員'
+    },
+    workingHours: {
+      vi: 'Theo ca (Ngày/Tối/Đêm)',
+      en: 'Shift-based (Day/Evening/Night)',
+      ja: 'シフト制（日勤/夕勤/夜勤）'
+    },
+    holidays: {
+      vi: '4 ngày nghỉ mỗi 4 tuần (luân phiên)',
+      en: '4 days off per 4-week period (rotating)',
+      ja: '4週8休（シフト制）'
+    },
+    description: {
+      vi: 'Cung cấp chăm sóc và hỗ trợ hàng ngày cho người cao tuổi, bao gồm hỗ trợ tắm rửa, ăn uống và di chuyển. Tạo một môi trường sống thoải mái và an toàn cho tất cả cư dân.',
+      en: 'Provide daily care and support to elderly residents, including assistance with bathing, meals, and mobility. Create a comfortable and safe living environment for all residents.',
+      ja: '高齢者の入居者様への日常的なケアとサポートを提供します。入浴、食事、移動の支援などが含まれます。すべての入居者様にとって快適で安全な生活環境を創出します。'
+    },
+    requirements: {
+      vi: ['Có chứng chỉ Hộ lý (Kaigo Fukushi Shi) hoặc đã hoàn thành đào tạo Thực tập sinh kỹ năng ngành hộ lý', 'JLPT N3 trở lên', 'Tính cách nhân ái và kiên nhẫn'],
+      en: ['Certified Care Worker (Kaigo Fukushi Shi) or completed Technical Intern training in caregiving', 'JLPT N3 or higher', 'A compassionate and patient personality'],
+      ja: ['介護福祉士の資格保有者、または介護分野の技能実習修了者', 'JLPT N3以上', '思いやりと忍耐力のある方']
+    },
+    benefits: {
+      vi: ['Bảo hiểm xã hội đầy đủ', 'Phụ cấp đi lại', 'Cung cấp đồng phục', 'Cơ hội đào tạo nâng cao kỹ năng'],
+      en: ['Full social insurance', 'Transportation allowance', 'Uniform provided', 'Opportunities for skill-up training'],
+      ja: ['社会保険完備', '交通費支給', '制服貸与', 'スキルアップ研修の機会あり']
+    }
+  }
+] as MockJob[];

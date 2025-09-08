@@ -20,53 +20,32 @@ export function JobDetail({ jobId }: { jobId: string }) {
   const [job, setJob] = useState<any | null>(null);
 
   useEffect(() => {
-    // 1. Check mock jobs
-    const mockJob = mockJobs.find(j => j.id === jobId);
-    if(mockJob) {
-        setJob(mockJob);
-        return;
-    }
-
-    // 2. Check jobs from localStorage
     const storedJobsRaw = localStorage.getItem('postedJobs');
-    if (storedJobsRaw) {
-      try {
-        const storedJobs: MockJob[] = JSON.parse(storedJobsRaw);
-        const storedJob = storedJobs.find(j => j.id === jobId);
-        if (storedJob) {
-          setJob(storedJob);
-          return;
-        }
-      } catch (e) {
-        console.error("Failed to parse jobs from local storage", e);
-      }
-    }
-    
-    setJob(null);
-
-  }, [jobId, t]);
+    const storedJobs = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
+    const allJobs = [...storedJobs, ...mockJobs];
+    const foundJob = allJobs.find(j => j.id === jobId);
+    setJob(foundJob || null);
+  }, [jobId]);
 
   if (job === null) {
-      // Could be a loading state
       return null;
   }
    if (!job) return notFound();
 
-  // Define properties based on type for cleaner access
-  const title = job.jobTitle || job.title || '';
-  const company = job.companyName || job.company || '';
-  const location = job.location || 'Japan';
+  const title = job.title?.[language] || job.title || '';
+  const company = job.company?.[language] || job.companyName || '';
+  const location = job.location?.[language] || 'Nhật Bản';
   const applicants = job.applicants || 0;
   const postedDate = job.postedDate || job.date_posted;
-  const description = job.jobDescription || job.description || 'Chưa có mô tả chi tiết.';
-  const requirements = job.requirements || [];
-  const benefits = job.benefits || [];
+  const description = job.description?.[language] || job.jobDescription || 'Chưa có mô tả chi tiết.';
+  const requirements = job.requirements?.[language] || job.requirements || [];
+  const benefits = job.benefits?.[language] || job.benefits || [];
   const status = job.status || 'N/A';
-  const salary = job.salary || 'N/A';
-  const visaType = job.visaType || 'N/A';
-  const contractType = job.contractType || 'N/A';
-  const workingHours = job.workingHours || 'N/A';
-  const holidays = job.holidays || 'N/A';
+  const salary = job.salary?.[language] || 'Thương lượng';
+  const visaType = job.visaType?.[language] || 'N/A';
+  const contractType = job.contractType?.[language] || 'N/A';
+  const workingHours = job.workingHours?.[language] || 'N/A';
+  const holidays = job.holidays?.[language] || 'N/A';
 
 
   return (

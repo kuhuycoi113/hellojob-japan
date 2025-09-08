@@ -53,7 +53,7 @@ const statusStyles: Record<string, string> = {
 const JOBS_PER_PAGE = 9;
 
 export function JobsPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [jobs, setJobs] = useState<MockJob[]>([]);
   const isMobile = useIsMobile();
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
@@ -101,17 +101,17 @@ export function JobsPage() {
                     <div className="relative aspect-video">
                     <Image
                         src={job.image}
-                        alt={job.title}
+                        alt={job.title[language]}
                         fill
                         className="object-cover"
                         data-ai-hint={job.imageHint}
                     />
                     </div>
                     <CardHeader>
-                        <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{job.title}</CardTitle>
+                        <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{job.title[language]}</CardTitle>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                             <Briefcase className="w-4 h-4" />
-                            <span>{job.company}</span>
+                            <span>{job.company[language]}</span>
                         </div>
                     </CardHeader>
                     <CardContent className="flex-grow">
@@ -155,12 +155,12 @@ export function JobsPage() {
                         <TableCell>
                             <div className="flex items-center gap-3">
                                 <Avatar className="hidden h-10 w-10 sm:flex rounded-md">
-                                    <AvatarImage src={job.image} alt={job.title} className="object-cover" />
-                                    <AvatarFallback className="rounded-md">{job.company.charAt(0)}</AvatarFallback>
+                                    <AvatarImage src={job.image} alt={job.title[language]} className="object-cover" />
+                                    <AvatarFallback className="rounded-md">{job.company[language].charAt(0)}</AvatarFallback>
                                 </Avatar>
                                 <div>
-                                    <div className="font-medium font-headline">{job.title}</div>
-                                    <div className="text-sm text-muted-foreground">{job.company}</div>
+                                    <div className="font-medium font-headline">{job.title[language]}</div>
+                                    <div className="text-sm text-muted-foreground">{job.company[language]}</div>
                                 </div>
                             </div>
                         </TableCell>
