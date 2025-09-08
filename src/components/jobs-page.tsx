@@ -297,17 +297,6 @@ export function JobsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-bold font-headline">
-            {t.jobsPage.title}
-          </h1>
-          <p className="text-muted-foreground">
-            {isGuest ? t.jobsPage.guestSubtitle : t.jobsPage.subtitle}
-          </p>
-        </div>
-      </div>
-      
       { (userRole === 'union' || userRole === 'support_org') && !isGuest && (
         <>
           <PartnershipOpportunities />
@@ -326,6 +315,14 @@ export function JobsPage() {
       )}
 
       <div className="space-y-4" ref={jobsListRef}>
+        <div className="mb-4">
+            <h1 className="text-2xl sm:text-3xl font-bold font-headline">
+                {t.jobsPage.title}
+            </h1>
+            <p className="text-muted-foreground">
+                {isGuest ? t.jobsPage.guestSubtitle : t.jobsPage.subtitle}
+            </p>
+        </div>
         {!isGuest ? (
           <>
             <Tabs value={activeTab} onValueChange={(value) => { setActiveTab(value); setCurrentPage(1); }}>
