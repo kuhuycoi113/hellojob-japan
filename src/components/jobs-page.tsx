@@ -296,8 +296,8 @@ export function JobsPage() {
   );
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" ref={jobsListRef}>
+    <div className="space-y-6" ref={jobsListRef}>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold font-headline">
             {t.jobsPage.title}
@@ -319,10 +319,10 @@ export function JobsPage() {
       </div>
       
       { (userRole === 'union' || userRole === 'support_org') && !isGuest && (
-        <>
+        <div className="space-y-8">
           <PartnershipOpportunities />
           <PartnershipInfo />
-        </>
+        </div>
       )}
 
       {isGuest && (
@@ -336,7 +336,7 @@ export function JobsPage() {
       )}
 
       {!isGuest ? (
-        <>
+        <div className="space-y-4">
           <Tabs value={activeTab} onValueChange={(value) => { setActiveTab(value); setCurrentPage(1); }}>
             <div className="flex items-center justify-between">
               <TabsList className="flex-wrap h-auto">
@@ -375,7 +375,7 @@ export function JobsPage() {
           </Tabs>
           
           {totalPages > 1 && (
-            <Pagination className="mt-8">
+            <Pagination className="pt-4">
                 <PaginationContent>
                     <PaginationItem>
                     <PaginationPrevious 
@@ -411,7 +411,7 @@ export function JobsPage() {
                 </PaginationContent>
             </Pagination>
           )}
-        </>
+        </div>
       ) : (
         <Card className="text-center py-16 px-6">
           <div className="flex justify-center mb-4">
@@ -426,3 +426,4 @@ export function JobsPage() {
     </div>
   );
 }
+
