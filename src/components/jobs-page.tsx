@@ -87,6 +87,7 @@ function PartnershipInfo() {
                     <h3 className="font-bold text-green-800">{t_info.specialOffer.title}</h3>
                     <p className="text-sm text-green-700 mb-2">{t_info.specialOffer.description}</p>
                     <p className="text-sm text-green-700 font-semibold">{t_info.systemPartnerOffer.description}</p>
+                    <p className="text-sm text-green-700 font-semibold mt-1">{t_info.supportOrgReferral.description}</p>
                  </div>
                  <Button variant="link" className="p-0 text-green-800 self-end">
                     {t_info.specialOffer.learnMore} <ArrowRight className="w-4 h-4 ml-1" />

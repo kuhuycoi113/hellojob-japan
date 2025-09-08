@@ -890,6 +890,9 @@
     },
     "systemPartnerOffer": {
       "description": "Especially, when partnering with a sending company in the HelloJob system, the platform fee is only 20%!"
+    },
+    "supportOrgReferral": {
+      "description": "Furthermore, if the receiving company is introduced by a Supporting Organization, the platform fee is reduced by an additional 5%."
     }
   }
 }

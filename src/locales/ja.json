@@ -890,6 +890,9 @@
     },
     "systemPartnerOffer": {
       "description": "特に、HelloJobシステム内の送り出し機関と提携する場合、プラットフォーム手数料はわずか20%になります！"
+    },
+    "supportOrgReferral": {
+      "description": "さらに、受入企業が登録支援機関によってシステムに紹介された場合、プラットフォーム手数料がさらに5%削減されます。"
     }
   }
 }

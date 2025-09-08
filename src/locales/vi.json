@@ -890,6 +890,9 @@
     },
     "systemPartnerOffer": {
       "description": "Đặc biệt, khi hợp tác với công ty phái cử trong hệ thống HelloJob, phí nền tảng chỉ còn 20%!"
+    },
+    "supportOrgReferral": {
+      "description": "Thêm nữa, nếu xí nghiệp tiếp nhận được Cơ quan hỗ trợ giới thiệu vào hệ thống, phí nền tảng sẽ giảm thêm 5%."
     }
   }
 }
