@@ -1,4 +1,5 @@
-// This is a new file.
+'use client';
+
 import { JobsPage } from '@/components/jobs-page';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
