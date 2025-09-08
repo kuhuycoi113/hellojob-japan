@@ -46,28 +46,10 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { mockJobs, type MockJob } from '@/data/mock-jobs';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import dynamic from 'next/dynamic';
 import { Skeleton } from './ui/skeleton';
 import { cn } from '@/lib/utils';
 import { Opportunity, opportunities as initialOpportunities } from '@/data/opportunities';
-
-
-const PartnershipOpportunities = dynamic(
-  () => import('./partnership-opportunities').then(mod => mod.PartnershipOpportunities),
-  { 
-    ssr: false,
-    loading: () => (
-      <div className="mb-8">
-        <Skeleton className="h-8 w-1/3 mb-4" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Skeleton className="h-64 w-full" />
-          <Skeleton className="h-64 w-full hidden md:block" />
-          <Skeleton className="h-64 w-full hidden lg:block" />
-        </div>
-      </div>
-    )
-  }
-);
+import { PartnershipOpportunities } from './partnership-opportunities';
 
 
 const statusStyles: Record<string, string> = {
@@ -317,7 +299,7 @@ export function JobsPage() {
             {t.jobsPage.subtitle}
           </p>
         </div>
-        <Button asChild size="lg" variant="secondary">
+        <Button asChild size="lg" variant="accent">
           <Link href="/post-job-ai">
             <PlusCircle className="mr-2 h-5 w-5" />
             {t.jobsPage.postNewJob}
@@ -403,4 +385,5 @@ export function JobsPage() {
   );
 }
 
+    
     
