@@ -812,6 +812,10 @@
       "toggleMenu": "Mở menu",
       "edit": "Sửa",
       "archive": "Lưu trữ"
+    },
+    "noJobsGuest": {
+      "title": "Chưa có dữ liệu việc làm",
+      "description": "Vui lòng đăng nhập để xem và quản lý các tin tuyển dụng của bạn."
     }
   },
   "jobDetail": {

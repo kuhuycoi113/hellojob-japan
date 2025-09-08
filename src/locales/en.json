@@ -812,6 +812,10 @@
       "toggleMenu": "Toggle menu",
       "edit": "Edit",
       "archive": "Archive"
+    },
+    "noJobsGuest": {
+      "title": "No Job Data Available",
+      "description": "Please log in to view and manage your job postings."
     }
   },
   "jobDetail": {

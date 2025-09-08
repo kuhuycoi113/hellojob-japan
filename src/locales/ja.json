@@ -812,6 +812,10 @@
       "toggleMenu": "メニューを開閉",
       "edit": "編集",
       "archive": "アーカイブ"
+    },
+    "noJobsGuest": {
+      "title": "求人データがありません",
+      "description": "ログインして、求人情報を閲覧・管理してください。"
     }
   },
   "jobDetail": {
