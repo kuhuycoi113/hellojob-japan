@@ -296,7 +296,7 @@ export function Header() {
                     <DropdownMenuSeparator />
                     <div className="grid grid-cols-4 gap-2 mt-4">
                         {menuItems.map((item) => (
-                            <DropdownMenuItem key={item.label} asChild className="flex-col h-20 p-2 text-center">
+                            <DropdownMenuItem key={item.href} asChild className="flex-col h-20 p-2 text-center">
                               <Link href={item.href}>
                                 <div className="text-primary mb-1">{item.icon}</div>
                                 <span className="text-xs whitespace-normal leading-tight">{item.label}</span>
