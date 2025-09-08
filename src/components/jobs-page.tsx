@@ -99,7 +99,7 @@ export function JobsPage() {
   const [viewMode, setViewMode] = useState<'list' | 'grid' | null>(null);
   const [activeTab, setActiveTab] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
-  const [userRole, setUserRole] = useState('union'); // 'union', 'support_org', or 'company'
+  const [userRole, setUserRole] = useState('union');
   const jobsListRef = useRef<HTMLDivElement>(null);
   const [highlightedJobId, setHighlightedJobId] = useState<string | null>(null);
 
@@ -310,6 +310,8 @@ export function JobsPage() {
                   <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
                   <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
                   <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
+                  <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
+                  <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
