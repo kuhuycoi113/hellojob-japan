@@ -29,7 +29,7 @@
       "about": "About Us",
       "dashboard": "Dashboard",
       "chat": "Chat",
-      "signUpForPremium": "Sign Up for Premium (Unlock All)"
+      "signUpForPremium": "Sign Up for Premium"
     },
     "editProfile": "Edit Profile"
   },
@@ -692,163 +692,165 @@
     }
   },
   "userRoles": {
-    "title": "Who are you?",
-    "description": "Tell us your role for the best experience.",
+    "title": "Bạn là ai?",
+    "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
     "hiringCompany": {
-      "title": "Accepting Company (Ukeire Kigyou)",
-      "description": "Directly hires personnel."
+      "title": "Xí nghiệp tiếp nhận",
+      "description": "Trực tiếp tuyển dụng nhân sự."
     },
     "supportOrg": {
-      "title": "Support Organization (Shien Kikan)",
-      "description": "Supports companies and workers."
+      "title": "Cơ quan hỗ trợ",
+      "description": "Hỗ trợ các công ty và người lao động."
     },
     "union": {
-      "title": "Cooperative Union (Kyoudou Kumiai)",
-      "description": "Manages and supports interns."
+      "title": "Nghiệp đoàn",
+      "description": "Quản lý và hỗ trợ thực tập sinh."
     },
     "sendingCompany": {
-      "title": "Sending Company (Okuridashi Kikan)",
-      "description": "Recruits and dispatches workers from Vietnam."
+      "title": "Công ty phái cử",
+      "description": "Tuyển và phái cử lao động từ Việt Nam."
     },
     "hakenCompany": {
-      "title": "Haken Company (Temporary Staffing)",
-      "description": "Dispatches temporary staff."
+      "title": "Công ty Haken (Nhân sự phái cử)",
+      "description": "Phái cử nhân viên tạm thời."
     },
     "yuryoShokai": {
-      "title": "Paid Job Placement Service (Yuryo Shokai)",
-      "description": "Provides paid job placement services."
+      "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
+      "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
     }
   },
   "chat": {
-    "title": "HelloJob AI Assistant",
-    "statusOnline": "Online",
-    "placeholder": "Type your question here...",
-    "greeting": "Hello, {role} client. How can I assist you today?",
-    "defaultGreeting": "Hello. How can I assist you today?",
-    "error": "Sorry, I'm having trouble connecting. Please try again later."
+    "title": "Trợ lý AI HelloJob",
+    "statusOnline": "Đang hoạt động",
+    "placeholder": "Nhập câu hỏi của bạn ở đây...",
+    "greeting": "Xin chào quý khách {role}. Tôi có thể giúp gì cho bạn hôm nay?",
+    "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?",
+    "error": "Xin lỗi, tôi đang gặp sự cố kết nối. Vui lòng thử lại sau."
   },
   "callScreen": {
-    "connecting": "Connecting...",
+    "connecting": "Đang kết nối...",
     "permissionError": {
-        "title": "Permission Required",
-        "description": "Please grant access to your camera and microphone in your browser to use this feature."
+        "title": "Yêu cầu quyền truy cập",
+        "description": "Vui lòng cấp quyền truy cập máy ảnh và micro trong trình duyệt của bạn để sử dụng tính năng này."
     }
   },
   "visaTypes": {
-    "title": "Which Visa type do you want to recruit?",
-    "description": "Choose the visa type that fits your recruitment needs.",
+    "title": "Bạn muốn tuyển loại Visa nào?",
+    "description": "Hãy chọn loại visa phù hợp với nhu cầu tuyển dụng của bạn.",
     "intern": {
-      "title": "Technical Intern",
-      "description": "Skill training program in Japan."
+      "title": "Thực tập sinh kỹ năng",
+      "description": "Chương trình đào tạo kỹ năng tại Nhật Bản."
     },
     "skilled": {
-      "title": "Specified Skilled Worker",
-      "description": "Experienced workers for long-term employment."
+      "title": "Kỹ năng đặc định",
+      "description": "Lao động có kinh nghiệm làm việc dài hạn."
     },
     "engineer": {
-      "title": "Engineer/Specialist",
-      "description": "Highly qualified professionals with degrees."
+      "title": "Kỹ sư, tri thức",
+      "description": "Chuyên gia có trình độ cao, bằng cấp chuyên ngành."
     }
   },
    "visaSubTypes": {
-    "title": "Please select more details",
+    "title": "Vui lòng chọn chi tiết hơn",
     "intern": {
-      "threeYear": "3-Year Intern",
-      "oneYear": "1-Year Intern",
-      "go": "3 Go Intern"
+      "threeYear": "Thực tập sinh 3 năm",
+      "oneYear": "Thực tập sinh 1 năm",
+      "go": "Thực tập sinh 3 Go"
     },
     "skilled": {
-      "japan": "Skilled candidates in Japan",
-      "vietnam": "Skilled candidates from Vietnam"
+      "japan": "Ứng viên Đặc định tại Nhật",
+      "vietnam": "Ứng viên Đặc định từ Việt Nam"
     },
     "engineer": {
-      "japan": "Engineer/Specialist candidates in Japan",
-      "vietnam": "Engineer/Specialist candidates from Vietnam"
+      "japan": "Ứng viên Kỹ sư/Tri thức tại Nhật",
+      "vietnam": "Ứng viên Kỹ sư/Tri thức từ Việt Nam"
     }
   },
   "postMethod": {
-    "title": "Choose posting method",
-    "description": "How do you want to create your job listing?",
+    "title": "Chọn phương thức đăng tin",
+    "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
-      "title": "Post with AI",
-      "description": "Briefly describe and let AI create a professional job post."
+      "title": "Đăng việc làm bằng AI",
+      "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
     },
     "manual": {
-      "title": "Manual Entry",
-      "description": "Fill out a detailed form for full control over the listing."
+      "title": "Nhập liệu thủ công",
+      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
     }
   },
    "jobsPage": {
-    "title": "Job Management",
-    "subtitle": "Manage your job postings here.",
-    "postNewJob": "Post New Job",
-    "applicants": "applicants",
-    "postedOn": "Posted on",
-    "viewDetails": "View Details",
+    "title": "Quản lý việc làm",
+    "subtitle": "Quản lý các tin tuyển dụng của bạn tại đây.",
+    "postNewJob": "Đăng việc làm mới",
+    "applicants": "ứng viên",
+    "postedOn": "Đăng ngày",
+    "viewDetails": "Xem chi tiết",
     "tabs": {
-      "all": "All",
-      "active": "Active",
-      "awaiting": "Awaiting Approval",
-      "closed": "Closed"
+      "all": "Tất cả",
+      "active": "Đang tuyển",
+      "awaiting": "Chờ duyệt",
+      "closed": "Đã đóng"
     },
     "table": {
-      "jobTitle": "Job Title",
-      "applicants": "Applicants",
-      "status": "Status",
-      "postedDate": "Posted Date",
-      "actions": "Actions",
-      "toggleMenu": "Toggle menu",
-      "viewDetails": "View details",
-      "edit": "Edit",
-      "archive": "Archive"
+      "jobTitle": "Chức danh",
+      "applicants": "Ứng viên",
+      "status": "Trạng thái",
+      "postedDate": "Ngày đăng",
+      "actions": "Hành động",
+      "toggleMenu": "Mở menu",
+      "viewDetails": "Xem chi tiết",
+      "edit": "Chỉnh sửa",
+      "archive": "Lưu trữ"
     }
   },
   "jobDetail": {
-      "backButton": "Back to List",
-      "findCandidates": "Find Candidates",
-      "location": "Location",
-      "applicants": "Applicants",
-      "postedDate": "Posted Date",
-      "jobDescription": "Job Description",
-      "requirements": "Requirements",
-      "benefits": "Benefits",
-      "jobInformation": "Job Information",
-      "salary": "Salary",
-      "visaType": "Visa Type",
-      "contractType": "Contract Type",
-      "workingHours": "Working Hours",
-      "holidays": "Holidays",
+      "backButton": "Quay lại danh sách",
+      "findCandidates": "Tìm ứng viên",
+      "location": "Địa điểm",
+      "applicants": "Ứng viên",
+      "postedDate": "Ngày đăng",
+      "jobDescription": "Mô tả công việc",
+      "requirements": "Yêu cầu",
+      "benefits": "Quyền lợi",
+      "jobInformation": "Thông tin công việc",
+      "salary": "Mức lương",
+      "visaType": "Loại Visa",
+      "contractType": "Loại hợp đồng",
+      "workingHours": "Giờ làm việc",
+      "holidays": "Ngày nghỉ",
       "suitableCandidates": {
-        "title": "Suitable Candidates",
-        "description": "Based on the job requirements, here are some potentially suitable candidates.",
-        "loadMore": "Load {count} more candidates"
+        "title": "Ứng viên phù hợp",
+        "description": "Dựa trên yêu cầu công việc, đây là những ứng viên có thể phù hợp.",
+        "loadMore": "Xem thêm {count} ứng viên khác"
       },
-      "invite": "Invite to Apply"
+      "invite": "Mời ứng tuyển"
   },
   "unlockCandidates": {
-    "title": "Unlock Candidate Profile",
-    "description": "To view the full profile, please choose an option below.",
-    "buttonText": "Unlock Now",
-    "or": "OR",
-    "premiumButton": "Sign up for Premium (Unlock All)",
-    "referButton": "Refer another user",
+    "title": "Mở khóa hồ sơ ứng viên",
+    "description": "Để xem toàn bộ hồ sơ, vui lòng chọn một trong các phương thức dưới đây.",
+    "buttonText": "Mở khóa ngay",
+    "or": "HOẶC",
+    "premiumButton": "Đăng ký Premium (Mở tất cả)",
+    "referButton": "Giới thiệu người dùng khác",
     "payment": {
-      "direct": "Direct Payment",
-      "gateway": "Other Gateways",
-      "cardNumber": "Card Number",
-      "expiryDate": "Expiry Date",
+      "direct": "Thanh toán trực tiếp",
+      "gateway": "Cổng khác",
+      "cardNumber": "Số thẻ",
+      "expiryDate": "Ngày hết hạn",
       "cvc": "CVC",
-      "cardName": "Cardholder Name",
-      "payButton": "Pay {amount} JPY",
-      "secure": "Secure payment"
+      "cardName": "Tên chủ thẻ",
+      "payButton": "Thanh toán {amount} JPY",
+      "secure": "Thanh toán được bảo mật"
     }
   },
     "partnershipOpportunities": {
-    "title": "New Partnership Opportunities",
-    "from": "From: {company}",
-    "expiresIn": "Expires in",
-    "requirements": "Key Requirements",
-    "accept": "Accept",
-    "decline": "Decline"
+    "title": "Cơ hội hợp tác mới",
+    "from": "Từ: {company}",
+    "expiresIn": "Hết hạn sau",
+    "requirements": "Yêu cầu chính",
+    "accept": "Chấp nhận",
+    "decline": "Từ chối"
   }
 }
+
+    

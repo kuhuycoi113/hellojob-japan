@@ -29,7 +29,7 @@
       "about": "会社概要",
       "dashboard": "ダッシュボード",
       "chat": "相談する",
-      "signUpForPremium": "プレミアムに登録（すべてアンロック）"
+      "signUpForPremium": "プレミアムに登録"
     },
     "editProfile": "プロフィール編集"
   },
@@ -852,3 +852,5 @@
     "decline": "辞退する"
   }
 }
+
+    

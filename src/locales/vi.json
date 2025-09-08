@@ -29,7 +29,7 @@
       "about": "Giới thiệu",
       "dashboard": "Quản lý",
       "chat": "Tư vấn",
-      "signUpForPremium": "Đăng ký Premium (Mở tất cả)"
+      "signUpForPremium": "Đăng ký Premium"
     },
     "editProfile": "Sửa hồ sơ"
   },
@@ -852,3 +852,5 @@
     "decline": "Từ chối"
   }
 }
+
+    
