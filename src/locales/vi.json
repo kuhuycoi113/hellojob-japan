@@ -825,8 +825,21 @@
       "invite": "Mời ứng tuyển"
   },
   "unlockCandidates": {
-    "title": "Mở khóa để xem thêm",
-    "description": "Xem thêm {count} ứng viên khác bằng cách nâng cấp tài khoản của bạn.",
-    "buttonText": "Mở khóa ngay"
+    "title": "Mở khóa hồ sơ ứng viên",
+    "description": "Để xem toàn bộ hồ sơ, vui lòng chọn một trong các phương thức dưới đây.",
+    "buttonText": "Mở khóa ngay",
+    "or": "HOẶC",
+    "premiumButton": "Đăng ký tài khoản Premium",
+    "referButton": "Giới thiệu người dùng khác",
+    "payment": {
+      "direct": "Thanh toán trực tiếp",
+      "gateway": "Cổng khác",
+      "cardNumber": "Số thẻ",
+      "expiryDate": "Ngày hết hạn",
+      "cvc": "CVC",
+      "cardName": "Tên chủ thẻ",
+      "payButton": "Thanh toán {amount} JPY",
+      "secure": "Thanh toán được bảo mật"
+    }
   }
 }

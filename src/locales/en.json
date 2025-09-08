@@ -825,8 +825,21 @@
       "invite": "Invite to Apply"
   },
   "unlockCandidates": {
-    "title": "Unlock to see more",
-    "description": "See {count} more candidates by upgrading your account.",
-    "buttonText": "Unlock Now"
+    "title": "Unlock Candidate Profile",
+    "description": "To view the full profile, please choose an option below.",
+    "buttonText": "Unlock Now",
+    "or": "OR",
+    "premiumButton": "Sign up for Premium",
+    "referButton": "Refer another user",
+    "payment": {
+      "direct": "Direct Payment",
+      "gateway": "Other Gateways",
+      "cardNumber": "Card Number",
+      "expiryDate": "Expiry Date",
+      "cvc": "CVC",
+      "cardName": "Cardholder Name",
+      "payButton": "Pay {amount} JPY",
+      "secure": "Secure payment"
+    }
   }
 }

@@ -825,8 +825,21 @@
       "invite": "応募を依頼"
   },
   "unlockCandidates": {
-    "title": "ロック解除して続きを見る",
-    "description": "アカウントをアップグレードして、さらに{count}人の候補者を表示します。",
-    "buttonText": "今すぐロック解除"
+    "title": "候補者プロフィールをアンロック",
+    "description": "完全なプロフィールを閲覧するには、以下のオプションを選択してください。",
+    "buttonText": "今すぐアンロック",
+    "or": "または",
+    "premiumButton": "プレミアムに登録",
+    "referButton": "他のユーザーを紹介",
+    "payment": {
+      "direct": "直接支払い",
+      "gateway": "他のゲートウェイ",
+      "cardNumber": "カード番号",
+      "expiryDate": "有効期限",
+      "cvc": "CVC",
+      "cardName": "カード名義人",
+      "payButton": "{amount} JPYを支払う",
+      "secure": "安全な支払い"
+    }
   }
 }

@@ -8,6 +8,7 @@ import type { Candidate } from '@/data/candidates';
 import { Briefcase, Eye, Lock, UserCheck } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { UnlockCandidateDialog } from '@/components/unlock-candidate-dialog';
 
 interface CandidateCardProps {
   candidate: Candidate;
@@ -54,10 +55,12 @@ export function CandidateCard({ candidate, isLocked = false }: CandidateCardProp
       </div>
       {isLocked && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/70 backdrop-blur-sm">
-           <Button variant="outline">
-                <Lock className="w-4 h-4 mr-2" />
-                {t.unlockCandidates.buttonText}
-            </Button>
+           <UnlockCandidateDialog>
+              <Button variant="outline">
+                  <Lock className="w-4 h-4 mr-2" />
+                  {t.unlockCandidates.buttonText}
+              </Button>
+           </UnlockCandidateDialog>
         </div>
       )}
     </Card>
