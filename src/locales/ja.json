@@ -48,7 +48,8 @@
     "postJobAI": "AIで投稿",
     "dashboard": "管理",
     "menu": "メニュー",
-    "handbook": "ハンドブック"
+    "handbook": "ハンドブック",
+    "manageJobs": "管理"
   },
   "mobile_menu_sheet": {
     "hello": "こんにちは",

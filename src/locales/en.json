@@ -48,7 +48,8 @@
     "postJobAI": "Post AI",
     "dashboard": "Dashboard",
     "menu": "Menu",
-    "handbook": "Handbook"
+    "handbook": "Handbook",
+    "manageJobs": "Manage"
   },
   "mobile_menu_sheet": {
     "hello": "Hello",

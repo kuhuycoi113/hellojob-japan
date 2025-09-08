@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Home, Sparkles, User, Search, BookOpen } from 'lucide-react';
+import { Home, Sparkles, User, Search, BookOpen, Briefcase } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/contexts/language-context';
 import { cn } from '@/lib/utils';
@@ -15,6 +15,7 @@ export function MobileFooter() {
     { href: '/', label: t.mobile_footer.home, icon: <Home /> },
     { href: '/post-job-ai', label: t.mobile_footer.postJobAI, icon: <Sparkles /> },
     { href: '/handbook', label: t.mobile_footer.handbook, icon: <BookOpen /> },
+    { href: '/jobs', label: t.mobile_footer.manageJobs, icon: <Briefcase /> },
   ];
 
   return (
