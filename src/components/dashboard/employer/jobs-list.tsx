@@ -64,7 +64,7 @@ export function JobsList() {
             {t.dashboard_employer.jobs_list.subtitle}
           </p>
         </div>
-        <Button asChild size="lg">
+        <Button asChild size="lg" variant="secondary">
           <Link href="/post-job-ai">
             <PlusCircle className="mr-2 h-5 w-5" />
             {t.dashboard_employer.jobs_list.post_job_button}
