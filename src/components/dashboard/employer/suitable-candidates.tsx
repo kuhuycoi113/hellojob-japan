@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,7 +10,7 @@ export function SuitableCandidates() {
   const { t } = useLanguage();
   // For demonstration, we'll just take the first few candidates.
   // In a real app, this would involve a matching algorithm.
-  const suitableCandidates = allCandidates.slice(0, 4);
+  const suitableCandidates = allCandidates.slice(0, 6);
 
   return (
     <Card className="shadow-lg">
