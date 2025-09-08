@@ -829,7 +829,7 @@
     "description": "To view the full profile, please choose an option below.",
     "buttonText": "Unlock Now",
     "or": "OR",
-    "premiumButton": "Sign up for Premium",
+    "premiumButton": "Sign up for Premium (Unlock All)",
     "referButton": "Refer another user",
     "payment": {
       "direct": "Direct Payment",

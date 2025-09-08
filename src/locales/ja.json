@@ -829,7 +829,7 @@
     "description": "完全なプロフィールを閲覧するには、以下のオプションを選択してください。",
     "buttonText": "今すぐアンロック",
     "or": "または",
-    "premiumButton": "プレミアムに登録",
+    "premiumButton": "プレミアムに登録 (すべてアンロック)",
     "referButton": "他のユーザーを紹介",
     "payment": {
       "direct": "直接支払い",

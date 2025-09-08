@@ -829,7 +829,7 @@
     "description": "Để xem toàn bộ hồ sơ, vui lòng chọn một trong các phương thức dưới đây.",
     "buttonText": "Mở khóa ngay",
     "or": "HOẶC",
-    "premiumButton": "Đăng ký tài khoản Premium",
+    "premiumButton": "Đăng ký Premium (Mở tất cả)",
     "referButton": "Giới thiệu người dùng khác",
     "payment": {
       "direct": "Thanh toán trực tiếp",
