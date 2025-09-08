@@ -28,7 +28,8 @@
       "handbook": "ハンドブック",
       "about": "会社概要",
       "dashboard": "ダッシュボード",
-      "chat": "相談する"
+      "chat": "相談する",
+      "signUpForPremium": "プレミアムに登録"
     },
     "editProfile": "プロフィール編集"
   },
@@ -829,7 +830,7 @@
     "description": "完全なプロフィールを閲覧するには、以下のオプションを選択してください。",
     "buttonText": "今すぐアンロック",
     "or": "または",
-    "premiumButton": "プレミアムに登録 (すべてアンロック)",
+    "premiumButton": "プレミアムに登録（すべてアンロック）",
     "referButton": "他のユーザーを紹介",
     "payment": {
       "direct": "直接支払い",
@@ -838,7 +839,7 @@
       "expiryDate": "有効期限",
       "cvc": "CVC",
       "cardName": "カード名義人",
-      "payButton": "{amount} JPYを支払う",
+      "payButton": "{amount}円を支払う",
       "secure": "安全な支払い"
     }
   }

@@ -5,14 +5,14 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
-  SheetClose
+  SheetClose,
+  SheetTrigger
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/language-context';
-import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle, Users } from 'lucide-react';
+import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle, Users, Diamond } from 'lucide-react';
 import { Logo } from './logo';
 import Link from 'next/link';
 import { Separator } from './ui/separator';
@@ -58,6 +58,11 @@ export function MobileMenuSheet() {
                   </Card>
               </Link>
             </SheetClose>
+            
+            <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mb-4">
+              <Diamond className="mr-2 h-4 w-4" />
+              {t.header.menuItems.signUpForPremium}
+            </Button>
 
             <Separator className="mb-6"/>
 

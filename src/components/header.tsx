@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, PlusCircle, AlertCircle, Settings } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -278,6 +278,10 @@ export function Header() {
                         </div>
                     </div>
                   </Link>
+                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mb-4">
+                    <Diamond className="mr-2 h-4 w-4" />
+                    {t.header.menuItems.signUpForPremium}
+                  </Button>
                   <DropdownMenuSeparator />
                    <div className="grid grid-cols-4 gap-2 mt-4">
                       {menuItems.map((item) => (
