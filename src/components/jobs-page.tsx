@@ -29,6 +29,7 @@ import {
   Diamond,
   ArrowRight,
   UserSquare,
+  Info,
 } from 'lucide-react';
 import {
   Pagination,
@@ -178,6 +179,8 @@ export function JobsPage() {
     return t.jobsPage.tabs[key] || status;
   }
 
+  const isGuest = userRole === 'guest';
+
   const JobsGridView = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {paginatedJobs.map((job) => {
@@ -296,7 +299,7 @@ export function JobsPage() {
             {t.jobsPage.title}
           </h1>
           <p className="text-muted-foreground">
-            {t.jobsPage.subtitle}
+            {isGuest ? t.jobsPage.guestSubtitle : t.jobsPage.subtitle}
           </p>
         </div>
         <div className="flex gap-4 items-center">
@@ -307,6 +310,7 @@ export function JobsPage() {
                   <SelectValue placeholder="Select role" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
                   <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
                   <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
                   <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
@@ -315,20 +319,32 @@ export function JobsPage() {
                 </SelectContent>
               </Select>
             </div>
-            <Button asChild size="lg" variant="accent">
-              <Link href="/post-job-ai">
-                <PlusCircle className="mr-2 h-5 w-5" />
-                {t.jobsPage.postNewJob}
-              </Link>
-            </Button>
+            {!isGuest && (
+              <Button asChild size="lg" variant="accent">
+                <Link href="/post-job-ai">
+                  <PlusCircle className="mr-2 h-5 w-5" />
+                  {t.jobsPage.postNewJob}
+                </Link>
+              </Button>
+            )}
         </div>
       </div>
       
-      { (userRole === 'union' || userRole === 'support_org') && (
+      { (userRole === 'union' || userRole === 'support_org') && !isGuest && (
         <>
           <PartnershipOpportunities />
           <PartnershipInfo />
         </>
+      )}
+
+      {isGuest && (
+          <Card className="bg-blue-50 border-blue-200">
+              <CardContent className="p-4 flex items-center gap-4">
+                  <Info className="w-6 h-6 text-blue-600 flex-shrink-0"/>
+                  <p className="text-sm text-blue-800">{t.jobsPage.guestCta}</p>
+                   <Button>{t.cta.postJob}</Button>
+              </CardContent>
+          </Card>
       )}
 
       <Tabs value={activeTab} onValueChange={(value) => { setActiveTab(value); setCurrentPage(1); }}>

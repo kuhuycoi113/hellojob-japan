@@ -718,6 +718,10 @@
     "yuryoShokai": {
       "title": "有料職業紹介事業者",
       "description": "有料で職業紹介を行う。"
+    },
+    "guest": {
+        "title": "ゲスト（未ログイン）",
+        "description": "ビジターとして閲覧する。"
     }
   },
   "chat": {
@@ -782,6 +786,8 @@
    "jobsPage": {
     "title": "求人管理",
     "subtitle": "こちらで求人情報と協力の機会を管理します。",
+    "guestSubtitle": "求人情報を検索し、プラットフォームの機能をご覧ください。",
+    "guestCta": "求人を掲載し、候補者と繋がるには、新規登録またはログインしてください。",
     "postNewJob": "新規求人作成",
     "applicants": "応募者",
     "postedOn": "掲載日",
@@ -803,7 +809,9 @@
       "status": "ステータス",
       "postedDate": "掲載日",
       "actions": "操作",
-      "toggleMenu": "メニューを開閉"
+      "toggleMenu": "メニューを開閉",
+      "edit": "編集",
+      "archive": "アーカイブ"
     }
   },
   "jobDetail": {

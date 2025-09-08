@@ -718,6 +718,10 @@
     "yuryoShokai": {
       "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
       "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
+    },
+    "guest": {
+        "title": "Khách (Chưa đăng nhập)",
+        "description": "Xem với tư cách khách truy cập."
     }
   },
   "chat": {
@@ -782,6 +786,8 @@
    "jobsPage": {
     "title": "Quản lý việc làm",
     "subtitle": "Quản lý các tin tuyển dụng và cơ hội hợp tác của bạn tại đây.",
+    "guestSubtitle": "Khám phá các cơ hội việc làm và xem cách nền tảng của chúng tôi hoạt động.",
+    "guestCta": "Đăng ký hoặc đăng nhập để đăng việc làm và kết nối với ứng viên.",
     "postNewJob": "Đăng việc làm mới",
     "applicants": "ứng viên",
     "postedOn": "Đăng ngày",
@@ -803,7 +809,9 @@
       "status": "Trạng thái",
       "postedDate": "Ngày đăng",
       "actions": "Hành động",
-      "toggleMenu": "Mở menu"
+      "toggleMenu": "Mở menu",
+      "edit": "Sửa",
+      "archive": "Lưu trữ"
     }
   },
   "jobDetail": {
