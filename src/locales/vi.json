@@ -17,7 +17,7 @@
     "settings": "Cài đặt",
     "logout": "Đăng xuất",
     "postJob": "Đăng việc làm",
-    "x_function": "Việc làm",
+    "x_function": "Quản lý việc làm",
     "menuItems": {
       "recruiterAccount": "Tài khoản nhà tuyển dụng",
       "recruiterAccountType": "Tài khoản {type}",
@@ -779,8 +779,8 @@
     }
   },
    "jobsPage": {
-    "title": "Quản lý việc làm",
-    "subtitle": "Quản lý các tin tuyển dụng của bạn tại đây.",
+    "title": "Việc làm",
+    "subtitle": "Quản lý các tin tuyển dụng và cơ hội hợp tác của bạn tại đây.",
     "postNewJob": "Đăng việc làm mới",
     "applicants": "ứng viên",
     "postedOn": "Đăng ngày",
@@ -869,3 +869,4 @@
     
 
     
+

@@ -17,7 +17,7 @@
     "settings": "Settings",
     "logout": "Logout",
     "postJob": "Post a Job",
-    "x_function": "Jobs",
+    "x_function": "Manage Jobs",
     "menuItems": {
       "recruiterAccount": "Recruiter Account",
       "recruiterAccountType": "{type} Account",
@@ -780,7 +780,7 @@
   },
    "jobsPage": {
     "title": "Quản lý việc làm",
-    "subtitle": "Quản lý các tin tuyển dụng của bạn tại đây.",
+    "subtitle": "Quản lý các tin tuyển dụng và cơ hội hợp tác của bạn tại đây.",
     "postNewJob": "Đăng việc làm mới",
     "applicants": "ứng viên",
     "postedOn": "Đăng ngày",
