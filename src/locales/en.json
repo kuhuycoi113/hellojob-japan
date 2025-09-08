@@ -720,151 +720,152 @@
     }
   },
   "chat": {
-    "title": "Trợ lý AI HelloJob",
-    "statusOnline": "Đang hoạt động",
-    "placeholder": "Nhập câu hỏi của bạn ở đây...",
-    "greeting": "Xin chào quý khách {role}. Tôi có thể giúp gì cho bạn hôm nay?",
-    "defaultGreeting": "Xin chào. Tôi có thể giúp gì cho bạn hôm nay?",
-    "error": "Xin lỗi, tôi đang gặp sự cố kết nối. Vui lòng thử lại sau."
+    "title": "AIアシスタントHelloJob",
+    "statusOnline": "オンライン",
+    "placeholder": "ここに質問を入力してください...",
+    "greeting": "こんにちは、{role}のお客様。本日はどのようなご用件でしょうか？",
+    "defaultGreeting": "こんにちは。本日はどのようなご用件でしょうか？",
+    "error": "申し訳ありませんが、接続に問題が発生しました。後でもう一度お試しください。"
   },
   "callScreen": {
-    "connecting": "Đang kết nối...",
+    "connecting": "接続中...",
     "permissionError": {
-        "title": "Yêu cầu quyền truy cập",
-        "description": "Vui lòng cấp quyền truy cập máy ảnh và micro trong trình duyệt của bạn để sử dụng tính năng này."
+        "title": "アクセス権限が必要です",
+        "description": "この機能を使用するには、ブラウザでカメラとマイクへのアクセスを許可してください。"
     }
   },
   "visaTypes": {
-    "title": "Bạn muốn tuyển loại Visa nào?",
-    "description": "Hãy chọn loại visa phù hợp với nhu cầu tuyển dụng của bạn.",
+    "title": "どの在留資格を募集しますか？",
+    "description": "採用ニーズに合わせて適切な在留資格を選択してください。",
     "intern": {
-      "title": "Thực tập sinh kỹ năng",
-      "description": "Chương trình đào tạo kỹ năng tại Nhật Bản."
+      "title": "技能実習",
+      "description": "日本での技能実習プログラム。"
     },
     "skilled": {
-      "title": "Kỹ năng đặc định",
-      "description": "Lao động có kinh nghiệm làm việc dài hạn."
+      "title": "特定技能",
+      "description": "長期就労のための経験豊富な労働者。"
     },
     "engineer": {
-      "title": "Kỹ sư, tri thức",
-      "description": "Chuyên gia có trình độ cao, bằng cấp chuyên ngành."
+      "title": "技術・人文知識・国際業務",
+      "description": "学位を持つ高度な専門家。"
     }
   },
    "visaSubTypes": {
-    "title": "Vui lòng chọn chi tiết hơn",
+    "title": "詳細を選択してください",
     "intern": {
-      "threeYear": "Thực tập sinh 3 năm",
-      "oneYear": "Thực tập sinh 1 năm",
-      "go": "Thực tập sinh 3 Go"
+      "threeYear": "技能実習3年",
+      "oneYear": "技能実習1年",
+      "go": "技能実習3号"
     },
     "skilled": {
-      "japan": "Ứng viên Đặc định tại Nhật",
-      "vietnam": "Ứng viên Đặc định từ Việt Nam"
+      "japan": "日本在住の特定技能候補者",
+      "vietnam": "ベトナムからの特定技能候補者"
     },
     "engineer": {
-      "japan": "Ứng viên Kỹ sư/Tri thức tại Nhật",
-      "vietnam": "Ứng viên Kỹ sư/Tri thức từ Việt Nam"
+      "japan": "日本在住の技術・人文知識・国際業務候補者",
+      "vietnam": "ベトナムからの技術・人文知識・国際業務候補者"
     }
   },
   "postMethod": {
-    "title": "Chọn phương thức đăng tin",
-    "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
+    "title": "投稿方法を選択",
+    "description": "求人情報をどのように作成しますか？",
     "ai": {
-      "title": "Đăng việc làm bằng AI",
-      "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
+      "title": "AIで投稿",
+      "description": "簡単な説明で、AIがプロフェッショナルな求人情報を作成します。"
     },
     "manual": {
-      "title": "Nhập liệu thủ công",
-      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
+      "title": "手動入力",
+      "description": "詳細なフォームに記入して、リストを完全に制御します。"
     }
   },
    "jobsPage": {
-    "title": "Manage Jobs",
-    "subtitle": "Manage your job postings and partnership opportunities here.",
-    "postNewJob": "Post New Job",
-    "applicants": "applicants",
-    "postedOn": "Posted on",
-    "viewDetails": "View Details",
+    "title": "求人管理",
+    "subtitle": "こちらで求人情報と協力の機会を管理します。",
+    "postNewJob": "新規求人作成",
+    "applicants": "応募者",
+    "postedOn": "掲載日",
+    "viewDetails": "詳細を見る",
     "tabs": {
-      "all": "All",
-      "active": "Active",
-      "searching": "Searching",
-      "awaiting": "Awaiting Approval",
-      "completed": "Completed",
-      "closed": "Closed"
+      "all": "すべて",
+      "active": "募集中",
+      "searching": "募集中",
+      "awaiting": "承認待ち",
+      "completed": "完了",
+      "closed": "募集終了"
     },
     "table": {
-      "jobTitle": "Job Title",
-      "applicants": "Applicants",
-      "status": "Status",
-      "postedDate": "Date Posted",
-      "actions": "Actions"
+      "jobTitle": "役職",
+      "applicants": "応募者数",
+      "status": "ステータス",
+      "postedDate": "掲載日",
+      "actions": "操作",
+      "toggleMenu": "メニューを開閉"
     }
   },
   "jobDetail": {
-      "backButton": "Back to list",
-      "findCandidates": "Find Candidates",
-      "location": "Location",
-      "applicants": "Applicants",
-      "postedDate": "Posted Date",
-      "jobDescription": "Job Description",
-      "requirements": "Requirements",
-      "benefits": "Benefits",
-      "jobInformation": "Job Information",
-      "salary": "Salary",
-      "visaType": "Visa Type",
-      "contractType": "Contract Type",
-      "workingHours": "Working Hours",
-      "holidays": "Holidays",
+      "backButton": "求人一覧に戻る",
+      "findCandidates": "候補者を探す",
+      "location": "勤務地",
+      "applicants": "応募者数",
+      "postedDate": "掲載日",
+      "jobDescription": "職務内容",
+      "requirements": "応募要件",
+      "benefits": "福利厚生",
+      "jobInformation": "求人情報",
+      "salary": "給与",
+      "visaType": "在留資格",
+      "contractType": "雇用形態",
+      "workingHours": "勤務時間",
+      "holidays": "休日",
       "suitableCandidates": {
-        "title": "Suitable Candidates",
-        "description": "Based on the job requirements, here are some potentially suitable candidates.",
-        "loadMore": "View {count} more candidates"
+        "title": "適合する候補者",
+        "description": "職務要件に基づき、適合する可能性のある候補者です。",
+        "loadMore": "さらに{count}名の候補者を見る"
       },
-      "invite": "Invite to Apply"
+      "invite": "応募を依頼"
   },
   "unlockCandidates": {
-    "title": "Unlock Candidate Profile",
-    "description": "To view the full profile, please choose one of the options below.",
-    "buttonText": "Unlock Now",
-    "or": "OR",
-    "premiumButton": "Sign up for Premium",
-    "referButton": "Refer another user",
+    "title": "候補者プロフィールをアンロック",
+    "description": "完全なプロフィールを閲覧するには、以下のオプションを選択してください。",
+    "buttonText": "今すぐアンロック",
+    "or": "または",
+    "premiumButton": "プレミアムに登録",
+    "referButton": "他のユーザーを紹介",
     "payment": {
-      "direct": "Direct Payment",
-      "gateway": "Other Gateway",
-      "cardNumber": "Card Number",
-      "expiryDate": "Expiry Date",
+      "direct": "直接支払い",
+      "gateway": "他のゲートウェイ",
+      "cardNumber": "カード番号",
+      "expiryDate": "有効期限",
       "cvc": "CVC",
-      "cardName": "Name on Card",
-      "payButton": "Pay {amount} JPY",
-      "secure": "Secure Payment"
+      "cardName": "カード名義人",
+      "payButton": "{amount}円を支払う",
+      "secure": "安全な支払い"
     }
   },
     "partnershipOpportunities": {
-    "title": "New Partnership Opportunities",
-    "from": "From: {company}",
-    "expiresIn": "Expires in",
-    "requirements": "Key Requirements",
-    "accept": "Accept",
-    "decline": "Decline",
+    "title": "新規協力案件",
+    "from": "依頼元: {company}",
+    "expiresIn": "残り時間",
+    "requirements": "主な要件",
+    "accept": "受託する",
+    "decline": "辞退する",
     "table": {
-      "opportunity": "Opportunity",
-      "company": "Company",
-      "visaType": "Visa Type",
-      "expires": "Expires",
-      "actions": "Actions"
-    }
+        "opportunity": "案件",
+        "company": "企業",
+        "visaType": "在留資格",
+        "expires": "期限",
+        "actions": "操作"
+      }
   },
   "partnershipInfo": {
     "revenueShare": {
-      "title": "Revenue Share Model",
-      "description": "For each accepted opportunity, the partner will receive 70% and HelloJob will receive 30% of the service fee after deducting costs."
+      "title": "収益分配モデル",
+      "description": "承認された各機会について、パートナーは費用を差し引いた後のサービス料の70%を受け取り、HelloJobは30%を受け取ります。"
     },
     "specialOffer": {
-      "title": "Special Offer",
-      "description": "Upgrade to the Premium package to reduce the service fee to just 25%!",
-      "learnMore": "Learn more"
+      "title": "特別オファー",
+      "description": "プレミアムパッケージにアップグレードすると、サービス料がわずか25%に割引されます！",
+      "learnMore": "詳細を見る"
     }
   }
 }

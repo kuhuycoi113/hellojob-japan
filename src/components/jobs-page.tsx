@@ -171,6 +171,11 @@ export function JobsPage() {
     if (tabValue === 'all') return jobs.length;
     return jobs.filter(j => (j.status || '').toLowerCase().replace(/\s/g, '-') === tabValue).length;
   }
+  
+  const getTranslatedStatus = (status: string) => {
+    const key = status.toLowerCase().replace(/\s/g, '-') as keyof typeof t.jobsPage.tabs;
+    return t.jobsPage.tabs[key] || status;
+  }
 
   const JobsGridView = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -198,7 +203,7 @@ export function JobsPage() {
                         </div>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                        <Badge className={cn(statusStyles[job.status], 'bg-opacity-80')}>{job.status}</Badge>
+                        <Badge className={cn(statusStyles[job.status], 'bg-opacity-80')}>{getTranslatedStatus(job.status)}</Badge>
                         <div className="flex items-center gap-4 mt-4 text-sm">
                             <div className="flex items-center gap-2">
                                 <Users className="w-4 h-4 text-muted-foreground" />
@@ -253,7 +258,7 @@ export function JobsPage() {
                         </TableCell>
                         <TableCell className="hidden md:table-cell">{job.applicants}</TableCell>
                         <TableCell className="hidden sm:table-cell">
-                            <Badge className={cn(statusStyles[job.status], 'bg-opacity-80')}>{job.status}</Badge>
+                            <Badge className={cn(statusStyles[job.status], 'bg-opacity-80')}>{getTranslatedStatus(job.status)}</Badge>
                         </TableCell>
                         <TableCell className="hidden lg:table-cell">{job.postedDate}</TableCell>
                         <TableCell>
