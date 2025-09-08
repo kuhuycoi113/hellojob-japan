@@ -865,8 +865,10 @@
     "expiresIn": "Hết hạn sau",
     "requirements": "Yêu cầu chính",
     "fees": "Thông tin phí",
-    "referralFee": "Phí giới thiệu",
+    "referralFee": "Tổng phí giới thiệu",
     "managementFee": "Phí quản lý",
+    "platformFee": "Phí nền tảng",
+    "partnerReceives": "Đối tác nhận",
     "accept": "Chấp nhận",
     "decline": "Từ chối",
     "table": {

@@ -865,8 +865,10 @@
     "expiresIn": "Expires in",
     "requirements": "Key Requirements",
     "fees": "Fee Information",
-    "referralFee": "Referral Fee",
+    "referralFee": "Total Referral Fee",
     "managementFee": "Management Fee",
+    "platformFee": "Platform Fee",
+    "partnerReceives": "Partner Receives",
     "accept": "Accept",
     "decline": "Decline",
     "table": {

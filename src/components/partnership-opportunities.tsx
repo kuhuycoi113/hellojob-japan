@@ -95,6 +95,50 @@ export function PartnershipOpportunities() {
         return null; // Don't render the component if there are no opportunities
     }
 
+    const FeeDetails = ({ opportunity }: { opportunity: Opportunity }) => {
+        const feeString = opportunity.referralFee[language];
+        const feeValue = parseInt(feeString.replace(/[^0-9]/g, ''), 10);
+        
+        if (isNaN(feeValue)) {
+            return (
+                 <div className="flex justify-between items-baseline">
+                    <span className="text-muted-foreground">{t_opp.referralFee}:</span>
+                    <span className="font-medium text-foreground">{feeString}</span>
+                </div>
+            );
+        }
+
+        const platformFee = feeValue * 0.3;
+        const partnerReceives = feeValue * 0.7;
+
+        const formatCurrency = (value: number) => {
+            return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', currencyDisplay: 'code' }).format(value).replace('JPY', 'JPY');
+        };
+        
+        return (
+             <div className="space-y-1">
+                <div className="flex justify-between items-baseline">
+                    <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
+                    <span className="font-bold text-lg text-primary">{formatCurrency(partnerReceives)}</span>
+                </div>
+                <div className="flex justify-between items-baseline text-xs">
+                    <span className="text-muted-foreground">{t_opp.referralFee}:</span>
+                    <span className="font-medium text-muted-foreground">{formatCurrency(feeValue)}</span>
+                </div>
+                 <div className="flex justify-between items-baseline text-xs">
+                    <span className="text-muted-foreground">{t_opp.platformFee} (30%):</span>
+                    <span className="font-medium text-muted-foreground">{formatCurrency(platformFee)}</span>
+                </div>
+                {opportunity.visaType.en !== 'Engineer' && (
+                  <div className="flex justify-between items-baseline text-xs pt-1">
+                      <span className="text-muted-foreground">{t_opp.managementFee}:</span>
+                      <span className="font-medium text-muted-foreground">{opportunity.managementFee[language]}</span>
+                  </div>
+                )}
+            </div>
+        )
+    };
+
     const OpportunitiesGridView = () => (
         <Carousel opts={{ align: "start", loop: false }} className="w-full">
             <CarouselContent className="-ml-4">
@@ -125,18 +169,7 @@ export function PartnershipOpportunities() {
                                     <Separator />
                                      <div>
                                         <h4 className="font-semibold mb-2 flex items-center gap-2"><HandCoins className="w-4 h-4 text-muted-foreground" /> {t_opp.fees}</h4>
-                                        <div className="space-y-1">
-                                            <div className="flex justify-between items-baseline">
-                                                <span className="text-muted-foreground">{t_opp.referralFee}:</span>
-                                                <span className="font-bold text-lg text-primary">{opp.referralFee[language]}</span>
-                                            </div>
-                                            {opp.visaType.en !== 'Engineer' && (
-                                              <div className="flex justify-between items-baseline">
-                                                  <span className="text-muted-foreground">{t_opp.managementFee}:</span>
-                                                  <span className="font-medium text-foreground">{opp.managementFee[language]}</span>
-                                              </div>
-                                            )}
-                                        </div>
+                                        <FeeDetails opportunity={opp} />
                                     </div>
                                 </CardContent>
                                     <CardFooter className="flex gap-2">
@@ -180,16 +213,7 @@ export function PartnershipOpportunities() {
                             </TableCell>
                              <TableCell className="hidden lg:table-cell">{opp.company[language]}</TableCell>
                             <TableCell className="hidden md:table-cell text-xs">
-                                <div>
-                                    <span>{t_opp.referralFee}:</span>
-                                    <span className="font-semibold text-primary ml-1">{opp.referralFee[language]}</span>
-                                </div>
-                                {opp.visaType.en !== 'Engineer' && (
-                                  <div>
-                                      <span>{t_opp.managementFee}:</span>
-                                      <span className="font-medium ml-1">{opp.managementFee[language]}</span>
-                                  </div>
-                                )}
+                                <FeeDetails opportunity={opp} />
                             </TableCell>
                             <TableCell className="text-right">
                                 <CountdownTimer expiryTimestamp={new Date(opp.expires).getTime()} />

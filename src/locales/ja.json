@@ -865,8 +865,10 @@
     "expiresIn": "残り時間",
     "requirements": "主な要件",
     "fees": "手数料情報",
-    "referralFee": "紹介手数料",
+    "referralFee": "紹介手数料総額",
     "managementFee": "管理手数料",
+    "platformFee": "プラットフォーム手数料",
+    "partnerReceives": "受取額",
     "accept": "受託する",
     "decline": "辞退する",
     "table": {
