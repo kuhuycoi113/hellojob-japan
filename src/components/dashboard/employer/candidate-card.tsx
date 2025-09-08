@@ -53,8 +53,8 @@ export function CandidateCard({ candidate, isLocked = false }: CandidateCardProp
         </div>
       </div>
       {isLocked && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm">
-           <Button size="lg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/70 backdrop-blur-sm">
+           <Button variant="outline">
                 <Lock className="w-4 h-4 mr-2" />
                 {t.unlockCandidates.buttonText}
             </Button>
