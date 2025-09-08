@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -165,7 +166,7 @@ export function Header() {
     { href: "/how-it-works", label: t.header.menuItems.howItWorks, icon: <Compass /> },
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
-    { href: "/advisors", label: t.header.advisors, icon: <UsersIcon /> },
+    { href: "/advisors", label: t.header.menuItems.advisors, icon: <UsersIcon /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
@@ -201,110 +202,148 @@ export function Header() {
   }
 
   return (
-    <header className="fixed md:sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <div className="flex items-center gap-10">
-          <Link href="/">
-            <Logo />
-          </Link>
-        </div>
-
-        <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-sm font-medium">
-          {navLinks.map(link => (
-            <Link
-              key={link.href + link.label}
-              href={link.href}
-              className={cn(
-                "transition-colors hover:text-secondary whitespace-nowrap flex items-center gap-2",
-                pathname === link.href ? "text-primary font-bold" : "text-foreground/80"
-              )}
-            >
-              {link.icon}
-              {link.label}
+    <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
+      <header className="fixed md:sticky top-0 z-50 w-full border-b bg-white">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-10">
+            <Link href="/">
+              <Logo />
             </Link>
-          ))}
-        </nav>
+          </div>
 
-        <div className="flex items-center gap-2">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                className="flex items-center gap-2"
+          <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-sm font-medium">
+            {navLinks.map(link => (
+              <Link
+                key={link.href + link.label}
+                href={link.href}
+                className={cn(
+                  "transition-colors hover:text-secondary whitespace-nowrap flex items-center gap-2",
+                  pathname === link.href ? "text-primary font-bold" : "text-foreground/80"
+                )}
               >
-                {languageConfig[language].flag}
-                <span className="hidden md:inline">{languageConfig[language].short}</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('vi')}>
-                <VietnamFlag />
-                <span>Tiếng Việt</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('ja')}>
-                <JapanFlag />
-                <span>Tiếng Nhật</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('en')}>
-                <EnglishFlag />
-                <span>Tiếng Anh</span>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+                {link.icon}
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-           <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleChat}>
-             <MessageSquareText className="h-6 w-6" />
-           </Button>
-
-          <div className="hidden md:flex items-center gap-2">
-            <Button variant="outline" asChild>
-                <Link href="/jobs" className={cn(pathname === "/jobs" && "text-primary font-bold")}>
-                    {t.header.x_function}
-                </Link>
-            </Button>
+          <div className="flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <LayoutGrid className="h-5 w-5" />
+                <Button
+                  variant="outline"
+                  className="flex items-center gap-2"
+                >
+                  {languageConfig[language].flag}
+                  <span className="hidden md:inline">{languageConfig[language].short}</span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-80 p-4">
-                  <Link href="/dashboard/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-4 transition-colors">
-                    <div className="flex items-center gap-4">
-                        <Avatar className="h-12 w-12">
-                            <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                            <AvatarFallback>TVC</AvatarFallback>
-                        </Avatar>
-                        <div>
-                            <p className="font-semibold text-base">Công ty cổ phần TVC</p>
-                            <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.sendingCompany.title)}</p>
-                        </div>
-                    </div>
-                  </Link>
-                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mb-4">
-                    <Diamond className="mr-2 h-4 w-4" />
-                    {t.header.menuItems.signUpForPremium}
-                  </Button>
-                  <DropdownMenuSeparator />
-                   <div className="grid grid-cols-4 gap-2 mt-4">
-                      {menuItems.map((item) => (
-                          <DropdownMenuItem key={item.label} asChild className="flex-col h-20 p-2 text-center">
-                             <Link href={item.href}>
-                              <div className="text-primary mb-1">{item.icon}</div>
-                              <span className="text-xs whitespace-normal leading-tight">{item.label}</span>
-                            </Link>
-                          </DropdownMenuItem>
-                      ))}
-                  </div>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('vi')}>
+                  <VietnamFlag />
+                  <span>Tiếng Việt</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('ja')}>
+                  <JapanFlag />
+                  <span>Tiếng Nhật</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('en')}>
+                  <EnglishFlag />
+                  <span>Tiếng Anh</span>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+
+            <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleChat}>
+              <MessageSquareText className="h-6 w-6" />
+            </Button>
+
+            <div className="hidden md:flex items-center gap-2">
+              <DialogTrigger asChild>
+                  <Button variant="secondary">
+                      <PlusCircle className="mr-2 h-4 w-4" />
+                      {t.header.postJob}
+                  </Button>
+              </DialogTrigger>
+              <Button variant="outline" asChild>
+                  <Link href="/jobs" className={cn(pathname === "/jobs" && "text-primary font-bold")}>
+                      {t.header.x_function}
+                  </Link>
+              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <LayoutGrid className="h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-80 p-4">
+                    <Link href="/dashboard/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-4 transition-colors">
+                      <div className="flex items-center gap-4">
+                          <Avatar className="h-12 w-12">
+                              <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                              <AvatarFallback>TVC</AvatarFallback>
+                          </Avatar>
+                          <div>
+                              <p className="font-semibold text-base">Công ty cổ phần TVC</p>
+                              <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.sendingCompany.title)}</p>
+                          </div>
+                      </div>
+                    </Link>
+                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mb-4">
+                      <Diamond className="mr-2 h-4 w-4" />
+                      {t.header.menuItems.signUpForPremium}
+                    </Button>
+                    <DropdownMenuSeparator />
+                    <div className="grid grid-cols-4 gap-2 mt-4">
+                        {menuItems.map((item) => (
+                            <DropdownMenuItem key={item.label} asChild className="flex-col h-20 p-2 text-center">
+                              <Link href={item.href}>
+                                <div className="text-primary mb-1">{item.icon}</div>
+                                <span className="text-xs whitespace-normal leading-tight">{item.label}</span>
+                              </Link>
+                            </DropdownMenuItem>
+                        ))}
+                    </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
         </div>
-      </div>
-      
-       {/* Dialogs for Post Job Flow */}
-       <Dialog open={visaDialogOpen} onOpenChange={setVisaDialogOpen}>
-           <DialogContent className="sm:max-w-3xl">
+        
+        {/* Dialogs for Post Job Flow */}
+        <DialogContent className="sm:max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+            <DialogDescription className="text-center">
+              {t.userRoles.description}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+            {userRoles.map((role) => (
+              <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary/5 p-3 rounded-lg">
+                      {role.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-base text-gray-800">
+                        {role.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {role.description}
+                      </p>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                </Card>
+              </div>
+            ))}
+          </div>
+        </DialogContent>
+
+        <Dialog open={visaDialogOpen} onOpenChange={setVisaDialogOpen}>
+            <DialogContent className="sm:max-w-3xl">
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaTypes.title}</DialogTitle>
                 <DialogDescription className="text-center">
@@ -322,7 +361,7 @@ export function Header() {
                         <h3 className="font-semibold text-base text-gray-800">
                           {visa.title}
                         </h3>
-                         <p className="text-sm text-muted-foreground mt-1">
+                          <p className="text-sm text-muted-foreground mt-1">
                           {visa.description}
                         </p>
                       </div>
@@ -334,7 +373,7 @@ export function Header() {
         </Dialog>
 
         <Dialog open={visaSubTypeDialogOpen} onOpenChange={setVisaSubTypeDialogOpen}>
-           <DialogContent className="sm:max-w-xl">
+            <DialogContent className="sm:max-w-xl">
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaSubTypes.title}</DialogTitle>
               </DialogHeader>
@@ -353,7 +392,7 @@ export function Header() {
         </Dialog>
         
         <Dialog open={postMethodDialogOpen} onOpenChange={setPostMethodDialogOpen}>
-           <DialogContent className="sm:max-w-xl">
+            <DialogContent className="sm:max-w-xl">
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
                 <DialogDescription className="text-center">{t.postMethod.description}</DialogDescription>
@@ -372,22 +411,23 @@ export function Header() {
                       </p>
                     </Card>
                   </Link>
-                   <Link href="/">
+                    <Link href="/">
                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
                       <div className="bg-primary/5 p-3 rounded-lg mb-4">
                         <Pencil className="h-8 w-8 text-yellow-500" />
                       </div>
                       <h3 className="font-semibold text-base text-gray-800">
-                         {t.postMethod.manual.title}
+                          {t.postMethod.manual.title}
                       </h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                         {t.postMethod.manual.description}
+                          {t.postMethod.manual.description}
                       </p>
                     </Card>
                   </Link>
               </div>
             </DialogContent>
         </Dialog>
-    </header>
+      </header>
+    </Dialog>
   );
 }
