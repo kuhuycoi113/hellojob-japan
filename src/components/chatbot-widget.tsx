@@ -29,6 +29,7 @@ import {
 import { useSearchParams } from 'next/navigation';
 import { CallScreen } from './call-screen';
 import { useChat } from '@/contexts/chat-context';
+import { Logo } from './logo';
 
 type Message = {
   role: 'user' | 'model';
@@ -70,10 +71,10 @@ function ChatbotWidgetContent() {
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      const greeting = userRole ? t.chat.greeting.replace('{role}', userRole) : t.chat.defaultGreeting;
-      setMessages([{ role: 'model', content: greeting }]);
+      const initialMessage: Message = { role: 'model', content: "Xin chào, tôi là Phạm Thị Dung. Tôi có thể giúp gì cho bạn?" };
+      setMessages([initialMessage]);
     }
-  }, [isOpen, messages.length, t.chat.greeting, t.chat.defaultGreeting, userRole]);
+  }, [isOpen, messages.length]);
 
   const handleSend = async () => {
     if (input.trim() === '' || isLoading) return;
@@ -131,13 +132,13 @@ function ChatbotWidgetContent() {
         <Button
           size="lg"
           className={cn(
-              "rounded-full h-16 w-16 shadow-lg transition-colors",
-              isOpen ? "bg-secondary text-primary-foreground hover:bg-secondary/90" : "bg-primary text-primary-foreground hover:bg-primary/90"
+              "rounded-full h-16 w-16 shadow-lg transition-all duration-300",
+              isOpen ? "bg-secondary text-secondary-foreground hover:bg-secondary/90 w-0 p-0 border-none" : "bg-primary text-primary-foreground hover:bg-primary/90"
           )}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle chat"
         >
-          <MessageSquareText className="h-8 w-8" />
+         {isOpen ? <X className="h-8 w-8" /> : <MessageSquareText className="h-8 w-8" />}
         </Button>
       </div>
 
@@ -149,40 +150,32 @@ function ChatbotWidgetContent() {
             : 'opacity-0 translate-y-4 pointer-events-none'
         )}
       >
-        <Card className="w-[380px] h-[450px] shadow-2xl rounded-2xl flex flex-col bg-white">
+        <Card className="w-[380px] h-[500px] shadow-2xl rounded-2xl flex flex-col bg-white">
           {inCall ? (
             <CallScreen onEndCall={endCall} callType={callType} />
           ) : (
             <>
-              <CardHeader className="flex flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  <Avatar>
-                    <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                    <AvatarFallback>TV</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <CardTitle className="font-headline text-xl text-gray-800">
-                      {t.chat.title}
-                    </CardTitle>
+              <CardHeader className="flex flex-row items-center justify-between gap-4 bg-primary text-primary-foreground rounded-t-2xl">
+                <div className="flex flex-col">
+                   <Logo className="text-white" />
                     <div className="flex items-center gap-2 mt-1">
-                      <div className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></div>
-                      <p className="text-sm text-muted-foreground">
-                        {t.chat.statusOnline}
+                      <div className="h-2.5 w-2.5 rounded-full bg-green-400"></div>
+                      <p className="text-sm">
+                        Đang hoạt động
                       </p>
                     </div>
-                  </div>
                 </div>
                 <div className="flex items-center">
-                  <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground rounded-full" onClick={() => startCall('voice')}>
+                  <Button variant="ghost" size="icon" className="h-8 w-8 text-white/80 hover:text-white rounded-full" onClick={() => startCall('voice')}>
                     <Phone className="h-5 w-5" />
                   </Button>
-                  <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground rounded-full" onClick={() => startCall('video')}>
+                  <Button variant="ghost" size="icon" className="h-8 w-8 text-white/80 hover:text-white rounded-full" onClick={() => startCall('video')}>
                     <Video className="h-5 w-5" />
                   </Button>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-8 w-8 text-muted-foreground rounded-full"
+                    className="h-8 w-8 text-white/80 hover:text-white rounded-full"
                     onClick={() => setIsOpen(false)}
                   >
                     <X className="h-5 w-5" />
@@ -190,43 +183,43 @@ function ChatbotWidgetContent() {
                 </div>
               </CardHeader>
               <CardContent className="flex-1 overflow-y-auto p-4 space-y-6">
-                {messages.map((msg, index) => (
-                  <div
-                    key={index}
-                    className={cn(
-                      'flex items-end gap-3',
-                      msg.role === 'user' && 'justify-end'
-                    )}
-                  >
-                    {msg.role === 'model' && (
-                      <Avatar className="h-9 w-9 border shrink-0">
-                        <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                        <AvatarFallback>TV</AvatarFallback>
-                      </Avatar>
-                    )}
+                 {messages.map((msg, index) => (
                     <div
-                      className={cn(
-                        'max-w-xs rounded-lg p-3',
-                        msg.role === 'model'
-                          ? 'bg-muted rounded-bl-none'
-                          : 'bg-primary text-primary-foreground rounded-br-none'
-                      )}
+                        key={index}
+                        className={cn(
+                        'flex items-end gap-3',
+                        msg.role === 'user' && 'justify-end'
+                        )}
                     >
-                      <p className="text-sm">{msg.content}</p>
+                        {msg.role === 'model' && (
+                        <Avatar className="h-9 w-9 border shrink-0">
+                            <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Tư vấn viên Phạm Thị Dung" />
+                            <AvatarFallback>PD</AvatarFallback>
+                        </Avatar>
+                        )}
+                        <div
+                        className={cn(
+                            'max-w-xs rounded-lg p-3',
+                            msg.role === 'model'
+                            ? 'bg-muted rounded-bl-none'
+                            : 'bg-primary text-primary-foreground rounded-br-none'
+                        )}
+                        >
+                        {msg.role === 'model' && index > 0 && <p className="text-xs font-semibold text-gray-600 mb-1">Tư vấn viên Phạm Thị Dung</p>}
+                        <p className="text-sm">{msg.content}</p>
+                        </div>
+                        {msg.role === 'user' && (
+                        <Avatar className="h-9 w-9 border shrink-0">
+                            <AvatarFallback>You</AvatarFallback>
+                        </Avatar>
+                        )}
                     </div>
-                    {msg.role === 'user' && (
-                      <Avatar className="h-9 w-9 border shrink-0">
-                        <AvatarFallback>You</AvatarFallback>
-                      </Avatar>
-                    )}
-                  </div>
-                ))}
+                    ))}
                 {isLoading && (
                   <div className="flex items-start gap-3">
                     <Avatar className="h-9 w-9 border">
-                      <AvatarFallback className="bg-primary/10 text-primary">
-                        <Bot size={20} />
-                      </AvatarFallback>
+                       <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Tư vấn viên Phạm Thị Dung" />
+                       <AvatarFallback>PD</AvatarFallback>
                     </Avatar>
                     <div className="max-w-xs rounded-lg p-3 bg-muted flex items-center justify-center">
                       <LoaderCircle className="w-5 h-5 animate-spin text-muted-foreground" />
@@ -235,37 +228,37 @@ function ChatbotWidgetContent() {
                 )}
                 <div ref={messagesEndRef} />
               </CardContent>
-              <CardFooter className="p-2 border-t">
-                <div className="flex w-full items-center space-x-1">
-                  <Button variant="ghost" size="icon">
-                    <Paperclip className="h-5 w-5 text-muted-foreground" />
-                  </Button>
-                  <Button variant="ghost" size="icon">
-                    <ImageIcon className="h-5 w-5 text-muted-foreground" />
-                  </Button>
-                  <Input
-                    type="text"
-                    placeholder={t.chat.placeholder}
-                    className="flex-1 text-base border-none focus-visible:ring-0 shadow-none"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                    disabled={isLoading}
-                  />
-                  <Button
-                    type="submit"
-                    onClick={handleSend}
-                    disabled={isLoading}
-                    size="icon"
-                    variant="ghost"
-                  >
-                    {isLoading ? (
-                      <LoaderCircle className="h-5 w-5 animate-spin" />
-                    ) : (
-                      <SendHorizonal className="h-5 w-5 text-primary" />
-                    )}
-                    <span className="sr-only">Send</span>
-                  </Button>
+              <CardFooter className="p-2 border-t bg-white rounded-b-2xl">
+                 <div className="flex w-full items-center space-x-1 bg-muted/50 rounded-full p-1">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0">
+                        <Paperclip className="h-5 w-5 text-muted-foreground" />
+                    </Button>
+                    <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0">
+                        <ImageIcon className="h-5 w-5 text-muted-foreground" />
+                    </Button>
+                    <Input
+                        type="text"
+                        placeholder="Nhập câu hỏi của bạn ở đây..."
+                        className="flex-1 text-sm border-none focus-visible:ring-0 shadow-none bg-transparent"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                        disabled={isLoading}
+                    />
+                    <Button
+                        type="submit"
+                        onClick={handleSend}
+                        disabled={isLoading || !input.trim()}
+                        size="icon"
+                        className="h-8 w-8 shrink-0 rounded-full"
+                    >
+                        {isLoading ? (
+                        <LoaderCircle className="h-5 w-5 animate-spin" />
+                        ) : (
+                        <SendHorizonal className="h-5 w-5" />
+                        )}
+                        <span className="sr-only">Send</span>
+                    </Button>
                 </div>
               </CardFooter>
             </>
