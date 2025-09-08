@@ -38,7 +38,7 @@ export function CandidateCard({ candidate }: CandidateCardProps) {
             <Briefcase className="w-4 h-4" />
             {candidate.specialty[language]}
           </p>
-          <div className="flex items-center gap-2 pt-2">
+          <div className="flex flex-wrap items-center gap-2 pt-2">
              <Button size="xs" variant="outline">
                 <Eye className="w-4 h-4 mr-2" />
                 {t.common.viewProfile}
