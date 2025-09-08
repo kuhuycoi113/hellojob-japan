@@ -819,7 +819,8 @@
       "holidays": "Holidays",
       "suitableCandidates": {
         "title": "Suitable Candidates",
-        "description": "Based on the job requirements, here are some potentially suitable candidates."
+        "description": "Based on the job requirements, here are some potentially suitable candidates.",
+        "loadMore": "Load {count} more candidates"
       },
       "invite": "Invite to Apply"
   }

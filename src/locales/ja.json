@@ -819,7 +819,8 @@
       "holidays": "休日",
       "suitableCandidates": {
         "title": "適合する候補者",
-        "description": "職務要件に基づき、適合する可能性のある候補者です。"
+        "description": "職務要件に基づき、適合する可能性のある候補者です。",
+        "loadMore": "さらに{count}名の候補者を見る"
       },
       "invite": "応募を依頼"
   }
