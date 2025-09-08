@@ -1,3 +1,4 @@
+
 'use client';
 
 import {
@@ -16,9 +17,15 @@ import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileTe
 import { Logo } from './logo';
 import Link from 'next/link';
 import { Separator } from './ui/separator';
+import { useState } from 'react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { Label } from './ui/label';
+import { cn } from '@/lib/utils';
 
 export function MobileMenuSheet() {
   const { t } = useLanguage();
+  const [userRole, setUserRole] = useState('guest');
+
 
   const menuItems = [
     { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
@@ -29,6 +36,26 @@ export function MobileMenuSheet() {
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
+
+  const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => (
+    <div className={cn(inMenu ? "my-4" : "hidden")}>
+      <Label htmlFor="role-switcher-mobile" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
+      <Select value={userRole} onValueChange={setUserRole}>
+        <SelectTrigger id="role-switcher-mobile" className="h-10 bg-muted">
+          <SelectValue placeholder="Select a role" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
+          <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
+          <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
+          <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
+          <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
+          <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+  );
+
 
   return (
     <Sheet>
@@ -63,6 +90,8 @@ export function MobileMenuSheet() {
               <Diamond className="mr-2 h-4 w-4" />
               {t.header.menuItems.signUpForPremium}
             </Button>
+            
+            <RoleSwitcher inMenu={true} />
 
             <Separator className="mb-6"/>
 

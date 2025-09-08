@@ -65,7 +65,7 @@ const EnglishFlag = () => (
 type VisaType = 'intern' | 'skilled' | 'engineer';
 type Role = { title: string; description: string; icon: JSX.Element; }
 
-export function Header({ userRole, setUserRole }: { userRole?: string; setUserRole?: (role: string) => void; }) {
+export function Header() {
   const { language, setLanguage, t } = useLanguage();
   const { toggleChat } = useChat();
   const pathname = usePathname();
@@ -77,6 +77,7 @@ export function Header({ userRole, setUserRole }: { userRole?: string; setUserRo
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
   const [selectedVisaSubType, setSelectedVisaSubType] = useState<{title: string, href: string} | null>(null);
+  const [userRole, setUserRole] = useState('guest');
 
 
   const languageConfig = {
@@ -203,6 +204,25 @@ export function Header({ userRole, setUserRole }: { userRole?: string; setUserRo
     return `/post-job-ai?${params.toString()}`;
   }
 
+  const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => (
+    <div className={cn(!inMenu && "hidden lg:block w-48 ml-4")}>
+      <Label htmlFor="role-switcher" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
+      <Select value={userRole} onValueChange={setUserRole}>
+        <SelectTrigger id="role-switcher" className={cn("h-8", inMenu && "bg-muted")}>
+          <SelectValue placeholder="Select a role" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
+          <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
+          <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
+          <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
+          <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
+          <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+  );
+
   return (
     <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
       <header className="fixed md:sticky top-0 z-50 w-full border-b bg-white">
@@ -211,24 +231,6 @@ export function Header({ userRole, setUserRole }: { userRole?: string; setUserRo
             <Link href="/">
               <Logo />
             </Link>
-            {setUserRole && (
-              <div className="hidden lg:block w-48 ml-4">
-                <Label htmlFor="role-switcher" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
-                <Select value={userRole} onValueChange={setUserRole}>
-                    <SelectTrigger id="role-switcher" className="h-8">
-                        <SelectValue placeholder="Select a role" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
-                        <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
-                        <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
-                        <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
-                        <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
-                        <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
-                    </SelectContent>
-                </Select>
-            </div>
-            )}
           </div>
 
           <nav className="hidden md:flex flex-1 justify-center items-center gap-6 text-sm font-medium">
@@ -297,7 +299,7 @@ export function Header({ userRole, setUserRole }: { userRole?: string; setUserRo
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-80 p-4">
-                    <Link href="/dashboard/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-4 transition-colors">
+                    <Link href="/dashboard/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-2 transition-colors">
                       <div className="flex items-center gap-4">
                           <Avatar className="h-12 w-12">
                               <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
@@ -309,6 +311,10 @@ export function Header({ userRole, setUserRole }: { userRole?: string; setUserRo
                           </div>
                       </div>
                     </Link>
+                    <DropdownMenuSeparator />
+                    <div className="my-2">
+                      <RoleSwitcher inMenu={true} />
+                    </div>
                     <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mb-4">
                       <Diamond className="mr-2 h-4 w-4" />
                       {t.header.menuItems.signUpForPremium}
