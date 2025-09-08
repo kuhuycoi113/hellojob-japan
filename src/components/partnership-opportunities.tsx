@@ -124,9 +124,15 @@ export function PartnershipOpportunities() {
                                     <Separator />
                                      <div>
                                         <h4 className="font-semibold mb-2 flex items-center gap-2"><HandCoins className="w-4 h-4 text-muted-foreground" /> {t_opp.fees}</h4>
-                                        <div className="space-y-1 text-muted-foreground">
-                                            <div className="flex justify-between"><span>{t_opp.referralFee}:</span> <span className="font-medium text-foreground">{opp.referralFee[language]}</span></div>
-                                            <div className="flex justify-between"><span>{t_opp.managementFee}:</span> <span className="font-medium text-foreground">{opp.managementFee[language]}</span></div>
+                                        <div className="space-y-1">
+                                            <div className="flex justify-between items-baseline">
+                                                <span className="text-muted-foreground">{t_opp.referralFee}:</span>
+                                                <span className="font-bold text-lg text-primary">{opp.referralFee[language]}</span>
+                                            </div>
+                                            <div className="flex justify-between items-baseline">
+                                                <span className="text-muted-foreground">{t_opp.managementFee}:</span>
+                                                <span className="font-medium text-foreground">{opp.managementFee[language]}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </CardContent>
@@ -171,8 +177,14 @@ export function PartnershipOpportunities() {
                             </TableCell>
                              <TableCell className="hidden lg:table-cell">{opp.company[language]}</TableCell>
                             <TableCell className="hidden md:table-cell text-xs">
-                                <div>{t_opp.referralFee}: {opp.referralFee[language]}</div>
-                                <div>{t_opp.managementFee}: {opp.managementFee[language]}</div>
+                                <div>
+                                    <span>{t_opp.referralFee}:</span>
+                                    <span className="font-semibold text-primary ml-1">{opp.referralFee[language]}</span>
+                                </div>
+                                <div>
+                                    <span>{t_opp.managementFee}:</span>
+                                    <span className="font-medium ml-1">{opp.managementFee[language]}</span>
+                                </div>
                             </TableCell>
                             <TableCell className="text-right">
                                 <CountdownTimer expiryTimestamp={new Date(opp.expires).getTime()} />
