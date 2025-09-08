@@ -40,21 +40,9 @@ export function SuitableCandidates({ jobId }: SuitableCandidatesProps) {
                     <CandidateCard key={candidate.id} candidate={candidate} />
                 ))}
 
-                {lockedCandidates.length > 0 && (
-                    <div className="relative md:col-span-2">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 blur-sm pointer-events-none">
-                            {lockedCandidates.slice(0, 4).map(candidate => (
-                                <CandidateCard key={candidate.id} candidate={candidate} />
-                            ))}
-                        </div>
-                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 rounded-lg">
-                            <Lock className="w-12 h-12 text-gray-700 mb-4" />
-                            <h4 className="text-lg font-bold text-gray-800">{t.unlockCandidates.title}</h4>
-                            <p className="text-muted-foreground mb-4">{t.unlockCandidates.description.replace('{count}', (candidateCount - FREE_DISPLAY_COUNT).toString())}</p>
-                            <Button size="lg">{t.unlockCandidates.buttonText}</Button>
-                        </div>
-                    </div>
-                )}
+                {lockedCandidates.map(candidate => (
+                    <CandidateCard key={candidate.id} candidate={candidate} isLocked={true} />
+                ))}
             </div>
         </CardContent>
     </Card>
