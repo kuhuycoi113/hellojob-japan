@@ -94,13 +94,12 @@ function PartnershipInfo() {
   )
 }
 
-export function JobsPage() {
+export function JobsPage({ userRole }: { userRole: string }) {
   const { t, language } = useLanguage();
   const [jobs, setJobs] = useState<MockJob[]>([]);
   const [viewMode, setViewMode] = useState<'list' | 'grid' | null>(null);
   const [activeTab, setActiveTab] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
-  const [userRole, setUserRole] = useState('guest');
   const jobsListRef = useRef<HTMLDivElement>(null);
   const [highlightedJobId, setHighlightedJobId] = useState<string | null>(null);
 

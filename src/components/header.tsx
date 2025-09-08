@@ -65,7 +65,7 @@ const EnglishFlag = () => (
 type VisaType = 'intern' | 'skilled' | 'engineer';
 type Role = { title: string; description: string; icon: JSX.Element; }
 
-export function Header() {
+export function Header({ userRole, setUserRole }: { userRole?: string; setUserRole?: (role: string) => void; }) {
   const { language, setLanguage, t } = useLanguage();
   const { toggleChat } = useChat();
   const pathname = usePathname();
@@ -211,6 +211,24 @@ export function Header() {
             <Link href="/">
               <Logo />
             </Link>
+            {setUserRole && (
+              <div className="hidden lg:block w-48 ml-4">
+                <Label htmlFor="role-switcher" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
+                <Select value={userRole} onValueChange={setUserRole}>
+                    <SelectTrigger id="role-switcher" className="h-8">
+                        <SelectValue placeholder="Select a role" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
+                        <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
+                        <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
+                        <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
+                        <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
+                        <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
+                    </SelectContent>
+                </Select>
+            </div>
+            )}
           </div>
 
           <nav className="hidden md:flex flex-1 justify-center items-center gap-6 text-sm font-medium">
