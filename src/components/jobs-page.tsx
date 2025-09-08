@@ -53,6 +53,7 @@ import { PartnershipOpportunities } from './partnership-opportunities';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Label } from './ui/label';
 import { useRole } from '@/contexts/role-context';
+import { useLanguage } from '@/contexts/language-context';
 
 
 const statusStyles: Record<string, string> = {
