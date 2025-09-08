@@ -887,6 +887,9 @@
       "title": "Special Offer",
       "description": "Upgrade to the Premium package to get a discounted service fee of only 25%!",
       "learnMore": "Learn More"
+    },
+    "systemPartnerOffer": {
+      "description": "Especially, when partnering with a sending company in the HelloJob system, the platform fee is only 20%!"
     }
   }
 }

@@ -44,7 +44,6 @@ import {
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import Link from 'next/link';
-import { useLanguage } from '@/contexts/language-context';
 import { mockJobs, type MockJob } from '@/data/mock-jobs';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
@@ -85,7 +84,8 @@ function PartnershipInfo() {
                  <Diamond className="w-6 h-6 text-green-600 mt-1 flex-shrink-0"/>
                  <div className="flex-grow">
                     <h3 className="font-bold text-green-800">{t_info.specialOffer.title}</h3>
-                    <p className="text-sm text-green-700">{t_info.specialOffer.description}</p>
+                    <p className="text-sm text-green-700 mb-2">{t_info.specialOffer.description}</p>
+                    <p className="text-sm text-green-700 font-semibold">{t_info.systemPartnerOffer.description}</p>
                  </div>
                  <Button variant="link" className="p-0 text-green-800 self-end">
                     {t_info.specialOffer.learnMore} <ArrowRight className="w-4 h-4 ml-1" />

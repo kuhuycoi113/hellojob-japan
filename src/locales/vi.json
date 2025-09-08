@@ -887,6 +887,9 @@
       "title": "Ưu đãi đặc biệt",
       "description": "Nâng cấp lên gói Premium để giảm phí dịch vụ xuống chỉ còn 25%!",
       "learnMore": "Tìm hiểu thêm"
+    },
+    "systemPartnerOffer": {
+      "description": "Đặc biệt, khi hợp tác với công ty phái cử trong hệ thống HelloJob, phí nền tảng chỉ còn 20%!"
     }
   }
 }
