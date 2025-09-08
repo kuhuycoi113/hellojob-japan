@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import {
@@ -21,23 +22,13 @@ import { useState } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Label } from './ui/label';
 import { cn } from '@/lib/utils';
+import { useRole } from '@/contexts/role-context';
 
-export function MobileMenuSheet() {
+const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
   const { t } = useLanguage();
-  const [userRole, setUserRole] = useState('guest');
+  const { userRole, setUserRole } = useRole();
 
-
-  const menuItems = [
-    { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
-    { href: "/how-it-works", label: t.header.menuItems.howItWorks, icon: <Compass /> },
-    { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
-    { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
-    { href: "/advisors", label: t.header.advisors, icon: <Users /> },
-    { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
-    { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
-  ];
-
-  const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => (
+  return (
     <div className={cn(inMenu ? "my-4" : "hidden")}>
       <Label htmlFor="role-switcher-mobile" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
       <Select value={userRole} onValueChange={setUserRole}>
@@ -55,6 +46,23 @@ export function MobileMenuSheet() {
       </Select>
     </div>
   );
+};
+
+
+export function MobileMenuSheet() {
+  const { t } = useLanguage();
+
+
+  const menuItems = [
+    { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
+    { href: "/how-it-works", label: t.header.menuItems.howItWorks, icon: <Compass /> },
+    { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
+    { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
+    { href: "/advisors", label: t.header.advisors, icon: <Users /> },
+    { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
+    { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
+  ];
+
 
 
   return (

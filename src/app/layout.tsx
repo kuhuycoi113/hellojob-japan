@@ -6,6 +6,7 @@ import { MobileFooter } from '@/components/mobile-footer';
 import { ChatbotWidget } from '@/components/chatbot-widget';
 import { ChatProvider } from '@/contexts/chat-context';
 import { UnlockedCandidatesProvider } from '@/contexts/unlocked-candidates-context';
+import { RoleProvider } from '@/contexts/role-context';
 
 export const metadata: Metadata = {
   title: 'HelloJob Recommender',
@@ -31,15 +32,17 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <LanguageProvider defaultLanguage="vi">
-          <UnlockedCandidatesProvider>
-            <ChatProvider>
-              <div className="pt-16 md:pt-0 pb-20 md:pb-0">
-                {children}
-              </div>
-              <MobileFooter />
-              <ChatbotWidget />
-            </ChatProvider>
-          </UnlockedCandidatesProvider>
+          <RoleProvider>
+            <UnlockedCandidatesProvider>
+              <ChatProvider>
+                <div className="pt-16 md:pt-0 pb-20 md:pb-0">
+                  {children}
+                </div>
+                <MobileFooter />
+                <ChatbotWidget />
+              </ChatProvider>
+            </UnlockedCandidatesProvider>
+          </RoleProvider>
         </LanguageProvider>
         <Toaster />
       </body>

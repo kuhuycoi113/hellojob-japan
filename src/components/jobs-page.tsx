@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -52,6 +53,7 @@ import { cn } from '@/lib/utils';
 import { PartnershipOpportunities } from './partnership-opportunities';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Label } from './ui/label';
+import { useRole } from '@/contexts/role-context';
 
 
 const statusStyles: Record<string, string> = {
@@ -94,8 +96,9 @@ function PartnershipInfo() {
   )
 }
 
-export function JobsPage({ userRole }: { userRole: string }) {
+export function JobsPage() {
   const { t, language } = useLanguage();
+  const { userRole } = useRole();
   const [jobs, setJobs] = useState<MockJob[]>([]);
   const [viewMode, setViewMode] = useState<'list' | 'grid' | null>(null);
   const [activeTab, setActiveTab] = useState('all');

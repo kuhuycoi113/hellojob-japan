@@ -25,6 +25,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useChat } from '@/contexts/chat-context';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Label } from './ui/label';
+import { useRole } from '@/contexts/role-context';
 
 
 const VietnamFlag = () => (
@@ -65,6 +66,31 @@ const EnglishFlag = () => (
 type VisaType = 'intern' | 'skilled' | 'engineer';
 type Role = { title: string; description: string; icon: JSX.Element; }
 
+const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
+  const { t } = useLanguage();
+  const { userRole, setUserRole } = useRole();
+
+  return (
+    <div className={cn(!inMenu && "hidden lg:block w-48 ml-4", inMenu && "px-2")}>
+      <Label htmlFor="role-switcher" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
+      <Select value={userRole} onValueChange={setUserRole}>
+        <SelectTrigger id="role-switcher" className={cn("h-8", inMenu && "bg-muted")}>
+          <SelectValue placeholder="Select a role" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
+          <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
+          <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
+          <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
+          <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
+          <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+  );
+};
+
+
 export function Header() {
   const { language, setLanguage, t } = useLanguage();
   const { toggleChat } = useChat();
@@ -77,7 +103,6 @@ export function Header() {
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
   const [selectedVisaSubType, setSelectedVisaSubType] = useState<{title: string, href: string} | null>(null);
-  const [userRole, setUserRole] = useState('guest');
 
 
   const languageConfig = {
@@ -203,25 +228,6 @@ export function Header() {
 
     return `/post-job-ai?${params.toString()}`;
   }
-
-  const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => (
-    <div className={cn(!inMenu && "hidden lg:block w-48 ml-4", inMenu && "px-2")}>
-      <Label htmlFor="role-switcher" className="text-xs text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
-      <Select value={userRole} onValueChange={setUserRole}>
-        <SelectTrigger id="role-switcher" className={cn("h-8", inMenu && "bg-muted")}>
-          <SelectValue placeholder="Select a role" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
-          <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
-          <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
-          <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
-          <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
-          <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
-        </SelectContent>
-      </Select>
-    </div>
-  );
 
   return (
     <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
