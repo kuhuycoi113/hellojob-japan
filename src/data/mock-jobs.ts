@@ -210,5 +210,89 @@ export const mockJobs: MockJob[] = [
       en: ['Full social insurance', 'Transportation allowance', 'Uniform provided', 'Opportunities for skill-up training'],
       ja: ['社会保険完備', '交通費支給', '制服貸与', 'スキルアップ研修の機会あり']
     }
-  }
+  },
+  ...Array.from({ length: 27 }, (_, i) => {
+    const jobIndex = i + 4;
+    const statusTypes: ('Active' | 'Awaiting Approval' | 'Closed')[] = ['Active', 'Awaiting Approval', 'Closed'];
+    const industries = [
+        { vi: 'Nông nghiệp', en: 'Agriculture', ja: '農業', hint: 'farm tractor' },
+        { vi: 'Cơ khí', en: 'Mechanics', ja: '機械', hint: 'metal workshop' },
+        { vi: 'Lắp ráp điện tử', en: 'Electronics Assembly', ja: '電子組立', hint: 'electronics factory' },
+        { vi: 'Dệt may', en: 'Textiles', ja: '繊維', hint: 'sewing machine' },
+        { vi: 'Dọn dẹp tòa nhà', en: 'Building Cleaning', ja: 'ビルクリーニング', hint: 'cleaning service' },
+        { vi: 'Khách sạn', en: 'Hospitality', ja: '宿泊', hint: 'hotel lobby' }
+    ];
+    const locations = [
+        { vi: 'Hokkaido', en: 'Hokkaido', ja: '北海道' },
+        { vi: 'Fukuoka', en: 'Fukuoka', ja: '福岡' },
+        { vi: 'Kanagawa', en: 'Kanagawa', ja: '神奈川' },
+        { vi: 'Saitama', en: 'Saitama', ja: '埼玉' },
+        { vi: 'Chiba', en: 'Chiba', ja: '千葉' }
+    ];
+    const companies = [
+        { vi: 'Công ty TNHH Watanabe', en: 'Watanabe Co., Ltd.', ja: '渡辺株式会社' },
+        { vi: 'Tập đoàn Ito', en: 'Ito Group', ja: '伊藤グループ' },
+        { vi: 'Xí nghiệp Yamamoto', en: 'Yamamoto Works', ja: '山本工業' },
+        { vi: 'Công ty Tanaka', en: 'Tanaka Corporation', ja: '田中商事' }
+    ];
+    const industry = industries[jobIndex % industries.length];
+    const location = locations[jobIndex % locations.length];
+    const company = companies[jobIndex % companies.length];
+
+    return {
+      id: `JOB${String(jobIndex).padStart(3, '0')}`,
+      title: {
+        vi: `${industry.vi} tại ${location.vi}`,
+        en: `${industry.en} in ${location.en}`,
+        ja: `${location.ja}での${industry.ja}`
+      },
+      company,
+      applicants: Math.floor(Math.random() * 30),
+      status: statusTypes[jobIndex % statusTypes.length],
+      postedDate: `2024-05-${String(25 - (jobIndex % 25)).padStart(2, '0')}`,
+      image: `https://picsum.photos/400/225?random=${jobIndex}`,
+      imageHint: industry.hint,
+      location,
+      visaType: {
+        vi: 'Kỹ năng đặc định (i)',
+        en: 'Specified Skilled Worker (i)',
+        ja: '特定技能1号'
+      },
+      salary: {
+        vi: '195.000 JPY/tháng',
+        en: '¥195,000/month',
+        ja: '月給19.5万円'
+      },
+      contractType: {
+        vi: 'Toàn thời gian',
+        en: 'Full-time',
+        ja: '正社員'
+      },
+      workingHours: {
+        vi: '08:30 - 17:30',
+        en: '08:30 - 17:30',
+        ja: '08:30～17:30'
+      },
+      holidays: {
+        vi: 'Chủ Nhật và một ngày khác trong tuần',
+        en: 'Sunday and one other weekday',
+        ja: '日曜・他週1日'
+      },
+      description: {
+        vi: `Tuyển dụng nhân viên cho ngành ${industry.vi}. Công việc ổn định, môi trường làm việc tốt. Yêu cầu ứng viên chăm chỉ, có trách nhiệm.`,
+        en: `Recruiting staff for the ${industry.en} industry. Stable job, good working environment. Seeking hardworking and responsible candidates.`,
+        ja: `${industry.ja} ngànhのスタッフを募集しています。安定した仕事、良好な労働環境。勤勉で責任感のある候補者を求めています。`
+      },
+      requirements: {
+        vi: ['Sức khỏe tốt, không có bệnh truyền nhiễm', 'Chăm chỉ, chịu khó học hỏi', 'Ưu tiên ứng viên có kinh nghiệm'],
+        en: ['Good health, no infectious diseases', 'Hardworking, willing to learn', 'Candidates with experience are prioritized'],
+        ja: ['健康で、伝染病がないこと', '勤勉で、学ぶ意欲があること', '経験者優遇']
+      },
+      benefits: {
+        vi: ['Hỗ trợ tìm nhà ở', 'Bảo hiểm đầy đủ theo luật pháp', 'Tăng lương hàng năm'],
+        en: ['Housing search support', 'Full insurance according to law', 'Annual salary increase'],
+        ja: ['住居探しサポート', '法律に基づく完全な保険', '毎年の昇給']
+      }
+    };
+  })
 ] as MockJob[];

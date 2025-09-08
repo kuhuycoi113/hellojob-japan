@@ -11,7 +11,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { JobsTable } from './jobs-table';
 import { JobsGallery } from './jobs-gallery';
 import Link from 'next/link';
-import { mockJobs } from '@/data/jobs'; // Import mock data
+import { mockJobs } from '@/data/mock-jobs'; // Import mock data
 
 export function JobsList() {
   const { t } = useLanguage();
@@ -24,7 +24,7 @@ export function JobsList() {
     // Set mock jobs data on component mount
     const storedJobsRaw = localStorage.getItem('postedJobs');
     const storedJobs: Job[] = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
-    const allJobs = [...storedJobs, ...mockJobs].slice(0, 20); // Combine and limit to 20
+    const allJobs = [...storedJobs, ...mockJobs].slice(0, 30); // Combine and limit to 30
      // Remove duplicates by id, giving priority to storedJobs
     const uniqueJobs = allJobs.filter((job, index, self) =>
         index === self.findIndex((j) => (
