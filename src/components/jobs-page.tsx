@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -34,7 +35,6 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import Link from 'next/link';
@@ -43,7 +43,25 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { mockJobs, type MockJob } from '@/data/mock-jobs';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { PartnershipOpportunities } from './partnership-opportunities';
+import dynamic from 'next/dynamic';
+import { Skeleton } from './ui/skeleton';
+
+const PartnershipOpportunities = dynamic(
+  () => import('./partnership-opportunities').then(mod => mod.PartnershipOpportunities),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="mb-8">
+        <Skeleton className="h-8 w-1/3 mb-4" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Skeleton className="h-64 w-full" />
+          <Skeleton className="h-64 w-full hidden md:block" />
+          <Skeleton className="h-64 w-full hidden lg:block" />
+        </div>
+      </div>
+    )
+  }
+);
 
 
 const statusStyles: Record<string, string> = {
