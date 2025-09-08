@@ -9,14 +9,18 @@ import { Briefcase, Eye, Lock, UserCheck } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { UnlockCandidateDialog } from '@/components/unlock-candidate-dialog';
+import { useUnlockedCandidates } from '@/contexts/unlocked-candidates-context';
 
 interface CandidateCardProps {
   candidate: Candidate;
   isLocked?: boolean;
 }
 
-export function CandidateCard({ candidate, isLocked = false }: CandidateCardProps) {
+export function CandidateCard({ candidate, isLocked: initiallyLocked = false }: CandidateCardProps) {
   const { t, language } = useLanguage();
+  const { unlockedIds } = useUnlockedCandidates();
+  
+  const isLocked = initiallyLocked && !unlockedIds.has(candidate.id);
 
   const getDisplayName = () => {
     if (language === 'ja') {
@@ -55,7 +59,7 @@ export function CandidateCard({ candidate, isLocked = false }: CandidateCardProp
       </div>
       {isLocked && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/70 backdrop-blur-sm">
-           <UnlockCandidateDialog>
+           <UnlockCandidateDialog candidateId={candidate.id}>
               <Button variant="outline">
                   <Lock className="w-4 h-4 mr-2" />
                   {t.unlockCandidates.buttonText}

@@ -1,4 +1,3 @@
-// This is a new file.
 'use client';
 
 import {
@@ -8,6 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from '@/components/ui/dialog';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -16,10 +16,25 @@ import { useLanguage } from '@/contexts/language-context';
 import { CreditCard, Diamond, ShieldCheck, UserPlus } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { ScrollArea } from './ui/scroll-area';
+import { useUnlockedCandidates } from '@/contexts/unlocked-candidates-context';
+import { useToast } from '@/hooks/use-toast';
 
-export function UnlockCandidateDialog({ children }: { children: React.ReactNode }) {
+export function UnlockCandidateDialog({ children, candidateId }: { children: React.ReactNode, candidateId: string }) {
   const { t } = useLanguage();
   const t_unlock = t.unlockCandidates;
+  const { unlockCandidate } = useUnlockedCandidates();
+  const { toast } = useToast();
+
+
+  const handlePayment = () => {
+    // In a real app, this would involve a payment gateway integration.
+    // For this demo, we'll just simulate a successful payment.
+    unlockCandidate(candidateId);
+    toast({
+        title: "Thanh toán thành công!",
+        description: `Hồ sơ ứng viên ${candidateId} đã được mở khoá.`,
+    })
+  }
 
   return (
     <Dialog>
@@ -67,9 +82,11 @@ export function UnlockCandidateDialog({ children }: { children: React.ReactNode 
         </ScrollArea>
 
         <div className="bg-muted/50 p-6 space-y-4 border-t mt-auto">
-          <Button className="w-full h-12 text-base" size="lg">
-            {t_unlock.payment.payButton.replace('{amount}', '990')}
-          </Button>
+          <DialogClose asChild>
+            <Button className="w-full h-12 text-base" size="lg" onClick={handlePayment}>
+              {t_unlock.payment.payButton.replace('{amount}', '990')}
+            </Button>
+          </DialogClose>
 
           <div className="relative flex justify-center text-xs uppercase">
             <span className="bg-muted/50 px-2 text-muted-foreground">{t_unlock.or}</span>
