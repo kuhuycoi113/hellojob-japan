@@ -832,7 +832,7 @@
     "description": "完全なプロフィールを閲覧するには、以下のオプションを選択してください。",
     "buttonText": "今すぐアンロック",
     "or": "または",
-    "premiumButton": "プレミアムに登録（すべてアンロック）",
+    "premiumButton": "プレミアムに登録",
     "referButton": "他のユーザーを紹介",
     "payment": {
       "direct": "直接支払い",
@@ -845,13 +845,24 @@
       "secure": "安全な支払い"
     }
   },
-  "partnershipOpportunities": {
+    "partnershipOpportunities": {
     "title": "新規協力案件",
     "from": "依頼元: {company}",
     "expiresIn": "残り時間",
     "requirements": "主な要件",
     "accept": "受託する",
     "decline": "辞退する"
+  },
+  "partnershipInfo": {
+    "revenueShare": {
+      "title": "収益分配モデル",
+      "description": "承認された各機会について、パートナーは費用を差し引いた後のサービス料の70%を受け取り、HelloJobは30%を受け取ります。"
+    },
+    "specialOffer": {
+      "title": "特別オファー",
+      "description": "プレミアムパッケージにアップグレードすると、サービス料がわずか25%に割引されます！",
+      "learnMore": "詳細を見る"
+    }
   }
 }
 

@@ -25,6 +25,9 @@ import {
   MoreHorizontal,
   Users,
   Briefcase,
+  DollarSign,
+  Diamond,
+  ArrowRight,
 } from 'lucide-react';
 import {
   Pagination,
@@ -77,10 +80,39 @@ const statusStyles: Record<string, string> = {
 
 const JOBS_PER_PAGE = 9;
 
+function PartnershipInfo() {
+  const { t } = useLanguage();
+  const t_info = t.partnershipInfo;
+  return (
+    <div className="mb-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <Card className="bg-yellow-50 border-yellow-200">
+            <CardContent className="p-4 flex items-start gap-4">
+                 <DollarSign className="w-6 h-6 text-yellow-600 mt-1 flex-shrink-0"/>
+                 <div>
+                    <h3 className="font-bold text-yellow-800">{t_info.revenueShare.title}</h3>
+                    <p className="text-sm text-yellow-700">{t_info.revenueShare.description}</p>
+                 </div>
+            </CardContent>
+        </Card>
+         <Card className="bg-green-50 border-green-200">
+            <CardContent className="p-4 flex items-start gap-4">
+                 <Diamond className="w-6 h-6 text-green-600 mt-1 flex-shrink-0"/>
+                 <div className="flex-grow">
+                    <h3 className="font-bold text-green-800">{t_info.specialOffer.title}</h3>
+                    <p className="text-sm text-green-700">{t_info.specialOffer.description}</p>
+                 </div>
+                 <Button variant="link" className="p-0 text-green-800 self-end">
+                    {t_info.specialOffer.learnMore} <ArrowRight className="w-4 h-4 ml-1" />
+                 </Button>
+            </CardContent>
+        </Card>
+    </div>
+  )
+}
+
 export function JobsPage() {
   const { t, language } = useLanguage();
   const [jobs, setJobs] = useState<MockJob[]>([]);
-  const isMobile = useIsMobile();
   const [viewMode, setViewMode] = useState<'list' | 'grid' | null>(null);
   const [activeTab, setActiveTab] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
@@ -88,9 +120,10 @@ export function JobsPage() {
   const jobsListRef = useRef<HTMLDivElement>(null);
   const [highlightedJobId, setHighlightedJobId] = useState<string | null>(null);
 
-  useEffect(() => {
-    setViewMode(isMobile ? 'list' : 'grid');
-  }, [isMobile]);
+   useEffect(() => {
+    // Only set viewMode on client-side to avoid hydration mismatch
+    setViewMode(window.innerWidth < 768 ? 'list' : 'grid');
+  }, []);
 
   const loadJobs = () => {
     const storedJobsRaw = localStorage.getItem('postedJobs');
@@ -270,7 +303,10 @@ export function JobsPage() {
   return (
     <div className="space-y-6">
       { (userRole === 'union' || userRole === 'support_org') && (
-        <PartnershipOpportunities />
+        <>
+          <PartnershipOpportunities />
+          <PartnershipInfo />
+        </>
       )}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" ref={jobsListRef}>
         <div>

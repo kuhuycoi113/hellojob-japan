@@ -832,7 +832,7 @@
     "description": "Để xem toàn bộ hồ sơ, vui lòng chọn một trong các phương thức dưới đây.",
     "buttonText": "Mở khóa ngay",
     "or": "HOẶC",
-    "premiumButton": "Đăng ký Premium (Mở tất cả)",
+    "premiumButton": "Đăng ký Premium",
     "referButton": "Giới thiệu người dùng khác",
     "payment": {
       "direct": "Thanh toán trực tiếp",
@@ -852,6 +852,17 @@
     "requirements": "Yêu cầu chính",
     "accept": "Chấp nhận",
     "decline": "Từ chối"
+  },
+  "partnershipInfo": {
+    "revenueShare": {
+      "title": "Mô hình chia sẻ doanh thu",
+      "description": "Với mỗi cơ hội được chấp nhận, đối tác sẽ nhận 70% và HelloJob nhận 30% phí dịch vụ sau khi trừ các chi phí."
+    },
+    "specialOffer": {
+      "title": "Ưu đãi đặc biệt",
+      "description": "Nâng cấp lên gói Premium để giảm phí dịch vụ xuống chỉ còn 25%!",
+      "learnMore": "Tìm hiểu thêm"
+    }
   }
 }
 
