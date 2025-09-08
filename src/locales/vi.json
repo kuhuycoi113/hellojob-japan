@@ -788,7 +788,9 @@
     "tabs": {
       "all": "Tất cả",
       "active": "Đang tuyển",
+      "searching": "Đang tìm kiếm",
       "awaiting": "Chờ duyệt",
+      "completed": "Đã hoàn thành",
       "closed": "Đã đóng"
     },
     "table": {
@@ -852,5 +854,7 @@
     "decline": "Từ chối"
   }
 }
+
+    
 
     

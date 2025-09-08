@@ -146,9 +146,9 @@ export function JobsPage() {
   const TABS = [
     { value: 'all', label: t.jobsPage.tabs.all },
     { value: 'active', label: t.jobsPage.tabs.active },
-    { value: 'searching', label: t.dashboard_employer.jobs_list.tabs.searching },
+    { value: 'searching', label: t.jobsPage.tabs.searching },
     { value: 'awaiting-approval', label: t.jobsPage.tabs.awaiting },
-    { value: 'completed', label: t.dashboard_employer.jobs_list.tabs.completed },
+    { value: 'completed', label: t.jobsPage.tabs.completed },
     { value: 'closed', label: t.jobsPage.tabs.closed },
   ];
   
@@ -366,3 +366,5 @@ export function JobsPage() {
     </div>
   );
 }
+
+    

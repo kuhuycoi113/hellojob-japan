@@ -779,78 +779,82 @@
     }
   },
    "jobsPage": {
-    "title": "Quản lý việc làm",
-    "subtitle": "Quản lý các tin tuyển dụng của bạn tại đây.",
-    "postNewJob": "Đăng việc làm mới",
-    "applicants": "ứng viên",
-    "postedOn": "Đăng ngày",
-    "viewDetails": "Xem chi tiết",
+    "title": "Manage Jobs",
+    "subtitle": "Manage your job postings here.",
+    "postNewJob": "Post New Job",
+    "applicants": "applicants",
+    "postedOn": "Posted on",
+    "viewDetails": "View Details",
     "tabs": {
-      "all": "Tất cả",
-      "active": "Đang tuyển",
-      "awaiting": "Chờ duyệt",
-      "closed": "Đã đóng"
+      "all": "All",
+      "active": "Active",
+      "searching": "Searching",
+      "awaiting": "Awaiting Approval",
+      "completed": "Completed",
+      "closed": "Closed"
     },
     "table": {
-      "jobTitle": "Chức danh",
-      "applicants": "Ứng viên",
-      "status": "Trạng thái",
-      "postedDate": "Ngày đăng",
-      "actions": "Hành động",
-      "toggleMenu": "Mở menu",
-      "viewDetails": "Xem chi tiết",
-      "edit": "Chỉnh sửa",
-      "archive": "Lưu trữ"
+      "jobTitle": "Job Title",
+      "applicants": "Applicants",
+      "status": "Status",
+      "postedDate": "Date Posted",
+      "actions": "Actions",
+      "toggleMenu": "Toggle menu",
+      "viewDetails": "View Details",
+      "edit": "Edit",
+      "archive": "Archive"
     }
   },
   "jobDetail": {
-      "backButton": "Quay lại danh sách",
-      "findCandidates": "Tìm ứng viên",
-      "location": "Địa điểm",
-      "applicants": "Ứng viên",
-      "postedDate": "Ngày đăng",
-      "jobDescription": "Mô tả công việc",
-      "requirements": "Yêu cầu",
-      "benefits": "Quyền lợi",
-      "jobInformation": "Thông tin công việc",
-      "salary": "Mức lương",
-      "visaType": "Loại Visa",
-      "contractType": "Loại hợp đồng",
-      "workingHours": "Giờ làm việc",
-      "holidays": "Ngày nghỉ",
+      "backButton": "Back to list",
+      "findCandidates": "Find Candidates",
+      "location": "Location",
+      "applicants": "Applicants",
+      "postedDate": "Date Posted",
+      "jobDescription": "Job Description",
+      "requirements": "Requirements",
+      "benefits": "Benefits",
+      "jobInformation": "Job Information",
+      "salary": "Salary",
+      "visaType": "Visa Type",
+      "contractType": "Contract Type",
+      "workingHours": "Working Hours",
+      "holidays": "Holidays",
       "suitableCandidates": {
-        "title": "Ứng viên phù hợp",
-        "description": "Dựa trên yêu cầu công việc, đây là những ứng viên có thể phù hợp.",
-        "loadMore": "Xem thêm {count} ứng viên khác"
+        "title": "Suitable Candidates",
+        "description": "Based on the job requirements, here are some potentially suitable candidates.",
+        "loadMore": "Load {count} more candidates"
       },
-      "invite": "Mời ứng tuyển"
+      "invite": "Invite to Apply"
   },
   "unlockCandidates": {
-    "title": "Mở khóa hồ sơ ứng viên",
-    "description": "Để xem toàn bộ hồ sơ, vui lòng chọn một trong các phương thức dưới đây.",
-    "buttonText": "Mở khóa ngay",
-    "or": "HOẶC",
-    "premiumButton": "Đăng ký Premium (Mở tất cả)",
-    "referButton": "Giới thiệu người dùng khác",
+    "title": "Unlock Candidate Profile",
+    "description": "To view the full profile, please select one of the options below.",
+    "buttonText": "Unlock Now",
+    "or": "OR",
+    "premiumButton": "Sign Up for Premium (Unlock All)",
+    "referButton": "Refer Another User",
     "payment": {
-      "direct": "Thanh toán trực tiếp",
-      "gateway": "Cổng khác",
-      "cardNumber": "Số thẻ",
-      "expiryDate": "Ngày hết hạn",
+      "direct": "Direct Payment",
+      "gateway": "Other Gateways",
+      "cardNumber": "Card Number",
+      "expiryDate": "Expiry Date",
       "cvc": "CVC",
-      "cardName": "Tên chủ thẻ",
-      "payButton": "Thanh toán {amount} JPY",
-      "secure": "Thanh toán được bảo mật"
+      "cardName": "Cardholder Name",
+      "payButton": "Pay {amount} JPY",
+      "secure": "Secure Payment"
     }
   },
     "partnershipOpportunities": {
-    "title": "Cơ hội hợp tác mới",
-    "from": "Từ: {company}",
-    "expiresIn": "Hết hạn sau",
-    "requirements": "Yêu cầu chính",
-    "accept": "Chấp nhận",
-    "decline": "Từ chối"
+    "title": "New Partnership Opportunities",
+    "from": "From: {company}",
+    "expiresIn": "Expires in",
+    "requirements": "Main Requirements",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }
+
+    
 
     
