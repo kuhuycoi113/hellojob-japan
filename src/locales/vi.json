@@ -786,11 +786,14 @@
     "applicants": "ứng viên",
     "postedOn": "Đăng ngày",
     "viewDetails": "Xem chi tiết",
+    "roleSwitcher": {
+      "label": "Mô phỏng vai trò người dùng"
+    },
     "tabs": {
       "all": "Tất cả",
       "active": "Đang tuyển",
       "searching": "Đang tìm kiếm",
-      "awaiting": "Chờ duyệt",
+      "awaiting-approval": "Chờ duyệt",
       "completed": "Đã hoàn thành",
       "closed": "Đã đóng"
     },

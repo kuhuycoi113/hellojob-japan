@@ -28,6 +28,7 @@ import {
   DollarSign,
   Diamond,
   ArrowRight,
+  UserSquare,
 } from 'lucide-react';
 import {
   Pagination,
@@ -48,6 +49,8 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Skeleton } from './ui/skeleton';
 import { cn } from '@/lib/utils';
 import { PartnershipOpportunities } from './partnership-opportunities';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { Label } from './ui/label';
 
 
 const statusStyles: Record<string, string> = {
@@ -287,12 +290,6 @@ export function JobsPage() {
 
   return (
     <div className="space-y-6">
-      { (userRole === 'union' || userRole === 'support_org') && (
-        <>
-          <PartnershipOpportunities />
-          <PartnershipInfo />
-        </>
-      )}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" ref={jobsListRef}>
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold font-headline">
@@ -302,13 +299,35 @@ export function JobsPage() {
             {t.jobsPage.subtitle}
           </p>
         </div>
-        <Button asChild size="lg" variant="accent">
-          <Link href="/post-job-ai">
-            <PlusCircle className="mr-2 h-5 w-5" />
-            {t.jobsPage.postNewJob}
-          </Link>
-        </Button>
+        <div className="flex gap-4 items-center">
+            <div className="w-48">
+              <Label htmlFor="role-switcher" className="text-xs font-medium text-muted-foreground">{t.jobsPage.roleSwitcher.label}</Label>
+              <Select value={userRole} onValueChange={setUserRole}>
+                <SelectTrigger id="role-switcher" className="h-9">
+                  <SelectValue placeholder="Select role" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
+                  <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
+                  <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <Button asChild size="lg" variant="accent">
+              <Link href="/post-job-ai">
+                <PlusCircle className="mr-2 h-5 w-5" />
+                {t.jobsPage.postNewJob}
+              </Link>
+            </Button>
+        </div>
       </div>
+      
+      { (userRole === 'union' || userRole === 'support_org') && (
+        <>
+          <PartnershipOpportunities />
+          <PartnershipInfo />
+        </>
+      )}
 
       <Tabs value={activeTab} onValueChange={(value) => { setActiveTab(value); setCurrentPage(1); }}>
         <div className="flex items-center justify-between">

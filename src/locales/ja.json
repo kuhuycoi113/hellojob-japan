@@ -786,11 +786,14 @@
     "applicants": "応募者",
     "postedOn": "掲載日",
     "viewDetails": "詳細を見る",
+    "roleSwitcher": {
+      "label": "ユーザーロールをシミュレート"
+    },
     "tabs": {
       "all": "すべて",
       "active": "募集中",
       "searching": "募集中",
-      "awaiting": "承認待ち",
+      "awaiting-approval": "承認待ち",
       "completed": "完了",
       "closed": "募集終了"
     },

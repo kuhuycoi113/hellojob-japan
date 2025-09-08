@@ -780,93 +780,96 @@
     }
   },
    "jobsPage": {
-    "title": "求人管理",
-    "subtitle": "こちらで求人情報と協力の機会を管理します。",
-    "postNewJob": "新規求人作成",
-    "applicants": "応募者",
-    "postedOn": "掲載日",
-    "viewDetails": "詳細を見る",
+    "title": "Manage Jobs",
+    "subtitle": "Manage your job postings and partnership opportunities here.",
+    "postNewJob": "Post New Job",
+    "applicants": "applicants",
+    "postedOn": "Posted on",
+    "viewDetails": "View Details",
+    "roleSwitcher": {
+      "label": "Simulate User Role"
+    },
     "tabs": {
-      "all": "すべて",
-      "active": "募集中",
-      "searching": "募集中",
-      "awaiting": "承認待ち",
-      "completed": "完了",
-      "closed": "募集終了"
+      "all": "All",
+      "active": "Active",
+      "searching": "Searching",
+      "awaiting-approval": "Awaiting Approval",
+      "completed": "Completed",
+      "closed": "Closed"
     },
     "table": {
-      "jobTitle": "役職",
-      "applicants": "応募者数",
-      "status": "ステータス",
-      "postedDate": "掲載日",
-      "actions": "操作",
-      "toggleMenu": "メニューを開閉"
+      "jobTitle": "Job Title",
+      "applicants": "Applicants",
+      "status": "Status",
+      "postedDate": "Posted Date",
+      "actions": "Actions",
+      "toggleMenu": "Toggle menu"
     }
   },
   "jobDetail": {
-      "backButton": "求人一覧に戻る",
-      "findCandidates": "候補者を探す",
-      "location": "勤務地",
-      "applicants": "応募者数",
-      "postedDate": "掲載日",
-      "jobDescription": "職務内容",
-      "requirements": "応募要件",
-      "benefits": "福利厚生",
-      "jobInformation": "求人情報",
-      "salary": "給与",
-      "visaType": "在留資格",
-      "contractType": "雇用形態",
-      "workingHours": "勤務時間",
-      "holidays": "休日",
+      "backButton": "Back to list",
+      "findCandidates": "Find Candidates",
+      "location": "Location",
+      "applicants": "Applicants",
+      "postedDate": "Date Posted",
+      "jobDescription": "Job Description",
+      "requirements": "Requirements",
+      "benefits": "Benefits",
+      "jobInformation": "Job Information",
+      "salary": "Salary",
+      "visaType": "Visa Type",
+      "contractType": "Contract Type",
+      "workingHours": "Working Hours",
+      "holidays": "Holidays",
       "suitableCandidates": {
-        "title": "適合する候補者",
-        "description": "職務要件に基づき、適合する可能性のある候補者です。",
-        "loadMore": "さらに{count}名の候補者を見る"
+        "title": "Suitable Candidates",
+        "description": "Based on the job requirements, here are some potentially suitable candidates.",
+        "loadMore": "View {count} more candidates"
       },
-      "invite": "応募を依頼"
+      "invite": "Invite to Apply"
   },
   "unlockCandidates": {
-    "title": "候補者プロフィールをアンロック",
-    "description": "完全なプロフィールを閲覧するには、以下のオプションを選択してください。",
-    "buttonText": "今すぐアンロック",
-    "or": "または",
-    "premiumButton": "プレミアムに登録",
-    "referButton": "他のユーザーを紹介",
+    "title": "Unlock Candidate Profile",
+    "description": "To view the full profile, please choose one of the options below.",
+    "buttonText": "Unlock Now",
+    "or": "OR",
+    "premiumButton": "Sign up for Premium",
+    "referButton": "Refer another user",
     "payment": {
-      "direct": "直接支払い",
-      "gateway": "他のゲートウェイ",
-      "cardNumber": "カード番号",
-      "expiryDate": "有効期限",
+      "direct": "Direct Payment",
+      "gateway": "Other Gateway",
+      "cardNumber": "Card Number",
+      "expiryDate": "Expiry Date",
       "cvc": "CVC",
-      "cardName": "カード名義人",
-      "payButton": "{amount}円を支払う",
-      "secure": "安全な支払い"
+      "cardName": "Cardholder Name",
+      "payButton": "Pay {amount} JPY",
+      "secure": "Secure Payment"
     }
   },
     "partnershipOpportunities": {
-    "title": "新規協力案件",
-    "from": "依頼元: {company}",
-    "expiresIn": "残り時間",
-    "requirements": "主な要件",
-    "accept": "受託する",
-    "decline": "辞退する",
+    "title": "New Partnership Opportunities",
+    "from": "From: {company}",
+    "expiresIn": "Expires in",
+    "requirements": "Key Requirements",
+    "accept": "Accept",
+    "decline": "Decline",
     "table": {
-        "opportunity": "案件",
-        "company": "企業",
-        "visaType": "在留資格",
-        "expires": "期限",
-        "actions": "操作"
+        "opportunity": "Opportunity",
+        "company": "Company",
+        "visaType": "Visa Type",
+        "expires": "Expires",
+        "actions": "Actions"
       }
   },
   "partnershipInfo": {
     "revenueShare": {
-      "title": "収益分配モデル",
-      "description": "承認された各機会について、パートナーは費用を差し引いた後のサービス料の70%を受け取り、HelloJobは30%を受け取ります。"
+      "title": "Revenue Share Model",
+      "description": "For each accepted opportunity, partners receive 70% and HelloJob receives 30% of the service fee after costs."
     },
     "specialOffer": {
-      "title": "特別オファー",
-      "description": "プレミアムパッケージにアップグレードすると、サービス料がわずか25%に割引されます！",
-      "learnMore": "詳細を見る"
+      "title": "Special Offer",
+      "description": "Upgrade to the Premium package to get a discounted service fee of only 25%!",
+      "learnMore": "Learn More"
     }
   }
 }
