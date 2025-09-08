@@ -696,6 +696,10 @@
   "userRoles": {
     "title": "What is your role?",
     "description": "Let us know your role for the best experience.",
+    "guest": {
+      "title": "Guest (Not Logged In)",
+      "description": "View as a visitor."
+    },
     "hiringCompany": {
       "title": "Hiring Company",
       "description": "Directly recruits personnel."
@@ -719,10 +723,6 @@
     "yuryoShokai": {
       "title": "Paid Employment Placement Business",
       "description": "Provides paid job placement services."
-    },
-    "guest": {
-        "title": "Guest (Not Logged In)",
-        "description": "View as a visitor."
     }
   },
   "chat": {
@@ -789,7 +789,7 @@
     "subtitle": "Manage your job postings and partnership opportunities here.",
     "guestSubtitle": "Explore job opportunities and see how our platform works.",
     "guestCta": "Sign up or log in to post jobs and connect with candidates.",
-    "postNewJob": "Post New Job",
+    "inviteSendingCompany": "Invite Sending Co.",
     "applicants": "applicants",
     "postedOn": "Posted on",
     "viewDetails": "View Details",
@@ -871,6 +871,7 @@
     "partnerReceives": "Partner Receives",
     "accept": "Accept",
     "decline": "Decline",
+    "referredByYou": "Referred by you",
     "table": {
         "opportunity": "Opportunity",
         "company": "Company",

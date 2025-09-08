@@ -7,13 +7,14 @@ import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { useLanguage } from '@/contexts/language-context';
 import { opportunities as initialOpportunities, type Opportunity } from '@/data/opportunities';
-import { CheckCircle, XCircle, List, LayoutGrid, MoreHorizontal, HandCoins, FileText } from 'lucide-react';
+import { CheckCircle, XCircle, List, LayoutGrid, MoreHorizontal, HandCoins, FileText, Sparkles } from 'lucide-react';
 import { Badge } from './ui/badge';
 import type { MockJob } from '@/data/mock-jobs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
 import { cn } from '@/lib/utils';
 import { Separator } from './ui/separator';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 
 export function PartnershipOpportunities() {
     const { t, language } = useLanguage();
@@ -134,7 +135,10 @@ export function PartnershipOpportunities() {
                     <span className="font-medium text-muted-foreground">{formatCurrency(feeValue)}</span>
                 </div>
                  <div className="flex justify-between items-baseline text-xs">
-                    <span className="text-muted-foreground">{t_opp.platformFee} ({platformFeeRate * 100}%):</span>
+                    <span className="text-muted-foreground">{t_opp.platformFee} ({isReferred ? 
+                        <span className="font-bold text-green-600">{platformFeeRate * 100}%</span> 
+                        : <span>{platformFeeRate * 100}%</span>
+                    }):</span>
                     <span className="font-medium text-muted-foreground">{formatCurrency(platformFee)}</span>
                 </div>
                 {opportunity.visaType.en !== 'Engineer' && (
@@ -147,6 +151,27 @@ export function PartnershipOpportunities() {
         )
     };
 
+    const CompanyNameDisplay = ({ opportunity }: { opportunity: Opportunity }) => {
+        const isReferred = opportunity.id === 'OPP001' || opportunity.id === 'OPP003';
+        return (
+            <div className="flex items-center gap-1.5">
+                <span>{t_opp.from.replace('{company}', opportunity.company[language])}</span>
+                {isReferred && (
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <Sparkles className="w-4 h-4 text-yellow-500" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>{t_opp.referredByYou}</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+                )}
+            </div>
+        )
+    }
+
     const OpportunitiesGridView = () => (
         <Carousel opts={{ align: "start", loop: false }} className="w-full">
             <CarouselContent className="-ml-4">
@@ -158,7 +183,9 @@ export function PartnershipOpportunities() {
                                     <div className="flex justify-between items-start">
                                         <div>
                                             <CardTitle className="text-lg font-bold">{opp.title[language]}</CardTitle>
-                                            <CardDescription>{t_opp.from.replace('{company}', opp.company[language])}</CardDescription>
+                                            <CardDescription>
+                                                <CompanyNameDisplay opportunity={opp} />
+                                            </CardDescription>
                                         </div>
                                         <Badge variant="secondary" className="bg-primary/20 text-primary-foreground">{opp.visaType[language]}</Badge>
                                     </div>
@@ -219,7 +246,23 @@ export function PartnershipOpportunities() {
                                 <div className="font-medium font-headline">{opp.title[language]}</div>
                                 <Badge variant="secondary" className="bg-primary/20 text-primary-foreground font-normal mt-1">{opp.visaType[language]}</Badge>
                             </TableCell>
-                             <TableCell className="hidden lg:table-cell">{opp.company[language]}</TableCell>
+                             <TableCell className="hidden lg:table-cell">
+                                <div className="flex items-center gap-1.5">
+                                    <span>{opp.company[language]}</span>
+                                    {(opp.id === 'OPP001' || opp.id === 'OPP003') && (
+                                        <TooltipProvider>
+                                            <Tooltip>
+                                                <TooltipTrigger>
+                                                    <Sparkles className="w-4 h-4 text-yellow-500" />
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                    <p>{t_opp.referredByYou}</p>
+                                                </TooltipContent>
+                                            </Tooltip>
+                                        </TooltipProvider>
+                                    )}
+                                </div>
+                             </TableCell>
                             <TableCell className="hidden md:table-cell text-xs">
                                 <FeeDetails opportunity={opp} />
                             </TableCell>

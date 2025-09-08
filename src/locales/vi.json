@@ -696,6 +696,10 @@
   "userRoles": {
     "title": "Bạn là ai?",
     "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
+    "guest": {
+      "title": "Khách (Chưa đăng nhập)",
+      "description": "Xem với tư cách khách truy cập."
+    },
     "hiringCompany": {
       "title": "Xí nghiệp tiếp nhận",
       "description": "Trực tiếp tuyển dụng nhân sự."
@@ -719,10 +723,6 @@
     "yuryoShokai": {
       "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
       "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
-    },
-    "guest": {
-        "title": "Khách (Chưa đăng nhập)",
-        "description": "Xem với tư cách khách truy cập."
     }
   },
   "chat": {
@@ -736,8 +736,8 @@
   "callScreen": {
     "connecting": "Đang kết nối...",
     "permissionError": {
-        "title": "Yêu cầu quyền truy cập",
-        "description": "Vui lòng cấp quyền truy cập máy ảnh và micro trong trình duyệt của bạn để sử dụng tính năng này."
+      "title": "Yêu cầu quyền truy cập",
+      "description": "Vui lòng cấp quyền truy cập máy ảnh và micro trong trình duyệt của bạn để sử dụng tính năng này."
     }
   },
   "visaTypes": {
@@ -756,7 +756,7 @@
       "description": "Chuyên gia có trình độ cao, bằng cấp chuyên ngành."
     }
   },
-   "visaSubTypes": {
+  "visaSubTypes": {
     "title": "Vui lòng chọn chi tiết hơn",
     "intern": {
       "threeYear": "Thực tập sinh 3 năm",
@@ -784,12 +784,12 @@
       "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
     }
   },
-   "jobsPage": {
+  "jobsPage": {
     "title": "Quản lý việc làm",
     "subtitle": "Quản lý các tin tuyển dụng và cơ hội hợp tác của bạn tại đây.",
     "guestSubtitle": "Khám phá các cơ hội việc làm và xem cách nền tảng của chúng tôi hoạt động.",
     "guestCta": "Đăng ký hoặc đăng nhập để đăng việc làm và kết nối với ứng viên.",
-    "postNewJob": "Đăng việc làm mới",
+    "inviteSendingCompany": "Mời phái cử",
     "applicants": "ứng viên",
     "postedOn": "Đăng ngày",
     "viewDetails": "Xem chi tiết",
@@ -820,26 +820,26 @@
     }
   },
   "jobDetail": {
-      "backButton": "Quay lại danh sách",
-      "findCandidates": "Tìm ứng viên",
-      "location": "Địa điểm",
-      "applicants": "Ứng viên",
-      "postedDate": "Ngày đăng",
-      "jobDescription": "Mô tả công việc",
-      "requirements": "Yêu cầu",
-      "benefits": "Quyền lợi",
-      "jobInformation": "Thông tin công việc",
-      "salary": "Mức lương",
-      "visaType": "Loại Visa",
-      "contractType": "Loại hợp đồng",
-      "workingHours": "Giờ làm việc",
-      "holidays": "Ngày nghỉ",
-      "suitableCandidates": {
-        "title": "Ứng viên phù hợp",
-        "description": "Dựa trên yêu cầu công việc, đây là những ứng viên có thể phù hợp.",
-        "loadMore": "Xem thêm {count} ứng viên khác"
-      },
-      "invite": "Mời ứng tuyển"
+    "backButton": "Quay lại danh sách",
+    "findCandidates": "Tìm ứng viên",
+    "location": "Địa điểm",
+    "applicants": "Ứng viên",
+    "postedDate": "Ngày đăng",
+    "jobDescription": "Mô tả công việc",
+    "requirements": "Yêu cầu",
+    "benefits": "Quyền lợi",
+    "jobInformation": "Thông tin công việc",
+    "salary": "Mức lương",
+    "visaType": "Loại Visa",
+    "contractType": "Loại hợp đồng",
+    "workingHours": "Giờ làm việc",
+    "holidays": "Ngày nghỉ",
+    "suitableCandidates": {
+      "title": "Ứng viên phù hợp",
+      "description": "Dựa trên yêu cầu công việc, đây là những ứng viên có thể phù hợp.",
+      "loadMore": "Xem thêm {count} ứng viên khác"
+    },
+    "invite": "Mời ứng tuyển"
   },
   "unlockCandidates": {
     "title": "Mở khóa hồ sơ ứng viên",
@@ -859,7 +859,7 @@
       "secure": "Thanh toán được bảo mật"
     }
   },
-    "partnershipOpportunities": {
+  "partnershipOpportunities": {
     "title": "Cơ hội hợp tác mới",
     "from": "Từ: {company}",
     "expiresIn": "Hết hạn sau",
@@ -871,14 +871,15 @@
     "partnerReceives": "Đối tác nhận",
     "accept": "Chấp nhận",
     "decline": "Từ chối",
+    "referredByYou": "Do bạn giới thiệu",
     "table": {
-        "opportunity": "Cơ hội",
-        "company": "Công ty",
-        "visaType": "Loại Visa",
-        "fees": "Thông tin phí",
-        "expires": "Hết hạn",
-        "actions": "Hành động"
-      }
+      "opportunity": "Cơ hội",
+      "company": "Công ty",
+      "visaType": "Loại Visa",
+      "fees": "Thông tin phí",
+      "expires": "Hết hạn",
+      "actions": "Hành động"
+    }
   },
   "partnershipInfo": {
     "revenueShare": {

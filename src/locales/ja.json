@@ -696,6 +696,10 @@
   "userRoles": {
     "title": "あなたの役割を選択してください",
     "description": "最適な体験のために、あなたの役割を教えてください。",
+    "guest": {
+      "title": "ゲスト（未ログイン）",
+      "description": "ビジターとして閲覧する。"
+    },
     "hiringCompany": {
       "title": "受入企業",
       "description": "直接人材を採用する。"
@@ -719,10 +723,6 @@
     "yuryoShokai": {
       "title": "有料職業紹介事業者",
       "description": "有料で職業紹介を行う。"
-    },
-    "guest": {
-        "title": "ゲスト（未ログイン）",
-        "description": "ビジターとして閲覧する。"
     }
   },
   "chat": {
@@ -736,8 +736,8 @@
   "callScreen": {
     "connecting": "接続中...",
     "permissionError": {
-        "title": "アクセス権限が必要です",
-        "description": "この機能を使用するには、ブラウザでカメラとマイクへのアクセスを許可してください。"
+      "title": "アクセス権限が必要です",
+      "description": "この機能を使用するには、ブラウザでカメラとマイクへのアクセスを許可してください。"
     }
   },
   "visaTypes": {
@@ -756,7 +756,7 @@
       "description": "学位を持つ高度な専門家。"
     }
   },
-   "visaSubTypes": {
+  "visaSubTypes": {
     "title": "詳細を選択してください",
     "intern": {
       "threeYear": "技能実習3年",
@@ -784,12 +784,12 @@
       "description": "詳細なフォームに記入して、リストを完全に制御します。"
     }
   },
-   "jobsPage": {
+  "jobsPage": {
     "title": "求人管理",
     "subtitle": "こちらで求人情報と協力の機会を管理します。",
     "guestSubtitle": "求人情報を検索し、プラットフォームの機能をご覧ください。",
     "guestCta": "求人を掲載し、候補者と繋がるには、新規登録またはログインしてください。",
-    "postNewJob": "新規求人作成",
+    "inviteSendingCompany": "派遣を招待",
     "applicants": "応募者",
     "postedOn": "掲載日",
     "viewDetails": "詳細を見る",
@@ -820,26 +820,26 @@
     }
   },
   "jobDetail": {
-      "backButton": "求人一覧に戻る",
-      "findCandidates": "候補者を探す",
-      "location": "勤務地",
-      "applicants": "応募者数",
-      "postedDate": "掲載日",
-      "jobDescription": "職務内容",
-      "requirements": "応募要件",
-      "benefits": "福利厚生",
-      "jobInformation": "求人情報",
-      "salary": "給与",
-      "visaType": "在留資格",
-      "contractType": "雇用形態",
-      "workingHours": "勤務時間",
-      "holidays": "休日",
-      "suitableCandidates": {
-        "title": "適合する候補者",
-        "description": "職務要件に基づき、適合する可能性のある候補者です。",
-        "loadMore": "さらに{count}名の候補者を見る"
-      },
-      "invite": "応募を依頼"
+    "backButton": "求人一覧に戻る",
+    "findCandidates": "候補者を探す",
+    "location": "勤務地",
+    "applicants": "応募者数",
+    "postedDate": "掲載日",
+    "jobDescription": "職務内容",
+    "requirements": "応募要件",
+    "benefits": "福利厚生",
+    "jobInformation": "求人情報",
+    "salary": "給与",
+    "visaType": "在留資格",
+    "contractType": "雇用形態",
+    "workingHours": "勤務時間",
+    "holidays": "休日",
+    "suitableCandidates": {
+      "title": "適合する候補者",
+      "description": "職務要件に基づき、適合する可能性のある候補者です。",
+      "loadMore": "さらに{count}名の候補者を見る"
+    },
+    "invite": "応募を依頼"
   },
   "unlockCandidates": {
     "title": "候補者プロフィールをアンロック",
@@ -859,7 +859,7 @@
       "secure": "安全な支払い"
     }
   },
-    "partnershipOpportunities": {
+  "partnershipOpportunities": {
     "title": "新規協力案件",
     "from": "依頼元: {company}",
     "expiresIn": "残り時間",
@@ -871,14 +871,15 @@
     "partnerReceives": "受取額",
     "accept": "受託する",
     "decline": "辞退する",
+    "referredByYou": "あなたが紹介しました",
     "table": {
-        "opportunity": "案件",
-        "company": "企業",
-        "visaType": "在留資格",
-        "fees": "手数料情報",
-        "expires": "期限",
-        "actions": "操作"
-      }
+      "opportunity": "案件",
+      "company": "企業",
+      "visaType": "在留資格",
+      "fees": "手数料情報",
+      "expires": "期限",
+      "actions": "操作"
+    }
   },
   "partnershipInfo": {
     "revenueShare": {
