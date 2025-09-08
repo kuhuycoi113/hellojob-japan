@@ -29,7 +29,7 @@
       "about": "About Us",
       "dashboard": "Dashboard",
       "chat": "Chat",
-      "signUpForPremium": "Sign Up for Premium"
+      "signUpForPremium": "Sign Up for Premium (Unlock All)"
     },
     "editProfile": "Edit Profile"
   },
@@ -778,7 +778,7 @@
       "description": "Fill out a detailed form for full control over the listing."
     }
   },
-  "jobsPage": {
+   "jobsPage": {
     "title": "Job Management",
     "subtitle": "Manage your job postings here.",
     "postNewJob": "Post New Job",
@@ -842,5 +842,13 @@
       "payButton": "Pay {amount} JPY",
       "secure": "Secure payment"
     }
+  },
+    "partnershipOpportunities": {
+    "title": "New Partnership Opportunities",
+    "from": "From: {company}",
+    "expiresIn": "Expires in",
+    "requirements": "Key Requirements",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }

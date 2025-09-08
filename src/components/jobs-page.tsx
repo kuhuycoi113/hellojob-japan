@@ -43,6 +43,8 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { mockJobs, type MockJob } from '@/data/mock-jobs';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { PartnershipOpportunities } from './partnership-opportunities';
+
 
 const statusStyles: Record<string, string> = {
   Active: 'bg-green-100 text-green-800',
@@ -59,6 +61,7 @@ export function JobsPage() {
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
   const [activeTab, setActiveTab] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const [userRole, setUserRole] = useState('union'); // 'union', 'support_org', or 'company'
 
   useEffect(() => {
     setJobs(mockJobs);
@@ -197,6 +200,9 @@ export function JobsPage() {
 
   return (
     <div className="space-y-6">
+      { (userRole === 'union' || userRole === 'support_org') && (
+        <PartnershipOpportunities />
+      )}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold font-headline">
