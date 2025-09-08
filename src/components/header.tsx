@@ -88,7 +88,6 @@ export function Header() {
     { href: "/post-job-ai", label: t.header.postJobAI, icon: <Sparkles className="h-4 w-4 text-accent" /> },
     { href: "/handbook", label: t.header.handbook },
     { href: "/about", label: t.header.about },
-    { href: "/jobs", label: t.header.x_function }
   ];
   
     const userRoles = [
@@ -258,7 +257,11 @@ export function Header() {
            </Button>
 
           <div className="hidden md:flex items-center gap-2">
-
+            <Button variant="outline" asChild>
+                <Link href="/jobs" className={cn(pathname === "/jobs" && "text-primary font-bold")}>
+                    {t.header.x_function}
+                </Link>
+            </Button>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">
