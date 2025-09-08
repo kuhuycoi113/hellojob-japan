@@ -296,7 +296,7 @@ export function JobsPage() {
   );
 
   return (
-    <div className="space-y-6" ref={jobsListRef}>
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold font-headline">
@@ -306,23 +306,13 @@ export function JobsPage() {
             {isGuest ? t.jobsPage.guestSubtitle : t.jobsPage.subtitle}
           </p>
         </div>
-        <div className="flex gap-4 items-center">
-            {!isGuest && (
-              <Button asChild size="lg" variant="accent">
-                <Link href="/post-job-ai">
-                  <PlusCircle className="mr-2 h-5 w-5" />
-                  {t.jobsPage.postNewJob}
-                </Link>
-              </Button>
-            )}
-        </div>
       </div>
       
       { (userRole === 'union' || userRole === 'support_org') && !isGuest && (
-        <div className="space-y-8">
+        <>
           <PartnershipOpportunities />
           <PartnershipInfo />
-        </div>
+        </>
       )}
 
       {isGuest && (
@@ -335,95 +325,96 @@ export function JobsPage() {
           </Card>
       )}
 
-      {!isGuest ? (
-        <div className="space-y-4">
-          <Tabs value={activeTab} onValueChange={(value) => { setActiveTab(value); setCurrentPage(1); }}>
-            <div className="flex items-center justify-between">
-              <TabsList className="flex-wrap h-auto">
-                {TABS.map((tab) => (
-                  <TabsTrigger key={tab.value} value={tab.value} className="flex-shrink-0">
-                    {tab.label} ({getTabCount(tab.value)})
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              <div className="flex items-center gap-2">
-                <Button
-                  variant={viewMode === 'list' ? 'secondary' : 'ghost'}
-                  size="icon"
-                  onClick={() => setViewMode('list')}
-                  disabled={!viewMode}
-                >
-                  <List className="h-5 w-5" />
-                </Button>
-                <Button
-                  variant={viewMode === 'grid' ? 'secondary' : 'ghost'}
-                  size="icon"
-                  onClick={() => setViewMode('grid')}
-                  disabled={!viewMode}
-                >
-                  <LayoutGrid className="h-5 w-5" />
-                </Button>
+      <div className="space-y-4" ref={jobsListRef}>
+        {!isGuest ? (
+          <>
+            <Tabs value={activeTab} onValueChange={(value) => { setActiveTab(value); setCurrentPage(1); }}>
+              <div className="flex items-center justify-between">
+                <TabsList className="flex-wrap h-auto">
+                  {TABS.map((tab) => (
+                    <TabsTrigger key={tab.value} value={tab.value} className="flex-shrink-0">
+                      {tab.label} ({getTabCount(tab.value)})
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant={viewMode === 'list' ? 'secondary' : 'ghost'}
+                    size="icon"
+                    onClick={() => setViewMode('list')}
+                    disabled={!viewMode}
+                  >
+                    <List className="h-5 w-5" />
+                  </Button>
+                  <Button
+                    variant={viewMode === 'grid' ? 'secondary' : 'ghost'}
+                    size="icon"
+                    onClick={() => setViewMode('grid')}
+                    disabled={!viewMode}
+                  >
+                    <LayoutGrid className="h-5 w-5" />
+                  </Button>
+                </div>
+              </div>
+              <div className="mt-4">
+                  {viewMode === 'list' ? <JobsListView /> : viewMode === 'grid' ? <JobsGridView /> : 
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {Array.from({ length: 9 }).map((_, i) => <Skeleton key={i} className="h-[420px] w-full" />)}
+                  </div>
+                  }
+              </div>
+            </Tabs>
+            
+            {totalPages > 1 && (
+              <Pagination className="pt-4">
+                  <PaginationContent>
+                      <PaginationItem>
+                      <PaginationPrevious 
+                          href="#"
+                          onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }}
+                          aria-disabled={currentPage <= 1}
+                          className={currentPage <= 1 ? "pointer-events-none opacity-50" : ""}
+                      >
+                        {t.pagination.previous}
+                      </PaginationPrevious>
+                      </PaginationItem>
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                          <PaginationItem key={page}>
+                              <PaginationLink 
+                                  href="#"
+                                  onClick={(e) => { e.preventDefault(); handlePageChange(page); }}
+                                  isActive={currentPage === page}
+                              >
+                                  {page}
+                              </PaginationLink>
+                          </PaginationItem>
+                      ))}
+                      <PaginationItem>
+                      <PaginationNext 
+                          href="#"
+                          onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }}
+                          aria-disabled={currentPage >= totalPages}
+                          className={currentPage >= totalPages ? "pointer-events-none opacity-50" : ""}
+                      >
+                        {t.pagination.next}
+                      </PaginationNext>
+                      </PaginationItem>
+                  </PaginationContent>
+              </Pagination>
+            )}
+          </>
+        ) : (
+          <Card className="text-center py-16 px-6">
+            <div className="flex justify-center mb-4">
+              <div className="p-4 rounded-full bg-muted">
+                <Briefcase className="w-10 h-10 text-muted-foreground"/>
               </div>
             </div>
-            <div className="mt-4">
-                {viewMode === 'list' ? <JobsListView /> : viewMode === 'grid' ? <JobsGridView /> : 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {Array.from({ length: 9 }).map((_, i) => <Skeleton key={i} className="h-[420px] w-full" />)}
-                </div>
-                }
-            </div>
-          </Tabs>
-          
-          {totalPages > 1 && (
-            <Pagination className="pt-4">
-                <PaginationContent>
-                    <PaginationItem>
-                    <PaginationPrevious 
-                        href="#"
-                        onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }}
-                        aria-disabled={currentPage <= 1}
-                        className={currentPage <= 1 ? "pointer-events-none opacity-50" : ""}
-                    >
-                      {t.pagination.previous}
-                    </PaginationPrevious>
-                    </PaginationItem>
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                        <PaginationItem key={page}>
-                            <PaginationLink 
-                                href="#"
-                                onClick={(e) => { e.preventDefault(); handlePageChange(page); }}
-                                isActive={currentPage === page}
-                            >
-                                {page}
-                            </PaginationLink>
-                        </PaginationItem>
-                    ))}
-                    <PaginationItem>
-                    <PaginationNext 
-                        href="#"
-                        onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }}
-                        aria-disabled={currentPage >= totalPages}
-                        className={currentPage >= totalPages ? "pointer-events-none opacity-50" : ""}
-                    >
-                      {t.pagination.next}
-                    </PaginationNext>
-                    </PaginationItem>
-                </PaginationContent>
-            </Pagination>
-          )}
-        </div>
-      ) : (
-        <Card className="text-center py-16 px-6">
-          <div className="flex justify-center mb-4">
-            <div className="p-4 rounded-full bg-muted">
-              <Briefcase className="w-10 h-10 text-muted-foreground"/>
-            </div>
-          </div>
-          <CardTitle className="text-xl font-bold font-headline">{t.jobsPage.noJobsGuest.title}</CardTitle>
-          <p className="text-muted-foreground mt-2">{t.jobsPage.noJobsGuest.description}</p>
-        </Card>
-      )}
+            <CardTitle className="text-xl font-bold font-headline">{t.jobsPage.noJobsGuest.title}</CardTitle>
+            <p className="text-muted-foreground mt-2">{t.jobsPage.noJobsGuest.description}</p>
+          </Card>
+        )}
+      </div>
     </div>
   );
 }
-
