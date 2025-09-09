@@ -271,16 +271,6 @@ function AiJobPostFormContent() {
 
   const userRoles: Role[] = [
     {
-      icon: <Users className="h-8 w-8 text-purple-500" />,
-      title: t.userRoles.sendingCompany.title,
-      description: t.userRoles.sendingCompany.description,
-    },
-    {
-      icon: <Building className="h-8 w-8 text-blue-500" />,
-      title: t.userRoles.hiringCompany.title,
-      description: t.userRoles.hiringCompany.description,
-    },
-    {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
       description: t.userRoles.supportOrg.description,
@@ -294,6 +284,11 @@ function AiJobPostFormContent() {
       icon: <Users className="h-8 w-8 text-red-500" />,
       title: t.userRoles.yuryoShokai.title,
       description: t.userRoles.yuryoShokai.description,
+    },
+    {
+      icon: <Building className="h-8 w-8 text-blue-500" />,
+      title: t.userRoles.sendingCompany.title,
+      description: t.userRoles.sendingCompany.description,
     },
   ];
 

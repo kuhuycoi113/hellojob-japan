@@ -690,10 +690,6 @@
       "title": "Nghiệp đoàn",
       "description": "Quản lý và hỗ trợ thực tập sinh."
     },
-    "hiringCompany": {
-      "title": "Xí nghiệp tiếp nhận",
-      "description": "Trực tiếp tuyển dụng và sử dụng lao động."
-    },
     "yuryoShokai": {
       "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
       "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
@@ -843,7 +839,7 @@
     "managementFee": "Phí quản lý",
     "platformFee": "Phí nền tảng",
     "partnerReceives": "Đối tác nhận",
-    "accept": "Nhận",
+    "accept": "Chấp nhận",
     "decline": "Từ chối",
     "referredByYou": "Do bạn giới thiệu",
     "table": {

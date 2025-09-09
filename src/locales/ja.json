@@ -349,7 +349,7 @@
     ],
     "newPostsTitle": "新着記事",
     "longVideos": [
-      {
+       {
         "type": "video",
         "category": "面接のコツ",
         "title": "採用担当者に響く！日本語履歴書の書き方とポイント",
@@ -689,10 +689,6 @@
     "union": {
       "title": "協同組合",
       "description": "実習生を管理・支援する。"
-    },
-    "hiringCompany": {
-      "title": "受入企業",
-      "description": "直接労働者を雇用し、活用する。"
     },
     "yuryoShokai": {
       "title": "有料職業紹介事業者",
