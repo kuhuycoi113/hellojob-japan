@@ -5,7 +5,7 @@ import { useAuth } from '@/contexts/auth-context';
 import { PasswordGate } from '@/components/password-gate';
 import { useEffect, useState } from 'react';
 import { MobileFooter } from './mobile-footer';
-import { ChatbotWidget } from './chatbot-widget';
+import { LiveChatWidget } from './chatbot-widget';
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
@@ -29,7 +29,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         {children}
       </div>
       <MobileFooter />
-      <ChatbotWidget />
+      <LiveChatWidget />
     </>
   );
 }

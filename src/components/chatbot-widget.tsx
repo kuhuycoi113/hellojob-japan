@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Suspense, useEffect, useRef, useState } from 'react';
@@ -11,7 +12,6 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { chatWithBot } from '@/ai/flows/ai-chatbot';
 import { useLanguage } from '@/contexts/language-context';
 import { cn } from '@/lib/utils';
 import {
@@ -25,6 +25,7 @@ import {
   Video,
   X,
   MessageSquareText,
+  User,
 } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { CallScreen } from './call-screen';
@@ -36,24 +37,13 @@ type Message = {
   content: string;
 };
 
-type GenkitMessage = {
-  role: 'user' | 'model' | 'tool';
-  content: {
-    text?: string;
-    toolRequest?: any;
-    toolResponse?: any;
-  }[];
-};
-
-function ChatbotWidgetContent() {
+function LiveChatWidgetContent() {
   const { t } = useLanguage();
-  const searchParams = useSearchParams();
   const { isOpen, setIsOpen } = useChat();
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const userRole = searchParams.get('role') || 'Hiring Company';
   const [inCall, setInCall] = useState(false);
   const [callType, setCallType] = useState<'video' | 'voice'>('video');
   const [isMounted, setIsMounted] = useState(false);
@@ -81,35 +71,15 @@ function ChatbotWidgetContent() {
 
     const userMessage: Message = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
-    const currentInput = input;
     setInput('');
     setIsLoading(true);
 
-    try {
-      const genkitHistory: GenkitMessage[] = messages.map((msg) => ({
-        role: msg.role,
-        content: [{ text: msg.content }],
-      }));
-
-      const response = await chatWithBot({
-        question: currentInput,
-        history: genkitHistory,
-        userRole,
-        advisorName: 'HelloJob AI',
-      });
-
-      const botMessage: Message = { role: 'model', content: response.answer };
+    // Simulate advisor's response
+    setTimeout(() => {
+      const botMessage: Message = { role: 'model', content: "Cảm ơn bạn đã liên hệ! Tư vấn viên sẽ phản hồi bạn trong thời gian sớm nhất." };
       setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      console.error('Chatbot error:', error);
-      const errorMessage: Message = {
-        role: 'model',
-        content: t.chat.error,
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
       setIsLoading(false);
-    }
+    }, 1500);
   };
   
   const startCall = (type: 'video' | 'voice') => {
@@ -210,7 +180,9 @@ function ChatbotWidgetContent() {
                         </div>
                         {msg.role === 'user' && (
                         <Avatar className="h-9 w-9 border shrink-0">
-                            <AvatarFallback>You</AvatarFallback>
+                            <AvatarFallback>
+                              <User className="h-5 w-5" />
+                            </AvatarFallback>
                         </Avatar>
                         )}
                     </div>
@@ -269,10 +241,10 @@ function ChatbotWidgetContent() {
   );
 }
 
-export function ChatbotWidget() {
+export function LiveChatWidget() {
   return (
     <Suspense>
-      <ChatbotWidgetContent />
+      <LiveChatWidgetContent />
     </Suspense>
   );
 }
