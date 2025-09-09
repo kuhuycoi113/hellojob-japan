@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -183,9 +182,9 @@ export function PartnershipOpportunities() {
                                     <div className="flex justify-between items-start">
                                         <div>
                                             <CardTitle className="text-lg font-bold">{opp.title[language]}</CardTitle>
-                                            <CardDescription>
+                                            <div className="text-sm text-muted-foreground">
                                                 <CompanyNameDisplay opportunity={opp} />
-                                            </CardDescription>
+                                            </div>
                                         </div>
                                         <Badge variant="secondary" className="bg-primary/20 text-primary-foreground">{opp.visaType[language]}</Badge>
                                     </div>
