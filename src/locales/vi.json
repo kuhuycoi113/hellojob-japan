@@ -29,7 +29,12 @@
       "about": "Giới thiệu",
       "dashboard": "Quản lý",
       "chat": "Tư vấn",
-      "signUpForPremium": "Đăng ký Premium"
+      "signUpForPremium": "Đăng ký Premium",
+      "guestCta": {
+        "title": "Chào mừng đến với HelloJob",
+        "description": "Đăng nhập hoặc đăng ký để truy cập đầy đủ tính năng.",
+        "button": "Đăng nhập / Đăng ký"
+      }
     },
     "editProfile": "Sửa hồ sơ"
   },
@@ -839,7 +844,7 @@
     "managementFee": "Phí quản lý",
     "platformFee": "Phí nền tảng",
     "partnerReceives": "Đối tác nhận",
-    "accept": "Chấp nhận",
+    "accept": "Nhận",
     "decline": "Từ chối",
     "referredByYou": "Do bạn giới thiệu",
     "table": {

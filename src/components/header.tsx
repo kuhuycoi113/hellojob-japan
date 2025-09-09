@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond, LogIn } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/language-context';
 import { translations } from '@/locales/translations';
 import { usePathname } from 'next/navigation';
@@ -79,10 +79,10 @@ const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
-          <SelectItem value="sending_company">{t.userRoles.sendingCompany.title}</SelectItem>
           <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
           <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
           <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
+          <SelectItem value="sending_company">{t.userRoles.sendingCompany.title}</SelectItem>
         </SelectContent>
       </Select>
     </div>
@@ -92,6 +92,7 @@ const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
 
 export function Header() {
   const { language, setLanguage, t } = useLanguage();
+  const { userRole } = useRole();
   const { toggleChat } = useChat();
   const pathname = usePathname();
 
@@ -294,18 +295,31 @@ export function Header() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-80 p-4">
-                    <Link href="/dashboard/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-2 transition-colors">
-                      <div className="flex items-center gap-4">
-                          <Avatar className="h-12 w-12">
-                              <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                              <AvatarFallback>TVC</AvatarFallback>
-                          </Avatar>
-                          <div>
-                              <p className="font-semibold text-base">Công ty cổ phần TVC</p>
-                              <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.sendingCompany.title)}</p>
-                          </div>
-                      </div>
-                    </Link>
+                    {userRole === 'guest' ? (
+                       <Card className="bg-primary/10 text-center p-4">
+                          <CardContent className="p-0">
+                            <h4 className="font-bold text-base">{t.header.menuItems.guestCta.title}</h4>
+                            <p className="text-sm text-muted-foreground mt-1 mb-3">{t.header.menuItems.guestCta.description}</p>
+                            <Button className="w-full">
+                              <LogIn className="mr-2 h-4 w-4" />
+                              {t.header.menuItems.guestCta.button}
+                            </Button>
+                          </CardContent>
+                       </Card>
+                    ) : (
+                      <Link href="/dashboard/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-2 transition-colors">
+                        <div className="flex items-center gap-4">
+                            <Avatar className="h-12 w-12">
+                                <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                                <AvatarFallback>TVC</AvatarFallback>
+                            </Avatar>
+                            <div>
+                                <p className="font-semibold text-base">Công ty cổ phần TVC</p>
+                                <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.sendingCompany.title)}</p>
+                            </div>
+                        </div>
+                      </Link>
+                    )}
                     <DropdownMenuSeparator />
                     
                     <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 my-2">

@@ -29,7 +29,12 @@
       "about": "About Us",
       "dashboard": "Dashboard",
       "chat": "Chat",
-      "signUpForPremium": "Sign Up for Premium"
+      "signUpForPremium": "Sign Up for Premium",
+      "guestCta": {
+        "title": "Welcome to HelloJob",
+        "description": "Log in or sign up to access all features.",
+        "button": "Log In / Sign Up"
+      }
     },
     "editProfile": "Edit Profile"
   },

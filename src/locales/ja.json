@@ -29,7 +29,12 @@
       "about": "会社概要",
       "dashboard": "ダッシュボード",
       "chat": "相談する",
-      "signUpForPremium": "プレミアムに登録"
+      "signUpForPremium": "プレミアムに登録",
+      "guestCta": {
+        "title": "HelloJobへようこそ",
+        "description": "ログインまたは新規登録して、すべての機能にアクセスしてください。",
+        "button": "ログイン/新規登録"
+      }
     },
     "editProfile": "プロフィール編集"
   },
