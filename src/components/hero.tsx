@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section className="py-20 sm:py-32 bg-primary/90 text-white">
       <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-headline tracking-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold font-headline tracking-tight">
           {t.hero.title}
         </h1>
         <p className="mt-6 max-w-3xl mx-auto text-lg text-white/90">
