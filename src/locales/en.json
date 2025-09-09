@@ -295,7 +295,7 @@
     "input": {
       "title": "1. Describe your job",
       "description": "Provide a few keywords, a sentence, or upload an existing job description. The more detail you provide, the better the result.",
-      "reset": "Create New",
+      "reset": "Start Over",
       "refinePlaceholder": "Enter a request to refine (e.g., 'add 3 years experience requirement')"
     },
     "output": {

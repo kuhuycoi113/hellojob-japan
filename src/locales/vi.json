@@ -296,7 +296,7 @@
     "input": {
       "title": "1. Mô tả công việc của bạn",
       "description": "Cung cấp một vài từ khóa, một câu, hoặc tải lên một mô tả công việc có sẵn. Càng chi tiết, kết quả càng tốt.",
-      "reset": "Tạo mới",
+      "reset": "Làm lại",
       "refinePlaceholder": "Nhập yêu cầu để tinh chỉnh (ví dụ: 'thêm yêu cầu kinh nghiệm 3 năm')"
     },
     "output": {

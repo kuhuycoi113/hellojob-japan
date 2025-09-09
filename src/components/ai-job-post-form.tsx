@@ -914,7 +914,14 @@ function AiJobPostFormContent() {
         
         {showActionFooter && (
           <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/80 backdrop-blur-sm border-t">
-              <div className="container mx-auto max-w-7xl flex justify-center">
+              <div className="container mx-auto max-w-7xl flex justify-center gap-4">
+                  <Button
+                      size="lg"
+                      variant="outline"
+                      onClick={handleReset}
+                  >
+                      {t.ai_job_post_form.input.reset}
+                  </Button>
                   <Button
                       size="lg"
                       className="bg-accent text-accent-foreground hover:bg-accent/90"
