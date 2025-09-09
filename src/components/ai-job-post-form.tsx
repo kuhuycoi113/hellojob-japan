@@ -652,7 +652,7 @@ function AiJobPostFormContent() {
                         {uploadedFile.type.startsWith('image/') ? (
                           <img src={uploadedFile.dataUri} alt={uploadedFile.name} className="object-contain w-full h-full" />
                         ) : uploadedFile.type === 'application/pdf' ? (
-                          <iframe src={uploadedFile.dataUri} width="100%" height="100%" />
+                           <iframe src={uploadedFile.dataUri} width="100%" height="100%" />
                         ) : (
                           <div className="flex flex-col items-center justify-center h-full p-4">
                             <FileIcon type={uploadedFile.type} />
@@ -662,7 +662,7 @@ function AiJobPostFormContent() {
                           </div>
                         )}
                       </div>
-                      <div className="text-center">
+                       <div className="text-center">
                           <p className="font-semibold mt-4 break-all text-center">{uploadedFile.name}</p>
                           <p className="text-sm text-muted-foreground">({(uploadedFile.size / 1024).toFixed(2)} KB)</p>
                       </div>
@@ -913,7 +913,7 @@ function AiJobPostFormContent() {
         </Dialog>
         
         {showActionFooter && (
-          <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/80 backdrop-blur-sm border-t">
+          <div className="fixed bottom-16 md:bottom-0 left-0 right-0 z-50 p-4 bg-background/80 backdrop-blur-sm border-t">
               <div className="container mx-auto max-w-7xl flex justify-center gap-4">
                   <Button
                       size="lg"
