@@ -349,9 +349,9 @@
     ],
     "newPostsTitle": "新着記事",
     "longVideoTitle": "長編動画",
-    "posts": [
+    "longVideos": [
       {
-        "type": "article",
+        "type": "video",
         "category": "面接のコツ",
         "title": "採用担当者に響く！日本語履歴書の書き方とポイント",
         "description": "面接は日本での夢の仕事を得るための決定的なステップです。専門家から得た5つの貴重な経験を基に、しっかりと準備しましょう。",
@@ -359,13 +359,15 @@
         "hint": "job interview professional"
       },
       {
-        "type": "article",
+        "type": "video",
         "category": "日本での生活",
         "title": "日本での生活費は一ヶ月いくら？",
         "description": "来日前の資金計画は重要です。この記事では、毎月の生活費について詳しく解説しますので、準備の参考にしてください。",
         "image": "https://picsum.photos/600/400?random=12",
         "hint": "woman thinking question marks"
-      },
+      }
+    ],
+    "posts": [
       {
         "type": "article",
         "category": "手続き・ビザ",

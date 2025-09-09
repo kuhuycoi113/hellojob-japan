@@ -349,9 +349,9 @@
     ],
     "newPostsTitle": "New Posts",
     "longVideoTitle": "Long Videos",
-    "posts": [
+    "longVideos": [
       {
-        "type": "article",
+        "type": "video",
         "category": "Interview Experience",
         "title": "5 Interview Experiences for Tokutei Ginou to Secure the Job",
         "description": "The interview is the decisive step to get your dream job in Japan. Prepare thoroughly with these 5 valuable experiences from experts.",
@@ -359,13 +359,15 @@
         "hint": "job interview professional"
       },
       {
-        "type": "article",
+        "type": "video",
         "category": "Life in Japan",
         "title": "How Much is the Cost of Living in Japan per Month?",
         "description": "Financial planning is a crucial step before moving to Japan. This article will detail the monthly living expenses you need to prepare for.",
         "image": "https://picsum.photos/600/400?random=12",
         "hint": "woman thinking question marks"
-      },
+      }
+    ],
+    "posts": [
       {
         "type": "article",
         "category": "Procedures & Visa",
