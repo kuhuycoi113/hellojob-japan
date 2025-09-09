@@ -271,7 +271,7 @@ function AiJobPostFormContent() {
 
   const userRoles: Role[] = [
     {
-      icon: <Users className="h-8 w-8 text-red-500" />,
+      icon: <Users className="h-8 w-8 text-purple-500" />,
       title: t.userRoles.sendingCompany.title,
       description: t.userRoles.sendingCompany.description,
     },
@@ -291,7 +291,7 @@ function AiJobPostFormContent() {
       description: t.userRoles.union.description,
     },
     {
-      icon: <Users className="h-8 w-8 text-purple-500" />,
+      icon: <Users className="h-8 w-8 text-red-500" />,
       title: t.userRoles.yuryoShokai.title,
       description: t.userRoles.yuryoShokai.description,
     },
@@ -605,9 +605,10 @@ function AiJobPostFormContent() {
   const isLoading = state === 'loading_job' || state === 'loading_partners' || state === 'translating';
   const showAnalyzeButton = uploadedFile && !jobPost;
   const showGenerateButton = !uploadedFile || jobPost;
+  const showActionFooter = (state === 'job_completed' || state === 'loading_partners' || state === 'partners_completed') && editableJobPost;
 
   return (
-    <section className="py-16 sm:py-24 bg-blue-50/50">
+    <section className="py-16 sm:py-24 bg-blue-50/50 pb-32">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <div className="inline-block bg-primary/10 text-primary p-3 rounded-lg mb-4">
@@ -801,26 +802,6 @@ function AiJobPostFormContent() {
                     </div>
                   )}
                 </CardContent>
-                {(state === 'job_completed' || state === 'loading_partners' || state === 'partners_completed') && editableJobPost && (
-                  <CardFooter className="flex justify-end gap-2">
-                    <Button
-                      size="lg"
-                      className="bg-accent text-accent-foreground hover:bg-accent/90"
-                      onClick={handlePostJob}
-                    >
-                      <Send className="mr-2 h-4 w-4" />
-                      {t.ai_job_post_form.postJobButton}
-                    </Button>
-                    <Button size="lg" onClick={handleFindPartners} disabled={state === 'loading_partners'}>
-                       {state === 'loading_partners' ? (
-                        <LoaderCircle className="animate-spin" />
-                      ) : (
-                        <Search className="mr-2 h-4 w-4" />
-                      )}
-                      {t.ai_job_post_form.findPartnersButton}
-                    </Button>
-                  </CardFooter>
-                )}
               </Card>
 
               {(state === 'loading_partners' || state === 'partners_completed') && (
@@ -833,6 +814,31 @@ function AiJobPostFormContent() {
           </div>
         </div>
       </div>
+      
+      {showActionFooter && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-t">
+          <div className="container mx-auto px-4 py-3 flex justify-end items-center gap-4">
+            <Button
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90"
+                onClick={handlePostJob}
+              >
+                <Send className="mr-2 h-4 w-4" />
+                {t.ai_job_post_form.postJobButton}
+              </Button>
+              <Button size="lg" onClick={handleFindPartners} disabled={state === 'loading_partners'}>
+                  {state === 'loading_partners' ? (
+                  <LoaderCircle className="animate-spin" />
+                ) : (
+                  <Search className="mr-2 h-4 w-4" />
+                )}
+                {t.ai_job_post_form.findPartnersButton}
+              </Button>
+          </div>
+        </div>
+      )}
+
+
        <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
             <DialogContent className="sm:max-w-3xl">
               <DialogHeader>
@@ -925,3 +931,5 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
