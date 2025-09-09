@@ -270,7 +270,7 @@ function AiJobPostFormContent() {
 
 
   const userRoles: Role[] = [
-    {
+     {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
       description: t.userRoles.supportOrg.description,
@@ -285,7 +285,7 @@ function AiJobPostFormContent() {
       title: t.userRoles.yuryoShokai.title,
       description: t.userRoles.yuryoShokai.description,
     },
-    {
+     {
       icon: <Building className="h-8 w-8 text-blue-500" />,
       title: t.userRoles.sendingCompany.title,
       description: t.userRoles.sendingCompany.description,
@@ -564,6 +564,11 @@ function AiJobPostFormContent() {
     }
   };
 
+  const handlePostAndFindPartners = async () => {
+    handlePostJob();
+    await handleFindPartners();
+  }
+
   const handleEdit = <K extends keyof GenerateJobPostOutput>(field: K, value: GenerateJobPostOutput[K]) => {
     if (editableJobPost) {
         setEditableJobPost({ ...editableJobPost, [field]: value });
@@ -812,22 +817,19 @@ function AiJobPostFormContent() {
       
       {showActionFooter && (
         <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-t">
-          <div className="container mx-auto px-4 py-3 flex justify-end items-center gap-4">
+          <div className="container mx-auto px-4 py-3 flex justify-start items-center gap-4">
             <Button
                 size="lg"
                 className="bg-accent text-accent-foreground hover:bg-accent/90"
-                onClick={handlePostJob}
+                onClick={handlePostAndFindPartners}
+                disabled={state === 'loading_partners'}
               >
-                <Send className="mr-2 h-4 w-4" />
-                {t.ai_job_post_form.postJobButton}
-              </Button>
-              <Button size="lg" onClick={handleFindPartners} disabled={state === 'loading_partners'}>
-                  {state === 'loading_partners' ? (
+                {state === 'loading_partners' ? (
                   <LoaderCircle className="animate-spin" />
                 ) : (
-                  <Search className="mr-2 h-4 w-4" />
+                  <Send className="mr-2 h-4 w-4" />
                 )}
-                {t.ai_job_post_form.findPartnersButton}
+                {t.ai_job_post_form.postAndFindPartnersButton}
               </Button>
           </div>
         </div>
@@ -926,5 +928,3 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
-
-    

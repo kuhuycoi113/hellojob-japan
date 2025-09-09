@@ -321,6 +321,7 @@
     "refineButton": "Tinh chỉnh",
     "postJobButton": "Đăng việc làm này",
     "findPartnersButton": "Tìm đối tác phù hợp",
+    "postAndFindPartnersButton": "Đăng và tìm đối tác phù hợp",
     "sendRequestsButton": "Gửi yêu cầu hợp tác",
     "partner_matching": {
       "title": "3. Tìm đối tác phù hợp",
@@ -695,10 +696,6 @@
     "yuryoShokai": {
       "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
       "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
-    },
-    "hiringCompany": {
-      "title": "Xí nghiệp tiếp nhận",
-      "description": "Trực tiếp tuyển dụng và sử dụng lao động."
     },
     "sendingCompany": {
       "title": "Công ty phái cử (Công ty xuất khẩu lao động)",

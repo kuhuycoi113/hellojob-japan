@@ -320,6 +320,7 @@
     "refineButton": "調整する",
     "postJobButton": "この求人を掲載する",
     "findPartnersButton": "最適なパートナーを探す",
+    "postAndFindPartnersButton": "掲載してパートナーを探す",
     "sendRequestsButton": "協力リクエストを送信",
     "partner_matching": {
       "title": "3. 最適なパートナーを探す",
@@ -683,21 +684,21 @@
       "title": "ゲスト（未ログイン）",
       "description": "ビジターとして閲覧する。"
     },
-    "sendingCompany": {
-      "title": "送り出し機関",
-      "description": "ベトナムから労働者を募集・派遣する。"
-    },
     "supportOrg": {
-      "title": "登録支援機関",
+      "title": "登録支援機関 (Shien Kikan)",
       "description": "企業と労働者を支援する。"
     },
     "union": {
-      "title": "協同組合",
+      "title": "協同組合 (Kumiai)",
       "description": "実習生を管理・支援する。"
     },
     "yuryoShokai": {
-      "title": "有料職業紹介事業者",
+      "title": "有料職業紹介事業者 (Yuryo Shokai)",
       "description": "有料で職業紹介を行う。"
+    },
+    "sendingCompany": {
+      "title": "送り出し機関",
+      "description": "ベトナムから労働者を募集・派遣する。"
     }
   },
   "chat": {

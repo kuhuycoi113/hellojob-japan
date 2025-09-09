@@ -320,6 +320,7 @@
     "refineButton": "Refine",
     "postJobButton": "Post this Job",
     "findPartnersButton": "Find Matching Partners",
+    "postAndFindPartnersButton": "Post and Find Partners",
     "sendRequestsButton": "Send Partnership Requests",
     "partner_matching": {
       "title": "3. Find Matching Partners",
@@ -683,12 +684,8 @@
       "title": "Guest (Not Logged In)",
       "description": "View as a visitor."
     },
-    "sendingCompany": {
-      "title": "Sending Company",
-      "description": "Recruits and dispatches workers from Vietnam."
-    },
     "supportOrg": {
-      "title": "Supporting Organization",
+      "title": "Supporting Organization (Shien Kikan)",
       "description": "Supports companies and workers."
     },
     "union": {
@@ -698,6 +695,10 @@
     "yuryoShokai": {
       "title": "Paid Employment Placement Business",
       "description": "Provides paid job placement services."
+    },
+    "sendingCompany": {
+      "title": "Sending Company",
+      "description": "Recruits and dispatches workers from Vietnam."
     }
   },
   "chat": {
