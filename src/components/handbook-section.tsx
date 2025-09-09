@@ -185,12 +185,12 @@ export function HandbookSection() {
                     </h3>
                     <div className="space-y-4">
                         {newsAndArticles.map((article, index) => (
-                        <Link href="/handbook/post-detail" key={index}>
-                            <div className="group">
-                                <Badge variant="outline" className="mb-1">{article.category}</Badge>
-                                <h4 className="font-semibold text-gray-800 leading-snug group-hover:text-primary">{article.title}</h4>
-                                <p className="text-sm text-muted-foreground">{article.readTime}</p>
-                            </div>
+                        <Link href="/handbook/post-detail" key={index} className="block">
+                           <Card className="p-4 hover:bg-gray-50 hover:shadow-md transition-all group">
+                                <Badge variant="outline" className="mb-2 group-hover:border-primary group-hover:text-primary transition-colors">{article.category}</Badge>
+                                <h4 className="font-semibold text-gray-800 leading-snug group-hover:text-primary transition-colors">{article.title}</h4>
+                                <p className="text-sm text-muted-foreground mt-1">{article.readTime}</p>
+                           </Card>
                         </Link>
                         ))}
                     </div>
