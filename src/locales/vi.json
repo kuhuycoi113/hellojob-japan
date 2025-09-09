@@ -348,7 +348,6 @@
       }
     ],
     "newPostsTitle": "Bài viết mới",
-    "longVideoTitle": "Video dài",
     "longVideos": [
        {
         "type": "video",
@@ -679,10 +678,6 @@
       "title": "Khách (Chưa đăng nhập)",
       "description": "Xem với tư cách khách truy cập."
     },
-    "hiringCompany": {
-      "title": "Xí nghiệp tiếp nhận",
-      "description": "Trực tiếp tuyển dụng nhân sự."
-    },
     "supportOrg": {
       "title": "Cơ quan hỗ trợ",
       "description": "Hỗ trợ các công ty và người lao động."
@@ -694,10 +689,6 @@
     "sendingCompany": {
       "title": "Công ty phái cử",
       "description": "Tuyển và phái cử lao động từ Việt Nam."
-    },
-    "hakenCompany": {
-      "title": "Công ty Haken (Nhân sự phái cử)",
-      "description": "Phái cử nhân viên tạm thời."
     },
     "yuryoShokai": {
       "title": "Công ty giới thiệu có phí (Yuryo Shokai)",

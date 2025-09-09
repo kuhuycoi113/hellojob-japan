@@ -37,11 +37,9 @@ const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
-          <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
           <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
           <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
           <SelectItem value="sending_company">{t.userRoles.sendingCompany.title}</SelectItem>
-          <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
           <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
         </SelectContent>
       </Select>

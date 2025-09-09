@@ -348,7 +348,6 @@
       }
     ],
     "newPostsTitle": "New Posts",
-    "longVideoTitle": "Long Videos",
     "longVideos": [
       {
         "type": "video",
@@ -679,10 +678,6 @@
       "title": "Guest (Not Logged In)",
       "description": "View as a visitor."
     },
-    "hiringCompany": {
-      "title": "Hiring Company",
-      "description": "Directly recruits personnel."
-    },
     "supportOrg": {
       "title": "Supporting Organization",
       "description": "Supports companies and workers."
@@ -694,10 +689,6 @@
     "sendingCompany": {
       "title": "Sending Company",
       "description": "Recruits and dispatches workers from Vietnam."
-    },
-    "hakenCompany": {
-      "title": "Haken Company (Dispatch)",
-      "description": "Dispatches temporary staff."
     },
     "yuryoShokai": {
       "title": "Paid Employment Placement Business",

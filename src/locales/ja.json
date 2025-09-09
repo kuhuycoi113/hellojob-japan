@@ -348,7 +348,6 @@
       }
     ],
     "newPostsTitle": "新着記事",
-    "longVideoTitle": "長編動画",
     "longVideos": [
       {
         "type": "video",
@@ -679,10 +678,6 @@
       "title": "ゲスト（未ログイン）",
       "description": "ビジターとして閲覧する。"
     },
-    "hiringCompany": {
-      "title": "受入企業",
-      "description": "直接人材を採用する。"
-    },
     "supportOrg": {
       "title": "登録支援機関",
       "description": "企業と労働者を支援する。"
@@ -694,10 +689,6 @@
     "sendingCompany": {
       "title": "送り出し機関",
       "description": "ベトナムから労働者を募集・派遣する。"
-    },
-    "hakenCompany": {
-      "title": "人材派遣会社",
-      "description": "人材を派遣する。"
     },
     "yuryoShokai": {
       "title": "有料職業紹介事業者",

@@ -79,11 +79,9 @@ const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
-          <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
           <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
           <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
           <SelectItem value="sending_company">{t.userRoles.sendingCompany.title}</SelectItem>
-          <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
           <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
         </SelectContent>
       </Select>
@@ -122,11 +120,6 @@ export function Header() {
   
     const userRoles = [
     {
-      icon: <Building className="h-8 w-8 text-primary" />,
-      title: t.userRoles.hiringCompany.title,
-      description: t.userRoles.hiringCompany.description,
-    },
-    {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
       description: t.userRoles.supportOrg.description,
@@ -140,11 +133,6 @@ export function Header() {
       icon: <Users className="h-8 w-8 text-red-500" />,
       title: t.userRoles.sendingCompany.title,
       description: t.userRoles.sendingCompany.description,
-    },
-    {
-      icon: <Users className="h-8 w-8 text-blue-500" />,
-      title: t.userRoles.hakenCompany.title,
-      description: t.userRoles.hakenCompany.description,
     },
     {
       icon: <Users className="h-8 w-8 text-purple-500" />,
