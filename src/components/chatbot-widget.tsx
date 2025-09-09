@@ -31,10 +31,12 @@ import { useSearchParams } from 'next/navigation';
 import { CallScreen } from './call-screen';
 import { useChat } from '@/contexts/chat-context';
 import { Logo } from './logo';
+import Image from 'next/image';
 
 type Message = {
   role: 'user' | 'model';
   content: string;
+  image?: string;
 };
 
 function LiveChatWidgetContent() {
@@ -47,6 +49,9 @@ function LiveChatWidgetContent() {
   const [inCall, setInCall] = useState(false);
   const [callType, setCallType] = useState<'video' | 'voice'>('video');
   const [isMounted, setIsMounted] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
 
   useEffect(() => {
     setIsMounted(true);
@@ -91,6 +96,45 @@ function LiveChatWidgetContent() {
     setInCall(false);
   }
 
+  const handleImageButtonClick = () => {
+    fileInputRef.current?.click();
+  }
+
+  const handleImageSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setSelectedImage(reader.result as string);
+        };
+        reader.readAsDataURL(file);
+    }
+  }
+
+  const handleSendImage = () => {
+    if (!selectedImage) return;
+
+    const userMessage: Message = {
+        role: 'user',
+        content: input, // Send current text with image
+        image: selectedImage
+    };
+    setMessages(prev => [...prev, userMessage]);
+    
+    // Reset inputs
+    setInput('');
+    setSelectedImage(null);
+    if(fileInputRef.current) fileInputRef.current.value = "";
+
+    // Simulate response
+    setIsLoading(true);
+    setTimeout(() => {
+      const botMessage: Message = { role: 'model', content: "Cảm ơn bạn đã gửi ảnh. Chúng tôi sẽ xem xét và phản hồi sớm." };
+      setMessages((prev) => [...prev, botMessage]);
+      setIsLoading(false);
+    }, 1500);
+  }
+
   if (!isMounted) {
     return null;
   }
@@ -120,7 +164,7 @@ function LiveChatWidgetContent() {
             : 'opacity-0 translate-y-4 pointer-events-none'
         )}
       >
-        <Card className="w-[380px] h-[500px] shadow-2xl rounded-2xl flex flex-col bg-white">
+        <Card className="w-[380px] h-[600px] shadow-2xl rounded-2xl flex flex-col bg-white">
           {inCall ? (
             <CallScreen onEndCall={endCall} callType={callType} />
           ) : (
@@ -169,14 +213,20 @@ function LiveChatWidgetContent() {
                         )}
                         <div
                         className={cn(
-                            'max-w-xs rounded-lg p-3',
+                            'max-w-xs rounded-lg p-3 flex flex-col',
                             msg.role === 'model'
                             ? 'bg-muted rounded-bl-none'
                             : 'bg-primary text-primary-foreground rounded-br-none'
                         )}
                         >
                         {msg.role === 'model' && index > 0 && <p className="text-xs font-semibold text-gray-600 mb-1">Tư vấn viên Phạm Thị Dung</p>}
-                        <p className="text-sm">{msg.content}</p>
+                        
+                        {msg.image && (
+                          <div className="relative w-48 h-32 mb-2 rounded-md overflow-hidden">
+                              <Image src={msg.image} alt="Sent image" layout="fill" objectFit="cover" />
+                          </div>
+                        )}
+                        {msg.content && <p className="text-sm">{msg.content}</p>}
                         </div>
                         {msg.role === 'user' && (
                         <Avatar className="h-9 w-9 border shrink-0">
@@ -200,13 +250,33 @@ function LiveChatWidgetContent() {
                 )}
                 <div ref={messagesEndRef} />
               </CardContent>
-              <CardFooter className="p-2 border-t bg-white rounded-b-2xl">
+              <CardFooter className="p-2 border-t bg-white rounded-b-2xl flex flex-col">
+                  {selectedImage && (
+                    <div className="p-2 w-full flex items-center justify-between bg-muted rounded-md mb-2">
+                        <div className="flex items-center gap-2">
+                            <div className="relative w-10 h-10 rounded-md overflow-hidden">
+                                <Image src={selectedImage} alt="Preview" layout="fill" objectFit="cover"/>
+                            </div>
+                            <span className="text-xs text-muted-foreground">Image selected</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                            <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => setSelectedImage(null)}>
+                                <X className="h-4 w-4" />
+                            </Button>
+                             <Button size="sm" onClick={handleSendImage}>
+                                Send
+                                <SendHorizonal className="h-4 w-4 ml-2" />
+                            </Button>
+                        </div>
+                    </div>
+                  )}
                  <div className="flex w-full items-center space-x-1 bg-muted/50 rounded-full p-1">
                     <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0">
                         <Paperclip className="h-5 w-5 text-muted-foreground" />
                     </Button>
-                    <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0" onClick={handleImageButtonClick}>
                         <ImageIcon className="h-5 w-5 text-muted-foreground" />
+                        <input type="file" ref={fileInputRef} onChange={handleImageSelect} accept="image/*" className="hidden" />
                     </Button>
                     <Input
                         type="text"
