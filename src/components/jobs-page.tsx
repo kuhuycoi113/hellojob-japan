@@ -195,13 +195,17 @@ export function JobsPage() {
                     isHighlighted && "border-2 border-accent shadow-lg animate-pulse-once"
                 )}>
                     <div className="relative aspect-video">
-                    <Image
-                        src={job.image}
-                        alt={job.title?.[language] || ''}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={job.imageHint}
-                    />
+                    {job.image ? (
+                        <Image
+                            src={job.image}
+                            alt={job.title?.[language] || ''}
+                            fill
+                            className="object-cover"
+                            data-ai-hint={job.imageHint}
+                        />
+                    ) : (
+                        <Skeleton className="h-full w-full" />
+                    )}
                     </div>
                     <CardHeader>
                         <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{job.title?.[language]}</CardTitle>
@@ -262,7 +266,9 @@ export function JobsPage() {
                         <TableCell>
                             <div className="flex items-center gap-3">
                                 <Avatar className="hidden h-10 w-10 sm:flex rounded-md">
-                                    <AvatarImage src={job.image} alt={job.title?.[language]} className="object-cover" />
+                                    {job.image ? (
+                                        <AvatarImage src={job.image} alt={job.title?.[language]} className="object-cover" />
+                                    ) : null}
                                     <AvatarFallback className="rounded-md">{job.company?.[language]?.charAt(0)}</AvatarFallback>
                                 </Avatar>
                                 <div>
