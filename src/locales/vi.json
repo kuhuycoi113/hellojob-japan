@@ -883,5 +883,69 @@
     "supportOrgReferral": {
       "description": "Thêm nữa, nếu xí nghiệp tiếp nhận được Cơ quan hỗ trợ giới thiệu vào hệ thống, phí nền tảng sẽ giảm thêm 5%."
     }
+  },
+  "advisorProfile": {
+    "header": {
+      "title": "Hồ sơ Tư vấn viên",
+      "subtitle": "Tìm hiểu về chuyên viên tư vấn riêng, người sẽ đồng hành cùng bạn trong suốt quá trình."
+    },
+    "professionalInfo": {
+      "title": "Thông tin chuyên môn",
+      "experience": {
+        "label": "Kinh nghiệm"
+      },
+      "mainField": {
+        "label": "Lĩnh vực chính"
+      },
+      "subField": {
+        "label": "Lĩnh vực phụ"
+      }
+    },
+    "achievements": {
+      "title": "Thành tựu chính",
+      "successfulCandidates": "Ứng viên thành công",
+      "managedJobs": "Việc làm đã quản lý"
+    },
+    "systemAdvantages": {
+      "title": "Lợi thế từ hệ thống",
+      "items": [
+        {
+          "title": "Hệ thống Ghép nối bằng AI",
+          "description": "Tự động kết nối với các công ty và ứng viên phù hợp dựa trên dữ liệu."
+        },
+        {
+          "title": "Công cụ Quản lý Thông minh",
+          "description": "Theo dõi tiến độ ứng viên và quản lý tin tuyển dụng một cách hiệu quả."
+        },
+        {
+          "title": "Hỗ trợ Pháp lý & Thủ tục",
+          "description": "Nhận tư vấn và hỗ trợ chuyên nghiệp cho các giấy tờ phức tạp."
+        }
+      ]
+    },
+    "addedValue": {
+      "title": "Giá trị gia tăng của tôi",
+      "items": [
+        {
+          "title": "Tư vấn cá nhân hóa",
+          "description": "Tôi lắng nghe nhu cầu của bạn để đưa ra các chiến lược và giải pháp tuyển dụng phù hợp."
+        },
+        {
+          "title": "Hỗ trợ 24/7",
+          "description": "Tôi luôn sẵn sàng trả lời các câu hỏi và giải quyết vấn đề của bạn một cách nhanh chóng."
+        },
+        {
+          "title": "Xây dựng mối quan hệ lâu dài",
+          "description": "Tôi hướng tới việc trở thành đối tác tin cậy của bạn, đảm bảo thành công lâu dài cho cả hai bên."
+        }
+      ]
+    },
+    "contactActions": {
+      "messenger": "Chat qua Messenger",
+      "call": "Gọi ngay",
+      "zalo": "Chat qua Zalo",
+      "chat": "Chat với AI"
+    },
+    "contactButton": "Liên hệ ngay"
   }
 }

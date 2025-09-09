@@ -883,5 +883,69 @@
     "supportOrgReferral": {
       "description": "さらに、受入企業が登録支援機関によってシステムに紹介された場合、プラットフォーム手数料がさらに5%削減されます。"
     }
+  },
+  "advisorProfile": {
+    "header": {
+      "title": "相談員プロフィール",
+      "subtitle": "プロセス全体をガイドする専任コンサルタントをご紹介します。"
+    },
+    "professionalInfo": {
+      "title": "専門情報",
+      "experience": {
+        "label": "経験"
+      },
+      "mainField": {
+        "label": "主な専門分野"
+      },
+      "subField": {
+        "label": "副専門分野"
+      }
+    },
+    "achievements": {
+      "title": "主な実績",
+      "successfulCandidates": "成功した紹介",
+      "managedJobs": "管理した求人"
+    },
+    "systemAdvantages": {
+      "title": "システムの利点",
+      "items": [
+        {
+          "title": "AIマッチングシステム",
+          "description": "データに基づいて適切な企業や候補者と自動的に接続します。"
+        },
+        {
+          "title": "スマート管理ツール",
+          "description": "候補者の進捗状況を効率的に追跡し、求人情報を管理します。"
+        },
+        {
+          "title": "法務・手続きサポート",
+          "description": "複雑な書類作成に関する専門的なアドバイスと支援を受けられます。"
+        }
+      ]
+    },
+    "addedValue": {
+      "title": "私の付加価値",
+      "items": [
+        {
+          "title": "パーソナライズされたコンサルテーション",
+          "description": "お客様のニーズに耳を傾け、カスタマイズされた採用戦略とソリューションを提供します。"
+        },
+        {
+          "title": "24時間サポート",
+          "description": "いつでもご質問にお答えし、問題を迅速に解決します。"
+        },
+        {
+          "title": "長期的な関係構築",
+          "description": "信頼できるパートナーとなり、双方の長期的な成功を確実にすることを目指しています。"
+        }
+      ]
+    },
+    "contactActions": {
+      "messenger": "Messengerでチャット",
+      "call": "電話をかける",
+      "zalo": "Zaloでチャット",
+      "chat": "AIとチャット"
+    },
+    "contactButton": "今すぐ相談"
   }
 }

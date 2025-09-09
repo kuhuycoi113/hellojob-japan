@@ -160,7 +160,7 @@
       }
     ]
   },
-   "advisors": {
+  "advisors": {
     "title": "Meet Our Advisors",
     "subtitle": "Our experienced HR and legal experts are here to support you.",
     "viewProfile": "View Profile",
@@ -883,5 +883,69 @@
     "supportOrgReferral": {
       "description": "Furthermore, if the receiving company is introduced by a Supporting Organization, the platform fee is reduced by an additional 5%."
     }
+  },
+  "advisorProfile": {
+    "header": {
+      "title": "Advisor Profile",
+      "subtitle": "Get to know your dedicated consultant who will guide you through the entire process."
+    },
+    "professionalInfo": {
+      "title": "Professional Information",
+      "experience": {
+        "label": "Experience"
+      },
+      "mainField": {
+        "label": "Main Field"
+      },
+      "subField": {
+        "label": "Sub-Field"
+      }
+    },
+    "achievements": {
+      "title": "Key Achievements",
+      "successfulCandidates": "Successful Placements",
+      "managedJobs": "Managed Jobs"
+    },
+    "systemAdvantages": {
+      "title": "System Advantages",
+      "items": [
+        {
+          "title": "AI Matching System",
+          "description": "Automatically connect with suitable companies and candidates based on data."
+        },
+        {
+          "title": "Smart Management Tools",
+          "description": "Efficiently track candidate progress and manage job postings."
+        },
+        {
+          "title": "Legal & Procedural Support",
+          "description": "Get expert advice and assistance with complex paperwork."
+        }
+      ]
+    },
+    "addedValue": {
+      "title": "My Added Value",
+      "items": [
+        {
+          "title": "Personalized Consultation",
+          "description": "I listen to your needs to provide tailored recruitment strategies and solutions."
+        },
+        {
+          "title": "24/7 Support",
+          "description": "I am always available to answer your questions and resolve issues promptly."
+        },
+        {
+          "title": "Building Long-term Relationships",
+          "description": "I aim to become your trusted partner, ensuring long-term success for both parties."
+        }
+      ]
+    },
+    "contactActions": {
+      "messenger": "Chat on Messenger",
+      "call": "Call Now",
+      "zalo": "Chat on Zalo",
+      "chat": "Chat with AI"
+    },
+    "contactButton": "Contact Now"
   }
 }
