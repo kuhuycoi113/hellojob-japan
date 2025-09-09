@@ -304,7 +304,7 @@ export function JobsPage() {
 
   return (
     <div className="space-y-6">
-        { (userRole === 'union' || userRole === 'support_org') && !isGuest && (
+        { (userRole === 'union' || userRole === 'support_org' || userRole === 'sending_company') && !isGuest && (
             <>
             <PartnershipOpportunities />
             <PartnershipInfo />
