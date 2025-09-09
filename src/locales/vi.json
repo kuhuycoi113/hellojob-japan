@@ -36,7 +36,8 @@
         "button": "Đăng nhập / Đăng ký"
       }
     },
-    "editProfile": "Sửa hồ sơ"
+    "editProfile": "Sửa hồ sơ",
+    "login": "Đăng nhập / Đăng ký"
   },
   "pagination": {
     "previous": "Trang trước",
@@ -683,21 +684,25 @@
       "title": "Khách (Chưa đăng nhập)",
       "description": "Xem với tư cách khách truy cập."
     },
-    "sendingCompany": {
-      "title": "Công ty phái cử",
-      "description": "Tuyển và phái cử lao động từ Việt Nam."
-    },
     "supportOrg": {
-      "title": "Cơ quan hỗ trợ",
+      "title": "Cơ quan hỗ trợ (Shien Kikan)",
       "description": "Hỗ trợ các công ty và người lao động."
     },
     "union": {
-      "title": "Nghiệp đoàn",
+      "title": "Nghiệp đoàn (Kumiai)",
       "description": "Quản lý và hỗ trợ thực tập sinh."
     },
     "yuryoShokai": {
       "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
       "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
+    },
+    "hiringCompany": {
+      "title": "Xí nghiệp tiếp nhận",
+      "description": "Trực tiếp tuyển dụng và sử dụng lao động."
+    },
+    "sendingCompany": {
+      "title": "Công ty phái cử",
+      "description": "Tuyển và phái cử lao động từ Việt Nam."
     }
   },
   "chat": {
