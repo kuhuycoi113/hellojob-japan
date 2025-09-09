@@ -235,7 +235,10 @@
             "managedJobs": "220"
         }
       }
-    ]
+    ],
+    "advisorProfile": {
+      "contactButton": "Contact Now"
+    }
   },
   "cta": {
     "title": "Ready to Find the Right Talent for Your Business?",
@@ -330,7 +333,7 @@
     "featured": {
       "category": "Specified Skilled Worker",
       "title": "What is the Specified Skilled Worker (Tokutei Ginou) Visa? Everything You Need to Know for 2024",
-      "description": "Tokutei Ginou is a new type of work visa in Japan, opening up great opportunities for Vietnamese workers. Let's explore the conditions, benefits, and eligible industries.",
+      "description": "Tokutei Ginou is a new type of work visa in Japan, opening up great opportunities for Vietnamese workers. Let's explore the conditions, benefits, and eligible industries. This program allows skilled foreign workers to work long-term in various sectors facing labor shortages, such as construction, nursing care, and agriculture, offering competitive salaries and better working conditions.",
       "link": "Read article"
     },
     "videoTitle": "Short Videos",
@@ -362,19 +365,17 @@
         "description": "Financial planning is a crucial step before moving to Japan. This article will detail the monthly living expenses you need to prepare for.",
         "image": "https://picsum.photos/600/400?random=12",
         "hint": "woman thinking question marks"
-      }
-    ],
-    "longVideos": [
+      },
       {
-        "type": "video",
+        "type": "article",
         "category": "Procedures & Visa",
-        "title": "Comparing Intern vs. Specified Skilled Worker: Which Program to Choose?",
+        "title": "Intern vs. Specified Skilled Worker: Which Program to Choose?",
         "description": "Technical Intern Training (TTS) and Specified Skilled Worker (Tokutei Ginou) are two common paths to work in Japan. This article analyzes the pros and cons of each program.",
         "image": "https://picsum.photos/600/400?random=13",
         "hint": "japan passport"
       },
       {
-        "type": "video",
+        "type": "article",
         "category": "Procedures & Visa",
         "title": "Conditions for Permanent Residency Visa in Japan 2024",
         "description": "A permanent residency visa is the goal for many foreigners who wish to live and work long-term in Japan. This article will update you on the latest requirements.",

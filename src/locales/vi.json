@@ -235,7 +235,10 @@
             "managedJobs": "220"
         }
       }
-    ]
+    ],
+    "advisorProfile": {
+      "contactButton": "Liên hệ ngay"
+    }
   },
   "cta": {
     "title": "Sẵn sàng tìm kiếm nhân tài cho doanh nghiệp của bạn?",
@@ -330,7 +333,7 @@
     "featured": {
       "category": "Kỹ năng đặc định",
       "title": "Kỹ năng đặc định (Tokutei Ginou) là gì? Toàn bộ thông tin cần biết 2024",
-      "description": "Tokutei Ginou là một loại visa lao động mới của Nhật Bản, mở ra cơ hội lớn cho người lao động Việt Nam. Hãy cùng tìm hiểu chi tiết về điều kiện, quyền lợi và các ngành nghề tuyển dụng.",
+      "description": "Tokutei Ginou là một loại visa lao động mới của Nhật Bản, mở ra cơ hội lớn cho người lao động Việt Nam. Hãy cùng tìm hiểu chi tiết về điều kiện, quyền lợi và các ngành nghề tuyển dụng. Chương trình này cho phép lao động có tay nghề làm việc dài hạn tại các ngành nghề thiếu hụt lao động như xây dựng, điều dưỡng, nông nghiệp, với mức lương và điều kiện làm việc tốt hơn.",
       "link": "Đọc bài viết"
     },
     "videoTitle": "Video ngắn",
@@ -362,11 +365,9 @@
         "description": "Lập kế hoạch tài chính là bước quan trọng trước khi đến Nhật. Bài viết này sẽ phân tích chi tiết các khoản chi phí sinh hoạt hàng tháng bạn cần chuẩn bị.",
         "image": "https://picsum.photos/600/400?random=12",
         "hint": "woman thinking question marks"
-      }
-    ],
-    "longVideos": [
-        {
-        "type": "video",
+      },
+      {
+        "type": "article",
         "category": "Thủ tục & Visa",
         "title": "So sánh Thực tập sinh và Kỹ năng đặc định: Nên chọn chương trình nào?",
         "description": "Thực tập sinh (TTS) và Kỹ năng đặc định (Tokutei Ginou) là hai con đường phổ biến để sang Nhật làm việc. Bài viết này sẽ phân tích ưu, nhược điểm của mỗi chương trình.",
@@ -374,7 +375,7 @@
         "hint": "japan passport"
       },
       {
-        "type": "video",
+        "type": "article",
         "category": "Thủ tục & Visa",
         "title": "Điều kiện xin visa vĩnh trú tại Nhật Bản năm 2024",
         "description": "Visa vĩnh trú là mục tiêu của nhiều người nước ngoài muốn sinh sống và làm việc lâu dài tại Nhật. Bài viết sẽ cập nhật những điều kiện mới nhất bạn cần đáp ứng.",
