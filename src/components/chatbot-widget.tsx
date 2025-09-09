@@ -147,7 +147,7 @@ function LiveChatWidgetContent() {
           size="lg"
           className={cn(
               "rounded-full h-16 w-16 shadow-lg transition-all duration-300",
-              isOpen ? "bg-secondary text-secondary-foreground hover:bg-secondary/90 w-0 p-0 border-none" : "bg-primary text-primary-foreground hover:bg-primary/90"
+              isOpen ? "w-0 p-0 opacity-0" : "bg-primary text-primary-foreground hover:bg-primary/90"
           )}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle chat"
@@ -318,3 +318,5 @@ export function LiveChatWidget() {
     </Suspense>
   );
 }
+
+    
