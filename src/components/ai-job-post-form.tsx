@@ -605,7 +605,7 @@ function AiJobPostFormContent() {
   const isLoading = state === 'loading_job' || state === 'loading_partners' || state === 'translating';
   const showAnalyzeButton = uploadedFile && !jobPost;
   const showGenerateButton = !uploadedFile || jobPost;
-  const showActionFooter = (state === 'job_completed' || state === 'loading_partners' || state === 'partners_completed') && editableJobPost;
+  const showActionFooter = (state === 'job_completed' || state === 'partners_completed') && editableJobPost;
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
@@ -652,7 +652,7 @@ function AiJobPostFormContent() {
                         {uploadedFile.type.startsWith('image/') ? (
                           <img src={uploadedFile.dataUri} alt={uploadedFile.name} className="object-contain w-full h-full" />
                         ) : uploadedFile.type === 'application/pdf' ? (
-                          <embed src={uploadedFile.dataUri} type="application/pdf" width="100%" height="100%" />
+                          <iframe src={uploadedFile.dataUri} width="100%" height="100%" />
                         ) : (
                           <div className="flex flex-col items-center justify-center h-full p-4">
                             <FileIcon type={uploadedFile.type} />
@@ -813,6 +813,23 @@ function AiJobPostFormContent() {
                     </div>
                   )}
                 </CardContent>
+                {showActionFooter && (
+                <CardFooter className="pt-6 justify-center">
+                    <Button
+                        size="lg"
+                        className="bg-accent text-accent-foreground hover:bg-accent/90"
+                        onClick={handlePostAndFindPartners}
+                        disabled={state === 'loading_partners'}
+                    >
+                        {state === 'loading_partners' ? (
+                        <LoaderCircle className="animate-spin" />
+                        ) : (
+                        <Send className="mr-2 h-4 w-4" />
+                        )}
+                        {t.ai_job_post_form.postAndFindPartnersButton}
+                    </Button>
+                </CardFooter>
+                 )}
               </Card>
               
               {(state === 'loading_partners' || state === 'partners_completed') && (
@@ -908,25 +925,6 @@ function AiJobPostFormContent() {
             </DialogContent>
         </Dialog>
         
-        {showActionFooter && (
-            <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/80 backdrop-blur-sm border-t">
-                <div className="container mx-auto px-4 max-w-7xl flex justify-center">
-                    <Button
-                        size="lg"
-                        className="bg-accent text-accent-foreground hover:bg-accent/90"
-                        onClick={handlePostAndFindPartners}
-                        disabled={state === 'loading_partners'}
-                    >
-                        {state === 'loading_partners' ? (
-                        <LoaderCircle className="animate-spin" />
-                        ) : (
-                        <Send className="mr-2 h-4 w-4" />
-                        )}
-                        {t.ai_job_post_form.postAndFindPartnersButton}
-                    </Button>
-                </div>
-            </div>
-        )}
     </section>
   );
 }
@@ -938,5 +936,3 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
-
-    
