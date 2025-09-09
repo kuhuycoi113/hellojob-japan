@@ -288,16 +288,16 @@ export function Cta() {
                       </p>
                     </Card>
                   </Link>
-                   <Link href="/">
+                    <Link href="/">
                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
                       <div className="bg-primary/5 p-3 rounded-lg mb-4">
                         <Pencil className="h-8 w-8 text-yellow-500" />
                       </div>
                       <h3 className="font-semibold text-base text-gray-800">
-                         {t.postMethod.manual.title}
+                          {t.postMethod.manual.title}
                       </h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                         {t.postMethod.manual.description}
+                          {t.postMethod.manual.description}
                       </p>
                     </Card>
                   </Link>
