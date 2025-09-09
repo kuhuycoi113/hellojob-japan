@@ -41,12 +41,10 @@ export function ShareLongVideoForm() {
   };
   
   const categories = Array.from(new Set([
-    t.handbook.articles[0].category,
-    t.handbook.articles[1].category,
-    t.handbook.articles[2].category,
-    t.handbook.articles[3].category,
-    t.handbook.articles[4].category,
-    t.handbook.articles[5].category,
+    t.handbook.featured.category,
+    ...t.handbook.posts.map(p => p.category),
+    ...t.handbook.articles.map(a => a.category),
+    ...t.handbook.longVideos.map(v => v.category),
   ]));
 
   return (
