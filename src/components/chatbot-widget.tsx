@@ -21,11 +21,11 @@ import {
   MessageSquare,
   Paperclip,
   Phone,
-  SendHorizonal,
-  Video,
+  Video as VideoIcon,
   X,
   MessageSquareText,
   User,
+  SendHorizonal,
 } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { CallScreen } from './call-screen';
@@ -37,6 +37,7 @@ type Message = {
   role: 'user' | 'model';
   content: string;
   image?: string;
+  video?: string;
 };
 
 function LiveChatWidgetContent() {
@@ -50,7 +51,9 @@ function LiveChatWidgetContent() {
   const [callType, setCallType] = useState<'video' | 'voice'>('video');
   const [isMounted, setIsMounted] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const imageInputRef = useRef<HTMLInputElement>(null);
+  const videoInputRef = useRef<HTMLInputElement>(null);
 
 
   useEffect(() => {
@@ -82,7 +85,7 @@ function LiveChatWidgetContent() {
     // Simulate advisor's response
     setTimeout(() => {
       const botMessage: Message = { role: 'model', content: "Cảm ơn bạn đã liên hệ! Tư vấn viên sẽ phản hồi bạn trong thời gian sớm nhất." };
-      setMessages((prev) => [...prev, botMessage]);
+      setMessages((prev) => [..._ , botMessage]);
       setIsLoading(false);
     }, 1500);
   };
@@ -97,42 +100,70 @@ function LiveChatWidgetContent() {
   }
 
   const handleImageButtonClick = () => {
-    fileInputRef.current?.click();
+    imageInputRef.current?.click();
+  }
+  
+  const handleVideoButtonClick = () => {
+    videoInputRef.current?.click();
   }
 
   const handleImageSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file) {
+    if (file && file.type.startsWith('image/')) {
         const reader = new FileReader();
         reader.onloadend = () => {
             setSelectedImage(reader.result as string);
+            setSelectedVideo(null); // Clear other selections
+        };
+        reader.readAsDataURL(file);
+    }
+  }
+  
+  const handleVideoSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file && file.type.startsWith('video/')) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setSelectedVideo(reader.result as string);
+            setSelectedImage(null); // Clear other selections
         };
         reader.readAsDataURL(file);
     }
   }
 
-  const handleSendImage = () => {
-    if (!selectedImage) return;
+  const handleSendMedia = () => {
+    if (!selectedImage && !selectedVideo) return;
 
     const userMessage: Message = {
         role: 'user',
-        content: input, // Send current text with image
-        image: selectedImage
+        content: input,
+        image: selectedImage || undefined,
+        video: selectedVideo || undefined
     };
     setMessages(prev => [...prev, userMessage]);
     
     // Reset inputs
     setInput('');
     setSelectedImage(null);
-    if(fileInputRef.current) fileInputRef.current.value = "";
+    setSelectedVideo(null);
+    if(imageInputRef.current) imageInputRef.current.value = "";
+    if(videoInputRef.current) videoInputRef.current.value = "";
+
 
     // Simulate response
     setIsLoading(true);
     setTimeout(() => {
-      const botMessage: Message = { role: 'model', content: "Cảm ơn bạn đã gửi ảnh. Chúng tôi sẽ xem xét và phản hồi sớm." };
+      const botMessage: Message = { role: 'model', content: `Cảm ơn bạn đã gửi ${selectedImage ? 'ảnh' : 'video'}. Chúng tôi sẽ xem xét và phản hồi sớm.` };
       setMessages((prev) => [...prev, botMessage]);
       setIsLoading(false);
     }, 1500);
+  }
+  
+  const resetSelections = () => {
+      setSelectedImage(null);
+      setSelectedVideo(null);
+      if(imageInputRef.current) imageInputRef.current.value = "";
+      if(videoInputRef.current) videoInputRef.current.value = "";
   }
 
   if (!isMounted) {
@@ -184,7 +215,7 @@ function LiveChatWidgetContent() {
                     <Phone className="h-5 w-5" />
                   </Button>
                   <Button variant="ghost" size="icon" className="h-8 w-8 text-white/80 hover:text-white rounded-full" onClick={() => startCall('video')}>
-                    <Video className="h-5 w-5" />
+                    <VideoIcon className="h-5 w-5" />
                   </Button>
                   <Button
                     variant="ghost"
@@ -226,6 +257,11 @@ function LiveChatWidgetContent() {
                               <Image src={msg.image} alt="Sent image" layout="fill" objectFit="cover" />
                           </div>
                         )}
+                        {msg.video && (
+                             <div className="relative w-48 h-32 mb-2 rounded-md overflow-hidden bg-black">
+                                <video src={msg.video} controls className="w-full h-full" />
+                            </div>
+                        )}
                         {msg.content && <p className="text-sm">{msg.content}</p>}
                         </div>
                         {msg.role === 'user' && (
@@ -251,19 +287,23 @@ function LiveChatWidgetContent() {
                 <div ref={messagesEndRef} />
               </CardContent>
               <CardFooter className="p-2 border-t bg-white rounded-b-2xl flex flex-col">
-                  {selectedImage && (
+                  {(selectedImage || selectedVideo) && (
                     <div className="p-2 w-full flex items-center justify-between bg-muted rounded-md mb-2">
                         <div className="flex items-center gap-2">
-                            <div className="relative w-10 h-10 rounded-md overflow-hidden">
-                                <Image src={selectedImage} alt="Preview" layout="fill" objectFit="cover"/>
+                            <div className="relative w-10 h-10 rounded-md overflow-hidden bg-black">
+                                {selectedImage ? (
+                                     <Image src={selectedImage} alt="Preview" layout="fill" objectFit="cover"/>
+                                ) : selectedVideo ? (
+                                    <video src={selectedVideo} className="w-full h-full object-cover" />
+                                ) : null}
                             </div>
-                            <span className="text-xs text-muted-foreground">Image selected</span>
+                            <span className="text-xs text-muted-foreground">{selectedImage ? 'Image selected' : 'Video selected'}</span>
                         </div>
                         <div className="flex items-center gap-1">
-                            <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => setSelectedImage(null)}>
+                            <Button variant="ghost" size="icon" className="h-7 w-7" onClick={resetSelections}>
                                 <X className="h-4 w-4" />
                             </Button>
-                             <Button size="sm" onClick={handleSendImage}>
+                             <Button size="sm" onClick={handleSendMedia}>
                                 Send
                                 <SendHorizonal className="h-4 w-4 ml-2" />
                             </Button>
@@ -274,9 +314,13 @@ function LiveChatWidgetContent() {
                     <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0">
                         <Paperclip className="h-5 w-5 text-muted-foreground" />
                     </Button>
+                     <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0" onClick={handleVideoButtonClick}>
+                        <VideoIcon className="h-5 w-5 text-muted-foreground" />
+                        <input type="file" ref={videoInputRef} onChange={handleVideoSelect} accept="video/*" className="hidden" />
+                    </Button>
                     <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0" onClick={handleImageButtonClick}>
                         <ImageIcon className="h-5 w-5 text-muted-foreground" />
-                        <input type="file" ref={fileInputRef} onChange={handleImageSelect} accept="image/*" className="hidden" />
+                        <input type="file" ref={imageInputRef} onChange={handleImageSelect} accept="image/*" className="hidden" />
                     </Button>
                     <Input
                         type="text"
