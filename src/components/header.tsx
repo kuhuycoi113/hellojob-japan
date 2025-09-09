@@ -135,7 +135,7 @@ export function Header() {
         title: t.userRoles.yuryoShokai.title,
         description: t.userRoles.yuryoShokai.description,
       },
-      {
+       {
         icon: <Building className="h-8 w-8 text-blue-500" />,
         title: t.userRoles.sendingCompany.title,
         description: t.userRoles.sendingCompany.description,
@@ -322,10 +322,12 @@ export function Header() {
                     )}
                     <DropdownMenuSeparator />
                     
-                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 my-2">
-                      <Diamond className="mr-2 h-4 w-4" />
-                      {t.header.menuItems.signUpForPremium}
-                    </Button>
+                    {userRole !== 'guest' && (
+                      <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 my-2">
+                        <Diamond className="mr-2 h-4 w-4" />
+                        {t.header.menuItems.signUpForPremium}
+                      </Button>
+                    )}
 
                     <div className="grid grid-cols-4 gap-2 my-4">
                         {menuItems.map((item) => (
