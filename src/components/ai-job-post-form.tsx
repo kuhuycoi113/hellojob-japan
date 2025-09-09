@@ -609,7 +609,7 @@ function AiJobPostFormContent() {
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
-      <div className={cn("container mx-auto px-4 max-w-7xl", showActionFooter && "pb-32")}>
+      <div className={cn("container mx-auto px-4 max-w-7xl")}>
         <div className="text-center mb-12">
           <div className="inline-block bg-primary/10 text-primary p-3 rounded-lg mb-4">
             <Sparkles className="h-8 w-8" />
@@ -661,6 +661,10 @@ function AiJobPostFormContent() {
                             <p className="text-xs text-muted-foreground mt-2">No preview available for this file type.</p>
                           </div>
                         )}
+                      </div>
+                      <div className="text-center">
+                          <p className="font-semibold mt-4 break-all text-center">{uploadedFile.name}</p>
+                          <p className="text-sm text-muted-foreground">({(uploadedFile.size / 1024).toFixed(2)} KB)</p>
                       </div>
                       <div className="flex justify-center gap-2">
                           <Button variant="outline" size="sm" onClick={handleUploadCardClick}>{t.ai_job_post_form.upload.changeFile}</Button>
@@ -813,23 +817,6 @@ function AiJobPostFormContent() {
                     </div>
                   )}
                 </CardContent>
-                {showActionFooter && (
-                <CardFooter className="pt-6 justify-center">
-                    <Button
-                        size="lg"
-                        className="bg-accent text-accent-foreground hover:bg-accent/90"
-                        onClick={handlePostAndFindPartners}
-                        disabled={state === 'loading_partners'}
-                    >
-                        {state === 'loading_partners' ? (
-                        <LoaderCircle className="animate-spin" />
-                        ) : (
-                        <Send className="mr-2 h-4 w-4" />
-                        )}
-                        {t.ai_job_post_form.postAndFindPartnersButton}
-                    </Button>
-                </CardFooter>
-                 )}
               </Card>
               
               {(state === 'loading_partners' || state === 'partners_completed') && (
@@ -925,6 +912,25 @@ function AiJobPostFormContent() {
             </DialogContent>
         </Dialog>
         
+        {showActionFooter && (
+          <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/80 backdrop-blur-sm border-t">
+              <div className="container mx-auto max-w-7xl flex justify-center">
+                  <Button
+                      size="lg"
+                      className="bg-accent text-accent-foreground hover:bg-accent/90"
+                      onClick={handlePostAndFindPartners}
+                      disabled={state === 'loading_partners'}
+                  >
+                      {state === 'loading_partners' ? (
+                      <LoaderCircle className="animate-spin" />
+                      ) : (
+                      <Send className="mr-2 h-4 w-4" />
+                      )}
+                      {t.ai_job_post_form.postAndFindPartnersButton}
+                  </Button>
+              </div>
+          </div>
+        )}
     </section>
   );
 }
@@ -936,3 +942,5 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
