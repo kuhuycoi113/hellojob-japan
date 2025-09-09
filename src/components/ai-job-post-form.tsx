@@ -271,9 +271,9 @@ function AiJobPostFormContent() {
 
   const userRoles = [
     {
-      icon: <Building className="h-8 w-8 text-primary" />,
-      title: t.userRoles.hiringCompany.title,
-      description: t.userRoles.hiringCompany.description,
+      icon: <Users className="h-8 w-8 text-red-500" />,
+      title: t.userRoles.sendingCompany.title,
+      description: t.userRoles.sendingCompany.description,
     },
     {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
@@ -284,16 +284,6 @@ function AiJobPostFormContent() {
       icon: <Handshake className="h-8 w-8 text-green-500" />,
       title: t.userRoles.union.title,
       description: t.userRoles.union.description,
-    },
-    {
-      icon: <Users className="h-8 w-8 text-red-500" />,
-      title: t.userRoles.sendingCompany.title,
-      description: t.userRoles.sendingCompany.description,
-    },
-    {
-      icon: <Users className="h-8 w-8 text-blue-500" />,
-      title: t.userRoles.hakenCompany.title,
-      description: t.userRoles.hakenCompany.description,
     },
     {
       icon: <Users className="h-8 w-8 text-purple-500" />,

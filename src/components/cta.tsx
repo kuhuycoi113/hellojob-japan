@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -31,6 +32,11 @@ export function Cta() {
 
   const userRoles = [
     {
+      icon: <Users className="h-8 w-8 text-red-500" />,
+      title: t.userRoles.sendingCompany.title,
+      description: t.userRoles.sendingCompany.description,
+    },
+    {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
       description: t.userRoles.supportOrg.description,
@@ -39,11 +45,6 @@ export function Cta() {
       icon: <Handshake className="h-8 w-8 text-green-500" />,
       title: t.userRoles.union.title,
       description: t.userRoles.union.description,
-    },
-    {
-      icon: <Users className="h-8 w-8 text-red-500" />,
-      title: t.userRoles.sendingCompany.title,
-      description: t.userRoles.sendingCompany.description,
     },
     {
       icon: <Users className="h-8 w-8 text-purple-500" />,

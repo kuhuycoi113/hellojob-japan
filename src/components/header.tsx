@@ -79,9 +79,9 @@ const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
+          <SelectItem value="sending_company">{t.userRoles.sendingCompany.title}</SelectItem>
           <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
           <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
-          <SelectItem value="sending_company">{t.userRoles.sendingCompany.title}</SelectItem>
           <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
         </SelectContent>
       </Select>
@@ -120,6 +120,11 @@ export function Header() {
   
     const userRoles = [
     {
+      icon: <Users className="h-8 w-8 text-red-500" />,
+      title: t.userRoles.sendingCompany.title,
+      description: t.userRoles.sendingCompany.description,
+    },
+    {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
       description: t.userRoles.supportOrg.description,
@@ -128,11 +133,6 @@ export function Header() {
       icon: <Handshake className="h-8 w-8 text-green-500" />,
       title: t.userRoles.union.title,
       description: t.userRoles.union.description,
-    },
-    {
-      icon: <Users className="h-8 w-8 text-red-500" />,
-      title: t.userRoles.sendingCompany.title,
-      description: t.userRoles.sendingCompany.description,
     },
     {
       icon: <Users className="h-8 w-8 text-purple-500" />,
