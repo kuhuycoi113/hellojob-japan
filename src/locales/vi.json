@@ -663,14 +663,14 @@
           "type": "video"
         },
         {
-          "title": "5 Kinh nghiệm phỏng vấn Tokutei Ginou chắc chắn đậu",
+          "title": "5 Kinh nghiệm phỏng vấn Tokutei Ginou chắc chắnậu",
           "category": "Kinh nghiệm phỏng vấn",
           "image": "https://picsum.photos/400/400?random=2",
           "type": "article"
         },
         {
-          "title": "How Much is the Cost of Living in Japan per Month?",
-          "category": "Life in Japan",
+          "title": "Chi phí sinh hoạt ở Nhật Bản hết bao nhiêu một tháng?",
+          "category": "Cuộc sống ở Nhật",
           "image": "https://picsum.photos/400/400?random=3",
           "type": "article"
         }
@@ -701,7 +701,7 @@
       "description": "Trực tiếp tuyển dụng và sử dụng lao động."
     },
     "sendingCompany": {
-      "title": "Công ty phái cử",
+      "title": "Công ty phái cử (Công ty xuất khẩu lao động)",
       "description": "Tuyển và phái cử lao động từ Việt Nam."
     }
   },
