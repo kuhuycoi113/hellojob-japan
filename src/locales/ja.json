@@ -345,6 +345,7 @@
       }
     ],
     "newPostsTitle": "新着記事",
+    "longVideoTitle": "長編動画",
     "posts": [
       {
         "type": "article",
@@ -361,8 +362,10 @@
         "description": "来日前の資金計画は重要です。この記事では、毎月の生活費について詳しく解説しますので、準備の参考にしてください。",
         "image": "https://picsum.photos/600/400?random=12",
         "hint": "woman thinking question marks"
-      },
-      {
+      }
+    ],
+     "longVideos": [
+        {
         "type": "video",
         "category": "手続き・ビザ",
         "title": "技能実習と特定技能、どちらを選ぶべき？徹底比較",
@@ -432,7 +435,6 @@
       "description": "日本での生活や仕事に関する話、ヒント、貴重な経験をベトナム人コミュニティと共有しませんか？HelloJobに記事や動画を投稿してください！",
       "button": "今すぐ共有"
     },
-    "longVideos": [],
     "shareContentButton": "コンテンツを共有する",
     "shareOptions": {
       "title": "共有したいコンテンツの種類を選択してください",

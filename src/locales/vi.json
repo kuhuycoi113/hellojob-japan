@@ -345,6 +345,7 @@
       }
     ],
     "newPostsTitle": "Bài viết mới",
+    "longVideoTitle": "Video dài",
     "posts": [
       {
         "type": "article",
@@ -361,8 +362,10 @@
         "description": "Lập kế hoạch tài chính là bước quan trọng trước khi đến Nhật. Bài viết này sẽ phân tích chi tiết các khoản chi phí sinh hoạt hàng tháng bạn cần chuẩn bị.",
         "image": "https://picsum.photos/600/400?random=12",
         "hint": "woman thinking question marks"
-      },
-      {
+      }
+    ],
+    "longVideos": [
+        {
         "type": "video",
         "category": "Thủ tục & Visa",
         "title": "So sánh Thực tập sinh và Kỹ năng đặc định: Nên chọn chương trình nào?",
@@ -432,7 +435,6 @@
       "description": "Bạn có câu chuyện, mẹo hay hoặc kinh nghiệm quý báu muốn chia sẻ với cộng đồng người Việt tại Nhật? Hãy đóng góp bài viết, video cho HelloJob!",
       "button": "Chia sẻ ngay"
     },
-    "longVideos": [],
     "shareContentButton": "Chia sẻ nội dung của bạn",
     "shareOptions": {
       "title": "Chọn loại nội dung bạn muốn chia sẻ",

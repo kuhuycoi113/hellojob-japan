@@ -345,6 +345,7 @@
       }
     ],
     "newPostsTitle": "New Posts",
+    "longVideoTitle": "Long Videos",
     "posts": [
       {
         "type": "article",
@@ -361,7 +362,9 @@
         "description": "Financial planning is a crucial step before moving to Japan. This article will detail the monthly living expenses you need to prepare for.",
         "image": "https://picsum.photos/600/400?random=12",
         "hint": "woman thinking question marks"
-      },
+      }
+    ],
+    "longVideos": [
       {
         "type": "video",
         "category": "Procedures & Visa",
@@ -432,7 +435,6 @@
       "description": "Have a story, tip, or valuable experience you want to share with the Vietnamese community in Japan? Contribute your articles and videos to HelloJob!",
       "button": "Share Now"
     },
-    "longVideos": [],
     "shareContentButton": "Share your content",
     "shareOptions": {
       "title": "Choose the type of content you want to share",

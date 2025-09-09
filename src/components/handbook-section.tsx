@@ -122,11 +122,6 @@ export function HandbookSection() {
                                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                                         data-ai-hint={post.hint}
                                     />
-                                     {post.type === 'video' && (
-                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                                            <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
-                                        </div>
-                                    )}
                                 </div>
                                 <CardContent className="p-4 flex-grow flex flex-col">
                                 <Badge variant="outline" className="mb-2 w-fit">
@@ -136,6 +131,41 @@ export function HandbookSection() {
                                     {post.title}
                                 </h4>
                                 <p className="text-sm text-muted-foreground mt-2 line-clamp-3">{post.description}</p>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+
+                 {/* Long Videos Section */}
+                <div>
+                    <h3 className="text-2xl font-bold font-headline text-gray-800 mb-6 flex items-center gap-3">
+                        <Video className="w-7 h-7 text-primary" />
+                        {t.handbook.longVideoTitle}
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {longVideos.map((video, index) => (
+                             <Card key={index} className="shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col group">
+                                <div className="relative w-full aspect-video">
+                                    <Image
+                                        src={video.image}
+                                        alt={video.title}
+                                        fill
+                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        data-ai-hint={video.hint}
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                                        <PlayCircle className="w-12 h-12 text-white/80 transform transition-transform group-hover:scale-110" />
+                                    </div>
+                                </div>
+                                <CardContent className="p-4 flex-grow flex flex-col">
+                                <Badge variant="outline" className="mb-2 w-fit">
+                                    {video.category}
+                                </Badge>
+                                <h4 className="font-bold font-headline text-lg text-gray-800 flex-grow group-hover:text-primary transition-colors">
+                                    {video.title}
+                                </h4>
+                                <p className="text-sm text-muted-foreground mt-2 line-clamp-3">{video.description}</p>
                                 </CardContent>
                             </Card>
                         ))}
