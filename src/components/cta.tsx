@@ -30,11 +30,16 @@ export function Cta() {
   const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
   const [selectedVisaSubType, setSelectedVisaSubType] = useState<{title: string, href: string} | null>(null);
 
-  const userRoles = [
+  const userRoles: Role[] = [
     {
       icon: <Users className="h-8 w-8 text-red-500" />,
       title: t.userRoles.sendingCompany.title,
       description: t.userRoles.sendingCompany.description,
+    },
+    {
+      icon: <Building className="h-8 w-8 text-blue-500" />,
+      title: t.userRoles.hiringCompany.title,
+      description: t.userRoles.hiringCompany.description,
     },
     {
       icon: <Users className="h-8 w-8 text-yellow-500" />,

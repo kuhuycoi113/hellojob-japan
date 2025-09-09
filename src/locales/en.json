@@ -690,6 +690,10 @@
       "title": "Sending Company",
       "description": "Recruits and dispatches workers from Vietnam."
     },
+     "hiringCompany": {
+      "title": "Hiring Company",
+      "description": "Directly recruits and employs workers."
+    },
     "yuryoShokai": {
       "title": "Paid Employment Placement Business",
       "description": "Provides paid job placement services."
@@ -706,8 +710,8 @@
   "callScreen": {
     "connecting": "Connecting...",
     "permissionError": {
-        "title": "Permission Required",
-        "description": "Please allow access to your camera and microphone in your browser to use this feature."
+      "title": "Permission Required",
+      "description": "Please allow access to your camera and microphone in your browser to use this feature."
     }
   },
   "visaTypes": {

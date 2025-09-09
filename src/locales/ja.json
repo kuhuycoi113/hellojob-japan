@@ -690,6 +690,10 @@
       "title": "送り出し機関",
       "description": "ベトナムから労働者を募集・派遣する。"
     },
+     "hiringCompany": {
+      "title": "受入企業",
+      "description": "直接労働者を雇用し、活用する。"
+    },
     "yuryoShokai": {
       "title": "有料職業紹介事業者",
       "description": "有料で職業紹介を行う。"
