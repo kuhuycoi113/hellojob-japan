@@ -331,9 +331,9 @@
     "pageSubtitle": "All the information you need about the labor market, skills, and life in Japan.",
     "searchPlaceholder": "Search articles (e.g., Tokutei, costs...)",
     "featured": {
-      "category": "Specified Skilled Worker",
-      "title": "What is the Specified Skilled Worker (Tokutei Ginou) Visa? Everything You Need to Know for 2024",
-      "description": "Tokutei Ginou is a new type of work visa in Japan, opening up great opportunities for Vietnamese workers. Let's explore the conditions, benefits, and eligible industries. This program allows skilled foreign workers to work long-term in various sectors facing labor shortages, such as construction, nursing care, and agriculture, offering competitive salaries and better working conditions.",
+      "category": "Supporting Organizations",
+      "title": "How can Supporting Organizations (Shien Kikan) recruit Vietnamese candidates at the lowest cost?",
+      "description": "Explore effective strategies and tools to optimize recruitment costs for Vietnamese labor, from leveraging technology platforms to smart collaboration with domestic and international partners.",
       "link": "Read article"
     },
     "videoTitle": "Short Videos",
@@ -678,6 +678,10 @@
       "title": "Guest (Not Logged In)",
       "description": "View as a visitor."
     },
+    "sendingCompany": {
+      "title": "Sending Company",
+      "description": "Recruits and dispatches workers from Vietnam."
+    },
     "supportOrg": {
       "title": "Supporting Organization",
       "description": "Supports companies and workers."
@@ -686,11 +690,7 @@
       "title": "Cooperative Union",
       "description": "Manages and supports interns."
     },
-    "sendingCompany": {
-      "title": "Sending Company",
-      "description": "Recruits and dispatches workers from Vietnam."
-    },
-     "hiringCompany": {
+    "hiringCompany": {
       "title": "Hiring Company",
       "description": "Directly recruits and employs workers."
     },

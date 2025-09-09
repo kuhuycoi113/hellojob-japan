@@ -331,9 +331,9 @@
     "pageSubtitle": "Tất cả thông tin bạn cần biết về thị trường lao động, kỹ năng và cuộc sống tại Nhật Bản.",
     "searchPlaceholder": "Tìm kiếm bài viết (VD: Tokutei, chi phí...)",
     "featured": {
-      "category": "Kỹ năng đặc định",
-      "title": "Kỹ năng đặc định (Tokutei Ginou) là gì? Toàn bộ thông tin cần biết 2024",
-      "description": "Tokutei Ginou là một loại visa lao động mới của Nhật Bản, mở ra cơ hội lớn cho người lao động Việt Nam. Hãy cùng tìm hiểu chi tiết về điều kiện, quyền lợi và các ngành nghề tuyển dụng. Chương trình này cho phép người lao động có tay nghề làm việc dài hạn tại các ngành nghề thiếu hụt lao động như xây dựng, điều dưỡng, nông nghiệp, với mức lương và điều kiện làm việc tốt hơn.",
+      "category": "Cơ quan hỗ trợ",
+      "title": "Làm thế nào để Cơ quan hỗ trợ (Shien Kikan) tuyển dụng ứng viên Việt Nam với chi phí thấp nhất?",
+      "description": "Khám phá các chiến lược và công cụ hiệu quả để tối ưu hóa chi phí tuyển dụng lao động Việt Nam, từ việc sử dụng nền tảng công nghệ đến việc hợp tác thông minh với các đối tác trong và ngoài nước.",
       "link": "Đọc bài viết"
     },
     "videoTitle": "Video ngắn",
@@ -678,6 +678,10 @@
       "title": "Khách (Chưa đăng nhập)",
       "description": "Xem với tư cách khách truy cập."
     },
+    "sendingCompany": {
+      "title": "Công ty phái cử",
+      "description": "Tuyển và phái cử lao động từ Việt Nam."
+    },
     "supportOrg": {
       "title": "Cơ quan hỗ trợ",
       "description": "Hỗ trợ các công ty và người lao động."
@@ -685,10 +689,6 @@
     "union": {
       "title": "Nghiệp đoàn",
       "description": "Quản lý và hỗ trợ thực tập sinh."
-    },
-    "sendingCompany": {
-      "title": "Công ty phái cử",
-      "description": "Tuyển và phái cử lao động từ Việt Nam."
     },
     "hiringCompany": {
       "title": "Xí nghiệp tiếp nhận",
@@ -833,7 +833,7 @@
       "secure": "Thanh toán được bảo mật"
     }
   },
-  "partnershipOpportunities": {
+    "partnershipOpportunities": {
     "title": "Cơ hội hợp tác mới",
     "from": "Từ: {company}",
     "expiresIn": "Hết hạn sau",
@@ -847,13 +847,13 @@
     "decline": "Từ chối",
     "referredByYou": "Do bạn giới thiệu",
     "table": {
-      "opportunity": "Cơ hội",
-      "company": "Công ty",
-      "visaType": "Loại Visa",
-      "fees": "Thông tin phí",
-      "expires": "Hết hạn",
-      "actions": "Hành động"
-    }
+        "opportunity": "Cơ hội",
+        "company": "Công ty",
+        "visaType": "Loại Visa",
+        "fees": "Thông tin phí",
+        "expires": "Hết hạn",
+        "actions": "Hành động"
+      }
   },
   "partnershipInfo": {
     "revenueShare": {
