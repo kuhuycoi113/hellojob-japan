@@ -647,11 +647,22 @@ function AiJobPostFormContent() {
               </CardHeader>
               <CardContent className="flex-grow">
                 {uploadedFile ? (
-                   <div className="min-h-[200px] rounded-lg border-2 border-dashed border-gray-300 p-4 flex flex-col items-center justify-center text-center">
-                      <FileIcon type={uploadedFile.type} />
-                      <p className="font-semibold mt-4 break-all">{uploadedFile.name}</p>
-                      <p className="text-sm text-muted-foreground">({(uploadedFile.size / 1024).toFixed(2)} KB)</p>
-                      <div className="flex gap-2 mt-4">
+                  <div className="space-y-4">
+                      <div className="relative border-2 border-dashed rounded-lg h-96 overflow-y-auto">
+                        {uploadedFile.type.startsWith('image/') ? (
+                          <img src={uploadedFile.dataUri} alt={uploadedFile.name} className="object-contain w-full h-full" />
+                        ) : uploadedFile.type === 'application/pdf' ? (
+                          <embed src={uploadedFile.dataUri} type="application/pdf" width="100%" height="100%" />
+                        ) : (
+                          <div className="flex flex-col items-center justify-center h-full p-4">
+                            <FileIcon type={uploadedFile.type} />
+                            <p className="font-semibold mt-4 break-all text-center">{uploadedFile.name}</p>
+                            <p className="text-sm text-muted-foreground">({(uploadedFile.size / 1024).toFixed(2)} KB)</p>
+                            <p className="text-xs text-muted-foreground mt-2">No preview available for this file type.</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex justify-center gap-2">
                           <Button variant="outline" size="sm" onClick={handleUploadCardClick}>{t.ai_job_post_form.upload.changeFile}</Button>
                           <Button variant="destructive" size="sm" onClick={removeFile}>{t.ai_job_post_form.upload.removeFile}</Button>
                       </div>
@@ -927,3 +938,5 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
