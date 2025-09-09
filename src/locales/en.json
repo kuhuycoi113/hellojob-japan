@@ -324,6 +324,9 @@
     }
   },
   "handbook": {
+    "pageTitle": "HelloJob Handbook",
+    "pageSubtitle": "All the information you need about the labor market, skills, and life in Japan.",
+    "searchPlaceholder": "Search articles (e.g., Tokutei, costs...)",
     "featured": {
       "category": "Specified Skilled Worker",
       "title": "What is the Specified Skilled Worker (Tokutei Ginou) Visa? Everything You Need to Know for 2024",
@@ -331,7 +334,6 @@
       "link": "Read article"
     },
     "videoTitle": "Short Videos",
-    "longVideoTitle": "Long-Form Videos",
     "videos": [
       {
         "title": "3 Tips for a Successful Online Video Interview with Japanese Employers",
@@ -340,61 +342,41 @@
       {
         "title": "Guide to Safely and Quickly Transferring Money from Japan to Vietnam",
         "category": "Life in Japan"
-      },
-      {
-        "title": "5 Common Interview Questions & How to Answer in Japanese",
-        "category": "Interview Experience"
-      },
-      {
-        "title": "Taxes You Need to Know When Working in Japan",
-        "category": "Labor Law"
-      },
-      {
-        "title": "Japanese Culture: The Importance of 'Omiyage' (Souvenirs)",
-        "category": "Life in Japan"
-      },
-      {
-        "title": "Understanding the 'Nenmatsu Chosei' (Year-End Tax Adjustment)",
-        "category": "Life in Japan"
-      }
-    ],
-    "longVideos": [
-      {
-        "title": "A detailed discussion on the types of labor contracts in Japan for workers",
-        "duration": "15:20",
-        "category": "Labor Law"
-      },
-      {
-        "title": "The journey from Intern to Specified Skilled Worker: An insider's story",
-        "duration": "22:45",
-        "category": "Experience Sharing"
       }
     ],
     "newPostsTitle": "New Posts",
     "posts": [
       {
+        "type": "article",
         "category": "Interview Experience",
-        "title": "How to Write a Compelling Japanese CV to Impress Recruiters",
-        "image": "https://picsum.photos/600/400?random=10",
-        "hint": "writing resume"
-      },
-      {
-        "category": "Life in Japan",
-        "title": "Exploring the Unique Work Culture for Laborers in Japanese Companies",
+        "title": "5 Interview Experiences for Tokutei Ginou to Secure the Job",
+        "description": "The interview is the decisive step to get your dream job in Japan. Prepare thoroughly with these 5 valuable experiences from experts.",
         "image": "https://picsum.photos/600/400?random=11",
-        "hint": "team meeting"
+        "hint": "job interview professional"
       },
       {
-        "category": "Labor Law",
-        "title": "Changes to Labor Laws for Foreign Workers in Japan for 2024",
+        "type": "article",
+        "category": "Life in Japan",
+        "title": "How Much is the Cost of Living in Japan per Month?",
+        "description": "Financial planning is a crucial step before moving to Japan. This article will detail the monthly living expenses you need to prepare for.",
         "image": "https://picsum.photos/600/400?random=12",
-        "hint": "legal document"
+        "hint": "woman thinking question marks"
       },
       {
-        "category": "Cuộc sống ở Nhật",
-        "title": "What's the Cost of Living in Japan's Major Cities for Laborers?",
+        "type": "video",
+        "category": "Procedures & Visa",
+        "title": "Comparing Intern vs. Specified Skilled Worker: Which Program to Choose?",
+        "description": "Technical Intern Training (TTS) and Specified Skilled Worker (Tokutei Ginou) are two common paths to work in Japan. This article analyzes the pros and cons of each program.",
         "image": "https://picsum.photos/600/400?random=13",
-        "hint": "city life"
+        "hint": "japan passport"
+      },
+      {
+        "type": "video",
+        "category": "Procedures & Visa",
+        "title": "Conditions for Permanent Residency Visa in Japan 2024",
+        "description": "A permanent residency visa is the goal for many foreigners who wish to live and work long-term in Japan. This article will update you on the latest requirements.",
+        "image": "https://picsum.photos/600/400?random=14",
+        "hint": "couple planning finances"
       }
     ],
     "imagePosts": {
@@ -402,53 +384,55 @@
       "stories": [
         {
           "title": "A Day at the Factory",
-          "image": "https://picsum.photos/400/533?random=50",
+          "image": "https://picsum.photos/400/400?random=50",
           "hint": "factory worker"
         },
         {
           "title": "Evening Japanese Class",
-          "image": "https://picsum.photos/400/533?random=51",
+          "image": "https://picsum.photos/400/400?random=51",
           "hint": "classroom learning night"
         },
         {
           "title": "Dinner with Friends from Home",
-          "image": "https://picsum.photos/400/533?random=52",
+          "image": "https://picsum.photos/400/400?random=52",
           "hint": "people eating together"
         },
         {
           "title": "Beautiful Cherry Blossom Season",
-          "image": "https://picsum.photos/400/533?random=53",
+          "image": "https://picsum.photos/400/400?random=53",
           "hint": "cherry blossom"
         }
       ]
     },
-    "newsTitle": "News & Articles",
+    "newsTitle": "News & Posts",
     "articles": [
       {
         "category": "Life in Japan",
-        "title": "Work Culture in Japan: Understanding 'Hou-Ren-Sou' for Workers"
+        "title": "Work Culture in Japan: Understanding 'Hou-Ren-Sou' for Workers",
+        "readTime": "5 min read"
       },
       {
         "category": "Interview Experience",
-        "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction) for Workers"
+        "title": "Tips for Crafting an Impressive 'Jikoshoukai' (Self-Introduction) for Workers",
+        "readTime": "6 min read"
       },
       {
-        "category": "Labor Law",
-        "title": "The Latest Updates on Japanese Labor Law for Foreign Workers"
-      },
-      {
-        "category": "Market News",
-        "title": "Japan Faces Critical Labor Shortage"
-      },
-      {
-        "category": "Specified Skilled Worker",
-        "title": "A Detailed Guide to the Specified Skilled Worker Exam for Construction for Workers"
+        "category": "Interview Experience",
+        "title": "5 Key Tips for Finding a Tokutei Ginou Job in Japan",
+        "readTime": "4 min read"
       },
       {
         "category": "Life in Japan",
-        "title": "How to Find Affordable Housing for Foreign Workers in Japan?"
+        "title": "Top 5 Must-Have Apps for Life in Japan",
+        "readTime": "3 min read"
       }
     ],
+    "shareCTA": {
+      "title": "Share Your Experience",
+      "description": "Have a story, tip, or valuable experience you want to share with the Vietnamese community in Japan? Contribute your articles and videos to HelloJob!",
+      "button": "Share Now"
+    },
+    "longVideos": [],
     "shareContentButton": "Share your content",
     "shareOptions": {
       "title": "Choose the type of content you want to share",

@@ -324,6 +324,9 @@
     }
   },
   "handbook": {
+    "pageTitle": "HelloJobハンドブック",
+    "pageSubtitle": "日本の労働市場、スキル、生活に関する必要な情報がすべてここに。",
+    "searchPlaceholder": "記事を検索 (例: 特定技能、費用...)",
     "featured": {
       "category": "特定技能",
       "title": "特定技能とは？2024年版完全ガイド",
@@ -331,7 +334,6 @@
       "link": "記事を読む"
     },
     "videoTitle": "ショート動画",
-    "longVideoTitle": "長編動画",
     "videos": [
       {
         "title": "日本の採用担当者とのオンライン面接の3つのヒント",
@@ -340,61 +342,41 @@
       {
         "title": "日本からベトナムへ安全・迅速に送金する方法",
         "category": "日本での生活"
-      },
-      {
-        "title": "よくある面接質問5選と日本語での答え方",
-        "category": "面接のコツ"
-      },
-      {
-        "title": "日本で働く際に知っておくべき税金の種類",
-        "category": "労働法"
-      },
-      {
-        "title": "日本文化：『お土産』の重要性",
-        "category": "日本での生活"
-      },
-      {
-        "title": "「年末調整」の理解",
-        "category": "日本での生活"
-      }
-    ],
-    "longVideos": [
-      {
-        "title": "労働者向けの日本の労働契約の種類に関する詳細な議論",
-        "duration": "15:20",
-        "category": "労働法"
-      },
-      {
-        "title": "実習生から特定技能へ：経験者からの話",
-        "duration": "22:45",
-        "category": "経験談"
       }
     ],
     "newPostsTitle": "新着記事",
     "posts": [
       {
+        "type": "article",
         "category": "面接のコツ",
         "title": "採用担当者に響く！日本語履歴書の書き方とポイント",
-        "image": "https://picsum.photos/600/400?random=10",
-        "hint": "writing resume"
-      },
-      {
-        "category": "日本での生活",
-        "title": "労働者向け！日本のユニークな職場文化を探る",
+        "description": "面接は日本での夢の仕事を得るための決定的なステップです。専門家から得た5つの貴重な経験を基に、しっかりと準備しましょう。",
         "image": "https://picsum.photos/600/400?random=11",
-        "hint": "team meeting"
+        "hint": "job interview professional"
       },
       {
-        "category": "労働法",
-        "title": "2024年、日本の外国人労働者関連法の改正点",
-        "image": "https://picsum.photos/600/400?random=12",
-        "hint": "legal document"
-      },
-      {
+        "type": "article",
         "category": "日本での生活",
-        "title": "労働者向け！日本の主要都市での生活費はどのくらい？",
+        "title": "日本での生活費は一ヶ月いくら？",
+        "description": "来日前の資金計画は重要です。この記事では、毎月の生活費について詳しく解説しますので、準備の参考にしてください。",
+        "image": "https://picsum.photos/600/400?random=12",
+        "hint": "woman thinking question marks"
+      },
+      {
+        "type": "video",
+        "category": "手続き・ビザ",
+        "title": "技能実習と特定技能、どちらを選ぶべき？徹底比較",
+        "description": "技能実習（TTS）と特定技能（Tokutei Ginou）は、日本で働くための一般的な二つの道です。この記事では、それぞれの利点と欠点を分析します。",
         "image": "https://picsum.photos/600/400?random=13",
-        "hint": "city life"
+        "hint": "japan passport"
+      },
+      {
+        "type": "video",
+        "category": "手続き・ビザ",
+        "title": "2024年版 日本の永住ビザ申請条件",
+        "description": "永住ビザは、日本で長期的に生活し働きたい多くの外国人の目標です。この記事では、最新の申請条件を更新します。",
+        "image": "https://picsum.photos/600/400?random=14",
+        "hint": "couple planning finances"
       }
     ],
     "imagePosts": {
@@ -402,22 +384,22 @@
       "stories": [
         {
           "title": "工場での一日",
-          "image": "https://picsum.photos/400/533?random=50",
+          "image": "https://picsum.photos/400/400?random=50",
           "hint": "factory worker"
         },
         {
           "title": "夜の日本語教室",
-          "image": "https://picsum.photos/400/533?random=51",
+          "image": "https://picsum.photos/400/400?random=51",
           "hint": "classroom learning night"
         },
         {
           "title": "同郷の友達との夕食",
-          "image": "https://picsum.photos/400/533?random=52",
+          "image": "https://picsum.photos/400/400?random=52",
           "hint": "people eating together"
         },
         {
           "title": "美しい桜の季節",
-          "image": "https://picsum.photos/400/533?random=53",
+          "image": "https://picsum.photos/400/400?random=53",
           "hint": "cherry blossom"
         }
       ]
@@ -426,29 +408,31 @@
     "articles": [
       {
         "category": "日本での生活",
-        "title": "日本の会社文化：労働者のための「報・連・相」解説"
+        "title": "日本の会社文化：労働者のための「報・連・相」解説",
+        "readTime": "5分で読めます"
       },
       {
         "category": "面接のコツ",
-        "title": "労働者向け！好印象を与える自己紹介の書き方と伝え方"
+        "title": "好印象を与える自己紹介の書き方と伝え方",
+        "readTime": "6分で読めます"
       },
       {
-        "category": "労働法",
-        "title": "外国人労働者のための日本の労働法に関する最新情報"
-      },
-      {
-        "category": "市場ニュース",
-        "title": "日本は深刻な労働力不足に直面している"
-      },
-      {
-        "category": "特定技能",
-        "title": "労働者向け！建設分野の特定技能試験に関する詳細ガイド"
+        "category": "面接のコツ",
+        "title": "日本で特定技能の仕事を探す際の5つの注意点",
+        "readTime": "4分で読めます"
       },
       {
         "category": "日本での生活",
-        "title": "日本で外国人労働者が手頃な価格の住居を見つける方法は？"
+        "title": "日本での生活に欠かせないアプリ5選",
+        "readTime": "3分で読めます"
       }
     ],
+    "shareCTA": {
+      "title": "あなたの経験を共有しませんか？",
+      "description": "日本での生活や仕事に関する話、ヒント、貴重な経験をベトナム人コミュニティと共有しませんか？HelloJobに記事や動画を投稿してください！",
+      "button": "今すぐ共有"
+    },
+    "longVideos": [],
     "shareContentButton": "コンテンツを共有する",
     "shareOptions": {
       "title": "共有したいコンテンツの種類を選択してください",
@@ -859,7 +843,7 @@
       "secure": "安全な支払い"
     }
   },
-  "partnershipOpportunities": {
+    "partnershipOpportunities": {
     "title": "新規協力案件",
     "from": "依頼元: {company}",
     "expiresIn": "残り時間",
@@ -873,13 +857,13 @@
     "decline": "辞退する",
     "referredByYou": "あなたが紹介しました",
     "table": {
-      "opportunity": "案件",
-      "company": "企業",
-      "visaType": "在留資格",
-      "fees": "手数料情報",
-      "expires": "期限",
-      "actions": "操作"
-    }
+        "opportunity": "案件",
+        "company": "企業",
+        "visaType": "在留資格",
+        "fees": "手数料情報",
+        "expires": "期限",
+        "actions": "操作"
+      }
   },
   "partnershipInfo": {
     "revenueShare": {

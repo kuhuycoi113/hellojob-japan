@@ -324,77 +324,59 @@
     }
   },
   "handbook": {
+    "pageTitle": "Cẩm nang HelloJob",
+    "pageSubtitle": "Tất cả thông tin bạn cần biết về thị trường lao động, kỹ năng và cuộc sống tại Nhật Bản.",
+    "searchPlaceholder": "Tìm kiếm bài viết (VD: Tokutei, chi phí...)",
     "featured": {
       "category": "Kỹ năng đặc định",
-      "title": "Kỹ năng đặc định (Tokutei Ginou) là gì? Toàn bộ thông tin cần biết cho năm 2024",
+      "title": "Kỹ năng đặc định (Tokutei Ginou) là gì? Toàn bộ thông tin cần biết 2024",
       "description": "Tokutei Ginou là một loại visa lao động mới của Nhật Bản, mở ra cơ hội lớn cho người lao động Việt Nam. Hãy cùng tìm hiểu chi tiết về điều kiện, quyền lợi và các ngành nghề tuyển dụng.",
       "link": "Đọc bài viết"
     },
     "videoTitle": "Video ngắn",
-    "longVideoTitle": "Video dài",
     "videos": [
       {
         "title": "3 Mẹo phỏng vấn ONLINE qua video với nhà tuyển dụng Nhật",
         "category": "Kinh nghiệm phỏng vấn"
       },
       {
-        "title": "Hướng dẫn chuyển tiền từ Nhật về Việt Nam an toàn, nhanh chóng",
+        "title": "Hướng dẫn chuyển tiền từ Nhật về Việt Nam",
         "category": "Cuộc sống ở Nhật"
-      },
-      {
-        "title": "5 Câu hỏi phỏng vấn thường gặp và cách trả lời bằng tiếng Nhật",
-        "category": "Kinh nghiệm phỏng vấn"
-      },
-      {
-        "title": "Các loại thuế cần biết khi làm việc tại Nhật Bản",
-        "category": "Pháp luật lao động"
-      },
-      {
-        "title": "Văn hóa Nhật Bản: Tầm quan trọng của 'Omiyage' (Quà lưu niệm)",
-        "category": "Cuộc sống ở Nhật"
-      },
-      {
-        "title": "Hiểu về 'Nenmatsu Chosei' (Điều chỉnh thuế cuối năm)",
-        "category": "Cuộc sống ở Nhật"
-      }
-    ],
-    "longVideos": [
-      {
-        "title": "Thảo luận chi tiết về các loại hợp đồng lao động tại Nhật dành cho người lao động",
-        "duration": "15:20",
-        "category": "Pháp luật lao động"
-      },
-      {
-        "title": "Hành trình từ Thực tập sinh đến Kỹ năng đặc định: Chia sẻ từ người trong cuộc",
-        "duration": "22:45",
-        "category": "Chia sẻ kinh nghiệm"
       }
     ],
     "newPostsTitle": "Bài viết mới",
     "posts": [
       {
+        "type": "article",
         "category": "Kinh nghiệm phỏng vấn",
-        "title": "Cách viết CV tiếng Nhật thuyết phục để gây ấn tượng với nhà tuyển dụng",
-        "image": "https://picsum.photos/600/400?random=10",
-        "hint": "writing resume"
-      },
-      {
-        "category": "Cuộc sống ở Nhật",
-        "title": "Khám phá văn hóa làm việc độc đáo dành cho người lao động tại công ty Nhật Bản",
+        "title": "5 Kinh nghiệm phỏng vấn Tokutei Ginou chắc chắn đậu",
+        "description": "Buổi phỏng vấn là bước quyết định để bạn có được công việc mơ ước tại Nhật. Hãy chuẩn bị thật kỹ với 5 kinh nghiệm quý báu được đúc kết từ các chuyên gia.",
         "image": "https://picsum.photos/600/400?random=11",
-        "hint": "team meeting"
+        "hint": "job interview professional"
       },
       {
-        "category": "Pháp luật lao động",
-        "title": "Những thay đổi về luật lao động cho người lao động nước ngoài tại Nhật năm 2024",
-        "image": "https://picsum.photos/600/400?random=12",
-        "hint": "legal document"
-      },
-      {
+        "type": "article",
         "category": "Cuộc sống ở Nhật",
-        "title": "Chi phí sinh hoạt tại các thành phố lớn ở Nhật Bản là bao nhiêu dành cho người lao động?",
+        "title": "Chi phí sinh hoạt ở Nhật Bản hết bao nhiêu một tháng?",
+        "description": "Lập kế hoạch tài chính là bước quan trọng trước khi đến Nhật. Bài viết này sẽ phân tích chi tiết các khoản chi phí sinh hoạt hàng tháng bạn cần chuẩn bị.",
+        "image": "https://picsum.photos/600/400?random=12",
+        "hint": "woman thinking question marks"
+      },
+      {
+        "type": "video",
+        "category": "Thủ tục & Visa",
+        "title": "So sánh Thực tập sinh và Kỹ năng đặc định: Nên chọn chương trình nào?",
+        "description": "Thực tập sinh (TTS) và Kỹ năng đặc định (Tokutei Ginou) là hai con đường phổ biến để sang Nhật làm việc. Bài viết này sẽ phân tích ưu, nhược điểm của mỗi chương trình.",
         "image": "https://picsum.photos/600/400?random=13",
-        "hint": "city life"
+        "hint": "japan passport"
+      },
+      {
+        "type": "video",
+        "category": "Thủ tục & Visa",
+        "title": "Điều kiện xin visa vĩnh trú tại Nhật Bản năm 2024",
+        "description": "Visa vĩnh trú là mục tiêu của nhiều người nước ngoài muốn sinh sống và làm việc lâu dài tại Nhật. Bài viết sẽ cập nhật những điều kiện mới nhất bạn cần đáp ứng.",
+        "image": "https://picsum.photos/600/400?random=14",
+        "hint": "couple planning finances"
       }
     ],
     "imagePosts": {
@@ -402,53 +384,55 @@
       "stories": [
         {
           "title": "Một ngày ở công xưởng",
-          "image": "https://picsum.photos/400/533?random=50",
+          "image": "https://picsum.photos/400/400?random=50",
           "hint": "factory worker"
         },
         {
           "title": "Lớp học tiếng Nhật buổi tối",
-          "image": "https://picsum.photos/400/533?random=51",
+          "image": "https://picsum.photos/400/400?random=51",
           "hint": "classroom learning night"
         },
         {
           "title": "Bữa cơm cùng đồng hương",
-          "image": "https://picsum.photos/400/533?random=52",
+          "image": "https://picsum.photos/400/400?random=52",
           "hint": "people eating together"
         },
         {
           "title": "Cảnh đẹp mùa hoa anh đào",
-          "image": "https://picsum.photos/400/533?random=53",
+          "image": "https://picsum.photos/400/400?random=53",
           "hint": "cherry blossom"
         }
       ]
     },
-    "newsTitle": "Tin tức & Bài viết",
+    "newsTitle": "Tin tức & Bài đăng",
     "articles": [
       {
         "category": "Cuộc sống ở Nhật",
-        "title": "Văn hóa làm việc tại Nhật: Hiểu về 'Hou-Ren-Sou' dành cho người lao động"
+        "title": "Văn hóa làm việc tại công ty Nhật: Hou-Ren-Sou và những điều cần biết",
+        "readTime": "5 phút đọc"
       },
       {
         "category": "Kinh nghiệm phỏng vấn",
-        "title": "Mẹo trình bày 'Jikoshoukai' (tự giới thiệu bản thân) ấn tượng dành cho người lao động"
+        "title": "Mẹo viết và trình bày Jikoshoukai (tự giới thiệu bản thân) ấn tượng",
+        "readTime": "6 phút đọc"
       },
       {
-        "category": "Pháp luật lao động",
-        "title": "Cập nhật mới nhất về luật lao động Nhật Bản dành cho lao động nước ngoài"
-      },
-      {
-        "category": "Tin tức thị trường",
-        "title": "Nhật Bản đối mặt với tình trạng thiếu hụt lao động trầm trọng"
-      },
-      {
-        "category": "Kỹ năng đặc định",
-        "title": "Hướng dẫn chi tiết về kỳ thi Kỹ năng đặc định ngành Xây dựng dành cho người lao động"
+        "category": "Kinh nghiệm phỏng vấn",
+        "title": "5 Lưu ý vàng khi tự tìm việc Tokutei Ginou tại Nhật",
+        "readTime": "4 phút đọc"
       },
       {
         "category": "Cuộc sống ở Nhật",
-        "title": "Làm thế nào để tìm nhà ở giá rẻ cho người lao động nước ngoài tại Nhật?"
+        "title": "Top 5 ứng dụng không thể thiếu cho cuộc sống ở Nhật",
+        "readTime": "3 phút đọc"
       }
     ],
+    "shareCTA": {
+      "title": "Chia sẻ kinh nghiệm của bạn",
+      "description": "Bạn có câu chuyện, mẹo hay hoặc kinh nghiệm quý báu muốn chia sẻ với cộng đồng người Việt tại Nhật? Hãy đóng góp bài viết, video cho HelloJob!",
+      "button": "Chia sẻ ngay"
+    },
+    "longVideos": [],
     "shareContentButton": "Chia sẻ nội dung của bạn",
     "shareOptions": {
       "title": "Chọn loại nội dung bạn muốn chia sẻ",
