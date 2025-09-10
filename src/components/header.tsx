@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import Link from 'next/link';
@@ -321,7 +322,7 @@ export function Header() {
                     </div>
                   </div>
                 </div>
-                <DialogFooter>
+                <DialogFooter className="flex flex-row justify-start sm:justify-start border-t pt-4 -mx-6 px-6">
                     <Button variant="outline" onClick={backToMainDialog}>
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       {t.postDetail.article.backButton || 'Quay lại'}
