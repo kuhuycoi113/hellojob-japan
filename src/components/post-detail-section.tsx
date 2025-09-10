@@ -33,10 +33,74 @@ export function PostDetailSection() {
   const comments = t.postDetail.comments;
   const relatedContent = t.postDetail.relatedContent;
 
-  // Split content by newline to render paragraphs
-  const contentParagraphs = article.content
-    .split('\n')
-    .filter((p) => p.trim() !== '');
+  const renderContent = (content: string) => {
+    const lines = content.split('\n').filter(p => p.trim() !== '');
+    const elements = [];
+    let listItems: string[] = [];
+  
+    const flushList = () => {
+      if (listItems.length > 0) {
+        elements.push(
+          <ul key={`ul-${elements.length}`} className="list-none space-y-2 my-4">
+            {listItems.map((item, i) => (
+              <li key={i} className="flex items-start">
+                <span className="mr-3 text-primary">✨</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        );
+        listItems = [];
+      }
+    };
+  
+    for (const line of lines) {
+      if (line.startsWith('<h2>')) {
+        flushList();
+        elements.push(<h2 key={elements.length} className="text-2xl font-bold my-6">{line.replace(/<h2>/g, '')}</h2>);
+      } else if (line.startsWith('<ul>')) {
+        flushList(); // Flush previous list if any
+      } else if (line.startsWith('<li>')) {
+        listItems.push(line.replace(/<li>/g, ''));
+      } else if (line.startsWith('</ul>')) {
+        flushList();
+      } else if (line.includes('<strong>')) {
+         flushList();
+         const parts = line.split(/<strong>(.*?)<\/strong>/g);
+         elements.push(
+            <p key={elements.length}>
+              {parts.map((part, index) => 
+                index % 2 === 1 ? <strong key={index} className="font-bold">{part}</strong> : part
+              )}
+            </p>
+         )
+      } else if (line.includes(t.postDetail.article.ctaPhrase)) {
+        flushList();
+        const parts = line.split(t.postDetail.article.ctaPhrase);
+        elements.push(
+            <div key={elements.length} className="not-prose">
+              <p>{parts[0]}</p>
+              <div className="my-6 text-center">
+                 <Button asChild variant="secondary" size="default">
+                   <Link href="/post-job-ai">
+                     <PlusCircle className="mr-2 h-4 w-4" />
+                     {t.postDetail.article.ctaButton}
+                   </Link>
+                 </Button>
+              </div>
+              <p>{parts[1]}</p>
+            </div>
+        )
+      }
+       else {
+        flushList();
+        elements.push(<p key={elements.length}>{line}</p>);
+      }
+    }
+    flushList(); // flush any remaining list items
+    return elements;
+  };
+
 
   return (
     <section className="py-16 sm:py-24">
@@ -63,44 +127,7 @@ export function PostDetailSection() {
                   data-ai-hint={article.image.hint}
                 />
               </div>
-              {contentParagraphs.map((paragraph, index) => {
-                 const ctaPhrase = t.postDetail.article.ctaPhrase;
-                 if (ctaPhrase && paragraph.includes(ctaPhrase)) {
-                   const parts = paragraph.split(ctaPhrase);
-                   return (
-                     <div key={index} className="not-prose">
-                       <p>{parts[0]}</p>
-                       <div className="my-6 text-center">
-                          <Button asChild variant="secondary">
-                            <Link href="/post-job-ai">
-                              <PlusCircle className="mr-2 h-4 w-4" />
-                              {t.postDetail.article.ctaButton}
-                            </Link>
-                          </Button>
-                       </div>
-                       <p>{parts[1]}</p>
-                     </div>
-                   );
-                 }
-                // Simple check for list items
-                if (paragraph.trim().startsWith('✨')) {
-                  return (
-                    <p key={index} className="flex items-start">
-                      <span className="mr-2">✨</span>
-                      <span>{paragraph.replace('✨', '').trim()}</span>
-                    </p>
-                  );
-                }
-                if (paragraph.trim().startsWith('👉')) {
-                  return (
-                    <p key={index} className="flex items-start">
-                      <span className="mr-2">👉</span>
-                      <span>{paragraph.replace('👉', '').trim()}</span>
-                    </p>
-                  );
-                }
-                return <p key={index}>{paragraph}</p>;
-              })}
+              {renderContent(article.content)}
             </article>
 
             <Card className="shadow-lg" id="comments">

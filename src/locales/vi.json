@@ -341,7 +341,7 @@
     "featured": {
       "category": "Cơ quan hỗ trợ",
       "title": "Tuyển dụng Tokutei Ginou – Giải pháp tối ưu chi phí cho Shien cùng HelloJob 🚀",
-      "description": "Bạn đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou với chi phí cao và chất lượng không chắc chắn? Khám phá giải pháp của HelloJob để tối ưu chi phí và nâng cao hiệu quả.",
+      "description": "Gặp khó khăn với chi phí cao và chất lượng không chắc chắn khi tuyển dụng ứng viên Tokutei Ginou? Khám phá cách HelloJob giúp bạn tối ưu hóa chi phí và tăng hiệu quả.",
       "link": "Đọc bài viết"
     },
     "videoTitle": "Video ngắn",
@@ -586,7 +586,7 @@
     "article": {
       "category": "Cơ quan hỗ trợ",
       "title": "Tuyển dụng Tokutei Ginou – Giải pháp tối ưu chi phí cho Shien cùng HelloJob 🚀",
-      "content": "Bạn là Cơ quan hỗ trợ Nhật Bản (Shien Kikan), bạn đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou? Chi phí quá cao nhưng chưa chắc chắn về chất lượng ứng viên, hay liệu họ có gắn bó lâu dài với công ty hay không? \n👉 Đừng lo! Hãy để HelloJob giúp bạn tối ưu quy trình tuyển dụng. \nTối ưu chi phí – Tăng hiệu quả \nGiả sử bạn đang tuyển ứng viên Tokutei tại Nhật trong ngành Thực phẩm: \nChi phí thông thường: 250,000 JPY/ứng viên \nVới HelloJob, bạn chỉ cần: 100,000 JPY/ứng viên \nChúng tôi có hàng chục công ty phái cử uy tín sẵn sàng hỗ trợ, với dịch vụ minh bạch, cụ thể, chi tiết. \nNếu mức phí 100,000 JPY chưa có công ty phù hợp, bạn có thể: \nNâng lên 110,000 JPY → 120,000 JPY để thử dần \nNgay cả khi ở mức 150,000 JPY, bạn vẫn tiết kiệm được 100,000 JPY so với chi phí thông thường! \nKhoản tiết kiệm này bạn có thể dùng để: \n✨ Nâng cao chất lượng ứng viên \n✨ Tăng lương, thưởng để tối ưu hiệu suất \n✨ Hoặc đưa vào ngân sách tiết kiệm → tăng lợi nhuận dòng cho công ty \nĐừng bỏ lỡ cơ hội! \n👉 Hãy bấm ngay “Đăng thử đơn” trên HelloJob và trải nghiệm hiệu quả tuyển dụng Tối ưu ngay hôm nay!",
+      "content": "Bạn là Cơ quan hỗ trợ Nhật Bản (Shien Kikan), bạn đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou? Chi phí quá cao nhưng chưa chắc chắn về chất lượng ứng viên, hay liệu họ có gắn bó lâu dài với công ty hay không?\n👉 Đừng lo! Hãy để HelloJob giúp bạn tối ưu quy trình tuyển dụng.\n<h2>Tối ưu chi phí – Tăng hiệu quả</h2>\nGiả sử bạn đang tuyển ứng viên Tokutei tại Nhật trong ngành Thực phẩm:\n<strong>Chi phí thông thường: 250,000 JPY/ứng viên</strong>\n<strong>Với HelloJob, bạn chỉ cần: 100,000 JPY/ứng viên</strong>\nChúng tôi có hàng chục công ty phái cử uy tín sẵn sàng hỗ trợ, với dịch vụ minh bạch, cụ thể, chi tiết.\nNếu mức phí 100,000 JPY chưa có công ty phù hợp, bạn có thể: Nâng lên 110,000 JPY → 120,000 JPY để thử dần. Ngay cả khi ở mức 150,000 JPY, bạn vẫn tiết kiệm được 100,000 JPY so với chi phí thông thường!\n<h2>Khoản tiết kiệm này bạn có thể dùng để:</h2>\n<ul>\n<li>Nâng cao chất lượng ứng viên</li>\n<li>Tăng lương, thưởng để tối ưu hiệu suất</li>\n<li>Hoặc đưa vào ngân sách tiết kiệm → tăng lợi nhuận dòng cho công ty</li>\n</ul>\nĐừng bỏ lỡ cơ hội!\n👉 Hãy bấm ngay Đăng việc làm trên HelloJob và trải nghiệm hiệu quả tuyển dụng Tối ưu ngay hôm nay!",
       "author": "Đội ngũ HelloJob",
       "readTime": "3 phút đọc",
       "image": {
@@ -594,7 +594,7 @@
         "alt": "Người đang suy nghĩ với máy tính",
         "hint": "person thinking calculator"
       },
-      "ctaPhrase": "“Đăng thử đơn”",
+      "ctaPhrase": "Đăng việc làm",
       "ctaButton": "Đăng việc làm"
     },
     "commentSection": {
@@ -645,7 +645,7 @@
           "company": "Nagasaki, Hoàng Long H."
         },
         {
-          "title": "Kỹ sư cầu nối (Bridge SE) - Đấu thầu",
+          "title": "Bridge Engineer (Bridge SE) - Đấu thầu",
           "company": "Việc làm tại Nhật"
         }
       ]
@@ -864,9 +864,9 @@
       "feeRanges": {
         "sendingCompany": {
             "referral": "70,000 - 150,000 JPY",
-            "platform_20": "20% ({fee})",
-            "platform_25": "25% ({fee})",
-            "platform_30": "30% ({fee})",
+            "platform_20": "20% (từ {fee})",
+            "platform_25": "25% (từ {fee})",
+            "platform_30": "30% (từ {fee})",
             "receives_20": "56,000 - 120,000 JPY",
             "receives_25": "52,500 - 112,500 JPY",
             "receives_30": "49,000 - 105,000 JPY"
