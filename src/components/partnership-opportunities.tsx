@@ -106,11 +106,12 @@ export function PartnershipOpportunities() {
 
         if (userRole === 'sending_company') {
             const possibleFees = [70000, 150000, 90000, 120000];
-            const referralFee = possibleFees[parseInt(opportunity.id.slice(-1)) % possibleFees.length];
+            const referralFee = possibleFees[parseInt(opportunity.id.slice(-1), 10) % possibleFees.length];
 
             const feeRates = [0.20, 0.25, 0.30];
-            const platformFeeRate = feeRates[parseInt(opportunity.id.slice(-1)) % feeRates.length];
+            const platformFeeRate = feeRates[parseInt(opportunity.id.slice(-1), 10) % feeRates.length];
             
+            const platformFee = referralFee * platformFeeRate;
             const partnerReceives = referralFee * (1 - platformFeeRate);
             
             const isDiscounted = platformFeeRate < 0.30;
@@ -128,7 +129,7 @@ export function PartnershipOpportunities() {
                     <div className="flex justify-between items-baseline text-xs">
                         <span className="text-muted-foreground">{t_opp.platformFee}:</span>
                          <span className={cn("font-medium", isDiscounted ? "text-green-600 font-bold" : "text-muted-foreground")}>
-                            {`${platformFeeRate * 100}%`}
+                            {`${platformFeeRate * 100}% (${formatCurrency(platformFee)})`}
                         </span>
                     </div>
                 </div>
@@ -346,5 +347,7 @@ export function PartnershipOpportunities() {
         </div>
     );
 }
+
+    
 
     
