@@ -754,12 +754,12 @@
     "title": "Chọn phương thức đăng tin",
     "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
-      "title": "Đăng nhanh bằng AI",
+      "title": "Đăng bằng AI",
       "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
     },
     "manual": {
       "title": "Đăng thủ công",
-      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát tin tuyển dụng."
+      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
     }
   },
    "jobsPage": {
@@ -789,8 +789,16 @@
       "postedDate": "Ngày đăng",
       "actions": "Hành động",
       "toggleMenu": "Mở menu",
+      "viewDetails": "Xem chi tiết",
       "edit": "Sửa",
-      "archive": "Lưu trữ"
+      "archive": "Lưu trữ",
+      "delete": "Xoá"
+    },
+    "deleteDialog": {
+      "title": "Bạn có chắc chắn muốn xoá việc làm này không?",
+      "description": "Hành động này không thể hoàn tác. Tin tuyển dụng sẽ bị xoá vĩnh viễn.",
+      "cancel": "Huỷ",
+      "confirm": "Xoá"
     },
     "noJobsGuest": {
       "title": "Chưa có dữ liệu việc làm",

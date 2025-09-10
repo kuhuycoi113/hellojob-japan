@@ -786,8 +786,16 @@
       "postedDate": "Posted Date",
       "actions": "Actions",
       "toggleMenu": "Toggle menu",
+      "viewDetails": "View Details",
       "edit": "Edit",
-      "archive": "Archive"
+      "archive": "Archive",
+      "delete": "Delete"
+    },
+    "deleteDialog": {
+      "title": "Are you sure you want to delete this job?",
+      "description": "This action cannot be undone. This will permanently delete the job posting.",
+      "cancel": "Cancel",
+      "confirm": "Delete"
     },
     "noJobsGuest": {
       "title": "No Job Data Available",

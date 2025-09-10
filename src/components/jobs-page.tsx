@@ -31,6 +31,7 @@ import {
   ArrowRight,
   UserSquare,
   Info,
+  Trash2,
 } from 'lucide-react';
 import {
   Pagination,
@@ -41,6 +42,17 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import Link from 'next/link';
@@ -146,6 +158,17 @@ export function JobsPage() {
     };
   }, []);
 
+  const handleDeleteJob = (jobId: string) => {
+    // We only allow deleting jobs that are in localStorage (i.e., user-created)
+    const storedJobsRaw = localStorage.getItem('postedJobs');
+    if (storedJobsRaw) {
+        let storedJobs = JSON.parse(storedJobsRaw);
+        const updatedStoredJobs = storedJobs.filter((job: MockJob) => job.id !== jobId);
+        localStorage.setItem('postedJobs', JSON.stringify(updatedStoredJobs));
+        loadJobs(); // Reload all jobs to update the UI
+    }
+  };
+
   const filteredJobs = jobs.filter((job) => {
     if (activeTab === 'all') return true;
     const jobStatus = (job.status || '').toLowerCase().replace(/\s/g, '-');
@@ -184,6 +207,33 @@ export function JobsPage() {
   }
 
   const isGuest = userRole === 'guest';
+  
+  const DeleteButton = ({ jobId }: { jobId: string}) => {
+    const isMock = !localStorage.getItem('postedJobs')?.includes(jobId);
+    if (isMock) return null;
+
+    return (
+        <AlertDialog>
+            <AlertDialogTrigger asChild>
+                <Button variant="destructive" size="xs" onClick={(e) => e.preventDefault()}>
+                    <Trash2 className="h-4 w-4" />
+                </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+                <AlertDialogHeader>
+                <AlertDialogTitle>{t.jobsPage.deleteDialog.title}</AlertDialogTitle>
+                <AlertDialogDescription>
+                   {t.jobsPage.deleteDialog.description}
+                </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                <AlertDialogCancel>{t.jobsPage.deleteDialog.cancel}</AlertDialogCancel>
+                <AlertDialogAction onClick={() => handleDeleteJob(jobId)}>{t.jobsPage.deleteDialog.confirm}</AlertDialogAction>
+                </AlertDialogFooter>
+            </AlertDialogContent>
+        </AlertDialog>
+    );
+  }
 
   const JobsGridView = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -235,6 +285,7 @@ export function JobsPage() {
                                 <Button variant="outline" size="sm">
                                     <span className="group-hover:text-primary transition-colors">{t.jobsPage.viewDetails}</span>
                                 </Button>
+                                <DeleteButton jobId={job.id}/>
                             </div>
                         </div>
                     </CardFooter>
@@ -261,10 +312,9 @@ export function JobsPage() {
                   const isHighlighted = job.id === highlightedJobId;
                   return (
                     <TableRow key={job.id} 
-                      className={cn("hover:bg-muted/50 cursor-pointer", isHighlighted && "bg-accent/10 animate-pulse-once")} 
-                      onClick={() => window.location.href = `/dashboard/jobs/${job.id}`}>
+                      className={cn(isHighlighted && "bg-accent/10 animate-pulse-once")}>
                         <TableCell>
-                            <div className="flex items-center gap-3">
+                            <Link href={`/dashboard/jobs/${job.id}`} className="flex items-center gap-3 group">
                                 <Avatar className="hidden h-10 w-10 sm:flex rounded-md">
                                     {job.image ? (
                                         <AvatarImage src={job.image} alt={job.title?.[language]} className="object-cover" />
@@ -272,10 +322,10 @@ export function JobsPage() {
                                     <AvatarFallback className="rounded-md">{job.company?.[language]?.charAt(0)}</AvatarFallback>
                                 </Avatar>
                                 <div>
-                                    <div className="font-medium font-headline">{job.title?.[language]}</div>
+                                    <div className="font-medium font-headline group-hover:text-primary transition-colors">{job.title?.[language]}</div>
                                     <div className="text-sm text-muted-foreground">{job.company?.[language]}</div>
                                 </div>
-                            </div>
+                            </Link>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">{job.applicants}</TableCell>
                         <TableCell className="hidden sm:table-cell">
@@ -295,9 +345,34 @@ export function JobsPage() {
                                 </Button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end">
-                                <DropdownMenuItem>{t.jobsPage.table.viewDetails}</DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href={`/dashboard/jobs/${job.id}`}>{t.jobsPage.table.viewDetails}</Link>
+                                </DropdownMenuItem>
                                 <DropdownMenuItem>{t.jobsPage.table.edit}</DropdownMenuItem>
                                 <DropdownMenuItem>{t.jobsPage.table.archive}</DropdownMenuItem>
+                                 <AlertDialog>
+                                    <AlertDialogTrigger asChild>
+                                        <DropdownMenuItem
+                                            onSelect={(e) => e.preventDefault()}
+                                            className="text-red-600 focus:bg-red-50 focus:text-red-700"
+                                            disabled={!localStorage.getItem('postedJobs')?.includes(job.id)}
+                                        >
+                                            {t.jobsPage.table.delete}
+                                        </DropdownMenuItem>
+                                    </AlertDialogTrigger>
+                                    <AlertDialogContent>
+                                        <AlertDialogHeader>
+                                        <AlertDialogTitle>{t.jobsPage.deleteDialog.title}</AlertDialogTitle>
+                                        <AlertDialogDescription>
+                                            {t.jobsPage.deleteDialog.description}
+                                        </AlertDialogDescription>
+                                        </AlertDialogHeader>
+                                        <AlertDialogFooter>
+                                        <AlertDialogCancel>{t.jobsPage.deleteDialog.cancel}</AlertDialogCancel>
+                                        <AlertDialogAction onClick={() => handleDeleteJob(job.id)}>{t.jobsPage.deleteDialog.confirm}</AlertDialogAction>
+                                        </AlertDialogFooter>
+                                    </AlertDialogContent>
+                                </AlertDialog>
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         </TableCell>

@@ -788,8 +788,16 @@
       "postedDate": "掲載日",
       "actions": "操作",
       "toggleMenu": "メニューを開閉",
+      "viewDetails": "詳細を見る",
       "edit": "編集",
-      "archive": "アーカイブ"
+      "archive": "アーカイブ",
+      "delete": "削除"
+    },
+    "deleteDialog": {
+      "title": "この求人を削除してもよろしいですか？",
+      "description": "この操作は元に戻せません。求人情報が完全に削除されます。",
+      "cancel": "キャンセル",
+      "confirm": "削除"
     },
     "noJobsGuest": {
       "title": "求人データがありません",
