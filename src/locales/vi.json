@@ -753,11 +753,11 @@
     "title": "Chọn phương thức đăng tin",
     "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
-      "title": "Đăng việc làm bằng AI",
+      "title": "Đăng nhanh bằng AI",
       "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
     },
     "manual": {
-      "title": "Nhập liệu thủ công",
+      "title": "Đăng chi tiết (Thủ công)",
       "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
     }
   },

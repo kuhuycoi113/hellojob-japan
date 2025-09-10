@@ -219,8 +219,13 @@ export function Header() {
     return `/post-job-ai?${params.toString()}`;
   }
 
+  const handlePostMethodSelect = () => {
+    setPostMethodDialogOpen(false);
+    setRoleDialogOpen(true);
+  };
+
   return (
-    <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
+    <Dialog open={postMethodDialogOpen} onOpenChange={setPostMethodDialogOpen}>
       <header className="fixed md:sticky top-0 z-50 w-full border-b bg-white">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-4">
@@ -348,36 +353,73 @@ export function Header() {
         </div>
         
         {/* Dialogs for Post Job Flow */}
-        <DialogContent className="sm:max-w-3xl">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
-            <DialogDescription className="text-center">
-              {t.userRoles.description}
-            </DialogDescription>
-          </DialogHeader>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-            {userRoles.map((role) => (
-              <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-primary/5 p-3 rounded-lg">
-                      {role.icon}
+        <DialogContent className="sm:max-w-xl">
+            <DialogHeader>
+            <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
+            <DialogDescription className="text-center">{t.postMethod.description}</DialogDescription>
+            </DialogHeader>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                <div onClick={handlePostMethodSelect}>
+                <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
+                    <div className="bg-primary/5 p-3 rounded-lg mb-4">
+                    <Brain className="h-8 w-8 text-primary" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-base text-gray-800">
-                        {role.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {role.description}
-                      </p>
-                    </div>
-                  </div>
-                  <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                    <h3 className="font-semibold text-base text-gray-800">
+                    {t.postMethod.ai.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                    {t.postMethod.ai.description}
+                    </p>
                 </Card>
-              </div>
-            ))}
-          </div>
+                </div>
+                <div onClick={handlePostMethodSelect}>
+                <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
+                    <div className="bg-primary/5 p-3 rounded-lg mb-4">
+                    <Pencil className="h-8 w-8 text-yellow-500" />
+                    </div>
+                    <h3 className="font-semibold text-base text-gray-800">
+                        {t.postMethod.manual.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                        {t.postMethod.manual.description}
+                    </p>
+                </Card>
+                </div>
+            </div>
         </DialogContent>
+
+        <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
+            <DialogContent className="sm:max-w-3xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+                <DialogDescription className="text-center">
+                  {t.userRoles.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                {userRoles.map((role) => (
+                  <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                    <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="bg-primary/5 p-3 rounded-lg">
+                          {role.icon}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-base text-gray-800">
+                            {role.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {role.description}
+                          </p>
+                        </div>
+                      </div>
+                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </DialogContent>
+        </Dialog>
 
         <Dialog open={visaDialogOpen} onOpenChange={setVisaDialogOpen}>
             <DialogContent className="sm:max-w-3xl">
@@ -416,54 +458,18 @@ export function Header() {
               </DialogHeader>
               <div className="grid grid-cols-1 gap-4 py-4">
                 {selectedVisaType && visaSubTypes[selectedVisaType] && visaSubTypes[selectedVisaType].map((subType) => (
-                  <div onClick={() => handleVisaSubTypeSelect(subType)} key={subType.title}>
+                   <Link href={getAiPostUrl() + `&visaSubType=${encodeURIComponent(subType.title)}`} key={subType.title} onClick={() => handleVisaSubTypeSelect(subType)}>
                     <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                       <h3 className="font-semibold text-base text-gray-800">
                         {subType.title}
                       </h3>
                     </Card>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </DialogContent>
         </Dialog>
         
-        <Dialog open={postMethodDialogOpen} onOpenChange={setPostMethodDialogOpen}>
-            <DialogContent className="sm:max-w-xl">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
-                <DialogDescription className="text-center">{t.postMethod.description}</DialogDescription>
-              </DialogHeader>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                  <Link href={getAiPostUrl()}>
-                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
-                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
-                        <Brain className="h-8 w-8 text-primary" />
-                      </div>
-                      <h3 className="font-semibold text-base text-gray-800">
-                        {t.postMethod.ai.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {t.postMethod.ai.description}
-                      </p>
-                    </Card>
-                  </Link>
-                    <Link href="/">
-                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
-                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
-                        <Pencil className="h-8 w-8 text-yellow-500" />
-                      </div>
-                      <h3 className="font-semibold text-base text-gray-800">
-                          {t.postMethod.manual.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                          {t.postMethod.manual.description}
-                      </p>
-                    </Card>
-                  </Link>
-              </div>
-            </DialogContent>
-        </Dialog>
       </header>
     </Dialog>
   );

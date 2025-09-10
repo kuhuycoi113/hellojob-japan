@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -107,9 +106,19 @@ export function Cta() {
   const handleVisaSubTypeSelect = (subType: {title: string, href: string}) => {
     setSelectedVisaSubType(subType);
     setVisaSubTypeDialogOpen(false);
-    setPostMethodDialogOpen(true);
+    // Redirect to the correct page based on selections
+    const params = new URLSearchParams();
+    if(selectedRole) params.set('role', selectedRole.title);
+    if(selectedVisaType) {
+        const visa = visaTypes.find(v => v.type === selectedVisaType);
+        if(visa) params.set('visaType', visa.title);
+    }
+    params.set('visaSubType', subType.title);
+    // For now, let's assume manual post links to home and AI post to the AI page.
+    // This logic can be refined.
+    window.location.href = `/post-job-ai?${params.toString()}`;
   }
-  
+
   const getAiPostUrl = () => {
     const params = new URLSearchParams();
     if(selectedRole) params.set('role', selectedRole.title);
@@ -122,6 +131,11 @@ export function Cta() {
     return `/post-job-ai?${params.toString()}`;
   }
 
+  const handlePostMethodSelect = () => {
+    setPostMethodDialogOpen(false);
+    setRoleDialogOpen(true);
+  };
+
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -133,40 +147,44 @@ export function Cta() {
           {t.cta.subtitle}
         </p>
         <div className="mt-8 flex justify-center gap-4">
-          <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
+          <Dialog open={postMethodDialogOpen} onOpenChange={setPostMethodDialogOpen}>
             <DialogTrigger asChild>
               <Button size="lg" className='bg-accent text-accent-foreground hover:bg-accent/90' onClick={() => setIsForContact(false)}>
                 {t.cta.postJob}
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-3xl">
+            <DialogContent className="sm:max-w-xl">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
-                <DialogDescription className="text-center">
-                  {t.userRoles.description}
-                </DialogDescription>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
+                <DialogDescription className="text-center">{t.postMethod.description}</DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                {userRoles.map((role) => (
-                  <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                    <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="bg-primary/5 p-3 rounded-lg">
-                          {role.icon}
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-base text-gray-800">
-                            {role.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            {role.description}
-                          </p>
-                        </div>
+                  <div onClick={handlePostMethodSelect}>
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
+                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
+                        <Brain className="h-8 w-8 text-primary" />
                       </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                      <h3 className="font-semibold text-base text-gray-800">
+                        {t.postMethod.ai.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {t.postMethod.ai.description}
+                      </p>
                     </Card>
                   </div>
-                ))}
+                  <div onClick={handlePostMethodSelect}>
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
+                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
+                        <Pencil className="h-8 w-8 text-yellow-500" />
+                      </div>
+                      <h3 className="font-semibold text-base text-gray-800">
+                          {t.postMethod.manual.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                          {t.postMethod.manual.description}
+                      </p>
+                    </Card>
+                  </div>
               </div>
             </DialogContent>
           </Dialog>
@@ -210,6 +228,39 @@ export function Cta() {
           </Dialog>
         </div>
 
+        <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
+            <DialogContent className="sm:max-w-3xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+                <DialogDescription className="text-center">
+                  {t.userRoles.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                {userRoles.map((role) => (
+                  <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                    <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="bg-primary/5 p-3 rounded-lg">
+                          {role.icon}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-base text-gray-800">
+                            {role.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {role.description}
+                          </p>
+                        </div>
+                      </div>
+                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </DialogContent>
+          </Dialog>
+
         <Dialog open={visaDialogOpen} onOpenChange={setVisaDialogOpen}>
            <DialogContent className="sm:max-w-3xl">
               <DialogHeader>
@@ -247,51 +298,14 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-1 gap-4 py-4">
                 {selectedVisaType && visaSubTypes[selectedVisaType] && visaSubTypes[selectedVisaType].map((subType) => (
-                  <div onClick={() => handleVisaSubTypeSelect(subType)} key={subType.title}>
+                  <Link href={getAiPostUrl() + `&visaSubType=${encodeURIComponent(subType.title)}`} key={subType.title} onClick={() => handleVisaSubTypeSelect(subType)}>
                     <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                       <h3 className="font-semibold text-base text-gray-800">
                         {subType.title}
                       </h3>
                     </Card>
-                  </div>
+                  </Link>
                 ))}
-              </div>
-            </DialogContent>
-        </Dialog>
-        
-        <Dialog open={postMethodDialogOpen} onOpenChange={setPostMethodDialogOpen}>
-           <DialogContent className="sm:max-w-xl">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
-                <DialogDescription className="text-center">{t.postMethod.description}</DialogDescription>
-              </DialogHeader>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                  <Link href={getAiPostUrl()}>
-                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
-                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
-                        <Brain className="h-8 w-8 text-primary" />
-                      </div>
-                      <h3 className="font-semibold text-base text-gray-800">
-                        {t.postMethod.ai.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {t.postMethod.ai.description}
-                      </p>
-                    </Card>
-                  </Link>
-                    <Link href="/">
-                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
-                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
-                        <Pencil className="h-8 w-8 text-yellow-500" />
-                      </div>
-                      <h3 className="font-semibold text-base text-gray-800">
-                          {t.postMethod.manual.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                          {t.postMethod.manual.description}
-                      </p>
-                    </Card>
-                  </Link>
               </div>
             </DialogContent>
         </Dialog>
