@@ -10,22 +10,18 @@ import { useLanguage } from '@/contexts/language-context';
 import { Sparkles, LoaderCircle, FileText, Upload, Mic, Award, CheckCircle, Info, Pencil, Paperclip, X, FileImage, FileType, Brain, ChevronRight, GraduationCap, Star, Briefcase, Building, Users, Handshake, Send, Search, MicOff, Edit } from 'lucide-react';
 import { generateJobPost } from '@/ai/flows/generate-job-post';
 import { analyzeJobDocument } from '@/ai/flows/analyze-job-document';
-import { findMatchingPartners } from '@/ai/flows/find-matching-partners';
 import { translateJobPost } from '@/ai/flows/translate-job-post';
 import type { GenerateJobPostOutput } from '@/ai/schemas/generate-job-post-schema';
-import type { FindMatchingPartnersOutput } from '@/ai/schemas/find-matching-partners-schema';
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { allPartners } from '@/data/partners';
-import { MatchingPartnersResult } from '@/components/matching-partners-result';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 
-type SessionState = 'idle' | 'loading_job' | 'job_completed' | 'loading_partners' | 'partners_completed' | 'translating';
+type SessionState = 'idle' | 'loading_job' | 'job_completed' | 'translating';
 type UploadedFile = {
   name: string;
   type: string;
@@ -62,7 +58,6 @@ function AiJobPostFormContent() {
   const [jobPost, setJobPost] = useState<GenerateJobPostOutput | null>(null);
   const [editableJobPost, setEditableJobPost] = useState<GenerateJobPostOutput | null>(null);
 
-  const [matchingPartners, setMatchingPartners] = useState<FindMatchingPartnersOutput | null>(null);
   const [uploadedFile, setUploadedFile] = useState<UploadedFile | null>(null);
 
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
@@ -166,7 +161,7 @@ function AiJobPostFormContent() {
   // Effect to handle translation on language change
   useEffect(() => {
     const handleTranslate = async () => {
-      if (jobPost && editableJobPost && (state === 'job_completed' || state === 'partners_completed')) {
+      if (jobPost && editableJobPost && (state === 'job_completed')) {
         setState('translating');
         try {
           const targetLanguage = language === 'vi' ? 'Vietnamese' : language === 'ja' ? 'Japanese' : 'English';
@@ -453,7 +448,6 @@ function AiJobPostFormContent() {
     setVoiceDescription('');
     setJobPost(null);
     setEditableJobPost(null);
-    setMatchingPartners(null);
     removeFile();
   }
 
@@ -576,10 +570,10 @@ function AiJobPostFormContent() {
     return <Paperclip className="w-10 h-10 text-gray-500" />;
   };
 
-  const isLoading = state === 'loading_job' || state === 'loading_partners' || state === 'translating';
+  const isLoading = state === 'loading_job' || state === 'translating';
   const showAnalyzeButton = uploadedFile && !jobPost;
   const showGenerateButton = !uploadedFile || jobPost;
-  const showActionFooter = (state === 'job_completed' || state === 'partners_completed') && editableJobPost;
+  const showActionFooter = (state === 'job_completed') && editableJobPost;
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
@@ -678,7 +672,7 @@ function AiJobPostFormContent() {
                  )}
               </CardContent>
               <CardFooter className="flex justify-end gap-2" ref={actionFooterRef}>
-                {(state === 'job_completed' || state === 'partners_completed') && (
+                {(state === 'job_completed') && (
                     <Button variant="outline" onClick={handleReset}>{t.ai_job_post_form.input.reset}</Button>
                 )}
                 {showAnalyzeButton && (
@@ -734,7 +728,7 @@ function AiJobPostFormContent() {
                     </div>
                   )}
 
-                  {(state === 'job_completed' || state === 'loading_partners' || state === 'partners_completed') && editableJobPost && (
+                  {(state === 'job_completed') && editableJobPost && (
                     <div className="space-y-6 animate-in fade-in-50">
                         <div className='space-y-2'>
                            <Label htmlFor="jobTitle" className="text-lg font-semibold flex items-center gap-2">
@@ -793,13 +787,6 @@ function AiJobPostFormContent() {
                 </CardContent>
               </Card>
               
-              {(state === 'loading_partners' || state === 'partners_completed') && (
-                <MatchingPartnersResult 
-                  state={state} 
-                  partners={allPartners} 
-                  matchingResult={matchingPartners} 
-                />
-              )}
           </div>
         </div>
       </div>
@@ -900,9 +887,9 @@ function AiJobPostFormContent() {
                       size="lg"
                       className="bg-accent text-accent-foreground hover:bg-accent/90"
                       onClick={handlePostAndFindPartners}
-                      disabled={state === 'loading_partners'}
+                      disabled={isLoading}
                   >
-                      {state === 'loading_partners' ? (
+                      {isLoading ? (
                       <LoaderCircle className="animate-spin" />
                       ) : (
                       <Send className="mr-2 h-4 w-4" />
