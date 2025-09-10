@@ -99,25 +99,28 @@ export function PartnershipOpportunities() {
     const FeeDetails = ({ opportunity }: { opportunity: Opportunity }) => {
         const { userRole } = useRole();
         
+        const formatCurrency = (value: number) => {
+            return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', currencyDisplay: 'code' }).format(value).replace('JPY', ' JPY');
+        };
+
         if (userRole === 'sending_company') {
-            // Simulate different platform fees for each job
+            const possibleFees = [70000, 150000, 90000, 120000];
+            const referralFee = possibleFees[parseInt(opportunity.id.slice(-1)) % possibleFees.length];
+
             const feeRates = [0.20, 0.25, 0.30];
             const platformFeeRate = feeRates[parseInt(opportunity.id.slice(-1)) % feeRates.length];
             
-            const minReceives = 70000 * (1 - platformFeeRate);
-            const maxReceives = 150000 * (1 - platformFeeRate);
-            
-            const formatCurrency = (value: number) => Math.round(value / 1000) * 1000;
+            const partnerReceives = referralFee * (1 - platformFeeRate);
             
             return (
                 <div className="space-y-1">
                     <div className="flex justify-between items-baseline">
                         <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
-                        <span className="font-bold text-lg text-primary">{`${formatCurrency(minReceives).toLocaleString()} - ${formatCurrency(maxReceives).toLocaleString()} JPY`}</span>
+                        <span className="font-bold text-lg text-primary">{formatCurrency(partnerReceives)}</span>
                     </div>
-                    <div className="flex justify-between items-baseline text-xs">
+                     <div className="flex justify-between items-baseline text-xs">
                         <span className="text-muted-foreground">{t_opp.referralFee}:</span>
-                        <span className="font-medium text-muted-foreground">{t_opp.feeRanges.sendingCompany.referral}</span>
+                        <span className="font-medium text-muted-foreground">{formatCurrency(referralFee)}</span>
                     </div>
                     <div className="flex justify-between items-baseline text-xs">
                         <span className="text-muted-foreground">{t_opp.platformFee}:</span>
@@ -146,10 +149,6 @@ export function PartnershipOpportunities() {
 
         const platformFee = feeValue * platformFeeRate;
         const partnerReceives = feeValue * (1 - platformFeeRate);
-
-        const formatCurrency = (value: number) => {
-            return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', currencyDisplay: 'code' }).format(value).replace('JPY', ' JPY');
-        };
         
         return (
              <div className="space-y-1">
