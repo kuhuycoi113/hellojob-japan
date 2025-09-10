@@ -6,8 +6,8 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
   CardFooter,
+  CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -67,13 +67,15 @@ export function PostDetailSection() {
                  if (ctaPhrase && paragraph.includes(ctaPhrase)) {
                    const parts = paragraph.split(ctaPhrase);
                    return (
-                     <p key={index}>
-                       {parts[0]}
-                       <Button asChild variant="link" className="p-0 inline text-lg">
-                         <Link href="/post-job-ai">{t.postDetail.article.ctaButton}</Link>
-                       </Button>
-                       {parts[1]}
-                     </p>
+                     <div key={index} className="not-prose">
+                       <p>{parts[0]}</p>
+                       <div className="my-6 text-center">
+                          <Button asChild size="lg">
+                            <Link href="/post-job-ai">{t.postDetail.article.ctaButton}</Link>
+                          </Button>
+                       </div>
+                       <p>{parts[1]}</p>
+                     </div>
                    );
                  }
                 // Simple check for list items
