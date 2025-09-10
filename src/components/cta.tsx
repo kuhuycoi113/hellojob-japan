@@ -17,6 +17,7 @@ import { useLanguage } from '@/contexts/language-context';
 import { Building, Handshake, Users, ChevronRight, Sparkles, FileText, ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { Building as BuildingIcon } from 'lucide-react';
 
 type Role = { title: string; description: string; icon: JSX.Element; }
 
@@ -27,12 +28,20 @@ export function Cta() {
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
 
-  const userRoles: Role[] = [
+  const userRolesGroup1: Role[] = [
     {
       icon: <Building className="h-8 w-8 text-indigo-500" />,
       title: t.userRoles.receivingCompany.title,
       description: t.userRoles.receivingCompany.description,
     },
+    {
+      icon: <Building className="h-8 w-8 text-purple-500" />,
+      title: t.userRoles.hakenCompany.title,
+      description: t.userRoles.hakenCompany.description,
+    },
+  ];
+
+  const userRolesGroup2: Role[] = [
     {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
@@ -49,16 +58,13 @@ export function Cta() {
       description: t.userRoles.yuryoShokai.description,
     },
     {
-      icon: <Building className="h-8 w-8 text-blue-500" />,
+      icon: <BuildingIcon className="h-8 w-8 text-blue-500" />,
       title: t.userRoles.sendingCompany.title,
       description: t.userRoles.sendingCompany.description,
     },
-    {
-      icon: <Building className="h-8 w-8 text-purple-500" />,
-      title: t.userRoles.hakenCompany.title,
-      description: t.userRoles.hakenCompany.description,
-    },
   ];
+
+  const userRoles = [...userRolesGroup1, ...userRolesGroup2];
 
   const handleRoleSelect = (role: Role) => {
     setRoleDialogOpen(false);
@@ -123,32 +129,62 @@ export function Cta() {
                   {t.userRoles.description}
                 </DialogDescription>
               </DialogHeader>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                {userRoles.map((role) => (
-                  <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                    <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="bg-primary/5 p-3 rounded-lg">
-                          {role.icon}
+              <div className="space-y-6 py-4">
+                  <div>
+                    <h4 className="font-semibold text-center text-gray-600 mb-4">{t.userRoles.group1_title}</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {userRolesGroup1.map((role) => (
+                        <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                          <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                              <div className="bg-primary/5 p-3 rounded-lg">
+                                {role.icon}
+                              </div>
+                              <div>
+                                <h3 className="font-semibold text-base text-gray-800">
+                                  {role.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground mt-1">
+                                  {role.description}
+                                </p>
+                              </div>
+                            </div>
+                            <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                          </Card>
                         </div>
-                        <div>
-                          <h3 className="font-semibold text-base text-gray-800">
-                            {role.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            {role.description}
-                          </p>
-                        </div>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                    </Card>
+                      ))}
+                    </div>
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <h4 className="font-semibold text-center text-gray-600 mb-4">{t.userRoles.group2_title}</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {userRolesGroup2.map((role) => (
+                        <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                          <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                              <div className="bg-primary/5 p-3 rounded-lg">
+                                {role.icon}
+                              </div>
+                              <div>
+                                <h3 className="font-semibold text-base text-gray-800">
+                                  {role.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground mt-1">
+                                  {role.description}
+                                </p>
+                              </div>
+                            </div>
+                            <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                          </Card>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               <DialogFooter>
                   <Button variant="outline" onClick={backToMainDialog}>
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Quay lại
+                    {t.postDetail.article.backButton || 'Quay lại'}
                   </Button>
               </DialogFooter>
             </DialogContent>

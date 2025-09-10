@@ -592,7 +592,8 @@
         "hint": "person thinking calculator"
       },
       "ctaPhrase": "{ctaButton}",
-      "ctaButton": "求人掲載"
+      "ctaButton": "求人掲載",
+      "backButton": "戻る"
     },
     "commentSection": {
       "title": "コメント",
@@ -674,6 +675,8 @@
   "userRoles": {
     "title": "あなたの役割を選択してください",
     "description": "最適な体験のために、あなたの役割を教えてください。",
+    "group1_title": "日本の企業（採用側）",
+    "group2_title": "採用パートナー（供給・支援側）",
     "guest": {
       "title": "ゲスト（未ログイン）",
       "description": "ビジターとして閲覧する。"
@@ -853,7 +856,7 @@
     "fees": "手数料情報",
     "referralFee": "紹介手数料総額",
     "managementFee": "管理手数料",
-    "platformFee": "プラットフォーム手数料 ({percent})",
+    "platformFee": "プラットフォーム手数料",
     "partnerReceives": "あなたの受取額",
     "accept": "受託する",
     "decline": "辞退する",
@@ -960,5 +963,3 @@
     "contactButton": "今すぐ相談"
   }
 }
-
-    

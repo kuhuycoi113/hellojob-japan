@@ -592,7 +592,8 @@
         "hint": "person thinking calculator"
       },
       "ctaPhrase": "{ctaButton}",
-      "ctaButton": "Post a Job"
+      "ctaButton": "Post a Job",
+      "backButton": "Back"
     },
     "commentSection": {
       "title": "Comments",
@@ -674,6 +675,8 @@
   "userRoles": {
     "title": "What is your role?",
     "description": "Let us know your role for the best experience.",
+    "group1_title": "Companies in Japan (Hiring Side)",
+    "group2_title": "Recruitment Partners (Supplying/Supporting Side)",
     "guest": {
       "title": "Guest (Not Logged In)",
       "description": "View as a visitor."
@@ -853,7 +856,7 @@
     "fees": "Fee Information",
     "referralFee": "Total Referral Fee",
     "managementFee": "Management Fee",
-    "platformFee": "Platform Fee ({percent})",
+    "platformFee": "Platform Fee",
     "partnerReceives": "You Receive",
     "accept": "Accept",
     "decline": "Decline",
@@ -960,5 +963,3 @@
     "contactButton": "Contact Now"
   }
 }
-
-    

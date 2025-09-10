@@ -112,12 +112,20 @@ export function Header() {
     { href: "/about", label: t.header.about },
   ];
   
-    const userRoles: Role[] = [
+    const userRolesGroup1: Role[] = [
        {
         icon: <Building className="h-8 w-8 text-indigo-500" />,
         title: t.userRoles.receivingCompany.title,
         description: t.userRoles.receivingCompany.description,
       },
+      {
+        icon: <Building className="h-8 w-8 text-purple-500" />,
+        title: t.userRoles.hakenCompany.title,
+        description: t.userRoles.hakenCompany.description,
+      },
+    ]
+
+    const userRolesGroup2: Role[] = [
       {
         icon: <Users className="h-8 w-8 text-yellow-500" />,
         title: t.userRoles.supportOrg.title,
@@ -128,20 +136,15 @@ export function Header() {
         title: t.userRoles.union.title,
         description: t.userRoles.union.description,
       },
-      {
-        icon: <Users className="h-8 w-8 text-red-500" />,
-        title: t.userRoles.yuryoShokai.title,
-        description: t.userRoles.yuryoShokai.description,
-      },
        {
         icon: <BuildingIcon className="h-8 w-8 text-blue-500" />,
         title: t.userRoles.sendingCompany.title,
         description: t.userRoles.sendingCompany.description,
       },
       {
-        icon: <Building className="h-8 w-8 text-purple-500" />,
-        title: t.userRoles.hakenCompany.title,
-        description: t.userRoles.hakenCompany.description,
+        icon: <Users className="h-8 w-8 text-red-500" />,
+        title: t.userRoles.yuryoShokai.title,
+        description: t.userRoles.yuryoShokai.description,
       },
   ];
 
@@ -266,32 +269,62 @@ export function Header() {
                     {t.userRoles.description}
                     </DialogDescription>
                 </DialogHeader>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                    {userRoles.map((role) => (
-                    <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                        <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                            <div className="bg-primary/5 p-3 rounded-lg">
-                            {role.icon}
+                <div className="space-y-6 py-4">
+                  <div>
+                    <h4 className="font-semibold text-center text-gray-600 mb-4">{t.userRoles.group1_title}</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {userRolesGroup1.map((role) => (
+                        <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                          <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                              <div className="bg-primary/5 p-3 rounded-lg">
+                                {role.icon}
+                              </div>
+                              <div>
+                                <h3 className="font-semibold text-base text-gray-800">
+                                  {role.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground mt-1">
+                                  {role.description}
+                                </p>
+                              </div>
                             </div>
-                            <div>
-                            <h3 className="font-semibold text-base text-gray-800">
-                                {role.title}
-                            </h3>
-                            <p className="text-sm text-muted-foreground mt-1">
-                                {role.description}
-                            </p>
-                            </div>
+                            <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                          </Card>
                         </div>
-                        <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                        </Card>
+                      ))}
                     </div>
-                    ))}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-center text-gray-600 mb-4">{t.userRoles.group2_title}</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {userRolesGroup2.map((role) => (
+                        <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                          <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                              <div className="bg-primary/5 p-3 rounded-lg">
+                                {role.icon}
+                              </div>
+                              <div>
+                                <h3 className="font-semibold text-base text-gray-800">
+                                  {role.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground mt-1">
+                                  {role.description}
+                                </p>
+                              </div>
+                            </div>
+                            <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                          </Card>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
                 <DialogFooter>
                     <Button variant="outline" onClick={backToMainDialog}>
                       <ArrowLeft className="mr-2 h-4 w-4" />
-                      Quay lại
+                      {t.postDetail.article.backButton || 'Quay lại'}
                     </Button>
                 </DialogFooter>
               </DialogContent>

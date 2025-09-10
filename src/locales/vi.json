@@ -593,7 +593,8 @@
         "hint": "person thinking calculator"
       },
       "ctaPhrase": "{ctaButton}",
-      "ctaButton": "Đăng việc làm"
+      "ctaButton": "Đăng việc làm",
+      "backButton": "Quay lại"
     },
     "commentSection": {
       "title": "Bình luận",
@@ -675,6 +676,8 @@
   "userRoles": {
     "title": "Bạn là ai?",
     "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
+    "group1_title": "Xí nghiệp/Công ty tại Nhật Bản (Bên có nhu-cầu-tuyển-dụng)",
+    "group2_title": "Đối tác tuyển dụng (Bên cung cấp/hỗ trợ tuyển dụng)",
     "guest": {
       "title": "Khách (Chưa đăng nhập)",
       "description": "Xem với tư cách khách truy cập."
@@ -854,7 +857,7 @@
     "fees": "Thông tin phí",
     "referralFee": "Tổng phí giới thiệu",
     "managementFee": "Phí quản lý",
-    "platformFee": "Phí nền tảng ({percent})",
+    "platformFee": "Phí nền tảng",
     "partnerReceives": "Bạn nhận về",
     "accept": "Nhận",
     "decline": "Từ chối",
@@ -961,5 +964,3 @@
     "contactButton": "Liên hệ ngay"
   }
 }
-
-    
