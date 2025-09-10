@@ -29,6 +29,7 @@
       "about": "Giới thiệu",
       "dashboard": "Quản lý",
       "chat": "Tư vấn",
+      "advisors": "Tư vấn viên",
       "signUpForPremium": "Đăng ký Premium",
       "guestCta": {
         "title": "Chào mừng đến với HelloJob",
@@ -753,15 +754,15 @@
     "title": "Chọn phương thức đăng tin",
     "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
-      "title": "Đăng nhanh",
-      "description": "Chỉ cần vài thao tác đăng nhanh để xem ứng viên phù hợp."
+      "title": "Đăng bằng AI",
+      "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
     },
     "manual": {
-      "title": "Đăng chi tiết",
+      "title": "Đăng thủ công",
       "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát tin tuyển dụng."
     }
   },
-  "jobsPage": {
+   "jobsPage": {
     "title": "Quản lý việc làm",
     "subtitle": "Quản lý các tin tuyển dụng và cơ hội hợp tác của bạn tại đây.",
     "guestSubtitle": "Khám phá các cơ hội việc làm và xem cách nền tảng của chúng tôi hoạt động.",
@@ -940,5 +941,3 @@
     "contactButton": "Liên hệ ngay"
   }
 }
-
-    

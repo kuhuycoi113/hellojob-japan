@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Compass, Target, BookOpen, MessageSquare, Users as UsersIcon, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond, LogIn } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond, LogIn } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,11 +16,10 @@ import {
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/language-context';
-import { translations } from '@/locales/translations';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
-import { Building, Handshake, Users } from 'lucide-react';
+import { Building as BuildingIcon, Handshake, Users } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useChat } from '@/contexts/chat-context';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
@@ -63,7 +62,6 @@ const EnglishFlag = () => (
     </svg>
 );
 
-type VisaType = 'intern' | 'skilled' | 'engineer';
 type Role = { title: string; description: string; icon: JSX.Element; }
 
 const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
@@ -95,15 +93,9 @@ export function Header() {
   const { userRole } = useRole();
   const { toggleChat } = useChat();
   const pathname = usePathname();
+  const router = useRouter();
 
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
-  const [visaDialogOpen, setVisaDialogOpen] = useState(false);
-  const [visaSubTypeDialogOpen, setVisaSubTypeDialogOpen] = useState(false);
-  const [postMethodDialogOpen, setPostMethodDialogOpen] = useState(false);
-  const [selectedRole, setSelectedRole] = useState<Role | null>(null);
-  const [selectedVisaType, setSelectedVisaType] = useState<VisaType | null>(null);
-  const [selectedVisaSubType, setSelectedVisaSubType] = useState<{title: string, href: string} | null>(null);
-
 
   const languageConfig = {
     vi: { flag: <VietnamFlag />, name: 'Tiếng Việt', short: 'VN' },
@@ -119,7 +111,7 @@ export function Header() {
     { href: "/about", label: t.header.about },
   ];
   
-    const userRoles = [
+    const userRoles: Role[] = [
       {
         icon: <Users className="h-8 w-8 text-yellow-500" />,
         title: t.userRoles.supportOrg.title,
@@ -136,48 +128,11 @@ export function Header() {
         description: t.userRoles.yuryoShokai.description,
       },
        {
-        icon: <Building className="h-8 w-8 text-blue-500" />,
+        icon: <BuildingIcon className="h-8 w-8 text-blue-500" />,
         title: t.userRoles.sendingCompany.title,
         description: t.userRoles.sendingCompany.description,
       },
   ];
-  
-  const visaTypes = [
-      {
-        icon: <GraduationCap className="h-8 w-8 text-primary" />,
-        title: t.visaTypes.intern.title,
-        description: t.visaTypes.intern.description,
-        type: 'intern' as VisaType,
-      },
-      {
-        icon: <Star className="h-8 w-8 text-yellow-500" />,
-        title: t.visaTypes.skilled.title,
-        description: t.visaTypes.skilled.description,
-        type: 'skilled' as VisaType,
-      },
-      {
-        icon: <Briefcase className="h-8 w-8 text-green-500" />,
-        title: t.visaTypes.engineer.title,
-        description: t.visaTypes.engineer.description,
-        type: 'engineer' as VisaType,
-      },
-  ]
-
-  const visaSubTypes = {
-    intern: [
-      { title: t.visaSubTypes?.intern?.threeYear, href: "#"},
-      { title: t.visaSubTypes?.intern?.oneYear, href: "#"},
-      { title: t.visaSubTypes?.intern?.go, href: "#"},
-    ],
-    skilled: [
-      { title: t.visaSubTypes?.skilled?.japan, href: "#"},
-      { title: t.visaSubTypes?.skilled?.vietnam, href: "#"},
-    ],
-    engineer: [
-      { title: t.visaSubTypes?.engineer?.japan, href: "#"},
-      { title: t.visaSubTypes?.engineer?.vietnam, href: "#"},
-    ],
-  };
 
   const menuItems = [
     { href: "/post-job-ai", label: t.header.menuItems.postJobAI, icon: <Sparkles /> },
@@ -190,287 +145,170 @@ export function Header() {
   ];
 
   const handleRoleSelect = (role: Role) => {
-    setSelectedRole(role);
     setRoleDialogOpen(false);
-    setVisaDialogOpen(true);
-  }
-
-  const handleVisaTypeSelect = (type: VisaType) => {
-    setSelectedVisaType(type);
-    setVisaDialogOpen(false);
-    setVisaSubTypeDialogOpen(true);
-  }
-
-  const handleVisaSubTypeSelect = (subType: {title: string, href: string}) => {
-    setSelectedVisaSubType(subType);
-    setVisaSubTypeDialogOpen(false);
-    setPostMethodDialogOpen(true);
-  }
-  
-  const getAiPostUrl = () => {
     const params = new URLSearchParams();
-    if(selectedRole) params.set('role', selectedRole.title);
-    if(selectedVisaType) {
-        const visa = visaTypes.find(v => v.type === selectedVisaType);
-        if(visa) params.set('visaType', visa.title);
-    }
-    if(selectedVisaSubType) params.set('visaSubType', selectedVisaSubType.title);
-
-    return `/post-job-ai?${params.toString()}`;
+    params.set('role', role.title);
+    router.push(`/post-job-ai?${params.toString()}`);
   }
-
-  const handlePostMethodSelect = () => {
-    setPostMethodDialogOpen(false);
-    setRoleDialogOpen(true);
-  };
 
   return (
-    <Dialog open={postMethodDialogOpen} onOpenChange={setPostMethodDialogOpen}>
-      <header className="fixed md:sticky top-0 z-50 w-full border-b bg-white">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-4">
-            <Link href="/">
-              <Logo />
+    <header className="fixed md:sticky top-0 z-50 w-full border-b bg-white">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <div className="flex items-center gap-4">
+          <Link href="/">
+            <Logo />
+          </Link>
+        </div>
+
+        <nav className="hidden md:flex flex-1 justify-center items-center gap-6 text-sm font-medium">
+          {navLinks.map(link => (
+            <Link
+              key={link.href + link.label}
+              href={link.href}
+              className={cn(
+                "transition-colors hover:text-secondary whitespace-nowrap flex items-center gap-2",
+                pathname === link.href ? "text-primary font-bold" : "text-foreground/80"
+              )}
+            >
+              {link.icon}
+              {link.label}
             </Link>
-          </div>
+          ))}
+        </nav>
 
-          <nav className="hidden md:flex flex-1 justify-center items-center gap-6 text-sm font-medium">
-            {navLinks.map(link => (
-              <Link
-                key={link.href + link.label}
-                href={link.href}
-                className={cn(
-                  "transition-colors hover:text-secondary whitespace-nowrap flex items-center gap-2",
-                  pathname === link.href ? "text-primary font-bold" : "text-foreground/80"
-                )}
+        <div className="flex items-center gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="outline"
+                className="flex items-center gap-2"
               >
-                {link.icon}
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="flex items-center gap-2"
-                >
-                  {languageConfig[language].flag}
-                  <span className="hidden md:inline">{languageConfig[language].short}</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('vi')}>
-                  <VietnamFlag />
-                  <span>Tiếng Việt</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('ja')}>
-                  <JapanFlag />
-                  <span>Tiếng Nhật</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('en')}>
-                  <EnglishFlag />
-                  <span>Tiếng Anh</span>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleChat}>
-              <MessageSquareText className="h-6 w-6" />
-            </Button>
-
-            <div className="hidden md:flex items-center gap-2">
-              <DialogTrigger asChild>
-                  <Button variant="secondary">
-                      <PlusCircle className="mr-2 h-4 w-4" />
-                      {t.header.postJob}
-                  </Button>
-              </DialogTrigger>
-              <Button variant="outline" asChild>
-                  <Link href="/jobs" className={cn(pathname === "/jobs" && "text-primary font-bold")}>
-                      {t.header.x_function}
-                  </Link>
+                {languageConfig[language].flag}
+                <span className="hidden md:inline">{languageConfig[language].short}</span>
               </Button>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <LayoutGrid className="h-5 w-5" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-80 p-4">
-                    {userRole === 'guest' ? (
-                       <Card className="bg-primary/10 text-center p-4">
-                          <CardContent className="p-0">
-                            <h4 className="font-bold text-base">{t.header.menuItems.guestCta.title}</h4>
-                            <p className="text-sm text-muted-foreground mt-1 mb-3">{t.header.menuItems.guestCta.description}</p>
-                            <Button className="w-full">
-                              <LogIn className="mr-2 h-4 w-4" />
-                              {t.header.menuItems.guestCta.button}
-                            </Button>
-                          </CardContent>
-                       </Card>
-                    ) : (
-                      <Link href="/dashboard/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-2 transition-colors">
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('vi')}>
+                <VietnamFlag />
+                <span>Tiếng Việt</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('ja')}>
+                <JapanFlag />
+                <span>Tiếng Nhật</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center gap-2" onClick={() => setLanguage('en')}>
+                <EnglishFlag />
+                <span>Tiếng Anh</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleChat}>
+            <MessageSquareText className="h-6 w-6" />
+          </Button>
+
+          <div className="hidden md:flex items-center gap-2">
+             <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
+                <DialogTrigger asChild>
+                    <Button variant="secondary">
+                        <PlusCircle className="mr-2 h-4 w-4" />
+                        {t.header.postJob}
+                    </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-3xl">
+                <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+                    <DialogDescription className="text-center">
+                    {t.userRoles.description}
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                    {userRoles.map((role) => (
+                    <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                        <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
                         <div className="flex items-center gap-4">
-                            <Avatar className="h-12 w-12">
-                                <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-                                <AvatarFallback>TVC</AvatarFallback>
-                            </Avatar>
+                            <div className="bg-primary/5 p-3 rounded-lg">
+                            {role.icon}
+                            </div>
                             <div>
-                                <p className="font-semibold text-base">Công ty cổ phần TVC</p>
-                                <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.sendingCompany.title)}</p>
+                            <h3 className="font-semibold text-base text-gray-800">
+                                {role.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground mt-1">
+                                {role.description}
+                            </p>
                             </div>
                         </div>
-                      </Link>
-                    )}
-                    <DropdownMenuSeparator />
-                    
-                    {userRole !== 'guest' && (
-                      <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 my-2">
-                        <Diamond className="mr-2 h-4 w-4" />
-                        {t.header.menuItems.signUpForPremium}
-                      </Button>
-                    )}
-
-                    <div className="grid grid-cols-4 gap-2 my-4">
-                        {menuItems.map((item) => (
-                            <DropdownMenuItem key={item.href} asChild className="flex-col h-20 p-2 text-center">
-                              <Link href={item.href}>
-                                <div className="text-primary mb-1">{item.icon}</div>
-                                <span className="text-xs whitespace-normal leading-tight">{item.label}</span>
-                              </Link>
-                            </DropdownMenuItem>
-                        ))}
+                        <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                        </Card>
                     </div>
-                    <DropdownMenuSeparator />
-                    <RoleSwitcher inMenu={true} />
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+                    ))}
+                </div>
+                </DialogContent>
+             </Dialog>
+            <Button variant="outline" asChild>
+                <Link href="/jobs" className={cn(pathname === "/jobs" && "text-primary font-bold")}>
+                    {t.header.x_function}
+                </Link>
+            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <LayoutGrid className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-80 p-4">
+                  {userRole === 'guest' ? (
+                     <Card className="bg-primary/10 text-center p-4">
+                        <CardContent className="p-0">
+                          <h4 className="font-bold text-base">{t.header.menuItems.guestCta.title}</h4>
+                          <p className="text-sm text-muted-foreground mt-1 mb-3">{t.header.menuItems.guestCta.description}</p>
+                          <Button className="w-full">
+                            <LogIn className="mr-2 h-4 w-4" />
+                            {t.header.menuItems.guestCta.button}
+                          </Button>
+                        </CardContent>
+                     </Card>
+                  ) : (
+                    <Link href="/dashboard/profile" className="block hover:bg-accent/50 rounded-lg p-2 -m-2 mb-2 transition-colors">
+                      <div className="flex items-center gap-4">
+                          <Avatar className="h-12 w-12">
+                              <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+                              <AvatarFallback>TVC</AvatarFallback>
+                          </Avatar>
+                          <div>
+                              <p className="font-semibold text-base">Công ty cổ phần TVC</p>
+                              <p className="text-sm text-muted-foreground">{t.header.menuItems.recruiterAccountType.replace('{type}', t.userRoles.sendingCompany.title)}</p>
+                          </div>
+                      </div>
+                    </Link>
+                  )}
+                  <DropdownMenuSeparator />
+                  
+                  {userRole !== 'guest' && (
+                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 my-2">
+                      <Diamond className="mr-2 h-4 w-4" />
+                      {t.header.menuItems.signUpForPremium}
+                    </Button>
+                  )}
+
+                  <div className="grid grid-cols-4 gap-2 my-4">
+                      {menuItems.map((item) => (
+                          <DropdownMenuItem key={item.href} asChild className="flex-col h-20 p-2 text-center">
+                            <Link href={item.href}>
+                              <div className="text-primary mb-1">{item.icon}</div>
+                              <span className="text-xs whitespace-normal leading-tight">{item.label}</span>
+                            </Link>
+                          </DropdownMenuItem>
+                      ))}
+                  </div>
+                  <DropdownMenuSeparator />
+                  <RoleSwitcher inMenu={true} />
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
-        
-        {/* Dialogs for Post Job Flow */}
-        <DialogContent className="sm:max-w-xl">
-            <DialogHeader>
-            <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
-            <DialogDescription className="text-center">{t.postMethod.description}</DialogDescription>
-            </DialogHeader>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                <div onClick={handlePostMethodSelect}>
-                <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
-                    <div className="bg-primary/5 p-3 rounded-lg mb-4">
-                    <Brain className="h-8 w-8 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-base text-gray-800">
-                    {t.postMethod.ai.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                    {t.postMethod.ai.description}
-                    </p>
-                </Card>
-                </div>
-                <div onClick={handlePostMethodSelect}>
-                <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
-                    <div className="bg-primary/5 p-3 rounded-lg mb-4">
-                    <Pencil className="h-8 w-8 text-yellow-500" />
-                    </div>
-                    <h3 className="font-semibold text-base text-gray-800">
-                        {t.postMethod.manual.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                        {t.postMethod.manual.description}
-                    </p>
-                </Card>
-                </div>
-            </div>
-        </DialogContent>
-
-        <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
-            <DialogContent className="sm:max-w-3xl">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
-                <DialogDescription className="text-center">
-                  {t.userRoles.description}
-                </DialogDescription>
-              </DialogHeader>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                {userRoles.map((role) => (
-                  <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                    <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="bg-primary/5 p-3 rounded-lg">
-                          {role.icon}
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-base text-gray-800">
-                            {role.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            {role.description}
-                          </p>
-                        </div>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                    </Card>
-                  </div>
-                ))}
-              </div>
-            </DialogContent>
-        </Dialog>
-
-        <Dialog open={visaDialogOpen} onOpenChange={setVisaDialogOpen}>
-            <DialogContent className="sm:max-w-3xl">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaTypes.title}</DialogTitle>
-                <DialogDescription className="text-center">
-                  {t.visaTypes.description}
-                </DialogDescription>
-              </DialogHeader>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
-                {visaTypes.map((visa) => (
-                  <div key={visa.title} onClick={() => handleVisaTypeSelect(visa.type)}>
-                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
-                      <div className="bg-primary/5 p-3 rounded-lg mb-4">
-                        {visa.icon}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-base text-gray-800">
-                          {visa.title}
-                        </h3>
-                          <p className="text-sm text-muted-foreground mt-1">
-                          {visa.description}
-                        </p>
-                      </div>
-                    </Card>
-                  </div>
-                ))}
-              </div>
-            </DialogContent>
-        </Dialog>
-
-        <Dialog open={visaSubTypeDialogOpen} onOpenChange={setVisaSubTypeDialogOpen}>
-            <DialogContent className="sm:max-w-xl">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaSubTypes.title}</DialogTitle>
-              </DialogHeader>
-              <div className="grid grid-cols-1 gap-4 py-4">
-                {selectedVisaType && visaSubTypes[selectedVisaType] && visaSubTypes[selectedVisaType].map((subType) => (
-                   <Link href={getAiPostUrl() + `&visaSubType=${encodeURIComponent(subType.title)}`} key={subType.title} onClick={() => handleVisaSubTypeSelect(subType)}>
-                    <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
-                      <h3 className="font-semibold text-base text-gray-800">
-                        {subType.title}
-                      </h3>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-            </DialogContent>
-        </Dialog>
-        
-      </header>
-    </Dialog>
+      </div>
+    </header>
   );
 }

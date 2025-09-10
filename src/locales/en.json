@@ -29,6 +29,7 @@
       "about": "About Us",
       "dashboard": "Dashboard",
       "chat": "Chat",
+      "advisors": "Advisors",
       "signUpForPremium": "Sign Up for Premium",
       "guestCta": {
         "title": "Welcome to HelloJob",
@@ -752,11 +753,11 @@
     "title": "Choose a Posting Method",
     "description": "How would you like to create your job listing?",
     "ai": {
-      "title": "Quick Post",
-      "description": "A few quick steps to see suitable candidates."
+      "title": "Post with AI",
+      "description": "With a simple description, AI will create a professional job post."
     },
     "manual": {
-      "title": "Detailed Post",
+      "title": "Manual Post",
       "description": "Fill out a detailed form for full control over the listing."
     }
   },
@@ -939,5 +940,3 @@
     "contactButton": "Contact Now"
   }
 }
-
-    
