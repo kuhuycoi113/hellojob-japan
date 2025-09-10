@@ -221,7 +221,7 @@ export function Header() {
                       {t.header.postJob}
                   </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-xl">
+              <DialogContent className="sm:max-w-3xl">
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
                   <DialogDescription className="text-center">
