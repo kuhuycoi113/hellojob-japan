@@ -756,7 +756,7 @@
       "description": "A few quick steps to see suitable candidates."
     },
     "manual": {
-      "title": "Manual Entry",
+      "title": "Detailed Post",
       "description": "Fill out a detailed form for full control over the listing."
     }
   },
@@ -939,3 +939,5 @@
     "contactButton": "Contact Now"
   }
 }
+
+    
