@@ -11,9 +11,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter,
 } from '@/components/ui/dialog';
 import { useLanguage } from '@/contexts/language-context';
-import { Building, Handshake, Users, ChevronRight, Sparkles, FileText } from 'lucide-react';
+import { Building, Handshake, Users, ChevronRight, Sparkles, FileText, ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -24,6 +25,7 @@ export function Cta() {
   const router = useRouter();
   const [mainDialogOpen, setMainDialogOpen] = useState(false);
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
+  const [contactDialogOpen, setContactDialogOpen] = useState(false);
 
   const userRoles: Role[] = [
     {
@@ -60,16 +62,19 @@ export function Cta() {
 
   const handleRoleSelect = (role: Role) => {
     setRoleDialogOpen(false);
-    setMainDialogOpen(false);
     const params = new URLSearchParams();
     params.set('role', role.title);
     router.push(`/post-job-ai?${params.toString()}`);
   }
 
   const openRoleDialog = () => {
-    // We don't close the main dialog, but open the role dialog over it.
-    // This feels more like a sub-step.
+    setMainDialogOpen(false);
     setRoleDialogOpen(true);
+  }
+  
+  const backToMainDialog = () => {
+    setRoleDialogOpen(false);
+    setMainDialogOpen(true);
   }
 
   return (
@@ -140,10 +145,16 @@ export function Cta() {
                   </div>
                 ))}
               </div>
+              <DialogFooter>
+                  <Button variant="outline" onClick={backToMainDialog}>
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Quay lại
+                  </Button>
+              </DialogFooter>
             </DialogContent>
           </Dialog>
 
-          <Dialog>
+          <Dialog open={contactDialogOpen} onOpenChange={setContactDialogOpen}>
             <DialogTrigger asChild>
               <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100">
                 {t.cta.contactUs}
@@ -158,7 +169,7 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                 {userRoles.map((role) => (
-                  <Link href={`/chat?role=${encodeURIComponent(role.title)}`} key={role.title}>
+                  <Link href={`/chat?role=${encodeURIComponent(role.title)}`} key={role.title} onClick={() => setContactDialogOpen(false)}>
                     <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className="bg-primary/5 p-3 rounded-lg">
@@ -185,5 +196,3 @@ export function Cta() {
     </section>
   );
 }
-
-    

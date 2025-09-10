@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond, LogIn, FileText } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond, LogIn, FileText, ArrowLeft } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger, DialogFooter } from '@/components/ui/dialog';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/language-context';
 import { usePathname, useRouter } from 'next/navigation';
@@ -113,7 +113,7 @@ export function Header() {
   ];
   
     const userRoles: Role[] = [
-      {
+       {
         icon: <Building className="h-8 w-8 text-indigo-500" />,
         title: t.userRoles.receivingCompany.title,
         description: t.userRoles.receivingCompany.description,
@@ -157,14 +157,19 @@ export function Header() {
 
   const handleRoleSelect = (role: Role) => {
     setRoleDialogOpen(false);
-    setMainDialogOpen(false);
     const params = new URLSearchParams();
     params.set('role', role.title);
     router.push(`/post-job-ai?${params.toString()}`);
   }
 
   const openRoleDialog = () => {
+    setMainDialogOpen(false);
     setRoleDialogOpen(true);
+  }
+  
+  const backToMainDialog = () => {
+    setRoleDialogOpen(false);
+    setMainDialogOpen(true);
   }
 
   return (
@@ -283,6 +288,12 @@ export function Header() {
                     </div>
                     ))}
                 </div>
+                <DialogFooter>
+                    <Button variant="outline" onClick={backToMainDialog}>
+                      <ArrowLeft className="mr-2 h-4 w-4" />
+                      Quay lại
+                    </Button>
+                </DialogFooter>
               </DialogContent>
             </Dialog>
 
@@ -352,5 +363,3 @@ export function Header() {
     </header>
   );
 }
-
-    
