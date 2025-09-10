@@ -337,8 +337,8 @@
     "searchPlaceholder": "Search articles (e.g., Tokutei, costs...)",
     "featured": {
       "category": "Supporting Organizations",
-      "title": "How can Supporting Organizations (Shien Kikan) recruit Vietnamese candidates at the lowest cost?",
-      "description": "Explore effective strategies and tools to optimize recruitment costs for Vietnamese labor, from leveraging technology platforms to smart collaboration with domestic and international partners.",
+      "title": "Recruit Tokutei Ginou – The Ultimate Cost-Saving Solution for Shien Kikan with HelloJob 🚀",
+      "description": "Are you a Japanese Supporting Organization (Shien Kikan) struggling with recruiting Tokutei Ginou candidates? Are costs too high with uncertainty about candidate quality or long-term commitment? 👉 Don't worry! Let HelloJob help you optimize your recruitment process. Optimize Costs – Increase Efficiency. Let's say you're recruiting Tokutei candidates in Japan for the Food industry: Typical Cost: 250,000 JPY/candidate. With HelloJob, you only need: 100,000 JPY/candidate. We have dozens of reputable sending companies ready to assist with transparent, specific, and detailed services. If the 100,000 JPY fee doesn't attract a suitable company, you can: Gradually increase to 110,000 JPY → 120,000 JPY. Even at 150,000 JPY, you still save 100,000 JPY compared to the typical cost! You can use these savings to: ✨ Enhance candidate quality ✨ Increase salaries and bonuses to optimize performance ✨ Or add to your savings budget → increasing net profit for your company. Don't miss out! 👉 Click 'Post a Trial Order' on HelloJob now and experience optimal recruitment efficiency today!",
       "link": "Read article"
     },
     "videoTitle": "Short Videos",
@@ -866,12 +866,8 @@
       "feeRanges": {
         "sendingCompany": {
             "referral": "70,000 - 150,000 JPY",
-            "platform_20": "20%",
-            "platform_25": "25%",
-            "platform_30": "30%",
-            "receives_20": "56,000 - 120,000 JPY",
-            "receives_25": "52,500 - 112,500 JPY",
-            "receives_30": "49,000 - 105,000 JPY"
+            "platform_20": "20% - 30%",
+            "receives_20": "49,000 - 120,000 JPY"
         }
       }
   },
@@ -957,3 +953,5 @@
     "contactButton": "Contact Now"
   }
 }
+
+    
