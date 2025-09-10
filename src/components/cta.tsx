@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -12,7 +13,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { useLanguage } from '@/contexts/language-context';
-import { Building, Handshake, Users, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil } from 'lucide-react';
+import { Building, Handshake, Users, ChevronRight, Briefcase, GraduationCap, Star, Brain, Pencil, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 
 type VisaType = 'intern' | 'skilled' | 'engineer';
@@ -162,7 +163,7 @@ export function Cta() {
                   <div onClick={handlePostMethodSelect}>
                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
                       <div className="bg-primary/5 p-3 rounded-lg mb-4">
-                        <Brain className="h-8 w-8 text-primary" />
+                        <Sparkles className="h-8 w-8 text-primary" />
                       </div>
                       <h3 className="font-semibold text-base text-gray-800">
                         {t.postMethod.ai.title}
@@ -298,7 +299,7 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-1 gap-4 py-4">
                 {selectedVisaType && visaSubTypes[selectedVisaType] && visaSubTypes[selectedVisaType].map((subType) => (
-                  <Link href={getAiPostUrl() + `&visaSubType=${encodeURIComponent(subType.title)}`} key={subType.title} onClick={() => handleVisaSubTypeSelect(subType)}>
+                   <Link href={getAiPostUrl() + `&visaSubType=${encodeURIComponent(subType.title)}`} key={subType.title} onClick={() => handleVisaSubTypeSelect(subType)}>
                     <Card className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                       <h3 className="font-semibold text-base text-gray-800">
                         {subType.title}

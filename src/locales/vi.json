@@ -754,7 +754,7 @@
     "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
       "title": "Đăng nhanh",
-      "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
+      "description": "Chỉ cần mô tả ngắn gọn, hệ thống sẽ nhanh chóng tạo tin tuyển dụng chuyên nghiệp."
     },
     "manual": {
       "title": "Đăng chi tiết (Thủ công)",
