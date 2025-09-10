@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -112,6 +113,8 @@ export function PartnershipOpportunities() {
             
             const partnerReceives = referralFee * (1 - platformFeeRate);
             
+            const isDiscounted = platformFeeRate < 0.30;
+            
             return (
                 <div className="space-y-1">
                     <div className="flex justify-between items-baseline">
@@ -124,7 +127,9 @@ export function PartnershipOpportunities() {
                     </div>
                     <div className="flex justify-between items-baseline text-xs">
                         <span className="text-muted-foreground">{t_opp.platformFee}:</span>
-                        <span className="font-medium text-muted-foreground">{`${platformFeeRate * 100}%`}</span>
+                         <span className={cn("font-medium", isDiscounted ? "text-green-600 font-bold" : "text-muted-foreground")}>
+                            {`${platformFeeRate * 100}%`}
+                        </span>
                     </div>
                 </div>
             )
@@ -341,3 +346,5 @@ export function PartnershipOpportunities() {
         </div>
     );
 }
+
+    
