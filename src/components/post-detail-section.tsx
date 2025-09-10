@@ -7,6 +7,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -62,6 +63,19 @@ export function PostDetailSection() {
                 />
               </div>
               {contentParagraphs.map((paragraph, index) => {
+                 const ctaPhrase = t.postDetail.article.ctaPhrase;
+                 if (ctaPhrase && paragraph.includes(ctaPhrase)) {
+                   const parts = paragraph.split(ctaPhrase);
+                   return (
+                     <p key={index}>
+                       {parts[0]}
+                       <Button asChild variant="link" className="p-0 inline text-lg">
+                         <Link href="/post-job-ai">{t.postDetail.article.ctaButton}</Link>
+                       </Button>
+                       {parts[1]}
+                     </p>
+                   );
+                 }
                 // Simple check for list items
                 if (paragraph.trim().startsWith('✨')) {
                   return (

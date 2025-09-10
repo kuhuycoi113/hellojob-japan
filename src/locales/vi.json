@@ -593,7 +593,9 @@
         "src": "https://picsum.photos/1200/675?random=100",
         "alt": "Người đang suy nghĩ với máy tính",
         "hint": "person thinking calculator"
-      }
+      },
+      "ctaPhrase": "“Đăng thử đơn”",
+      "ctaButton": "Đăng việc làm"
     },
     "commentSection": {
       "title": "Bình luận",
@@ -664,7 +666,7 @@
           "type": "article"
         },
         {
-          "title": "How Much is the Cost of Living in Japan per Month?",
+          "title": "Chi phí sinh hoạt ở Nhật Bản hết bao nhiêu một tháng?",
           "category": "Cuộc sống ở Nhật",
           "image": "https://picsum.photos/400/400?random=3",
           "type": "article"
@@ -863,7 +865,11 @@
         "sendingCompany": {
             "referral": "70,000 - 150,000 JPY",
             "platform_20": "20% ({fee})",
-            "receives_20": "56,000 - 120,000 JPY"
+            "platform_25": "25% ({fee})",
+            "platform_30": "30% ({fee})",
+            "receives_20": "56,000 - 120,000 JPY",
+            "receives_25": "52,500 - 112,500 JPY",
+            "receives_30": "49,000 - 105,000 JPY"
         }
       }
   },
