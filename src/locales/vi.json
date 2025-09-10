@@ -138,8 +138,6 @@
     "title": "Cam Kết Về Chất Lượng Ứng Viên",
     "subtitle": "Chúng tôi đảm bảo cung cấp nguồn nhân lực không chỉ giỏi chuyên môn mà còn phù hợp với văn hóa doanh nghiệp của bạn.",
     "thoroughScreening": "Sàng lọc kỹ lưỡng",
-    "thoroughScreeningDesc": "Mỗi ứng viên đều trải qua quy trình phỏng vấn, kiểm tra năng lực và đánh giá thái độ chuyên nghiệp.",
-    "detailedProfiles": "Hồ sơ chi tiết",
     "detailedProfilesDesc": "Cung cấp hồ sơ ứng viên đầy đủ thông tin, video giới thiệu và các chứng chỉ, bằng cấp đã xác thực.",
     "inDepthTraining": "Đào tạo chuyên sâu",
     "inDepthTrainingDesc": "Ứng viên được đào tạo bài bản về ngôn ngữ, văn hóa và kỹ năng làm việc tại Nhật Bản trước khi xuất cảnh."
@@ -586,7 +584,7 @@
     "article": {
       "category": "Cơ quan hỗ trợ",
       "title": "Tuyển dụng Tokutei Ginou – Giải pháp tối ưu chi phí cho Shien cùng HelloJob 🚀",
-      "content": "Bạn là Cơ quan hỗ trợ Nhật Bản (Shien Kikan), bạn đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou? Chi phí quá cao nhưng chưa chắc chắn về chất lượng ứng viên, hay liệu họ có gắn bó lâu dài với công ty hay không?\n👉 Đừng lo! Hãy để HelloJob giúp bạn tối ưu quy trình tuyển dụng.\n<h2>Tối ưu chi phí – Tăng hiệu quả</h2>\nGiả sử bạn đang tuyển ứng viên Tokutei tại Nhật trong ngành Thực phẩm:\n<strong>Chi phí thông thường: 250,000 JPY/ứng viên</strong>\n<strong>Với HelloJob, bạn chỉ cần: 100,000 JPY/ứng viên</strong>\nChúng tôi có hàng chục công ty phái cử uy tín sẵn sàng hỗ trợ, với dịch vụ minh bạch, cụ thể, chi tiết.\nNếu mức phí 100,000 JPY chưa có công ty phù hợp, bạn có thể: Nâng lên 110,000 JPY → 120,000 JPY để thử dần. Ngay cả khi ở mức 150,000 JPY, bạn vẫn tiết kiệm được 100,000 JPY so với chi phí thông thường!\n<h2>Khoản tiết kiệm này bạn có thể dùng để:</h2>\n<ul>\n<li>Nâng cao chất lượng ứng viên</li>\n<li>Tăng lương, thưởng để tối ưu hiệu suất</li>\n<li>Hoặc đưa vào ngân sách tiết kiệm → tăng lợi nhuận dòng cho công ty</li>\n</ul>\nĐừng bỏ lỡ cơ hội!\n👉 Hãy bấm ngay “Đăng việc làm” trên HelloJob và trải nghiệm hiệu quả tuyển dụng Tối ưu ngay hôm nay!",
+      "content": "Bạn là Cơ quan hỗ trợ Nhật Bản (Shien Kikan), bạn đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou? Chi phí quá cao nhưng chưa chắc chắn về chất lượng ứng viên, hay liệu họ có gắn bó lâu dài với công ty hay không?\n👉Đừng lo! Hãy để HelloJob giúp bạn tối ưu quy trình tuyển dụng.\n<h2>Tối ưu chi phí – Tăng hiệu quả</h2>\nGiả sử bạn đang tuyển ứng viên Tokutei tại Nhật trong ngành Thực phẩm:\n<strong>Chi phí thông thường: 250,000 JPY/ứng viên</strong>\n<strong>Với HelloJob, bạn chỉ cần: 100,000 JPY/ứng viên</strong>\nChúng tôi có hàng chục công ty phái cử uy tín sẵn sàng hỗ trợ, với dịch vụ minh bạch, cụ thể, chi tiết.\nNếu mức phí 100,000 JPY chưa có công ty phù hợp, bạn có thể: Nâng lên 110,000 JPY → 120,000 JPY để thử dần\nNgay cả khi ở mức 150,000 JPY, bạn vẫn tiết kiệm được 100,000 JPY so với chi phí thông thường!\nKhoản tiết kiệm này bạn có thể dùng để:\n<ul>\n<li>Nâng cao chất lượng ứng viên</li>\n<li>Tăng lương, thưởng để tối ưu hiệu suất</li>\n<li>Hoặc đưa vào ngân sách tiết kiệm → tăng lợi nhuận dòng cho công ty</li>\n</ul>\nĐừng bỏ lỡ cơ hội!\n👉 Hãy bấm ngay {ctaButton} trên HelloJob và trải nghiệm hiệu quả tuyển dụng Tối ưu ngay hôm nay!",
       "author": "Đội ngũ HelloJob",
       "readTime": "3 phút đọc",
       "image": {
@@ -594,7 +592,7 @@
         "alt": "Người đang suy nghĩ với máy tính",
         "hint": "person thinking calculator"
       },
-      "ctaPhrase": "Đăng việc làm",
+      "ctaPhrase": "{ctaButton}",
       "ctaButton": "Đăng việc làm"
     },
     "commentSection": {
@@ -666,8 +664,8 @@
           "type": "article"
         },
         {
-          "title": "Chi phí sinh hoạt ở Nhật Bản hết bao nhiêu một tháng?",
-          "category": "Cuộc sống ở Nhật",
+          "title": "How Much is the Cost of Living in Japan per Month?",
+          "category": "Life in Japan",
           "image": "https://picsum.photos/400/400?random=3",
           "type": "article"
         }
@@ -749,12 +747,12 @@
     "title": "Chọn phương thức đăng đơn",
     "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
-      "title": "Đăng nhanh (AI)",
-      "description": "Chỉ cần mô tả ngắn gọn, AI sẽ tạo tin tuyển dụng chuyên nghiệp."
+      "title": "Đăng nhanh",
+      "description": "Chỉ vào thao tác bấm đơn giản để đưa thông tin việc làm lên tìm ứng viên phù hợp."
     },
     "manual": {
       "title": "Đăng chi tiết",
-      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
+      "description": "Điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát tin đăng."
     }
   },
    "jobsPage": {
@@ -840,7 +838,7 @@
       "secure": "Thanh toán được bảo mật"
     }
   },
-    "partnershipOpportunities": {
+  "partnershipOpportunities": {
     "title": "Cơ hội hợp tác mới",
     "from": "Từ: {company}",
     "expiresIn": "Hết hạn sau",
@@ -848,30 +846,30 @@
     "fees": "Thông tin phí",
     "referralFee": "Tổng phí giới thiệu",
     "managementFee": "Phí quản lý",
-    "platformFee": "Phí nền tảng",
+    "platformFee": "Phí nền tảng ({percent})",
     "partnerReceives": "Bạn nhận về",
     "accept": "Nhận",
     "decline": "Từ chối",
     "referredByYou": "Do bạn giới thiệu",
     "table": {
-        "opportunity": "Cơ hội",
-        "company": "Công ty",
-        "visaType": "Loại Visa",
-        "fees": "Thông tin phí",
-        "expires": "Hết hạn",
-        "actions": "Hành động"
-      },
-      "feeRanges": {
-        "sendingCompany": {
-            "referral": "70,000 - 150,000 JPY",
-            "platform_20": "20% (từ {fee})",
-            "platform_25": "25% (từ {fee})",
-            "platform_30": "30% (từ {fee})",
-            "receives_20": "56,000 - 120,000 JPY",
-            "receives_25": "52,500 - 112,500 JPY",
-            "receives_30": "49,000 - 105,000 JPY"
-        }
+      "opportunity": "Cơ hội",
+      "company": "Công ty",
+      "visaType": "Loại Visa",
+      "fees": "Thông tin phí",
+      "expires": "Hết hạn",
+      "actions": "Hành động"
+    },
+    "feeRanges": {
+      "sendingCompany": {
+        "referral": "70,000 - 150,000 JPY",
+        "platform_20": "20% (từ {fee})",
+        "platform_25": "25% (từ {fee})",
+        "platform_30": "30% (từ {fee})",
+        "receives_20": "56,000 - 120,000 JPY",
+        "receives_25": "52,500 - 112,500 JPY",
+        "receives_30": "49,000 - 105,000 JPY"
       }
+    }
   },
   "partnershipInfo": {
     "revenueShare": {
@@ -955,5 +953,3 @@
     "contactButton": "Liên hệ ngay"
   }
 }
-
-    
