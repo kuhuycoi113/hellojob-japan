@@ -104,10 +104,10 @@ export function PartnershipOpportunities() {
         };
 
         if (userRole === 'sending_company') {
-            const possibleFees = [150000, 90000, 120000, 70000];
+            const possibleFees = [150000, 90000, 120000, 70000, 150000, 90000, 120000, 70000];
             const referralFee = possibleFees[parseInt(opportunity.id.slice(-1), 16) % possibleFees.length];
 
-            const feeRates = [0.25, 0.30, 0.20];
+            const feeRates = [0.25, 0.30, 0.20, 0.25, 0.30, 0.20, 0.25, 0.30];
             const platformFeeRate = feeRates[parseInt(opportunity.id.slice(-1), 16) % feeRates.length];
             
             const platformFee = referralFee * platformFeeRate;
@@ -121,11 +121,11 @@ export function PartnershipOpportunities() {
                         <span className="text-muted-foreground">{t_opp.referralFee}:</span>
                         <span className="font-medium text-muted-foreground">{formatCurrency(referralFee)}</span>
                     </div>
-                    <div className="flex justify-between items-baseline text-xs">
-                        <span className="text-muted-foreground">{t_opp.platformFee}:</span>
-                         <span className={cn("font-medium", isDiscounted ? "text-green-600 font-bold" : "text-muted-foreground")}>
-                            {`${platformFeeRate * 100}% (${formatCurrency(platformFee)})`}
+                     <div className="flex justify-between items-baseline text-xs">
+                        <span className="text-muted-foreground">
+                            {t_opp.platformFee} (<span className={cn(isDiscounted ? "text-green-600 font-bold" : "")}>{platformFeeRate * 100}%</span>):
                         </span>
+                        <span className="font-medium text-muted-foreground">{formatCurrency(platformFee)}</span>
                     </div>
                      <div className="flex justify-between items-baseline">
                         <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
@@ -346,7 +346,3 @@ export function PartnershipOpportunities() {
         </div>
     );
 }
-
-    
-
-    
