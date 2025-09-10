@@ -362,7 +362,7 @@ export function Header() {
                 <div onClick={handlePostMethodSelect}>
                 <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center">
                     <div className="bg-primary/5 p-3 rounded-lg mb-4">
-                    <Sparkles className="h-8 w-8 text-primary" />
+                    <Brain className="h-8 w-8 text-primary" />
                     </div>
                     <h3 className="font-semibold text-base text-gray-800">
                     {t.postMethod.ai.title}

@@ -753,7 +753,7 @@
     "description": "How would you like to create your job listing?",
     "ai": {
       "title": "Quick Post",
-      "description": "Just provide a short description, and the system will quickly create a professional job post for you."
+      "description": "A few quick steps to see suitable candidates."
     },
     "manual": {
       "title": "Manual Entry",
