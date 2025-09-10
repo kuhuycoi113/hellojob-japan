@@ -664,7 +664,7 @@
           "type": "video"
         },
         {
-          "title": "5 Kinh nghiệm phỏng vấn Tokutei Ginou chắc chắnậu",
+          "title": "5 Kinh nghiệm phỏng vấn Tokutei Ginou chắc chắn đậu",
           "category": "Kinh nghiệm phỏng vấn",
           "image": "https://picsum.photos/400/400?random=2",
           "type": "article"
@@ -753,7 +753,7 @@
     "title": "Chọn phương thức đăng tin",
     "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
-      "title": "Đăng nhanh bằng AI",
+      "title": "Đăng nhanh",
       "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
     },
     "manual": {

@@ -752,7 +752,7 @@
     "title": "Choose a Posting Method",
     "description": "How would you like to create your job listing?",
     "ai": {
-      "title": "Post with AI",
+      "title": "Quick Post",
       "description": "With a simple description, AI will create a professional job post."
     },
     "manual": {
