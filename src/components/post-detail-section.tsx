@@ -21,6 +21,7 @@ import {
   MessageCircle,
   BookOpen,
   PlayCircle,
+  PlusCircle,
 } from 'lucide-react';
 import Link from 'next/link';
 import { FeaturedJobsSidebar } from './featured-jobs-sidebar';
@@ -70,8 +71,11 @@ export function PostDetailSection() {
                      <div key={index} className="not-prose">
                        <p>{parts[0]}</p>
                        <div className="my-6 text-center">
-                          <Button asChild size="lg">
-                            <Link href="/post-job-ai">{t.postDetail.article.ctaButton}</Link>
+                          <Button asChild variant="secondary">
+                            <Link href="/post-job-ai">
+                              <PlusCircle className="mr-2 h-4 w-4" />
+                              {t.postDetail.article.ctaButton}
+                            </Link>
                           </Button>
                        </div>
                        <p>{parts[1]}</p>
