@@ -159,7 +159,8 @@ export function JobsPage() {
   }, []);
 
   const handleDeleteJob = (jobId: string) => {
-    setJobs(prevJobs => prevJobs.filter(job => job.id !== jobId));
+    const updatedJobs = jobs.filter(job => job.id !== jobId);
+    setJobs(updatedJobs);
 
     const storedJobsRaw = localStorage.getItem('postedJobs');
     if (storedJobsRaw) {
@@ -498,5 +499,7 @@ export function JobsPage() {
     </div>
   );
 }
+
+    
 
     
