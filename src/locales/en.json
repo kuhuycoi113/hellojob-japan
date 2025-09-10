@@ -338,7 +338,7 @@
     "featured": {
       "category": "Supporting Organizations",
       "title": "Recruit Tokutei Ginou – The Ultimate Cost-Saving Solution for Shien Kikan with HelloJob 🚀",
-      "description": "Are you a Japanese Supporting Organization (Shien Kikan) struggling with recruiting Tokutei Ginou candidates? Are costs too high with uncertainty about candidate quality or long-term commitment? 👉 Don't worry! Let HelloJob help you optimize your recruitment process. Optimize Costs – Increase Efficiency. Let's say you're recruiting Tokutei candidates in Japan for the Food industry: Typical Cost: 250,000 JPY/candidate. With HelloJob, you only need: 100,000 JPY/candidate. We have dozens of reputable sending companies ready to assist with transparent, specific, and detailed services. If the 100,000 JPY fee doesn't attract a suitable company, you can: Gradually increase to 110,000 JPY → 120,000 JPY. Even at 150,000 JPY, you still save 100,000 JPY compared to the typical cost! You can use these savings to: ✨ Enhance candidate quality ✨ Increase salaries and bonuses to optimize performance ✨ Or add to your savings budget → increasing net profit for your company. Don't miss out! 👉 Click 'Post a Trial Order' on HelloJob now and experience optimal recruitment efficiency today!",
+      "description": "Struggling with high costs and uncertain quality when recruiting Tokutei Ginou candidates? Discover how HelloJob helps you optimize costs and increase efficiency.",
       "link": "Read article"
     },
     "videoTitle": "Short Videos",
@@ -581,22 +581,15 @@
   },
   "postDetail": {
     "article": {
-      "category": "Interview Experience",
-      "title": "How to Write a Compelling Japanese CV to Impress Recruiters",
-      "excerpt": "A well-prepared CV (履歴書 - rirekisho) is the first and most crucial step to opening the door to your dream job in Japan. It's not just a summary of your experience, but your very first introduction to a potential employer.",
+      "category": "Supporting Organizations",
+      "title": "Recruit Tokutei Ginou – The Ultimate Cost-Saving Solution for Shien Kikan with HelloJob 🚀",
+      "content": "Are you a Japanese Supporting Organization (Shien Kikan) struggling with recruiting Tokutei Ginou candidates? Are costs too high with uncertainty about candidate quality or long-term commitment? \n👉 Don't worry! Let HelloJob help you optimize your recruitment process. \nOptimize Costs – Increase Efficiency. \nLet's say you're recruiting Tokutei candidates in Japan for the Food industry: \nTypical Cost: 250,000 JPY/candidate. \nWith HelloJob, you only need: 100,000 JPY/candidate. \nWe have dozens of reputable sending companies ready to assist with transparent, specific, and detailed services. \nIf the 100,000 JPY fee doesn't attract a suitable company, you can: \nGradually increase to 110,000 JPY → 120,000 JPY. \nEven at 150,000 JPY, you still save 100,000 JPY compared to the typical cost! \nYou can use these savings to: \n✨ Enhance candidate quality \n✨ Increase salaries and bonuses to optimize performance \n✨ Or add to your savings budget → increasing net profit for your company. \nDon't miss out! \n👉 Click 'Post a Trial Order' on HelloJob now and experience optimal recruitment efficiency today!",
       "author": "HelloJob Team",
-      "readTime": "8 min read",
+      "readTime": "3 min read",
       "image": {
         "src": "https://picsum.photos/1200/675?random=100",
-        "alt": "Person writing a CV",
-        "hint": "person writing resume"
-      },
-      "content": {
-        "p1": "In a competitive landscape, a professional, clean, and comprehensive CV will make you stand out. It's essential to adhere to the common rules and standards of a Japanese CV, from the layout and use of honorifics (keigo) to the profile picture.",
-        "p2": "The Specified Skilled Worker (特定技能 - Tokutei Ginou) visa is a new residency status for foreign workers in Japan, introduced by the Japanese government in April 2019. The main purpose of this program is to address serious labor shortages in specific industrial fields in Japan. This program is divided into two main categories:",
-        "listHtml": "<ul><li><strong>Specified Skilled Worker (i) (Tokutei Ginou 1)</strong>: For workers with a certain level of skill and specialized knowledge, who can work immediately without much training. The maximum period of stay is 5 years, and family members are not allowed to accompany them.</li><li><strong>Specified Skilled Worker (ii) (Tokutei Ginou 2)</strong>: For workers with high-level skills and professional expertise. After completing the Type 1 program, workers can take an exam to advance to Type 2 to stay in Japan long-term, with opportunities to apply for permanent residency and sponsor family members.</li></ul>",
-        "h2": "Conditions for Participation",
-        "p3": "To participate in the Specified Skilled Worker program, workers need to meet basic conditions: Be 18 years of age or older, pass the Japanese-Language Proficiency Test (JLPT) at level N4 or equivalent exams like the JFT-Basic, and pass the skills proficiency test for their registered industry."
+        "alt": "Person thinking with calculator",
+        "hint": "person thinking calculator"
       }
     },
     "commentSection": {
@@ -866,8 +859,8 @@
       "feeRanges": {
         "sendingCompany": {
             "referral": "70,000 - 150,000 JPY",
-            "platform_20": "20% - 30%",
-            "receives_20": "49,000 - 120,000 JPY"
+            "platform_20": "20% (from {fee})",
+            "receives_20": "56,000 - 120,000 JPY"
         }
       }
   },

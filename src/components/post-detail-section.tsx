@@ -4,18 +4,14 @@ import Image from 'next/image';
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useLanguage } from '@/contexts/language-context';
-import { MessageSquare, ThumbsUp, MessageCircle, PlayCircle, BookOpen, Newspaper } from 'lucide-react';
+import { MessageSquare, ThumbsUp, MessageCircle, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import { FeaturedJobsSidebar } from './featured-jobs-sidebar';
 
@@ -25,6 +21,9 @@ export function PostDetailSection() {
   const article = t.postDetail.article;
   const comments = t.postDetail.comments;
   const relatedContent = t.postDetail.relatedContent;
+
+  // Split content by newline to render paragraphs
+  const contentParagraphs = article.content.split('\n').filter(p => p.trim() !== '');
 
   return (
     <section className="py-16 sm:py-24">
@@ -43,7 +42,6 @@ export function PostDetailSection() {
                   <span>&middot;</span>
                   <span>{article.readTime}</span>
               </div>
-              <p className="lead">{article.excerpt}</p>
               <div className="relative aspect-video my-8 rounded-lg overflow-hidden">
                 <Image
                   src={article.image.src}
@@ -53,14 +51,16 @@ export function PostDetailSection() {
                   data-ai-hint={article.image.hint}
                 />
               </div>
-              <p>{article.content.p1}</p>
-              <p>{article.content.p2}</p>
-              <div
-                dangerouslySetInnerHTML={{ __html: article.content.listHtml }}
-                className="prose-ul:list-disc prose-ul:pl-6 prose-li:my-1"
-              ></div>
-              <h2>{article.content.h2}</h2>
-              <p>{article.content.p3}</p>
+              {contentParagraphs.map((paragraph, index) => {
+                // Simple check for list items
+                if (paragraph.trim().startsWith('✨')) {
+                  return <p key={index} className="flex items-start"><span className="mr-2">✨</span><span>{paragraph.replace('✨', '').trim()}</span></p>;
+                }
+                 if (paragraph.trim().startsWith('👉')) {
+                  return <p key={index} className="flex items-start"><span className="mr-2">👉</span><span>{paragraph.replace('👉', '').trim()}</span></p>;
+                }
+                return <p key={index}>{paragraph}</p>;
+              })}
             </article>
 
             <Card className="shadow-lg" id="comments">
