@@ -114,6 +114,11 @@ export function Header() {
   
     const userRoles: Role[] = [
       {
+        icon: <Building className="h-8 w-8 text-indigo-500" />,
+        title: t.userRoles.receivingCompany.title,
+        description: t.userRoles.receivingCompany.description,
+      },
+      {
         icon: <Users className="h-8 w-8 text-yellow-500" />,
         title: t.userRoles.supportOrg.title,
         description: t.userRoles.supportOrg.description,
@@ -132,6 +137,11 @@ export function Header() {
         icon: <BuildingIcon className="h-8 w-8 text-blue-500" />,
         title: t.userRoles.sendingCompany.title,
         description: t.userRoles.sendingCompany.description,
+      },
+      {
+        icon: <Building className="h-8 w-8 text-purple-500" />,
+        title: t.userRoles.hakenCompany.title,
+        description: t.userRoles.hakenCompany.description,
       },
   ];
 
@@ -342,3 +352,5 @@ export function Header() {
     </header>
   );
 }
+
+    

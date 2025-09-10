@@ -337,8 +337,8 @@
     "searchPlaceholder": "Search articles (e.g., Tokutei, costs...)",
     "featured": {
       "category": "Supporting Organizations",
-      "title": "Recruit Tokutei Ginou – The Ultimate Cost-Saving Solution for Shien Kikan with HelloJob 🚀",
-      "description": "Struggling with high costs and uncertain quality when recruiting Tokutei Ginou candidates? Discover how HelloJob helps you optimize costs and increase efficiency.",
+      "title": "Recruit Tokutei Ginou - The Ultimate Cost-Saving Solution for Shien Kikan",
+      "description": "Discover effective strategies and tools to optimize recruitment costs for Vietnamese labor, from leveraging technology platforms to smart partnerships.",
       "link": "Read article"
     },
     "videoTitle": "Short Videos",
@@ -693,6 +693,14 @@
     "sendingCompany": {
       "title": "Sending Company",
       "description": "Recruits and dispatches workers from Vietnam."
+    },
+    "receivingCompany": {
+      "title": "Receiving Company",
+      "description": "Directly employs and utilizes workers."
+    },
+    "hakenCompany": {
+      "title": "Dispatch Company (Haken)",
+      "description": "Provides temporary worker dispatch services."
     }
   },
   "chat": {
@@ -952,3 +960,5 @@
     "contactButton": "Contact Now"
   }
 }
+
+    

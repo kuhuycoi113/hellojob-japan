@@ -2,7 +2,7 @@
 
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
-type Role = 'guest' | 'union' | 'support_org' | 'sending_company' | 'yuryo_shokai';
+type Role = 'guest' | 'union' | 'support_org' | 'sending_company' | 'yuryo_shokai' | 'receiving_company' | 'haken_company';
 
 interface RoleContextType {
   userRole: Role;
@@ -28,3 +28,5 @@ export const useRole = () => {
   }
   return context;
 };
+
+    

@@ -137,8 +137,6 @@
     "title": "人材の質へのこだわり",
     "subtitle": "専門スキルはもちろん、貴社の企業文化にマッチする人材の提供をお約束します。",
     "thoroughScreening": "徹底したスクリーニング",
-    "thoroughScreeningDesc": "全ての候補者に対し、専門スキル、実務能力、そして働く姿勢を評価する独自の面接プロセスを実施しています。",
-    "detailedProfiles": "詳細なプロフィール",
     "detailedProfilesDesc": "紹介動画や検証済みの資格・学歴証明書を含む、信頼性の高い詳細な候補者情報を提供します。",
     "inDepthTraining": "来日前の手厚い教育",
     "inDepthTrainingDesc": "候補者は来日前に、日本の言語、ビジネスマナー、そして企業文化に適応するための研修を受けます。"
@@ -339,8 +337,8 @@
     "searchPlaceholder": "記事を検索 (例: 特定技能、費用...)",
     "featured": {
       "category": "登録支援機関",
-      "title": "特定技能の採用 – HelloJobで支援機関のコストを最適化 🚀",
-      "description": "特定技能候補者の採用における高コストと品質の不確実性に悩んでいませんか？HelloJobがコストを最適化し、効率を高める方法をご紹介します。",
+      "title": "特定技能の採用 – 支援機関向けのコスト最適化ソリューション",
+      "description": "ベトナム人労働者の採用コストを最適化するための効果的な戦略とツールを発見しましょう。テクノロジープラットフォームの活用から、賢いパートナーシップまで。",
       "link": "記事を読む"
     },
     "videoTitle": "ショート動画",
@@ -695,6 +693,14 @@
     "sendingCompany": {
       "title": "送り出し機関",
       "description": "ベトナムから労働者を募集・派遣する。"
+    },
+    "receivingCompany": {
+      "title": "受入企業",
+      "description": "労働者を直接雇用・活用する。"
+    },
+    "hakenCompany": {
+      "title": "派遣会社",
+      "description": "労働者派遣サービスを提供する。"
     }
   },
   "chat": {
@@ -954,3 +960,5 @@
     "contactButton": "今すぐ相談"
   }
 }
+
+    
