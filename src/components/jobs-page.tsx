@@ -159,17 +159,13 @@ export function JobsPage() {
   }, []);
 
   const handleDeleteJob = (jobId: string) => {
-    // Update state to remove the job from the UI
     setJobs(prevJobs => prevJobs.filter(job => job.id !== jobId));
 
-    // Also remove from localStorage if it's a user-created job
     const storedJobsRaw = localStorage.getItem('postedJobs');
     if (storedJobsRaw) {
-        let storedJobs = JSON.parse(storedJobsRaw);
-        const updatedStoredJobs = storedJobs.filter((job: MockJob) => job.id !== jobId);
-        if (storedJobs.length !== updatedStoredJobs.length) {
-            localStorage.setItem('postedJobs', JSON.stringify(updatedStoredJobs));
-        }
+      const storedJobs = JSON.parse(storedJobsRaw);
+      const updatedStoredJobs = storedJobs.filter((job: MockJob) => job.id !== jobId);
+      localStorage.setItem('postedJobs', JSON.stringify(updatedStoredJobs));
     }
   };
 
