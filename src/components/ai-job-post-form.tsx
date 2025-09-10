@@ -498,31 +498,6 @@ function AiJobPostFormContent() {
     );
   }
 
-  const handleFindPartners = async () => {
-    if (!editableJobPost) return;
-
-    setState('loading_partners');
-    setMatchingPartners(null);
-
-    try {
-      const result = await findMatchingPartners({
-        jobPost: editableJobPost,
-        allPartners,
-        language,
-      });
-      setMatchingPartners(result);
-      setState('partners_completed');
-    } catch (error) {
-      console.error("Error finding matching partners:", error);
-      toast({
-        title: t.ai_job_post_form.error.apiTitle,
-        description: t.ai_job_post_form.error.apiDescription,
-        variant: "destructive",
-      });
-      setState('job_completed'); // Revert to previous state on error
-    }
-  }
-
   const handlePostJob = () => {
     if (!editableJobPost) return;
     try {
@@ -564,9 +539,8 @@ function AiJobPostFormContent() {
     }
   };
 
-  const handlePostAndFindPartners = async () => {
+  const handlePostAndFindPartners = () => {
     handlePostJob();
-    await handleFindPartners();
   }
 
   const handleEdit = <K extends keyof GenerateJobPostOutput>(field: K, value: GenerateJobPostOutput[K]) => {
