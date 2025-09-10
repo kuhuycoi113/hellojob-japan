@@ -21,7 +21,7 @@
     "menuItems": {
       "recruiterAccount": "Tài khoản nhà tuyển dụng",
       "recruiterAccountType": "Tài khoản {type}",
-      "postJobAI": "Đăng việc AI",
+      "postJobAI": "Đăng bằng AI",
       "howItWorks": "Các bước",
       "recruitRight": "Tuyển đúng người",
       "elearning": "E-Learning",
@@ -857,6 +857,13 @@
         "fees": "Thông tin phí",
         "expires": "Hết hạn",
         "actions": "Hành động"
+      },
+       "feeRanges": {
+        "sendingCompany": {
+            "referral": "70,000 - 150,000 JPY",
+            "platform": "20% - 30%",
+            "receives": "49,000 - 120,000 JPY"
+        }
       }
   },
   "partnershipInfo": {

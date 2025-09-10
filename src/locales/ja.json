@@ -580,7 +580,7 @@
       "title": "私たちのチーム",
       "subtitle": "HelloJobの成功の陰には、常にあなたの成長のために努力する献身的な人々がいます。"
     }
-  },
+},
   "postDetail": {
     "article": {
       "category": "面接のコツ",
@@ -856,6 +856,13 @@
         "fees": "手数料情報",
         "expires": "期限",
         "actions": "操作"
+      },
+      "feeRanges": {
+        "sendingCompany": {
+            "referral": "70,000 - 150,000円",
+            "platform": "20% - 30%",
+            "receives": "49,000 - 120,000円"
+        }
       }
   },
   "partnershipInfo": {

@@ -856,6 +856,13 @@
         "fees": "Fee Information",
         "expires": "Expires",
         "actions": "Actions"
+      },
+      "feeRanges": {
+        "sendingCompany": {
+            "referral": "70,000 - 150,000 JPY",
+            "platform": "20% - 30%",
+            "receives": "49,000 - 120,000 JPY"
+        }
       }
   },
   "partnershipInfo": {

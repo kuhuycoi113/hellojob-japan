@@ -14,6 +14,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { cn } from '@/lib/utils';
 import { Separator } from './ui/separator';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+import { useRole } from '@/contexts/role-context';
 
 export function PartnershipOpportunities() {
     const { t, language } = useLanguage();
@@ -96,15 +97,33 @@ export function PartnershipOpportunities() {
     }
 
     const FeeDetails = ({ opportunity }: { opportunity: Opportunity }) => {
+        const { userRole } = useRole();
+        
+        if (userRole === 'sending_company') {
+            return (
+                <div className="space-y-1">
+                    <div className="flex justify-between items-baseline">
+                        <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
+                        <span className="font-bold text-lg text-primary">{t_opp.feeRanges.sendingCompany.receives}</span>
+                    </div>
+                    <div className="flex justify-between items-baseline text-xs">
+                        <span className="text-muted-foreground">{t_opp.referralFee}:</span>
+                        <span className="font-medium text-muted-foreground">{t_opp.feeRanges.sendingCompany.referral}</span>
+                    </div>
+                    <div className="flex justify-between items-baseline text-xs">
+                        <span className="text-muted-foreground">{t_opp.platformFee}:</span>
+                        <span className="font-medium text-muted-foreground">{t_opp.feeRanges.sendingCompany.platform}</span>
+                    </div>
+                </div>
+            )
+        }
+
         const feeString = opportunity.referralFee[language];
         const feeValue = parseInt(feeString.replace(/[^0-9]/g, ''), 10);
-
-        // Simulate that some companies are referred by support organizations
         const isReferred = opportunity.id === 'OPP001' || opportunity.id === 'OPP003';
-        
-        let platformFeeRate = 0.30; // Default 30%
+        let platformFeeRate = 0.30;
         if (isReferred) {
-            platformFeeRate -= 0.05; // Reduced by 5% if referred
+            platformFeeRate -= 0.05;
         }
         
         if (isNaN(feeValue)) {
