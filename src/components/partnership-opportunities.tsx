@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -105,11 +104,11 @@ export function PartnershipOpportunities() {
         };
 
         if (userRole === 'sending_company') {
-            const possibleFees = [70000, 150000, 90000, 120000];
-            const referralFee = possibleFees[parseInt(opportunity.id.slice(-1), 10) % possibleFees.length];
+            const possibleFees = [150000, 90000, 120000, 70000];
+            const referralFee = possibleFees[parseInt(opportunity.id.slice(-1), 16) % possibleFees.length];
 
-            const feeRates = [0.20, 0.25, 0.30];
-            const platformFeeRate = feeRates[parseInt(opportunity.id.slice(-1), 10) % feeRates.length];
+            const feeRates = [0.25, 0.30, 0.20];
+            const platformFeeRate = feeRates[parseInt(opportunity.id.slice(-1), 16) % feeRates.length];
             
             const platformFee = referralFee * platformFeeRate;
             const partnerReceives = referralFee * (1 - platformFeeRate);
@@ -118,11 +117,7 @@ export function PartnershipOpportunities() {
             
             return (
                 <div className="space-y-1">
-                    <div className="flex justify-between items-baseline">
-                        <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
-                        <span className="font-bold text-lg text-primary">{formatCurrency(partnerReceives)}</span>
-                    </div>
-                     <div className="flex justify-between items-baseline text-xs">
+                    <div className="flex justify-between items-baseline text-xs">
                         <span className="text-muted-foreground">{t_opp.referralFee}:</span>
                         <span className="font-medium text-muted-foreground">{formatCurrency(referralFee)}</span>
                     </div>
@@ -131,6 +126,10 @@ export function PartnershipOpportunities() {
                          <span className={cn("font-medium", isDiscounted ? "text-green-600 font-bold" : "text-muted-foreground")}>
                             {`${platformFeeRate * 100}% (${formatCurrency(platformFee)})`}
                         </span>
+                    </div>
+                     <div className="flex justify-between items-baseline">
+                        <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
+                        <span className="font-bold text-lg text-primary">{formatCurrency(partnerReceives)}</span>
                     </div>
                 </div>
             )
@@ -158,10 +157,6 @@ export function PartnershipOpportunities() {
         
         return (
              <div className="space-y-1">
-                <div className="flex justify-between items-baseline">
-                    <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
-                    <span className="font-bold text-lg text-primary">{formatCurrency(partnerReceives)}</span>
-                </div>
                 <div className="flex justify-between items-baseline text-xs">
                     <span className="text-muted-foreground">{t_opp.referralFee}:</span>
                     <span className="font-medium text-muted-foreground">{formatCurrency(feeValue)}</span>
@@ -174,11 +169,15 @@ export function PartnershipOpportunities() {
                     <span className="font-medium text-muted-foreground">{formatCurrency(platformFee)}</span>
                 </div>
                 {opportunity.visaType.en !== 'Engineer' && (
-                  <div className="flex justify-between items-baseline text-xs pt-1">
+                  <div className="flex justify-between items-baseline text-xs">
                       <span className="text-muted-foreground">{t_opp.managementFee}:</span>
                       <span className="font-medium text-muted-foreground">{opportunity.managementFee[language]}</span>
                   </div>
                 )}
+                 <div className="flex justify-between items-baseline pt-1">
+                    <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
+                    <span className="font-bold text-lg text-primary">{formatCurrency(partnerReceives)}</span>
+                </div>
             </div>
         )
     };
