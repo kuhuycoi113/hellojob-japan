@@ -860,8 +860,12 @@
       "feeRanges": {
         "sendingCompany": {
             "referral": "70,000 - 150,000円",
-            "platform": "20% - 30%",
-            "receives": "49,000 - 120,000円"
+            "platform_20": "20%",
+            "platform_25": "25%",
+            "platform_30": "30%",
+            "receives_20": "56,000 - 120,000円",
+            "receives_25": "52,500 - 112,500円",
+            "receives_30": "49,000 - 105,000円"
         }
       }
   },

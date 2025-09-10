@@ -100,11 +100,20 @@ export function PartnershipOpportunities() {
         const { userRole } = useRole();
         
         if (userRole === 'sending_company') {
+            // Simulate different platform fees for each job
+            const feeRates = [0.20, 0.25, 0.30];
+            const platformFeeRate = feeRates[parseInt(opportunity.id.slice(-1)) % feeRates.length];
+            
+            const minReceives = 70000 * (1 - platformFeeRate);
+            const maxReceives = 150000 * (1 - platformFeeRate);
+            
+            const formatCurrency = (value: number) => Math.round(value / 1000) * 1000;
+            
             return (
                 <div className="space-y-1">
                     <div className="flex justify-between items-baseline">
                         <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
-                        <span className="font-bold text-lg text-primary">{t_opp.feeRanges.sendingCompany.receives}</span>
+                        <span className="font-bold text-lg text-primary">{`${formatCurrency(minReceives).toLocaleString()} - ${formatCurrency(maxReceives).toLocaleString()} JPY`}</span>
                     </div>
                     <div className="flex justify-between items-baseline text-xs">
                         <span className="text-muted-foreground">{t_opp.referralFee}:</span>
@@ -112,7 +121,7 @@ export function PartnershipOpportunities() {
                     </div>
                     <div className="flex justify-between items-baseline text-xs">
                         <span className="text-muted-foreground">{t_opp.platformFee}:</span>
-                        <span className="font-medium text-muted-foreground">{t_opp.feeRanges.sendingCompany.platform}</span>
+                        <span className="font-medium text-muted-foreground">{`${platformFeeRate * 100}%`}</span>
                     </div>
                 </div>
             )

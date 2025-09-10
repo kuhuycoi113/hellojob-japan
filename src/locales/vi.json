@@ -754,7 +754,7 @@
     "title": "Chọn phương thức đăng tin",
     "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
-      "title": "Đăng bằng AI",
+      "title": "Đăng nhanh bằng AI",
       "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
     },
     "manual": {
@@ -858,11 +858,15 @@
         "expires": "Hết hạn",
         "actions": "Hành động"
       },
-       "feeRanges": {
+      "feeRanges": {
         "sendingCompany": {
             "referral": "70,000 - 150,000 JPY",
-            "platform": "20% - 30%",
-            "receives": "49,000 - 120,000 JPY"
+            "platform_20": "20%",
+            "platform_25": "25%",
+            "platform_30": "30%",
+            "receives_20": "56,000 - 120,000 JPY",
+            "receives_25": "52,500 - 112,500 JPY",
+            "receives_30": "49,000 - 105,000 JPY"
         }
       }
   },

@@ -137,8 +137,6 @@
     "title": "Commitment to Candidate Quality",
     "subtitle": "We guarantee to provide a workforce that is not only professionally skilled but also a great fit for your corporate culture.",
     "thoroughScreening": "Rigorous Screening",
-    "thoroughScreeningDesc": "Every candidate undergoes a professional interview process, skills assessment, and attitude evaluation.",
-    "detailedProfiles": "Verified & Detailed Profiles",
     "detailedProfilesDesc": "We provide comprehensive candidate profiles with detailed information, introduction videos, and verified credentials.",
     "inDepthTraining": "Pre-departure Training",
     "inDepthTrainingDesc": "Candidates are thoroughly trained in Japanese language, culture, and professional work skills before their departure."
@@ -860,8 +858,12 @@
       "feeRanges": {
         "sendingCompany": {
             "referral": "70,000 - 150,000 JPY",
-            "platform": "20% - 30%",
-            "receives": "49,000 - 120,000 JPY"
+            "platform_20": "20%",
+            "platform_25": "25%",
+            "platform_30": "30%",
+            "receives_20": "56,000 - 120,000 JPY",
+            "receives_25": "52,500 - 112,500 JPY",
+            "receives_30": "49,000 - 105,000 JPY"
         }
       }
   },
