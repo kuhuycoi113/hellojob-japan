@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond, LogIn } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond, LogIn, FileText } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -95,6 +95,7 @@ export function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
+  const [mainDialogOpen, setMainDialogOpen] = useState(false);
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
 
   const languageConfig = {
@@ -146,9 +147,14 @@ export function Header() {
 
   const handleRoleSelect = (role: Role) => {
     setRoleDialogOpen(false);
+    setMainDialogOpen(false);
     const params = new URLSearchParams();
     params.set('role', role.title);
     router.push(`/post-job-ai?${params.toString()}`);
+  }
+
+  const openRoleDialog = () => {
+    setRoleDialogOpen(true);
   }
 
   return (
@@ -208,14 +214,37 @@ export function Header() {
           </Button>
 
           <div className="hidden md:flex items-center gap-2">
-             <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
-                <DialogTrigger asChild>
-                    <Button variant="secondary">
-                        <PlusCircle className="mr-2 h-4 w-4" />
-                        {t.header.postJob}
-                    </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-3xl">
+            <Dialog open={mainDialogOpen} onOpenChange={setMainDialogOpen}>
+              <DialogTrigger asChild>
+                  <Button variant="secondary">
+                      <PlusCircle className="mr-2 h-4 w-4" />
+                      {t.header.postJob}
+                  </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-xl">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
+                  <DialogDescription className="text-center">
+                    {t.postMethod.description}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center justify-center" onClick={openRoleDialog}>
+                      <div className="bg-primary/5 p-3 rounded-lg mb-4"><Sparkles className="h-8 w-8 text-primary" /></div>
+                      <h3 className="font-semibold text-base text-gray-800">{t.postMethod.ai.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{t.postMethod.ai.description}</p>
+                    </Card>
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center justify-center" onClick={() => { /* TODO */ }}>
+                        <div className="bg-primary/5 p-3 rounded-lg mb-4"><FileText className="h-8 w-8 text-primary" /></div>
+                        <h3 className="font-semibold text-base text-gray-800">{t.postMethod.manual.title}</h3>
+                        <p className="text-sm text-muted-foreground mt-1">{t.postMethod.manual.description}</p>
+                    </Card>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
+              <DialogContent className="sm:max-w-3xl">
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
                     <DialogDescription className="text-center">
@@ -244,8 +273,9 @@ export function Header() {
                     </div>
                     ))}
                 </div>
-                </DialogContent>
-             </Dialog>
+              </DialogContent>
+            </Dialog>
+
             <Button variant="outline" asChild>
                 <Link href="/jobs" className={cn(pathname === "/jobs" && "text-primary font-bold")}>
                     {t.header.x_function}

@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Dialog,
   DialogContent,
@@ -13,7 +13,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { useLanguage } from '@/contexts/language-context';
-import { Building, Handshake, Users, ChevronRight } from 'lucide-react';
+import { Building, Handshake, Users, ChevronRight, Sparkles, FileText } from 'lucide-react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -22,6 +22,7 @@ type Role = { title: string; description: string; icon: JSX.Element; }
 export function Cta() {
   const { t } = useLanguage();
   const router = useRouter();
+  const [mainDialogOpen, setMainDialogOpen] = useState(false);
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
 
   const userRoles: Role[] = [
@@ -49,9 +50,16 @@ export function Cta() {
 
   const handleRoleSelect = (role: Role) => {
     setRoleDialogOpen(false);
+    setMainDialogOpen(false);
     const params = new URLSearchParams();
     params.set('role', role.title);
     router.push(`/post-job-ai?${params.toString()}`);
+  }
+
+  const openRoleDialog = () => {
+    // We don't close the main dialog, but open the role dialog over it.
+    // This feels more like a sub-step.
+    setRoleDialogOpen(true);
   }
 
   return (
@@ -64,12 +72,35 @@ export function Cta() {
           {t.cta.subtitle}
         </p>
         <div className="mt-8 flex justify-center gap-4">
-          <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
+          <Dialog open={mainDialogOpen} onOpenChange={setMainDialogOpen}>
             <DialogTrigger asChild>
               <Button size="lg" className='bg-accent text-accent-foreground hover:bg-accent/90'>
                 {t.cta.postJob}
               </Button>
             </DialogTrigger>
+            <DialogContent className="sm:max-w-xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
+                <DialogDescription className="text-center">
+                  {t.postMethod.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                 <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center justify-center" onClick={openRoleDialog}>
+                    <div className="bg-primary/5 p-3 rounded-lg mb-4"><Sparkles className="h-8 w-8 text-primary" /></div>
+                    <h3 className="font-semibold text-base text-gray-800">{t.postMethod.ai.title}</h3>
+                    <p className="text-sm text-muted-foreground mt-1">{t.postMethod.ai.description}</p>
+                </Card>
+                 <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center justify-center" onClick={() => { /* TODO */ }}>
+                    <div className="bg-primary/5 p-3 rounded-lg mb-4"><FileText className="h-8 w-8 text-primary" /></div>
+                    <h3 className="font-semibold text-base text-gray-800">{t.postMethod.manual.title}</h3>
+                    <p className="text-sm text-muted-foreground mt-1">{t.postMethod.manual.description}</p>
+                </Card>
+              </div>
+            </DialogContent>
+          </Dialog>
+
+          <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
             <DialogContent className="sm:max-w-3xl">
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
