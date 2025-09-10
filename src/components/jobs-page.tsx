@@ -159,13 +159,17 @@ export function JobsPage() {
   }, []);
 
   const handleDeleteJob = (jobId: string) => {
-    // We only allow deleting jobs that are in localStorage (i.e., user-created)
+    // Update state to remove the job from the UI
+    setJobs(prevJobs => prevJobs.filter(job => job.id !== jobId));
+
+    // Also remove from localStorage if it's a user-created job
     const storedJobsRaw = localStorage.getItem('postedJobs');
     if (storedJobsRaw) {
         let storedJobs = JSON.parse(storedJobsRaw);
         const updatedStoredJobs = storedJobs.filter((job: MockJob) => job.id !== jobId);
-        localStorage.setItem('postedJobs', JSON.stringify(updatedStoredJobs));
-        loadJobs(); // Reload all jobs to update the UI
+        if (storedJobs.length !== updatedStoredJobs.length) {
+            localStorage.setItem('postedJobs', JSON.stringify(updatedStoredJobs));
+        }
     }
   };
 
@@ -209,13 +213,10 @@ export function JobsPage() {
   const isGuest = userRole === 'guest';
   
   const DeleteButton = ({ jobId }: { jobId: string}) => {
-    const isMock = !localStorage.getItem('postedJobs')?.includes(jobId);
-    if (isMock) return null;
-
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button variant="destructive" size="xs" onClick={(e) => e.preventDefault()}>
+                <Button variant="destructive" size="xs" onClick={(e) => {e.preventDefault(); e.stopPropagation();}}>
                     <Trash2 className="h-4 w-4" />
                 </Button>
             </AlertDialogTrigger>
@@ -355,7 +356,6 @@ export function JobsPage() {
                                         <DropdownMenuItem
                                             onSelect={(e) => e.preventDefault()}
                                             className="text-red-600 focus:bg-red-50 focus:text-red-700"
-                                            disabled={!localStorage.getItem('postedJobs')?.includes(job.id)}
                                         >
                                             {t.jobsPage.table.delete}
                                         </DropdownMenuItem>
@@ -502,3 +502,5 @@ export function JobsPage() {
     </div>
   );
 }
+
+    
