@@ -1,8 +1,18 @@
-// This is a new file.
+
 import { PartnerDetailPage } from '@/components/dashboard/partner-detail-page';
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
 
 export default function PartnerDetail({ params }: { params: { slug: string } }) {
-  return <PartnerDetailPage slug={params.slug} />;
+  return (
+    <div className="flex min-h-screen flex-col bg-blue-50/50">
+      <Header />
+      <main className="flex-1">
+        <PartnerDetailPage slug={params.slug} />
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
 // Optional: Generate static paths for featured partners if you want faster initial loads
