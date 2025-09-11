@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, PlusCircle, AlertCircle, Settings, Diamond, LogIn, FileText, ArrowLeft } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, PlusCircle, AlertCircle, Settings, Diamond, LogIn, FileText, ArrowLeft, Handshake } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,7 +20,7 @@ import { useLanguage } from '@/contexts/language-context';
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
-import { Building as BuildingIcon, Handshake, Users } from 'lucide-react';
+import { Building as BuildingIcon, Users } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useChat } from '@/contexts/chat-context';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
@@ -156,6 +156,7 @@ export function Header() {
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/advisors", label: t.header.menuItems.advisors, icon: <UsersIcon /> },
+    { href: "#", label: t.header.menuItems.partnerList, icon: <Handshake /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];

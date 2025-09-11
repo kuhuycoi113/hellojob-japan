@@ -60,6 +60,7 @@ export function MobileMenuSheet() {
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/advisors", label: t.header.advisors, icon: <Users /> },
+    { href: "#", label: t.header.menuItems.partnerList, icon: <Handshake /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
@@ -130,5 +131,3 @@ export function MobileMenuSheet() {
     </Sheet>
   );
 }
-
-    
