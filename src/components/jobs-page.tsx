@@ -32,6 +32,7 @@ import {
   UserSquare,
   Info,
   Trash2,
+  LogIn,
 } from 'lucide-react';
 import {
   Pagination,
@@ -66,6 +67,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Label } from './ui/label';
 import { useRole } from '@/contexts/role-context';
 import { useLanguage } from '@/contexts/language-context';
+import { AuthDialog } from './auth-dialog';
 
 
 const statusStyles: Record<string, string> = {
@@ -492,7 +494,13 @@ export function JobsPage() {
               </div>
             </div>
             <CardTitle className="text-xl font-bold font-headline">{t.jobsPage.noJobsGuest.title}</CardTitle>
-            <p className="text-muted-foreground mt-2">{t.jobsPage.noJobsGuest.description}</p>
+            <p className="text-muted-foreground mt-2 mb-6">{t.jobsPage.noJobsGuest.description}</p>
+            <AuthDialog>
+              <Button>
+                <LogIn className="mr-2 h-4 w-4" />
+                {t.header.menuItems.guestCta.button}
+              </Button>
+            </AuthDialog>
           </Card>
         )}
       </div>
