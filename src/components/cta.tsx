@@ -30,7 +30,7 @@ export function Cta() {
   const [roleDialogOpen, setRoleDialogOpen] = useState(false);
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
 
-  const userRolesGroup1: Role[] = [
+  const userRoles: Role[] = [
     {
       icon: <Building className="h-8 w-8 text-indigo-500" />,
       title: t.userRoles.receivingCompany.title,
@@ -41,9 +41,6 @@ export function Cta() {
       title: t.userRoles.hakenCompany.title,
       description: t.userRoles.hakenCompany.description,
     },
-  ];
-
-  const userRolesGroup2: Role[] = [
     {
       icon: <Users className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
@@ -65,8 +62,6 @@ export function Cta() {
       description: t.userRoles.sendingCompany.description,
     },
   ];
-
-  const userRoles = [...userRolesGroup1, ...userRolesGroup2];
 
   const handleRoleSelect = (role: Role) => {
     setRoleDialogOpen(false);
@@ -132,57 +127,27 @@ export function Cta() {
                 </DialogDescription>
               </DialogHeader>
               <ScrollArea className="flex-grow pr-6 -mr-6">
-                  <div className="space-y-6 py-4">
-                    <div>
-                      <h4 className="font-semibold text-center text-gray-600 mb-4">{t.userRoles.group1_title}</h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {userRolesGroup1.map((role) => (
-                          <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                            <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                              <div className="flex items-center gap-4">
-                                <div className="bg-primary/5 p-3 rounded-lg">
-                                  {role.icon}
-                                </div>
-                                <div>
-                                  <h3 className="font-semibold text-base text-gray-800">
-                                    {role.title}
-                                  </h3>
-                                  <p className="text-sm text-muted-foreground mt-1 hidden sm:block">
-                                    {role.description}
-                                  </p>
-                                </div>
-                              </div>
-                              <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                            </Card>
+                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                    {userRoles.map((role) => (
+                      <div key={role.title} onClick={() => handleRoleSelect(role)}>
+                        <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                          <div className="flex items-center gap-4">
+                            <div className="bg-primary/5 p-3 rounded-lg">
+                              {role.icon}
+                            </div>
+                            <div>
+                              <h3 className="font-semibold text-base text-gray-800">
+                                {role.title}
+                              </h3>
+                              <p className="text-sm text-muted-foreground mt-1 hidden sm:block">
+                                {role.description}
+                              </p>
+                            </div>
                           </div>
-                        ))}
+                          <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                        </Card>
                       </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-center text-gray-600 mb-4">{t.userRoles.group2_title}</h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {userRolesGroup2.map((role) => (
-                          <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                            <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                              <div className="flex items-center gap-4">
-                                <div className="bg-primary/5 p-3 rounded-lg">
-                                  {role.icon}
-                                </div>
-                                <div>
-                                  <h3 className="font-semibold text-base text-gray-800">
-                                    {role.title}
-                                  </h3>
-                                  <p className="text-sm text-muted-foreground mt-1 hidden sm:block">
-                                    {role.description}
-                                  </p>
-                                </div>
-                              </div>
-                              <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                            </Card>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </ScrollArea>
               <DialogFooter className="flex-row justify-start border-t pt-4 mt-auto">
