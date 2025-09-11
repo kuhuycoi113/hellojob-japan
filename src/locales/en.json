@@ -962,5 +962,70 @@
       "chat": "Chat with AI"
     },
     "contactButton": "Contact Now"
-  }
+  },
+  "elearningHero": {
+    "title": "Upskill, Expand Opportunities",
+    "subtitle": "Online courses specifically designed to help you succeed in the Japanese labor market.",
+    "cta": "Explore Courses",
+    "imageAlt": "Students learning online with laptops"
+  },
+  "allCoursesTitle": "All Courses",
+  "allCoursesSubtitle": "From language, culture to professional skills, we have everything you need.",
+  "enrollNow": "Enroll Now",
+  "allCourses": [
+    {
+      "title": "Business Japanese Communication",
+      "description": "Confidently communicate with Japanese colleagues and superiors in any work situation.",
+      "category": "Language",
+      "duration": "12 weeks",
+      "level": "Beginner",
+      "reviews": "120",
+      "hint": "japanese classroom"
+    },
+    {
+      "title": "Japanese Corporate Culture",
+      "description": "Understand the working style, etiquette, and core values in a Japanese company.",
+      "category": "Culture",
+      "duration": "4 weeks",
+      "level": "All Levels",
+      "reviews": "98",
+      "hint": "business meeting japan"
+    },
+    {
+      "title": "Kaizen & 5S Skills",
+      "description": "Master the principles of continuous improvement and effective workplace organization.",
+      "category": "Skills",
+      "duration": "6 weeks",
+      "level": "Intermediate",
+      "reviews": "75",
+      "hint": "factory improvement"
+    },
+    {
+      "title": "Intensive JLPT N3 Prep",
+      "description": "Conquer the JLPT N3 with an effective and structured learning path.",
+      "category": "Language",
+      "duration": "16 weeks",
+      "level": "Intermediate",
+      "reviews": "150",
+      "hint": "person studying exam"
+    },
+    {
+      "title": "Workplace Safety in Factories",
+      "description": "Equip yourself with the necessary knowledge and skills to ensure safety for yourself and colleagues.",
+      "category": "Skills",
+      "duration": "2 weeks",
+      "level": "Beginner",
+      "reviews": "60",
+      "hint": "safety gear factory"
+    },
+    {
+      "title": "Elderly Care Skills",
+      "description": "An intensive course for those working in the caregiving and nursing industry.",
+      "category": "Specialized",
+      "duration": "10 weeks",
+      "level": "All Levels",
+      "reviews": "88",
+      "hint": "caregiver helping elderly"
+    }
+  ]
 }

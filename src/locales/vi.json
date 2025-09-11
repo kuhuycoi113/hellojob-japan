@@ -963,5 +963,70 @@
       "chat": "Chat với AI"
     },
     "contactButton": "Liên hệ ngay"
-  }
+  },
+  "elearningHero": {
+    "title": "Nâng cao Kỹ năng, Mở rộng Cơ hội",
+    "subtitle": "Các khóa học trực tuyến được thiết kế đặc biệt để giúp bạn thành công tại thị trường lao động Nhật Bản.",
+    "cta": "Khám phá các khóa học",
+    "imageAlt": "Học viên đang học trực tuyến với laptop"
+  },
+  "allCoursesTitle": "Tất cả các khóa học",
+  "allCoursesSubtitle": "Từ ngôn ngữ, văn hóa đến kỹ năng chuyên ngành, chúng tôi có mọi thứ bạn cần.",
+  "enrollNow": "Đăng ký ngay",
+  "allCourses": [
+    {
+      "title": "Tiếng Nhật giao tiếp trong công việc",
+      "description": "Tự tin giao tiếp với đồng nghiệp và cấp trên người Nhật trong mọi tình huống công việc.",
+      "category": "Ngôn ngữ",
+      "duration": "12 tuần",
+      "level": "Sơ cấp",
+      "reviews": "120",
+      "hint": "japanese classroom"
+    },
+    {
+      "title": "Văn hóa doanh nghiệp Nhật Bản",
+      "description": "Hiểu rõ về cách làm việc, quy tắc ứng xử và các giá trị cốt lõi trong công ty Nhật.",
+      "category": "Văn hóa",
+      "duration": "4 tuần",
+      "level": "Mọi cấp độ",
+      "reviews": "98",
+      "hint": "business meeting japan"
+    },
+    {
+      "title": "Kỹ năng Kaizen và 5S",
+      "description": "Nắm vững các nguyên tắc cải tiến liên tục và sắp xếp nơi làm việc hiệu quả.",
+      "category": "Kỹ năng",
+      "duration": "6 tuần",
+      "level": "Trung cấp",
+      "reviews": "75",
+      "hint": "factory improvement"
+    },
+    {
+      "title": "Luyện thi JLPT N3 cấp tốc",
+      "description": "Chinh phục kỳ thi năng lực tiếng Nhật N3 với lộ trình học tập hiệu quả và bài bản.",
+      "category": "Ngôn ngữ",
+      "duration": "16 tuần",
+      "level": "Trung cấp",
+      "reviews": "150",
+      "hint": "person studying exam"
+    },
+    {
+      "title": "An toàn lao động trong nhà xưởng",
+      "description": "Trang bị kiến thức và kỹ năng cần thiết để đảm bảo an toàn cho bản thân và đồng nghiệp.",
+      "category": "Kỹ năng",
+      "duration": "2 tuần",
+      "level": "Sơ cấp",
+      "reviews": "60",
+      "hint": "safety gear factory"
+    },
+    {
+      "title": "Kỹ năng chăm sóc người cao tuổi",
+      "description": "Khóa học chuyên sâu dành cho các bạn làm việc trong ngành hộ lý, điều dưỡng.",
+      "category": "Chuyên ngành",
+      "duration": "10 tuần",
+      "level": "Mọi cấp độ",
+      "reviews": "88",
+      "hint": "caregiver helping elderly"
+    }
+  ]
 }

@@ -962,5 +962,70 @@
       "chat": "AIとチャット"
     },
     "contactButton": "今すぐ相談"
-  }
+  },
+  "elearningHero": {
+    "title": "スキルを磨き、チャンスを広げる",
+    "subtitle": "日本の労働市場で成功するために特別に設計されたオンラインコース。",
+    "cta": "コースを探す",
+    "imageAlt": "ラップトップでオンライン学習する学生"
+  },
+  "allCoursesTitle": "すべてのコース",
+  "allCoursesSubtitle": "言語、文化から専門スキルまで、必要なものがすべて揃っています。",
+  "enrollNow": "今すぐ登録",
+  "allCourses": [
+    {
+      "title": "ビジネス日本語会話",
+      "description": "日本の同僚や上司と、あらゆるビジネスシーンで自信を持ってコミュニケーションが取れるようになります。",
+      "category": "言語",
+      "duration": "12週間",
+      "level": "初級",
+      "reviews": "120",
+      "hint": "japanese classroom"
+    },
+    {
+      "title": "日本の企業文化",
+      "description": "日本企業における働き方、ビジネスマナー、そして核となる価値観を深く理解します。",
+      "category": "文化",
+      "duration": "4週間",
+      "level": "すべてのレベル",
+      "reviews": "98",
+      "hint": "business meeting japan"
+    },
+    {
+      "title": "カイゼンと5Sのスキル",
+      "description": "継続的な改善と効率的な職場整理の原則を習得します。",
+      "category": "スキル",
+      "duration": "6週間",
+      "level": "中級",
+      "reviews": "75",
+      "hint": "factory improvement"
+    },
+    {
+      "title": "JLPT N3短期集中講座",
+      "description": "効果的で体系的な学習プランで、日本語能力試験N3の合格を目指します。",
+      "category": "言語",
+      "duration": "16週間",
+      "level": "中級",
+      "reviews": "150",
+      "hint": "person studying exam"
+    },
+    {
+      "title": "工場での労働安全",
+      "description": "自分自身と同僚の安全を確保するために必要な知識とスキルを身につけます。",
+      "category": "スキル",
+      "duration": "2週間",
+      "level": "初級",
+      "reviews": "60",
+      "hint": "safety gear factory"
+    },
+    {
+      "title": "介護スキル",
+      "description": "介護・看護業界で働く方々のための専門的な集中コースです。",
+      "category": "専門",
+      "duration": "10週間",
+      "level": "すべてのレベル",
+      "reviews": "88",
+      "hint": "caregiver helping elderly"
+    }
+  ]
 }
