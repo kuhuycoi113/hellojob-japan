@@ -92,10 +92,10 @@ export function AuthDialog({ children }: { children: React.ReactNode }) {
                 <div className="hidden md:block relative">
                     <Image
                         src="https://picsum.photos/seed/sso/800/1200"
-                        alt="Inspirational image"
+                        alt="Inspirational image for recruiters"
                         fill
                         className="object-cover"
-                        data-ai-hint="journey path"
+                        data-ai-hint="teamwork collaboration"
                     />
                     <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-12">
                         <blockquote className="text-white text-3xl font-semibold">

@@ -42,7 +42,7 @@
   },
   "authDialog": {
     "title": "HelloJobへようこそ！",
-    "description": "アカウントを作成して、あなたのキャリアの可能性を広げましょう。",
+    "description": "アカウントを作成して、採用の可能性を最大限に引き出しましょう。",
     "continueWithGoogle": "Googleで続行",
     "continueWithFacebook": "Facebookで続行",
     "or": "または",
@@ -58,8 +58,8 @@
       "suffix": "に同意したことになります。"
     },
     "quote": {
-      "text": "千里の道も一歩から。",
-      "author": "老子"
+      "text": "人格を採用し、スキルは訓練せよ。",
+      "author": "ピーター・シュッツ"
     }
   },
   "pagination": {

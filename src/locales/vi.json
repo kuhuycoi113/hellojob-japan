@@ -43,7 +43,7 @@
   },
   "authDialog": {
     "title": "Chào mừng bạn đến với HelloJob!",
-    "description": "Tạo tài khoản để mở khóa tiềm năng sự nghiệp của bạn.",
+    "description": "Tạo tài khoản để mở khóa tiềm năng tuyển dụng của bạn.",
     "continueWithGoogle": "Tiếp tục với Google",
     "continueWithFacebook": "Tiếp tục với Facebook",
     "or": "HOẶC",
@@ -59,8 +59,8 @@
       "suffix": "của chúng tôi."
     },
     "quote": {
-      "text": "Hành trình vạn dặm, bắt đầu từ một bước chân.",
-      "author": "Lão Tử"
+      "text": "Hãy tuyển dụng nhân cách. Kỹ năng có thể đào tạo.",
+      "author": "Peter Schutz"
     }
   },
   "pagination": {

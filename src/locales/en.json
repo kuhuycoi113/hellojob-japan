@@ -42,7 +42,7 @@
   },
   "authDialog": {
     "title": "Welcome to HelloJob!",
-    "description": "Create an account to unlock your career potential.",
+    "description": "Create an account to unlock your recruitment potential.",
     "continueWithGoogle": "Continue with Google",
     "continueWithFacebook": "Continue with Facebook",
     "or": "OR",
@@ -58,8 +58,8 @@
       "suffix": ""
     },
     "quote": {
-      "text": "A journey of a thousand miles begins with a single step.",
-      "author": "Lao Tzu"
+      "text": "Hire character. Train skill.",
+      "author": "Peter Schutz"
     }
   },
   "pagination": {
