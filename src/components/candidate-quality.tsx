@@ -47,7 +47,7 @@ export function CandidateQuality() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature) => (
-            <Card key={feature.title} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+            <Card key={feature.hint} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
               <div className="aspect-w-16 aspect-h-9">
                  <Image
                   src={feature.image}
