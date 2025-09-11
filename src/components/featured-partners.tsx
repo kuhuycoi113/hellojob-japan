@@ -35,20 +35,12 @@ export function FeaturedPartners() {
 
   const partners = t.featuredPartners.partners;
   
-  const partnerLinks: Record<string, string> = {
-    "Nghiệp đoàn Global Support": "/dashboard/partner/global-support",
-    "Global Support Union": "/dashboard/partner/global-support",
-    "グローバルサポート協同組合": "/dashboard/partner/global-support",
-    "Tổ chức hỗ trợ Sakura": "/dashboard/partner/sakura-support",
-    "Sakura Support Org.": "/dashboard/partner/sakura-support",
-    "登録支援機関さくら": "/dashboard/partner/sakura-support",
-    "Công ty TNHH Vietnam Link": "/dashboard/partner/vietnam-link",
-    "Vietnam Link Co., Ltd": "/dashboard/partner/vietnam-link",
-    "ベトナムリンク有限会社": "/dashboard/partner/vietnam-link",
-    "Công ty cổ phần Nhân lực Vietproud": "/dashboard/partner-profile",
-    "Vietproud Manpower JSC": "/dashboard/partner-profile",
-    "ベットプラウド人材株式会社": "/dashboard/partner-profile",
-  };
+  const partnerLinks = [
+    "/dashboard/partner/global-support",
+    "/dashboard/partner/sakura-support",
+    "/dashboard/partner/vietnam-link",
+    "/dashboard/partner-profile"
+  ];
 
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
@@ -63,33 +55,39 @@ export function FeaturedPartners() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {partners.map((partner, index) => {
-            const partnerLink = partnerLinks[partner.name] || "#";
-            const isVietproud = partner.name === t.featuredPartners.partners[3].name;
+            const partnerLink = partnerLinks[index] || "#";
+            const isVietproud = index === 3; // Based on the original data structure
 
-            if (isVietproud) {
-                return (
-                    <Card
-                        key={index}
-                        className="flex flex-col text-center items-center p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full"
-                    >
-                         <Link href={partnerLink} className="group w-full">
-                            <div className="relative h-20 w-40 mx-auto mb-4">
-                            <Image
-                                src={`https://picsum.photos/300/150?random=${50 + index}`}
-                                alt={partner.name}
-                                fill
-                                className="object-contain"
-                                data-ai-hint="company logo"
-                            />
-                            </div>
-                            <CardContent className="flex flex-col flex-grow items-center p-0">
-                                <h3 className="font-bold text-lg text-gray-800 flex-grow">{partner.name}</h3>
-                                <p className="text-sm text-muted-foreground mt-1 mb-4">{partner.type}</p>
-                                <span className="font-semibold text-primary inline-flex items-center text-sm group-hover:underline">
-                                    {t.featuredPartners.viewProfile} <ArrowRight className="ml-1 h-3 w-3" />
-                                </span>
-                            </CardContent>
-                         </Link>
+            const partnerCardContent = (
+                <>
+                    <div className="relative h-20 w-40 mx-auto mb-4">
+                    <Image
+                        src={`https://picsum.photos/300/150?random=${50 + index}`}
+                        alt={partner.name}
+                        fill
+                        className="object-contain"
+                        data-ai-hint="company logo"
+                    />
+                    </div>
+                    <CardContent className="flex flex-col flex-grow items-center p-0">
+                        <h3 className="font-bold text-lg text-gray-800 flex-grow">{partner.name}</h3>
+                        <p className="text-sm text-muted-foreground mt-1 mb-4">{partner.type}</p>
+                         <span className="font-semibold text-primary inline-flex items-center text-sm group-hover:underline">
+                            {t.featuredPartners.viewProfile} <ArrowRight className="ml-1 h-3 w-3" />
+                        </span>
+                    </CardContent>
+                </>
+            );
+
+            return (
+                <Card
+                    key={index}
+                    className="flex flex-col text-center items-center p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full"
+                >
+                    <Link href={partnerLink} className="group w-full flex flex-col flex-grow">
+                        {partnerCardContent}
+                    </Link>
+                    {isVietproud && (
                          <div className="border-t w-full mt-4 pt-4 grid grid-cols-5 gap-2">
                              <Button variant="outline" size="icon" className="h-8 w-8"><FacebookMessengerIcon/></Button>
                              <Button variant="outline" size="icon" className="h-8 w-8"><LineIcon/></Button>
@@ -97,39 +95,8 @@ export function FeaturedPartners() {
                              <Button variant="outline" size="icon" className="h-8 w-8"><Phone className="h-4 w-4"/></Button>
                              <Button variant="outline" size="icon" className="h-8 w-8"><Mail className="h-4 w-4"/></Button>
                          </div>
-                    </Card>
-                )
-            }
-            
-            const partnerCard = (
-              <Card
-                className="flex flex-col text-center items-center p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full"
-              >
-                <div className="relative h-20 w-40 mb-4">
-                  <Image
-                    src={`https://picsum.photos/300/150?random=${50 + index}`}
-                    alt={partner.name}
-                    fill
-                    className="object-contain"
-                    data-ai-hint="company logo"
-                  />
-                </div>
-                <CardContent className="flex flex-col flex-grow items-center p-0">
-                  <h3 className="font-bold text-lg text-gray-800 flex-grow">{partner.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-1 mb-4">{partner.type}</p>
-                  <Button asChild variant="link" className="p-0 text-sm">
-                     <span className="flex items-center">
-                        {t.featuredPartners.viewProfile} <ArrowRight className="ml-1 h-3 w-3" />
-                     </span>
-                  </Button>
-                </CardContent>
-              </Card>
-            );
-
-            return (
-              <Link href={partnerLink} key={partner.name} className="group">
-                  {partnerCard}
-              </Link>
+                    )}
+                </Card>
             )
           })}
         </div>
