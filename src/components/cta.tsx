@@ -131,7 +131,7 @@ export function Cta() {
                   {t.userRoles.description}
                 </DialogDescription>
               </DialogHeader>
-              <ScrollArea className="flex-grow pr-6">
+              <ScrollArea className="flex-grow pr-6 -mr-6">
                   <div className="space-y-6 py-4">
                     <div>
                       <h4 className="font-semibold text-center text-gray-600 mb-4">{t.userRoles.group1_title}</h4>
