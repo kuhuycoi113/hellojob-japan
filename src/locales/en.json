@@ -1126,5 +1126,8 @@
         "Follow-up and support for workers throughout their employment in Japan."
       ]
     }
+  },
+  "partnerDetailPage": {
+    "partnerNotFound": "Partner not found."
   }
 }

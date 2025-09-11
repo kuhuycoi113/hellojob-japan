@@ -31,17 +31,17 @@ const FacebookMessengerIcon = () => (
 );
 
 export function FeaturedPartners() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const partners = t.featuredPartners.partners;
-  
-  const partnerLinks = [
-    "/dashboard/partner/global-support",
-    "/dashboard/partner/sakura-support",
-    "/dashboard/partner/vietnam-link",
-    "/dashboard/partner-profile"
-  ];
 
+  const partnerSlugs = [
+    'global-support-union',
+    'sakura-support-org',
+    'vietnam-link-co-ltd',
+    'vietproud-manpower-jsc'
+  ]
+  
   return (
     <section className="py-16 sm:py-24 bg-blue-50/50">
       <div className="container mx-auto px-4">
@@ -55,8 +55,9 @@ export function FeaturedPartners() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {partners.map((partner, index) => {
-            const partnerLink = partnerLinks[index] || "#";
-            const isVietproud = index === 3; // Based on the original data structure
+            const partnerSlug = partnerSlugs[index];
+            const partnerLink = `/dashboard/partner/${partnerSlug}`;
+            const isVietproud = partnerSlug === 'vietproud-manpower-jsc';
 
             const partnerCardContent = (
                 <>

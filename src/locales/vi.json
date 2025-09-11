@@ -1127,5 +1127,8 @@
         "Theo dõi và hỗ trợ người lao động trong suốt quá trình làm việc tại Nhật Bản."
       ]
     }
+  },
+  "partnerDetailPage": {
+    "partnerNotFound": "Không tìm thấy đối tác."
   }
 }
