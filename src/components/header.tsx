@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, MessageSquareText, PlusCircle, AlertCircle, Settings, Diamond, LogIn, FileText, ArrowLeft } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, PlusCircle, AlertCircle, Settings, Diamond, LogIn, FileText, ArrowLeft } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -204,7 +204,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleChat}>
-            <MessageSquareText className="h-6 w-6" />
+            <MessageSquare className="h-6 w-6" />
           </Button>
 
           <div className="md:hidden">

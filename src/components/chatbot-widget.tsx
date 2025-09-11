@@ -183,7 +183,7 @@ function LiveChatWidgetContent() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle chat"
         >
-         {isOpen ? <X className="h-8 w-8" /> : <MessageSquareText className="h-8 w-8" />}
+         {isOpen ? <X className="h-8 w-8" /> : <MessageSquare className="h-8 w-8" />}
         </Button>
       </div>
 
