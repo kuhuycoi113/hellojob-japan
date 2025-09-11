@@ -137,14 +137,14 @@ export function Header() {
       description: t.userRoles.union.description,
     },
     {
-      icon: <Building className="h-8 w-8 text-purple-500" />,
-      title: t.userRoles.hakenCompany.title,
-      description: t.userRoles.hakenCompany.description,
-    },
-    {
       icon: <Users className="h-8 w-8 text-red-500" />,
       title: t.userRoles.yuryoShokai.title,
       description: t.userRoles.yuryoShokai.description,
+    },
+    {
+      icon: <Building className="h-8 w-8 text-purple-500" />,
+      title: t.userRoles.hakenCompany.title,
+      description: t.userRoles.hakenCompany.description,
     },
   ];
 
@@ -300,8 +300,8 @@ export function Header() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                     {userRoles.map((role) => (
                       <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                        <Card className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                          <div className="flex items-center gap-4">
+                        <Card className="p-4 sm:p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
+                          <div className="flex items-center gap-2 sm:gap-4">
                             <div className="bg-primary/5 p-3 rounded-lg">
                               {role.icon}
                             </div>
