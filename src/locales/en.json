@@ -1058,5 +1058,73 @@
       "reviews": "88",
       "hint": "caregiver helping elderly"
     }
-  ]
+  ],
+  "partnerProfile": {
+    "companyName": "TVC Joint Stock Company",
+    "companyType": "Sending Company",
+    "location": "Hanoi, Vietnam",
+    "logout": "Log Out",
+    "about": {
+      "title": "About the Company",
+      "description": "TVC Sending Company is one of the leading units in Vietnam in providing high-quality human resources for the Japanese market. With many years of experience, we are proud to have successfully connected thousands of workers with reputable enterprises in Japan, focusing on industries such as construction, mechanics, and agriculture. We are committed to providing thorough training and comprehensive support to ensure that workers are best prepared for their work and life in Japan."
+    },
+    "videos": {
+      "title": "Company Videos",
+      "items": [
+        { "src": "https://picsum.photos/seed/vid1/400/225", "hint": "corporate presentation" },
+        { "src": "https://picsum.photos/seed/vid2/400/225", "hint": "worker interview" },
+        { "src": "https://picsum.photos/seed/vid3/400/225", "hint": "training facility" }
+      ]
+    },
+    "images": {
+      "title": "Company Photos",
+      "items": [
+        { "src": "https://picsum.photos/seed/img1/400/400", "hint": "office building" },
+        { "src": "https://picsum.photos/seed/img2/400/400", "hint": "team photo" },
+        { "src": "https://picsum.photos/seed/img3/400/400", "hint": "training session" },
+        { "src": "https://picsum.photos/seed/img4/400/400", "hint": "company event" }
+      ]
+    },
+    "history": {
+      "title": "History & Milestones",
+      "items": [
+        { "year": "2010", "title": "Company Establishment", "description": "Started with a team of 10 employees, focusing on the Japanese market." },
+        { "year": "2015", "title": "Received Labor Export License", "description": "Officially licensed by the Ministry of Labour, expanding the scale of operations." },
+        { "year": "2019", "title": "Partnered with 50+ Japanese Enterprises", "description": "Expanded the partner network, supplying a diverse range of professions for workers." }
+      ]
+    },
+    "licenses": {
+      "title": "Licenses & Certifications",
+      "items": ["Service operation license to send workers abroad No. 999/LDTBXH-GP"]
+    },
+    "info": {
+      "title": "Company Information",
+      "items": [
+        { "icon": "founded", "label": "Founded", "value": "2010" },
+        { "icon": "size", "label": "Size", "value": "50-100 employees" },
+        { "icon": "phone", "label": "Phone", "value": "024-1234-5678" },
+        { "icon": "website", "label": "Website", "value": "tvc-hr.com.vn" },
+        { "icon": "address", "label": "Address", "value": "Cau Giay District, Hanoi, Vietnam" }
+      ]
+    },
+    "industry": {
+      "title": "Industries & Fields",
+      "main": {
+        "title": "Main Industries",
+        "tags": ["Construction", "Mechanics", "Agriculture"]
+      },
+      "fields": {
+        "title": "Fields of Operation",
+        "description": "Supplying labor for industries: construction, mechanics, agriculture, food processing, caregiving."
+      }
+    },
+    "benefits": {
+      "title": "Benefits & Environment",
+      "items": [
+        "Support for Japanese language and vocational skills training before departure.",
+        "Loan support program for workers.",
+        "Follow-up and support for workers throughout their employment in Japan."
+      ]
+    }
+  }
 }

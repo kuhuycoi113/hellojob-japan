@@ -608,8 +608,8 @@
   "postDetail": {
     "article": {
       "category": "Cơ quan hỗ trợ",
-      "title": "Tuyển dụng Tokutei Ginou – Giải pháp tối ưu chi phí cho Shien cùng HelloJob 🚀",
-      "content": "<h2>Bạn là Cơ quan hỗ trợ Nhật Bản (Shien Kikan), bạn đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou? Chi phí quá cao nhưng chưa chắc chắn về chất lượng ứng viên, hay liệu họ có gắn bó lâu dài với công ty hay không?</h2>\n<p>👉Đừng lo! Hãy để HelloJob giúp bạn tối ưu quy trình tuyển dụng.</p>\n<h2>Tối ưu chi phí – Tăng hiệu quả</h2>\n<p>Giả sử bạn đang tuyển ứng viên Tokutei tại Nhật trong ngành Thực phẩm:</p>\n<ul><li><strong>Chi phí thông thường: 250,000 JPY/ứng viên</strong></li><li><strong>Với HelloJob, bạn chỉ cần: 100,000 JPY/ứng viên</strong></li></ul>\n<p>Chúng tôi có hàng chục công ty phái cử uy tín sẵn sàng hỗ trợ, với dịch vụ minh bạch, cụ thể, chi tiết.</p>\n<p>Nếu mức phí 100,000 JPY chưa có công ty phù hợp, bạn có thể: Nâng lên 110,000 JPY → 120,000 JPY để thử dần. Ngay cả khi ở mức 150,000 JPY, bạn vẫn tiết kiệm được 100,000 JPY so với chi phí thông thường!</p>\n<h2>Khoản tiết kiệm này bạn có thể dùng để:</h2>\n<ul>\n<li>Nâng cao chất lượng ứng viên</li>\n<li>Tăng lương, thưởng để tối ưu hiệu suất</li>\n<li>Hoặc đưa vào ngân sách tiết kiệm → tăng lợi nhuận dòng cho công ty</li>\n</ul>\n<p>Đừng bỏ lỡ cơ hội!</p>\n<p>👉 Hãy bấm ngay {ctaPhrase} trên HelloJob và trải nghiệm hiệu quả tuyển dụng Tối ưu ngay hôm nay!</p>",
+      "title": "Tuyển dụng Tokutei Ginou – Giải pháp tối ưu chi phí cho Shien kikan cùng HelloJob 🚀",
+      "content": "<h2>Bạn là Cơ quan hỗ trợ Nhật Bản (Shien Kikan), bạn đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou? Chi phí quá cao nhưng chưa chắc chắn về chất lượng ứng viên, hay liệu họ có gắn bó lâu dài với công ty hay không?</h2>\n<p>👉Đừng lo! Hãy để HelloJob giúp bạn tối ưu quy trình tuyển dụng.</p>\n<h2>Tối ưu chi phí – Tăng hiệu quả</h2>\n<p>Giả sử bạn đang tuyển ứng viên Tokutei tại Nhật trong ngành Thực phẩm:</p>\n<ul><li><strong>Chi phí thông thường: 250,000 JPY/ứng viên</strong></li><li><strong>Với HelloJob, bạn chỉ cần: 100,000 JPY/ứng viên</strong></li></ul>\n<p>Chúng tôi có hàng chục công ty phái cử uy tín sẵn sàng hỗ trợ, với dịch vụ minh bạch, cụ thể, chi tiết.</p>\n<p>Nếu mức phí 100,000 JPY chưa có công ty phù hợp, bạn có thể: Nâng lên 110,000 JPY → 120,000 JPY để thử dần. Ngay cả khi ở mức 150,000 JPY, bạn vẫn tiết kiệm được 100,000 JPY so với chi phí thông thường!</p>\n<h2>Khoản tiết kiệm này bạn có thể dùng để:</h2>\n<ul>\n<li>Nâng cao chất lượng ứng viên</li>\n<li>Tăng lương, thưởng để tối ưu hiệu suất</li>\n<li>Hoặc đưa vào ngân sách tiết kiệm → tăng lợi nhuận dòng cho công ty</li>\n</ul>\n<p>Đừng bỏ lỡ cơ hội!</p>\n<p>👉 Hãy bấm ngay {ctaButton} trên HelloJob và trải nghiệm hiệu quả tuyển dụng Tối ưu ngay hôm nay!</p>",
       "author": "Đội ngũ HelloJob",
       "readTime": "3 phút đọc",
       "image": {
@@ -1059,5 +1059,73 @@
       "reviews": "88",
       "hint": "caregiver helping elderly"
     }
-  ]
+  ],
+  "partnerProfile": {
+    "companyName": "Công ty cổ phần TVC",
+    "companyType": "Công ty phái cử",
+    "location": "Hà Nội, Việt Nam",
+    "logout": "Đăng xuất",
+    "about": {
+      "title": "Giới thiệu doanh nghiệp",
+      "description": "Công ty phái cử TVC là một trong những đơn vị hàng đầu tại Việt Nam trong lĩnh vực cung ứng nhân lực chất lượng cao cho thị trường Nhật Bản. Với nhiều năm kinh nghiệm, chúng tôi tự hào đã kết nối thành công hàng ngàn lao động với các doanh nghiệp uy tín tại Nhật, tập trung vào các ngành nghề như xây dựng, cơ khí, và nông nghiệp. Chúng tôi cam kết đào tạo bài bản và hỗ trợ toàn diện để đảm bảo người lao động có sự chuẩn bị tốt nhất cho công việc và cuộc sống tại Nhật."
+    },
+    "videos": {
+      "title": "Video về doanh nghiệp",
+      "items": [
+        { "src": "https://picsum.photos/seed/vid1/400/225", "hint": "corporate presentation" },
+        { "src": "https://picsum.photos/seed/vid2/400/225", "hint": "worker interview" },
+        { "src": "https://picsum.photos/seed/vid3/400/225", "hint": "training facility" }
+      ]
+    },
+    "images": {
+      "title": "Ảnh về doanh nghiệp",
+      "items": [
+        { "src": "https://picsum.photos/seed/img1/400/400", "hint": "office building" },
+        { "src": "https://picsum.photos/seed/img2/400/400", "hint": "team photo" },
+        { "src": "https://picsum.photos/seed/img3/400/400", "hint": "training session" },
+        { "src": "https://picsum.photos/seed/img4/400/400", "hint": "company event" }
+      ]
+    },
+    "history": {
+      "title": "Lịch sử & các mốc sự kiện",
+      "items": [
+        { "year": "2010", "title": "Thành lập công ty", "description": "Bắt đầu với đội ngũ 10 nhân viên, tập trung vào thị trường Nhật Bản." },
+        { "year": "2015", "title": "Nhận giấy phép xuất khẩu lao động", "description": "Chính thức được Bộ LĐ-TB&XH cấp phép, mở rộng quy mô hoạt động." },
+        { "year": "2019", "title": "Hợp tác với 50+ doanh nghiệp Nhật Bản", "description": "Mở rộng mạng lưới đối tác, cung ứng đa dạng ngành nghề cho người lao động." }
+      ]
+    },
+    "licenses": {
+      "title": "Giấy phép & Chứng nhận",
+      "items": ["Giấy phép hoạt động dịch vụ đưa người lao động đi làm việc ở nước ngoài số 999/LDTBXH-GP"]
+    },
+    "info": {
+      "title": "Thông tin doanh nghiệp",
+      "items": [
+        { "icon": "founded", "label": "Năm thành lập", "value": "2010" },
+        { "icon": "size", "label": "Quy mô", "value": "50-100 nhân viên" },
+        { "icon": "phone", "label": "SĐT", "value": "024-1234-5678" },
+        { "icon": "website", "label": "Website", "value": "tvc-hr.com.vn" },
+        { "icon": "address", "label": "Địa chỉ", "value": "Quận Cầu Giấy, Hà Nội, Việt Nam" }
+      ]
+    },
+    "industry": {
+      "title": "Ngành nghề & Lĩnh vực",
+      "main": {
+        "title": "Ngành nghề chính",
+        "tags": ["Xây dựng", "Cơ khí", "Nông nghiệp"]
+      },
+      "fields": {
+        "title": "Lĩnh vực hoạt động",
+        "description": "Cung ứng lao động cho các ngành: xây dựng, cơ khí, nông nghiệp, chế biến thực phẩm, hộ lý."
+      }
+    },
+    "benefits": {
+      "title": "Phúc lợi & Môi trường",
+      "items": [
+        "Hỗ trợ đào tạo tiếng Nhật và kỹ năng tay nghề trước khi xuất cảnh.",
+        "Chương trình hỗ trợ vay vốn cho người lao động.",
+        "Theo dõi và hỗ trợ người lao động trong suốt quá trình làm việc tại Nhật Bản."
+      ]
+    }
+  }
 }

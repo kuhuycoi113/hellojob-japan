@@ -212,7 +212,7 @@ export function Header() {
           <div className="md:hidden">
             <Dialog open={mainDialogOpen} onOpenChange={setMainDialogOpen}>
               <DialogTrigger asChild>
-                <Button variant="secondary">Đăng</Button>
+                <Button variant="secondary">{t.header.postJob}</Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-3xl">
                 <DialogHeader>

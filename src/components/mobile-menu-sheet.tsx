@@ -14,7 +14,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/language-context';
-import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle, Users, Diamond } from 'lucide-react';
+import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle, Users, Diamond, Settings } from 'lucide-react';
 import { Logo } from './logo';
 import Link from 'next/link';
 import { Separator } from './ui/separator';
@@ -78,6 +78,11 @@ export function MobileMenuSheet() {
       <SheetContent side="right" className="p-0 flex flex-col w-full max-w-sm">
         <SheetHeader className="p-4 flex flex-row items-center justify-between border-b">
           <SheetTitle><Logo /></SheetTitle>
+           <SheetClose asChild>
+            <Button variant="ghost" size="icon">
+                <Settings />
+            </Button>
+           </SheetClose>
         </SheetHeader>
         
         <div className="flex-grow overflow-y-auto px-4 pb-4 pt-4">

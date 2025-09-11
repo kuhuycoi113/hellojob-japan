@@ -1058,5 +1058,73 @@
       "reviews": "88",
       "hint": "caregiver helping elderly"
     }
-  ]
+  ],
+  "partnerProfile": {
+    "companyName": "株式会社TVC",
+    "companyType": "送り出し機関",
+    "location": "ベトナム、ハノイ",
+    "logout": "ログアウト",
+    "about": {
+      "title": "企業紹介",
+      "description": "TVC送り出し機関は、日本の市場向けに高品質な人材を供給するベトナムの主要な機関の一つです。長年の経験により、建設、機械、農業などの産業に焦点を当て、何千人もの労働者を日本の優良企業と成功裏に結びつけてきたことを誇りに思っています。私たちは、労働者が日本での仕事と生活に最善の準備ができるよう、徹底したトレーニングと包括的なサポートを提供することをお約束します。"
+    },
+    "videos": {
+      "title": "企業ビデオ",
+      "items": [
+        { "src": "https://picsum.photos/seed/vid1/400/225", "hint": "corporate presentation" },
+        { "src": "https://picsum.photos/seed/vid2/400/225", "hint": "worker interview" },
+        { "src": "https://picsum.photos/seed/vid3/400/225", "hint": "training facility" }
+      ]
+    },
+    "images": {
+      "title": "企業写真",
+      "items": [
+        { "src": "https://picsum.photos/seed/img1/400/400", "hint": "office building" },
+        { "src": "https://picsum.photos/seed/img2/400/400", "hint": "team photo" },
+        { "src": "https://picsum.photos/seed/img3/400/400", "hint": "training session" },
+        { "src": "https://picsum.photos/seed/img4/400/400", "hint": "company event" }
+      ]
+    },
+    "history": {
+      "title": "沿革とマイルストーン",
+      "items": [
+        { "year": "2010", "title": "会社設立", "description": "10人の従業員チームで開始し、日本市場に焦点を当てる。" },
+        { "year": "2015", "title": "労働者送り出し許可を取得", "description": "労働省から正式に認可され、事業規模を拡大。" },
+        { "year": "2019", "title": "50社以上の日本企業と提携", "description": "パートナーネットワークを拡大し、労働者に多様な職種を提供。" }
+      ]
+    },
+    "licenses": {
+      "title": "許可証と認定",
+      "items": ["海外労働者派遣サービス事業許可証 第999/LDTBXH-GP号"]
+    },
+    "info": {
+      "title": "企業情報",
+      "items": [
+        { "icon": "founded", "label": "設立年", "value": "2010" },
+        { "icon": "size", "label": "従業員数", "value": "50-100人" },
+        { "icon": "phone", "label": "電話番号", "value": "024-1234-5678" },
+        { "icon": "website", "label": "ウェブサイト", "value": "tvc-hr.com.vn" },
+        { "icon": "address", "label": "住所", "value": "ベトナム、ハノイ、カウザイ区" }
+      ]
+    },
+    "industry": {
+      "title": "業種と分野",
+      "main": {
+        "title": "主な業種",
+        "tags": ["建設", "機械", "農業"]
+      },
+      "fields": {
+        "title": "事業分野",
+        "description": "建設、機械、農業、食品加工、介護の各産業への労働力供給。"
+      }
+    },
+    "benefits": {
+      "title": "福利厚生と環境",
+      "items": [
+        "出国前の日本語および職業技能訓練のサポート。",
+        "労働者向けの融資支援プログラム。",
+        "日本での就労期間中の労働者のフォローアップとサポート。"
+      ]
+    }
+  }
 }
