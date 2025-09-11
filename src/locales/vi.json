@@ -139,6 +139,8 @@
     "title": "Cam Kết Về Chất Lượng Ứng Viên",
     "subtitle": "Chúng tôi đảm bảo cung cấp nguồn nhân lực không chỉ giỏi chuyên môn mà còn phù hợp với văn hóa doanh nghiệp của bạn.",
     "thoroughScreening": "Sàng lọc kỹ lưỡng",
+    "thoroughScreeningDesc": "Mỗi ứng viên đều trải qua quy trình phỏng vấn, kiểm tra năng lực và đánh giá thái độ chuyên nghiệp.",
+    "detailedProfiles": "Hồ sơ chi tiết",
     "detailedProfilesDesc": "Cung cấp hồ sơ ứng viên đầy đủ thông tin, video giới thiệu và các chứng chỉ, bằng cấp đã xác thực.",
     "inDepthTraining": "Đào tạo chuyên sâu",
     "inDepthTrainingDesc": "Ứng viên được đào tạo bài bản về ngôn ngữ, văn hóa và kỹ năng làm việc tại Nhật Bản trước khi xuất cảnh."
@@ -899,6 +901,13 @@
     "supportOrgReferral": {
       "description": "Thêm nữa, nếu xí nghiệp tiếp nhận được Cơ quan hỗ trợ giới thiệu vào hệ thống, phí nền tảng sẽ giảm thêm 5%."
     }
+  },
+  "partnerListPage": {
+    "searchPlaceholder": "Tìm tên đối tác...",
+    "partnerType": "Loại đối tác",
+    "allTypes": "Tất cả loại hình",
+    "mainIndustries": "Ngành nghề chính",
+    "noResults": "Không tìm thấy đối tác nào phù hợp."
   },
   "advisorProfile": {
     "header": {

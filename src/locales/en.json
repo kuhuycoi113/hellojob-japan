@@ -138,6 +138,8 @@
     "title": "Commitment to Candidate Quality",
     "subtitle": "We guarantee to provide a workforce that is not only professionally skilled but also a great fit for your corporate culture.",
     "thoroughScreening": "Rigorous Screening",
+    "thoroughScreeningDesc": "Each candidate goes through an interview process, skill checks, and a professional attitude assessment.",
+    "detailedProfiles": "Detailed Profiles",
     "detailedProfilesDesc": "We provide comprehensive candidate profiles with detailed information, introduction videos, and verified credentials.",
     "inDepthTraining": "Pre-departure Training",
     "inDepthTrainingDesc": "Candidates are thoroughly trained in Japanese language, culture, and professional work skills before their departure."
@@ -898,6 +900,13 @@
     "supportOrgReferral": {
       "description": "Furthermore, if the receiving company is introduced by a Supporting Organization, the platform fee is reduced by an additional 5%."
     }
+  },
+  "partnerListPage": {
+    "searchPlaceholder": "Search partner name...",
+    "partnerType": "Partner Type",
+    "allTypes": "All Types",
+    "mainIndustries": "Main Industries",
+    "noResults": "No matching partners found."
   },
   "advisorProfile": {
     "header": {

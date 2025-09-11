@@ -156,7 +156,7 @@ export function Header() {
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/advisors", label: t.header.menuItems.advisors, icon: <UsersIcon /> },
-    { href: "#", label: t.header.menuItems.partnerList, icon: <Handshake /> },
+    { href: "/partners", label: t.header.menuItems.partnerList, icon: <Handshake /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
