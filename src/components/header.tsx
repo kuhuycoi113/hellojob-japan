@@ -264,15 +264,15 @@ export function Header() {
             </Dialog>
 
             <Dialog open={roleDialogOpen} onOpenChange={setRoleDialogOpen}>
-              <DialogContent className="sm:max-w-3xl max-h-[95vh] flex flex-col">
+               <DialogContent className="sm:max-w-3xl max-h-[95vh] flex flex-col">
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
                     <DialogDescription className="text-center">
                     {t.userRoles.description}
                     </DialogDescription>
                 </DialogHeader>
-                <ScrollArea className="flex-grow">
-                  <div className="space-y-6 py-4 pr-6">
+                <ScrollArea className="flex-grow pr-6">
+                  <div className="space-y-6 py-4">
                     <div>
                       <h4 className="font-semibold text-center text-gray-600 mb-4">{t.userRoles.group1_title}</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -325,7 +325,7 @@ export function Header() {
                     </div>
                   </div>
                 </ScrollArea>
-                <DialogFooter className="flex flex-row justify-start border-t pt-4 mt-auto">
+                <DialogFooter className="flex-row justify-start border-t pt-4 mt-auto">
                     <Button variant="outline" onClick={backToMainDialog}>
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       {t.postDetail.article.backButton || 'Quay lại'}
