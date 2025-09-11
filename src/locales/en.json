@@ -40,6 +40,28 @@
     },
     "editProfile": "Edit Profile"
   },
+  "authDialog": {
+    "title": "Welcome to HelloJob!",
+    "description": "Create an account to unlock your career potential.",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithFacebook": "Continue with Facebook",
+    "or": "OR",
+    "emailOrPhone": "Email or Phone Number",
+    "signUp": "Sign Up",
+    "haveAccount": "Already have an account?",
+    "logIn": "Log In",
+    "terms": {
+      "prefix": "By continuing, you agree to our",
+      "termsLink": "Terms of Service",
+      "and": "and",
+      "privacyLink": "Privacy Policy",
+      "suffix": ""
+    },
+    "quote": {
+      "text": "A journey of a thousand miles begins with a single step.",
+      "author": "Lao Tzu"
+    }
+  },
   "pagination": {
     "previous": "Previous",
     "next": "Next"
@@ -586,7 +608,7 @@
     "article": {
       "category": "Supporting Organizations",
       "title": "Recruit Tokutei Ginou – The Ultimate Cost-Saving Solution for Shien Kikan with HelloJob 🚀",
-      "content": "<h2>Are you a Japanese Supporting Organization (Shien Kikan) struggling to recruit Tokutei Ginou candidates? Are costs too high with uncertainty about candidate quality or long-term commitment?</h2>\n<p>👉 Don't worry! Let HelloJob help you optimize your recruitment process.</p>\n<h2>Optimize Costs – Increase Efficiency</h2>\n<p>Let's say you're recruiting Tokutei candidates in Japan for the Food industry:</p>\n<ul><li><strong>Typical Cost: 250,000 JPY/candidate</strong></li><li><strong>With HelloJob, you only need: 100,000 JPY/candidate</strong></li></ul>\n<p>We have dozens of reputable sending companies ready to assist, with transparent, specific, and detailed services.</p>\n<p>If the 100,000 JPY fee doesn't attract a suitable company, you can:</p>\n<ul><li>Gradually increase to 110,000 JPY → 120,000 JPY.</li><li>Even at 150,000 JPY, you still save 100,000 JPY compared to the typical cost!</li></ul>\n<h2>What can you do with the savings?</h2>\n<ul>\n<li>Enhance candidate quality</li>\n<li>Increase salaries and bonuses to optimize performance</li>\n<li>Or add to your savings budget → increasing net profit for your company</li>\n</ul>\n<p>Don't miss out!</p>\n<p>👉 Just click “{ctaPhrase}” on HelloJob and experience optimal recruitment efficiency today!</p>",
+      "content": "<h2>Are you a Japanese Supporting Organization (Shien Kikan) struggling to recruit Tokutei Ginou candidates? Are costs too high with uncertainty about candidate quality or long-term commitment?</h2>\n<p>👉 Don't worry! Let HelloJob help you optimize your recruitment process.</p>\n<h2>Optimize Costs – Increase Efficiency</h2>\n<p>Let's say you're recruiting Tokutei candidates in Japan for the Food industry:</p>\n<ul><li><strong>Typical Cost: 250,000 JPY/candidate</strong></li><li><strong>With HelloJob, you only need: 100,000 JPY/candidate</strong></li></ul>\n<p>We have dozens of reputable sending companies ready to assist, with transparent, specific, and detailed services.</p>\n<p>If the 100,000 JPY fee doesn't attract a suitable company, you can:</p>\n<ul><li>Gradually increase to 110,000 JPY → 120,000 JPY.</li><li>Even at 150,000 JPY, you still save 100,000 JPY compared to the typical cost!</li></ul>\n<h2>What can you do with the savings?</h2>\n<ul>\n<li>Enhance candidate quality</li>\n<li>Increase salaries and bonuses to optimize performance</li>\n<li>Or add to your savings budget → increasing net profit for your company</li>\n</ul>\n<p>Don't miss out!</p>\n<p>👉 Just click “{ctaButton}” on HelloJob and experience optimal recruitment efficiency today!</p>",
       "author": "HelloJob Team",
       "readTime": "3 min read",
       "image": {

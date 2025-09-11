@@ -40,6 +40,28 @@
     },
     "editProfile": "プロフィール編集"
   },
+  "authDialog": {
+    "title": "HelloJobへようこそ！",
+    "description": "アカウントを作成して、あなたのキャリアの可能性を広げましょう。",
+    "continueWithGoogle": "Googleで続行",
+    "continueWithFacebook": "Facebookで続行",
+    "or": "または",
+    "emailOrPhone": "メールアドレスまたは電話番号",
+    "signUp": "登録",
+    "haveAccount": "アカウントをお持ちですか？",
+    "logIn": "ログイン",
+    "terms": {
+      "prefix": "続行することで、当社の",
+      "termsLink": "利用規約",
+      "and": "および",
+      "privacyLink": "プライバシーポリシー",
+      "suffix": "に同意したことになります。"
+    },
+    "quote": {
+      "text": "千里の道も一歩から。",
+      "author": "老子"
+    }
+  },
   "pagination": {
     "previous": "前へ",
     "next": "次へ"

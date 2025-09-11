@@ -27,6 +27,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Label } from './ui/label';
 import { useRole } from '@/contexts/role-context';
 import { ScrollArea } from './ui/scroll-area';
+import { AuthDialog } from './auth-dialog';
 
 
 const VietnamFlag = () => (
@@ -298,7 +299,7 @@ export function Header() {
                     {t.userRoles.description}
                     </DialogDescription>
                 </DialogHeader>
-                <ScrollArea className="flex-grow pr-6">
+                <ScrollArea className="flex-grow pr-6 -mr-6">
                   <div className="space-y-6 py-4">
                     <div>
                       <h4 className="font-semibold text-center text-gray-600 mb-4">{t.userRoles.group1_title}</h4>
@@ -378,10 +379,12 @@ export function Header() {
                         <CardContent className="p-0">
                           <h4 className="font-bold text-base">{t.header.menuItems.guestCta.title}</h4>
                           <p className="text-sm text-muted-foreground mt-1 mb-3">{t.header.menuItems.guestCta.description}</p>
-                          <Button className="w-full">
-                            <LogIn className="mr-2 h-4 w-4" />
-                            {t.header.menuItems.guestCta.button}
-                          </Button>
+                          <AuthDialog>
+                            <Button className="w-full">
+                              <LogIn className="mr-2 h-4 w-4" />
+                              {t.header.menuItems.guestCta.button}
+                            </Button>
+                          </AuthDialog>
                         </CardContent>
                      </Card>
                   ) : (
