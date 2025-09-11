@@ -608,8 +608,8 @@
   "postDetail": {
     "article": {
       "category": "Cơ quan hỗ trợ",
-      "title": "Tuyển dụng Tokutei Ginou – Giải pháp tối ưu chi phí cho Shien kikan cùng HelloJob 🚀",
-      "content": "<h2>Bạn là Cơ quan hỗ trợ Nhật Bản (Shien Kikan), bạn đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou? Chi phí quá cao nhưng chưa chắc chắn về chất lượng ứng viên, hay liệu họ có gắn bó lâu dài với công ty hay không?</h2>\n<p>👉Đừng lo! Hãy để HelloJob giúp bạn tối ưu quy trình tuyển dụng.</p>\n<h2>Tối ưu chi phí – Tăng hiệu quả</h2>\n<p>Giả sử bạn đang tuyển ứng viên Tokutei tại Nhật trong ngành Thực phẩm:</p>\n<ul><li><strong>Chi phí thông thường: 250,000 JPY/ứng viên</strong></li><li><strong>Với HelloJob, bạn chỉ cần: 100,000 JPY/ứng viên</strong></li></ul>\n<p>Chúng tôi có hàng chục công ty phái cử uy tín sẵn sàng hỗ trợ, với dịch vụ minh bạch, cụ thể, chi tiết.</p>\n<p>Nếu mức phí 100,000 JPY chưa có công ty phù hợp, bạn có thể: Nâng lên 110,000 JPY → 120,000 JPY để thử dần. Ngay cả khi ở mức 150,000 JPY, bạn vẫn tiết kiệm được 100,000 JPY so với chi phí thông thường!</p>\n<h2>Khoản tiết kiệm này bạn có thể dùng để:</h2>\n<ul>\n<li>Nâng cao chất lượng ứng viên</li>\n<li>Tăng lương, thưởng để tối ưu hiệu suất</li>\n<li>Hoặc đưa vào ngân sách tiết kiệm → tăng lợi nhuận dòng cho công ty</li>\n</ul>\n<p>Đừng bỏ lỡ cơ hội!</p>\n<p>👉 Hãy bấm ngay {ctaButton} trên HelloJob và trải nghiệm hiệu quả tuyển dụng Tối ưu ngay hôm nay!</p>",
+      "title": "Giải pháp Tối ưu Chi phí Tuyển dụng Tokutei Ginou cùng HelloJob",
+      "content": "<h2>Bạn là Cơ quan hỗ trợ (Shien Kikan) và đang gặp khó khăn với chi phí tuyển dụng Tokutei Ginou?</h2><p>HelloJob mang đến giải pháp giúp bạn tối ưu hóa quy trình. Ví dụ, với một vị trí trong ngành Thực phẩm tại Nhật:</p><ul><li><strong>Chi phí thông thường:</strong> 250.000 JPY/ứng viên</li><li><strong>Với HelloJob:</strong> Bắt đầu từ 100.000 JPY/ứng viên</li></ul><p>Chúng tôi có mạng lưới hàng chục công ty phái cử uy tín tại Việt Nam, đảm bảo dịch vụ minh bạch và hiệu quả. Nếu mức phí 100.000 JPY chưa thu hút được đối tác, bạn có thể linh hoạt điều chỉnh. Ngay cả ở mức 150.000 JPY, bạn vẫn tiết kiệm được 100.000 JPY so với thông thường.</p><h2>Khoản tiết kiệm này có thể dùng để:</h2><ul><li>Nâng cao chất lượng ứng viên.</li><li>Tăng lương, thưởng để cải thiện hiệu suất.</li><li>Hoặc đơn giản là tăng lợi nhuận cho doanh nghiệp của bạn.</li></ul><p>Đừng bỏ lỡ cơ hội này.</p>{ctaButton}",
       "author": "Đội ngũ HelloJob",
       "readTime": "3 phút đọc",
       "image": {
@@ -617,7 +617,6 @@
         "alt": "Người đang suy nghĩ với máy tính",
         "hint": "person thinking calculator"
       },
-      "ctaPhrase": "{ctaButton}",
       "ctaButton": "Đăng việc làm",
       "backButton": "Quay lại"
     },
@@ -1122,9 +1121,9 @@
     "benefits": {
       "title": "Phúc lợi & Môi trường",
       "items": [
-        "Hỗ trợ đào tạo tiếng Nhật và kỹ năng tay nghề trước khi xuất cảnh.",
-        "Chương trình hỗ trợ vay vốn cho người lao động.",
-        "Theo dõi và hỗ trợ người lao động trong suốt quá trình làm việc tại Nhật Bản."
+        "Hỗ trợ đào tạo tiếng Nhật và kỹ năng tay nghề trước khi xuất cảnh。",
+        "Chương trình hỗ trợ vay vốn cho người lao động。",
+        "Theo dõi và hỗ trợ người lao động trong suốt quá trình làm việc tại Nhật Bản。"
       ]
     }
   },

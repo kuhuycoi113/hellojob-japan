@@ -607,8 +607,8 @@
   "postDetail": {
     "article": {
       "category": "Supporting Organizations",
-      "title": "Recruit Tokutei Ginou – The Ultimate Cost-Saving Solution for Shien Kikan with HelloJob 🚀",
-      "content": "<h2>Are you a Japanese Supporting Organization (Shien Kikan) struggling to recruit Tokutei Ginou candidates? Are costs too high with uncertainty about candidate quality or long-term commitment?</h2>\n<p>👉 Don't worry! Let HelloJob help you optimize your recruitment process.</p>\n<h2>Optimize Costs – Increase Efficiency</h2>\n<p>Let's say you're recruiting Tokutei candidates in Japan for the Food industry:</p>\n<ul><li><strong>Typical Cost: 250,000 JPY/candidate</strong></li><li><strong>With HelloJob, you only need: 100,000 JPY/candidate</strong></li></ul>\n<p>We have dozens of reputable sending companies ready to assist, with transparent, specific, and detailed services.</p>\n<p>If the 100,000 JPY fee doesn't attract a suitable company, you can:</p>\n<ul><li>Gradually increase to 110,000 JPY → 120,000 JPY.</li><li>Even at 150,000 JPY, you still save 100,000 JPY compared to the typical cost!</li></ul>\n<h2>What can you do with the savings?</h2>\n<ul>\n<li>Enhance candidate quality</li>\n<li>Increase salaries and bonuses to optimize performance</li>\n<li>Or add to your savings budget → increasing net profit for your company</li>\n</ul>\n<p>Don't miss out!</p>\n<p>👉 Just click “{ctaButton}” on HelloJob and experience optimal recruitment efficiency today!</p>",
+      "title": "A Cost-Saving Solution for Recruiting Tokutei Ginou via HelloJob",
+      "content": "<h2>Are you a Japanese Supporting Organization (Shien Kikan) struggling with high recruitment costs and uncertainties for Tokutei Ginou candidates?</h2><p>HelloJob offers an optimized recruitment process. For example, when recruiting for the Food industry in Japan:</p><ul><li><strong>Typical Cost:</strong> 250,000 JPY/candidate</li><li><strong>With HelloJob:</strong> Starting from 100,000 JPY/candidate</li></ul><p>We have dozens of reputable sending companies ready to assist, with transparent and detailed services. If a 100,000 JPY fee doesn't attract a suitable company, you can incrementally increase the offer. Even at 150,000 JPY, you save 100,000 JPY compared to the typical cost.</p><h2>What can you do with the savings?</h2><ul><li>Enhance candidate quality</li><li>Increase salaries and bonuses to optimize performance</li><li>Or simply increase your company's net profit</li></ul><p>Don't miss out on this opportunity.</p>{ctaButton}",
       "author": "HelloJob Team",
       "readTime": "3 min read",
       "image": {
@@ -616,7 +616,6 @@
         "alt": "Person thinking with calculator",
         "hint": "person thinking calculator"
       },
-      "ctaPhrase": "{ctaButton}",
       "ctaButton": "Post a Job",
       "backButton": "Back"
     },
@@ -1090,7 +1089,8 @@
       "items": [
         { "year": "2010", "title": "Company Establishment", "description": "Started with a team of 10 employees, focusing on the Japanese market." },
         { "year": "2015", "title": "Received Labor Export License", "description": "Officially licensed by the Ministry of Labour, expanding the scale of operations." },
-        { "year": "2019", "title": "Partnered with 50+ Japanese Enterprises", "description": "Expanded the partner network, supplying a diverse range of professions for workers." }
+        { "year": "2019", "title": "Partnered with 50+ Japanese Enterprises",
+          "description": "Expanded the partner network, supplying a diverse range of professions for workers." }
       ]
     },
     "licenses": {
