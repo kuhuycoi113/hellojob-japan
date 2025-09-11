@@ -609,7 +609,7 @@
     "article": {
       "category": "Cơ quan hỗ trợ",
       "title": "Giải pháp Tối ưu Chi phí Tuyển dụng Tokutei Ginou cùng HelloJob",
-      "content": "<h2>Bạn là Cơ quan hỗ trợ (Shien Kikan) và đang gặp khó khăn với chi phí tuyển dụng Tokutei Ginou?</h2><p>HelloJob mang đến giải pháp giúp bạn tối ưu hóa quy trình. Ví dụ, với một vị trí trong ngành Thực phẩm tại Nhật:</p><ul><li><strong>Chi phí thông thường:</strong> 250.000 JPY/ứng viên</li><li><strong>Với HelloJob:</strong> Bắt đầu từ 100.000 JPY/ứng viên</li></ul><p>Chúng tôi có mạng lưới hàng chục công ty phái cử uy tín tại Việt Nam, đảm bảo dịch vụ minh bạch và hiệu quả. Nếu mức phí 100.000 JPY chưa thu hút được đối tác, bạn có thể linh hoạt điều chỉnh. Ngay cả ở mức 150.000 JPY, bạn vẫn tiết kiệm được 100.000 JPY so với thông thường.</p><h2>Khoản tiết kiệm này có thể dùng để:</h2><ul><li>Nâng cao chất lượng ứng viên.</li><li>Tăng lương, thưởng để cải thiện hiệu suất.</li><li>Hoặc đơn giản là tăng lợi nhuận cho doanh nghiệp của bạn.</li></ul><p>Đừng bỏ lỡ cơ hội này.</p>{ctaButton}",
+      "content": "<h2>Bạn là Cơ quan hỗ trợ Nhật Bản (Shien Kikan) và đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou?</h2><p>Chi phí quá cao nhưng không chắc chắn về chất lượng ứng viên, hay liệu họ có gắn bó lâu dài với công ty hay không?</p><p>👉Đừng lo! Hãy để HelloJob giúp bạn tối ưu quy trình tuyển dụng.</p><h2>Tối ưu chi phí – Tăng hiệu quả</h2><p>Giả sử bạn đang tuyển ứng viên Tokutei tại Nhật trong ngành Thực phẩm:</p><ul><li><strong>Chi phí thông thường: 250,000 JPY/ứng viên</strong></li><li><strong>Với HelloJob: Chỉ từ 100,000 JPY/ứng viên</strong></li></ul><p>Chúng tôi có hàng chục công ty phái cử uy tín sẵn sàng hỗ trợ, với dịch vụ minh bạch, cụ thể, chi tiết. Nếu mức phí 100,000 JPY chưa có công ty phù hợp, bạn có thể linh hoạt điều chỉnh: Nâng lên 110,000 JPY → 120,000 JPY để thử dần. Ngay cả khi ở mức 150,000 JPY, bạn vẫn tiết kiệm được 100,000 JPY so với chi phí thông thường!</p><h2>Khoản tiết kiệm này bạn có thể dùng để:</h2><ul><li>✨Nâng cao chất lượng ứng viên</li><li>✨Tăng lương, thưởng để tối ưu hiệu suất</li><li>✨Hoặc đưa vào ngân sách tiết kiệm → tăng lợi nhuận cho công ty</li></ul><p>Đừng bỏ lỡ cơ hội!</p><p>👉Hãy bấm ngay <strong>Đăng việc làm</strong> trên HelloJob và trải nghiệm hiệu quả tuyển dụng tối ưu ngay hôm nay!</p>",
       "author": "Đội ngũ HelloJob",
       "readTime": "3 phút đọc",
       "image": {
@@ -700,8 +700,6 @@
   "userRoles": {
     "title": "Bạn là ai?",
     "description": "Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.",
-    "group1_title": "Xí nghiệp/Công ty tại Nhật Bản (Bên có nhu-cầu-tuyển-dụng)",
-    "group2_title": "Đối tác tuyển dụng (Bên cung cấp/hỗ trợ tuyển dụng)",
     "guest": {
       "title": "Khách (Chưa đăng nhập)",
       "description": "Xem với tư cách khách truy cập."
@@ -719,7 +717,7 @@
       "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
     },
     "sendingCompany": {
-      "title": "Công ty phái cử (Công ty xuất khẩu lao động)",
+      "title": "Công ty phái cử",
       "description": "Tuyển và phái cử lao động từ Việt Nam."
     },
     "receivingCompany": {
