@@ -1,5 +1,3 @@
-
-
 'use client';
 
 import Link from 'next/link';
@@ -25,6 +23,9 @@ export function Cta() {
 
           <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100">
             {t.cta.contactUs}
+          </Button>
+          <Button size="lg" variant="outline">
+            Test
           </Button>
         </div>
       </div>
