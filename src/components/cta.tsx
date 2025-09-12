@@ -44,7 +44,20 @@ export function Cta() {
               </DialogHeader>
               <div className="flex justify-center gap-4 py-4">
                 <Button>A</Button>
-                <Button>B</Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button>B</Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>ich khong khong 2</DialogTitle>
+                    </DialogHeader>
+                    <div className="flex justify-center gap-4 py-4">
+                      <Button>C</Button>
+                      <Button>D</Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </DialogContent>
           </Dialog>
