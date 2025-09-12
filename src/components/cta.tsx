@@ -24,6 +24,7 @@ export function Cta() {
   const [dialog52Open, setDialog52Open] = useState(false);
   const [dialog53Open, setDialog53Open] = useState(false);
   const [dialog61Open, setDialog61Open] = useState(false);
+  const [dialog62Open, setDialog62Open] = useState(false);
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -151,12 +152,28 @@ export function Cta() {
                   <DialogTitle>ich khong khong 5 2</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => setDialog52Open(false)}>L1</Button>
-                  <Button onClick={() => setDialog52Open(false)}>L2</Button>
-                  <Button onClick={() => setDialog52Open(false)}>L3</Button>
+                  <Button onClick={() => { setDialog52Open(false); setDialog62Open(true); }}>L1</Button>
+                  <Button onClick={() => { setDialog52Open(false); setDialog62Open(true); }}>L2</Button>
+                  <Button onClick={() => { setDialog52Open(false); setDialog62Open(true); }}>L3</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog52Open(false); setDialog4Open(true); }}>Quay lại</Button>
+                </DialogFooter>
+              </DialogContent>
+          </Dialog>
+
+           <Dialog open={dialog62Open} onOpenChange={setDialog62Open}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>ich khong khong 6 2</DialogTitle>
+                </DialogHeader>
+                <div className="grid grid-cols-3 gap-4 py-4">
+                  {Array.from({ length: 15 }, (_, i) => (
+                    <Button key={i} onClick={() => setDialog62Open(false)}>LL{i + 1}</Button>
+                  ))}
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => { setDialog62Open(false); setDialog52Open(true); }}>Quay lại</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
