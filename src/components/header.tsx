@@ -98,11 +98,6 @@ export function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const [mainDialogOpen, setMainDialogOpen] = useState(false);
-  const [roleDialogOpen, setRoleDialogOpen] = useState(false);
-  const [createProfileMainDialogOpen, setCreateProfileMainDialogOpen] = useState(false);
-  const [createProfileRoleDialogOpen, setCreateProfileRoleDialogOpen] = useState(false);
-
 
   const languageConfig = {
     vi: { flag: <VietnamFlag />, name: 'Tiếng Việt', short: 'VN' },
@@ -163,31 +158,9 @@ export function Header() {
   ];
 
   const handleRoleSelect = (role: Role) => {
-    setRoleDialogOpen(false);
-    setCreateProfileRoleDialogOpen(false);
     const params = new URLSearchParams();
     params.set('role', role.title);
     router.push(`/post-job-ai?${params.toString()}`);
-  }
-
-  const openRoleDialogForJobs = () => {
-    setMainDialogOpen(false);
-    setRoleDialogOpen(true);
-  }
-  
-  const backToMainDialogForJobs = () => {
-    setRoleDialogOpen(false);
-    setMainDialogOpen(true);
-  }
-
-  const openRoleDialogForProfile = () => {
-    setCreateProfileMainDialogOpen(false);
-    setCreateProfileRoleDialogOpen(true);
-  }
-
-  const backToMainDialogForProfile = () => {
-    setCreateProfileRoleDialogOpen(false);
-    setCreateProfileMainDialogOpen(true);
   }
 
   return (
@@ -251,71 +224,7 @@ export function Header() {
           </DropdownMenu>
 
           <div className="hidden md:flex items-center gap-2">
-            <Dialog open={createProfileMainDialogOpen} onOpenChange={setCreateProfileMainDialogOpen}>
-              <DialogTrigger asChild>
-                <Button variant="outline">Tạo</Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-3xl">
-                <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title.replace('việc làm', 'hồ sơ')}</DialogTitle>
-                  <DialogDescription className="text-center">{t.postMethod.description.replace('tin tuyển dụng', 'hồ sơ')}</DialogDescription>
-                </DialogHeader>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                  <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center justify-center" onClick={openRoleDialogForProfile}>
-                    <div className="bg-primary/5 p-3 rounded-lg mb-4"><Sparkles className="h-8 w-8 text-primary" /></div>
-                    <h3 className="font-semibold text-base text-gray-800">{t.postMethod.ai.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{t.postMethod.ai.description}</p>
-                  </Card>
-                  <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center justify-center" onClick={() => { /* TODO */ }}>
-                    <div className="bg-primary/5 p-3 rounded-lg mb-4"><FileText className="h-8 w-8 text-primary" /></div>
-                    <h3 className="font-semibold text-base text-gray-800">{t.postMethod.manual.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{t.postMethod.manual.description}</p>
-                  </Card>
-                </div>
-              </DialogContent>
-            </Dialog>
-
-            <Dialog open={createProfileRoleDialogOpen} onOpenChange={setCreateProfileRoleDialogOpen}>
-               <DialogContent className="sm:max-w-3xl max-h-[95vh] flex flex-col">
-                <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
-                    <DialogDescription className="text-center">
-                    {t.userRoles.description}
-                    </DialogDescription>
-                </DialogHeader>
-                <ScrollArea className="flex-grow pr-6 -mr-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                    {userRoles.map((role) => (
-                      <div key={role.title} onClick={() => handleRoleSelect(role)}>
-                        <Card className="p-4 sm:p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center justify-between">
-                          <div className="flex items-center gap-2 sm:gap-4">
-                            <div className="bg-primary/5 p-3 rounded-lg">
-                              {role.icon}
-                            </div>
-                            <div>
-                              <h3 className="font-semibold text-base text-gray-800">
-                                {role.title}
-                              </h3>
-                              <p className="text-sm text-muted-foreground mt-1 hidden sm:block">
-                                {role.description}
-                              </p>
-                            </div>
-                          </div>
-                          <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                        </Card>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollArea>
-                <DialogFooter className="flex-row justify-start border-t pt-4 mt-auto">
-                    <Button variant="outline" onClick={backToMainDialogForProfile}>
-                      <ArrowLeft className="mr-2 h-4 w-4" />
-                      {t.postDetail.article.backButton || 'Quay lại'}
-                    </Button>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
-
+            <Button variant="outline">Tạo</Button>
             <Button variant="secondary">
               <PlusCircle className="mr-2 h-4 w-4" />
               {t.header.postJob}
