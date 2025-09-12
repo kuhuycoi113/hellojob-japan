@@ -29,9 +29,38 @@
       "about": "About Us",
       "dashboard": "Dashboard",
       "chat": "Chat",
-      "signUpForPremium": "Sign Up for Premium"
+      "advisors": "Advisors",
+      "signUpForPremium": "Sign Up for Premium",
+      "partnerList": "Partner List",
+      "guestCta": {
+        "title": "Welcome to HelloJob",
+        "description": "Log in or sign up to access all features.",
+        "button": "Log In / Sign Up"
+      }
     },
     "editProfile": "Edit Profile"
+  },
+  "authDialog": {
+    "title": "Welcome to HelloJob!",
+    "description": "Create an account to unlock your recruitment potential.",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithFacebook": "Continue with Facebook",
+    "or": "OR",
+    "emailOrPhone": "Email or Phone Number",
+    "signUp": "Sign Up",
+    "haveAccount": "Already have an account?",
+    "logIn": "Log In",
+    "terms": {
+      "prefix": "By continuing, you agree to our",
+      "termsLink": "Terms of Service",
+      "and": "and",
+      "privacyLink": "Privacy Policy",
+      "suffix": ""
+    },
+    "quote": {
+      "text": "Hire character. Train skill.",
+      "author": "Peter Schutz"
+    }
   },
   "pagination": {
     "previous": "Previous",
@@ -131,8 +160,8 @@
     "title": "Commitment to Candidate Quality",
     "subtitle": "We guarantee to provide a workforce that is not only professionally skilled but also a great fit for your corporate culture.",
     "thoroughScreening": "Rigorous Screening",
-    "thoroughScreeningDesc": "Every candidate undergoes a professional interview process, skills assessment, and attitude evaluation.",
-    "detailedProfiles": "Verified & Detailed Profiles",
+    "thoroughScreeningDesc": "Each candidate goes through an interview process, skill checks, and a professional attitude assessment.",
+    "detailedProfiles": "Detailed Profiles",
     "detailedProfilesDesc": "We provide comprehensive candidate profiles with detailed information, introduction videos, and verified credentials.",
     "inDepthTraining": "Pre-departure Training",
     "inDepthTrainingDesc": "Candidates are thoroughly trained in Japanese language, culture, and professional work skills before their departure."
@@ -290,7 +319,7 @@
     "input": {
       "title": "1. Describe your job",
       "description": "Provide a few keywords, a sentence, or upload an existing job description. The more detail you provide, the better the result.",
-      "reset": "Create New",
+      "reset": "Start Over",
       "refinePlaceholder": "Enter a request to refine (e.g., 'add 3 years experience requirement')"
     },
     "output": {
@@ -315,6 +344,7 @@
     "refineButton": "Refine",
     "postJobButton": "Post this Job",
     "findPartnersButton": "Find Matching Partners",
+    "postAndFindPartnersButton": "Post and Find Partners",
     "sendRequestsButton": "Send Partnership Requests",
     "partner_matching": {
       "title": "3. Find Matching Partners",
@@ -331,9 +361,9 @@
     "pageSubtitle": "All the information you need about the labor market, skills, and life in Japan.",
     "searchPlaceholder": "Search articles (e.g., Tokutei, costs...)",
     "featured": {
-      "category": "Specified Skilled Worker",
-      "title": "What is the Specified Skilled Worker (Tokutei Ginou) Visa? Everything You Need to Know for 2024",
-      "description": "Tokutei Ginou is a new type of work visa in Japan, opening up great opportunities for Vietnamese workers. Let's explore the conditions, benefits, and eligible industries. This program allows skilled foreign workers to work long-term in various sectors facing labor shortages, such as construction, nursing care, and agriculture, offering competitive salaries and better working conditions.",
+      "category": "Supporting Organizations",
+      "title": "Recruit Tokutei Ginou - The Ultimate Cost-Saving Solution for Shien Kikan",
+      "description": "Discover effective strategies and tools to optimize recruitment costs for Vietnamese labor, from leveraging technology platforms to smart partnerships.",
       "link": "Read article"
     },
     "videoTitle": "Short Videos",
@@ -348,7 +378,6 @@
       }
     ],
     "newPostsTitle": "New Posts",
-    "longVideoTitle": "Long Videos",
     "longVideos": [
       {
         "type": "video",
@@ -577,23 +606,18 @@
   },
   "postDetail": {
     "article": {
-      "category": "Interview Experience",
-      "title": "How to Write a Compelling Japanese CV to Impress Recruiters",
-      "excerpt": "A well-prepared CV (履歴書 - rirekisho) is the first and most crucial step to opening the door to your dream job in Japan. It's not just a summary of your experience, but your very first introduction to a potential employer.",
+      "category": "Supporting Organizations",
+      "title": "A Cost-Saving Solution for Recruiting Tokutei Ginou via HelloJob",
+      "content": "<h2>Are you a Japanese Supporting Organization (Shien Kikan) struggling with high recruitment costs and uncertainties for Tokutei Ginou candidates?</h2><p>HelloJob offers an optimized recruitment process. For example, when recruiting for the Food industry in Japan:</p><ul><li><strong>Typical Cost:</strong> 250,000 JPY/candidate</li><li><strong>With HelloJob:</strong> Starting from 100,000 JPY/candidate</li></ul><p>We have dozens of reputable sending companies ready to assist, with transparent and detailed services. If a 100,000 JPY fee doesn't attract a suitable company, you can incrementally increase the offer. Even at 150,000 JPY, you save 100,000 JPY compared to the typical cost.</p><h2>What can you do with the savings?</h2><ul><li>Enhance candidate quality</li><li>Increase salaries and bonuses to optimize performance</li><li>Or simply increase your company's net profit</li></ul><p>Don't miss out on this opportunity.</p>{ctaButton}",
       "author": "HelloJob Team",
-      "readTime": "8 min read",
+      "readTime": "3 min read",
       "image": {
         "src": "https://picsum.photos/1200/675?random=100",
-        "alt": "Person writing a CV",
-        "hint": "person writing resume"
+        "alt": "Person thinking with calculator",
+        "hint": "person thinking calculator"
       },
-      "content": {
-        "p1": "In a competitive landscape, a professional, clean, and comprehensive CV will make you stand out. It's essential to adhere to the common rules and standards of a Japanese CV, from the layout and use of honorifics (keigo) to the profile picture.",
-        "p2": "The Specified Skilled Worker (特定技能 - Tokutei Ginou) visa is a new residency status for foreign workers in Japan, introduced by the Japanese government in April 2019. The main purpose of this program is to address serious labor shortages in specific industrial fields in Japan. This program is divided into two main categories:",
-        "listHtml": "<ul><li><strong>Specified Skilled Worker (i) (Tokutei Ginou 1)</strong>: For workers with a certain level of skill and specialized knowledge, who can work immediately without much training. The maximum period of stay is 5 years, and family members are not allowed to accompany them.</li><li><strong>Specified Skilled Worker (ii) (Tokutei Ginou 2)</strong>: For workers with high-level skills and professional expertise. After completing the Type 1 program, workers can take an exam to advance to Type 2 to stay in Japan long-term, with opportunities to apply for permanent residency and sponsor family members.</li></ul>",
-        "h2": "Conditions for Participation",
-        "p3": "To participate in the Specified Skilled Worker program, workers need to meet basic conditions: Be 18 years of age or older, pass the Japanese-Language Proficiency Test (JLPT) at level N4 or equivalent exams like the JFT-Basic, and pass the skills proficiency test for their registered industry."
-      }
+      "ctaButton": "Post a Job",
+      "backButton": "Back"
     },
     "commentSection": {
       "title": "Comments",
@@ -644,7 +668,7 @@
         },
         {
           "title": "Bridge Engineer (Bridge SE) - Bidding",
-          "company": "Việc làm tại Nhật"
+          "company": "Jobs in Japan"
         }
       ]
     },
@@ -675,33 +699,35 @@
   "userRoles": {
     "title": "What is your role?",
     "description": "Let us know your role for the best experience.",
+    "group1_title": "Companies in Japan (Hiring Side)",
+    "group2_title": "Recruitment Partners (Supplying/Supporting Side)",
     "guest": {
       "title": "Guest (Not Logged In)",
       "description": "View as a visitor."
     },
-    "hiringCompany": {
-      "title": "Hiring Company",
-      "description": "Directly recruits personnel."
-    },
     "supportOrg": {
-      "title": "Supporting Organization",
+      "title": "Supporting Organization (Shien Kikan)",
       "description": "Supports companies and workers."
     },
     "union": {
       "title": "Cooperative Union",
       "description": "Manages and supports interns."
     },
+    "yuryoShokai": {
+      "title": "Paid Employment Placement Business",
+      "description": "Provides paid job placement services."
+    },
     "sendingCompany": {
       "title": "Sending Company",
       "description": "Recruits and dispatches workers from Vietnam."
     },
-    "hakenCompany": {
-      "title": "Haken Company (Dispatch)",
-      "description": "Dispatches temporary staff."
+    "receivingCompany": {
+      "title": "Receiving Company",
+      "description": "Directly employs and utilizes workers."
     },
-    "yuryoShokai": {
-      "title": "Paid Employment Placement Business",
-      "description": "Provides paid job placement services."
+    "hakenCompany": {
+      "title": "Dispatch Company (Haken)",
+      "description": "Provides temporary worker dispatch services."
     }
   },
   "chat": {
@@ -715,8 +741,8 @@
   "callScreen": {
     "connecting": "Connecting...",
     "permissionError": {
-        "title": "Permission Required",
-        "description": "Please allow access to your camera and microphone in your browser to use this feature."
+      "title": "Permission Required",
+      "description": "Please allow access to your camera and microphone in your browser to use this feature."
     }
   },
   "visaTypes": {
@@ -752,14 +778,14 @@
     }
   },
   "postMethod": {
-    "title": "Choose a Posting Method",
+    "title": "Choose a Job Posting Method",
     "description": "How would you like to create your job listing?",
     "ai": {
-      "title": "Post with AI",
-      "description": "With a simple description, AI will create a professional job post."
+      "title": "Quick Post",
+      "description": "A few simple clicks to get your job posted and find suitable candidates."
     },
     "manual": {
-      "title": "Manual Entry",
+      "title": "Detailed Post",
       "description": "Fill out a detailed form for full control over the listing."
     }
   },
@@ -790,8 +816,16 @@
       "postedDate": "Posted Date",
       "actions": "Actions",
       "toggleMenu": "Toggle menu",
+      "viewDetails": "View Details",
       "edit": "Edit",
-      "archive": "Archive"
+      "archive": "Archive",
+      "delete": "Delete"
+    },
+    "deleteDialog": {
+      "title": "Are you sure you want to delete this job?",
+      "description": "This action cannot be undone. This will permanently delete the job posting.",
+      "cancel": "Cancel",
+      "confirm": "Delete"
     },
     "noJobsGuest": {
       "title": "No Job Data Available",
@@ -847,7 +881,7 @@
     "referralFee": "Total Referral Fee",
     "managementFee": "Management Fee",
     "platformFee": "Platform Fee",
-    "partnerReceives": "Partner Receives",
+    "partnerReceives": "You Receive",
     "accept": "Accept",
     "decline": "Decline",
     "referredByYou": "Referred by you",
@@ -858,6 +892,17 @@
         "fees": "Fee Information",
         "expires": "Expires",
         "actions": "Actions"
+      },
+      "feeRanges": {
+        "sendingCompany": {
+            "referral": "70,000 - 150,000 JPY",
+            "platform_20": "20% (from {fee})",
+            "platform_25": "25% (from {fee})",
+            "platform_30": "30% (from {fee})",
+            "receives_20": "56,000 - 120,000 JPY",
+            "receives_25": "52,500 - 112,500 JPY",
+            "receives_30": "49,000 - 105,000 JPY"
+        }
       }
   },
   "partnershipInfo": {
@@ -876,6 +921,13 @@
     "supportOrgReferral": {
       "description": "Furthermore, if the receiving company is introduced by a Supporting Organization, the platform fee is reduced by an additional 5%."
     }
+  },
+  "partnerListPage": {
+    "searchPlaceholder": "Search partner name...",
+    "partnerType": "Partner Type",
+    "allTypes": "All Types",
+    "mainIndustries": "Main Industries",
+    "noResults": "No matching partners found."
   },
   "advisorProfile": {
     "header": {
@@ -940,5 +992,142 @@
       "chat": "Chat with AI"
     },
     "contactButton": "Contact Now"
+  },
+  "elearningHero": {
+    "title": "Upskill, Expand Opportunities",
+    "subtitle": "Online courses specifically designed to help you succeed in the Japanese labor market.",
+    "cta": "Explore Courses",
+    "imageAlt": "Students learning online with laptops"
+  },
+  "allCoursesTitle": "All Courses",
+  "allCoursesSubtitle": "From language, culture to professional skills, we have everything you need.",
+  "enrollNow": "Enroll Now",
+  "allCourses": [
+    {
+      "title": "Business Japanese Communication",
+      "description": "Confidently communicate with Japanese colleagues and superiors in any work situation.",
+      "category": "Language",
+      "duration": "12 weeks",
+      "level": "Beginner",
+      "reviews": "120",
+      "hint": "japanese classroom"
+    },
+    {
+      "title": "Japanese Corporate Culture",
+      "description": "Understand the working style, etiquette, and core values in a Japanese company.",
+      "category": "Culture",
+      "duration": "4 weeks",
+      "level": "All Levels",
+      "reviews": "98",
+      "hint": "business meeting japan"
+    },
+    {
+      "title": "Kaizen & 5S Skills",
+      "description": "Master the principles of continuous improvement and effective workplace organization.",
+      "category": "Skills",
+      "duration": "6 weeks",
+      "level": "Intermediate",
+      "reviews": "75",
+      "hint": "factory improvement"
+    },
+    {
+      "title": "Intensive JLPT N3 Prep",
+      "description": "Conquer the JLPT N3 with an effective and structured learning path.",
+      "category": "Language",
+      "duration": "16 weeks",
+      "level": "Intermediate",
+      "reviews": "150",
+      "hint": "person studying exam"
+    },
+    {
+      "title": "Workplace Safety in Factories",
+      "description": "Equip yourself with the necessary knowledge and skills to ensure safety for yourself and colleagues.",
+      "category": "Skills",
+      "duration": "2 weeks",
+      "level": "Beginner",
+      "reviews": "60",
+      "hint": "safety gear factory"
+    },
+    {
+      "title": "Elderly Care Skills",
+      "description": "An intensive course for those working in the caregiving and nursing industry.",
+      "category": "Specialized",
+      "duration": "10 weeks",
+      "level": "All Levels",
+      "reviews": "88",
+      "hint": "caregiver helping elderly"
+    }
+  ],
+  "partnerProfile": {
+    "companyName": "TVC Joint Stock Company",
+    "companyType": "Sending Company",
+    "location": "Hanoi, Vietnam",
+    "logout": "Log Out",
+    "about": {
+      "title": "About the Company",
+      "description": "TVC Sending Company is one of the leading units in Vietnam in providing high-quality human resources for the Japanese market. With many years of experience, we are proud to have successfully connected thousands of workers with reputable enterprises in Japan, focusing on industries such as construction, mechanics, and agriculture. We are committed to providing thorough training and comprehensive support to ensure that workers are best prepared for their work and life in Japan."
+    },
+    "videos": {
+      "title": "Company Videos",
+      "items": [
+        { "src": "https://picsum.photos/seed/vid1/400/225", "hint": "corporate presentation" },
+        { "src": "https://picsum.photos/seed/vid2/400/225", "hint": "worker interview" },
+        { "src": "https://picsum.photos/seed/vid3/400/225", "hint": "training facility" }
+      ]
+    },
+    "images": {
+      "title": "Company Photos",
+      "items": [
+        { "src": "https://picsum.photos/seed/img1/400/400", "hint": "office building" },
+        { "src": "https://picsum.photos/seed/img2/400/400", "hint": "team photo" },
+        { "src": "https://picsum.photos/seed/img3/400/400", "hint": "training session" },
+        { "src": "https://picsum.photos/seed/img4/400/400", "hint": "company event" }
+      ]
+    },
+    "history": {
+      "title": "History & Milestones",
+      "items": [
+        { "year": "2010", "title": "Company Establishment", "description": "Started with a team of 10 employees, focusing on the Japanese market." },
+        { "year": "2015", "title": "Received Labor Export License", "description": "Officially licensed by the Ministry of Labour, expanding the scale of operations." },
+        { "year": "2019", "title": "Partnered with 50+ Japanese Enterprises",
+          "description": "Expanded the partner network, supplying a diverse range of professions for workers." }
+      ]
+    },
+    "licenses": {
+      "title": "Licenses & Certifications",
+      "items": ["Service operation license to send workers abroad No. 999/LDTBXH-GP"]
+    },
+    "info": {
+      "title": "Company Information",
+      "items": [
+        { "icon": "founded", "label": "Founded", "value": "2010" },
+        { "icon": "size", "label": "Size", "value": "50-100 employees" },
+        { "icon": "phone", "label": "Phone", "value": "024-1234-5678" },
+        { "icon": "website", "label": "Website", "value": "tvc-hr.com.vn" },
+        { "icon": "address", "label": "Address", "value": "Cau Giay District, Hanoi, Vietnam" }
+      ]
+    },
+    "industry": {
+      "title": "Industries & Fields",
+      "main": {
+        "title": "Main Industries",
+        "tags": ["Construction", "Mechanics", "Agriculture"]
+      },
+      "fields": {
+        "title": "Fields of Operation",
+        "description": "Supplying labor for industries: construction, mechanics, agriculture, food processing, caregiving."
+      }
+    },
+    "benefits": {
+      "title": "Benefits & Environment",
+      "items": [
+        "Support for Japanese language and vocational skills training before departure.",
+        "Loan support program for workers.",
+        "Follow-up and support for workers throughout their employment in Japan."
+      ]
+    }
+  },
+  "partnerDetailPage": {
+    "partnerNotFound": "Partner not found."
   }
 }

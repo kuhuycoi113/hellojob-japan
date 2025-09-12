@@ -21,7 +21,7 @@
     "menuItems": {
       "recruiterAccount": "Tài khoản nhà tuyển dụng",
       "recruiterAccountType": "Tài khoản {type}",
-      "postJobAI": "Đăng việc AI",
+      "postJobAI": "Đăng bằng AI",
       "howItWorks": "Các bước",
       "recruitRight": "Tuyển đúng người",
       "elearning": "E-Learning",
@@ -29,9 +29,39 @@
       "about": "Giới thiệu",
       "dashboard": "Quản lý",
       "chat": "Tư vấn",
-      "signUpForPremium": "Đăng ký Premium"
+      "advisors": "Tư vấn viên",
+      "signUpForPremium": "Đăng ký Premium",
+      "partnerList": "Danh sách đối tác",
+      "guestCta": {
+        "title": "Chào mừng đến với HelloJob",
+        "description": "Đăng nhập hoặc đăng ký để truy cập đầy đủ tính năng.",
+        "button": "Đăng nhập / Đăng ký"
+      }
     },
-    "editProfile": "Sửa hồ sơ"
+    "editProfile": "Sửa hồ sơ",
+    "login": "Đăng nhập / Đăng ký"
+  },
+  "authDialog": {
+    "title": "Chào mừng bạn đến với HelloJob!",
+    "description": "Tạo tài khoản để mở khóa tiềm năng tuyển dụng của bạn.",
+    "continueWithGoogle": "Tiếp tục với Google",
+    "continueWithFacebook": "Tiếp tục với Facebook",
+    "or": "HOẶC",
+    "emailOrPhone": "Email hoặc Số điện thoại",
+    "signUp": "Đăng ký",
+    "haveAccount": "Đã có tài khoản?",
+    "logIn": "Đăng nhập",
+    "terms": {
+      "prefix": "Bằng việc tiếp tục, bạn đồng ý với",
+      "termsLink": "Điều khoản dịch vụ",
+      "and": "và",
+      "privacyLink": "Chính sách bảo mật",
+      "suffix": "của chúng tôi."
+    },
+    "quote": {
+      "text": "Hãy tuyển dụng nhân cách. Kỹ năng có thể đào tạo.",
+      "author": "Peter Schutz"
+    }
   },
   "pagination": {
     "previous": "Trang trước",
@@ -290,7 +320,7 @@
     "input": {
       "title": "1. Mô tả công việc của bạn",
       "description": "Cung cấp một vài từ khóa, một câu, hoặc tải lên một mô tả công việc có sẵn. Càng chi tiết, kết quả càng tốt.",
-      "reset": "Tạo mới",
+      "reset": "Làm lại",
       "refinePlaceholder": "Nhập yêu cầu để tinh chỉnh (ví dụ: 'thêm yêu cầu kinh nghiệm 3 năm')"
     },
     "output": {
@@ -315,6 +345,7 @@
     "refineButton": "Tinh chỉnh",
     "postJobButton": "Đăng việc làm này",
     "findPartnersButton": "Tìm đối tác phù hợp",
+    "postAndFindPartnersButton": "Đăng và tìm đối tác phù hợp",
     "sendRequestsButton": "Gửi yêu cầu hợp tác",
     "partner_matching": {
       "title": "3. Tìm đối tác phù hợp",
@@ -331,9 +362,9 @@
     "pageSubtitle": "Tất cả thông tin bạn cần biết về thị trường lao động, kỹ năng và cuộc sống tại Nhật Bản.",
     "searchPlaceholder": "Tìm kiếm bài viết (VD: Tokutei, chi phí...)",
     "featured": {
-      "category": "Kỹ năng đặc định",
-      "title": "Kỹ năng đặc định (Tokutei Ginou) là gì? Toàn bộ thông tin cần biết 2024",
-      "description": "Tokutei Ginou là một loại visa lao động mới của Nhật Bản, mở ra cơ hội lớn cho người lao động Việt Nam. Hãy cùng tìm hiểu chi tiết về điều kiện, quyền lợi và các ngành nghề tuyển dụng. Chương trình này cho phép người lao động có tay nghề làm việc dài hạn tại các ngành nghề thiếu hụt lao động như xây dựng, điều dưỡng, nông nghiệp, với mức lương và điều kiện làm việc tốt hơn.",
+      "category": "Cơ quan hỗ trợ",
+      "title": "Tuyển dụng Tokutei Ginou – Giải pháp tối ưu chi phí cho Shien Kikan",
+      "description": "Khám phá các chiến lược và công cụ hiệu quả để tối ưu hóa chi phí tuyển dụng lao động Việt Nam, từ việc sử dụng nền tảng công nghệ đến việc hợp tác thông minh.",
       "link": "Đọc bài viết"
     },
     "videoTitle": "Video ngắn",
@@ -348,7 +379,6 @@
       }
     ],
     "newPostsTitle": "Bài viết mới",
-    "longVideoTitle": "Video dài",
     "longVideos": [
        {
         "type": "video",
@@ -577,23 +607,18 @@
   },
   "postDetail": {
     "article": {
-      "category": "Kinh nghiệm phỏng vấn",
-      "title": "Cách viết CV tiếng Nhật thuyết phục để gây ấn tượng với nhà tuyển dụng",
-      "excerpt": "Một chiếc CV (履歴書 - rirekisho) được chuẩn bị kỹ lưỡng là bước đầu tiên và quan trọng nhất để bạn mở cánh cửa đến với công việc mơ ước tại Nhật Bản. Nó không chỉ là bản tóm tắt kinh nghiệm, mà còn là lời giới thiệu đầu tiên của bạn với nhà tuyển dụng.",
+      "category": "Cơ quan hỗ trợ",
+      "title": "Giải pháp Tối ưu Chi phí Tuyển dụng Tokutei Ginou cùng HelloJob",
+      "content": "<h2>Bạn là Cơ quan hỗ trợ Nhật Bản (Shien Kikan) và đang gặp khó khăn khi tuyển dụng ứng viên Tokutei Ginou?</h2><p>Chi phí quá cao nhưng không chắc chắn về chất lượng ứng viên, hay liệu họ có gắn bó lâu dài với công ty hay không?</p><p>👉Đừng lo! Hãy để HelloJob giúp bạn tối ưu quy trình tuyển dụng.</p><h2>Tối ưu chi phí – Tăng hiệu quả</h2><p>Giả sử bạn đang tuyển ứng viên Tokutei tại Nhật trong ngành Thực phẩm:</p><ul><li><strong>Chi phí thông thường: 250,000 JPY/ứng viên</strong></li><li><strong>Với HelloJob: Chỉ từ 100,000 JPY/ứng viên</strong></li></ul><p>Chúng tôi có hàng chục công ty phái cử uy tín sẵn sàng hỗ trợ, với dịch vụ minh bạch, cụ thể, chi tiết. Nếu mức phí 100,000 JPY chưa có công ty phù hợp, bạn có thể linh hoạt điều chỉnh: Nâng lên 110,000 JPY → 120,000 JPY để thử dần. Ngay cả khi ở mức 150,000 JPY, bạn vẫn tiết kiệm được 100,000 JPY so với chi phí thông thường!</p><h2>Khoản tiết kiệm này bạn có thể dùng để:</h2><ul><li>✨Nâng cao chất lượng ứng viên</li><li>✨Tăng lương, thưởng để tối ưu hiệu suất</li><li>✨Hoặc đưa vào ngân sách tiết kiệm → tăng lợi nhuận cho công ty</li></ul><p>Đừng bỏ lỡ cơ hội!</p><p>👉Hãy bấm ngay <strong>Đăng việc làm</strong> trên HelloJob và trải nghiệm hiệu quả tuyển dụng tối ưu ngay hôm nay!</p>",
       "author": "Đội ngũ HelloJob",
-      "readTime": "8 phút đọc",
+      "readTime": "3 phút đọc",
       "image": {
         "src": "https://picsum.photos/1200/675?random=100",
-        "alt": "Người đang viết CV",
-        "hint": "person writing resume"
+        "alt": "Người đang suy nghĩ với máy tính",
+        "hint": "person thinking calculator"
       },
-      "content": {
-        "p1": "Trong bối cảnh cạnh tranh, một chiếc CV chuyên nghiệp, sạch sẽ và đầy đủ thông tin sẽ giúp bạn nổi bật. Điều quan trọng là phải tuân thủ các quy tắc và chuẩn mực chung của CV tiếng Nhật, từ bố cục, cách dùng kính ngữ cho đến ảnh thẻ.",
-        "p2": "Visa Kỹ năng đặc định (特定技能 - Tokutei Ginou) là một loại tư cách lưu trú mới dành cho lao động người nước ngoài tại Nhật Bản, được chính phủ Nhật Bản triển khai từ tháng 4 năm 2019. Mục đích chính của chương trình này là để giải quyết tình trạng thiếu hụt lao động trầm trọng trong một số ngành công nghiệp cụ thể của Nhật Bản. Chương trình này được chia thành 2 loại chính:",
-        "listHtml": "<ul><li><strong>Kỹ năng đặc định loại 1 (Tokutei Ginou 1)</strong>: Dành cho lao động có trình độ kỹ năng và kiến thức chuyên môn nhất định, có thể làm việc ngay mà không cần qua đào tạo nhiều. Thời gian lưu trú tối đa là 5 năm và không được bảo lãnh gia đình.</li><li><strong>Kỹ năng đặc định loại 2 (Tokutei Ginou 2)</strong>: Dành cho lao động có kỹ năng tay nghề cao, chuyên nghiệp. Sau khi hoàn thành chương trình loại 1, lao động có thể thi chuyển lên được loại 2 để được ở lại Nhật Bản lâu dài, có cơ hội xin vĩnh trú và bảo lãnh người thân sang sinh sống.</li></ul>",
-        "h2": "Điều kiện tham gia chương trình",
-        "p3": "Để tham gia chương trình Kỹ năng đặc định, người lao động cần đáp ứng các điều kiện cơ bản sau: Độ tuổi từ đủ 18 tuổi trở lên, thi đỗ kỳ thi năng lực tiếng Nhật và kỳ thi kỹ năng tay nghề cho ngành nghề đăng ký."
-      }
+      "ctaButton": "Đăng việc làm",
+      "backButton": "Quay lại"
     },
     "commentSection": {
       "title": "Bình luận",
@@ -643,7 +668,7 @@
           "company": "Nagasaki, Hoàng Long H."
         },
         {
-          "title": "Kỹ sư cầu nối (Bridge SE) - Đấu thầu",
+          "title": "Bridge Engineer (Bridge SE) - Đấu thầu",
           "company": "Việc làm tại Nhật"
         }
       ]
@@ -679,29 +704,29 @@
       "title": "Khách (Chưa đăng nhập)",
       "description": "Xem với tư cách khách truy cập."
     },
-    "hiringCompany": {
-      "title": "Xí nghiệp tiếp nhận",
-      "description": "Trực tiếp tuyển dụng nhân sự."
-    },
     "supportOrg": {
-      "title": "Cơ quan hỗ trợ",
+      "title": "Cơ quan hỗ trợ (Shien Kikan)",
       "description": "Hỗ trợ các công ty và người lao động."
     },
     "union": {
-      "title": "Nghiệp đoàn",
+      "title": "Nghiệp đoàn (Kumiai)",
       "description": "Quản lý và hỗ trợ thực tập sinh."
+    },
+    "yuryoShokai": {
+      "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
+      "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
     },
     "sendingCompany": {
       "title": "Công ty phái cử",
       "description": "Tuyển và phái cử lao động từ Việt Nam."
     },
-    "hakenCompany": {
-      "title": "Công ty Haken (Nhân sự phái cử)",
-      "description": "Phái cử nhân viên tạm thời."
+    "receivingCompany": {
+      "title": "Xí nghiệp tiếp nhận",
+      "description": "Trực tiếp tuyển dụng và sử dụng lao động."
     },
-    "yuryoShokai": {
-      "title": "Công ty giới thiệu có phí (Yuryo Shokai)",
-      "description": "Cung cấp dịch vụ giới thiệu việc làm có tính phí."
+    "hakenCompany": {
+      "title": "Công ty Haken",
+      "description": "Cung cấp dịch vụ phái cử lao động tạm thời."
     }
   },
   "chat": {
@@ -752,18 +777,18 @@
     }
   },
   "postMethod": {
-    "title": "Chọn phương thức đăng tin",
+    "title": "Chọn phương thức đăng việc làm",
     "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
     "ai": {
-      "title": "Đăng việc làm bằng AI",
-      "description": "Mô tả ngắn gọn và để AI tạo tin tuyển dụng chuyên nghiệp."
+      "title": "Đăng nhanh",
+      "description": "Chỉ vào thao tác bấm đơn giản để đưa thông tin việc làm lên tìm ứng viên phù hợp."
     },
     "manual": {
-      "title": "Nhập liệu thủ công",
-      "description": "Tự điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát."
+      "title": "Đăng chi tiết",
+      "description": "Điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát tin đăng."
     }
   },
-  "jobsPage": {
+   "jobsPage": {
     "title": "Quản lý việc làm",
     "subtitle": "Quản lý các tin tuyển dụng và cơ hội hợp tác của bạn tại đây.",
     "guestSubtitle": "Khám phá các cơ hội việc làm và xem cách nền tảng của chúng tôi hoạt động.",
@@ -790,8 +815,16 @@
       "postedDate": "Ngày đăng",
       "actions": "Hành động",
       "toggleMenu": "Mở menu",
+      "viewDetails": "Xem chi tiết",
       "edit": "Sửa",
-      "archive": "Lưu trữ"
+      "archive": "Lưu trữ",
+      "delete": "Xoá"
+    },
+    "deleteDialog": {
+      "title": "Bạn có chắc chắn muốn xoá việc làm này không?",
+      "description": "Hành động này không thể hoàn tác. Tin tuyển dụng sẽ bị xoá vĩnh viễn.",
+      "cancel": "Huỷ",
+      "confirm": "Xoá"
     },
     "noJobsGuest": {
       "title": "Chưa có dữ liệu việc làm",
@@ -799,26 +832,26 @@
     }
   },
   "jobDetail": {
-    "backButton": "Quay lại danh sách",
-    "findCandidates": "Tìm ứng viên",
-    "location": "Địa điểm",
-    "applicants": "Ứng viên",
-    "postedDate": "Ngày đăng",
-    "jobDescription": "Mô tả công việc",
-    "requirements": "Yêu cầu",
-    "benefits": "Quyền lợi",
-    "jobInformation": "Thông tin công việc",
-    "salary": "Mức lương",
-    "visaType": "Loại Visa",
-    "contractType": "Loại hợp đồng",
-    "workingHours": "Giờ làm việc",
-    "holidays": "Ngày nghỉ",
-    "suitableCandidates": {
-      "title": "Ứng viên phù hợp",
-      "description": "Dựa trên yêu cầu công việc, đây là những ứng viên có thể phù hợp.",
-      "loadMore": "Xem thêm {count} ứng viên khác"
-    },
-    "invite": "Mời ứng tuyển"
+      "backButton": "Quay lại danh sách",
+      "findCandidates": "Tìm ứng viên",
+      "location": "Địa điểm",
+      "applicants": "Ứng viên",
+      "postedDate": "Ngày đăng",
+      "jobDescription": "Mô tả công việc",
+      "requirements": "Yêu cầu",
+      "benefits": "Quyền lợi",
+      "jobInformation": "Thông tin công việc",
+      "salary": "Mức lương",
+      "visaType": "Loại Visa",
+      "contractType": "Loại hợp đồng",
+      "workingHours": "Giờ làm việc",
+      "holidays": "Ngày nghỉ",
+      "suitableCandidates": {
+        "title": "Ứng viên phù hợp",
+        "description": "Dựa trên yêu cầu công việc, đây là những ứng viên có thể phù hợp.",
+        "loadMore": "Xem thêm {count} ứng viên khác"
+      },
+      "invite": "Mời ứng tuyển"
   },
   "unlockCandidates": {
     "title": "Mở khóa hồ sơ ứng viên",
@@ -847,8 +880,8 @@
     "referralFee": "Tổng phí giới thiệu",
     "managementFee": "Phí quản lý",
     "platformFee": "Phí nền tảng",
-    "partnerReceives": "Đối tác nhận",
-    "accept": "Chấp nhận",
+    "partnerReceives": "Bạn nhận về",
+    "accept": "Nhận",
     "decline": "Từ chối",
     "referredByYou": "Do bạn giới thiệu",
     "table": {
@@ -858,6 +891,17 @@
         "fees": "Thông tin phí",
         "expires": "Hết hạn",
         "actions": "Hành động"
+      },
+      "feeRanges": {
+        "sendingCompany": {
+            "referral": "70,000 - 150,000 JPY",
+            "platform_20": "20% (từ {fee})",
+            "platform_25": "25% (từ {fee})",
+            "platform_30": "30% (từ {fee})",
+            "receives_20": "56,000 - 120,000 JPY",
+            "receives_25": "52,500 - 112,500 JPY",
+            "receives_30": "49,000 - 105,000 JPY"
+        }
       }
   },
   "partnershipInfo": {
@@ -876,6 +920,13 @@
     "supportOrgReferral": {
       "description": "Thêm nữa, nếu xí nghiệp tiếp nhận được Cơ quan hỗ trợ giới thiệu vào hệ thống, phí nền tảng sẽ giảm thêm 5%."
     }
+  },
+  "partnerListPage": {
+    "searchPlaceholder": "Tìm tên đối tác...",
+    "partnerType": "Loại đối tác",
+    "allTypes": "Tất cả loại hình",
+    "mainIndustries": "Ngành nghề chính",
+    "noResults": "Không tìm thấy đối tác nào phù hợp."
   },
   "advisorProfile": {
     "header": {
@@ -940,5 +991,141 @@
       "chat": "Chat với AI"
     },
     "contactButton": "Liên hệ ngay"
+  },
+  "elearningHero": {
+    "title": "Nâng cao Kỹ năng, Mở rộng Cơ hội",
+    "subtitle": "Các khóa học trực tuyến được thiết kế đặc biệt để giúp bạn thành công tại thị trường lao động Nhật Bản.",
+    "cta": "Khám phá các khóa học",
+    "imageAlt": "Học viên đang học trực tuyến với laptop"
+  },
+  "allCoursesTitle": "Tất cả các khóa học",
+  "allCoursesSubtitle": "Từ ngôn ngữ, văn hóa đến kỹ năng chuyên ngành, chúng tôi có mọi thứ bạn cần.",
+  "enrollNow": "Đăng ký ngay",
+  "allCourses": [
+    {
+      "title": "Tiếng Nhật giao tiếp trong công việc",
+      "description": "Tự tin giao tiếp với đồng nghiệp và cấp trên người Nhật trong mọi tình huống công việc.",
+      "category": "Ngôn ngữ",
+      "duration": "12 tuần",
+      "level": "Sơ cấp",
+      "reviews": "120",
+      "hint": "japanese classroom"
+    },
+    {
+      "title": "Văn hóa doanh nghiệp Nhật Bản",
+      "description": "Hiểu rõ về cách làm việc, quy tắc ứng xử và các giá trị cốt lõi trong công ty Nhật.",
+      "category": "Văn hóa",
+      "duration": "4 tuần",
+      "level": "Mọi cấp độ",
+      "reviews": "98",
+      "hint": "business meeting japan"
+    },
+    {
+      "title": "Kỹ năng Kaizen và 5S",
+      "description": "Nắm vững các nguyên tắc cải tiến liên tục và sắp xếp nơi làm việc hiệu quả.",
+      "category": "Kỹ năng",
+      "duration": "6 tuần",
+      "level": "Trung cấp",
+      "reviews": "75",
+      "hint": "factory improvement"
+    },
+    {
+      "title": "Luyện thi JLPT N3 cấp tốc",
+      "description": "Chinh phục kỳ thi năng lực tiếng Nhật N3 với lộ trình học tập hiệu quả và bài bản.",
+      "category": "Ngôn ngữ",
+      "duration": "16 tuần",
+      "level": "Trung cấp",
+      "reviews": "150",
+      "hint": "person studying exam"
+    },
+    {
+      "title": "An toàn lao động trong nhà xưởng",
+      "description": "Trang bị kiến thức và kỹ năng cần thiết để đảm bảo an toàn cho bản thân và đồng nghiệp.",
+      "category": "Kỹ năng",
+      "duration": "2 tuần",
+      "level": "Sơ cấp",
+      "reviews": "60",
+      "hint": "safety gear factory"
+    },
+    {
+      "title": "Kỹ năng chăm sóc người cao tuổi",
+      "description": "Khóa học chuyên sâu dành cho các bạn làm việc trong ngành hộ lý, điều dưỡng.",
+      "category": "Chuyên ngành",
+      "duration": "10 tuần",
+      "level": "Mọi cấp độ",
+      "reviews": "88",
+      "hint": "caregiver helping elderly"
+    }
+  ],
+  "partnerProfile": {
+    "companyName": "Công ty cổ phần TVC",
+    "companyType": "Công ty phái cử",
+    "location": "Hà Nội, Việt Nam",
+    "logout": "Đăng xuất",
+    "about": {
+      "title": "Giới thiệu doanh nghiệp",
+      "description": "Công ty phái cử TVC là một trong những đơn vị hàng đầu tại Việt Nam trong lĩnh vực cung ứng nhân lực chất lượng cao cho thị trường Nhật Bản. Với nhiều năm kinh nghiệm, chúng tôi tự hào đã kết nối thành công hàng ngàn lao động với các doanh nghiệp uy tín tại Nhật, tập trung vào các ngành nghề như xây dựng, cơ khí, và nông nghiệp. Chúng tôi cam kết đào tạo bài bản và hỗ trợ toàn diện để đảm bảo người lao động có sự chuẩn bị tốt nhất cho công việc và cuộc sống tại Nhật."
+    },
+    "videos": {
+      "title": "Video về doanh nghiệp",
+      "items": [
+        { "src": "https://picsum.photos/seed/vid1/400/225", "hint": "corporate presentation" },
+        { "src": "https://picsum.photos/seed/vid2/400/225", "hint": "worker interview" },
+        { "src": "https://picsum.photos/seed/vid3/400/225", "hint": "training facility" }
+      ]
+    },
+    "images": {
+      "title": "Ảnh về doanh nghiệp",
+      "items": [
+        { "src": "https://picsum.photos/seed/img1/400/400", "hint": "office building" },
+        { "src": "https://picsum.photos/seed/img2/400/400", "hint": "team photo" },
+        { "src": "https://picsum.photos/seed/img3/400/400", "hint": "training session" },
+        { "src": "https://picsum.photos/seed/img4/400/400", "hint": "company event" }
+      ]
+    },
+    "history": {
+      "title": "Lịch sử & các mốc sự kiện",
+      "items": [
+        { "year": "2010", "title": "Thành lập công ty", "description": "Bắt đầu với đội ngũ 10 nhân viên, tập trung vào thị trường Nhật Bản." },
+        { "year": "2015", "title": "Nhận giấy phép xuất khẩu lao động", "description": "Chính thức được Bộ LĐ-TB&XH cấp phép, mở rộng quy mô hoạt động." },
+        { "year": "2019", "title": "Hợp tác với 50+ doanh nghiệp Nhật Bản", "description": "Mở rộng mạng lưới đối tác, cung ứng đa dạng ngành nghề cho người lao động." }
+      ]
+    },
+    "licenses": {
+      "title": "Giấy phép & Chứng nhận",
+      "items": ["Giấy phép hoạt động dịch vụ đưa người lao động đi làm việc ở nước ngoài số 999/LDTBXH-GP"]
+    },
+    "info": {
+      "title": "Thông tin doanh nghiệp",
+      "items": [
+        { "icon": "founded", "label": "Năm thành lập", "value": "2010" },
+        { "icon": "size", "label": "Quy mô", "value": "50-100 nhân viên" },
+        { "icon": "phone", "label": "SĐT", "value": "024-1234-5678" },
+        { "icon": "website", "label": "Website", "value": "tvc-hr.com.vn" },
+        { "icon": "address", "label": "Địa chỉ", "value": "Quận Cầu Giấy, Hà Nội, Việt Nam" }
+      ]
+    },
+    "industry": {
+      "title": "Ngành nghề & Lĩnh vực",
+      "main": {
+        "title": "Ngành nghề chính",
+        "tags": ["Xây dựng", "Cơ khí", "Nông nghiệp"]
+      },
+      "fields": {
+        "title": "Lĩnh vực hoạt động",
+        "description": "Cung ứng lao động cho các ngành: xây dựng, cơ khí, nông nghiệp, chế biến thực phẩm, hộ lý."
+      }
+    },
+    "benefits": {
+      "title": "Phúc lợi & Môi trường",
+      "items": [
+        "Hỗ trợ đào tạo tiếng Nhật và kỹ năng tay nghề trước khi xuất cảnh。",
+        "Chương trình hỗ trợ vay vốn cho người lao động。",
+        "Theo dõi và hỗ trợ người lao động trong suốt quá trình làm việc tại Nhật Bản。"
+      ]
+    }
+  },
+  "partnerDetailPage": {
+    "partnerNotFound": "Không tìm thấy đối tác."
   }
 }

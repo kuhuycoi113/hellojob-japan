@@ -14,7 +14,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/language-context';
-import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle, Users, Diamond } from 'lucide-react';
+import { Compass, Target, BookOpen, LayoutGrid, Building, Sparkles, Plus, FileText, Handshake, MessageSquare, AlertCircle, Users, Diamond, Settings } from 'lucide-react';
 import { Logo } from './logo';
 import Link from 'next/link';
 import { Separator } from './ui/separator';
@@ -37,12 +37,12 @@ const RoleSwitcher = ({ inMenu = false }: { inMenu?: boolean }) => {
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="guest">{t.userRoles.guest.title}</SelectItem>
-          <SelectItem value="company">{t.userRoles.hiringCompany.title}</SelectItem>
+          <SelectItem value="receiving_company">{t.userRoles.receivingCompany.title}</SelectItem>
+          <SelectItem value="sending_company">{t.userRoles.sendingCompany.title}</SelectItem>
           <SelectItem value="support_org">{t.userRoles.supportOrg.title}</SelectItem>
           <SelectItem value="union">{t.userRoles.union.title}</SelectItem>
-          <SelectItem value="sending_company">{t.userRoles.sendingCompany.title}</SelectItem>
-          <SelectItem value="haken">{t.userRoles.hakenCompany.title}</SelectItem>
           <SelectItem value="yuryo_shokai">{t.userRoles.yuryoShokai.title}</SelectItem>
+          <SelectItem value="haken_company">{t.userRoles.hakenCompany.title}</SelectItem>
         </SelectContent>
       </Select>
     </div>
@@ -60,6 +60,7 @@ export function MobileMenuSheet() {
     { href: "/handbook", label: t.header.menuItems.handbook, icon: <LayoutGrid /> },
     { href: "/about", label: t.header.menuItems.about, icon: <Building /> },
     { href: "/advisors", label: t.header.advisors, icon: <Users /> },
+    { href: "/partners", label: t.header.menuItems.partnerList, icon: <Handshake /> },
     { href: "/chat", label: t.header.menuItems.chat, icon: <MessageSquare /> },
     { href: "#", label: t.mobile_menu_sheet.feedback, icon: <AlertCircle /> },
   ];
@@ -77,6 +78,11 @@ export function MobileMenuSheet() {
       <SheetContent side="right" className="p-0 flex flex-col w-full max-w-sm">
         <SheetHeader className="p-4 flex flex-row items-center justify-between border-b">
           <SheetTitle><Logo /></SheetTitle>
+           <SheetClose asChild>
+            <Button variant="ghost" size="icon">
+                <Settings />
+            </Button>
+           </SheetClose>
         </SheetHeader>
         
         <div className="flex-grow overflow-y-auto px-4 pb-4 pt-4">

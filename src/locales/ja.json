@@ -29,9 +29,38 @@
       "about": "会社概要",
       "dashboard": "ダッシュボード",
       "chat": "相談する",
-      "signUpForPremium": "プレミアムに登録"
+      "advisors": "相談員",
+      "signUpForPremium": "プレミアムに登録",
+      "partnerList": "パートナーリスト",
+      "guestCta": {
+        "title": "HelloJobへようこそ",
+        "description": "ログインまたは新規登録して、すべての機能にアクセスしてください。",
+        "button": "ログイン/新規登録"
+      }
     },
     "editProfile": "プロフィール編集"
+  },
+  "authDialog": {
+    "title": "HelloJobへようこそ！",
+    "description": "アカウントを作成して、採用の可能性を最大限に引き出しましょう。",
+    "continueWithGoogle": "Googleで続行",
+    "continueWithFacebook": "Facebookで続行",
+    "or": "または",
+    "emailOrPhone": "メールアドレスまたは電話番号",
+    "signUp": "登録",
+    "haveAccount": "アカウントをお持ちですか？",
+    "logIn": "ログイン",
+    "terms": {
+      "prefix": "続行することで、当社の",
+      "termsLink": "利用規約",
+      "and": "および",
+      "privacyLink": "プライバシーポリシー",
+      "suffix": "に同意したことになります。"
+    },
+    "quote": {
+      "text": "人格を採用し、スキルは訓練せよ。",
+      "author": "ピーター・シュッツ"
+    }
   },
   "pagination": {
     "previous": "前へ",
@@ -131,7 +160,7 @@
     "title": "人材の質へのこだわり",
     "subtitle": "専門スキルはもちろん、貴社の企業文化にマッチする人材の提供をお約束します。",
     "thoroughScreening": "徹底したスクリーニング",
-    "thoroughScreeningDesc": "全ての候補者に対し、専門スキル、実務能力、そして働く姿勢を評価する独自の面接プロセスを実施しています。",
+    "thoroughScreeningDesc": "各候補者は面接、能力テスト、そしてプロとしての態度の評価というプロセスを経ています。",
     "detailedProfiles": "詳細なプロフィール",
     "detailedProfilesDesc": "紹介動画や検証済みの資格・学歴証明書を含む、信頼性の高い詳細な候補者情報を提供します。",
     "inDepthTraining": "来日前の手厚い教育",
@@ -290,7 +319,7 @@
     "input": {
       "title": "1. 仕事内容を記述してください",
       "description": "キーワード、一文、あるいは既存の職務記述書をアップロードしてください。詳細が多ければ多いほど、より良い結果が得られます。",
-      "reset": "新規作成",
+      "reset": "やり直す",
       "refinePlaceholder": "調整リクエストを入力してください（例：「経験3年必須を追加」）"
     },
     "output": {
@@ -315,6 +344,7 @@
     "refineButton": "調整する",
     "postJobButton": "この求人を掲載する",
     "findPartnersButton": "最適なパートナーを探す",
+    "postAndFindPartnersButton": "掲載してパートナーを探す",
     "sendRequestsButton": "協力リクエストを送信",
     "partner_matching": {
       "title": "3. 最適なパートナーを探す",
@@ -331,9 +361,9 @@
     "pageSubtitle": "日本の労働市場、スキル、生活に関する必要な情報がすべてここに。",
     "searchPlaceholder": "記事を検索 (例: 特定技能、費用...)",
     "featured": {
-      "category": "特定技能",
-      "title": "特定技能とは？2024年版完全ガイド",
-      "description": "特定技能は、日本の新しい労働ビザであり、ベトナム人労働者にとって大きなチャンスです。資格、待遇、対象分野について詳しく解説します。このプログラムは、建設、介護、農業など、人手不足が深刻な分野で熟練した外国人労働者が長期的に働くことを可能にし、競争力のある給与とより良い労働条件を提供します。",
+      "category": "登録支援機関",
+      "title": "特定技能の採用 – 支援機関向けのコスト最適化ソリューション",
+      "description": "ベトナム人労働者の採用コストを最適化するための効果的な戦略とツールを発見しましょう。テクノロジープラットフォームの活用から、賢いパートナーシップまで。",
       "link": "記事を読む"
     },
     "videoTitle": "ショート動画",
@@ -348,9 +378,8 @@
       }
     ],
     "newPostsTitle": "新着記事",
-    "longVideoTitle": "長編動画",
     "longVideos": [
-      {
+       {
         "type": "video",
         "category": "面接のコツ",
         "title": "採用担当者に響く！日本語履歴書の書き方とポイント",
@@ -574,26 +603,21 @@
       "title": "私たちのチーム",
       "subtitle": "HelloJobの成功の陰には、常にあなたの成長のために努力する献身的な人々がいます。"
     }
-  },
+},
   "postDetail": {
     "article": {
-      "category": "面接のコツ",
-      "title": "採用担当者に響く！日本語履歴書の書き方とポイント",
-      "excerpt": "よく準備された履歴書は、日本での理想の仕事への扉を開くための最初で最も重要なステップです。それは単なる経験の要約ではなく、雇用主への最初の自己紹介でもあります。",
+      "category": "登録支援機関",
+      "title": "HelloJobを活用した特定技能採用のコスト削減策",
+      "content": "<h2>日本の登録支援機関の皆様、特定技能候補者の採用コストや定着率にお悩みではありませんか？</h2><p>HelloJobが、貴社の採用プロセスを最適化します。例えば、食品業界での採用の場合：</p><ul><li><strong>一般的な費用：</strong> 250,000円/人</li><li><strong>HelloJobを利用した場合：</strong> 100,000円から/人</li></ul><p>弊社には、透明性の高いサービスを提供する、信頼できるベトナムの送り出し機関が多数登録しています。もし100,000円で応募がない場合でも、少しずつ費用を上げて調整可能です。仮に150,000円になったとしても、一般的な費用に比べて100,000円のコスト削減が実現できます。</p><h2>削減したコストの活用法：</h2><ul><li>より質の高い候補者の確保</li><li>給与やボーナスを増額し、従業員のパフォーマンスを向上</li><li>会社の利益として計上</li></ul><p>この機会をお見逃しなく。</p>{ctaButton}",
       "author": "HelloJobチーム",
-      "readTime": "8分で読めます",
+      "readTime": "3分で読めます",
       "image": {
         "src": "https://picsum.photos/1200/675?random=100",
-        "alt": "履歴書を書いている人",
-        "hint": "person writing resume"
+        "alt": "電卓を持って考えている人",
+        "hint": "person thinking calculator"
       },
-      "content": {
-        "p1": "競争の激しい状況では、プロフェッショナルでクリーン、かつ包括的な履歴書があなたを際立たせます。レイアウトや敬語の使い方から証明写真まで、日本の履歴書の一般的なルールや基準に従うことが不可欠です。",
-        "p2": "特定技能ビザは、2019年4月に日本政府によって導入された、外国人労働者のための新しい在留資格です。このプログラムの主な目的は、日本の特定の産業分野における深刻な労働力不足に対処することです。このプログラムは、主に2つのカテゴリに分かれています。",
-        "listHtml": "<ul><li><strong>特定技能1号</strong>: 一定の技能と専門知識を持ち、多くの訓練を必要とせずにすぐに働くことができる労働者向け。在留期間は最長5年で、家族の帯同は許可されません。</li><li><strong>特定技能2号</strong>: 高度なスキルと専門知識を持つ労働者向け。1号プログラムを修了した後、労働者は試験を受けて2号に進むことができ、長期滞在、永住権の申請、家族の帯同の機会が得られます。</li></ul>",
-        "h2": "参加条件",
-        "p3": "特定技能プログラムに参加するには、労働者は基本的な条件を満たす必要があります。18歳以上であること、日本語能力試験（JLPT）N4レベル以上またはJFT-Basicなどの同等の試験に合格すること、および登録した産業の技能試験に合格することです。"
-      }
+      "ctaButton": "求人を掲載する",
+      "backButton": "戻る"
     },
     "commentSection": {
       "title": "コメント",
@@ -664,8 +688,8 @@
           "type": "article"
         },
         {
-          "title": "How Much is the Cost of Living in Japan per Month?",
-          "category": "Life in Japan",
+          "title": "日本での生活費は一ヶ月いくら？",
+          "category": "日本での生活",
           "image": "https://picsum.photos/400/400?random=3",
           "type": "article"
         }
@@ -675,33 +699,35 @@
   "userRoles": {
     "title": "あなたの役割を選択してください",
     "description": "最適な体験のために、あなたの役割を教えてください。",
+    "group1_title": "日本の企業（採用側）",
+    "group2_title": "採用パートナー（供給・支援側）",
     "guest": {
       "title": "ゲスト（未ログイン）",
       "description": "ビジターとして閲覧する。"
     },
-    "hiringCompany": {
-      "title": "受入企業",
-      "description": "直接人材を採用する。"
-    },
     "supportOrg": {
-      "title": "登録支援機関",
+      "title": "登録支援機関 (Shien Kikan)",
       "description": "企業と労働者を支援する。"
     },
     "union": {
-      "title": "協同組合",
+      "title": "協同組合 (Kumiai)",
       "description": "実習生を管理・支援する。"
+    },
+    "yuryoShokai": {
+      "title": "有料職業紹介事業者 (Yuryo Shokai)",
+      "description": "有料で職業紹介を行う。"
     },
     "sendingCompany": {
       "title": "送り出し機関",
       "description": "ベトナムから労働者を募集・派遣する。"
     },
-    "hakenCompany": {
-      "title": "人材派遣会社",
-      "description": "人材を派遣する。"
+    "receivingCompany": {
+      "title": "受入企業",
+      "description": "労働者を直接雇用・活用する。"
     },
-    "yuryoShokai": {
-      "title": "有料職業紹介事業者",
-      "description": "有料で職業紹介を行う。"
+    "hakenCompany": {
+      "title": "派遣会社",
+      "description": "労働者派遣サービスを提供する。"
     }
   },
   "chat": {
@@ -752,22 +778,22 @@
     }
   },
   "postMethod": {
-    "title": "投稿方法を選択",
+    "title": "求人掲載方法を選択",
     "description": "求人情報をどのように作成しますか？",
     "ai": {
-      "title": "AIで投稿",
-      "description": "簡単な説明で、AIがプロフェッショナルな求人情報を作成します。"
+      "title": "クイック投稿",
+      "description": "簡単なクリック操作で求人情報を掲載し、適切な候補者を見つけます。"
     },
     "manual": {
-      "title": "手動入力",
+      "title": "詳細投稿",
       "description": "詳細なフォームに記入して、リストを完全に制御します。"
     }
   },
-  "jobsPage": {
+   "jobsPage": {
     "title": "求人管理",
     "subtitle": "こちらで求人情報と協力の機会を管理します。",
     "guestSubtitle": "求人情報を検索し、プラットフォームの機能をご覧ください。",
-    "guestCta": "求人を掲載し、候補者と繋がるには、新規登録またはログインしてください。",
+    "guestCta": "新規登録またはログインして、求人を掲載し、候補者と繋がってください。",
     "inviteSendingCompany": "派遣を招待",
     "applicants": "応募者",
     "postedOn": "掲載日",
@@ -790,8 +816,16 @@
       "postedDate": "掲載日",
       "actions": "操作",
       "toggleMenu": "メニューを開閉",
+      "viewDetails": "詳細を見る",
       "edit": "編集",
-      "archive": "アーカイブ"
+      "archive": "アーカイブ",
+      "delete": "削除"
+    },
+    "deleteDialog": {
+      "title": "この求人を削除してもよろしいですか？",
+      "description": "この操作は元に戻せません。求人情報が完全に削除されます。",
+      "cancel": "キャンセル",
+      "confirm": "削除"
     },
     "noJobsGuest": {
       "title": "求人データがありません",
@@ -847,7 +881,7 @@
     "referralFee": "紹介手数料総額",
     "managementFee": "管理手数料",
     "platformFee": "プラットフォーム手数料",
-    "partnerReceives": "受取額",
+    "partnerReceives": "あなたの受取額",
     "accept": "受託する",
     "decline": "辞退する",
     "referredByYou": "あなたが紹介しました",
@@ -858,6 +892,17 @@
         "fees": "手数料情報",
         "expires": "期限",
         "actions": "操作"
+      },
+      "feeRanges": {
+        "sendingCompany": {
+            "referral": "70,000 - 150,000円",
+            "platform_20": "20%（{fee}より）",
+            "platform_25": "25%（{fee}より）",
+            "platform_30": "30%（{fee}より）",
+            "receives_20": "56,000 - 120,000円",
+            "receives_25": "52,500 - 112,500円",
+            "receives_30": "49,000 - 105,000円"
+        }
       }
   },
   "partnershipInfo": {
@@ -876,6 +921,13 @@
     "supportOrgReferral": {
       "description": "さらに、受入企業が登録支援機関によってシステムに紹介された場合、プラットフォーム手数料がさらに5%削減されます。"
     }
+  },
+  "partnerListPage": {
+    "searchPlaceholder": "パートナー名を検索...",
+    "partnerType": "パートナーの種類",
+    "allTypes": "すべての種類",
+    "mainIndustries": "主な業種",
+    "noResults": "該当するパートナーが見つかりませんでした。"
   },
   "advisorProfile": {
     "header": {
@@ -940,5 +992,141 @@
       "chat": "AIとチャット"
     },
     "contactButton": "今すぐ相談"
+  },
+  "elearningHero": {
+    "title": "スキルを磨き、チャンスを広げる",
+    "subtitle": "日本の労働市場で成功するために特別に設計されたオンラインコース。",
+    "cta": "コースを探す",
+    "imageAlt": "ラップトップでオンライン学習する学生"
+  },
+  "allCoursesTitle": "すべてのコース",
+  "allCoursesSubtitle": "言語、文化から専門スキルまで、必要なものがすべて揃っています。",
+  "enrollNow": "今すぐ登録",
+  "allCourses": [
+    {
+      "title": "ビジネス日本語会話",
+      "description": "日本の同僚や上司と、あらゆるビジネスシーンで自信を持ってコミュニケーションが取れるようになります。",
+      "category": "言語",
+      "duration": "12週間",
+      "level": "初級",
+      "reviews": "120",
+      "hint": "japanese classroom"
+    },
+    {
+      "title": "日本の企業文化",
+      "description": "日本企業における働き方、ビジネスマナー、そして核となる価値観を深く理解します。",
+      "category": "文化",
+      "duration": "4週間",
+      "level": "すべてのレベル",
+      "reviews": "98",
+      "hint": "business meeting japan"
+    },
+    {
+      "title": "カイゼンと5Sのスキル",
+      "description": "継続的な改善と効率的な職場整理の原則を習得します。",
+      "category": "スキル",
+      "duration": "6週間",
+      "level": "中級",
+      "reviews": "75",
+      "hint": "factory improvement"
+    },
+    {
+      "title": "JLPT N3短期集中講座",
+      "description": "効果的で体系的な学習プランで、日本語能力試験N3の合格を目指します。",
+      "category": "言語",
+      "duration": "16週間",
+      "level": "中級",
+      "reviews": "150",
+      "hint": "person studying exam"
+    },
+    {
+      "title": "工場での労働安全",
+      "description": "自分自身と同僚の安全を確保するために必要な知識とスキルを身につけます。",
+      "category": "スキル",
+      "duration": "2週間",
+      "level": "初級",
+      "reviews": "60",
+      "hint": "safety gear factory"
+    },
+    {
+      "title": "介護スキル",
+      "description": "介護・看護業界で働く方々のための専門的な集中コースです。",
+      "category": "専門",
+      "duration": "10週間",
+      "level": "すべてのレベル",
+      "reviews": "88",
+      "hint": "caregiver helping elderly"
+    }
+  ],
+  "partnerProfile": {
+    "companyName": "株式会社TVC",
+    "companyType": "送り出し機関",
+    "location": "ベトナム、ハノイ",
+    "logout": "ログアウト",
+    "about": {
+      "title": "企業紹介",
+      "description": "TVC送り出し機関は、日本の市場向けに高品質な人材を供給するベトナムの主要な機関の一つです。長年の経験により、建設、機械、農業などの産業に焦点を当て、何千人もの労働者を日本の優良企業と成功裏に結びつけてきたことを誇りに思っています。私たちは、労働者が日本での仕事と生活に最善の準備ができるよう、徹底したトレーニングと包括的なサポートを提供することをお約束します。"
+    },
+    "videos": {
+      "title": "企業ビデオ",
+      "items": [
+        { "src": "https://picsum.photos/seed/vid1/400/225", "hint": "corporate presentation" },
+        { "src": "https://picsum.photos/seed/vid2/400/225", "hint": "worker interview" },
+        { "src": "https://picsum.photos/seed/vid3/400/225", "hint": "training facility" }
+      ]
+    },
+    "images": {
+      "title": "企業写真",
+      "items": [
+        { "src": "https://picsum.photos/seed/img1/400/400", "hint": "office building" },
+        { "src": "https://picsum.photos/seed/img2/400/400", "hint": "team photo" },
+        { "src": "https://picsum.photos/seed/img3/400/400", "hint": "training session" },
+        { "src": "https://picsum.photos/seed/img4/400/400", "hint": "company event" }
+      ]
+    },
+    "history": {
+      "title": "沿革とマイルストーン",
+      "items": [
+        { "year": "2010", "title": "会社設立", "description": "10人の従業員チームで開始し、日本市場に焦点を当てる。" },
+        { "year": "2015", "title": "労働者送り出し許可を取得", "description": "労働省から正式に認可され、事業規模を拡大。" },
+        { "year": "2019", "title": "50社以上の日本企業と提携", "description": "パートナーネットワークを拡大し、労働者に多様な職種を提供。" }
+      ]
+    },
+    "licenses": {
+      "title": "許可証と認定",
+      "items": ["海外労働者派遣サービス事業許可証 第999/LDTBXH-GP号"]
+    },
+    "info": {
+      "title": "企業情報",
+      "items": [
+        { "icon": "founded", "label": "設立年", "value": "2010" },
+        { "icon": "size", "label": "従業員数", "value": "50-100人" },
+        { "icon": "phone", "label": "電話番号", "value": "024-1234-5678" },
+        { "icon": "website", "label": "ウェブサイト", "value": "tvc-hr.com.vn" },
+        { "icon": "address", "label": "住所", "value": "ベトナム、ハノイ、カウザイ区" }
+      ]
+    },
+    "industry": {
+      "title": "業種と分野",
+      "main": {
+        "title": "主な業種",
+        "tags": ["建設", "機械", "農業"]
+      },
+      "fields": {
+        "title": "事業分野",
+        "description": "建設、機械、農業、食品加工、介護の各産業への労働力供給。"
+      }
+    },
+    "benefits": {
+      "title": "福利厚生と環境",
+      "items": [
+        "出国前の日本語および職業技能訓練のサポート。",
+        "労働者向けの融資支援プログラム。",
+        "日本での就労期間中の労働者のフォローアップとサポート。"
+      ]
+    }
+  },
+  "partnerDetailPage": {
+    "partnerNotFound": "パートナーが見つかりません。"
   }
 }

@@ -31,6 +31,8 @@ import {
   ArrowRight,
   UserSquare,
   Info,
+  Trash2,
+  LogIn,
 } from 'lucide-react';
 import {
   Pagination,
@@ -41,6 +43,17 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import Link from 'next/link';
@@ -54,6 +67,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Label } from './ui/label';
 import { useRole } from '@/contexts/role-context';
 import { useLanguage } from '@/contexts/language-context';
+import { AuthDialog } from './auth-dialog';
 
 
 const statusStyles: Record<string, string> = {
@@ -146,6 +160,18 @@ export function JobsPage() {
     };
   }, []);
 
+  const handleDeleteJob = (jobId: string) => {
+    const updatedJobs = jobs.filter(job => job.id !== jobId);
+    setJobs(updatedJobs);
+
+    const storedJobsRaw = localStorage.getItem('postedJobs');
+    if (storedJobsRaw) {
+      const storedJobs = JSON.parse(storedJobsRaw);
+      const updatedStoredJobs = storedJobs.filter((job: MockJob) => job.id !== jobId);
+      localStorage.setItem('postedJobs', JSON.stringify(updatedStoredJobs));
+    }
+  };
+
   const filteredJobs = jobs.filter((job) => {
     if (activeTab === 'all') return true;
     const jobStatus = (job.status || '').toLowerCase().replace(/\s/g, '-');
@@ -184,6 +210,30 @@ export function JobsPage() {
   }
 
   const isGuest = userRole === 'guest';
+  
+  const DeleteButton = ({ jobId }: { jobId: string}) => {
+    return (
+        <AlertDialog>
+            <AlertDialogTrigger asChild>
+                <Button variant="destructive" size="xs" onClick={(e) => {e.preventDefault(); e.stopPropagation();}}>
+                    <Trash2 className="h-4 w-4" />
+                </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+                <AlertDialogHeader>
+                <AlertDialogTitle>{t.jobsPage.deleteDialog.title}</AlertDialogTitle>
+                <AlertDialogDescription>
+                   {t.jobsPage.deleteDialog.description}
+                </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                <AlertDialogCancel>{t.jobsPage.deleteDialog.cancel}</AlertDialogCancel>
+                <AlertDialogAction onClick={() => handleDeleteJob(jobId)}>{t.jobsPage.deleteDialog.confirm}</AlertDialogAction>
+                </AlertDialogFooter>
+            </AlertDialogContent>
+        </AlertDialog>
+    );
+  }
 
   const JobsGridView = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -195,13 +245,17 @@ export function JobsPage() {
                     isHighlighted && "border-2 border-accent shadow-lg animate-pulse-once"
                 )}>
                     <div className="relative aspect-video">
-                    <Image
-                        src={job.image}
-                        alt={job.title?.[language] || ''}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={job.imageHint}
-                    />
+                    {job.image ? (
+                        <Image
+                            src={job.image}
+                            alt={job.title?.[language] || ''}
+                            fill
+                            className="object-cover"
+                            data-ai-hint={job.imageHint}
+                        />
+                    ) : (
+                        <Skeleton className="h-full w-full" />
+                    )}
                     </div>
                     <CardHeader>
                         <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{job.title?.[language]}</CardTitle>
@@ -231,6 +285,7 @@ export function JobsPage() {
                                 <Button variant="outline" size="sm">
                                     <span className="group-hover:text-primary transition-colors">{t.jobsPage.viewDetails}</span>
                                 </Button>
+                                <DeleteButton jobId={job.id}/>
                             </div>
                         </div>
                     </CardFooter>
@@ -257,19 +312,20 @@ export function JobsPage() {
                   const isHighlighted = job.id === highlightedJobId;
                   return (
                     <TableRow key={job.id} 
-                      className={cn("hover:bg-muted/50 cursor-pointer", isHighlighted && "bg-accent/10 animate-pulse-once")} 
-                      onClick={() => window.location.href = `/dashboard/jobs/${job.id}`}>
+                      className={cn(isHighlighted && "bg-accent/10 animate-pulse-once")}>
                         <TableCell>
-                            <div className="flex items-center gap-3">
+                            <Link href={`/dashboard/jobs/${job.id}`} className="flex items-center gap-3 group">
                                 <Avatar className="hidden h-10 w-10 sm:flex rounded-md">
-                                    <AvatarImage src={job.image} alt={job.title?.[language]} className="object-cover" />
+                                    {job.image ? (
+                                        <AvatarImage src={job.image} alt={job.title?.[language]} className="object-cover" />
+                                    ) : null}
                                     <AvatarFallback className="rounded-md">{job.company?.[language]?.charAt(0)}</AvatarFallback>
                                 </Avatar>
                                 <div>
-                                    <div className="font-medium font-headline">{job.title?.[language]}</div>
+                                    <div className="font-medium font-headline group-hover:text-primary transition-colors">{job.title?.[language]}</div>
                                     <div className="text-sm text-muted-foreground">{job.company?.[language]}</div>
                                 </div>
-                            </div>
+                            </Link>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">{job.applicants}</TableCell>
                         <TableCell className="hidden sm:table-cell">
@@ -289,9 +345,33 @@ export function JobsPage() {
                                 </Button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end">
-                                <DropdownMenuItem>{t.jobsPage.table.viewDetails}</DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link href={`/dashboard/jobs/${job.id}`}>{t.jobsPage.table.viewDetails}</Link>
+                                </DropdownMenuItem>
                                 <DropdownMenuItem>{t.jobsPage.table.edit}</DropdownMenuItem>
                                 <DropdownMenuItem>{t.jobsPage.table.archive}</DropdownMenuItem>
+                                 <AlertDialog>
+                                    <AlertDialogTrigger asChild>
+                                        <DropdownMenuItem
+                                            onSelect={(e) => e.preventDefault()}
+                                            className="text-red-600 focus:bg-red-50 focus:text-red-700"
+                                        >
+                                            {t.jobsPage.table.delete}
+                                        </DropdownMenuItem>
+                                    </AlertDialogTrigger>
+                                    <AlertDialogContent>
+                                        <AlertDialogHeader>
+                                        <AlertDialogTitle>{t.jobsPage.deleteDialog.title}</AlertDialogTitle>
+                                        <AlertDialogDescription>
+                                            {t.jobsPage.deleteDialog.description}
+                                        </AlertDialogDescription>
+                                        </AlertDialogHeader>
+                                        <AlertDialogFooter>
+                                        <AlertDialogCancel>{t.jobsPage.deleteDialog.cancel}</AlertDialogCancel>
+                                        <AlertDialogAction onClick={() => handleDeleteJob(job.id)}>{t.jobsPage.deleteDialog.confirm}</AlertDialogAction>
+                                        </AlertDialogFooter>
+                                    </AlertDialogContent>
+                                </AlertDialog>
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         </TableCell>
@@ -304,7 +384,7 @@ export function JobsPage() {
 
   return (
     <div className="space-y-6">
-        { (userRole === 'union' || userRole === 'support_org') && !isGuest && (
+        { (userRole === 'union' || userRole === 'support_org' || userRole === 'sending_company') && !isGuest && (
             <>
             <PartnershipOpportunities />
             <PartnershipInfo />
@@ -414,10 +494,20 @@ export function JobsPage() {
               </div>
             </div>
             <CardTitle className="text-xl font-bold font-headline">{t.jobsPage.noJobsGuest.title}</CardTitle>
-            <p className="text-muted-foreground mt-2">{t.jobsPage.noJobsGuest.description}</p>
+            <p className="text-muted-foreground mt-2 mb-6">{t.jobsPage.noJobsGuest.description}</p>
+            <AuthDialog>
+              <Button>
+                <LogIn className="mr-2 h-4 w-4" />
+                {t.header.menuItems.guestCta.button}
+              </Button>
+            </AuthDialog>
           </Card>
         )}
       </div>
     </div>
   );
 }
+
+    
+
+    

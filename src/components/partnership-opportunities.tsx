@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -15,6 +14,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { cn } from '@/lib/utils';
 import { Separator } from './ui/separator';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+import { useRole } from '@/contexts/role-context';
 
 export function PartnershipOpportunities() {
     const { t, language } = useLanguage();
@@ -97,15 +97,50 @@ export function PartnershipOpportunities() {
     }
 
     const FeeDetails = ({ opportunity }: { opportunity: Opportunity }) => {
+        const { userRole } = useRole();
+        
+        const formatCurrency = (value: number) => {
+            return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', currencyDisplay: 'code' }).format(value).replace('JPY', ' JPY');
+        };
+
+        if (userRole === 'sending_company') {
+            const possibleFees = [150000, 90000, 120000, 70000, 150000, 90000, 120000, 70000];
+            const referralFee = possibleFees[parseInt(opportunity.id.slice(-1), 16) % possibleFees.length];
+
+            const feeRates = [0.25, 0.30, 0.20, 0.25, 0.30, 0.20, 0.25, 0.30];
+            const platformFeeRate = feeRates[parseInt(opportunity.id.slice(-1), 16) % feeRates.length];
+            
+            const platformFee = referralFee * platformFeeRate;
+            const partnerReceives = referralFee * (1 - platformFeeRate);
+            
+            const isDiscounted = platformFeeRate < 0.30;
+            
+            return (
+                <div className="space-y-1">
+                    <div className="flex justify-between items-baseline text-xs">
+                        <span className="text-muted-foreground">{t_opp.referralFee}:</span>
+                        <span className="font-medium text-muted-foreground">{formatCurrency(referralFee)}</span>
+                    </div>
+                     <div className="flex justify-between items-baseline text-xs">
+                        <span className="text-muted-foreground">
+                            {t_opp.platformFee} (<span className={cn(isDiscounted ? "text-green-600 font-bold" : "")}>{platformFeeRate * 100}%</span>):
+                        </span>
+                        <span className="font-medium text-muted-foreground">{formatCurrency(platformFee)}</span>
+                    </div>
+                     <div className="flex justify-between items-baseline">
+                        <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
+                        <span className="font-bold text-lg text-primary">{formatCurrency(partnerReceives)}</span>
+                    </div>
+                </div>
+            )
+        }
+
         const feeString = opportunity.referralFee[language];
         const feeValue = parseInt(feeString.replace(/[^0-9]/g, ''), 10);
-
-        // Simulate that some companies are referred by support organizations
         const isReferred = opportunity.id === 'OPP001' || opportunity.id === 'OPP003';
-        
-        let platformFeeRate = 0.30; // Default 30%
+        let platformFeeRate = 0.30;
         if (isReferred) {
-            platformFeeRate -= 0.05; // Reduced by 5% if referred
+            platformFeeRate -= 0.05;
         }
         
         if (isNaN(feeValue)) {
@@ -119,17 +154,9 @@ export function PartnershipOpportunities() {
 
         const platformFee = feeValue * platformFeeRate;
         const partnerReceives = feeValue * (1 - platformFeeRate);
-
-        const formatCurrency = (value: number) => {
-            return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', currencyDisplay: 'code' }).format(value).replace('JPY', ' JPY');
-        };
         
         return (
              <div className="space-y-1">
-                <div className="flex justify-between items-baseline">
-                    <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
-                    <span className="font-bold text-lg text-primary">{formatCurrency(partnerReceives)}</span>
-                </div>
                 <div className="flex justify-between items-baseline text-xs">
                     <span className="text-muted-foreground">{t_opp.referralFee}:</span>
                     <span className="font-medium text-muted-foreground">{formatCurrency(feeValue)}</span>
@@ -142,11 +169,15 @@ export function PartnershipOpportunities() {
                     <span className="font-medium text-muted-foreground">{formatCurrency(platformFee)}</span>
                 </div>
                 {opportunity.visaType.en !== 'Engineer' && (
-                  <div className="flex justify-between items-baseline text-xs pt-1">
+                  <div className="flex justify-between items-baseline text-xs">
                       <span className="text-muted-foreground">{t_opp.managementFee}:</span>
                       <span className="font-medium text-muted-foreground">{opportunity.managementFee[language]}</span>
                   </div>
                 )}
+                 <div className="flex justify-between items-baseline pt-1">
+                    <span className="text-muted-foreground">{t_opp.partnerReceives}:</span>
+                    <span className="font-bold text-lg text-primary">{formatCurrency(partnerReceives)}</span>
+                </div>
             </div>
         )
     };
@@ -183,9 +214,9 @@ export function PartnershipOpportunities() {
                                     <div className="flex justify-between items-start">
                                         <div>
                                             <CardTitle className="text-lg font-bold">{opp.title[language]}</CardTitle>
-                                            <CardDescription>
+                                            <div className="text-sm text-muted-foreground">
                                                 <CompanyNameDisplay opportunity={opp} />
-                                            </CardDescription>
+                                            </div>
                                         </div>
                                         <Badge variant="secondary" className="bg-primary/20 text-primary-foreground">{opp.visaType[language]}</Badge>
                                     </div>
