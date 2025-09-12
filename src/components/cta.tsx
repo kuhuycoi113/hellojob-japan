@@ -26,6 +26,24 @@ export function Cta() {
   const [dialog61Open, setDialog61Open] = useState(false);
   const [dialog62Open, setDialog62Open] = useState(false);
   const [dialog63Open, setDialog63Open] = useState(false);
+  const [dialog7Open, setDialog7Open] = useState(false);
+  const [dialog7Caller, setDialog7Caller] = useState<string | null>(null);
+
+  const openDialog7 = (caller: string) => {
+    setDialog7Caller(caller);
+    if (caller === '61') setDialog61Open(false);
+    if (caller === '62') setDialog62Open(false);
+    if (caller === '63') setDialog63Open(false);
+    setDialog7Open(true);
+  };
+
+  const backFromDialog7 = () => {
+    setDialog7Open(false);
+    if (dialog7Caller === '61') setDialog61Open(true);
+    if (dialog7Caller === '62') setDialog62Open(true);
+    if (dialog7Caller === '63') setDialog63Open(true);
+  };
+
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -133,13 +151,13 @@ export function Cta() {
                   <DialogTitle>ich khong khong 6 1</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => setDialog61Open(false)}>KK1</Button>
-                  <Button onClick={() => setDialog61Open(false)}>KK2</Button>
-                  <Button onClick={() => setDialog61Open(false)}>KK3</Button>
-                  <Button onClick={() => setDialog61Open(false)}>KK4</Button>
-                  <Button onClick={() => setDialog61Open(false)}>KK5</Button>
-                  <Button onClick={() => setDialog61Open(false)}>KK6</Button>
-                  <Button onClick={() => setDialog61Open(false)}>KK7</Button>
+                  <Button onClick={() => openDialog7('61')}>KK1</Button>
+                  <Button onClick={() => openDialog7('61')}>KK2</Button>
+                  <Button onClick={() => openDialog7('61')}>KK3</Button>
+                  <Button onClick={() => openDialog7('61')}>KK4</Button>
+                  <Button onClick={() => openDialog7('61')}>KK5</Button>
+                  <Button onClick={() => openDialog7('61')}>KK6</Button>
+                  <Button onClick={() => openDialog7('61')}>KK7</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog61Open(false); setDialog51Open(true); }}>Quay lại</Button>
@@ -170,7 +188,7 @@ export function Cta() {
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
                   {Array.from({ length: 15 }, (_, i) => (
-                    <Button key={i} onClick={() => setDialog62Open(false)}>LL{i + 1}</Button>
+                    <Button key={i} onClick={() => openDialog7('62')}>LL{i + 1}</Button>
                   ))}
                 </div>
                 <DialogFooter>
@@ -201,11 +219,27 @@ export function Cta() {
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
                   {Array.from({ length: 21 }, (_, i) => (
-                    <Button key={i} onClick={() => setDialog63Open(false)}>MM{i + 1}</Button>
+                    <Button key={i} onClick={() => openDialog7('63')}>MM{i + 1}</Button>
                   ))}
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog63Open(false); setDialog53Open(true); }}>Quay lại</Button>
+                </DialogFooter>
+              </DialogContent>
+          </Dialog>
+          
+          <Dialog open={dialog7Open} onOpenChange={setDialog7Open}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>ich khong khong 7</DialogTitle>
+                </DialogHeader>
+                <div className="grid grid-cols-3 gap-4 py-4">
+                  {Array.from({ length: 9 }, (_, i) => (
+                    <Button key={i} onClick={() => setDialog7Open(false)}>N{i + 1}</Button>
+                  ))}
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={backFromDialog7}>Quay lại</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
