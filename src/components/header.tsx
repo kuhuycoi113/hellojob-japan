@@ -259,6 +259,7 @@ export function Header() {
           </DropdownMenu>
 
           <div className="hidden md:flex items-center gap-2">
+            <Button variant="outline">Tạo</Button>
             <Dialog open={mainDialogOpen} onOpenChange={setMainDialogOpen}>
               <DialogTrigger asChild>
                   <Button variant="secondary">
