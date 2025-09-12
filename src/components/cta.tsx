@@ -19,6 +19,7 @@ export function Cta() {
   const [dialog1Open, setDialog1Open] = useState(false);
   const [dialog2Open, setDialog2Open] = useState(false);
   const [dialog3Open, setDialog3Open] = useState(false);
+  const [dialog4Open, setDialog4Open] = useState(false);
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -75,18 +76,35 @@ export function Cta() {
                   <DialogTitle>ich khong khong 3</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => setDialog3Open(false)}>E</Button>
-                  <Button onClick={() => setDialog3Open(false)}>F</Button>
-                  <Button onClick={() => setDialog3Open(false)}>G</Button>
-                  <Button onClick={() => setDialog3Open(false)}>H</Button>
-                  <Button onClick={() => setDialog3Open(false)}>I</Button>
-                  <Button onClick={() => setDialog3Open(false)}>J</Button>
+                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>E</Button>
+                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>F</Button>
+                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>G</Button>
+                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>H</Button>
+                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>I</Button>
+                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>J</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog3Open(false); setDialog1Open(true); }}>Quay lại</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
+
+          <Dialog open={dialog4Open} onOpenChange={setDialog4Open}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>ich khong khong 4</DialogTitle>
+                </DialogHeader>
+                <div className="flex justify-center gap-4 py-4">
+                  <Button onClick={() => setDialog4Open(false)}>K</Button>
+                  <Button onClick={() => setDialog4Open(false)}>L</Button>
+                  <Button onClick={() => setDialog4Open(false)}>M</Button>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => { setDialog4Open(false); setDialog3Open(true); }}>Quay lại</Button>
+                </DialogFooter>
+              </DialogContent>
+          </Dialog>
+
         </div>
       </div>
     </section>
