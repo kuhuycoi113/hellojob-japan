@@ -6,7 +6,6 @@ import { useLanguage } from '@/contexts/language-context';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -19,6 +18,7 @@ export function Cta() {
   const { t } = useLanguage();
   const [dialog1Open, setDialog1Open] = useState(false);
   const [dialog2Open, setDialog2Open] = useState(false);
+  const [dialog3Open, setDialog3Open] = useState(false);
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -48,7 +48,7 @@ export function Cta() {
                 <DialogTitle>ich khong khong 1</DialogTitle>
               </DialogHeader>
               <div className="flex justify-center gap-4 py-4">
-                <Button onClick={() => setDialog1Open(false)}>A</Button>
+                <Button onClick={() => { setDialog1Open(false); setDialog3Open(true); }}>A</Button>
                 <Button onClick={() => { setDialog1Open(false); setDialog2Open(true); }}>B</Button>
               </div>
             </DialogContent>
@@ -65,6 +65,25 @@ export function Cta() {
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog2Open(false); setDialog1Open(true); }}>Quay lại</Button>
+                </DialogFooter>
+              </DialogContent>
+          </Dialog>
+
+          <Dialog open={dialog3Open} onOpenChange={setDialog3Open}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>ich khong khong 3</DialogTitle>
+                </DialogHeader>
+                <div className="grid grid-cols-3 gap-4 py-4">
+                  <Button onClick={() => setDialog3Open(false)}>E</Button>
+                  <Button onClick={() => setDialog3Open(false)}>F</Button>
+                  <Button onClick={() => setDialog3Open(false)}>G</Button>
+                  <Button onClick={() => setDialog3Open(false)}>H</Button>
+                  <Button onClick={() => setDialog3Open(false)}>I</Button>
+                  <Button onClick={() => setDialog3Open(false)}>J</Button>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => { setDialog3Open(false); setDialog1Open(true); }}>Quay lại</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
