@@ -10,7 +10,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from '@/components/ui/dialog';
+import { DialogFooter } from '@/components/ui/dialog';
 
 export function Cta() {
   const { t } = useLanguage();
@@ -25,7 +27,7 @@ export function Cta() {
           {t.cta.subtitle}
         </p>
         <div className="mt-8 flex justify-center gap-4">
-          <Button size="lg" className='bg-accent text-accent-foreground hover:bg-accent/90'>
+          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
             {t.cta.postJob}
           </Button>
 
@@ -56,6 +58,11 @@ export function Cta() {
                       <Button>C</Button>
                       <Button>D</Button>
                     </div>
+                     <DialogFooter>
+                      <DialogClose asChild>
+                        <Button variant="outline">Quay lại</Button>
+                      </DialogClose>
+                    </DialogFooter>
                   </DialogContent>
                 </Dialog>
               </div>
