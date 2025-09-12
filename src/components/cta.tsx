@@ -25,6 +25,7 @@ export function Cta() {
   const [dialog53Open, setDialog53Open] = useState(false);
   const [dialog61Open, setDialog61Open] = useState(false);
   const [dialog62Open, setDialog62Open] = useState(false);
+  const [dialog63Open, setDialog63Open] = useState(false);
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -184,11 +185,27 @@ export function Cta() {
                   <DialogTitle>ich khong khong 5 3</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => setDialog53Open(false)}>M1</Button>
-                  <Button onClick={() => setDialog53Open(false)}>M2</Button>
+                  <Button onClick={() => { setDialog53Open(false); setDialog63Open(true); }}>M1</Button>
+                  <Button onClick={() => { setDialog53Open(false); setDialog63Open(true); }}>M2</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog53Open(false); setDialog4Open(true); }}>Quay lại</Button>
+                </DialogFooter>
+              </DialogContent>
+          </Dialog>
+
+          <Dialog open={dialog63Open} onOpenChange={setDialog63Open}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>ich khong khong 6 3</DialogTitle>
+                </DialogHeader>
+                <div className="grid grid-cols-3 gap-4 py-4">
+                  {Array.from({ length: 21 }, (_, i) => (
+                    <Button key={i} onClick={() => setDialog63Open(false)}>MM{i + 1}</Button>
+                  ))}
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => { setDialog63Open(false); setDialog53Open(true); }}>Quay lại</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
