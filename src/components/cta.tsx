@@ -3,6 +3,14 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 export function Cta() {
   const { t } = useLanguage();
@@ -24,9 +32,22 @@ export function Cta() {
           <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100">
             {t.cta.contactUs}
           </Button>
-          <Button size="lg" variant="outline">
-            Test
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button size="lg" variant="outline">
+                Test
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>ich khong khong 1</DialogTitle>
+              </DialogHeader>
+              <div className="flex justify-center gap-4 py-4">
+                <Button>A</Button>
+                <Button>B</Button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
