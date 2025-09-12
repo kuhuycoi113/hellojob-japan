@@ -207,7 +207,7 @@ export function Header() {
           </Button>
 
           <div className="md:hidden">
-            <Dialog open={mainDialogOpen} onOpenChange={setMainDialogOpen}>
+            <Dialog>
               <DialogTrigger asChild>
                 <Button variant="secondary">{t.header.postJob}</Button>
               </DialogTrigger>
@@ -266,12 +266,10 @@ export function Header() {
               <DialogContent className="sm:max-w-3xl">
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold font-headline text-center">{t.postMethod.title}</DialogTitle>
-                  <DialogDescription className="text-center">
-                    {t.postMethod.description}
-                  </DialogDescription>
+                  <DialogDescription className="text-center">{t.postMethod.description}</DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                   <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center justify-center" onClick={openRoleDialog}>
+                   <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col items-center justify-center" onClick={() => router.push('/post-job-ai')}>
                       <div className="bg-primary/5 p-3 rounded-lg mb-4"><Sparkles className="h-8 w-8 text-primary" /></div>
                       <h3 className="font-semibold text-base text-gray-800">{t.postMethod.ai.title}</h3>
                       <p className="text-sm text-muted-foreground mt-1">{t.postMethod.ai.description}</p>
