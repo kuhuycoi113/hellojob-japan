@@ -23,6 +23,7 @@ export function Cta() {
   const [dialog51Open, setDialog51Open] = useState(false);
   const [dialog52Open, setDialog52Open] = useState(false);
   const [dialog53Open, setDialog53Open] = useState(false);
+  const [dialog61Open, setDialog61Open] = useState(false);
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -114,12 +115,32 @@ export function Cta() {
                   <DialogTitle>ich khong khong 5 1</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => setDialog51Open(false)}>K1</Button>
-                  <Button onClick={() => setDialog51Open(false)}>K2</Button>
-                  <Button onClick={() => setDialog51Open(false)}>K3</Button>
+                  <Button onClick={() => { setDialog51Open(false); setDialog61Open(true); }}>K1</Button>
+                  <Button onClick={() => { setDialog51Open(false); setDialog61Open(true); }}>K2</Button>
+                  <Button onClick={() => { setDialog51Open(false); setDialog61Open(true); }}>K3</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog51Open(false); setDialog4Open(true); }}>Quay lại</Button>
+                </DialogFooter>
+              </DialogContent>
+          </Dialog>
+          
+          <Dialog open={dialog61Open} onOpenChange={setDialog61Open}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>ich khong khong 6 1</DialogTitle>
+                </DialogHeader>
+                <div className="grid grid-cols-3 gap-4 py-4">
+                  <Button onClick={() => setDialog61Open(false)}>KK1</Button>
+                  <Button onClick={() => setDialog61Open(false)}>KK2</Button>
+                  <Button onClick={() => setDialog61Open(false)}>KK3</Button>
+                  <Button onClick={() => setDialog61Open(false)}>KK4</Button>
+                  <Button onClick={() => setDialog61Open(false)}>KK5</Button>
+                  <Button onClick={() => setDialog61Open(false)}>KK6</Button>
+                  <Button onClick={() => setDialog61Open(false)}>KK7</Button>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => { setDialog61Open(false); setDialog51Open(true); }}>Quay lại</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
