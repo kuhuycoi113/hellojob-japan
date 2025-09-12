@@ -8,7 +8,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
   DialogClose,
 } from '@/components/ui/dialog';
 import { DialogFooter } from '@/components/ui/dialog';
@@ -186,7 +185,6 @@ export function Cta() {
                 <div className="grid grid-cols-3 gap-4 py-4">
                   <Button onClick={() => setDialog53Open(false)}>M1</Button>
                   <Button onClick={() => setDialog53Open(false)}>M2</Button>
-                  <Button onClick={() => setDialog53Open(false)}>L3</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog53Open(false); setDialog4Open(true); }}>Quay lại</Button>
