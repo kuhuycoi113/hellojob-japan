@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/language-context';
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -202,7 +203,7 @@ export function Cta() {
                 <DialogHeader>
                   <DialogTitle>ich khong khong 5 3</DialogTitle>
                 </DialogHeader>
-                <div className="grid grid-cols-3 gap-4 py-4">
+                <div className="grid grid-cols-2 gap-4 py-4">
                   <Button onClick={() => { setDialog53Open(false); setDialog63Open(true); }}>M1</Button>
                   <Button onClick={() => { setDialog53Open(false); setDialog63Open(true); }}>M2</Button>
                 </div>
@@ -231,12 +232,21 @@ export function Cta() {
           <Dialog open={dialog7Open} onOpenChange={setDialog7Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>ich khong khong 7</DialogTitle>
+                  <DialogTitle>Chọn khu vực làm việc</DialogTitle>
+                  <DialogDescription>
+                    Lựa chọn khu vực bạn muốn làm việc tại Nhật Bản.
+                  </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  {Array.from({ length: 9 }, (_, i) => (
-                    <Button key={i} onClick={() => setDialog7Open(false)}>N{i + 1}</Button>
-                  ))}
+                    <Button onClick={() => setDialog7Open(false)}>Hokkaido</Button>
+                    <Button onClick={() => setDialog7Open(false)}>Tohoku</Button>
+                    <Button onClick={() => setDialog7Open(false)}>Kanto</Button>
+                    <Button onClick={() => setDialog7Open(false)}>Chubu</Button>
+                    <Button onClick={() => setDialog7Open(false)}>Kansai</Button>
+                    <Button onClick={() => setDialog7Open(false)}>Chugoku</Button>
+                    <Button onClick={() => setDialog7Open(false)}>Shikoku</Button>
+                    <Button onClick={() => setDialog7Open(false)}>Kyushu</Button>
+                    <Button onClick={() => setDialog7Open(false)}>Okinawa</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={backFromDialog7}>Quay lại</Button>
