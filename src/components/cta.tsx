@@ -22,6 +22,7 @@ export function Cta() {
   const [dialog4Open, setDialog4Open] = useState(false);
   const [dialog51Open, setDialog51Open] = useState(false);
   const [dialog52Open, setDialog52Open] = useState(false);
+  const [dialog53Open, setDialog53Open] = useState(false);
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -99,7 +100,7 @@ export function Cta() {
                 <div className="flex justify-center gap-4 py-4">
                   <Button onClick={() => { setDialog4Open(false); setDialog51Open(true); }}>K</Button>
                   <Button onClick={() => { setDialog4Open(false); setDialog52Open(true); }}>L</Button>
-                  <Button onClick={() => setDialog4Open(false)}>M</Button>
+                  <Button onClick={() => { setDialog4Open(false); setDialog53Open(true); }}>M</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog4Open(false); setDialog3Open(true); }}>Quay lại</Button>
@@ -135,6 +136,22 @@ export function Cta() {
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog52Open(false); setDialog4Open(true); }}>Quay lại</Button>
+                </DialogFooter>
+              </DialogContent>
+          </Dialog>
+
+          <Dialog open={dialog53Open} onOpenChange={setDialog53Open}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>ich khong khong 5 3</DialogTitle>
+                </DialogHeader>
+                <div className="grid grid-cols-3 gap-4 py-4">
+                  <Button onClick={() => setDialog53Open(false)}>M1</Button>
+                  <Button onClick={() => setDialog53Open(false)}>M2</Button>
+                  <Button onClick={() => setDialog53Open(false)}>L3</Button>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => { setDialog53Open(false); setDialog4Open(true); }}>Quay lại</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
