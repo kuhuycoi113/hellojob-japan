@@ -21,6 +21,7 @@ export function Cta() {
   const [dialog3Open, setDialog3Open] = useState(false);
   const [dialog4Open, setDialog4Open] = useState(false);
   const [dialog51Open, setDialog51Open] = useState(false);
+  const [dialog52Open, setDialog52Open] = useState(false);
 
   return (
     <section className="py-16 sm:py-24 bg-secondary">
@@ -97,7 +98,7 @@ export function Cta() {
                 </DialogHeader>
                 <div className="flex justify-center gap-4 py-4">
                   <Button onClick={() => { setDialog4Open(false); setDialog51Open(true); }}>K</Button>
-                  <Button onClick={() => setDialog4Open(false)}>L</Button>
+                  <Button onClick={() => { setDialog4Open(false); setDialog52Open(true); }}>L</Button>
                   <Button onClick={() => setDialog4Open(false)}>M</Button>
                 </div>
                 <DialogFooter>
@@ -118,6 +119,22 @@ export function Cta() {
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog51Open(false); setDialog4Open(true); }}>Quay lại</Button>
+                </DialogFooter>
+              </DialogContent>
+          </Dialog>
+
+          <Dialog open={dialog52Open} onOpenChange={setDialog52Open}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>ich khong khong 5 2</DialogTitle>
+                </DialogHeader>
+                <div className="grid grid-cols-3 gap-4 py-4">
+                  <Button onClick={() => setDialog52Open(false)}>L1</Button>
+                  <Button onClick={() => setDialog52Open(false)}>L2</Button>
+                  <Button onClick={() => setDialog52Open(false)}>L3</Button>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => { setDialog52Open(false); setDialog4Open(true); }}>Quay lại</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
