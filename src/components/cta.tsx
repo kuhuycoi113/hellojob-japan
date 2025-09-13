@@ -16,7 +16,7 @@ import {
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
-import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake } from 'lucide-react';
+import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit } from 'lucide-react';
 
 
 export function Cta() {
@@ -107,12 +107,25 @@ export function Cta() {
               </Button>
             </DialogTrigger>
             <DialogContent>
-              <DialogHeader>
-                <DialogTitle>ich khong khong 1</DialogTitle>
+              <DialogHeader className="text-center">
+                <DialogTitle className="text-2xl font-bold font-headline">Chọn phương thức tạo hồ sơ</DialogTitle>
+                <DialogDescription>Bạn muốn tạo hồ sơ để làm gì?</DialogDescription>
               </DialogHeader>
-              <div className="flex justify-center gap-4 py-4">
-                <Button onClick={() => { setDialog1Open(false); setDialog3Open(true); }}>A</Button>
-                <Button onClick={() => { setDialog1Open(false); setDialog2Open(true); }}>B</Button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                  <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog3Open(true); }}>
+                      <div className="flex justify-center mb-4">
+                          <div className="p-3 rounded-full bg-primary/10 text-primary"><BrainCircuit className="w-8 h-8"/></div>
+                      </div>
+                      <h3 className="font-semibold text-lg text-gray-800">Tạo nhanh</h3>
+                      <p className="text-sm text-muted-foreground mt-1">Để HelloJob AI gợi ý việc làm phù hợp cho bạn ngay lập tức.</p>
+                  </Card>
+                   <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog2Open(true); }}>
+                       <div className="flex justify-center mb-4">
+                          <div className="p-3 rounded-full bg-green-500/10 text-green-500"><Edit className="w-8 h-8"/></div>
+                      </div>
+                      <h3 className="font-semibold text-lg text-gray-800">Tạo chi tiết</h3>
+                      <p className="text-sm text-muted-foreground mt-1">Để hoàn thiện hồ sơ và sẵn sàng ứng tuyển vào công việc mơ ước.</p>
+                  </Card>
               </div>
             </DialogContent>
           </Dialog>
