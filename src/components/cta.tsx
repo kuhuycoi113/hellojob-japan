@@ -10,6 +10,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
+  DialogTrigger,
   DialogClose,
 } from '@/components/ui/dialog';
 import { DialogFooter } from '@/components/ui/dialog';
