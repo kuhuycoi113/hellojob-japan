@@ -198,7 +198,7 @@ export function Cta() {
                             <div className="p-3 rounded-full bg-primary/10 text-primary"><BrainCircuit className="w-8 h-8"/></div>
                         </div>
                         <h3 className="font-semibold text-lg text-gray-800">Dùng AI</h3>
-                        <p className="text-sm text-muted-foreground mt-1">Tải lên CV, AI sẽ tự động điền thông tin.</p>
+                        <p className="text-sm text-muted-foreground mt-1">Tải lên bản mô tả công việc (PDF, DOC, ảnh...), AI sẽ tự động tạo tin đăng.</p>
                     </Card>
                      <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                          <div className="flex justify-center mb-4">
