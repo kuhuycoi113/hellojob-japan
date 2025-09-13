@@ -137,12 +137,33 @@ export function Cta() {
            <Dialog open={dialog51Open} onOpenChange={setDialog51Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>ich khong khong 5 1</DialogTitle>
+                  <DialogTitle>Chọn loại Thực tập sinh kỹ năng</DialogTitle>
+                  <DialogDescription>
+                    Chọn loại hình chi tiết để tiếp tục.
+                  </DialogDescription>
                 </DialogHeader>
-                <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => { setDialog51Open(false); setDialog61Open(true); }}>K1</Button>
-                  <Button onClick={() => { setDialog51Open(false); setDialog61Open(true); }}>K2</Button>
-                  <Button onClick={() => { setDialog51Open(false); setDialog61Open(true); }}>K3</Button>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
+                    <Card
+                      className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                      onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
+                    >
+                      <CardTitle className="font-semibold text-base">Thực tập sinh 3 năm</CardTitle>
+                      <CardDescription>Chương trình phổ thông nhất</CardDescription>
+                    </Card>
+                    <Card
+                      className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                      onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
+                    >
+                      <CardTitle className="font-semibold text-base">Thực tập sinh 1 năm</CardTitle>
+                      <CardDescription>Chương trình ngắn hạn</CardDescription>
+                    </Card>
+                    <Card
+                      className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                      onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
+                    >
+                      <CardTitle className="font-semibold text-base">Thực tập sinh 3 Go</CardTitle>
+                      <CardDescription>Dành cho người có kinh nghiệm</CardDescription>
+                    </Card>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog51Open(false); setDialog4Open(true); }}>Quay lại</Button>
@@ -359,5 +380,3 @@ export function Cta() {
     </section>
   );
 }
-
-    
