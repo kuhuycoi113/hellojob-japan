@@ -10,7 +10,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
   DialogClose,
 } from '@/components/ui/dialog';
 import { DialogFooter } from '@/components/ui/dialog';
@@ -43,6 +42,8 @@ export function Cta() {
   const [dialog8Open, setDialog8Open] = useState(false);
   const [feeAmount, setFeeAmount] = useState('');
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
+  const [dialog9Open, setDialog9Open] = useState(false);
+  const [managementFeeAmount, setManagementFeeAmount] = useState('');
 
 
   const openDialog7 = (caller: string) => {
@@ -104,9 +105,20 @@ export function Cta() {
         setFeeAmount('');
     }
   };
+  
+    const handleManagementFeeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rawValue = e.target.value.replace(/,/g, '');
+    if (!isNaN(Number(rawValue))) {
+        const formattedValue = Number(rawValue).toLocaleString('en-US');
+        setManagementFeeAmount(formattedValue);
+    } else if (rawValue === '') {
+        setManagementFeeAmount('');
+    }
+  };
 
   const handleFinishFlow = () => {
     setDialog8Open(false);
+    setDialog9Open(false);
 
     if (selectedRole?.title === t.userRoles.receivingCompany.title) {
         setUserRole('support_org');
@@ -505,12 +517,12 @@ export function Cta() {
           </Dialog>
           
           <Dialog open={dialog7Open} onOpenChange={setDialog7Open}>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn khu vực làm việc</DialogTitle>
-                  <DialogDescription className="text-center">Lựa chọn khu vực bạn muốn làm việc tại Nhật Bản.</DialogDescription>
-                </DialogHeader>
-                <div className="grid grid-cols-3 gap-4 py-4">
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn khu vực làm việc</DialogTitle>
+                <DialogDescription className="text-center">Lựa chọn khu vực bạn muốn làm việc tại Nhật Bản.</DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-3 gap-4 py-4">
                   <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Hokkaido</Button>
                   <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Tohoku</Button>
                   <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Kanto</Button>
@@ -520,11 +532,11 @@ export function Cta() {
                   <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Shikoku</Button>
                   <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Kyushu</Button>
                   <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Okinawa</Button>
-                </div>
-                <DialogFooter>
-                  <Button variant="outline" onClick={backFromDialog7}>Quay lại</Button>
-                </DialogFooter>
-              </DialogContent>
+              </div>
+              <DialogFooter>
+                <Button variant="outline" onClick={backFromDialog7}>Quay lại</Button>
+              </DialogFooter>
+            </DialogContent>
           </Dialog>
 
           <Dialog open={dialog8Open} onOpenChange={setDialog8Open}>
@@ -549,6 +561,33 @@ export function Cta() {
                 </div>
                 <DialogFooter>
                     <Button variant="outline" onClick={() => { setDialog8Open(false); setDialog7Open(true); }}>Quay lại</Button>
+                    <Button onClick={() => { setDialog8Open(false); setDialog9Open(true); }}>Tiếp tục</Button>
+                </DialogFooter>
+            </DialogContent>
+          </Dialog>
+          
+          <Dialog open={dialog9Open} onOpenChange={setDialog9Open}>
+            <DialogContent>
+                <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold font-headline text-center">Nhập phí quản lý bạn mong muốn</DialogTitle>
+                </DialogHeader>
+                <div className="py-4">
+                    <Label htmlFor="management-fee">Phí quản lý</Label>
+                    <div className="relative mt-1">
+                        <Input
+                            id="management-fee"
+                            value={managementFeeAmount}
+                            onChange={handleManagementFeeChange}
+                            placeholder="Ví dụ: 20,000"
+                            className="pr-12 text-right"
+                        />
+                        <span className="absolute inset-y-0 right-4 flex items-center text-muted-foreground">
+                            JPY
+                        </span>
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button variant="outline" onClick={() => { setDialog9Open(false); setDialog8Open(true); }}>Quay lại</Button>
                     <Button onClick={handleFinishFlow}>Lưu và xem việc làm phù hợp</Button>
                 </DialogFooter>
             </DialogContent>
