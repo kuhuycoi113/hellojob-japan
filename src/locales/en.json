@@ -613,19 +613,19 @@
     }
   },
   "developmentPath": {
-    "title": "Paths for You to Choose in Japan",
-    "subtitle": "HelloJob will accompany you on every step of your career development in Japan.",
+    "title": "Understanding the Recruitment Process for Vietnamese Labor Types",
+    "subtitle": "HelloJob provides flexible staffing solutions to meet all business recruitment needs.",
     "skillIntern": {
       "title": "Technical Intern",
-      "description": "A program for those who want to learn skills and practical experience in various industries in Japan."
+      "description": "Recruit young talent to train professional skills and expertise in a real-world work environment in Japan."
     },
     "specifiedSkill": {
       "title": "Specified Skilled Worker",
-      "description": "For skilled and experienced workers who wish to work long-term in Japan with better remuneration."
+      "description": "Find workers with proven skills and experience who wish to work long-term in Japan with better remuneration."
     },
     "engineer": {
       "title": "Engineer, Specialist",
-      "description": "Recruiting engineers and specialists with high qualifications and specialized degrees to work in technical and technological fields."
+      "description": "Recruit highly qualified engineers and specialists with professional degrees for key positions in technical and technological fields."
     }
   },
   "postDetail": {
@@ -723,8 +723,6 @@
   "userRoles": {
     "title": "What is your role?",
     "description": "Let us know your role for the best experience.",
-    "group1_title": "Companies in Japan (Hiring Side)",
-    "group2_title": "Recruitment Partners (Supplying/Supporting Side)",
     "guest": {
       "title": "Guest (Not Logged In)",
       "description": "View as a visitor."
@@ -1155,3 +1153,5 @@
     "partnerNotFound": "Partner not found."
   }
 }
+
+    
