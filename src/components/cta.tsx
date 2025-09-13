@@ -16,7 +16,7 @@ import {
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
-import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit } from 'lucide-react';
+import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit, FastForward } from 'lucide-react';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { useRouter } from 'next/navigation';
@@ -170,7 +170,7 @@ export function Cta() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                   <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog3Open(true); }}>
                       <div className="flex justify-center mb-4">
-                          <div className="p-3 rounded-full bg-primary/10 text-primary"><BrainCircuit className="w-8 h-8"/></div>
+                          <div className="p-3 rounded-full bg-primary/10 text-primary"><FastForward className="w-8 h-8"/></div>
                       </div>
                       <h3 className="font-semibold text-lg text-gray-800">Tạo nhanh</h3>
                       <p className="text-sm text-muted-foreground mt-1">Chỉ vào thao tác đơn giản bạn sẽ đăng tải được việc làm nhanh chóng</p>
