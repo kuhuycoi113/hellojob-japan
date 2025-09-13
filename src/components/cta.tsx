@@ -216,12 +216,33 @@ export function Cta() {
           <Dialog open={dialog63Open} onOpenChange={setDialog63Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>ich khong khong 6 3</DialogTitle>
+                  <DialogTitle>Chọn ngành nghề mong muốn</DialogTitle>
+                  <DialogDescription>
+                    Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
+                  </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  {Array.from({ length: 21 }, (_, i) => (
-                    <Button key={i} onClick={() => openDialog7('63')}>MM{i + 1}</Button>
-                  ))}
+                  <Button onClick={() => openDialog7('63')}>Nông lâm ngư nghiệp</Button>
+                  <Button onClick={() => openDialog7('63')}>Thực phẩm</Button>
+                  <Button onClick={() => openDialog7('63')}>Sản xuất, chế tạo, công nghệ</Button>
+                  <Button onClick={() => openDialog7('63')}>Cơ khí, máy móc</Button>
+                  <Button onClick={() => openDialog7('63')}>Công nghệ ô tô</Button>
+                  <Button onClick={() => openDialog7('63')}>Vận chuyển hàng hóa</Button>
+                  <Button onClick={() => openDialog7('63')}>Xây dựng</Button>
+                  <Button onClick={() => openDialog7('63')}>Khách sạn, lưu trú</Button>
+                  <Button onClick={() => openDialog7('63')}>Y tế, điều dưỡng</Button>
+                  <Button onClick={() => openDialog7('63')}>Kinh doanh, kinh tế</Button>
+                  <Button onClick={() => openDialog7('63')}>Tài chính, kể toán, bảo hiểm</Button>
+                  <Button onClick={() => openDialog7('63')}>Báo chí, truyền thông, marketing</Button>
+                  <Button onClick={() => openDialog7('63')}>Công nghệ thông tin</Button>
+                  <Button onClick={() => openDialog7('63')}>Nghiên cứu, phân tích</Button>
+                  <Button onClick={() => openDialog7('63')}>Giáo dục, đào tạo</Button>
+                  <Button onClick={() => openDialog7('63')}>Hành chính, văn phòng</Button>
+                  <Button onClick={() => openDialog7('63')}>Pháp lý</Button>
+                  <Button onClick={() => openDialog7('63')}>Nghệ thuật, nghệ sĩ</Button>
+                  <Button onClick={() => openDialog7('63')}>Thể dục thể thao</Button>
+                  <Button onClick={() => openDialog7('63')}>Nghề có kỹ năng chuyên nghiệp</Button>
+                  <Button onClick={() => openDialog7('63')}>Việc làm bán chuyên nghiệp</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog63Open(false); setDialog53Open(true); }}>Quay lại</Button>
@@ -232,21 +253,18 @@ export function Cta() {
           <Dialog open={dialog7Open} onOpenChange={setDialog7Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Chọn khu vực làm việc</DialogTitle>
-                  <DialogDescription>
-                    Lựa chọn khu vực bạn muốn làm việc tại Nhật Bản.
-                  </DialogDescription>
+                  <DialogTitle>ich khong khong 7</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                    <Button onClick={() => setDialog7Open(false)}>Hokkaido</Button>
-                    <Button onClick={() => setDialog7Open(false)}>Tohoku</Button>
-                    <Button onClick={() => setDialog7Open(false)}>Kanto</Button>
-                    <Button onClick={() => setDialog7Open(false)}>Chubu</Button>
-                    <Button onClick={() => setDialog7Open(false)}>Kansai</Button>
-                    <Button onClick={() => setDialog7Open(false)}>Chugoku</Button>
-                    <Button onClick={() => setDialog7Open(false)}>Shikoku</Button>
-                    <Button onClick={() => setDialog7Open(false)}>Kyushu</Button>
-                    <Button onClick={() => setDialog7Open(false)}>Okinawa</Button>
+                  <Button onClick={() => setDialog7Open(false)}>N1</Button>
+                  <Button onClick={() => setDialog7Open(false)}>N2</Button>
+                  <Button onClick={() => setDialog7Open(false)}>N3</Button>
+                  <Button onClick={() => setDialog7Open(false)}>N4</Button>
+                  <Button onClick={() => setDialog7Open(false)}>N5</Button>
+                  <Button onClick={() => setDialog7Open(false)}>N6</Button>
+                  <Button onClick={() => setDialog7Open(false)}>N7</Button>
+                  <Button onClick={() => setDialog7Open(false)}>N8</Button>
+                  <Button onClick={() => setDialog7Open(false)}>N9</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={backFromDialog7}>Quay lại</Button>
