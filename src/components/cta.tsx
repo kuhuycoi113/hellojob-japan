@@ -19,10 +19,15 @@ import { Card, CardDescription, CardTitle } from './ui/card';
 import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit } from 'lucide-react';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
+import { useRouter } from 'next/navigation';
+import { useRole } from '@/contexts/role-context';
 
 
 export function Cta() {
   const { t } = useLanguage();
+  const router = useRouter();
+  const { setUserRole } = useRole();
+
   const [dialog1Open, setDialog1Open] = useState(false);
   const [dialog2Open, setDialog2Open] = useState(false);
   const [dialog3Open, setDialog3Open] = useState(false);
@@ -37,6 +42,7 @@ export function Cta() {
   const [dialog7Caller, setDialog7Caller] = useState<string | null>(null);
   const [dialog8Open, setDialog8Open] = useState(false);
   const [feeAmount, setFeeAmount] = useState('');
+  const [selectedRole, setSelectedRole] = useState<Role | null>(null);
 
 
   const openDialog7 = (caller: string) => {
@@ -54,7 +60,9 @@ export function Cta() {
     if (dialog7Caller === '63') setDialog63Open(true);
   };
 
-  const userRoles: { title: string; description: string; icon: JSX.Element }[] = [
+  type Role = { title: string; description: string; icon: JSX.Element; }
+
+  const userRoles: Role[] = [
      {
       icon: <Building className="h-8 w-8 text-indigo-500" />,
       title: t.userRoles.receivingCompany.title,
@@ -95,6 +103,26 @@ export function Cta() {
     } else if (rawValue === '') {
         setFeeAmount('');
     }
+  };
+
+  const handleFinishFlow = () => {
+    setDialog8Open(false);
+
+    if (selectedRole?.title === t.userRoles.receivingCompany.title) {
+        setUserRole('support_org');
+        router.push('/jobs');
+    } else if (selectedRole?.title === t.userRoles.supportOrg.title) {
+        setUserRole('sending_company');
+        router.push('/jobs');
+    } else {
+        router.push('/jobs');
+    }
+  };
+
+  const handleRoleSelectAndContinue = (role: Role) => {
+    setSelectedRole(role);
+    setDialog3Open(false);
+    setDialog4Open(true);
   };
 
 
@@ -182,7 +210,7 @@ export function Cta() {
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
                   {userRoles.map((role) => (
-                    <Card key={role.title} className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center gap-4" onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>
+                    <Card key={role.title} className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center gap-4" onClick={() => handleRoleSelectAndContinue(role)}>
                         <div className="bg-primary/5 p-3 rounded-lg">
                           {role.icon}
                         </div>
@@ -521,7 +549,7 @@ export function Cta() {
                 </div>
                 <DialogFooter>
                     <Button variant="outline" onClick={() => { setDialog8Open(false); setDialog7Open(true); }}>Quay lại</Button>
-                    <Button onClick={() => setDialog8Open(false)}>Lưu và xem việc làm phù hợp</Button>
+                    <Button onClick={handleFinishFlow}>Lưu và xem việc làm phù hợp</Button>
                 </DialogFooter>
             </DialogContent>
           </Dialog>
