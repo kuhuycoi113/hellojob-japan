@@ -510,7 +510,7 @@ export function Cta() {
           </Dialog>
 
           <Dialog open={dialog63Open} onOpenChange={setDialog63Open}>
-              <DialogContent>
+              <DialogContent className="sm:max-w-5xl">
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn ngành nghề mong muốn</DialogTitle>
                   <DialogDescription className="text-center">
