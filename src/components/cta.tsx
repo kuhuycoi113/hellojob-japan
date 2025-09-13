@@ -16,7 +16,7 @@ import {
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
-import { Plane, Users } from 'lucide-react';
+import { GraduationCap, Star, Briefcase, Plane, Users } from 'lucide-react';
 
 
 export function Cta() {
@@ -119,26 +119,64 @@ export function Cta() {
           </Dialog>
 
           <Dialog open={dialog4Open} onOpenChange={setDialog4Open}>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>ich khong khong 4</DialogTitle>
-                </DialogHeader>
-                <div className="flex justify-center gap-4 py-4">
-                  <Button onClick={() => { setDialog4Open(false); setDialog51Open(true); }}>K</Button>
-                  <Button onClick={() => { setDialog4Open(false); setDialog52Open(true); }}>L</Button>
-                  <Button onClick={() => { setDialog4Open(false); setDialog53Open(true); }}>M</Button>
-                </div>
-                <DialogFooter>
-                  <Button variant="outline" onClick={() => { setDialog4Open(false); setDialog3Open(true); }}>Quay lại</Button>
-                </DialogFooter>
-              </DialogContent>
+            <DialogContent className="sm:max-w-4xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại hình lao động</DialogTitle>
+                <DialogDescription className="text-center">
+                  Hãy chọn loại hình phù hợp nhất với trình độ và mong muốn của bạn.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
+                  <Card
+                    className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                    onClick={() => { setDialog4Open(false); setDialog51Open(true); }}
+                  >
+                    <div className="flex justify-center mb-4">
+                      <div className="bg-primary/10 text-primary p-3 rounded-full">
+                        <GraduationCap className="w-8 h-8" />
+                      </div>
+                    </div>
+                    <CardTitle className="font-semibold text-lg">{t.visaTypes.intern.title}</CardTitle>
+                    <CardDescription>{t.visaTypes.intern.description}</CardDescription>
+                  </Card>
+
+                  <Card
+                    className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                    onClick={() => { setDialog4Open(false); setDialog52Open(true); }}
+                  >
+                    <div className="flex justify-center mb-4">
+                      <div className="bg-yellow-400/10 text-yellow-500 p-3 rounded-full">
+                        <Star className="w-8 h-8" />
+                      </div>
+                    </div>
+                    <CardTitle className="font-semibold text-lg">{t.visaTypes.skilled.title}</CardTitle>
+                    <CardDescription>{t.visaTypes.skilled.description}</CardDescription>
+                  </Card>
+
+                  <Card
+                    className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                    onClick={() => { setDialog4Open(false); setDialog53Open(true); }}
+                  >
+                     <div className="flex justify-center mb-4">
+                      <div className="bg-green-400/10 text-green-500 p-3 rounded-full">
+                        <Briefcase className="w-8 h-8" />
+                      </div>
+                    </div>
+                    <CardTitle className="font-semibold text-lg">{t.visaTypes.engineer.title}</CardTitle>
+                    <CardDescription>{t.visaTypes.engineer.description}</CardDescription>
+                  </Card>
+              </div>
+              <DialogFooter>
+                <Button variant="outline" onClick={() => { setDialog4Open(false); setDialog3Open(true); }}>Quay lại</Button>
+              </DialogFooter>
+            </DialogContent>
           </Dialog>
 
            <Dialog open={dialog51Open} onOpenChange={setDialog51Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Chọn loại Thực tập sinh kỹ năng</DialogTitle>
-                  <DialogDescription>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Thực tập sinh kỹ năng</DialogTitle>
+                  <DialogDescription className="text-center">
                     Chọn loại hình chi tiết để tiếp tục.
                   </DialogDescription>
                 </DialogHeader>
@@ -174,8 +212,8 @@ export function Cta() {
           <Dialog open={dialog61Open} onOpenChange={setDialog61Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Chọn ngành nghề mong muốn</DialogTitle>
-                  <DialogDescription>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn ngành nghề mong muốn</DialogTitle>
+                  <DialogDescription className="text-center">
                     Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
                   </DialogDescription>
                 </DialogHeader>
@@ -197,8 +235,8 @@ export function Cta() {
           <Dialog open={dialog52Open} onOpenChange={setDialog52Open}>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Chọn loại Kỹ năng đặc định</DialogTitle>
-                <DialogDescription>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Kỹ năng đặc định</DialogTitle>
+                <DialogDescription className="text-center">
                   Chọn loại hình chi tiết để tiếp tục.
                 </DialogDescription>
               </DialogHeader>
@@ -234,8 +272,8 @@ export function Cta() {
            <Dialog open={dialog62Open} onOpenChange={setDialog62Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Chọn ngành nghề mong muốn</DialogTitle>
-                  <DialogDescription>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn ngành nghề mong muốn</DialogTitle>
+                  <DialogDescription className="text-center">
                     Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
                   </DialogDescription>
                 </DialogHeader>
@@ -265,8 +303,8 @@ export function Cta() {
           <Dialog open={dialog53Open} onOpenChange={setDialog53Open}>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Chọn loại Kỹ sư, tri thức</DialogTitle>
-                <DialogDescription>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Kỹ sư, tri thức</DialogTitle>
+                <DialogDescription className="text-center">
                   Chọn loại hình chi tiết để tiếp tục.
                 </DialogDescription>
               </DialogHeader>
