@@ -181,7 +181,7 @@ export function Cta() {
                           <div className="p-3 rounded-full bg-green-500/10 text-green-500"><Edit className="w-8 h-8"/></div>
                       </div>
                       <h3 className="font-semibold text-lg text-gray-800">Tạo chi tiết</h3>
-                      <p className="text-sm text-muted-foreground mt-1">Để hoàn thiện hồ sơ và sẵn sàng ứng tuyển vào công việc mơ ước.</p>
+                      <p className="text-sm text-muted-foreground mt-1">Hoàn thiện thông tin chi tiết hơn để có việc làm hoàn hảo</p>
                   </Card>
               </div>
             </DialogContent>
