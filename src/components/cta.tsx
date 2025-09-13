@@ -15,7 +15,7 @@ import {
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
-import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit, FastForward, UserPlus } from 'lucide-react';
+import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit, FastForward, UserPlus, ChevronRight } from 'lucide-react';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { useRouter } from 'next/navigation';
@@ -315,7 +315,7 @@ export function Cta() {
                       onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
                     >
                       <div className="flex justify-center mb-4">
-                        <div className="bg-primary/10 text-primary p-3 rounded-full">
+                        <div className="p-3 rounded-full bg-primary/10 text-primary">
                           <GraduationCap className="w-8 h-8" />
                         </div>
                       </div>
@@ -354,7 +354,7 @@ export function Cta() {
           </Dialog>
           
           <Dialog open={dialog61Open} onOpenChange={setDialog61Open}>
-              <DialogContent>
+              <DialogContent className="sm:max-w-4xl">
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn ngành nghề mong muốn</DialogTitle>
                   <DialogDescription className="text-center">
