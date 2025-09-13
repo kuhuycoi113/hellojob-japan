@@ -1,5 +1,3 @@
-
-
 'use client';
 
 import Link from 'next/link';
@@ -189,7 +187,7 @@ export function Cta() {
           </Dialog>
 
            <Dialog open={dialog2Open} onOpenChange={setDialog2Open}>
-              <DialogContent>
+              <DialogContent className="sm:max-w-xl">
                 <DialogHeader className="text-center">
                   <DialogTitle className="text-2xl font-bold font-headline">Bạn muốn tạo hồ sơ chi tiết bằng cách nào?</DialogTitle>
                 </DialogHeader>
