@@ -17,6 +17,8 @@ import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
 import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit } from 'lucide-react';
+import { Input } from './ui/input';
+import { Label } from './ui/label';
 
 
 export function Cta() {
@@ -33,6 +35,9 @@ export function Cta() {
   const [dialog63Open, setDialog63Open] = useState(false);
   const [dialog7Open, setDialog7Open] = useState(false);
   const [dialog7Caller, setDialog7Caller] = useState<string | null>(null);
+  const [dialog8Open, setDialog8Open] = useState(false);
+  const [feeAmount, setFeeAmount] = useState('');
+
 
   const openDialog7 = (caller: string) => {
     setDialog7Caller(caller);
@@ -81,6 +86,16 @@ export function Cta() {
       description: t.userRoles.hakenCompany.description,
     },
   ];
+
+  const handleFeeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rawValue = e.target.value.replace(/,/g, '');
+    if (!isNaN(Number(rawValue))) {
+        const formattedValue = Number(rawValue).toLocaleString('en-US');
+        setFeeAmount(formattedValue);
+    } else if (rawValue === '') {
+        setFeeAmount('');
+    }
+  };
 
 
   return (
@@ -468,20 +483,47 @@ export function Cta() {
                   <DialogDescription className="text-center">Lựa chọn khu vực bạn muốn làm việc tại Nhật Bản.</DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => setDialog7Open(false)}>Hokkaido</Button>
-                  <Button onClick={() => setDialog7Open(false)}>Tohoku</Button>
-                  <Button onClick={() => setDialog7Open(false)}>Kanto</Button>
-                  <Button onClick={() => setDialog7Open(false)}>Chubu</Button>
-                  <Button onClick={() => setDialog7Open(false)}>Kansai</Button>
-                  <Button onClick={() => setDialog7Open(false)}>Chugoku</Button>
-                  <Button onClick={() => setDialog7Open(false)}>Shikoku</Button>
-                  <Button onClick={() => setDialog7Open(false)}>Kyushu</Button>
-                  <Button onClick={() => setDialog7Open(false)}>Okinawa</Button>
+                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Hokkaido</Button>
+                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Tohoku</Button>
+                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Kanto</Button>
+                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Chubu</Button>
+                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Kansai</Button>
+                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Chugoku</Button>
+                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Shikoku</Button>
+                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Kyushu</Button>
+                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Okinawa</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={backFromDialog7}>Quay lại</Button>
                 </DialogFooter>
               </DialogContent>
+          </Dialog>
+
+          <Dialog open={dialog8Open} onOpenChange={setDialog8Open}>
+            <DialogContent>
+                <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold font-headline text-center">Nhập phí giới thiệu bạn mong muốn</DialogTitle>
+                </DialogHeader>
+                <div className="py-4">
+                    <Label htmlFor="fee">Phí giới thiệu</Label>
+                    <div className="relative mt-1">
+                        <Input
+                            id="fee"
+                            value={feeAmount}
+                            onChange={handleFeeChange}
+                            placeholder="Ví dụ: 100,000"
+                            className="pr-12 text-right"
+                        />
+                        <span className="absolute inset-y-0 right-4 flex items-center text-muted-foreground">
+                            JPY
+                        </span>
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button variant="outline" onClick={() => { setDialog8Open(false); setDialog7Open(true); }}>Quay lại</Button>
+                    <Button onClick={() => setDialog8Open(false)}>Lưu và xem việc làm phù hợp</Button>
+                </DialogFooter>
+            </DialogContent>
           </Dialog>
 
         </div>
