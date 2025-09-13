@@ -50,7 +50,7 @@ export function Cta() {
   };
 
   const userRoles: { title: string; description: string; icon: JSX.Element }[] = [
-    {
+     {
       icon: <Building className="h-8 w-8 text-indigo-500" />,
       title: t.userRoles.receivingCompany.title,
       description: t.userRoles.receivingCompany.description,
@@ -464,18 +464,19 @@ export function Cta() {
           <Dialog open={dialog7Open} onOpenChange={setDialog7Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>ich khong khong 7</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn khu vực làm việc</DialogTitle>
+                  <DialogDescription className="text-center">Lựa chọn khu vực bạn muốn làm việc tại Nhật Bản.</DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => setDialog7Open(false)}>N1</Button>
-                  <Button onClick={() => setDialog7Open(false)}>N2</Button>
-                  <Button onClick={() => setDialog7Open(false)}>N3</Button>
-                  <Button onClick={() => setDialog7Open(false)}>N4</Button>
-                  <Button onClick={() => setDialog7Open(false)}>N5</Button>
-                  <Button onClick={() => setDialog7Open(false)}>N6</Button>
-                  <Button onClick={() => setDialog7Open(false)}>N7</Button>
-                  <Button onClick={() => setDialog7Open(false)}>N8</Button>
-                  <Button onClick={() => setDialog7Open(false)}>N9</Button>
+                  <Button onClick={() => setDialog7Open(false)}>Hokkaido</Button>
+                  <Button onClick={() => setDialog7Open(false)}>Tohoku</Button>
+                  <Button onClick={() => setDialog7Open(false)}>Kanto</Button>
+                  <Button onClick={() => setDialog7Open(false)}>Chubu</Button>
+                  <Button onClick={() => setDialog7Open(false)}>Kansai</Button>
+                  <Button onClick={() => setDialog7Open(false)}>Chugoku</Button>
+                  <Button onClick={() => setDialog7Open(false)}>Shikoku</Button>
+                  <Button onClick={() => setDialog7Open(false)}>Kyushu</Button>
+                  <Button onClick={() => setDialog7Open(false)}>Okinawa</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={backFromDialog7}>Quay lại</Button>
