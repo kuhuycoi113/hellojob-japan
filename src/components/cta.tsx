@@ -430,7 +430,7 @@ export function Cta() {
           </Dialog>
 
            <Dialog open={dialog62Open} onOpenChange={setDialog62Open}>
-              <DialogContent>
+              <DialogContent className="sm:max-w-4xl">
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn ngành nghề mong muốn</DialogTitle>
                   <DialogDescription className="text-center">
@@ -620,7 +620,3 @@ export function Cta() {
     </section>
   );
 }
-
-    
-
-    
