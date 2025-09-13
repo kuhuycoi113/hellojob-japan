@@ -584,20 +584,28 @@
       "description": "To become the leading technology platform in Vietnam for human resource supply and development, especially for the high-skilled labor market in Japan and other developed countries."
     },
     "coreValues": {
-      "title": "Our Core Values",
+      "title": "6 Core Values",
       "subtitle": "The principles that guide all our actions and decisions.",
-      "userCentric": {
-        "title": "User-Centric",
-        "description": "All products and features are built based on the needs and experiences of both workers and recruitment partners."
-      },
-      "sustainableGrowth": {
-        "title": "Sustainable Growth",
-        "description": "We don't just help workers find jobs; we build a long-term and sustainable career development path."
-      },
-      "trustedPartner": {
-        "title": "Trusted Partner",
-        "description": "Building transparent, effective, and mutually beneficial partnerships with recruitment and franchise partners."
-      }
+      "items": [
+        {
+          "title": "Fundamentally, people are good. To give is to receive."
+        },
+        {
+          "title": "Continuous development, without limits."
+        },
+        {
+          "title": "Always be creative, find solutions, never get discouraged, never complain, never give up."
+        },
+        {
+          "title": "Be what you dream. Believe in yourself, become who you want to be."
+        },
+        {
+          "title": "Choose to do good, become a person useful to society."
+        },
+        {
+          "title": "Work results are the most accurate answer."
+        }
+      ]
     },
     "team": {
       "title": "Our Team",

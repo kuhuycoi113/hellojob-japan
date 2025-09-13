@@ -585,20 +585,28 @@
       "description": "Trở thành nền tảng công nghệ hàng đầu tại Việt Nam trong lĩnh vực cung ứng và phát triển nguồn nhân lực, đặc biệt là cho thị trường lao động tay nghề cao tại Nhật Bản và các quốc gia phát triển."
     },
     "coreValues": {
-      "title": "Giá trị cốt lõi",
+      "title": "6 Giá trị cốt lõi",
       "subtitle": "Những nguyên tắc định hướng mọi hành động và quyết định của chúng tôi.",
-      "userCentric": {
-        "title": "Lấy người dùng làm trung tâm",
-        "description": "Mọi sản phẩm, tính năng đều được xây dựng dựa trên nhu cầu và trải nghiệm của người lao động và đối tác tuyển dụng."
-      },
-      "sustainableGrowth": {
-        "title": "Tăng trưởng bền vững",
-        "description": "Chúng tôi không chỉ giúp người lao động tìm việc, mà còn xây dựng lộ trình phát triển sự nghiệp lâu dài và bền vững."
-      },
-      "trustedPartner": {
-        "title": "Đối tác tin cậy",
-        "description": "Xây dựng mối quan hệ hợp tác minh bạch, hiệu quả và cùng có lợi với các đối tác tuyển dụng và nhượng quyền."
-      }
+      "items": [
+        {
+          "title": "Về cơ bản con người là tốt, cho là nhận"
+        },
+        {
+          "title": "Không ngừng phát triển, không giới hạn"
+        },
+        {
+          "title": "Luôn sáng tạo, tìm giải pháp, không nản chí, không than vãn, không bao giờ bỏ cuộc"
+        },
+        {
+          "title": "Be what you dream, Tin tưởng bản thân, trở thành người bạn muốn"
+        },
+        {
+          "title": "Lựa chọn làm điều tốt, trở thành người có ích cho xã hội"
+        },
+        {
+          "title": "Kết quả công việc là câu trả lời chính xác nhất"
+        }
+      ]
     },
     "team": {
       "title": "Đội ngũ của chúng tôi",

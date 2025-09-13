@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, TrendingUp, ShieldCheck, Target, Lightbulb } from 'lucide-react';
+import { Heart, Zap, Sparkles, BrainCircuit, ShieldCheck, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 
 export function AboutSection() {
@@ -10,19 +10,28 @@ export function AboutSection() {
 
   const coreValues = [
     {
-      icon: <Users className="h-10 w-10 text-primary" />,
-      title: t.aboutPage.coreValues.userCentric.title,
-      description: t.aboutPage.coreValues.userCentric.description,
+      icon: <Heart className="h-10 w-10 text-red-500" />,
+      title: t.aboutPage.coreValues.items[0].title,
     },
     {
-      icon: <TrendingUp className="h-10 w-10 text-primary" />,
-      title: t.aboutPage.coreValues.sustainableGrowth.title,
-      description: t.aboutPage.coreValues.sustainableGrowth.description,
+      icon: <Zap className="h-10 w-10 text-yellow-500" />,
+      title: t.aboutPage.coreValues.items[1].title,
     },
     {
-      icon: <ShieldCheck className="h-10 w-10 text-primary" />,
-      title: t.aboutPage.coreValues.trustedPartner.title,
-      description: t.aboutPage.coreValues.trustedPartner.description,
+      icon: <Sparkles className="h-10 w-10 text-orange-500" />,
+      title: t.aboutPage.coreValues.items[2].title,
+    },
+    {
+      icon: <BrainCircuit className="h-10 w-10 text-blue-500" />,
+      title: t.aboutPage.coreValues.items[3].title,
+    },
+    {
+      icon: <ShieldCheck className="h-10 w-10 text-green-500" />,
+      title: t.aboutPage.coreValues.items[4].title,
+    },
+    {
+      icon: <CheckCircle className="h-10 w-10 text-primary" />,
+      title: t.aboutPage.coreValues.items[5].title,
     },
   ];
   
@@ -59,7 +68,7 @@ export function AboutSection() {
                 <div>
                     <div className="flex items-center gap-4 mb-4">
                         <div className="p-3 bg-primary/10 rounded-full">
-                            <Target className="h-8 w-8 text-primary"/>
+                            <Heart className="h-8 w-8 text-primary"/>
                         </div>
                         <h2 className="text-3xl font-bold font-headline text-gray-800">{t.aboutPage.mission.title}</h2>
                     </div>
@@ -68,7 +77,7 @@ export function AboutSection() {
                  <div>
                     <div className="flex items-center gap-4 mb-4">
                         <div className="p-3 bg-yellow-400/10 rounded-full">
-                            <Lightbulb className="h-8 w-8 text-yellow-500"/>
+                            <Sparkles className="h-8 w-8 text-yellow-500"/>
                         </div>
                         <h2 className="text-3xl font-bold font-headline text-gray-800">{t.aboutPage.vision.title}</h2>
                     </div>
@@ -86,17 +95,16 @@ export function AboutSection() {
               {t.aboutPage.coreValues.subtitle}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {coreValues.map((value) => (
-              <Card key={value.title} className="text-center shadow-lg rounded-xl p-8 border-t-4 border-primary">
-                <CardHeader className="flex justify-center items-center">
+              <Card key={value.title} className="text-center shadow-lg rounded-xl p-6 border-t-4 border-primary flex flex-col items-center justify-start">
+                <CardHeader className="flex justify-center items-center p-2">
                   <div className="bg-primary/10 p-4 rounded-full">
                     {value.icon}
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <CardTitle className="font-headline text-xl mb-2 text-gray-800">{value.title}</CardTitle>
-                  <p className="text-muted-foreground">{value.description}</p>
+                <CardContent className="p-2 flex-grow flex items-center">
+                  <CardTitle className="font-headline text-lg text-gray-800">{value.title}</CardTitle>
                 </CardContent>
               </Card>
             ))}
