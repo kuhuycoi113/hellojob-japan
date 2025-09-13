@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -222,7 +223,7 @@ export function Cta() {
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
                   {userRoles.map((role) => (
-                    <Card key={role.title} className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center gap-4" onClick={() => handleRoleSelectAndContinue(role)}>
+                    <Card key={role.title} className="p-4 sm:p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center gap-4" onClick={() => handleRoleSelectAndContinue(role)}>
                         <div className="bg-primary/5 p-3 rounded-lg">
                           {role.icon}
                         </div>
