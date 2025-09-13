@@ -15,6 +15,9 @@ import {
 } from '@/components/ui/dialog';
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
+import { Card, CardDescription, CardTitle } from './ui/card';
+import { Plane, Users } from 'lucide-react';
+
 
 export function Cta() {
   const { t } = useLanguage();
@@ -218,18 +221,57 @@ export function Cta() {
           </Dialog>
 
           <Dialog open={dialog53Open} onOpenChange={setDialog53Open}>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>ich khong khong 5 3</DialogTitle>
-                </DialogHeader>
-                <div className="grid grid-cols-2 gap-4 py-4">
-                  <Button onClick={() => { setDialog53Open(false); setDialog63Open(true); }}>M1</Button>
-                  <Button onClick={() => { setDialog53Open(false); setDialog63Open(true); }}>M2</Button>
-                </div>
-                <DialogFooter>
-                  <Button variant="outline" onClick={() => { setDialog53Open(false); setDialog4Open(true); }}>Quay lại</Button>
-                </DialogFooter>
-              </DialogContent>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Chọn loại Kỹ sư, tri thức</DialogTitle>
+                <DialogDescription>
+                  Chọn loại hình chi tiết để tiếp tục.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                <Card
+                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                  onClick={() => {
+                    setDialog53Open(false);
+                    setDialog63Open(true);
+                  }}
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="bg-primary/10 text-primary p-3 rounded-full">
+                      <Users className="w-8 h-8" />
+                    </div>
+                  </div>
+                  <CardTitle className="font-semibold text-base">Kỹ sư đầu Nhật</CardTitle>
+                  <CardDescription>Dành cho kỹ sư đang ở Nhật</CardDescription>
+                </Card>
+                <Card
+                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                  onClick={() => {
+                    setDialog53Open(false);
+                    setDialog63Open(true);
+                  }}
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="bg-primary/10 text-primary p-3 rounded-full">
+                      <Plane className="w-8 h-8" />
+                    </div>
+                  </div>
+                  <CardTitle className="font-semibold text-base">Kỹ sư đầu Việt</CardTitle>
+                  <CardDescription>Dành cho kỹ sư ở Việt Nam</CardDescription>
+                </Card>
+              </div>
+              <DialogFooter>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setDialog53Open(false);
+                    setDialog4Open(true);
+                  }}
+                >
+                  Quay lại
+                </Button>
+              </DialogFooter>
+            </DialogContent>
           </Dialog>
 
           <Dialog open={dialog63Open} onOpenChange={setDialog63Open}>
@@ -296,3 +338,5 @@ export function Cta() {
     </section>
   );
 }
+
+    
