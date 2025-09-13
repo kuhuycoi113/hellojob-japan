@@ -16,7 +16,7 @@ import {
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
-import { GraduationCap, Star, Briefcase, Plane, Users } from 'lucide-react';
+import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake } from 'lucide-react';
 
 
 export function Cta() {
@@ -48,6 +48,39 @@ export function Cta() {
     if (dialog7Caller === '62') setDialog62Open(true);
     if (dialog7Caller === '63') setDialog63Open(true);
   };
+
+  const userRoles: { title: string; description: string; icon: JSX.Element }[] = [
+    {
+      icon: <Building className="h-8 w-8 text-indigo-500" />,
+      title: t.userRoles.receivingCompany.title,
+      description: t.userRoles.receivingCompany.description,
+    },
+    {
+      icon: <Building className="h-8 w-8 text-blue-500" />,
+      title: t.userRoles.sendingCompany.title,
+      description: t.userRoles.sendingCompany.description,
+    },
+    {
+      icon: <Users className="h-8 w-8 text-yellow-500" />,
+      title: t.userRoles.supportOrg.title,
+      description: t.userRoles.supportOrg.description,
+    },
+    {
+      icon: <Handshake className="h-8 w-8 text-green-500" />,
+      title: t.userRoles.union.title,
+      description: t.userRoles.union.description,
+    },
+    {
+      icon: <Users className="h-8 w-8 text-red-500" />,
+      title: t.userRoles.yuryoShokai.title,
+      description: t.userRoles.yuryoShokai.description,
+    },
+    {
+      icon: <Building className="h-8 w-8 text-purple-500" />,
+      title: t.userRoles.hakenCompany.title,
+      description: t.userRoles.hakenCompany.description,
+    },
+  ];
 
 
   return (
@@ -100,17 +133,29 @@ export function Cta() {
           </Dialog>
 
           <Dialog open={dialog3Open} onOpenChange={setDialog3Open}>
-              <DialogContent>
+              <DialogContent className="sm:max-w-4xl">
                 <DialogHeader>
-                  <DialogTitle>ich khong khong 3</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+                  <DialogDescription className="text-center">
+                    {t.userRoles.description}
+                  </DialogDescription>
                 </DialogHeader>
-                <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>E</Button>
-                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>F</Button>
-                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>G</Button>
-                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>H</Button>
-                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>I</Button>
-                  <Button onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>J</Button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
+                  {userRoles.map((role) => (
+                    <Card key={role.title} className="p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center gap-4" onClick={() => { setDialog3Open(false); setDialog4Open(true); }}>
+                        <div className="bg-primary/5 p-3 rounded-lg">
+                          {role.icon}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-base text-gray-800">
+                            {role.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {role.description}
+                          </p>
+                        </div>
+                    </Card>
+                  ))}
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog3Open(false); setDialog1Open(true); }}>Quay lại</Button>
