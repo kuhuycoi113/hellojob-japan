@@ -132,12 +132,24 @@ export function Cta() {
 
            <Dialog open={dialog2Open} onOpenChange={setDialog2Open}>
               <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>ich khong khong 2</DialogTitle>
+                <DialogHeader className="text-center">
+                  <DialogTitle className="text-2xl font-bold font-headline">Bạn muốn tạo hồ sơ chi tiết bằng cách nào?</DialogTitle>
                 </DialogHeader>
-                <div className="flex justify-center gap-4 py-4">
-                  <Button onClick={() => setDialog2Open(false)}>C</Button>
-                  <Button onClick={() => setDialog2Open(false)}>D</Button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
+                        <div className="flex justify-center mb-4">
+                            <div className="p-3 rounded-full bg-primary/10 text-primary"><BrainCircuit className="w-8 h-8"/></div>
+                        </div>
+                        <h3 className="font-semibold text-lg text-gray-800">Dùng AI</h3>
+                        <p className="text-sm text-muted-foreground mt-1">Tải lên CV, AI sẽ tự động điền thông tin.</p>
+                    </Card>
+                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
+                         <div className="flex justify-center mb-4">
+                            <div className="p-3 rounded-full bg-green-500/10 text-green-500"><Edit className="w-8 h-8"/></div>
+                        </div>
+                        <h3 className="font-semibold text-lg text-gray-800">Thủ công</h3>
+                        <p className="text-sm text-muted-foreground mt-1">Tự điền thông tin vào biểu mẫu chi tiết.</p>
+                    </Card>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog2Open(false); setDialog1Open(true); }}>Quay lại</Button>
@@ -148,9 +160,9 @@ export function Cta() {
           <Dialog open={dialog3Open} onOpenChange={setDialog3Open}>
               <DialogContent className="sm:max-w-4xl">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">Bạn là ai?</DialogTitle>
                   <DialogDescription className="text-center">
-                    {t.userRoles.description}
+                    Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
