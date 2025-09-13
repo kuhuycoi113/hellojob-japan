@@ -363,7 +363,7 @@ export function Cta() {
           </Dialog>
 
           <Dialog open={dialog52Open} onOpenChange={setDialog52Open}>
-            <DialogContent>
+            <DialogContent className="sm:max-w-2xl">
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Kỹ năng đặc định</DialogTitle>
                 <DialogDescription className="text-center">
