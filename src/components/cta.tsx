@@ -15,7 +15,7 @@ import {
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
-import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit, FastForward } from 'lucide-react';
+import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit, FastForward, UserPlus } from 'lucide-react';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { useRouter } from 'next/navigation';
@@ -372,23 +372,38 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
                 <Card
-                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
                   onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
                 >
+                  <div className="flex justify-center mb-4">
+                      <div className="bg-primary/10 text-primary p-3 rounded-full">
+                          <Users className="w-8 h-8" />
+                      </div>
+                  </div>
                   <CardTitle className="font-semibold text-base">Đặc định đầu Nhật</CardTitle>
                   <CardDescription>Dành cho người đang ở Nhật</CardDescription>
                 </Card>
                 <Card
-                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
                   onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
                 >
+                   <div className="flex justify-center mb-4">
+                      <div className="bg-green-500/10 text-green-500 p-3 rounded-full">
+                          <Plane className="w-8 h-8" />
+                      </div>
+                  </div>
                   <CardTitle className="font-semibold text-base">Đặc định đầu Việt</CardTitle>
                   <CardDescription>Dành cho người ở Việt Nam</CardDescription>
                 </Card>
                 <Card
-                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
                   onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
                 >
+                   <div className="flex justify-center mb-4">
+                      <div className="bg-yellow-500/10 text-yellow-500 p-3 rounded-full">
+                          <UserPlus className="w-8 h-8" />
+                      </div>
+                  </div>
                   <CardTitle className="font-semibold text-base">Đặc định đi mới</CardTitle>
                   <CardDescription>Lần đầu đăng ký</CardDescription>
                 </Card>
