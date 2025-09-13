@@ -163,7 +163,7 @@ export function Cta() {
                 Test
               </Button>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent className="sm:max-w-xl">
               <DialogHeader className="text-center">
                 <DialogTitle className="text-2xl font-bold font-headline">Chọn phương thức tạo hồ sơ</DialogTitle>
                 <DialogDescription>Bạn muốn tạo hồ sơ để làm gì?</DialogDescription>
@@ -620,5 +620,7 @@ export function Cta() {
     </section>
   );
 }
+
+    
 
     
