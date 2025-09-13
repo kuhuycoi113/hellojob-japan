@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import Link from 'next/link';
@@ -15,7 +16,7 @@ import {
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
-import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit, FastForward, UserPlus, ChevronRight } from 'lucide-react';
+import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit, FastForward, UserPlus, ChevronRight, HandCoins } from 'lucide-react';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { useRouter } from 'next/navigation';
@@ -562,9 +563,12 @@ export function Cta() {
           </Dialog>
 
           <Dialog open={dialog8Open} onOpenChange={setDialog8Open}>
-            <DialogContent>
+            <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold font-headline text-center">Nhập phí giới thiệu bạn mong muốn</DialogTitle>
+                    <DialogTitle className="text-2xl font-bold font-headline text-center flex items-center justify-center gap-2">
+                      <HandCoins className="h-6 w-6 text-primary" />
+                      Nhập phí giới thiệu bạn mong muốn
+                    </DialogTitle>
                 </DialogHeader>
                 <div className="py-4">
                     <Label htmlFor="fee">Phí giới thiệu</Label>
@@ -573,7 +577,7 @@ export function Cta() {
                             id="fee"
                             value={feeAmount}
                             onChange={handleFeeChange}
-                            placeholder="Ví dụ: 100,000"
+                            placeholder="Ví dụ: 200,000"
                             className="pr-12 text-right"
                         />
                         <span className="absolute inset-y-0 right-4 flex items-center text-muted-foreground">
@@ -589,12 +593,15 @@ export function Cta() {
           </Dialog>
           
           <Dialog open={dialog9Open} onOpenChange={setDialog9Open}>
-            <DialogContent>
+            <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold font-headline text-center">Nhập phí quản lý bạn mong muốn</DialogTitle>
+                    <DialogTitle className="text-2xl font-bold font-headline text-center flex items-center justify-center gap-2">
+                        <HandCoins className="h-6 w-6 text-primary" />
+                        Nhập phí quản lý bạn mong muốn
+                    </DialogTitle>
                 </DialogHeader>
                 <div className="py-4">
-                    <Label htmlFor="management-fee">Phí quản lý</Label>
+                    <Label htmlFor="management-fee">Phí quản lý/tháng</Label>
                     <div className="relative mt-1">
                         <Input
                             id="management-fee"
