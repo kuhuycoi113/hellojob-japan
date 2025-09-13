@@ -215,14 +215,15 @@ export function Cta() {
           </Dialog>
 
           <Dialog open={dialog3Open} onOpenChange={setDialog3Open}>
-              <DialogContent className="sm:max-w-4xl">
-                <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold font-headline text-center">Bạn là ai?</DialogTitle>
-                  <DialogDescription className="text-center">
-                    Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
+            <DialogContent className="sm:max-w-4xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">Bạn là ai?</DialogTitle>
+                <DialogDescription className="text-center">
+                  Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.
+                </DialogDescription>
+              </DialogHeader>
+              <ScrollArea className="h-[60vh] sm:h-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4 pr-4 sm:pr-0">
                   {userRoles.map((role) => (
                     <Card key={role.title} className="p-4 sm:p-6 text-left hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer h-full flex items-center gap-4" onClick={() => handleRoleSelectAndContinue(role)}>
                         <div className="bg-primary/5 p-3 rounded-lg">
@@ -239,10 +240,11 @@ export function Cta() {
                     </Card>
                   ))}
                 </div>
-                <DialogFooter>
-                  <Button variant="outline" onClick={() => { setDialog3Open(false); setDialog1Open(true); }}>Quay lại</Button>
-                </DialogFooter>
-              </DialogContent>
+              </ScrollArea>
+              <DialogFooter>
+                <Button variant="outline" onClick={() => { setDialog3Open(false); setDialog1Open(true); }}>Quay lại</Button>
+              </DialogFooter>
+            </DialogContent>
           </Dialog>
 
           <Dialog open={dialog4Open} onOpenChange={setDialog4Open}>
