@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -185,12 +186,27 @@ export function Cta() {
            <Dialog open={dialog62Open} onOpenChange={setDialog62Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>ich khong khong 6 2</DialogTitle>
+                  <DialogTitle>Chọn ngành nghề mong muốn</DialogTitle>
+                  <DialogDescription>
+                    Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
+                  </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  {Array.from({ length: 15 }, (_, i) => (
-                    <Button key={i} onClick={() => openDialog7('62')}>LL{i + 1}</Button>
-                  ))}
+                    <Button onClick={() => openDialog7('62')}>Ngư nghiệp</Button>
+                    <Button onClick={() => openDialog7('62')}>Nông nghiệp</Button>
+                    <Button onClick={() => openDialog7('62')}>Nhà hàng</Button>
+                    <Button onClick={() => openDialog7('62')}>Thực phẩm</Button>
+                    <Button onClick={() => openDialog7('62')}>Sản xuất, dịch vụ tổng hợp</Button>
+                    <Button onClick={() => openDialog7('62')}>Điện, điện tử</Button>
+                    <Button onClick={() => openDialog7('62')}>Chế tạo Vật liệu</Button>
+                    <Button onClick={() => openDialog7('62')}>Cơ khí, chế tạo máy</Button>
+                    <Button onClick={() => openDialog7('62')}>Ô tô</Button>
+                    <Button onClick={() => openDialog7('62')}>Hàng không</Button>
+                    <Button onClick={() => openDialog7('62')}>Vận tải</Button>
+                    <Button onClick={() => openDialog7('62')}>Xây dựng</Button>
+                    <Button onClick={() => openDialog7('62')}>Vệ sinh toà nhà</Button>
+                    <Button onClick={() => openDialog7('62')}>Lưu trú, khách sạn</Button>
+                    <Button onClick={() => openDialog7('62')}>Điều dưỡng</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog62Open(false); setDialog52Open(true); }}>Quay lại</Button>
