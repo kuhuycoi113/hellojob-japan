@@ -344,13 +344,14 @@ export function Cta() {
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => openDialog7('61')}>Ngư nghiệp</Button>
-                  <Button onClick={() => openDialog7('61')}>Nông nghiệp</Button>
-                  <Button onClick={() => openDialog7('61')}>Thực phẩm</Button>
-                  <Button onClick={() => openDialog7('61')}>Sản xuất, dịch vụ tổng hợp</Button>
-                  <Button onClick={() => openDialog7('61')}>Cơ khí, kim loại</Button>
-                  <Button onClick={() => openDialog7('61')}>Xây dựng</Button>
-                  <Button onClick={() => openDialog7('61')}>May mặc</Button>
+                  {[
+                    'Ngư nghiệp', 'Nông nghiệp', 'Thực phẩm',
+                    'Sản xuất, dịch vụ tổng hợp', 'Cơ khí, kim loại', 'Xây dựng', 'May mặc'
+                  ].map(industry => (
+                    <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('61')}>
+                      <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
+                    </Card>
+                  ))}
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog61Open(false); setDialog51Open(true); }}>Quay lại</Button>
