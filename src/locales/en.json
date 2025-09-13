@@ -612,6 +612,22 @@
       "subtitle": "The dedicated people behind HelloJob's success, always striving for your development."
     }
   },
+  "developmentPath": {
+    "title": "Paths for You to Choose in Japan",
+    "subtitle": "HelloJob will accompany you on every step of your career development in Japan.",
+    "skillIntern": {
+      "title": "Technical Intern",
+      "description": "A program for those who want to learn skills and practical experience in various industries in Japan."
+    },
+    "specifiedSkill": {
+      "title": "Specified Skilled Worker",
+      "description": "For skilled and experienced workers who wish to work long-term in Japan with better remuneration."
+    },
+    "engineer": {
+      "title": "Engineer, Specialist",
+      "description": "Recruiting engineers and specialists with high qualifications and specialized degrees to work in technical and technological fields."
+    }
+  },
   "postDetail": {
     "article": {
       "category": "Supporting Organizations",

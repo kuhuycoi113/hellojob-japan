@@ -613,6 +613,22 @@
       "subtitle": "Những con người tâm huyết đứng sau thành công của HelloJob, luôn nỗ lực vì sự phát triển của bạn."
     }
   },
+  "developmentPath": {
+    "title": "Những con đường cho bạn lựa chọn tại Nhật Bản",
+    "subtitle": "HelloJob sẽ đồng hành cùng bạn trên mọi chặng đường phát triển sự nghiệp tại Nhật Bản.",
+    "skillIntern": {
+      "title": "Thực tập sinh kỹ năng",
+      "description": "Chương trình dành cho những người muốn học hỏi kỹ năng và kinh nghiệm thực tế trong các ngành nghề tại Nhật Bản."
+    },
+    "specifiedSkill": {
+      "title": "Kỹ năng đặc định",
+      "description": "Dành cho lao động có tay nghề và kinh nghiệm, mong muốn làm việc lâu dài tại Nhật Bản với mức đãi ngộ tốt hơn."
+    },
+    "engineer": {
+      "title": "Kỹ sư, tri thức",
+      "description": "Tuyển dụng các kỹ sư, chuyên gia có trình độ cao và bằng cấp chuyên ngành để làm việc trong các lĩnh vực kỹ thuật, công nghệ."
+    }
+  },
   "postDetail": {
     "article": {
       "category": "Cơ quan hỗ trợ",
