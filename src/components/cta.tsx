@@ -174,19 +174,40 @@ export function Cta() {
           </Dialog>
 
           <Dialog open={dialog52Open} onOpenChange={setDialog52Open}>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>ich khong khong 5 2</DialogTitle>
-                </DialogHeader>
-                <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => { setDialog52Open(false); setDialog62Open(true); }}>L1</Button>
-                  <Button onClick={() => { setDialog52Open(false); setDialog62Open(true); }}>L2</Button>
-                  <Button onClick={() => { setDialog52Open(false); setDialog62Open(true); }}>L3</Button>
-                </div>
-                <DialogFooter>
-                  <Button variant="outline" onClick={() => { setDialog52Open(false); setDialog4Open(true); }}>Quay lại</Button>
-                </DialogFooter>
-              </DialogContent>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Chọn loại Kỹ năng đặc định</DialogTitle>
+                <DialogDescription>
+                  Chọn loại hình chi tiết để tiếp tục.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
+                <Card
+                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                  onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
+                >
+                  <CardTitle className="font-semibold text-base">Đặc định đầu Nhật</CardTitle>
+                  <CardDescription>Dành cho người đang ở Nhật</CardDescription>
+                </Card>
+                <Card
+                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                  onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
+                >
+                  <CardTitle className="font-semibold text-base">Đặc định đầu Việt</CardTitle>
+                  <CardDescription>Dành cho người ở Việt Nam</CardDescription>
+                </Card>
+                <Card
+                  className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                  onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
+                >
+                  <CardTitle className="font-semibold text-base">Đặc định đi mới</CardTitle>
+                  <CardDescription>Lần đầu đăng ký</CardDescription>
+                </Card>
+              </div>
+              <DialogFooter>
+                <Button variant="outline" onClick={() => { setDialog52Open(false); setDialog4Open(true); }}>Quay lại</Button>
+              </DialogFooter>
+            </DialogContent>
           </Dialog>
 
            <Dialog open={dialog62Open} onOpenChange={setDialog62Open}>
