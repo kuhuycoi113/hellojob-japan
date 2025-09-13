@@ -302,7 +302,7 @@ export function Cta() {
           </Dialog>
 
            <Dialog open={dialog51Open} onOpenChange={setDialog51Open}>
-              <DialogContent>
+              <DialogContent className="sm:max-w-2xl">
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Thực tập sinh kỹ năng</DialogTitle>
                   <DialogDescription className="text-center">
@@ -311,23 +311,38 @@ export function Cta() {
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
                     <Card
-                      className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                      className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
                       onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
                     >
+                      <div className="flex justify-center mb-4">
+                        <div className="bg-primary/10 text-primary p-3 rounded-full">
+                          <GraduationCap className="w-8 h-8" />
+                        </div>
+                      </div>
                       <CardTitle className="font-semibold text-base">Thực tập sinh 3 năm</CardTitle>
                       <CardDescription>Chương trình phổ thông nhất</CardDescription>
                     </Card>
                     <Card
-                      className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                      className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
                       onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
                     >
+                      <div className="flex justify-center mb-4">
+                        <div className="bg-yellow-400/10 text-yellow-500 p-3 rounded-full">
+                          <GraduationCap className="w-8 h-8" />
+                        </div>
+                      </div>
                       <CardTitle className="font-semibold text-base">Thực tập sinh 1 năm</CardTitle>
                       <CardDescription>Chương trình ngắn hạn</CardDescription>
                     </Card>
                     <Card
-                      className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
+                      className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
                       onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
                     >
+                      <div className="flex justify-center mb-4">
+                        <div className="bg-green-400/10 text-green-500 p-3 rounded-full">
+                          <GraduationCap className="w-8 h-8" />
+                        </div>
+                      </div>
                       <CardTitle className="font-semibold text-base">Thực tập sinh 3 Go</CardTitle>
                       <CardDescription>Dành cho người có kinh nghiệm</CardDescription>
                     </Card>
@@ -605,3 +620,5 @@ export function Cta() {
     </section>
   );
 }
+
+    
