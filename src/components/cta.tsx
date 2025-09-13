@@ -21,6 +21,7 @@ import { Label } from './ui/label';
 import { useRouter } from 'next/navigation';
 import { useRole } from '@/contexts/role-context';
 import { useLanguage } from '@/contexts/language-context';
+import { ScrollArea } from './ui/scroll-area';
 
 
 export function Cta() {
@@ -484,21 +485,23 @@ export function Cta() {
                     Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
                   </DialogDescription>
                 </DialogHeader>
-                <div className="grid grid-cols-3 gap-4 py-4">
-                   {[
-                    'Nông lâm ngư nghiệp', 'Thực phẩm', 'Sản xuất, chế tạo, công nghệ',
-                    'Cơ khí, máy móc', 'Công nghệ ô tô', 'Vận chuyển hàng hóa', 'Xây dựng',
-                    'Khách sạn, lưu trú', 'Y tế, điều dưỡng', 'Kinh doanh, kinh tế',
-                    'Tài chính, kể toán, bảo hiểm', 'Báo chí, truyền thông, marketing',
-                    'Công nghệ thông tin', 'Nghiên cứu, phân tích', 'Giáo dục, đào tạo',
-                    'Hành chính, văn phòng', 'Pháp lý', 'Nghệ thuật, nghệ sĩ',
-                    'Thể dục thể thao', 'Nghề có kỹ năng chuyên nghiệp', 'Việc làm bán chuyên nghiệp'
-                  ].map(industry => (
-                    <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('63')}>
-                      <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
-                    </Card>
-                  ))}
-                </div>
+                <ScrollArea className="h-[60vh]">
+                  <div className="grid grid-cols-3 gap-4 py-4 pr-4">
+                    {[
+                      'Nông lâm ngư nghiệp', 'Thực phẩm', 'Sản xuất, chế tạo, công nghệ',
+                      'Cơ khí, máy móc', 'Công nghệ ô tô', 'Vận chuyển hàng hóa', 'Xây dựng',
+                      'Khách sạn, lưu trú', 'Y tế, điều dưỡng', 'Kinh doanh, kinh tế',
+                      'Tài chính, kể toán, bảo hiểm', 'Báo chí, truyền thông, marketing',
+                      'Công nghệ thông tin', 'Nghiên cứu, phân tích', 'Giáo dục, đào tạo',
+                      'Hành chính, văn phòng', 'Pháp lý', 'Nghệ thuật, nghệ sĩ',
+                      'Thể dục thể thao', 'Nghề có kỹ năng chuyên nghiệp', 'Việc làm bán chuyên nghiệp'
+                    ].map(industry => (
+                      <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('63')}>
+                        <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
+                      </Card>
+                    ))}
+                  </div>
+                </ScrollArea>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog63Open(false); setDialog53Open(true); }}>Quay lại</Button>
                 </DialogFooter>
