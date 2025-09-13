@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -231,7 +230,7 @@ export function Cta() {
                           <h3 className="font-semibold text-base text-gray-800">
                             {role.title}
                           </h3>
-                          <p className="text-sm text-muted-foreground mt-1">
+                          <p className="text-sm text-muted-foreground mt-1 hidden sm:block">
                             {role.description}
                           </p>
                         </div>
