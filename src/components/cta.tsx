@@ -3,7 +3,6 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/contexts/language-context';
 import {
   Dialog,
   DialogContent,
@@ -479,33 +478,25 @@ export function Cta() {
           <Dialog open={dialog63Open} onOpenChange={setDialog63Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Chọn ngành nghề mong muốn</DialogTitle>
-                  <DialogDescription>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn ngành nghề mong muốn</DialogTitle>
+                  <DialogDescription className="text-center">
                     Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => openDialog7('63')}>Nông lâm ngư nghiệp</Button>
-                  <Button onClick={() => openDialog7('63')}>Thực phẩm</Button>
-                  <Button onClick={() => openDialog7('63')}>Sản xuất, chế tạo, công nghệ</Button>
-                  <Button onClick={() => openDialog7('63')}>Cơ khí, máy móc</Button>
-                  <Button onClick={() => openDialog7('63')}>Công nghệ ô tô</Button>
-                  <Button onClick={() => openDialog7('63')}>Vận chuyển hàng hóa</Button>
-                  <Button onClick={() => openDialog7('63')}>Xây dựng</Button>
-                  <Button onClick={() => openDialog7('63')}>Khách sạn, lưu trú</Button>
-                  <Button onClick={() => openDialog7('63')}>Y tế, điều dưỡng</Button>
-                  <Button onClick={() => openDialog7('63')}>Kinh doanh, kinh tế</Button>
-                  <Button onClick={() => openDialog7('63')}>Tài chính, kể toán, bảo hiểm</Button>
-                  <Button onClick={() => openDialog7('63')}>Báo chí, truyền thông, marketing</Button>
-                  <Button onClick={() => openDialog7('63')}>Công nghệ thông tin</Button>
-                  <Button onClick={() => openDialog7('63')}>Nghiên cứu, phân tích</Button>
-                  <Button onClick={() => openDialog7('63')}>Giáo dục, đào tạo</Button>
-                  <Button onClick={() => openDialog7('63')}>Hành chính, văn phòng</Button>
-                  <Button onClick={() => openDialog7('63')}>Pháp lý</Button>
-                  <Button onClick={() => openDialog7('63')}>Nghệ thuật, nghệ sĩ</Button>
-                  <Button onClick={() => openDialog7('63')}>Thể dục thể thao</Button>
-                  <Button onClick={() => openDialog7('63')}>Nghề có kỹ năng chuyên nghiệp</Button>
-                  <Button onClick={() => openDialog7('63')}>Việc làm bán chuyên nghiệp</Button>
+                   {[
+                    'Nông lâm ngư nghiệp', 'Thực phẩm', 'Sản xuất, chế tạo, công nghệ',
+                    'Cơ khí, máy móc', 'Công nghệ ô tô', 'Vận chuyển hàng hóa', 'Xây dựng',
+                    'Khách sạn, lưu trú', 'Y tế, điều dưỡng', 'Kinh doanh, kinh tế',
+                    'Tài chính, kể toán, bảo hiểm', 'Báo chí, truyền thông, marketing',
+                    'Công nghệ thông tin', 'Nghiên cứu, phân tích', 'Giáo dục, đào tạo',
+                    'Hành chính, văn phòng', 'Pháp lý', 'Nghệ thuật, nghệ sĩ',
+                    'Thể dục thể thao', 'Nghề có kỹ năng chuyên nghiệp', 'Việc làm bán chuyên nghiệp'
+                  ].map(industry => (
+                    <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('63')}>
+                      <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
+                    </Card>
+                  ))}
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog63Open(false); setDialog53Open(true); }}>Quay lại</Button>
