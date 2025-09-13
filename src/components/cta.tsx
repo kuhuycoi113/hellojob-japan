@@ -150,16 +150,19 @@ export function Cta() {
           <Dialog open={dialog61Open} onOpenChange={setDialog61Open}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>ich khong khong 6 1</DialogTitle>
+                  <DialogTitle>Chọn ngành nghề mong muốn</DialogTitle>
+                  <DialogDescription>
+                    Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
+                  </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => openDialog7('61')}>KK1</Button>
-                  <Button onClick={() => openDialog7('61')}>KK2</Button>
-                  <Button onClick={() => openDialog7('61')}>KK3</Button>
-                  <Button onClick={() => openDialog7('61')}>KK4</Button>
-                  <Button onClick={() => openDialog7('61')}>KK5</Button>
-                  <Button onClick={() => openDialog7('61')}>KK6</Button>
-                  <Button onClick={() => openDialog7('61')}>KK7</Button>
+                  <Button onClick={() => openDialog7('61')}>Ngư nghiệp</Button>
+                  <Button onClick={() => openDialog7('61')}>Nông nghiệp</Button>
+                  <Button onClick={() => openDialog7('61')}>Thực phẩm</Button>
+                  <Button onClick={() => openDialog7('61')}>Sản xuất, dịch vụ tổng hợp</Button>
+                  <Button onClick={() => openDialog7('61')}>Cơ khí, kim loại</Button>
+                  <Button onClick={() => openDialog7('61')}>Xây dựng</Button>
+                  <Button onClick={() => openDialog7('61')}>May mặc</Button>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog61Open(false); setDialog51Open(true); }}>Quay lại</Button>
