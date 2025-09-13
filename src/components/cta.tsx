@@ -512,15 +512,13 @@ export function Cta() {
                 <DialogDescription className="text-center">Lựa chọn khu vực bạn muốn làm việc tại Nhật Bản.</DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-3 gap-4 py-4">
-                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Hokkaido</Button>
-                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Tohoku</Button>
-                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Kanto</Button>
-                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Chubu</Button>
-                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Kansai</Button>
-                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Chugoku</Button>
-                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Shikoku</Button>
-                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Kyushu</Button>
-                  <Button onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>Okinawa</Button>
+                  {[
+                    'Hokkaido', 'Tohoku', 'Kanto', 'Chubu', 'Kansai', 'Chugoku', 'Shikoku', 'Kyushu', 'Okinawa'
+                  ].map(region => (
+                    <Card key={region} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>
+                      <h3 className="font-semibold text-base text-gray-800">{region}</h3>
+                    </Card>
+                  ))}
               </div>
               <DialogFooter>
                 <Button variant="outline" onClick={backFromDialog7}>Quay lại</Button>
