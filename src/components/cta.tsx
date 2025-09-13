@@ -10,8 +10,8 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
   DialogClose,
+  DialogTrigger,
 } from '@/components/ui/dialog';
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
@@ -404,21 +404,16 @@ export function Cta() {
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                    <Button onClick={() => openDialog7('62')}>Ngư nghiệp</Button>
-                    <Button onClick={() => openDialog7('62')}>Nông nghiệp</Button>
-                    <Button onClick={() => openDialog7('62')}>Nhà hàng</Button>
-                    <Button onClick={() => openDialog7('62')}>Thực phẩm</Button>
-                    <Button onClick={() => openDialog7('62')}>Sản xuất, dịch vụ tổng hợp</Button>
-                    <Button onClick={() => openDialog7('62')}>Điện, điện tử</Button>
-                    <Button onClick={() => openDialog7('62')}>Chế tạo Vật liệu</Button>
-                    <Button onClick={() => openDialog7('62')}>Cơ khí, chế tạo máy</Button>
-                    <Button onClick={() => openDialog7('62')}>Ô tô</Button>
-                    <Button onClick={() => openDialog7('62')}>Hàng không</Button>
-                    <Button onClick={() => openDialog7('62')}>Vận tải</Button>
-                    <Button onClick={() => openDialog7('62')}>Xây dựng</Button>
-                    <Button onClick={() => openDialog7('62')}>Vệ sinh toà nhà</Button>
-                    <Button onClick={() => openDialog7('62')}>Lưu trú, khách sạn</Button>
-                    <Button onClick={() => openDialog7('62')}>Điều dưỡng</Button>
+                  {[
+                    'Ngư nghiệp', 'Nông nghiệp', 'Nhà hàng', 'Thực phẩm',
+                    'Sản xuất, dịch vụ tổng hợp', 'Điện, điện tử', 'Chế tạo Vật liệu',
+                    'Cơ khí, chế tạo máy', 'Ô tô', 'Hàng không', 'Vận tải',
+                    'Xây dựng', 'Vệ sinh toà nhà', 'Lưu trú, khách sạn', 'Điều dưỡng'
+                  ].map(industry => (
+                    <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('62')}>
+                      <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
+                    </Card>
+                  ))}
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => { setDialog62Open(false); setDialog52Open(true); }}>Quay lại</Button>
