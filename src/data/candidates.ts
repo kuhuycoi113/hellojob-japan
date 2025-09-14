@@ -36,6 +36,7 @@ export type Candidate = {
         language: Record<Language, string>;
         level: Record<Language, string> | null;
     } | null;
+    years_of_experience?: Record<Language, string>;
 }
 
 const lastNames = [
@@ -97,6 +98,19 @@ const educationLevels = [
     { vi: "Daigaku", en: "University", ja: "大学" },
     { vi: "Daigaku-in", en: "Graduate School", ja: "大学院" },
     { vi: "Hakashi", en: "Doctorate", ja: "博士" }
+];
+
+const yearsOfExperience = [
+    { vi: "Trên 0,5 năm", en: "Over 0.5 years", ja: "0.5年以上" },
+    { vi: "Trên 1 năm", en: "Over 1 year", ja: "1年以上" },
+    { vi: "Trên 1,5 năm", en: "Over 1.5 years", ja: "1.5年以上" },
+    { vi: "Trên 2 năm", en: "Over 2 years", ja: "2年以上" },
+    { vi: "Trên 2,5 năm", en: "Over 2.5 years", ja: "2.5年以上" },
+    { vi: "Trên 3 năm", en: "Over 3 years", ja: "3年以上" },
+    { vi: "Trên 3,5 năm", en: "Over 3.5 years", ja: "3.5年以上" },
+    { vi: "Trên 4 năm", en: "Over 4 years", ja: "4年以上" },
+    { vi: "Trên 4,5 năm", en: "Over 4.5 years", ja: "4.5年以上" },
+    { vi: "Trên 5 năm", en: "Over 5 years", ja: "5年以上" },
 ];
 
 const internIndustries = {
@@ -577,6 +591,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const randomFirstName = getRandomElement(firstNames);
     const randomGender = getRandomElement(genders);
     const randomEducation = getRandomElement(educationLevels);
+    const randomExperience = getRandomElement(yearsOfExperience);
     
     let randomLanguageAbility = {...getRandomElement(languageAbilities)};
     if (randomLanguageAbility.language.en === 'Japanese') {
@@ -674,6 +689,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         desired_salary: getRandomSalary(randomVisaKey),
         desired_net_salary: getRandomNetSalary(randomVisaKey),
         education_level: randomEducation,
+        years_of_experience: randomExperience,
         jobs: {
             count: Math.floor(Math.random() * 10) + 1,
             images: Array.from({ length: 3 }, (_, j) => `https://picsum.photos/50?random=job${i}${j}`)
@@ -702,3 +718,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
 
   
+
+
+    
