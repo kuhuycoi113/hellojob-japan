@@ -398,5 +398,3 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         ...(interviewLocation && { interview_location: interviewLocation }),
     };
 });
-
-    
