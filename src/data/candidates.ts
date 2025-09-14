@@ -380,6 +380,33 @@ const japaneseLevels = [
     { vi: "Trình độ tương đương N1", en: "N1 Equivalent", ja: "N1相当" },
 ];
 
+const englishLevels = [
+    { vi: "TOEIC 900", en: "TOEIC 900", ja: "TOEIC 900" },
+    { vi: "TOEIC 800", en: "TOEIC 800", ja: "TOEIC 800" },
+    { vi: "TOEIC 700", en: "TOEIC 700", ja: "TOEIC 700" },
+    { vi: "TOEIC 600", en: "TOEIC 600", ja: "TOEIC 600" },
+    { vi: "TOEIC 500", en: "TOEIC 500", ja: "TOEIC 500" },
+    { vi: "TOEIC 400", en: "TOEIC 400", ja: "TOEIC 400" },
+    { vi: "IELTS 9.0", en: "IELTS 9.0", ja: "IELTS 9.0" },
+    { vi: "IELTS 8.0", en: "IELTS 8.0", ja: "IELTS 8.0" },
+    { vi: "IELTS 7.0", en: "IELTS 7.0", ja: "IELTS 7.0" },
+    { vi: "IELTS 6.0", en: "IELTS 6.0", ja: "IELTS 6.0" },
+    { vi: "IELTS 5.0", en: "IELTS 5.0", ja: "IELTS 5.0" },
+    { vi: "IELTS 4.0", en: "IELTS 4.0", ja: "IELTS 4.0" },
+    { vi: "Giao tiếp IELTS 9.0", en: "Conversational IELTS 9.0", ja: "会話IELTS 9.0" },
+    { vi: "Giao tiếp IELTS 8.0", en: "Conversational IELTS 8.0", ja: "会話IELTS 8.0" },
+    { vi: "Giao tiếp IELTS 7.0", en: "Conversational IELTS 7.0", ja: "会話IELTS 7.0" },
+    { vi: "Giao tiếp IELTS 6.0", en: "Conversational IELTS 6.0", ja: "会話IELTS 6.0" },
+    { vi: "Giao tiếp IELTS 5.0", en: "Conversational IELTS 5.0", ja: "会話IELTS 5.0" },
+    { vi: "Giao tiếp IELTS 4.0", en: "Conversational IELTS 4.0", ja: "会話IELTS 4.0" },
+    { vi: "Trình độ tương đương 9.0", en: "Equivalent 9.0", ja: "9.0相当" },
+    { vi: "Trình độ tương đương 8.0", en: "Equivalent 8.0", ja: "8.0相当" },
+    { vi: "Trình độ tương đương 7.0", en: "Equivalent 7.0", ja: "7.0相当" },
+    { vi: "Trình độ tương đương 6.0", en: "Equivalent 6.0", ja: "6.0相当" },
+    { vi: "Trình độ tương đương 5.0", en: "Equivalent 5.0", ja: "5.0相当" },
+    { vi: "Trình độ tương đương 4.0", en: "Equivalent 4.0", ja: "4.0相当" },
+];
+
 
 const languageAbilities = [
     {
@@ -388,11 +415,11 @@ const languageAbilities = [
     },
     {
         language: { vi: "Tiếng Nhật", en: "Japanese", ja: "日本語" },
-        level: null // Will be replaced by random japanese level
+        level: null 
     },
     {
         language: { vi: "Tiếng Anh", en: "English", ja: "英語" },
-        level: { vi: "N/A", en: "N/A", ja: "N/A" } 
+        level: null
     }
 ];
 
@@ -538,6 +565,8 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     let randomLanguageAbility = {...getRandomElement(languageAbilities)};
     if (randomLanguageAbility.language.en === 'Japanese') {
         randomLanguageAbility.level = getRandomElement(japaneseLevels);
+    } else if (randomLanguageAbility.language.en === 'English') {
+        randomLanguageAbility.level = getRandomElement(englishLevels);
     }
 
 
