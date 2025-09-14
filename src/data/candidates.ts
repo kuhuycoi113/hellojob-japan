@@ -23,6 +23,7 @@ export type Candidate = {
     hepatitis_b?: Record<Language, boolean | null>;
     financial_ability?: Record<Language, string | null>;
     interview_location?: Record<Language, string | null>;
+    tattoo?: Record<Language, string | null>;
 }
 
 const lastNames = [
@@ -349,6 +350,12 @@ const interviewLocations = {
     ja: ["日本国内", "ベトナム国内"],
 };
 
+const tattoos = {
+    none: { vi: "Không hình xăm", en: "No tattoo", ja: "刺青なし" },
+    small: { vi: "Có xăm nhỏ (kín)", en: "Has small (hidden) tattoo", ja: "小さい刺青あり（隠せる）" },
+    large: { vi: "Có xăm to (lộ)", en: "Has large (visible) tattoo", ja: "大きい刺青あり（見える）" },
+};
+
 
 function getRandomElement<T>(arr: T[]): T {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -428,7 +435,14 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const formattedDateOfBirth = `${String(dateOfBirth.getDate()).padStart(2, '0')}/${String(dateOfBirth.getMonth() + 1).padStart(2, '0')}/${dateOfBirth.getFullYear()}`;
 
     // --- Start applying rules ---
-    let hasTattoo = Math.random() > 0.8;
+    const tattooRand = Math.random();
+    let tattooStatus: 'none' | 'small' | 'large' = 'none';
+    if (tattooRand > 0.85) {
+        tattooStatus = 'large';
+    } else if (tattooRand > 0.6) {
+        tattooStatus = 'small';
+    }
+    
     let hasHepatitisB = Math.random() > 0.9;
     let financialAbility: Record<Language, string> | null = {
         vi: getRandomElement(financialAbilities.vi),
@@ -444,7 +458,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const visaSubtypeEn = visaSubtype.en;
 
     if (["3 Go Intern", "Skilled (from Vietnam)", "Skilled (in Japan)"].includes(visaSubtypeEn)) {
-         hasTattoo = false; 
+         tattooStatus = 'none';
         hasHepatitisB = false;
     }
     if (["New Skilled Worker", "Engineer/Specialist (from Vietnam)", "Engineer/Specialist (in Japan)"].includes(visaSubtypeEn)) {
@@ -455,14 +469,16 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         interviewLocation = null;
     }
     
+    const tattooRecord = tattoos[tattooStatus];
+    
     let details_vi = `${age} tuổi - ${height} cm - ${weight} kg`;
     let details_en = `${age} years old - ${height} cm - ${weight} kg`;
     let details_ja = `${age}歳 - ${height} cm - ${weight} kg`;
 
     if (!["3 Go Intern", "Skilled (from Vietnam)", "Skilled (in Japan)"].includes(visaSubtypeEn)) {
-         details_vi += ` - ${hasTattoo ? "Có hình xăm" : "Không hình xăm"}`;
-         details_en += ` - ${hasTattoo ? "Has tattoo" : "No tattoo"}`;
-         details_ja += ` - ${hasTattoo ? "刺青あり" : "刺青なし"}`;
+         details_vi += ` - ${tattooRecord.vi}`;
+         details_en += ` - ${tattooRecord.en}`;
+         details_ja += ` - ${tattooRecord.ja}`;
     }
 
     return {
@@ -502,5 +518,10 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         ...(hasHepatitisB && { hepatitis_b: { vi: true, en: true, ja: true } }),
         ...(financialAbility && { financial_ability: financialAbility }),
         ...(interviewLocation && { interview_location: interviewLocation }),
+        tattoo: {
+            vi: tattooRecord.vi,
+            en: tattooRecord.en,
+            ja: tattooRecord.ja,
+        }
     };
 });
