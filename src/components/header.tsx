@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, PlusCircle, AlertCircle, Settings, Diamond, LogIn, FileText, ArrowLeft, Handshake, FastForward, BrainCircuit, HardHat, Plane, UserCheck, HandCoins, Briefcase } from 'lucide-react';
+import { LayoutGrid, User, Sparkles, ChevronRight, Compass, Building, Users as UsersIcon, MessageSquare, PlusCircle, AlertCircle, Settings, Diamond, LogIn, FileText, ArrowLeft, Handshake, FastForward, BrainCircuit, HardHat, Plane, UserCheck, HandCoins, Briefcase, UserPlus } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
