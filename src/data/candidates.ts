@@ -25,6 +25,14 @@ export type Candidate = {
     financial_ability?: Record<Language, string | null>;
     interview_location?: Record<Language, string | null>;
     tattoo?: Record<Language, string | null>;
+    specialConditions?: {
+        isUrgent: boolean;
+        canDoFactory: boolean;
+        canDoOutdoor: boolean;
+        wantsGinou2: boolean;
+        wantsToChangeJob: boolean;
+    };
+    language_ability?: Record<Language, string | null>;
 }
 
 const lastNames = [
@@ -351,6 +359,12 @@ const tattoos = {
     large: { vi: "Có xăm to (lộ)", en: "Has large (visible) tattoo", ja: "大きい刺青あり（見える）" },
 };
 
+const languageAbilities = [
+    { vi: "Không biết ngoại ngữ", en: "No foreign language", ja: "外国語ができない" },
+    { vi: "Tiếng Nhật", en: "Japanese", ja: "日本語" },
+    { vi: "Tiếng Anh", en: "English", ja: "英語" }
+];
+
 function getRandomSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
     let min: number, max: number;
 
@@ -489,6 +503,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const randomLastName = getRandomElement(lastNames);
     const randomFirstName = getRandomElement(firstNames);
     const randomGender = getRandomElement(genders);
+    const randomLanguageAbility = getRandomElement(languageAbilities);
 
     const name_vi = `${randomLastName.vi} ${randomFirstName.vi}`;
     const name_en = `${randomLastName.en} ${randomFirstName.en}`;
@@ -583,13 +598,25 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         },
         created_date: generateRandomDate(new Date(2023, 0, 1), new Date()),
         height,
-        ...(hasHepatitisB && { hepatitis_b: { vi: true, en: true, ja: true } }),
-        ...(financialAbility && { financial_ability: financialAbility }),
-        ...(interviewLocation && { interview_location: interviewLocation }),
+        hepatitis_b: (hasHepatitisB) ? { vi: true, en: true, ja: true } : null,
+        financial_ability: financialAbility,
+        interview_location: interviewLocation,
         tattoo: {
             vi: tattooRecord.vi,
             en: tattooRecord.en,
             ja: tattooRecord.ja,
-        }
+        },
+        specialConditions: {
+            isUrgent: Math.random() > 0.8,
+            canDoFactory: Math.random() > 0.5,
+            canDoOutdoor: (randomVisaKey === 'intern' || randomVisaKey === 'skilled') && Math.random() > 0.6,
+            wantsGinou2: (randomVisaKey === 'intern') && Math.random() > 0.7,
+            wantsToChangeJob: (randomVisaKey === 'skilled' || randomVisaKey === 'engineer') && Math.random() > 0.75,
+        },
+        language_ability: {
+            vi: randomLanguageAbility.vi,
+            en: randomLanguageAbility.en,
+            ja: randomLanguageAbility.ja,
+        },
     };
 });
