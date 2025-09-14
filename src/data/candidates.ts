@@ -109,7 +109,18 @@ const internIndustries = {
         vi: "Cơ khí, kim loại", en: "Mechanics & Metal", ja: "機械・金属", jobs: []
     },
      general: {
-        vi: "Sản xuất, dịch vụ tổng hợp", en: "General Manufacturing & Services", ja: "製造・サービス", jobs: []
+        vi: "Sản xuất, dịch vụ tổng hợp", 
+        en: "General Manufacturing & Services", 
+        ja: "製造・サービス", 
+        jobs: [
+            { vi: "Đúc, gia công nhựa", en: "Plastic Molding & Processing", ja: "プラスチック成形・加工" },
+            { vi: "In ấn, đóng gói", en: "Printing & Packaging", ja: "印刷・包装" },
+            { vi: "Bảo dưỡng ô tô", en: "Automotive Maintenance", ja: "自動車整備" },
+            { vi: "Lắp ráp linh kiện", en: "Component Assembly", ja: "部品組立" },
+            { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング" },
+            { vi: "Gia công kim loại", en: "Metal Processing", ja: "金属加工" },
+            { vi: "Gia công gỗ", en: "Wood Processing", ja: "木材加工" }
+        ]
     }
 };
 
