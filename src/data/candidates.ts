@@ -40,6 +40,7 @@ export type Candidate = {
     ginou_remaining_period?: Record<Language, string> | null;
     desired_work_shift?: Record<Language, string>;
     vision?: Record<Language, string>;
+    dominant_hand?: Record<Language, string>;
 }
 
 const lastNames = [
@@ -157,6 +158,12 @@ const visions = [
     { vi: "Viễn thị", en: "Hyperopia", ja: "遠視" },
     { vi: "Loạn thị", en: "Astigmatism", ja: "乱視" },
     { vi: "Mù màu", en: "Color Blindness", ja: "色覚異常" },
+];
+
+const dominantHands = [
+    { vi: "Tay phải", en: "Right-handed", ja: "右利き" },
+    { vi: "Tay trái", en: "Left-handed", ja: "左利き" },
+    { vi: "Cả hai tay", en: "Ambidextrous", ja: "両利き" },
 ];
 
 const internIndustries = {
@@ -761,10 +768,13 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         },
         language_ability: randomLanguageAbility,
         desired_work_shift: getRandomElement(desiredWorkShifts),
-        vision: getRandomElement(visions)
+        vision: getRandomElement(visions),
+        dominant_hand: getRandomElement(dominantHands),
     };
 });
 
     
 
     
+
+  
