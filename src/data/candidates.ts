@@ -276,7 +276,17 @@ const engineerIndustries = {
         { vi: 'Nhân viên tôn giáo', en: 'Religious Worker', ja: '宗教家' },
         { vi: 'Phi công', en: 'Pilot', ja: 'パイロット' }
     ] },
-    semi_professional: { vi: "Việc làm bán chuyên nghiệp", en: "Semi-professional Occupations", ja: "準専門職", jobs: [] }
+    semi_professional: { 
+        vi: "Việc làm bán chuyên nghiệp", 
+        en: "Semi-professional Occupations", 
+        ja: "準専門職", 
+        jobs: [
+            { vi: 'Công việc mùa hè', en: 'Summer Job', ja: '夏の仕事' },
+            { vi: 'Lao động kỳ nghỉ', en: 'Working Holiday', ja: 'ワーキングホリデー' },
+            { vi: 'Sinh viên thực tập', en: 'Student Intern', ja: 'インターンシップ' },
+            { vi: 'Trao đổi văn hóa quốc tế', en: 'International Cultural Exchange', ja: '国際文化交流' }
+        ]
+    }
 };
 
 
