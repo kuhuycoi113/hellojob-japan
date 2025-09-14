@@ -205,7 +205,7 @@ export function Cta() {
                             <div className="p-3 rounded-full bg-green-500/10 text-green-500"><FileText className="w-8 h-8"/></div>
                         </div>
                         <h3 className="font-semibold text-lg text-gray-800">Thủ công</h3>
-                        <p className="text-sm text-muted-foreground mt-1">Tự điền thông tin vào biểu mẫu chi tiết.</p>
+                        <p className="text-sm text-muted-foreground mt-1">Tự điền thông tin vào biểu mẫu chi tiết bằng cách nhập bằng tay.</p>
                     </Card>
                 </div>
                 <DialogFooter>
