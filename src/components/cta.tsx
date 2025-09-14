@@ -253,7 +253,7 @@ export function Cta() {
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại hình lao động</DialogTitle>
                 <DialogDescription className="text-center">
-                  Hãy chọn loại hình phù hợp nhất với trình độ và mong muốn của bạn.
+                  Hãy chọn loại hình lao động bạn muốn tuyển dụng.
                 </DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
@@ -307,7 +307,7 @@ export function Cta() {
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Thực tập sinh kỹ năng</DialogTitle>
                   <DialogDescription className="text-center">
-                    Chọn loại hình chi tiết để tiếp tục.
+                    Chọn chương trình Thực tập sinh bạn muốn tuyển.
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
@@ -345,7 +345,7 @@ export function Cta() {
                         </div>
                       </div>
                       <CardTitle className="font-semibold text-base">Thực tập sinh 3 Go</CardTitle>
-                      <CardDescription>Dành cho người có kinh nghiệm</CardDescription>
+                      <CardDescription>Để tuyển TTS đã có kinh nghiệm</CardDescription>
                     </Card>
                 </div>
                 <DialogFooter>
@@ -383,7 +383,7 @@ export function Cta() {
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Kỹ năng đặc định</DialogTitle>
                 <DialogDescription className="text-center">
-                  Chọn loại hình chi tiết để tiếp tục.
+                  Chọn chương trình Kỹ năng đặc định bạn muốn tuyển.
                 </DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
@@ -397,7 +397,7 @@ export function Cta() {
                       </div>
                   </div>
                   <CardTitle className="font-semibold text-base">Đặc định đầu Nhật</CardTitle>
-                  <CardDescription>Dành cho người đang ở Nhật</CardDescription>
+                  <CardDescription>Để tuyển ứng viên ở Nhật</CardDescription>
                 </Card>
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
@@ -409,7 +409,7 @@ export function Cta() {
                       </div>
                   </div>
                   <CardTitle className="font-semibold text-base">Đặc định đầu Việt</CardTitle>
-                  <CardDescription>Dành cho người ở Việt Nam</CardDescription>
+                  <CardDescription>Để tuyển ứng viên từ Việt Nam</CardDescription>
                 </Card>
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
@@ -421,7 +421,7 @@ export function Cta() {
                       </div>
                   </div>
                   <CardTitle className="font-semibold text-base">Đặc định đi mới</CardTitle>
-                  <CardDescription>Lần đầu đăng ký</CardDescription>
+                  <CardDescription>Để tuyển ứng viên mới</CardDescription>
                 </Card>
               </div>
               <DialogFooter>
@@ -461,7 +461,7 @@ export function Cta() {
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Kỹ sư, tri thức</DialogTitle>
                 <DialogDescription className="text-center">
-                  Chọn loại hình chi tiết để tiếp tục.
+                  Chọn chương trình Kỹ sư bạn muốn tuyển.
                 </DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
@@ -478,7 +478,7 @@ export function Cta() {
                     </div>
                   </div>
                   <CardTitle className="font-semibold text-base">Kỹ sư đầu Nhật</CardTitle>
-                  <CardDescription>Dành cho kỹ sư đang ở Nhật</CardDescription>
+                  <CardDescription>Để tuyển kỹ sư ở Nhật</CardDescription>
                 </Card>
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
@@ -493,7 +493,7 @@ export function Cta() {
                     </div>
                   </div>
                   <CardTitle className="font-semibold text-base">Kỹ sư đầu Việt</CardTitle>
-                  <CardDescription>Dành cho kỹ sư ở Việt Nam</CardDescription>
+                  <CardDescription>Để tuyển kỹ sư từ Việt Nam</CardDescription>
                 </Card>
               </div>
               <DialogFooter>
@@ -617,7 +617,7 @@ export function Cta() {
                 </div>
                 <DialogFooter>
                     <Button variant="outline" onClick={() => { setDialog9Open(false); setDialog8Open(true); }}>Quay lại</Button>
-                    <Button onClick={handleFinishFlow}>Lưu và xem việc làm phù hợp</Button>
+                    <Button onClick={handleFinishFlow}>Lưu và tìm đối tác phù hợp</Button>
                 </DialogFooter>
             </DialogContent>
           </Dialog>
