@@ -403,7 +403,7 @@ export function Cta() {
                   onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
                 >
                    <div className="flex justify-center mb-4">
-                      <div className="bg-green-500/10 text-green-500 p-3 rounded-full">
+                      <div className="bg-secondary/10 text-secondary p-3 rounded-full">
                           <Plane className="w-8 h-8" />
                       </div>
                   </div>
@@ -626,3 +626,5 @@ export function Cta() {
     </section>
   );
 }
+
+    
