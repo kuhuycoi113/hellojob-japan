@@ -161,6 +161,30 @@ const skilledIndustries = {
     caregiver: { vi: "Điều dưỡng", en: "Caregiver", ja: "介護", jobs: [] }
 };
 
+const engineerIndustries = {
+    agri_forest_fish: { vi: "Nông lâm ngư nghiệp", en: "Agriculture, Forestry, Fishery", ja: "農林水産業", jobs: [] },
+    food: { vi: "Thực phẩm", en: "Food", ja: "食品", jobs: [] },
+    manufacturing: { vi: "Sản xuất, chế tạo, công nghệ", en: "Manufacturing, Fabrication, Technology", ja: "製造・加工・技術", jobs: [] },
+    mechanics: { vi: "Cơ khí, máy móc", en: "Mechanics, Machinery", ja: "機械・機器", jobs: [] },
+    automotive: { vi: "Công nghệ ô tô", en: "Automotive Technology", ja: "自動車技術", jobs: [] },
+    transport: { vi: "Vận chuyển hàng hoá", en: "Freight Transport", ja: "貨物輸送", jobs: [] },
+    construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
+    hotel: { vi: "Khách sạn, lưu trú", en: "Hotel, Accommodation", ja: "ホテル・宿泊", jobs: [] },
+    medical_care: { vi: "Y tế, điều dưỡng", en: "Medical, Caregiving", ja: "医療・介護", jobs: [] },
+    business_econ: { vi: "Kinh doanh, kinh tế", en: "Business, Economics", ja: "ビジネス・経済", jobs: [] },
+    finance: { vi: "Tài chính, kế toán, bảo hiểm", en: "Finance, Accounting, Insurance", ja: "金融・会計・保険", jobs: [] },
+    media: { vi: "Báo chí, truyền thông, marketing", en: "Journalism, Media, Marketing", ja: "報道・メディア・マーケティング", jobs: [] },
+    it: { vi: "Công nghệ thông tin", en: "Information Technology", ja: "情報技術", jobs: [] },
+    research: { vi: "Nghiên cứu, phân tích", en: "Research, Analysis", ja: "研究・分析", jobs: [] },
+    education: { vi: "Giáo dục, đào tạo", en: "Education, Training", ja: "教育・研修", jobs: [] },
+    admin: { vi: "Hành chính, văn phòng", en: "Administration, Office", ja: "事務・オフィス", jobs: [] },
+    legal: { vi: "Pháp lý", en: "Legal", ja: "法務", jobs: [] },
+    arts: { vi: "Nghệ thuật, nghệ sĩ", en: "Arts, Artist", ja: "芸術・アーティスト", jobs: [] },
+    sports: { vi: "Thể dục thể thao", en: "Sports", ja: "スポーツ", jobs: [] },
+    professional: { vi: "Nghề có kỹ năng chuyên nghiệp", en: "Professional Occupations", ja: "専門職", jobs: [] },
+    semi_professional: { vi: "Việc làm bán chuyên nghiệp", en: "Semi-professional Occupations", ja: "準専門職", jobs: [] }
+};
+
 
 const otherSpecialties = [
     { vi: "Gia công đồ ăn", en: "Food Processing", ja: "食品加工" },
@@ -268,9 +292,15 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         } else {
             randomSpecialty = { vi: industry.vi, en: industry.en, ja: industry.ja };
         }
-    }
-    else {
-        randomSpecialty = getRandomElement(otherSpecialties);
+    } else { // Engineer
+        const industryKeys = Object.keys(engineerIndustries) as (keyof typeof engineerIndustries)[];
+        const randomIndustryKey = getRandomElement(industryKeys);
+        const industry = engineerIndustries[randomIndustryKey];
+        if (industry.jobs.length > 0) {
+            randomSpecialty = getRandomElement(industry.jobs);
+        } else {
+            randomSpecialty = { vi: industry.vi, en: industry.en, ja: industry.ja };
+        }
     }
     
     const randomLastName = getRandomElement(lastNames);
@@ -368,6 +398,3 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         ...(interviewLocation && { interview_location: interviewLocation }),
     };
 });
-
-    
-    
