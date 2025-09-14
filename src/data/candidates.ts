@@ -262,10 +262,57 @@ const internIndustries = {
         en: "Food", 
         ja: "食品製造", 
         jobs: [
-            { vi: 'Chế biến thủy sản', en: 'Seafood Processing', ja: '水産加工' },
-            { vi: 'Chế biến thịt', en: 'Meat Processing', ja: '食肉加工' },
-            { vi: 'Chế biến thực phẩm & đồ ăn liền', en: 'Food & Instant Meal Processing', ja: '食品・惣菜加工'},
-            { vi: 'Làm bánh & kẹo', en: 'Bakery & Confectionery', ja: '製パン・製菓'}
+            { vi: 'Bánh gạo', en: 'Rice Crackers', ja: 'せんべい' },
+            { vi: 'Bánh kẹo', en: 'Confectionery', ja: '菓子' },
+            { vi: 'Bánh ngọt', en: 'Cakes/Pastries', ja: '洋菓子' },
+            { vi: 'Bếp viện', en: 'Hospital Kitchen Staff', ja: '病院内調理' },
+            { vi: 'Chế biến cá', en: 'Fish Processing', ja: '魚肉加工' },
+            { vi: 'Chế biến đồ ăn sẵn', en: 'Ready-to-eat Meal Processing', ja: '惣菜加工' },
+            { vi: 'Chế biến gia cầm', en: 'Poultry Processing', ja: '鶏肉加工' },
+            { vi: 'Chế biến sushi', en: 'Sushi Preparation', ja: '寿司製造' },
+            { vi: 'Chế biến thịt bò, lợn', en: 'Beef & Pork Processing', ja: '食肉加工（牛・豚）' },
+            { vi: 'Chế biến thuỷ sản sống', en: 'Live Seafood Processing', ja: '活魚介類加工' },
+            { vi: 'Chiết xuất thuỷ sản', en: 'Seafood Extract Production', ja: '水産エキス製造' },
+            { vi: 'Cơm hộp', en: 'Bento Box Preparation', ja: '弁当製造' },
+            { vi: 'Cơm nắm', en: 'Onigiri (Rice Ball) Making', ja: 'おにぎり製造' },
+            { vi: 'Cửa hàng siêu thị', en: 'Supermarket Staff', ja: 'スーパーマーケット業務' },
+            { vi: 'Đậu hũ', en: 'Tofu Production', ja: '豆腐製造' },
+            { vi: 'Đồ ăn kèm', en: 'Side Dish Preparation', ja: '付け合わせ調理' },
+            { vi: 'Đồ konbini', en: 'Convenience Store Food Preparation', ja: 'コンビニ向け食品製造' },
+            { vi: 'Đóng gói bánh kẹo', en: 'Confectionery Packaging', ja: '菓子包装' },
+            { vi: 'Đóng gói cafe', en: 'Coffee Packaging', ja: 'コーヒー包装' },
+            { vi: 'Đóng gói gạo', en: 'Rice Packaging', ja: '米包装' },
+            { vi: 'Đóng gói rau', en: 'Vegetable Packaging', ja: '野菜包装' },
+            { vi: 'Đóng gói rau củ', en: 'Vegetable Packaging', ja: '野菜包装' },
+            { vi: 'Đóng gói rong biển', en: 'Seaweed Packaging', ja: '海苔包装' },
+            { vi: 'Đóng gói thanh cua', en: 'Imitation Crab Stick Packaging', ja: 'カニカマ包装' },
+            { vi: 'Đóng hộp thực phẩm', en: 'Food Canning', ja: '食品缶詰' },
+            { vi: 'Gia công đồ ăn liền', en: 'Instant Food Processing', ja: 'インスタント食品加工' },
+            { vi: 'Giăm bông, xúc xích', en: 'Ham & Sausage Production', ja: 'ハム・ソーセージ製造' },
+            { vi: 'Há cảo', en: 'Dumpling (Gyoza) Making', ja: '餃子製造' },
+            { vi: 'Làm bánh kẹo', en: 'Confectionery Making', ja: '製菓' },
+            { vi: 'Mỳ tôm', en: 'Instant Noodle Production', ja: '即席麺製造' },
+            { vi: 'Salad', en: 'Salad Preparation', ja: 'サラダ製造' },
+            { vi: 'Sản xuất bánh mì', en: 'Bread Making', ja: '製パン' },
+            { vi: 'Sản xuất dưa muối', en: 'Pickle Production', ja: '漬物製造' },
+            { vi: 'Sản xuất mắm cá', en: 'Fish Sauce Production', ja: '魚醤製造' },
+            { vi: 'Sản xuất mỳ', en: 'Noodle Production', ja: '製麺' },
+            { vi: 'Siêu thị', en: 'Supermarket Staff', ja: 'スーパーマーケット業務' },
+            { vi: 'Tẩm ướp thuỷ sản', en: 'Marinated Seafood Production', ja: '水産物味付け加工' },
+            { vi: 'Thái cá sashimi', en: 'Sashimi Slicing', ja: '刺身のスライス' },
+            { vi: 'Thịt bò', en: 'Beef Processing', ja: '牛肉加工' },
+            { vi: 'Thịt gà', en: 'Chicken Processing', ja: '鶏肉加工' },
+            { vi: 'Thịt lợn', en: 'Pork Processing', ja: '豚肉加工' },
+            { vi: 'Thức ăn cơ sở y tế', en: 'Medical Facility Food Service', ja: '医療施設向け給食' },
+            { vi: 'Thực phẩm', en: 'Food Products', ja: '食品' },
+            { vi: 'Thực phẩm sữa', en: 'Dairy Products', ja: '乳製品' },
+            { vi: 'Thực phẩm trứng', en: 'Egg Products', ja: '鶏卵製品' },
+            { vi: 'Thuỷ sản gia công chế biến', en: 'Processed Seafood Production', ja: '水産加工品製造' },
+            { vi: 'Thuỷ sản khô', en: 'Dried Seafood Production', ja: '水産乾物製造' },
+            { vi: 'Thuỷ sản lên men', en: 'Fermented Seafood Production', ja: '水産発酵食品製造' },
+            { vi: 'Thuỷ sản sấy khô', en: 'Dried Seafood Production', ja: '水産乾燥品製造' },
+            { vi: 'Thuỷ sản ủ muối', en: 'Salted Seafood Production', ja: '水産塩蔵品製造' },
+            { vi: 'Thuỷ sản xông khói', en: 'Smoked Seafood Production', ja: '水産燻製品製造' },
         ]
     },
     general: {
@@ -758,28 +805,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const randomExperience = getRandomElement(yearsOfExperience);
     
     let randomLanguageAbility = {...getRandomElement(languageAbilities)};
-    if (randomLanguageAbility.language.en === 'Japanese') {
-        randomLanguageAbility.level = getRandomElement(japaneseLevels);
-    } else if (randomLanguageAbility.language.en === 'English') {
-        randomLanguageAbility.level = getRandomElement(englishLevels);
-    }
-
-
-    const name_vi = `${randomLastName.vi} ${randomFirstName.vi}`;
-    const name_en = `${randomLastName.en} ${randomFirstName.en}`;
-    const name_ja = `${randomLastName.ja} ${randomFirstName.ja}`;
-
-    const age = Math.floor(Math.random() * (69 - 18 + 1)) + 18; // 18-69
-    const height = Math.floor(Math.random() * (205 - 140 + 1)) + 140; // 140-205 cm
-    const weight = Math.floor(Math.random() * (105 - 40 + 1)) + 40; // 40-105 kg
     
-    const currentYear = new Date().getFullYear();
-    const birthYear = currentYear - age;
-    const birthMonth = Math.floor(Math.random() * 12);
-    const birthDay = Math.floor(Math.random() * 28) + 1;
-    const dateOfBirth = new Date(birthYear, birthMonth, birthDay);
-    const formattedDateOfBirth = `${String(dateOfBirth.getDate()).padStart(2, '0')}/${String(dateOfBirth.getMonth() + 1).padStart(2, '0')}/${dateOfBirth.getFullYear()}`;
-
     // --- Start applying rules from the image ---
     const visaSubtypeEn = visaSubtype.en;
 
@@ -815,9 +841,31 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
     if (visaSubtypeEn === '3-Year Intern' || visaSubtypeEn === '1-Year Intern') {
         randomLanguageAbility = { language: { vi: "Không yêu cầu", en: "Not required", ja: "不問" }, level: null };
+    } else {
+        if (randomLanguageAbility.language.en === 'Japanese') {
+            randomLanguageAbility.level = getRandomElement(japaneseLevels);
+        } else if (randomLanguageAbility.language.en === 'English') {
+            randomLanguageAbility.level = getRandomElement(englishLevels);
+        }
     }
 
+
     const tattooRecord = hasTattoo ? (Math.random() > 0.5 ? tattoos.large : tattoos.small) : tattoos.none;
+
+    const name_vi = `${randomLastName.vi} ${randomFirstName.vi}`;
+    const name_en = `${randomLastName.en} ${randomFirstName.en}`;
+    const name_ja = `${randomLastName.ja} ${randomFirstName.ja}`;
+
+    const age = Math.floor(Math.random() * (69 - 18 + 1)) + 18; // 18-69
+    const height = Math.floor(Math.random() * (205 - 140 + 1)) + 140; // 140-205 cm
+    const weight = Math.floor(Math.random() * (105 - 40 + 1)) + 40; // 40-105 kg
+    
+    const currentYear = new Date().getFullYear();
+    const birthYear = currentYear - age;
+    const birthMonth = Math.floor(Math.random() * 12);
+    const birthDay = Math.floor(Math.random() * 28) + 1;
+    const dateOfBirth = new Date(birthYear, birthMonth, birthDay);
+    const formattedDateOfBirth = `${String(dateOfBirth.getDate()).padStart(2, '0')}/${String(dateOfBirth.getMonth() + 1).padStart(2, '0')}/${dateOfBirth.getFullYear()}`;
 
     let details_vi = `${age} tuổi - ${height} cm - ${weight} kg`;
     let details_en = `${age} years old - ${height} cm - ${weight} kg`;
@@ -920,5 +968,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
 
+
+    
 
     
