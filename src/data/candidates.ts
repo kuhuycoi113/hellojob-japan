@@ -513,7 +513,34 @@ const internIndustries = {
         ]
     },
     textiles: {
-        vi: "May mặc", en: "Textiles", ja: "繊維・衣服", jobs: []
+        vi: "May mặc", en: "Textiles", ja: "繊維・衣服", jobs: [
+            { vi: 'Chăn ga gối đệm', en: 'Bedding', ja: '寝具' },
+            { vi: 'Công việc trước kéo sợi', en: 'Pre-spinning work', ja: '紡績前作業' },
+            { vi: 'Công việc trước khi dệt', en: 'Pre-weaving work', ja: '製織前作業' },
+            { vi: 'Dệt hoàn thiện', en: 'Weaving finishing', ja: '織物仕上げ' },
+            { vi: 'Dệt kim máy sợi dọc', en: 'Warp knitting', ja: '経編' },
+            { vi: 'Dệt may', en: 'Weaving', ja: '織物' },
+            { vi: 'Gia công dệt', en: 'Textile processing', ja: '繊維加工' },
+            { vi: 'Gia công sợi hỗn hợp', en: 'Mixed yarn processing', ja: '混紡糸加工' },
+            { vi: 'Kéo sợi tinh', en: 'Fine spinning', ja: '精紡' },
+            { vi: 'May khăn mặt', en: 'Towel sewing', ja: 'タオル縫製' },
+            { vi: 'May mặc', en: 'Garment sewing', ja: '衣類縫製' },
+            { vi: 'May quần áo', en: 'Clothes sewing', ja: '衣服縫製' },
+            { vi: 'May quần áo nam', en: 'Men\'s clothing sewing', ja: '紳士服縫製' },
+            { vi: 'Nhuộm chỉ', en: 'Yarn dyeing', ja: '糸染め' },
+            { vi: 'Nhuộm vải, đan len', en: 'Fabric dyeing, knitting', ja: '布染め、ニット編み' },
+            { vi: 'Quần áo phụ nữ, trẻ em', en: 'Women\'s and children\'s clothing', ja: '婦人子供服' },
+            { vi: 'Quấn sợi', en: 'Yarn winding', ja: '糸巻き' },
+            { vi: 'Sản xuất áo sơ mi', en: 'Shirt manufacturing', ja: 'ワイシャツ製造' },
+            { vi: 'Sản xuất đồ lót', en: 'Underwear manufacturing', ja: '下着製造' },
+            { vi: 'Sản xuất ghế ngồi ô tô', en: 'Car seat manufacturing', ja: '自動車シート製造' },
+            { vi: 'Sản xuất máy dệt kim tròn', en: 'Circular knitting machine manufacturing', ja: '丸編み機製造' },
+            { vi: 'Sản xuất tất', en: 'Socks manufacturing', ja: '靴下製造' },
+            { vi: 'Sản xuất thảm dệt', en: 'Woven carpet manufacturing', ja: '織りカーペット製造' },
+            { vi: 'Sản xuất thảm đục lỗ', en: 'Needle-punched carpet manufacturing', ja: 'ニードルパンチカーペット製造' },
+            { vi: 'Sản xuất thảm nhung nổi', en: 'Tufted carpet manufacturing', ja: 'タフテッドカーペット製造' },
+            { vi: 'Sản xuất vải bạt', en: 'Canvas manufacturing', ja: '帆布製造' }
+        ]
     },
 };
 
@@ -1149,5 +1176,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
 
     
+
 
 
