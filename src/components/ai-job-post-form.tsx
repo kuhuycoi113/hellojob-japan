@@ -52,6 +52,8 @@ function AiJobPostFormContent() {
   const role = searchParams.get('role');
   const initialVisaType = searchParams.get('visaType');
   const initialVisaSubType = searchParams.get('visaSubType');
+  const industry = searchParams.get('industry');
+  const region = searchParams.get('region');
   
   const [state, setState] = useState<SessionState>('idle');
   const [description, setDescription] = useState('');
@@ -555,7 +557,7 @@ function AiJobPostFormContent() {
     }
   };
 
-  const hasSelections = role || initialVisaType || initialVisaSubType;
+  const hasSelections = role || initialVisaType || initialVisaSubType || industry || region;
 
   const FileIcon = ({ type }: { type: string }) => {
     if (type.startsWith('image/')) {
@@ -606,6 +608,8 @@ function AiJobPostFormContent() {
                 {role && <Badge variant="secondary">{role}</Badge>}
                 {initialVisaType && <Badge variant="secondary">{initialVisaType}</Badge>}
                 {initialVisaSubType && <Badge variant="secondary">{initialVisaSubType}</Badge>}
+                {industry && <Badge variant="secondary">{industry}</Badge>}
+                {region && <Badge variant="secondary">{region}</Badge>}
               </div>
             </CardHeader>
           </Card>
@@ -915,5 +919,7 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
+
+    
 
     
