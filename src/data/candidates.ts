@@ -92,7 +92,15 @@ const internIndustries = {
         vi: "Xây dựng", en: "Construction", ja: "建設", jobs: []
     },
     food: {
-        vi: "Thực phẩm", en: "Food", ja: "食品", jobs: []
+        vi: "Thực phẩm", 
+        en: "Food", 
+        ja: "食品", 
+        jobs: [
+            { vi: 'Chế biến thủy sản', en: 'Seafood Processing', ja: '水産加工' },
+            { vi: 'Chế biến thịt', en: 'Meat Processing', ja: '食肉加工' },
+            { vi: 'Chế biến thực phẩm & đồ ăn liền', en: 'Food & Instant Meal Processing', ja: '食品・惣菜加工'},
+            { vi: 'Làm bánh & kẹo', en: 'Bakery & Confectionery', ja: '製パン・製菓'}
+        ]
     },
     textiles: {
         vi: "May mặc", en: "Textiles", ja: "繊維", jobs: []
