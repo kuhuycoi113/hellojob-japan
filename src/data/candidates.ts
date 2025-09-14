@@ -531,21 +531,35 @@ const internIndustries = {
 };
 
 const skilledIndustries = {
-    caregiver: { vi: "Điều dưỡng", en: "Caregiver", ja: "介護", jobs: [
+    caregiver: { 
+        vi: "Điều dưỡng", 
+        en: "Caregiver", 
+        ja: "介護", 
+        jobs: [
             { vi: 'Điều dưỡng, hộ lý', en: 'Nursing, Caregiving', ja: '看護・介護' }
         ] 
     },
-    hotel: { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル", jobs: [
-        { vi: 'Buồng phòng khách sạn', en: 'Hotel Housekeeping', ja: '客室清掃' },
-        { vi: '(Khách sạn) Tiếp khách, quản lý vệ sinh', en: 'Guest Services & Hygiene Management', ja: '接客・衛生管理' },
-        { vi: 'Hành lý khách sạn', en: 'Bellhop / Porter', ja: 'ベルスタッフ / ポーター' },
-        { vi: 'Lễ tân khách sạn', en: 'Hotel Reception / Front Desk', ja: 'フロント業務 / 受付' },
-        { vi: 'Lưu trú khách sạn', en: 'Accommodation Services', ja: '宿泊サービス' },
-        { vi: 'Quản lý khách sạn', en: 'Hotel Management', ja: 'ホテル管理' }
-    ] },
-    cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [
-        { vi: 'Vệ sinh toà nhà', en: 'Building Cleaning', ja: 'ビルクリーニング' }
-    ] },
+    hotel: { 
+        vi: "Lưu trú, khách sạn", 
+        en: "Accommodation & Hotel", 
+        ja: "宿泊・ホテル", 
+        jobs: [
+            { vi: 'Buồng phòng khách sạn', en: 'Hotel Housekeeping', ja: 'ホテル客室清掃' },
+            { vi: '(Khách sạn) Tiếp khách, quản lý vệ sinh', en: 'Guest Services & Hygiene Management', ja: '接客・衛生管理' },
+            { vi: 'Hành lý khách sạn', en: 'Bellhop / Porter', ja: 'ベルスタッフ / ポーター' },
+            { vi: 'Lễ tân khách sạn', en: 'Hotel Reception / Front Desk', ja: 'フロント業務 / 受付' },
+            { vi: 'Lưu trú khách sạn', en: 'Accommodation Services', ja: '宿泊サービス' },
+            { vi: 'Quản lý khách sạn', en: 'Hotel Management', ja: 'ホテル管理' }
+        ] 
+    },
+    cleaning: { 
+        vi: "Vệ sinh toà nhà", 
+        en: "Building Cleaning", 
+        ja: "ビルクリーニング", 
+        jobs: [
+            { vi: 'Vệ sinh toà nhà', en: 'Building Cleaning', ja: 'ビルクリーニング' }
+        ] 
+    },
     transport: { 
         vi: "Vận tải", 
         en: "Transportation", 
@@ -575,7 +589,11 @@ const skilledIndustries = {
             { vi: 'Hỗ trợ mặt đất máy bay', en: 'Aircraft ground support', ja: '航空機地上支援' }
         ]
     },
-    automotive: { vi: "Ô tô", en: "Automotive", ja: "自動車", jobs: [
+    automotive: { 
+        vi: "Ô tô", 
+        en: "Automotive", 
+        ja: "自動車", 
+        jobs: [
             { vi: 'Bảo dưỡng ô tô', en: 'Automotive Maintenance', ja: '自動車整備' },
             { vi: 'Kiểm tra linh kiện ô tô', en: 'Automotive Parts Inspection', ja: '自動車部品検査' },
             { vi: 'Lắp ráp linh kiện ô tô', en: 'Automotive Parts Assembly', ja: '自動車部品組立' },
@@ -583,7 +601,11 @@ const skilledIndustries = {
             { vi: 'Sửa chữa ô tô', en: 'Automotive Repair', ja: '自動車修理' }
         ] 
     },
-    machinery: { vi: "Cơ khí, chế tạo máy", en: "Machinery Manufacturing", ja: "機械製造", jobs: [
+    machinery: { 
+        vi: "Cơ khí, chế tạo máy", 
+        en: "Machinery Manufacturing", 
+        ja: "機械製造", 
+        jobs: [
         { vi: 'Bảo trì máy móc', en: 'Machine Maintenance', ja: '機械保全' },
         { vi: 'Chế tạo kim loại tấm', en: 'Sheet Metal Fabrication', ja: '板金加工' },
         { vi: 'Chế tạo máy', en: 'Machine Manufacturing', ja: '機械製造' },
@@ -638,7 +660,8 @@ const skilledIndustries = {
         { vi: 'Vận hành máy ép nhựa', en: 'Plastic Injection Molding Machine Operation', ja: 'プラスチック射出成形機操作' },
         { vi: 'Vận hành máy gia công', en: 'Machining Center Operation', ja: 'マシニングセンタ操作' },
         { vi: 'Xử lý điện hóa nhôm', en: 'Aluminum Anodizing', ja: 'アルミニウム陽極酸化処理' }
-    ] },
+        ] 
+    },
     material: { 
         vi: "Chế tạo Vật liệu", 
         en: "Material Manufacturing", 
@@ -649,7 +672,11 @@ const skilledIndustries = {
             { vi: 'Xử lý nhiệt tổng thể', en: 'Overall Heat Treatment', ja: '全体熱処理' }
         ] 
     },
-    electronics: { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子", jobs: [
+    electronics: { 
+        vi: "Điện, điện tử", 
+        en: "Electronics", 
+        ja: "電気・電子", 
+        jobs: [
             { vi: 'Bản mạch in', en: 'Printed Circuit Board', ja: 'プリント基板' },
             { vi: 'Cuộn dây máy điện quay', en: 'Rotating Electrical Machine Winding', ja: '回転電機巻線' },
             { vi: 'Điện', en: 'Electrical', ja: '電気' },
@@ -668,68 +695,74 @@ const skilledIndustries = {
             { vi: 'Sửa chữa tủ điện', en: 'Electrical Cabinet Repair', ja: '配電盤修理' },
             { vi: 'Thi công điện', en: 'Electrical Construction', ja: '電気工事' },
             { vi: 'Thiết kế bảng mạch in', en: 'PCB Design', ja: 'プリント基板設計' }
-        ] },
-    construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [
-        { vi: 'Bê tông', en: 'Concrete Work', ja: 'コンクリート工事' },
-        { vi: 'Buộc thép', en: 'Rebar Tying', ja: '鉄筋結束' },
-        { vi: 'Chống thấm', en: 'Waterproofing', ja: '防水工事' },
-        { vi: 'Chống thấm trần nhà', en: 'Ceiling Waterproofing', ja: '天井防水' },
-        { vi: 'Công trình chống nóng, lạnh', en: 'Insulation Work', ja: '断熱工事' },
-        { vi: 'Cốp pha công trình', en: 'Formwork', ja: '型枠工事' },
-        { vi: 'Dán tường', en: 'Wallpapering', ja: '壁貼り' },
-        { vi: 'Đổ bê tông áp lực', en: 'Pressure Concrete Pouring', ja: '圧送コンクリート' },
-        { vi: 'Đổ nhựa đường', en: 'Asphalt Paving', ja: 'アスファルト舗装' },
-        { vi: 'Dựng giàn giáo', en: 'Scaffolding', ja: '足場組立' },
-        { vi: 'Đường ống', en: 'Piping', ja: '配管' },
-        { vi: 'Đường ống điều hoà', en: 'HVAC Piping', ja: '空調配管' },
-        { vi: 'Đường ống nhà máy', en: 'Factory Piping', ja: '工場配管' },
-        { vi: 'Đường ống nước', en: 'Plumbing', ja: '給排水配管' },
-        { vi: 'Đường ống xây dựng', en: 'Construction Piping', ja: '建設配管' },
-        { vi: 'Gia công đường ống', en: 'Pipe Fabrication', ja: '配管加工' },
-        { vi: 'Gia công khung thép', en: 'Steel Frame Fabrication', ja: '鉄骨加工' },
-        { vi: 'Gia công khung thép trong xưởng', en: 'In-shop Steel Frame Fabrication', ja: '工場内鉄骨加工' },
-        { vi: 'Gia công sắt trong xưởng', en: 'In-shop Ironwork', ja: '工場内鉄筋加工' },
-        { vi: 'Gia công vật liệu đá', en: 'Stone Material Processing', ja: '石材加工' },
-        { vi: 'Hàn khung thép trên cao', en: 'High-altitude Steel Frame Welding', ja: '高所鉄骨溶接' },
-        { vi: 'Hoàn thiện nội thất', en: 'Interior Finishing', ja: '内装仕上げ' },
-        { vi: 'Hoàn thiện sàn nhựa', en: 'Plastic Floor Finishing', ja: 'プラスチック系床仕上げ' },
-        { vi: 'Hoàn thiện sàn thảm', en: 'Carpet Floor Finishing', ja: 'カーペット系床仕上げ' },
-        { vi: 'Hoàn thiện ván', en: 'Board Finishing', ja: 'ボード仕上げ' },
-        { vi: 'Hút nước ngầm công trình', en: 'Construction Dewatering', ja: '建設現場の排水' },
-        { vi: 'Khoan giếng máy dập', en: 'Percussion Drilling', ja: 'パーカッション式井戸掘り' },
-        { vi: 'Khoan giếng máy khoan', en: 'Rotary Drilling', ja: 'ロータリー式井戸掘り' },
-        { vi: 'Khung chắn toà nhà', en: 'Building Curtain Wall', ja: 'カーテンウォール施工' },
-        { vi: 'Lái máy ủi', en: 'Bulldozer Operator', ja: 'ブルドーザー運転' },
-        { vi: 'Lái máy xây dựng', en: 'Construction Machinery Operator', ja: '建設機械施工' },
-        { vi: 'Lái máy xúc', en: 'Excavator Operator', ja: '掘削機運転' },
-        { vi: 'Lái máy xúc lật', en: 'Loader Operator', ja: 'ローダー運転' },
-        { vi: 'Lái xe lu', en: 'Road Roller Operator', ja: 'ローラー運転' },
-        { vi: 'Làm nền, móng', en: 'Foundation Work', ja: '基礎工事' },
-        { vi: 'Lắp bồn tắm', en: 'Bathtub Installation', ja: '浴槽設置' },
-        { vi: 'Lắp đặt đường ống', en: 'Pipe Installation', ja: '配管設置' },
-        { vi: 'Lắp đặt lò nung-xây dựng', en: 'Furnace Installation', ja: '築炉' },
-        { vi: 'Lắp đặt pin năng lượng', en: 'Solar Panel Installation', ja: '太陽光パネル設置' },
-        { vi: 'Lắp điện lạnh, điều hòa', en: 'HVAC Installation', ja: '冷凍空調機器施工' },
-        { vi: 'Lắp ghép cốt thép', en: 'Reinforcement Assembly', ja: '鉄筋組立' },
-        { vi: 'Lát đá', en: 'Stone Paving', ja: '石張り' },
-        { vi: 'Lợp mái nhà', en: 'Roofing', ja: '屋根葺き' },
-        { vi: 'Lợp ngói', en: 'Tiling', ja: '瓦葺き' },
-        { vi: 'Mộc cốp pha', en: 'Formwork Carpentry', ja: '型枠大工' },
-        { vi: 'Nội thất gỗ-xây dựng', en: 'Architectural Carpentry', ja: '建築大工' },
-        { vi: 'Ốp lát gạch', en: 'Tiling', ja: 'タイル張り' },
-        { vi: 'Phá dỡ', en: 'Demolition', ja: '解体' },
-        { vi: 'San lấp mặt bằng', en: 'Earth-moving / Leveling', ja: '土工' },
-        { vi: 'Sản xuất bê tông', en: 'Concrete Production', ja: 'コンクリート製造' },
-        { vi: 'Sơn xây dựng', en: 'Architectural Painting', ja: '建築塗装' },
-        { vi: 'Tấm kim loại kiến trúc', en: 'Architectural Sheet Metal', ja: '建築板金' },
-        { vi: 'Tấm kim loại ống gió', en: 'Duct Sheet Metal', ja: 'ダクト板金' },
-        { vi: 'Thi công dán tường', en: 'Wallpapering', ja: '壁紙施工' },
-        { vi: 'Thi công lắp rèm', en: 'Curtain Installation', ja: 'カーテン施工' },
-        { vi: 'Thi công móng thép', en: 'Steel Foundation Work', ja: '鉄筋コンクリート基礎工事' },
-        { vi: 'Thợ mộc xây dựng', en: 'Carpenter', ja: '大工' },
-        { vi: 'Trát vữa', en: 'Plastering', ja: '左官' },
-        { vi: 'Xây dựng tổng hợp', en: 'General Construction', ja: '総合建設' },
-    ] },
+        ] 
+    },
+    construction: { 
+        vi: "Xây dựng", 
+        en: "Construction", 
+        ja: "建設", 
+        jobs: [
+            { vi: 'Bê tông', en: 'Concrete Work', ja: 'コンクリート工事' },
+            { vi: 'Buộc thép', en: 'Rebar Tying', ja: '鉄筋結束' },
+            { vi: 'Chống thấm', en: 'Waterproofing', ja: '防水工事' },
+            { vi: 'Chống thấm trần nhà', en: 'Ceiling Waterproofing', ja: '天井防水' },
+            { vi: 'Công trình chống nóng, lạnh', en: 'Insulation Work', ja: '断熱工事' },
+            { vi: 'Cốp pha công trình', en: 'Formwork', ja: '型枠工事' },
+            { vi: 'Dán tường', en: 'Wallpapering', ja: '壁貼り' },
+            { vi: 'Đổ bê tông áp lực', en: 'Pressure Concrete Pouring', ja: '圧送コンクリート' },
+            { vi: 'Đổ nhựa đường', en: 'Asphalt Paving', ja: 'アスファルト舗装' },
+            { vi: 'Dựng giàn giáo', en: 'Scaffolding', ja: '足場組立' },
+            { vi: 'Đường ống', en: 'Piping', ja: '配管' },
+            { vi: 'Đường ống điều hoà', en: 'HVAC Piping', ja: '空調配管' },
+            { vi: 'Đường ống nhà máy', en: 'Factory Piping', ja: '工場配管' },
+            { vi: 'Đường ống nước', en: 'Plumbing', ja: '給排水配管' },
+            { vi: 'Đường ống xây dựng', en: 'Construction Piping', ja: '建設配管' },
+            { vi: 'Gia công đường ống', en: 'Pipe Fabrication', ja: '配管加工' },
+            { vi: 'Gia công khung thép', en: 'Steel Frame Fabrication', ja: '鉄骨加工' },
+            { vi: 'Gia công khung thép trong xưởng', en: 'In-shop Steel Frame Fabrication', ja: '工場内鉄骨加工' },
+            { vi: 'Gia công sắt trong xưởng', en: 'In-shop Ironwork', ja: '工場内鉄筋加工' },
+            { vi: 'Gia công vật liệu đá', en: 'Stone Material Processing', ja: '石材加工' },
+            { vi: 'Hàn khung thép trên cao', en: 'High-altitude Steel Frame Welding', ja: '高所鉄骨溶接' },
+            { vi: 'Hoàn thiện nội thất', en: 'Interior Finishing', ja: '内装仕上げ' },
+            { vi: 'Hoàn thiện sàn nhựa', en: 'Plastic Floor Finishing', ja: 'プラスチック系床仕上げ' },
+            { vi: 'Hoàn thiện sàn thảm', en: 'Carpet Floor Finishing', ja: 'カーペット系床仕上げ' },
+            { vi: 'Hoàn thiện ván', en: 'Board Finishing', ja: 'ボード仕上げ' },
+            { vi: 'Hút nước ngầm công trình', en: 'Construction Dewatering', ja: '建設現場の排水' },
+            { vi: 'Khoan giếng máy dập', en: 'Percussion Drilling', ja: 'パーカッション式井戸掘り' },
+            { vi: 'Khoan giếng máy khoan', en: 'Rotary Drilling', ja: 'ロータリー式井戸掘り' },
+            { vi: 'Khung chắn toà nhà', en: 'Building Curtain Wall', ja: 'カーテンウォール施工' },
+            { vi: 'Lái máy ủi', en: 'Bulldozer Operator', ja: 'ブルドーザー運転' },
+            { vi: 'Lái máy xây dựng', en: 'Construction Machinery Operator', ja: '建設機械施工' },
+            { vi: 'Lái máy xúc', en: 'Excavator Operator', ja: '掘削機運転' },
+            { vi: 'Lái máy xúc lật', en: 'Loader Operator', ja: 'ローダー運転' },
+            { vi: 'Lái xe lu', en: 'Road Roller Operator', ja: 'ローラー運転' },
+            { vi: 'Làm nền, móng', en: 'Foundation Work', ja: '基礎工事' },
+            { vi: 'Lắp bồn tắm', en: 'Bathtub Installation', ja: '浴槽設置' },
+            { vi: 'Lắp đặt đường ống', en: 'Pipe Installation', ja: '配管設置' },
+            { vi: 'Lắp đặt lò nung-xây dựng', en: 'Furnace Installation', ja: '築炉' },
+            { vi: 'Lắp đặt pin năng lượng', en: 'Solar Panel Installation', ja: '太陽光パネル設置' },
+            { vi: 'Lắp điện lạnh, điều hòa', en: 'HVAC Installation', ja: '冷凍空調機器施工' },
+            { vi: 'Lắp ghép cốt thép', en: 'Reinforcement Assembly', ja: '鉄筋組立' },
+            { vi: 'Lát đá', en: 'Stone Paving', ja: '石張り' },
+            { vi: 'Lợp mái nhà', en: 'Roofing', ja: '屋根葺き' },
+            { vi: 'Lợp ngói', en: 'Tiling', ja: '瓦葺き' },
+            { vi: 'Mộc cốp pha', en: 'Formwork Carpentry', ja: '型枠大工' },
+            { vi: 'Nội thất gỗ-xây dựng', en: 'Architectural Carpentry', ja: '建築大工' },
+            { vi: 'Ốp lát gạch', en: 'Tiling', ja: 'タイル張り' },
+            { vi: 'Phá dỡ', en: 'Demolition', ja: '解体' },
+            { vi: 'San lấp mặt bằng', en: 'Earth-moving / Leveling', ja: '土工' },
+            { vi: 'Sản xuất bê tông', en: 'Concrete Production', ja: 'コンクリート製造' },
+            { vi: 'Sơn xây dựng', en: 'Architectural Painting', ja: '建築塗装' },
+            { vi: 'Tấm kim loại kiến trúc', en: 'Architectural Sheet Metal', ja: '建築板金' },
+            { vi: 'Tấm kim loại ống gió', en: 'Duct Sheet Metal', ja: 'ダクト板金' },
+            { vi: 'Thi công dán tường', en: 'Wallpapering', ja: '壁紙施工' },
+            { vi: 'Thi công lắp rèm', en: 'Curtain Installation', ja: 'カーテン施工' },
+            { vi: 'Thi công móng thép', en: 'Steel Foundation Work', ja: '鉄筋コンクリート基礎工事' },
+            { vi: 'Thợ mộc xây dựng', en: 'Carpenter', ja: '大工' },
+            { vi: 'Trát vữa', en: 'Plastering', ja: '左官' },
+            { vi: 'Xây dựng tổng hợp', en: 'General Construction', ja: '総合建設' },
+        ] 
+    },
     general: { 
         vi: "Sản xuất, dịch vụ tổng hợp", 
         en: "General Manufacturing & Services", 
@@ -896,115 +929,61 @@ const engineerIndustries = {
         vi: "Báo chí, truyền thông, marketing", 
         en: "Journalism, Media, Marketing", 
         ja: "報道・メディア・マーケティング", 
-        jobs: [
-            { vi: "Báo chí", en: "Journalism", ja: "報道" },
-            { vi: "Biên tập", en: "Editing", ja: "編集" },
-            { vi: "Digital Marketing", en: "Digital Marketing", ja: "デジタルマーケティング" },
-            { vi: "Marketing", en: "Marketing", ja: "マーケティング" },
-            { vi: "Nhà báo", en: "Journalist", ja: "ジャーナリスト" },
-            { vi: "Thiết kế Marketing", en: "Marketing Design", ja: "マーケティングデザイン" },
-            { vi: "Truyền thông", en: "Media/Communications", ja: "メディア/コミュニケーション" },
-            { vi: "Viết quảng cáo", en: "Copywriting", ja: "コピーライティング" }
-        ] 
+        jobs: []
     },
     it: { 
         vi: "Công nghệ thông tin", 
         en: "Information Technology", 
         ja: "情報技術", 
-        jobs: [
-            { vi: "Blockchain", en: "Blockchain", ja: "ブロックチェーン" },
-            { vi: "BrSE (Bridge System Engineer)", en: "BrSE (Bridge System Engineer)", ja: "BrSE (ブリッジシステムエンジニア)" },
-            { vi: "Business Analyst (BA)", en: "Business Analyst (BA)", ja: "ビジネスアナリスト (BA)" },
-            { vi: "Công nghệ thông tin", en: "Information Technology", ja: "情報技術" },
-            { vi: "COO (Chief Operation Officer)", en: "COO (Chief Operation Officer)", ja: "COO (最高執行責任者)" },
-            { vi: "CTO (Chief Technology Officer)", en: "CTO (Chief Technology Officer)", ja: "CTO (最高技術責任者)" },
-            { vi: "ITM (Information Technical Manager)", en: "ITM (Information Technical Manager)", ja: "ITM (情報技術マネージャー)" },
-            { vi: "Lập trình nhúng", en: "Embedded Programming", ja: "組み込みプログラミング" },
-            { vi: "Lập trình viên", en: "Programmer", ja: "プログラマー" },
-            { vi: "PM (Product Manager)", en: "PM (Product Manager)", ja: "PM (プロダクトマネージャー)" },
-            { vi: "PO (Product Owner)", en: "PO (Product Owner)", ja: "プロダクトオーナー)" },
-            { vi: "Product Manager (PM)", en: "Product Manager (PM)", ja: "プロダクトマネージャー (PM)" },
-            { vi: "Product Owner (PO)", en: "Product Owner (PO)", ja: "プロダクトオーナー (PO)" },
-            { vi: "Tester", en: "Tester", ja: "テスター" },
-            { vi: "Thiết kế", en: "Design", ja: "デザイン" },
-            { vi: "Thiết kế UI, UX", en: "UI, UX Design", ja: "UI, UX デザイン" },
-            { vi: "Trí tuệ nhân tạo", en: "Artificial Intelligence", ja: "人工知能" },
-            { vi: "Vận hành web thương mại điện tử", en: "E-commerce Web Operation", ja: "ECサイト運営" }
-        ] 
+        jobs: []
     },
     research: { 
         vi: "Nghiên cứu, phân tích", 
         en: "Research, Analysis", 
         ja: "研究・分析", 
-        jobs: [
-            { vi: "Phân tích dữ liệu", en: "Data Analysis", ja: "データ分析" },
-            { vi: "Nghiên cứu thị trường", en: "Market Research", ja: "市場調査" }
-        ] 
+        jobs: [] 
     },
     education: {
         vi: "Giáo dục, đào tạo",
         en: "Education, Training",
         ja: "教育・研修",
-        jobs: [
-            { vi: "Giảng dạy có chứng chỉ", en: "Teaching with certification", ja: "資格を持つ教員" },
-            { vi: "Giảng dạy đại học", en: "University teaching", ja: "大学での教育" },
-            { vi: "Giảng dạy ngoài cơ sở giáo dục", en: "Teaching outside educational institutions", ja: "教育機関外での教育" },
-            { vi: "Giảng dạy ngôn ngữ tại Tiểu học, THCS, PTTH", en: "Language teaching at elementary, middle, and high schools", ja: "小中高校での言語教育" },
-            { vi: "Giảng dạy trường dạy nghề (Senmon)", en: "Teaching at vocational schools (Senmon)", ja: "専門学校での教育" },
-            { vi: "Giảng dạy trường học các loại", en: "Teaching at various types of schools", ja: "各種学校での教育" },
-            { vi: "Giảng dạy trường quốc tế", en: "Teaching at international schools", ja: "国際学校での教育" },
-            { vi: "Hướng dẫn nghiên cứu", en: "Research supervision", ja: "研究指導" },
-            { vi: "Hướng dẫn thể thao", en: "Sports coaching", ja: "スポーツ指導" }
-        ]
+        jobs: []
     },
     admin: { 
         vi: "Hành chính, văn phòng", 
         en: "Administration, Office", 
         ja: "事務・オフィス", 
-        jobs: [
-            { vi: "Biên dịch, phiên dịch", en: "Translation, Interpreting", ja: "翻訳・通訳" },
-            { vi: "Nhân viên văn phòng", en: "Office Staff", ja: "事務員" }
-        ] 
+        jobs: [] 
     },
-    legal: { vi: "Pháp lý", en: "Legal", ja: "法務", jobs: [
-            { vi: 'Chuyên viên pháp lý hành chính', en: 'Administrative Scrivener', ja: '行政書士' },
-            { vi: 'Dịch vụ pháp lý', en: 'Legal Services', ja: '法律業務' },
-            { vi: 'Lập văn bản tư pháp', en: 'Judicial Scrivener', ja: '司法書士' },
-            { vi: 'Luật sư', en: 'Lawyer', ja: '弁護士' },
-            { vi: 'Luật sư luật nước ngoài', en: 'Foreign Law Lawyer', ja: '外国法弁護士' },
-            { vi: 'Luật sư nước ngoài', en: 'Foreign Lawyer', ja: '外国弁護士' },
-            { vi: 'Luật sư sở hữu trí tuệ', en: 'Intellectual Property Lawyer', ja: '知的財産弁護士' },
-    ] },
-    arts: { vi: "Nghệ thuật, nghệ sĩ", en: "Arts, Artist", ja: "芸術・アーティスト", jobs: [
-            { vi: 'Mỹ thuật gia, nhiếp ảnh gia', en: 'Artist, photographer', ja: '美術家、写真家' },
-            { vi: 'Nhà văn', en: 'Writer', ja: '作家' },
-            { vi: 'Nhạc sĩ, nghệ sĩ sân khấu', en: 'Musician, stage artist', ja: '音楽家、舞台芸術家' },
-    ] },
-    sports: { vi: "Thể dục thể thao", en: "Sports", ja: "スポーツ", jobs: [
-        { vi: 'Vận động viên chuyên nghiệp', en: 'Professional athlete', ja: 'プロスポーツ選手' },
-        { vi: 'Vận động viên nghiệp dư', en: 'Amateur athlete', ja: 'アマチュアスポーツ選手' },
-    ] },
-    professional: { vi: "Nghề có kỹ năng chuyên nghiệp", en: "Professional Occupations", ja: "専門職", jobs: [
-        { vi: 'Công chức', en: 'Public Servant', ja: '公務員' },
-        { vi: 'Giúp việc gia đình đặc khu', en: 'Special Zone Housekeeper', ja: '特別区域家事使用人' },
-        { vi: 'Huấn luyện động vật', en: 'Animal Trainer', ja: '動物調教師' },
-        { vi: 'Nấu nướng', en: 'Cooking', ja: '調理師' },
-        { vi: 'Người pha chế rượu', en: 'Sommelier', ja: 'ソムリエ' },
-        { vi: 'Người quản gia', en: 'Butler/Housekeeper', ja: '執事・家政婦' },
-        { vi: 'Nhà ngoại giao', en: 'Diplomat', ja: '外交官' },
-        { vi: 'Nhân viên tôn giáo', en: 'Religious Worker', ja: '宗教家' },
-        { vi: 'Phi công', en: 'Pilot', ja: 'パイロット' }
-    ] },
+    legal: { 
+        vi: "Pháp lý", 
+        en: "Legal", 
+        ja: "法務", 
+        jobs: [] 
+    },
+    arts: { 
+        vi: "Nghệ thuật, nghệ sĩ", 
+        en: "Arts, Artist", 
+        ja: "芸術・アーティスト", 
+        jobs: []
+    },
+    sports: { 
+        vi: "Thể dục thể thao", 
+        en: "Sports", 
+        ja: "スポーツ", 
+        jobs: []
+    },
+    professional: { 
+        vi: "Nghề có kỹ năng chuyên nghiệp", 
+        en: "Professional Occupations", 
+        ja: "専門職", 
+        jobs: []
+    },
     semi_professional: { 
         vi: "Việc làm bán chuyên nghiệp", 
         en: "Semi-professional Occupations", 
         ja: "準専門職", 
-        jobs: [
-            { vi: 'Công việc mùa hè', en: 'Summer Job', ja: '夏の仕事' },
-            { vi: 'Lao động kỳ nghỉ', en: 'Working Holiday', ja: 'ワーキングホリデー' },
-            { vi: 'Sinh viên thực tập', en: 'Student Intern', ja: 'インターンシップ' },
-            { vi: 'Trao đổi văn hóa quốc tế', en: 'International Cultural Exchange', ja: '国際文化交流' }
-        ]
+        jobs: []
     }
 };
 
@@ -1483,6 +1462,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
