@@ -6,6 +6,7 @@ export type Candidate = {
     name_vi: string;
     name_en: string;
     gender: Record<Language, string>;
+    date_of_birth: string;
     avatar: string;
     details: Record<Language, string>;
     visa_type: Record<Language, string>;
@@ -168,10 +169,17 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const name_en = `${randomLastName.en} ${randomFirstName.en}`;
     const name_ja = `${randomLastName.ja} ${randomFirstName.ja}`;
 
-    const age = Math.floor(Math.random() * 20) + 20; // 20-39
+    const age = Math.floor(Math.random() * (69 - 18 + 1)) + 18; // 18-69
     const height = Math.floor(Math.random() * 30) + 150; // 150-179 cm
     const weight = Math.floor(Math.random() * 30) + 45; // 45-74 kg
     
+    const currentYear = new Date().getFullYear();
+    const birthYear = currentYear - age;
+    const birthMonth = Math.floor(Math.random() * 12);
+    const birthDay = Math.floor(Math.random() * 28) + 1;
+    const dateOfBirth = new Date(birthYear, birthMonth, birthDay);
+    const formattedDateOfBirth = `${String(dateOfBirth.getDate()).padStart(2, '0')}/${String(dateOfBirth.getMonth() + 1).padStart(2, '0')}/${dateOfBirth.getFullYear()}`;
+
     // --- Start applying rules ---
     let hasTattoo = Math.random() > 0.8;
     let hasHepatitisB = Math.random() > 0.9;
@@ -221,6 +229,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             en: randomGender.en,
             ja: randomGender.ja
         },
+        date_of_birth: formattedDateOfBirth,
         avatar,
         details: {
             vi: details_vi,
