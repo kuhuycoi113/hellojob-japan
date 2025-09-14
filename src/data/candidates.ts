@@ -568,7 +568,31 @@ const skilledIndustries = {
         ]
     },
     restaurant: { vi: "Nhà hàng", en: "Restaurant", ja: "外食", jobs: [] },
-    agriculture: { vi: "Nông nghiệp", en: "Agriculture", ja: "農業", jobs: [] },
+    agriculture: {
+        vi: "Nông nghiệp",
+        en: "Agriculture",
+        ja: "農業",
+        jobs: [
+            { vi: 'Nông nghiệp chăn nuôi', en: 'Livestock Agriculture', ja: '畜産農業' },
+            { vi: 'Nông nghiệp trồng trọt', en: 'Cultivation Agriculture', ja: '耕種農業' },
+            { vi: 'Chăn nuôi bò', en: 'Cattle Raising', ja: '牛の飼育' },
+            { vi: 'Chăn nuôi bò sữa', en: 'Dairy Farming', ja: '酪農' },
+            { vi: 'Chăn nuôi gà', en: 'Chicken Farming', ja: '養鶏' },
+            { vi: 'Chăn nuôi lợn', en: 'Pig Farming', ja: '養豚' },
+            { vi: 'Nhặt trứng gà', en: 'Egg Collecting', ja: '鶏卵の収集' },
+            { vi: 'Thu hoạch bắp cải', en: 'Cabbage Harvesting', ja: 'キャベツの収穫' },
+            { vi: 'Thu hoạch cà chua', en: 'Tomato Harvesting', ja: 'トマトの収穫' },
+            { vi: 'Thu hoạch dâu tây', en: 'Strawberry Harvesting', ja: 'いちごの収穫' },
+            { vi: 'Thu hoạch hoa', en: 'Flower Harvesting', ja: '花の収穫' },
+            { vi: 'Thu hoạch hoa quả', en: 'Fruit Harvesting', ja: '果物の収穫' },
+            { vi: 'Thu hoạch rau củ', en: 'Vegetable Harvesting', ja: '野菜の収穫' },
+            { vi: 'Trồng cây ăn quả', en: 'Fruit Cultivation', ja: '果樹栽培' },
+            { vi: 'Trồng nấm', en: 'Mushroom Cultivation', ja: 'きのこ栽培' },
+            { vi: 'Trồng nấm công nghệ cao', en: 'High-tech Mushroom Cultivation', ja: 'ハイテクきのこ栽培' },
+            { vi: 'Trồng rau củ', en: 'Vegetable Cultivation', ja: '野菜栽培' },
+            { vi: 'Trồng trọt nhà kính', en: 'Greenhouse Cultivation', ja: 'ハウス栽培' }
+        ]
+    },
     fishery: {
         vi: "Ngư nghiệp", 
         en: "Fishery", 
