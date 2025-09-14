@@ -16,6 +16,7 @@ export type Candidate = {
     specialty: Record<Language, string>;
     desired_salary: Record<Language, string>;
     desired_net_salary?: Record<Language, string>;
+    desired_annual_income?: Record<Language, string> | null;
     education_level?: Record<Language, string>;
     jobs: {
         count: number;
@@ -490,24 +491,6 @@ const tattoos = {
     large: { vi: "Có xăm to (lộ)", en: "Has large (visible) tattoo", ja: "大きい刺青あり（見える）" },
 };
 
-const japaneseLevels = [
-    { vi: "JLPT N5", en: "JLPT N5", ja: "JLPT N5" },
-    { vi: "JLPT N4", en: "JLPT N4", ja: "JLPT N4" },
-    { vi: "JLPT N3", en: "JLPT N3", ja: "JLPT N3" },
-    { vi: "JLPT N2", en: "JLPT N2", ja: "JLPT N2" },
-    { vi: "JLPT N1", en: "JLPT N1", ja: "JLPT N1" },
-    { vi: "Kaiwa N5", en: "Conversational N5", ja: "会話N5" },
-    { vi: "Kaiwa N4", en: "Conversational N4", ja: "会話N4" },
-    { vi: "Kaiwa N3", en: "Conversational N3", ja: "会話N3" },
-    { vi: "Kaiwa N2", en: "Conversational N2", ja: "会話N2" },
-    { vi: "Kaiwa N1", en: "Conversational N1", ja: "会話N1" },
-    { vi: "Trình độ tương đương N5", en: "N5 Equivalent", ja: "N5相当" },
-    { vi: "Trình độ tương đương N4", en: "N4 Equivalent", ja: "N4相当" },
-    { vi: "Trình độ tương đương N3", en: "N3 Equivalent", ja: "N3相当" },
-    { vi: "Trình độ tương đương N2", en: "N2 Equivalent", ja: "N2相当" },
-    { vi: "Trình độ tương đương N1", en: "N1 Equivalent", ja: "N1相当" },
-];
-
 const englishLevels = [
     { vi: "TOEIC 900", en: "TOEIC 900", ja: "TOEIC 900" },
     { vi: "TOEIC 800", en: "TOEIC 800", ja: "TOEIC 800" },
@@ -535,6 +518,24 @@ const englishLevels = [
     { vi: "Trình độ tương đương 4.0", en: "Equivalent 4.0", ja: "4.0相当" },
 ];
 
+const japaneseLevels = [
+    { vi: "JLPT N5", en: "JLPT N5", ja: "JLPT N5" },
+    { vi: "JLPT N4", en: "JLPT N4", ja: "JLPT N4" },
+    { vi: "JLPT N3", en: "JLPT N3", ja: "JLPT N3" },
+    { vi: "JLPT N2", en: "JLPT N2", ja: "JLPT N2" },
+    { vi: "JLPT N1", en: "JLPT N1", ja: "JLPT N1" },
+    { vi: "Kaiwa N5", en: "Conversational N5", ja: "会話N5" },
+    { vi: "Kaiwa N4", en: "Conversational N4", ja: "会話N4" },
+    { vi: "Kaiwa N3", en: "Conversational N3", ja: "会話N3" },
+    { vi: "Kaiwa N2", en: "Conversational N2", ja: "会話N2" },
+    { vi: "Kaiwa N1", en: "Conversational N1", ja: "会話N1" },
+    { vi: "Trình độ tương đương N5", en: "N5 Equivalent", ja: "N5相当" },
+    { vi: "Trình độ tương đương N4", en: "N4 Equivalent", ja: "N4相当" },
+    { vi: "Trình độ tương đương N3", en: "N3 Equivalent", ja: "N3相当" },
+    { vi: "Trình độ tương đương N2", en: "N2 Equivalent", ja: "N2相当" },
+    { vi: "Trình độ tương đương N1", en: "N1 Equivalent", ja: "N1相当" },
+];
+
 
 const languageAbilities = [
     {
@@ -552,40 +553,68 @@ const languageAbilities = [
 ];
 
 function getRandomSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
+    let min, max;
+    // These are hourly wages
+    switch (visaTypeKey) {
+      case 'intern':
+        min = 700; max = 1800;
+        break;
+      case 'skilled':
+        min = 750; max = 5000;
+        break;
+      case 'engineer':
+        min = 800; max = 15000;
+        break;
+      default:
+        min = 700; max = 2000;
+    }
+    const salary = Math.floor(Math.random() * (max - min + 1)) + min;
+    return {
+      vi: `${salary.toLocaleString('de-DE')} Yên/giờ`,
+      en: `${salary.toLocaleString('en-US')} JPY/hour`,
+      ja: `${salary.toLocaleString('ja-JP')}円/時`,
+    };
+}
+
+function getRandomAnnualIncome(visaTypeKey: keyof typeof visaTypes): Record<Language, string> | null {
     let min: number, max: number;
 
     switch (visaTypeKey) {
-        case 'intern':
-            min = 120000;
-            max = 500000;
-            break;
         case 'skilled':
-            min = 150000;
-            max = 1500000;
-            break;
-        case 'engineer':
-            min = 160000;
+            min = 1500000;
             max = 10000000;
             break;
+        case 'engineer':
+            min = 1600000;
+            max = 30000000;
+            break;
+        case 'intern':
         default:
-            min = 150000;
-            max = 300000;
+            return null; // Interns don't have this data
     }
     
     const salary = Math.floor(Math.random() * (max - min + 1)) + min;
-    const salaryInMan = salary / 10000;
     
     const formatToMan = (value: number) => {
-        if (value >= 1) {
-            return `${Math.round(value)}万`;
+        const man = value / 10000;
+        if (man >= 100) {
+            return `${(man / 100).toFixed(1)} triệu`; // for Vietnamese
         }
-        return `${value.toFixed(1)}万`;
+        if (man >= 1) {
+            return `${Math.round(man)}万`;
+        }
+        return `${value.toLocaleString('ja-JP')}`;
     };
 
+    const formatToManJa = (value: number) => {
+         const man = value / 10000;
+         return `${Math.round(man)}万円`;
+    }
+
     return {
-        vi: `${salary.toLocaleString('de-DE')} Yên`,
-        en: `${salary.toLocaleString('en-US')} JPY`,
-        ja: `${formatToMan(salaryInMan)}円`,
+        vi: `${salary.toLocaleString('de-DE')} Yên/năm`,
+        en: `${salary.toLocaleString('en-US')} JPY/year`,
+        ja: `${formatToManJa(salary)}/年`,
     };
 }
 
@@ -804,6 +833,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         },
         desired_salary: getRandomSalary(randomVisaKey),
         desired_net_salary: getRandomNetSalary(randomVisaKey),
+        desired_annual_income: getRandomAnnualIncome(randomVisaKey),
         education_level: randomEducation,
         years_of_experience: randomExperience,
         ginou_remaining_period: randomVisaKey === 'intern' ? getRandomElement(ginouRemainingPeriods) : null,
@@ -846,4 +876,5 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
