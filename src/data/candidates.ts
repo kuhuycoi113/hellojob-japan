@@ -537,7 +537,14 @@ const skilledIndustries = {
     cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [] },
     transport: { vi: "Vận tải", en: "Transportation", ja: "運輸", jobs: [] },
     aviation: { vi: "Hàng không", en: "Aviation", ja: "航空", jobs: [] },
-    automotive: { vi: "Ô tô", en: "Automotive", ja: "自動車", jobs: [] },
+    automotive: { vi: "Ô tô", en: "Automotive", ja: "自動車", jobs: [
+            { vi: 'Bảo dưỡng ô tô', en: 'Automotive Maintenance', ja: '自動車整備' },
+            { vi: 'Kiểm tra linh kiện ô tô', en: 'Automotive Parts Inspection', ja: '自動車部品検査' },
+            { vi: 'Lắp ráp linh kiện ô tô', en: 'Automotive Parts Assembly', ja: '自動車部品組立' },
+            { vi: 'Linh kiện ô tô', en: 'Automotive Components', ja: '自動車部品' },
+            { vi: 'Sửa chữa ô tô', en: 'Automotive Repair', ja: '自動車修理' }
+        ] 
+    },
     machinery: { vi: "Cơ khí, chế tạo máy", en: "Machinery Manufacturing", ja: "機械製造", jobs: [
         { vi: 'Bảo trì máy móc', en: 'Machine Maintenance', ja: '機械保全' },
         { vi: 'Chế tạo kim loại tấm', en: 'Sheet Metal Fabrication', ja: '板金加工' },
@@ -1378,6 +1385,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
