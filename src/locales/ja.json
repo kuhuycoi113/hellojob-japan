@@ -907,26 +907,26 @@
     }
   },
   "jobDetail": {
-    "backButton": "求人一覧に戻る",
-    "findCandidates": "候補者を探す",
-    "location": "勤務地",
-    "applicants": "応募者数",
-    "postedDate": "掲載日",
-    "jobDescription": "職務内容",
-    "requirements": "応募要件",
-    "benefits": "福利厚生",
-    "jobInformation": "求人情報",
-    "salary": "給与",
-    "visaType": "在留資格",
-    "contractType": "雇用形態",
-    "workingHours": "勤務時間",
-    "holidays": "休日",
-    "suitableCandidates": {
-      "title": "適合する候補者",
-      "description": "職務要件に基づき、適合する可能性のある候補者です。",
-      "loadMore": "さらに{count}名の候補者を見る"
-    },
-    "invite": "応募を依頼"
+      "backButton": "求人一覧に戻る",
+      "findCandidates": "候補者を探す",
+      "location": "勤務地",
+      "applicants": "応募者数",
+      "postedDate": "掲載日",
+      "jobDescription": "職務内容",
+      "requirements": "応募要件",
+      "benefits": "福利厚生",
+      "jobInformation": "求人情報",
+      "salary": "給与",
+      "visaType": "在留資格",
+      "contractType": "雇用形態",
+      "workingHours": "勤務時間",
+      "holidays": "休日",
+      "suitableCandidates": {
+        "title": "適合する候補者",
+        "description": "職務要件に基づき、適合する可能性のある候補者です。",
+        "loadMore": "さらに{count}名の候補者を見る"
+      },
+      "invite": "応募を依頼"
   },
   "unlockCandidates": {
     "title": "候補者プロフィールをアンロック",
@@ -1202,5 +1202,16 @@
   },
   "partnerDetailPage": {
     "partnerNotFound": "パートナーが見つかりません。"
+  },
+  "regions": {
+    "Hokkaido": "北海道",
+    "Tohoku": "東北",
+    "Kanto": "関東",
+    "Chubu": "中部",
+    "Kansai": "関西",
+    "Chugoku": "中国",
+    "Shikoku": "四国",
+    "Kyushu": "九州",
+    "Okinawa": "沖縄"
   }
 }

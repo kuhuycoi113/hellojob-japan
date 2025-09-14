@@ -1203,5 +1203,16 @@
   },
   "partnerDetailPage": {
     "partnerNotFound": "Không tìm thấy đối tác."
+  },
+  "regions": {
+    "Hokkaido": "Hokkaido",
+    "Tohoku": "Tohoku",
+    "Kanto": "Kanto",
+    "Chubu": "Chubu",
+    "Kansai": "Kansai",
+    "Chugoku": "Chugoku",
+    "Shikoku": "Shikoku",
+    "Kyushu": "Kyushu",
+    "Okinawa": "Okinawa"
   }
 }
