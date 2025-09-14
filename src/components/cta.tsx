@@ -27,6 +27,7 @@ import { ScrollArea } from './ui/scroll-area';
 
 export function Cta() {
   const { t } = useLanguage();
+  const t_cta_flow = t.cta_flow;
   const router = useRouter();
   const { setUserRole } = useRole();
 
@@ -166,23 +167,23 @@ export function Cta() {
             </DialogTrigger>
             <DialogContent className="sm:max-w-xl">
               <DialogHeader className="text-center">
-                <DialogTitle className="text-2xl font-bold font-headline">Chọn phương thức đăng việc làm</DialogTitle>
-                <DialogDescription>Bạn muốn đăng việc làm theo phương thức nào?</DialogDescription>
+                <DialogTitle className="text-2xl font-bold font-headline">{t_cta_flow.dialog1_title}</DialogTitle>
+                <DialogDescription>{t_cta_flow.dialog1_desc}</DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                   <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog3Open(true); }}>
                       <div className="flex justify-center mb-4">
                           <div className="p-3 rounded-full bg-primary/10 text-primary"><FastForward className="w-8 h-8"/></div>
                       </div>
-                      <h3 className="font-semibold text-lg text-gray-800">Đăng nhanh</h3>
-                      <p className="text-sm text-muted-foreground mt-1">Chỉ vào thao tác đơn giản bạn sẽ đăng tải được việc làm nhanh chóng</p>
+                      <h3 className="font-semibold text-lg text-gray-800">{t_cta_flow.dialog1_opt1_title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{t_cta_flow.dialog1_opt1_desc}</p>
                   </Card>
                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog2Open(true); }}>
                        <div className="flex justify-center mb-4">
                           <div className="p-3 rounded-full bg-green-500/10 text-green-500"><FileText className="w-8 h-8"/></div>
                       </div>
-                      <h3 className="font-semibold text-lg text-gray-800">Đăng chi tiết</h3>
-                      <p className="text-sm text-muted-foreground mt-1">Tự điền thông tin vào biểu mẫu chi tiết bằng cách nhập bằng tay.</p>
+                      <h3 className="font-semibold text-lg text-gray-800">{t_cta_flow.dialog1_opt2_title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{t_cta_flow.dialog1_opt2_desc}</p>
                   </Card>
               </div>
             </DialogContent>
@@ -191,26 +192,26 @@ export function Cta() {
            <Dialog open={dialog2Open} onOpenChange={setDialog2Open}>
               <DialogContent className="sm:max-w-xl">
                 <DialogHeader className="text-center">
-                  <DialogTitle className="text-2xl font-bold font-headline">Bạn muốn đăng việc làm chi tiết bằng cách nào?</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline">{t_cta_flow.dialog2_title}</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                         <div className="flex justify-center mb-4">
                             <div className="p-3 rounded-full bg-primary/10 text-primary"><BrainCircuit className="w-8 h-8"/></div>
                         </div>
-                        <h3 className="font-semibold text-lg text-gray-800">Dùng AI</h3>
-                        <p className="text-sm text-muted-foreground mt-1">Tải lên bản mô tả công việc (PDF, DOC, ảnh...), AI sẽ tự động tạo tin đăng.</p>
+                        <h3 className="font-semibold text-lg text-gray-800">{t_cta_flow.dialog2_opt1_title}</h3>
+                        <p className="text-sm text-muted-foreground mt-1">{t_cta_flow.dialog2_opt1_desc}</p>
                     </Card>
                      <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                          <div className="flex justify-center mb-4">
                             <div className="p-3 rounded-full bg-secondary/10 text-secondary"><FileText className="w-8 h-8"/></div>
                         </div>
-                        <h3 className="font-semibold text-lg text-gray-800">Thủ công</h3>
-                        <p className="text-sm text-muted-foreground mt-1">Tự điền thông tin vào biểu mẫu chi tiết bằng cách nhập bằng tay.</p>
+                        <h3 className="font-semibold text-lg text-gray-800">{t_cta_flow.dialog2_opt2_title}</h3>
+                        <p className="text-sm text-muted-foreground mt-1">{t_cta_flow.dialog2_opt2_desc}</p>
                     </Card>
                 </div>
                 <DialogFooter>
-                  <Button variant="outline" onClick={() => { setDialog2Open(false); setDialog1Open(true); }}>Quay lại</Button>
+                  <Button variant="outline" onClick={() => { setDialog2Open(false); setDialog1Open(true); }}>{t_cta_flow.back_button}</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
@@ -218,9 +219,9 @@ export function Cta() {
           <Dialog open={dialog3Open} onOpenChange={setDialog3Open}>
             <DialogContent className="sm:max-w-4xl">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">Bạn là ai?</DialogTitle>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.userRoles.title}</DialogTitle>
                 <DialogDescription className="text-center">
-                  Hãy cho chúng tôi biết vai trò của bạn để có trải nghiệm tốt nhất.
+                  {t.userRoles.description}
                 </DialogDescription>
               </DialogHeader>
               <ScrollArea className="h-[60vh] sm:h-auto">
@@ -243,7 +244,7 @@ export function Cta() {
                 </div>
               </ScrollArea>
               <DialogFooter>
-                <Button variant="outline" onClick={() => { setDialog3Open(false); setDialog1Open(true); }}>Quay lại</Button>
+                <Button variant="outline" onClick={() => { setDialog3Open(false); setDialog1Open(true); }}>{t_cta_flow.back_button}</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -251,9 +252,9 @@ export function Cta() {
           <Dialog open={dialog4Open} onOpenChange={setDialog4Open}>
             <DialogContent className="sm:max-w-4xl">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại hình lao động</DialogTitle>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t.visaTypes.title}</DialogTitle>
                 <DialogDescription className="text-center">
-                  Hãy chọn loại hình lao động bạn muốn tuyển dụng.
+                  {t.visaTypes.description}
                 </DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
@@ -297,7 +298,7 @@ export function Cta() {
                   </Card>
               </div>
               <DialogFooter>
-                <Button variant="outline" onClick={() => { setDialog4Open(false); setDialog3Open(true); }}>Quay lại</Button>
+                <Button variant="outline" onClick={() => { setDialog4Open(false); setDialog3Open(true); }}>{t_cta_flow.back_button}</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -305,9 +306,9 @@ export function Cta() {
            <Dialog open={dialog51Open} onOpenChange={setDialog51Open}>
               <DialogContent className="sm:max-w-2xl">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Thực tập sinh kỹ năng</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t_cta_flow.dialog5_1_title}</DialogTitle>
                   <DialogDescription className="text-center">
-                    Chọn chương trình Thực tập sinh bạn muốn tuyển.
+                    {t_cta_flow.dialog5_1_desc}
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
@@ -320,8 +321,8 @@ export function Cta() {
                           <HardHat className="w-8 h-8" />
                         </div>
                       </div>
-                      <CardTitle className="font-semibold text-base">Thực tập sinh 3 năm</CardTitle>
-                      <CardDescription>Chương trình phổ thông nhất</CardDescription>
+                      <CardTitle className="font-semibold text-base">{t_cta_flow.dialog5_1_opt1_title}</CardTitle>
+                      <CardDescription>{t_cta_flow.dialog5_1_opt1_desc}</CardDescription>
                     </Card>
                     <Card
                       className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
@@ -332,8 +333,8 @@ export function Cta() {
                           <HardHat className="w-8 h-8" />
                         </div>
                       </div>
-                      <CardTitle className="font-semibold text-base">Thực tập sinh 1 năm</CardTitle>
-                      <CardDescription>Chương trình ngắn hạn</CardDescription>
+                      <CardTitle className="font-semibold text-base">{t_cta_flow.dialog5_1_opt2_title}</CardTitle>
+                      <CardDescription>{t_cta_flow.dialog5_1_opt2_desc}</CardDescription>
                     </Card>
                     <Card
                       className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
@@ -344,12 +345,12 @@ export function Cta() {
                           <HardHat className="w-8 h-8" />
                         </div>
                       </div>
-                      <CardTitle className="font-semibold text-base">Thực tập sinh 3 Go</CardTitle>
-                      <CardDescription>Để tuyển TTS đã có kinh nghiệm</CardDescription>
+                      <CardTitle className="font-semibold text-base">{t_cta_flow.dialog5_1_opt3_title}</CardTitle>
+                      <CardDescription>{t_cta_flow.dialog5_1_opt3_desc}</CardDescription>
                     </Card>
                 </div>
                 <DialogFooter>
-                  <Button variant="outline" onClick={() => { setDialog51Open(false); setDialog4Open(true); }}>Quay lại</Button>
+                  <Button variant="outline" onClick={() => { setDialog51Open(false); setDialog4Open(true); }}>{t_cta_flow.back_button}</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
@@ -357,23 +358,20 @@ export function Cta() {
           <Dialog open={dialog61Open} onOpenChange={setDialog61Open}>
               <DialogContent className="sm:max-w-4xl">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn ngành nghề mong muốn</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t_cta_flow.dialog6_title}</DialogTitle>
                   <DialogDescription className="text-center">
-                    Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
+                    {t_cta_flow.dialog6_desc}
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  {[
-                    'Ngư nghiệp', 'Nông nghiệp', 'Thực phẩm',
-                    'Sản xuất, dịch vụ tổng hợp', 'Cơ khí, kim loại', 'Xây dựng', 'May mặc'
-                  ].map(industry => (
+                  {t_cta_flow.dialog6_industries_intern.map(industry => (
                     <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('61')}>
                       <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
                     </Card>
                   ))}
                 </div>
                 <DialogFooter>
-                  <Button variant="outline" onClick={() => { setDialog61Open(false); setDialog51Open(true); }}>Quay lại</Button>
+                  <Button variant="outline" onClick={() => { setDialog61Open(false); setDialog51Open(true); }}>{t_cta_flow.back_button}</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
@@ -381,9 +379,9 @@ export function Cta() {
           <Dialog open={dialog52Open} onOpenChange={setDialog52Open}>
             <DialogContent className="sm:max-w-2xl">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Kỹ năng đặc định</DialogTitle>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t_cta_flow.dialog5_2_title}</DialogTitle>
                 <DialogDescription className="text-center">
-                  Chọn chương trình Kỹ năng đặc định bạn muốn tuyển.
+                  {t_cta_flow.dialog5_2_desc}
                 </DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
@@ -396,8 +394,8 @@ export function Cta() {
                           <Users className="w-8 h-8" />
                       </div>
                   </div>
-                  <CardTitle className="font-semibold text-base">Đặc định đầu Nhật</CardTitle>
-                  <CardDescription>Để tuyển ứng viên ở Nhật</CardDescription>
+                  <CardTitle className="font-semibold text-base">{t_cta_flow.dialog5_2_opt1_title}</CardTitle>
+                  <CardDescription>{t_cta_flow.dialog5_2_opt1_desc}</CardDescription>
                 </Card>
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
@@ -408,8 +406,8 @@ export function Cta() {
                           <Plane className="w-8 h-8" />
                       </div>
                   </div>
-                  <CardTitle className="font-semibold text-base">Đặc định đầu Việt</CardTitle>
-                  <CardDescription>Để tuyển ứng viên từ Việt Nam</CardDescription>
+                  <CardTitle className="font-semibold text-base">{t_cta_flow.dialog5_2_opt2_title}</CardTitle>
+                  <CardDescription>{t_cta_flow.dialog5_2_opt2_desc}</CardDescription>
                 </Card>
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
@@ -420,12 +418,12 @@ export function Cta() {
                           <UserPlus className="w-8 h-8" />
                       </div>
                   </div>
-                  <CardTitle className="font-semibold text-base">Đặc định đi mới</CardTitle>
-                  <CardDescription>Để tuyển ứng viên mới</CardDescription>
+                  <CardTitle className="font-semibold text-base">{t_cta_flow.dialog5_2_opt3_title}</CardTitle>
+                  <CardDescription>{t_cta_flow.dialog5_2_opt3_desc}</CardDescription>
                 </Card>
               </div>
               <DialogFooter>
-                <Button variant="outline" onClick={() => { setDialog52Open(false); setDialog4Open(true); }}>Quay lại</Button>
+                <Button variant="outline" onClick={() => { setDialog52Open(false); setDialog4Open(true); }}>{t_cta_flow.back_button}</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -433,25 +431,20 @@ export function Cta() {
            <Dialog open={dialog62Open} onOpenChange={setDialog62Open}>
               <DialogContent className="sm:max-w-4xl">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn ngành nghề mong muốn</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t_cta_flow.dialog6_title}</DialogTitle>
                   <DialogDescription className="text-center">
-                    Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
+                    {t_cta_flow.dialog6_desc}
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
-                  {[
-                    'Ngư nghiệp', 'Nông nghiệp', 'Nhà hàng', 'Thực phẩm',
-                    'Sản xuất, dịch vụ tổng hợp', 'Điện, điện tử', 'Chế tạo Vật liệu',
-                    'Cơ khí, chế tạo máy', 'Ô tô', 'Hàng không', 'Vận tải',
-                    'Xây dựng', 'Vệ sinh toà nhà', 'Lưu trú, khách sạn', 'Điều dưỡng'
-                  ].map(industry => (
+                  {t_cta_flow.dialog6_industries_skilled.map(industry => (
                     <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('62')}>
                       <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
                     </Card>
                   ))}
                 </div>
                 <DialogFooter>
-                  <Button variant="outline" onClick={() => { setDialog62Open(false); setDialog52Open(true); }}>Quay lại</Button>
+                  <Button variant="outline" onClick={() => { setDialog62Open(false); setDialog52Open(true); }}>{t_cta_flow.back_button}</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
@@ -459,9 +452,9 @@ export function Cta() {
           <Dialog open={dialog53Open} onOpenChange={setDialog53Open}>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn loại Kỹ sư, tri thức</DialogTitle>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t_cta_flow.dialog5_3_title}</DialogTitle>
                 <DialogDescription className="text-center">
-                  Chọn chương trình Kỹ sư bạn muốn tuyển.
+                  {t_cta_flow.dialog5_3_desc}
                 </DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
@@ -477,8 +470,8 @@ export function Cta() {
                       <Users className="w-8 h-8" />
                     </div>
                   </div>
-                  <CardTitle className="font-semibold text-base">Kỹ sư đầu Nhật</CardTitle>
-                  <CardDescription>Để tuyển kỹ sư ở Nhật</CardDescription>
+                  <CardTitle className="font-semibold text-base">{t_cta_flow.dialog5_3_opt1_title}</CardTitle>
+                  <CardDescription>{t_cta_flow.dialog5_3_opt1_desc}</CardDescription>
                 </Card>
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
@@ -492,8 +485,8 @@ export function Cta() {
                       <Plane className="w-8 h-8" />
                     </div>
                   </div>
-                  <CardTitle className="font-semibold text-base">Kỹ sư đầu Việt</CardTitle>
-                  <CardDescription>Để tuyển kỹ sư từ Việt Nam</CardDescription>
+                  <CardTitle className="font-semibold text-base">{t_cta_flow.dialog5_3_opt2_title}</CardTitle>
+                  <CardDescription>{t_cta_flow.dialog5_3_opt2_desc}</CardDescription>
                 </Card>
               </div>
               <DialogFooter>
@@ -504,7 +497,7 @@ export function Cta() {
                     setDialog4Open(true);
                   }}
                 >
-                  Quay lại
+                  {t_cta_flow.back_button}
                 </Button>
               </DialogFooter>
             </DialogContent>
@@ -513,22 +506,14 @@ export function Cta() {
           <Dialog open={dialog63Open} onOpenChange={setDialog63Open}>
               <DialogContent className="sm:max-w-5xl">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn ngành nghề mong muốn</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline text-center">{t_cta_flow.dialog6_title}</DialogTitle>
                   <DialogDescription className="text-center">
-                    Lựa chọn ngành nghề bạn quan tâm nhất để chúng tôi gợi ý việc làm chính xác hơn.
+                    {t_cta_flow.dialog6_desc}
                   </DialogDescription>
                 </DialogHeader>
                 <ScrollArea className="h-[60vh]">
                   <div className="grid grid-cols-3 gap-4 py-4 pr-4">
-                    {[
-                      'Nông lâm ngư nghiệp', 'Thực phẩm', 'Sản xuất, chế tạo, công nghệ',
-                      'Cơ khí, máy móc', 'Công nghệ ô tô', 'Vận chuyển hàng hóa', 'Xây dựng',
-                      'Khách sạn, lưu trú', 'Y tế, điều dưỡng', 'Kinh doanh, kinh tế',
-                      'Tài chính, kể toán, bảo hiểm', 'Báo chí, truyền thông, marketing',
-                      'Công nghệ thông tin', 'Nghiên cứu, phân tích', 'Giáo dục, đào tạo',
-                      'Hành chính, văn phòng', 'Pháp lý', 'Nghệ thuật, nghệ sĩ',
-                      'Thể dục thể thao', 'Nghề có kỹ năng chuyên nghiệp', 'Việc làm bán chuyên nghiệp'
-                    ].map(industry => (
+                    {t_cta_flow.dialog6_industries_engineer.map(industry => (
                       <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('63')}>
                         <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
                       </Card>
@@ -536,7 +521,7 @@ export function Cta() {
                   </div>
                 </ScrollArea>
                 <DialogFooter>
-                  <Button variant="outline" onClick={() => { setDialog63Open(false); setDialog53Open(true); }}>Quay lại</Button>
+                  <Button variant="outline" onClick={() => { setDialog63Open(false); setDialog53Open(true); }}>{t_cta_flow.back_button}</Button>
                 </DialogFooter>
               </DialogContent>
           </Dialog>
@@ -544,20 +529,18 @@ export function Cta() {
           <Dialog open={dialog7Open} onOpenChange={setDialog7Open}>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold font-headline text-center">Chọn khu vực làm việc</DialogTitle>
-                <DialogDescription className="text-center">Lựa chọn khu vực bạn muốn làm việc tại Nhật Bản.</DialogDescription>
+                <DialogTitle className="text-2xl font-bold font-headline text-center">{t_cta_flow.dialog7_title}</DialogTitle>
+                <DialogDescription className="text-center">{t_cta_flow.dialog7_desc}</DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-3 gap-4 py-4">
-                  {[
-                    'Hokkaido', 'Tohoku', 'Kanto', 'Chubu', 'Kansai', 'Chugoku', 'Shikoku', 'Kyushu', 'Okinawa'
-                  ].map(region => (
+                  {t_cta_flow.dialog7_regions.map(region => (
                     <Card key={region} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>
                       <h3 className="font-semibold text-base text-gray-800">{region}</h3>
                     </Card>
                   ))}
               </div>
               <DialogFooter>
-                <Button variant="outline" onClick={backFromDialog7}>Quay lại</Button>
+                <Button variant="outline" onClick={backFromDialog7}>{t_cta_flow.back_button}</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -567,17 +550,17 @@ export function Cta() {
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold font-headline text-center flex items-center justify-center gap-2">
                       <HandCoins className="h-6 w-6 text-primary" />
-                      Nhập phí giới thiệu bạn đề xuất cho đối tác
+                      {t_cta_flow.dialog8_title}
                     </DialogTitle>
                 </DialogHeader>
                 <div className="py-4">
-                    <Label htmlFor="fee">Phí giới thiệu</Label>
+                    <Label htmlFor="fee">{t_cta_flow.dialog8_label}</Label>
                     <div className="relative mt-1">
                         <Input
                             id="fee"
                             value={feeAmount}
                             onChange={handleFeeChange}
-                            placeholder="Ví dụ: 200,000"
+                            placeholder={t_cta_flow.dialog8_placeholder}
                             className="pr-12 text-right"
                         />
                         <span className="absolute inset-y-0 right-4 flex items-center text-muted-foreground">
@@ -586,8 +569,8 @@ export function Cta() {
                     </div>
                 </div>
                 <DialogFooter>
-                    <Button variant="outline" onClick={() => { setDialog8Open(false); setDialog7Open(true); }}>Quay lại</Button>
-                    <Button onClick={() => { setDialog8Open(false); setDialog9Open(true); }}>Tiếp tục</Button>
+                    <Button variant="outline" onClick={() => { setDialog8Open(false); setDialog7Open(true); }}>{t_cta_flow.back_button}</Button>
+                    <Button onClick={() => { setDialog8Open(false); setDialog9Open(true); }}>{t_cta_flow.continue_button}</Button>
                 </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -597,17 +580,17 @@ export function Cta() {
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold font-headline text-center flex items-center justify-center gap-2">
                         <HandCoins className="h-6 w-6 text-primary" />
-                        Nhập phí quản lý bạn đề xuất cho đối tác
+                        {t_cta_flow.dialog9_title}
                     </DialogTitle>
                 </DialogHeader>
                 <div className="py-4">
-                    <Label htmlFor="management-fee">Phí quản lý/tháng</Label>
+                    <Label htmlFor="management-fee">{t_cta_flow.dialog9_label}</Label>
                     <div className="relative mt-1">
                         <Input
                             id="management-fee"
                             value={managementFeeAmount}
                             onChange={handleManagementFeeChange}
-                            placeholder="Ví dụ: 20,000"
+                            placeholder={t_cta_flow.dialog9_placeholder}
                             className="pr-12 text-right"
                         />
                         <span className="absolute inset-y-0 right-4 flex items-center text-muted-foreground">
@@ -616,8 +599,8 @@ export function Cta() {
                     </div>
                 </div>
                 <DialogFooter>
-                    <Button variant="outline" onClick={() => { setDialog9Open(false); setDialog8Open(true); }}>Quay lại</Button>
-                    <Button onClick={handleFinishFlow}>Lưu và tìm đối tác phù hợp</Button>
+                    <Button variant="outline" onClick={() => { setDialog9Open(false); setDialog8Open(true); }}>{t_cta_flow.back_button}</Button>
+                    <Button onClick={handleFinishFlow}>{t_cta_flow.save_button}</Button>
                 </DialogFooter>
             </DialogContent>
           </Dialog>
