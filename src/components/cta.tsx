@@ -167,7 +167,7 @@ export function Cta() {
             <DialogContent className="sm:max-w-xl">
               <DialogHeader className="text-center">
                 <DialogTitle className="text-2xl font-bold font-headline">Chọn phương thức đăng việc làm</DialogTitle>
-                <DialogDescription>Bạn muốn đăng hồ sơ để làm gì?</DialogDescription>
+                <DialogDescription>Bạn muốn đăng việc làm theo phương thức nào?</DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                   <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog3Open(true); }}>
