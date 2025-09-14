@@ -256,7 +256,11 @@ const engineerIndustries = {
             { vi: 'Luật sư nước ngoài', en: 'Foreign Lawyer', ja: '外国弁護士' },
             { vi: 'Luật sư sở hữu trí tuệ', en: 'Intellectual Property Lawyer', ja: '知的財産弁護士' },
     ] },
-    arts: { vi: "Nghệ thuật, nghệ sĩ", en: "Arts, Artist", ja: "芸術・アーティスト", jobs: [] },
+    arts: { vi: "Nghệ thuật, nghệ sĩ", en: "Arts, Artist", ja: "芸術・アーティスト", jobs: [
+            { vi: 'Mỹ thuật gia, nhiếp ảnh gia', en: 'Artist, photographer', ja: '美術家、写真家' },
+            { vi: 'Nhà văn', en: 'Writer', ja: '作家' },
+            { vi: 'Nhạc sĩ, nghệ sĩ sân khấu', en: 'Musician, stage artist', ja: '音楽家、舞台芸術家' },
+    ] },
     sports: { vi: "Thể dục thể thao", en: "Sports", ja: "スポーツ", jobs: [] },
     professional: { vi: "Nghề có kỹ năng chuyên nghiệp", en: "Professional Occupations", ja: "専門職", jobs: [] },
     semi_professional: { vi: "Việc làm bán chuyên nghiệp", en: "Semi-professional Occupations", ja: "準専門職", jobs: [] }
