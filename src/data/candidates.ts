@@ -46,6 +46,7 @@ export type Candidate = {
     dominant_hand?: Record<Language, string>;
     hometown?: Record<Language, string>;
     current_residence?: Record<Language, string>;
+    documents_status?: Record<Language, string>;
 }
 
 const lastNames = [
@@ -552,6 +553,13 @@ const languageAbilities = [
     }
 ];
 
+const documentStatuses = [
+    { vi: 'Giấy tờ Việt Nam', en: 'Vietnamese Documents', ja: 'ベトナムの書類' },
+    { vi: 'Giấy tờ Nhật Bản', en: 'Japanese Documents', ja: '日本の書類' },
+    { vi: 'Giấy tờ nước ngoài/du học', en: 'Foreign/Study Abroad Documents', ja: '外国/留学の書類' },
+];
+
+
 function getRandomSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
     let min, max;
     // These are hourly wages
@@ -864,6 +872,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         dominant_hand: getRandomElement(dominantHands),
         hometown: getRandomElement(hometowns),
         current_residence: currentResidenceWithDetail,
+        documents_status: getRandomElement(documentStatuses),
     };
 });
 
@@ -879,5 +888,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
 
+
+    
 
     
