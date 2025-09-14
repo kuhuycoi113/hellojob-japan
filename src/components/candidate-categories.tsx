@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Building, Handshake } from 'lucide-react';
+import { Users, Building, Handshake, Briefcase } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 
 export function CandidateCategories() {
@@ -19,7 +19,7 @@ export function CandidateCategories() {
       description: t.candidateCategories.specifiedSkillDesc,
     },
     {
-      icon: <Building className="h-10 w-10 text-blue-500" />,
+      icon: <Briefcase className="h-10 w-10 text-green-500" />,
       title: t.candidateCategories.engineerKnowledge,
       description: t.candidateCategories.engineerKnowledgeDesc,
     },

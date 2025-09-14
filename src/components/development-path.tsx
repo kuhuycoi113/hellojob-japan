@@ -20,7 +20,7 @@ export function DevelopmentPath() {
       description: paths.specifiedSkill.description,
     },
     {
-      icon: <Briefcase className="h-10 w-10 text-blue-500" />,
+      icon: <Briefcase className="h-10 w-10 text-green-500" />,
       title: paths.engineer.title,
       description: paths.engineer.description,
     },
