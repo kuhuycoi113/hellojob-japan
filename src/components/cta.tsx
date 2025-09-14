@@ -15,7 +15,7 @@ import {
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
-import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, HardHat, FastForward, UserPlus, ChevronRight, HandCoins, FileText } from 'lucide-react';
+import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, HardHat, FastForward, UserPlus, ChevronRight, HandCoins, FileText, UserCheck } from 'lucide-react';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { useRouter } from 'next/navigation';
@@ -275,7 +275,7 @@ export function Cta() {
                   >
                     <div className="flex justify-center mb-4">
                       <div className="bg-yellow-400/10 text-yellow-500 p-3 rounded-full">
-                        <Star className="w-8 h-8" />
+                        <UserCheck className="w-8 h-8" />
                       </div>
                     </div>
                     <CardTitle className="font-semibold text-lg">{t.visaTypes.skilled.title}</CardTitle>
