@@ -593,10 +593,15 @@ function AiJobPostFormContent() {
         {hasSelections && (
           <Card className="mb-8 bg-blue-100/50 border-blue-200 max-w-4xl mx-auto">
             <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <Info className="w-5 h-5 text-blue-600"/>
-                {t.ai_job_post_form.your_selections_title}
-              </CardTitle>
+              <div className="flex justify-between items-start">
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Info className="w-5 h-5 text-blue-600"/>
+                  {t.ai_job_post_form.your_selections_title}
+                </CardTitle>
+                <Button variant="ghost" size="icon" className="h-6 w-6 text-blue-700" onClick={() => router.push('/post-job-ai')}>
+                  <X className="w-4 h-4" />
+                </Button>
+              </div>
               <div className="flex flex-wrap gap-2 pt-2">
                 {role && <Badge variant="secondary">{role}</Badge>}
                 {initialVisaType && <Badge variant="secondary">{initialVisaType}</Badge>}
