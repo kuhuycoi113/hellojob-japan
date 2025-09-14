@@ -5,6 +5,7 @@ export type Candidate = {
     name_ja: string;
     name_vi: string;
     name_en: string;
+    gender: Record<Language, string>;
     avatar: string;
     details: Record<Language, string>;
     visa_type: Record<Language, string>;
@@ -59,6 +60,12 @@ const firstNames = [
     { vi: "Vân", en: "Van", ja: "ヴァン" },
     { vi: "Xuân", en: "Xuan", ja: "スアン" },
     { vi: "Yến", en: "Yen", ja: "イエン" },
+];
+
+const genders = [
+    { vi: "Nam", en: "Male", ja: "男性" },
+    { vi: "Nữ", en: "Female", ja: "女性" },
+    { vi: "Chưa rõ", en: "Unknown", ja: "不明" }
 ];
 
 
@@ -155,6 +162,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
     const randomLastName = getRandomElement(lastNames);
     const randomFirstName = getRandomElement(firstNames);
+    const randomGender = getRandomElement(genders);
 
     const name_vi = `${randomLastName.vi} ${randomFirstName.vi}`;
     const name_en = `${randomLastName.en} ${randomFirstName.en}`;
@@ -181,7 +189,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const visaSubtypeEn = visaSubtype.en;
 
     if (["3 Go Intern", "Skilled (from Vietnam)", "Skilled (in Japan)"].includes(visaSubtypeEn)) {
-        hasTattoo = false; // "Không có" means no field, so we just don't show it
+         hasTattoo = false; // "Không có" means no field, so we just don't show it
         hasHepatitisB = false;
     }
     if (["New Skilled Worker", "Engineer/Specialist (from Vietnam)", "Engineer/Specialist (in Japan)"].includes(visaSubtypeEn)) {
@@ -208,6 +216,11 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         name_ja,
         name_vi,
         name_en,
+        gender: {
+            vi: randomGender.vi,
+            en: randomGender.en,
+            ja: randomGender.ja
+        },
         avatar,
         details: {
             vi: details_vi,
