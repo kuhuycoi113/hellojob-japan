@@ -67,7 +67,7 @@ export function Cta() {
   type Role = { title: string; description: string; icon: JSX.Element; }
 
   const userRoles: Role[] = [
-     {
+    {
       icon: <Building className="h-8 w-8 text-primary" />,
       title: t.userRoles.receivingCompany.title,
       description: t.userRoles.receivingCompany.description,
@@ -166,22 +166,22 @@ export function Cta() {
             </DialogTrigger>
             <DialogContent className="sm:max-w-xl">
               <DialogHeader className="text-center">
-                <DialogTitle className="text-2xl font-bold font-headline">Chọn phương thức tạo hồ sơ</DialogTitle>
-                <DialogDescription>Bạn muốn tạo hồ sơ để làm gì?</DialogDescription>
+                <DialogTitle className="text-2xl font-bold font-headline">Chọn phương thức đăng việc làm</DialogTitle>
+                <DialogDescription>Bạn muốn đăng hồ sơ để làm gì?</DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                   <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog3Open(true); }}>
                       <div className="flex justify-center mb-4">
                           <div className="p-3 rounded-full bg-primary/10 text-primary"><FastForward className="w-8 h-8"/></div>
                       </div>
-                      <h3 className="font-semibold text-lg text-gray-800">Tạo nhanh</h3>
+                      <h3 className="font-semibold text-lg text-gray-800">Đăng nhanh</h3>
                       <p className="text-sm text-muted-foreground mt-1">Chỉ vào thao tác đơn giản bạn sẽ đăng tải được việc làm nhanh chóng</p>
                   </Card>
                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog2Open(true); }}>
                        <div className="flex justify-center mb-4">
                           <div className="p-3 rounded-full bg-green-500/10 text-green-500"><FileText className="w-8 h-8"/></div>
                       </div>
-                      <h3 className="font-semibold text-lg text-gray-800">Tạo chi tiết</h3>
+                      <h3 className="font-semibold text-lg text-gray-800">Đăng chi tiết</h3>
                       <p className="text-sm text-muted-foreground mt-1">Tự điền thông tin vào biểu mẫu chi tiết bằng cách nhập bằng tay.</p>
                   </Card>
               </div>
@@ -191,7 +191,7 @@ export function Cta() {
            <Dialog open={dialog2Open} onOpenChange={setDialog2Open}>
               <DialogContent className="sm:max-w-xl">
                 <DialogHeader className="text-center">
-                  <DialogTitle className="text-2xl font-bold font-headline">Bạn muốn tạo hồ sơ chi tiết bằng cách nào?</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline">Bạn muốn đăng hồ sơ chi tiết bằng cách nào?</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
@@ -627,5 +627,3 @@ export function Cta() {
     </section>
   );
 }
-
-    
