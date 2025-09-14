@@ -1,4 +1,5 @@
 
+
 import { type Language } from "@/locales/translations";
 
 export type Candidate = {
@@ -42,6 +43,7 @@ export type Candidate = {
     vision?: Record<Language, string>;
     dominant_hand?: Record<Language, string>;
     hometown?: Record<Language, string>;
+    current_residence?: Record<Language, string>;
 }
 
 const lastNames = [
@@ -202,6 +204,11 @@ const hometowns = [
     { vi: "Thái Nguyên", en: "Thai Nguyen", ja: "タイグエン" },
     { vi: "Tuyên Quang", en: "Tuyen Quang", ja: "トゥエンクアン" },
     { vi: "Vĩnh Long", en: "Vinh Long", ja: "ヴィンロン" }
+];
+
+const currentResidences = [
+    { vi: "Việt Nam", en: "Vietnam", ja: "ベトナム" },
+    { vi: "Nhật Bản", en: "Japan", ja: "日本" },
 ];
 
 const internIndustries = {
@@ -809,6 +816,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         vision: getRandomElement(visions),
         dominant_hand: getRandomElement(dominantHands),
         hometown: getRandomElement(hometowns),
+        current_residence: getRandomElement(currentResidences),
     };
 });
 
@@ -817,3 +825,4 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
 
   
+
