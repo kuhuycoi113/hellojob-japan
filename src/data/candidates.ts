@@ -1,6 +1,7 @@
 
 
 import { type Language } from "@/locales/translations";
+import { japanRegions } from "./locations";
 
 export type Candidate = {
     id: string;
@@ -639,6 +640,8 @@ function generateRandomDate(start: Date, end: Date): string {
     return `${day}/${month}/${year}`;
 }
 
+const allJapanesePrefectures = japanRegions.flatMap(region => region.prefectures);
+
 export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => {
     const id = `VN${String(i + 1).padStart(5, '0')}`;
     const avatar = `https://i.pravatar.cc/150?u=candidate${i}`;
@@ -770,14 +773,10 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         currentResidenceWithDetail.en += `, ${randomHometown.en}`;
         currentResidenceWithDetail.ja += `、${randomHometown.ja}`;
     } else { // Japan
-        // This is where you would ideally have a list of Japanese prefectures
-        // For now, I'll add a placeholder, but this can be improved.
-        const japanesePrefectures = ["東京都", "大阪府", "愛知県", "福岡県", "北海道"];
-        const randomPrefecture = getRandomElement(japanesePrefectures);
-         currentResidenceWithDetail.ja += `、${randomPrefecture}`;
-         // English and Vietnamese translations for prefectures would be needed for a full solution.
-         currentResidenceWithDetail.en += `, ${randomPrefecture}`;
-         currentResidenceWithDetail.vi += `, ${randomPrefecture}`;
+        const randomPrefecture = getRandomElement(allJapanesePrefectures);
+        currentResidenceWithDetail.vi = `Nhật Bản, ${randomPrefecture.vi}`;
+        currentResidenceWithDetail.en = `Japan, ${randomPrefecture.en}`;
+        currentResidenceWithDetail.ja = `日本、${randomPrefecture.ja}`;
     }
 
     return {
