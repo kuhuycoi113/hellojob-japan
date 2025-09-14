@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState, Suspense, useRef, useEffect } from 'react';
@@ -377,7 +378,7 @@ function AiJobPostFormContent() {
       icon: <Pencil className="w-8 h-8 text-orange-500" />,
       title: t.ai_job_post_form.suggestions.s4_title,
       description: t.ai_job_post_form.suggestions.s4_desc,
-      onClick: () => {} // Placeholder for manual entry
+      onClick: () => router.push('/post-job/manual')
     }
   ];
   
