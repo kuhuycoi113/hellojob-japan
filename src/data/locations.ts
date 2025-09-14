@@ -1,4 +1,4 @@
-// This is a new file.
+
 import type { Language } from "@/locales/translations";
 
 export type Prefecture = {
