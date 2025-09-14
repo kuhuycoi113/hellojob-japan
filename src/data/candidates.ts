@@ -41,6 +41,7 @@ export type Candidate = {
     desired_work_shift?: Record<Language, string>;
     vision?: Record<Language, string>;
     dominant_hand?: Record<Language, string>;
+    hometown?: Record<Language, string>;
 }
 
 const lastNames = [
@@ -164,6 +165,43 @@ const dominantHands = [
     { vi: "Tay phải", en: "Right-handed", ja: "右利き" },
     { vi: "Tay trái", en: "Left-handed", ja: "左利き" },
     { vi: "Cả hai tay", en: "Ambidextrous", ja: "両利き" },
+];
+
+const hometowns = [
+    { vi: "An Giang", en: "An Giang", ja: "アンザン" },
+    { vi: "Bắc Ninh", en: "Bac Ninh", ja: "バクニン" },
+    { vi: "Cao Bằng", en: "Cao Bang", ja: "カオバン" },
+    { vi: "Cà Mau", en: "Ca Mau", ja: "カマウ" },
+    { vi: "Cần Thơ", en: "Can Tho", ja: "カントー" },
+    { vi: "Đà Nẵng", en: "Da Nang", ja: "ダナン" },
+    { vi: "Điện Biên", en: "Dien Bien", ja: "ディエンビエン" },
+    { vi: "Đồng Nai", en: "Dong Nai", ja: "ドンナイ" },
+    { vi: "Đồng Tháp", en: "Dong Thap", ja: "ドンタップ" },
+    { vi: "Đắk Lắk", en: "Dak Lak", ja: "ダクラク" },
+    { vi: "Gia Lai", en: "Gia Lai", ja: "ザライ" },
+    { vi: "Hà Nội", en: "Hanoi", ja: "ハノイ" },
+    { vi: "Hà Tĩnh", en: "Ha Tinh", ja: "ハティン" },
+    { vi: "Hải Phòng", en: "Hai Phong", ja: "ハイフォン" },
+    { vi: "Hưng Yên", en: "Hung Yen", ja: "フンイエン" },
+    { vi: "Huế", en: "Hue", ja: "フエ" },
+    { vi: "Khánh Hòa", en: "Khanh Hoa", ja: "カインホア" },
+    { vi: "Lai Châu", en: "Lai Chau", ja: "ライチャウ" },
+    { vi: "Lào Cai", en: "Lao Cai", ja: "ラオカイ" },
+    { vi: "Lạng Sơn", en: "Lang Son", ja: "ランソン" },
+    { vi: "Lâm Đồng", en: "Lam Dong", ja: "ラムドン" },
+    { vi: "Nghệ An", en: "Nghe An", ja: "ゲアン" },
+    { vi: "Ninh Bình", en: "Ninh Binh", ja: "ニンビン" },
+    { vi: "Phú Thọ", en: "Phu Tho", ja: "フート" },
+    { vi: "Quảng Ngãi", en: "Quang Ngai", ja: "クアンガイ" },
+    { vi: "Quảng Ninh", en: "Quang Ninh", ja: "クアンニン" },
+    { vi: "Quảng Trị", en: "Quang Tri", ja: "クアンチ" },
+    { vi: "Sơn La", en: "Son La", ja: "ソンラ" },
+    { vi: "Tây Ninh", en: "Tay Ninh", ja: "タイニン" },
+    { vi: "Thanh Hóa", en: "Thanh Hoa", ja: "タインホア" },
+    { vi: "Thành phố Hồ Chí Minh", en: "Ho Chi Minh City", ja: "ホーチミン市" },
+    { vi: "Thái Nguyên", en: "Thai Nguyen", ja: "タイグエン" },
+    { vi: "Tuyên Quang", en: "Tuyen Quang", ja: "トゥエンクアン" },
+    { vi: "Vĩnh Long", en: "Vinh Long", ja: "ヴィンロン" }
 ];
 
 const internIndustries = {
@@ -290,8 +328,8 @@ const engineerIndustries = {
         ja: "情報技術", 
         jobs: [
             { vi: "Blockchain", en: "Blockchain", ja: "ブロックチェーン" },
-            { vi: "BrSE (Bridge System Engineer)", en: "BrSE (Bridge System Engineer)", en: "Business Analyst (BA)", ja: "BrSE (ブリッジシステムエンジニア)" },
-            { vi: "Business Analyst (BA)", en: "Business Analyst (BA)", en: "Business Analyst (BA)", ja: "ビジネスアナリスト (BA)" },
+            { vi: "BrSE (Bridge System Engineer)", en: "BrSE (Bridge System Engineer)", ja: "BrSE (ブリッジシステムエンジニア)" },
+            { vi: "Business Analyst (BA)", en: "Business Analyst (BA)", ja: "ビジネスアナリスト (BA)" },
             { vi: "Công nghệ thông tin", en: "Information Technology", ja: "情報技術" },
             { vi: "COO (Chief Operation Officer)", en: "COO (Chief Operation Officer)", ja: "COO (最高執行責任者)" },
             { vi: "CTO (Chief Technology Officer)", en: "CTO (Chief Technology Officer)", ja: "CTO (最高技術責任者)" },
@@ -770,6 +808,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         desired_work_shift: getRandomElement(desiredWorkShifts),
         vision: getRandomElement(visions),
         dominant_hand: getRandomElement(dominantHands),
+        hometown: getRandomElement(hometowns),
     };
 });
 
