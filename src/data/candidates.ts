@@ -418,7 +418,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
     const age = Math.floor(Math.random() * (69 - 18 + 1)) + 18; // 18-69
     const height = Math.floor(Math.random() * (205 - 140 + 1)) + 140; // 140-205 cm
-    const weight = Math.floor(Math.random() * 30) + 45; // 45-74 kg
+    const weight = Math.floor(Math.random() * 66) + 40; // 40-105 kg
     
     const currentYear = new Date().getFullYear();
     const birthYear = currentYear - age;
