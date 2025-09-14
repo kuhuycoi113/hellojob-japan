@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import Link from 'next/link';
@@ -67,27 +68,27 @@ export function Cta() {
 
   const userRoles: Role[] = [
      {
-      icon: <Building className="h-8 w-8 text-indigo-500" />,
+      icon: <Building className="h-8 w-8 text-primary" />,
       title: t.userRoles.receivingCompany.title,
       description: t.userRoles.receivingCompany.description,
     },
     {
-      icon: <Plane className="h-8 w-8 text-blue-500" />,
+      icon: <Plane className="h-8 w-8 text-secondary" />,
       title: t.userRoles.sendingCompany.title,
       description: t.userRoles.sendingCompany.description,
     },
     {
-      icon: <UserCheck className="h-8 w-8 text-yellow-500" />,
+      icon: <UserCheck className="h-8 w-8 text-accent" />,
       title: t.userRoles.supportOrg.title,
       description: t.userRoles.supportOrg.description,
     },
     {
-      icon: <Handshake className="h-8 w-8 text-green-500" />,
+      icon: <Handshake className="h-8 w-8 text-chart-1" />,
       title: t.userRoles.union.title,
       description: t.userRoles.union.description,
     },
     {
-      icon: <Users className="h-8 w-8 text-red-500" />,
+      icon: <Users className="h-8 w-8 text-indigo-500" />,
       title: t.userRoles.yuryoShokai.title,
       description: t.userRoles.yuryoShokai.description,
     },
@@ -181,7 +182,7 @@ export function Cta() {
                           <div className="p-3 rounded-full bg-green-500/10 text-green-500"><FileText className="w-8 h-8"/></div>
                       </div>
                       <h3 className="font-semibold text-lg text-gray-800">Tạo chi tiết</h3>
-                      <p className="text-sm text-muted-foreground mt-1">Hãy hoàn thiện thông tin chi tiết hơn để có việc làm hoàn hảo nhất</p>
+                      <p className="text-sm text-muted-foreground mt-1">Tự điền thông tin vào biểu mẫu chi tiết bằng cách nhập bằng tay.</p>
                   </Card>
               </div>
             </DialogContent>
@@ -202,7 +203,7 @@ export function Cta() {
                     </Card>
                      <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
                          <div className="flex justify-center mb-4">
-                            <div className="p-3 rounded-full bg-green-500/10 text-green-500"><FileText className="w-8 h-8"/></div>
+                            <div className="p-3 rounded-full bg-secondary/10 text-secondary"><FileText className="w-8 h-8"/></div>
                         </div>
                         <h3 className="font-semibold text-lg text-gray-800">Thủ công</h3>
                         <p className="text-sm text-muted-foreground mt-1">Tự điền thông tin vào biểu mẫu chi tiết bằng cách nhập bằng tay.</p>
@@ -287,7 +288,7 @@ export function Cta() {
                     onClick={() => { setDialog4Open(false); setDialog53Open(true); }}
                   >
                      <div className="flex justify-center mb-4">
-                      <div className="bg-secondary/10 text-secondary p-3 rounded-full">
+                      <div className="bg-green-500/10 text-green-500 p-3 rounded-full">
                         <Briefcase className="w-8 h-8" />
                       </div>
                     </div>
