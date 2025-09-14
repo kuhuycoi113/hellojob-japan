@@ -587,7 +587,7 @@ const skilledIndustries = {
             { vi: 'Dọn dẹp khoang hành khách', en: 'Passenger cabin cleaning', ja: '客室清掃（交通機関）' },
             { vi: 'Hàng hóa hàng không', en: 'Air cargo handling', ja: '航空貨物取扱' },
             { vi: 'Hỗ trợ mặt đất máy bay', en: 'Aircraft ground support', ja: '航空機地上支援' }
-        ]
+        ] 
     },
     automotive: { 
         vi: "Ô tô", 
@@ -1508,6 +1508,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
