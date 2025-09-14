@@ -535,7 +535,25 @@ const skilledIndustries = {
     caregiver: { vi: "Điều dưỡng", en: "Caregiver", ja: "介護", jobs: [] },
     hotel: { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル", jobs: [] },
     cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [] },
-    transport: { vi: "Vận tải", en: "Transportation", ja: "運輸", jobs: [] },
+    transport: { 
+        vi: "Vận tải", 
+        en: "Transportation", 
+        ja: "運輸", 
+        jobs: [
+            { vi: 'Hậu cần vận tải', en: 'Logistics', ja: '運輸・物流' },
+            { vi: 'Lái xe', en: 'Driver', ja: '運転手' },
+            { vi: 'Lái xe buýt cỡ lớn', en: 'Large Bus Driver', ja: '大型バス運転手' },
+            { vi: 'Lái xe buýt cỡ trung', en: 'Medium Bus Driver', ja: '中型バス運転手' },
+            { vi: 'Lái xe nâng', en: 'Forklift Driver', ja: 'フォークリフト運転手' },
+            { vi: 'Lái xe tải cỡ lớn', en: 'Large Truck Driver', ja: '大型トラック運転手' },
+            { vi: 'Lái xe tải cỡ nhỏ', en: 'Small Truck Driver', ja: '小型トラック運転手' },
+            { vi: 'Lái xe tải cỡ trung', en: 'Medium Truck Driver', ja: '中型トラック運転手' },
+            { vi: 'Lái xe taxi', en: 'Taxi Driver', ja: 'タクシー運転手' },
+            { vi: 'Phụ xe', en: "Driver's Assistant / Conductor", ja: '車掌 / 助手' },
+            { vi: 'Quản lý kho vận tải', en: 'Warehouse Management', ja: '倉庫管理' },
+            { vi: 'Thực tập lái xe', en: 'Driving Intern / Trainee Driver', ja: '運転実習生' }
+        ] 
+    },
     aviation: { 
         vi: "Hàng không", 
         en: "Aviation", 
@@ -1394,6 +1412,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
