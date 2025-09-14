@@ -173,7 +173,21 @@ const engineerIndustries = {
     medical_care: { vi: "Y tế, điều dưỡng", en: "Medical, Caregiving", ja: "医療・介護", jobs: [] },
     business_econ: { vi: "Kinh doanh, kinh tế", en: "Business, Economics", ja: "ビジネス・経済", jobs: [] },
     finance: { vi: "Tài chính, kế toán, bảo hiểm", en: "Finance, Accounting, Insurance", ja: "金融・会計・保険", jobs: [] },
-    media: { vi: "Báo chí, truyền thông, marketing", en: "Journalism, Media, Marketing", ja: "報道・メディア・マーケティング", jobs: [] },
+    media: { 
+        vi: "Báo chí, truyền thông, marketing", 
+        en: "Journalism, Media, Marketing", 
+        ja: "報道・メディア・マーケティング", 
+        jobs: [
+            { vi: "Báo chí", en: "Journalism", ja: "報道" },
+            { vi: "Biên tập", en: "Editing", ja: "編集" },
+            { vi: "Digital Marketing", en: "Digital Marketing", ja: "デジタルマーケティング" },
+            { vi: "Marketing", en: "Marketing", ja: "マーケティング" },
+            { vi: "Nhà báo", en: "Journalist", ja: "ジャーナリスト" },
+            { vi: "Thiết kế Marketing", en: "Marketing Design", ja: "マーケティングデザイン" },
+            { vi: "Truyền thông", en: "Media/Communications", ja: "メディア/コミュニケーション" },
+            { vi: "Viết quảng cáo", en: "Copywriting", ja: "コピーライティング" }
+        ] 
+    },
     it: { vi: "Công nghệ thông tin", en: "Information Technology", ja: "情報技術", jobs: [] },
     research: { vi: "Nghiên cứu, phân tích", en: "Research, Analysis", ja: "研究・分析", jobs: [] },
     education: { vi: "Giáo dục, đào tạo", en: "Education, Training", ja: "教育・研修", jobs: [] },
