@@ -13,6 +13,7 @@ export type Candidate = {
     visa_type: Record<Language, string>;
     specialty: Record<Language, string>;
     desired_salary: Record<Language, string>;
+    desired_net_salary?: Record<Language, string>;
     jobs: {
         count: number;
         images: string[];
@@ -388,6 +389,44 @@ function getRandomSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, 
     };
 }
 
+function getRandomNetSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
+    let min: number, max: number;
+
+    switch (visaTypeKey) {
+        case 'intern':
+            min = 100000;
+            max = 400000;
+            break;
+        case 'skilled':
+            min = 120000;
+            max = 1300000;
+            break;
+        case 'engineer':
+            min = 120000;
+            max = 9000000;
+            break;
+        default:
+            min = 120000;
+            max = 250000;
+    }
+    
+    const salary = Math.floor(Math.random() * (max - min + 1)) + min;
+    const salaryInMan = salary / 10000;
+    
+    const formatToMan = (value: number) => {
+        if (value >= 1) {
+            return `${Math.round(value)}万`;
+        }
+        return `${value.toFixed(1)}万`;
+    };
+
+    return {
+        vi: `${salary.toLocaleString('de-DE')} Yên`,
+        en: `${salary.toLocaleString('en-US')} JPY`,
+        ja: `${formatToMan(salaryInMan)}円`,
+    };
+}
+
 
 function getRandomElement<T>(arr: T[]): T {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -537,6 +576,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             ja: randomSpecialty.ja,
         },
         desired_salary: getRandomSalary(randomVisaKey),
+        desired_net_salary: getRandomNetSalary(randomVisaKey),
         jobs: {
             count: Math.floor(Math.random() * 10) + 1,
             images: Array.from({ length: 3 }, (_, j) => `https://picsum.photos/50?random=job${i}${j}`)
