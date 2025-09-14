@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Building, Handshake, Briefcase } from 'lucide-react';
+import { HardHat, UserCheck, Briefcase } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 
 export function CandidateCategories() {
@@ -9,12 +9,12 @@ export function CandidateCategories() {
   
   const categories = [
     {
-      icon: <Users className="h-10 w-10 text-primary" />,
+      icon: <HardHat className="h-10 w-10 text-primary" />,
       title: t.candidateCategories.skillIntern,
       description: t.candidateCategories.skillInternDesc,
     },
     {
-      icon: <Handshake className="h-10 w-10 text-yellow-500" />,
+      icon: <UserCheck className="h-10 w-10 text-yellow-500" />,
       title: t.candidateCategories.specifiedSkill,
       description: t.candidateCategories.specifiedSkillDesc,
     },
