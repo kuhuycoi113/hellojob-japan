@@ -802,14 +802,14 @@
   },
   "postMethod": {
     "title": "Chọn phương thức đăng việc làm",
-    "description": "Bạn muốn tạo tin tuyển dụng của mình như thế nào?",
+    "description": "Bạn muốn đăng tin tuyển dụng của mình như thế nào?",
     "ai": {
       "title": "Đăng nhanh",
-      "description": "Chỉ vào thao tác bấm đơn giản để đưa thông tin việc làm lên tìm ứng viên phù hợp."
+      "description": "Chỉ vài thao tác đơn giản, bạn sẽ đăng tải được việc làm nhanh chóng."
     },
     "manual": {
       "title": "Đăng chi tiết",
-      "description": "Điền vào biểu mẫu chi tiết để có toàn quyền kiểm soát tin đăng."
+      "description": "Tự điền thông tin vào biểu mẫu chi tiết để có toàn quyền kiểm soát tin đăng."
     }
   },
    "jobsPage": {
@@ -1153,6 +1153,3 @@
     "partnerNotFound": "Không tìm thấy đối tác."
   }
 }
-
-    
-    

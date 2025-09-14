@@ -800,8 +800,8 @@
     }
   },
   "postMethod": {
-    "title": "Choose a Job Posting Method",
-    "description": "How would you like to create your job listing?",
+    "title": "Choose a Posting Method",
+    "description": "How would you like to post your job listing?",
     "ai": {
       "title": "Quick Post",
       "description": "A few simple clicks to get your job posted and find suitable candidates."
@@ -1153,6 +1153,3 @@
     "partnerNotFound": "Partner not found."
   }
 }
-
-    
-    
