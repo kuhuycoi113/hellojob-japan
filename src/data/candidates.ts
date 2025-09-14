@@ -332,12 +332,6 @@ const visaTypes = {
     }
 }
 
-const desiredSalaries = {
-    vi: ["Phí giới thiệu", "Thương lượng", "20 vạn Yên", "22 vạn Yên", "25 vạn Yên"],
-    en: ["Referral Fee", "Negotiable", "200,000 JPY", "220,000 JPY", "250,000 JPY"],
-    ja: ["紹介料", "交渉可能", "20万円", "22万円", "25万円"],
-};
-
 const financialAbilities = {
     vi: ["Đã đủ", "Cần hỗ trợ", "Đang chờ"],
     en: ["Sufficient", "Needs Support", "Pending"],
@@ -355,6 +349,44 @@ const tattoos = {
     small: { vi: "Có xăm nhỏ (kín)", en: "Has small (hidden) tattoo", ja: "小さい刺青あり（隠せる）" },
     large: { vi: "Có xăm to (lộ)", en: "Has large (visible) tattoo", ja: "大きい刺青あり（見える）" },
 };
+
+function getRandomSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
+    let min: number, max: number;
+
+    switch (visaTypeKey) {
+        case 'intern':
+            min = 120000;
+            max = 500000;
+            break;
+        case 'skilled':
+            min = 150000;
+            max = 1500000;
+            break;
+        case 'engineer':
+            min = 160000;
+            max = 10000000;
+            break;
+        default:
+            min = 150000;
+            max = 300000;
+    }
+    
+    const salary = Math.floor(Math.random() * (max - min + 1)) + min;
+    const salaryInMan = salary / 10000;
+    
+    const formatToMan = (value: number) => {
+        if (value >= 1) {
+            return `${Math.round(value)}万`;
+        }
+        return `${value.toFixed(1)}万`;
+    };
+
+    return {
+        vi: `${salary.toLocaleString('de-DE')} Yên`,
+        en: `${salary.toLocaleString('en-US')} JPY`,
+        ja: `${formatToMan(salaryInMan)}円`,
+    };
+}
 
 
 function getRandomElement<T>(arr: T[]): T {
@@ -425,7 +457,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
     const age = Math.floor(Math.random() * (69 - 18 + 1)) + 18; // 18-69
     const height = Math.floor(Math.random() * (205 - 140 + 1)) + 140; // 140-205 cm
-    const weight = Math.floor(Math.random() * 66) + 40; // 40-105 kg
+    const weight = Math.floor(Math.random() * (105 - 40 + 1)) + 40; // 40-105 kg
     
     const currentYear = new Date().getFullYear();
     const birthYear = currentYear - age;
@@ -504,11 +536,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             en: randomSpecialty.en,
             ja: randomSpecialty.ja,
         },
-        desired_salary: {
-            vi: getRandomElement(desiredSalaries.vi),
-            en: getRandomElement(desiredSalaries.en),
-            ja: getRandomElement(desiredSalaries.ja),
-        },
+        desired_salary: getRandomSalary(randomVisaKey),
         jobs: {
             count: Math.floor(Math.random() * 10) + 1,
             images: Array.from({ length: 3 }, (_, j) => `https://picsum.photos/50?random=job${i}${j}`)
