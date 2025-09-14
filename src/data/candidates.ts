@@ -220,8 +220,16 @@ const internIndustries = {
         en: "Fishery",
         ja: "漁業",
         jobs: [
-            { vi: 'Nuôi trồng thuỷ sản', en: 'Aquaculture', ja: '養殖業' },
-            { vi: 'Đánh bắt cá', en: 'Fishing', ja: '漁業' },
+            { vi: 'Câu cá ngừ cần và dây', en: 'Tuna pole and line fishing', ja: 'まぐろ一本釣り漁業' },
+            { vi: 'Câu mực', en: 'Squid fishing', ja: 'いか釣り漁業' },
+            { vi: 'Câu tôm, cua bằng lồng', en: 'Pot fishing for shrimp and crab', ja: 'かご漁業（えび・かに）' },
+            { vi: 'Đánh cá dây câu dài', en: 'Longline fishing', ja: 'はえ縄漁業' },
+            { vi: 'Đánh cá lưới kéo', en: 'Trawl fishing', ja: 'トロール漁業' },
+            { vi: 'Đánh cá lưới rê', en: 'Gillnet fishing', ja: '刺し網漁業' },
+            { vi: 'Đánh cá lưới sào', en: 'Stick-held dip net fishing', ja: '棒受網漁業' },
+            { vi: 'Đánh cá lưới thả', en: 'Drift net fishing', ja: '流し網漁業' },
+            { vi: 'Đặt lưới đánh cá', en: 'Set net fishing', ja: '定置網漁業' },
+            { vi: 'Nuôi sò điệp', en: 'Scallop aquaculture', ja: 'ほたてがい養殖業' }
         ]
     },
     agriculture: {
@@ -893,4 +901,5 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
 
     
+
 
