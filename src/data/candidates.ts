@@ -553,7 +553,26 @@ const skilledIndustries = {
     automotive: { vi: "Ô tô", en: "Automotive", ja: "自動車", jobs: [] },
     machinery: { vi: "Cơ khí, chế tạo máy", en: "Machinery Manufacturing", ja: "機械製造", jobs: [] },
     material: { vi: "Chế tạo Vật liệu", en: "Material Manufacturing", ja: "素材製造", jobs: [] },
-    electronics: { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子", jobs: [] },
+    electronics: { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子", jobs: [
+            { vi: 'Bản mạch in', en: 'Printed Circuit Board', ja: 'プリント基板' },
+            { vi: 'Cuộn dây máy điện quay', en: 'Rotating Electrical Machine Winding', ja: '回転電機巻線' },
+            { vi: 'Điện', en: 'Electrical', ja: '電気' },
+            { vi: 'Điện tử', en: 'Electronics', ja: '電子' },
+            { vi: 'Lắp ráp điện', en: 'Electrical Assembly', ja: '電気組立' },
+            { vi: 'Lắp ráp điện tử', en: 'Electronic Assembly', ja: '電子組立' },
+            { vi: 'Lắp ráp linh kiện bán dẫn', en: 'Semiconductor Component Assembly', ja: '半導体部品組立' },
+            { vi: 'Lắp ráp máy biến áp', en: 'Transformer Assembly', ja: '変圧器組立' },
+            { vi: 'Lắp ráp thiết bị điện khí', en: 'Electrical Pneumatic Equipment Assembly', ja: '電気空圧機器組立' },
+            { vi: 'Lắp ráp thiết bị điện quay', en: 'Rotating Electrical Equipment Assembly', ja: '回転電機組立' },
+            { vi: 'Lắp ráp thiết bị điện tử', en: 'Electronic Equipment Assembly', ja: '電子機器組立' },
+            { vi: 'Lắp thiết bị đóng, mở', en: 'Switchgear Assembly', ja: '開閉制御器具組立' },
+            { vi: 'Lắp tủ điện, tủ điều khiển', en: 'Control Panel Assembly', ja: '配電盤・制御盤組立' },
+            { vi: 'Sản xuất bảng mạch in', en: 'Printed Circuit Board Manufacturing', ja: 'プリント基板製造' },
+            { vi: 'Sửa chữa dụng cụ', en: 'Tool Repair', ja: '治工具修理' },
+            { vi: 'Sửa chữa tủ điện', en: 'Electrical Cabinet Repair', ja: '配電盤修理' },
+            { vi: 'Thi công điện', en: 'Electrical Construction', ja: '電気工事' },
+            { vi: 'Thiết kế bảng mạch in', en: 'PCB Design', ja: 'プリント基板設計' }
+        ] },
     construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
     general: { 
         vi: "Sản xuất, dịch vụ tổng hợp", 
@@ -1308,6 +1327,5 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
-
 
 
