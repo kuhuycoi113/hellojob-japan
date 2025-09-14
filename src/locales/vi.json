@@ -773,7 +773,7 @@
     "description": "Hãy chọn loại visa phù hợp với nhu cầu tuyển dụng của bạn.",
     "intern": {
       "title": "Thực tập sinh kỹ năng",
-      "description": "Chương trình đào tạo kỹ năng tại Nhật Bản."
+      "description": "Chương trình dành cho lao động phổ thông, đào tạo kỹ năng tại Nhật Bản."
     },
     "skilled": {
       "title": "Kỹ năng đặc định",
@@ -1154,4 +1154,5 @@
   }
 }
 
+    
     

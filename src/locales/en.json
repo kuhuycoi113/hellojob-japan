@@ -772,7 +772,7 @@
     "description": "Select the appropriate visa type for your recruitment needs.",
     "intern": {
       "title": "Technical Intern",
-      "description": "A program for skill training in Japan."
+      "description": "A skill training program in Japan, suitable for general laborers."
     },
     "skilled": {
       "title": "Specified Skilled Worker",
@@ -1154,4 +1154,5 @@
   }
 }
 
+    
     
