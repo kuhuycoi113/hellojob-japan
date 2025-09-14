@@ -126,17 +126,17 @@ const internIndustries = {
 };
 
 const skilledIndustries = {
-    fishery: {
-        vi: "Ngư nghiệp", 
-        en: "Fishery", 
-        ja: "漁業",
-        jobs: [
-            { vi: 'Nuôi trồng thuỷ sản', en: 'Aquaculture', ja: '養殖業' },
-            { vi: 'Đánh bắt cá', en: 'Fishing', ja: '漁業' }
-        ]
-    },
-    agriculture: { vi: "Nông nghiệp", en: "Agriculture", ja: "農業", jobs: [] },
-    restaurant: { vi: "Nhà hàng", en: "Restaurant", ja: "外食", jobs: [] },
+    caregiver: { vi: "Điều dưỡng", en: "Caregiver", ja: "介護", jobs: [] },
+    hotel: { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル", jobs: [] },
+    cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [] },
+    construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
+    transport: { vi: "Vận tải", en: "Transportation", ja: "運輸", jobs: [] },
+    aviation: { vi: "Hàng không", en: "Aviation", ja: "航空", jobs: [] },
+    automotive: { vi: "Ô tô", en: "Automotive", ja: "自動車", jobs: [] },
+    machinery: { vi: "Cơ khí, chế tạo máy", en: "Machinery Manufacturing", ja: "機械製造", jobs: [] },
+    material: { vi: "Chế tạo Vật liệu", en: "Material Manufacturing", ja: "素材製造", jobs: [] },
+    electronics: { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子", jobs: [] },
+    general: { vi: "Sản xuất, dịch vụ tổng hợp", en: "General Manufacturing & Services", ja: "製造・サービス", jobs: [] },
     food: {
         vi: "Thực phẩm",
         en: "Food",
@@ -148,17 +148,17 @@ const skilledIndustries = {
             { vi: 'Làm bánh & kẹo', en: 'Bakery & Confectionery', ja: '製パン・製菓' }
         ]
     },
-    general: { vi: "Sản xuất, dịch vụ tổng hợp", en: "General Manufacturing & Services", ja: "製造・サービス", jobs: [] },
-    electronics: { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子", jobs: [] },
-    material: { vi: "Chế tạo Vật liệu", en: "Material Manufacturing", ja: "素材製造", jobs: [] },
-    machinery: { vi: "Cơ khí, chế tạo máy", en: "Machinery Manufacturing", ja: "機械製造", jobs: [] },
-    automotive: { vi: "Ô tô", en: "Automotive", ja: "自動車", jobs: [] },
-    aviation: { vi: "Hàng không", en: "Aviation", ja: "航空", jobs: [] },
-    transport: { vi: "Vận tải", en: "Transportation", ja: "運輸", jobs: [] },
-    construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
-    cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [] },
-    hotel: { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル", jobs: [] },
-    caregiver: { vi: "Điều dưỡng", en: "Caregiver", ja: "介護", jobs: [] }
+    restaurant: { vi: "Nhà hàng", en: "Restaurant", ja: "外食", jobs: [] },
+    agriculture: { vi: "Nông nghiệp", en: "Agriculture", ja: "農業", jobs: [] },
+    fishery: {
+        vi: "Ngư nghiệp", 
+        en: "Fishery", 
+        ja: "漁業",
+        jobs: [
+            { vi: 'Nuôi trồng thuỷ sản', en: 'Aquaculture', ja: '養殖業' },
+            { vi: 'Đánh bắt cá', en: 'Fishing', ja: '漁業' }
+        ]
+    },
 };
 
 const engineerIndustries = {
@@ -398,3 +398,5 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         ...(interviewLocation && { interview_location: interviewLocation }),
     };
 });
+
+    
