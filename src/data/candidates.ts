@@ -214,7 +214,22 @@ const engineerIndustries = {
         ] 
     },
     research: { vi: "Nghiên cứu, phân tích", en: "Research, Analysis", ja: "研究・分析", jobs: [] },
-    education: { vi: "Giáo dục, đào tạo", en: "Education, Training", ja: "教育・研修", jobs: [] },
+    education: {
+        vi: "Giáo dục, đào tạo",
+        en: "Education, Training",
+        ja: "教育・研修",
+        jobs: [
+            { vi: "Giảng dạy có chứng chỉ", en: "Teaching with certification", ja: "資格を持つ教員" },
+            { vi: "Giảng dạy đại học", en: "University teaching", ja: "大学での教育" },
+            { vi: "Giảng dạy ngoài cơ sở giáo dục", en: "Teaching outside educational institutions", ja: "教育機関外での教育" },
+            { vi: "Giảng dạy ngôn ngữ tại Tiểu học, THCS, PTTH", en: "Language teaching at elementary, middle, and high schools", ja: "小中高校での言語教育" },
+            { vi: "Giảng dạy trường dạy nghề (Senmon)", en: "Teaching at vocational schools (Senmon)", ja: "専門学校での教育" },
+            { vi: "Giảng dạy trường học các loại", en: "Teaching at various types of schools", ja: "各種学校での教育" },
+            { vi: "Giảng dạy trường quốc tế", en: "Teaching at international schools", ja: "国際学校での教育" },
+            { vi: "Hướng dẫn nghiên cứu", en: "Research supervision", ja: "研究指導" },
+            { vi: "Hướng dẫn thể thao", en: "Sports coaching", ja: "スポーツ指導" }
+        ]
+    },
     admin: { vi: "Hành chính, văn phòng", en: "Administration, Office", ja: "事務・オフィス", jobs: [] },
     legal: { vi: "Pháp lý", en: "Legal", ja: "法務", jobs: [] },
     arts: { vi: "Nghệ thuật, nghệ sĩ", en: "Arts, Artist", ja: "芸術・アーティスト", jobs: [] },
