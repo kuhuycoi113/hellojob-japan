@@ -555,7 +555,48 @@ const skilledIndustries = {
     material: { vi: "Chế tạo Vật liệu", en: "Material Manufacturing", ja: "素材製造", jobs: [] },
     electronics: { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子", jobs: [] },
     construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
-    general: { vi: "Sản xuất, dịch vụ tổng hợp", en: "General Manufacturing & Services", ja: "製造・サービス", jobs: [] },
+    general: { 
+        vi: "Sản xuất, dịch vụ tổng hợp", 
+        en: "General Manufacturing & Services", 
+        ja: "製造・サービス", 
+        jobs: [
+            { vi: 'Bảo trì đường sắt', en: 'Railway Maintenance', ja: '鉄道保守' },
+            { vi: 'Công việc cưa gỗ', en: 'Wood Sawing', ja: '製材作業' },
+            { vi: 'Đóng gói', en: 'Packaging', ja: '包装' },
+            { vi: 'Đóng gói công nghiệp', en: 'Industrial Packaging', ja: '工業包装' },
+            { vi: 'Đóng gói mỹ phẩm', en: 'Cosmetics Packaging', ja: '化粧品包装' },
+            { vi: 'Đóng sách', en: 'Bookbinding', ja: '製本' },
+            { vi: 'Đúc gốm bằng áp lực', en: 'Pressure-cast Ceramics', ja: 'セラミック圧力鋳造' },
+            { vi: 'Đúc khuôn cao su', en: 'Rubber Molding', ja: 'ゴム成形' },
+            { vi: 'Đục lỗ hộp in', en: 'Printed Box Punching', ja: '印刷箱の穴あけ' },
+            { vi: 'Đúc nhựa', en: 'Plastic Molding', ja: 'プラスチック成形' },
+            { vi: 'Đúc nhựa cán xếp chồng', en: 'Laminated Plastic Molding', ja: '積層プラスチック成形' },
+            { vi: 'Đúc nhựa ép phun', en: 'Injection Molding', ja: '射出成形' },
+            { vi: 'Đúc nhựa nén', en: 'Compression Molding', ja: '圧縮成形' },
+            { vi: 'Đúc nhựa thổi định hình', en: 'Blow Molding', ja: 'ブロー成形' },
+            { vi: 'Đúc nhựa thổi phồng', en: 'Inflation Molding', ja: 'インフレーション成形' },
+            { vi: 'Gia công đồ gia dụng', en: 'Home Appliance Processing', ja: '家電製品加工' },
+            { vi: 'Gia công ép đùn cao su', en: 'Rubber Extrusion', ja: 'ゴム押出加工' },
+            { vi: 'Gia công sản phẩm gỗ', en: 'Wood Product Processing', ja: '木製品加工' },
+            { vi: 'Gỗ ép', en: 'Plywood Manufacturing', ja: '合板製造' },
+            { vi: 'In gốm', en: 'Ceramic Printing', ja: 'セラミック印刷' },
+            { vi: 'In offset', en: 'Offset Printing', ja: 'オフセット印刷' },
+            { vi: 'In ống đồng', en: 'Gravure Printing', ja: 'グラビア印刷' },
+            { vi: 'In vỏ bánh kẹo', en: 'Confectionery Wrapper Printing', ja: '菓子包装印刷' },
+            { vi: 'Kiểm tra sản phẩm nhựa', en: 'Plastic Product Inspection', ja: 'プラスチック製品検査' },
+            { vi: 'Nặn gốm bằng bánh xoay', en: 'Pottery (Wheel Throwing)', ja: '陶芸（ろくろ）' },
+            { vi: 'Nhiên liệu rắn từ rác', en: 'Solid Recovered Fuel (SRF)', ja: 'ごみ固形燃料（RDF）' },
+            { vi: 'Sản xuất hộp bìa cứng', en: 'Cardboard Box Manufacturing', ja: '段ボール箱製造' },
+            { vi: 'Sản xuất hộp in', en: 'Printed Box Manufacturing', ja: '印刷箱製造' },
+            { vi: 'Sản xuất hộp nhãn dán', en: 'Sticker Box Manufacturing', ja: 'シールボックス製造' },
+            { vi: 'Sản xuất linh kiện', en: 'Component Manufacturing', ja: '部品製造' },
+            { vi: 'Sản xuất pin năng lượng', en: 'Battery Manufacturing', ja: '電池製造' },
+            { vi: 'Sản xuất vải lanh', en: 'Linen Fabric Manufacturing', ja: 'リネン生地製造' },
+            { vi: 'Thiết bị khí nén đường sắt', en: 'Railway Pneumatic Equipment', ja: '鉄道用空気圧装置' },
+            { vi: 'Trộn và cán cao su', en: 'Rubber Mixing and Calendering', ja: 'ゴム混合・圧延' },
+            { vi: 'Vật liệu composite nhiều lớp', en: 'Laminated Composite Materials', ja: '積層複合材' }
+        ] 
+    },
     food: {
         vi: "Thực phẩm",
         en: "Food",
@@ -1267,5 +1308,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
