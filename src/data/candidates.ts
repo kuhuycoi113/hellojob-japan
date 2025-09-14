@@ -237,8 +237,24 @@ const internIndustries = {
         en: "Agriculture",
         ja: "農業",
         jobs: [
-            { vi: "Trồng trọt", en: "Crop Farming", ja: "耕種農業" },
-            { vi: "Chăn nuôi", en: "Livestock Farming", ja: "畜産農業" },
+            { vi: "Nông nghiệp trồng trọt", en: "Crop farming", ja: "耕種農業" },
+            { vi: "Nông nghiệp chăn nuôi", en: "Livestock farming", ja: "畜産農業" },
+            { vi: "Chăn nuôi bò", en: "Cattle raising", ja: "牛の飼育" },
+            { vi: "Chăn nuôi bò sữa", en: "Dairy farming", ja: "酪農" },
+            { vi: "Chăn nuôi gà", en: "Chicken farming", ja: "養鶏" },
+            { vi: "Chăn nuôi lợn", en: "Pig farming", ja: "養豚" },
+            { vi: "Nhặt trứng gà", en: "Egg collecting", ja: "鶏卵の収集" },
+            { vi: "Thu hoạch bắp cải", en: "Cabbage harvesting", ja: "キャベツの収穫" },
+            { vi: "Thu hoạch cà chua", en: "Tomato harvesting", ja: "トマトの収穫" },
+            { vi: "Thu hoạch dâu tây", en: "Strawberry harvesting", ja: "いちごの収穫" },
+            { vi: "Thu hoạch hoa", en: "Flower harvesting", ja: "花の収穫" },
+            { vi: "Thu hoạch hoa quả", en: "Fruit harvesting", ja: "果物の収穫" },
+            { vi: "Thu hoạch rau củ", en: "Vegetable harvesting", ja: "野菜の収穫" },
+            { vi: "Trồng cây ăn quả", en: "Fruit cultivation", ja: "果樹栽培" },
+            { vi: "Trồng nấm", en: "Mushroom cultivation", ja: "きのこ栽培" },
+            { vi: "Trồng nấm công nghệ cao", en: "High-tech mushroom cultivation", ja: "ハイテクきのこ栽培" },
+            { vi: "Trồng rau củ", en: "Vegetable cultivation", ja: "野菜栽培" },
+            { vi: "Trồng trọt nhà kính", en: "Greenhouse cultivation", ja: "ハウス栽培" }
         ]
     },
     food: {
@@ -903,3 +919,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
 
 
+
+
+    
