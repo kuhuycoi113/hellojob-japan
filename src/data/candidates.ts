@@ -247,7 +247,15 @@ const engineerIndustries = {
             { vi: "Nhân viên văn phòng", en: "Office Staff", ja: "事務員" }
         ] 
     },
-    legal: { vi: "Pháp lý", en: "Legal", ja: "法務", jobs: [] },
+    legal: { vi: "Pháp lý", en: "Legal", ja: "法務", jobs: [
+            { vi: 'Chuyên viên pháp lý hành chính', en: 'Administrative Scrivener', ja: '行政書士' },
+            { vi: 'Dịch vụ pháp lý', en: 'Legal Services', ja: '法律業務' },
+            { vi: 'Lập văn bản tư pháp', en: 'Judicial Scrivener', ja: '司法書士' },
+            { vi: 'Luật sư', en: 'Lawyer', ja: '弁護士' },
+            { vi: 'Luật sư luật nước ngoài', en: 'Foreign Law Lawyer', ja: '外国法弁護士' },
+            { vi: 'Luật sư nước ngoài', en: 'Foreign Lawyer', ja: '外国弁護士' },
+            { vi: 'Luật sư sở hữu trí tuệ', en: 'Intellectual Property Lawyer', ja: '知的財産弁護士' },
+    ] },
     arts: { vi: "Nghệ thuật, nghệ sĩ", en: "Arts, Artist", ja: "芸術・アーティスト", jobs: [] },
     sports: { vi: "Thể dục thể thao", en: "Sports", ja: "スポーツ", jobs: [] },
     professional: { vi: "Nghề có kỹ năng chuyên nghiệp", en: "Professional Occupations", ja: "専門職", jobs: [] },
