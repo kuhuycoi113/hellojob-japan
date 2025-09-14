@@ -67,7 +67,15 @@ export const japanRegions: Region[] = [
     vi: "Kansai",
     en: "Kansai",
     ja: "関西",
-    prefectures: []
+    prefectures: [
+        { vi: "Mie", en: "Mie", ja: "三重" },
+        { vi: "Shiga", en: "Shiga", ja: "滋賀" },
+        { vi: "Kyoto", en: "Kyoto", ja: "京都" },
+        { vi: "Osaka", en: "Osaka", ja: "大阪" },
+        { vi: "Hyogo", en: "Hyogo", ja: "兵庫" },
+        { vi: "Nara", en: "Nara", ja: "奈良" },
+        { vi: "Wakayama", en: "Wakayama", ja: "和歌山" }
+    ]
   },
   {
     vi: "Chugoku",
@@ -94,4 +102,5 @@ export const japanRegions: Region[] = [
     prefectures: []
   }
 ];
+
 
