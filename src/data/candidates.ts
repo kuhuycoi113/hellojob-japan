@@ -552,7 +552,16 @@ const skilledIndustries = {
     aviation: { vi: "Hàng không", en: "Aviation", ja: "航空", jobs: [] },
     automotive: { vi: "Ô tô", en: "Automotive", ja: "自動車", jobs: [] },
     machinery: { vi: "Cơ khí, chế tạo máy", en: "Machinery Manufacturing", ja: "機械製造", jobs: [] },
-    material: { vi: "Chế tạo Vật liệu", en: "Material Manufacturing", ja: "素材製造", jobs: [] },
+    material: { 
+        vi: "Chế tạo Vật liệu", 
+        en: "Material Manufacturing", 
+        ja: "素材製造", 
+        jobs: [
+            { vi: 'Xử lý nhiệt bề mặt', en: 'Surface Heat Treatment', ja: '表面熱処理' },
+            { vi: 'Xử lý nhiệt một phần', en: 'Partial Heat Treatment', ja: '部分熱処理' },
+            { vi: 'Xử lý nhiệt tổng thể', en: 'Overall Heat Treatment', ja: '全体熱処理' }
+        ] 
+    },
     electronics: { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子", jobs: [
             { vi: 'Bản mạch in', en: 'Printed Circuit Board', ja: 'プリント基板' },
             { vi: 'Cuộn dây máy điện quay', en: 'Rotating Electrical Machine Winding', ja: '回転電機巻線' },
@@ -1327,5 +1336,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
