@@ -15,6 +15,10 @@ export type Candidate = {
         images: string[];
     };
     created_date: string;
+    // Add optional fields based on user request
+    hepatitis_b?: Record<Language, boolean | null>;
+    financial_ability?: Record<Language, string | null>;
+    interview_location?: Record<Language, string | null>;
 }
 
 const lastNames = [
@@ -108,6 +112,19 @@ const desiredSalaries = {
     ja: ["紹介料", "交渉可能", "20万円", "22万円", "25万円"],
 };
 
+const financialAbilities = {
+    vi: ["Đã đủ", "Cần hỗ trợ", "Đang chờ"],
+    en: ["Sufficient", "Needs Support", "Pending"],
+    ja: ["十分", "要支援", "保留中"],
+};
+
+const interviewLocations = {
+    vi: ["Tại Nhật Bản", "Tại Việt Nam"],
+    en: ["In Japan", "In Vietnam"],
+    ja: ["日本国内", "ベトナム国内"],
+};
+
+
 function getRandomElement<T>(arr: T[]): T {
     return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -130,6 +147,11 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const randomVisaKey = getRandomElement(visaKeys);
     const visaInfo = visaTypes[randomVisaKey];
     const randomVisaSubtypeIndex = Math.floor(Math.random() * visaInfo.subtypes.vi.length);
+    const visaSubtype: Record<Language, string> = {
+        vi: visaInfo.subtypes.vi[randomVisaSubtypeIndex],
+        en: visaInfo.subtypes.en[randomVisaSubtypeIndex],
+        ja: visaInfo.subtypes.ja[randomVisaSubtypeIndex],
+    };
     
     const randomLastName = getRandomElement(lastNames);
     const randomFirstName = getRandomElement(firstNames);
@@ -141,7 +163,45 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const age = Math.floor(Math.random() * 20) + 20; // 20-39
     const height = Math.floor(Math.random() * 30) + 150; // 150-179 cm
     const weight = Math.floor(Math.random() * 30) + 45; // 45-74 kg
-    const hasTattoo = Math.random() > 0.8;
+    
+    // --- Start applying rules ---
+    let hasTattoo = Math.random() > 0.8;
+    let hasHepatitisB = Math.random() > 0.9;
+    let financialAbility: Record<Language, string> | null = {
+        vi: getRandomElement(financialAbilities.vi),
+        en: getRandomElement(financialAbilities.en),
+        ja: getRandomElement(financialAbilities.ja),
+    };
+    let interviewLocation: Record<Language, string> | null = {
+        vi: getRandomElement(interviewLocations.vi),
+        en: getRandomElement(interviewLocations.en),
+        ja: getRandomElement(interviewLocations.ja),
+    };
+
+    const visaSubtypeEn = visaSubtype.en;
+
+    if (["3 Go Intern", "Skilled (from Vietnam)", "Skilled (in Japan)"].includes(visaSubtypeEn)) {
+        hasTattoo = false; // "Không có" means no field, so we just don't show it
+        hasHepatitisB = false;
+    }
+    if (["New Skilled Worker", "Engineer/Specialist (from Vietnam)", "Engineer/Specialist (in Japan)"].includes(visaSubtypeEn)) {
+        hasHepatitisB = false;
+    }
+    if (["Skilled (in Japan)", "Engineer/Specialist (in Japan)"].includes(visaSubtypeEn)) {
+        financialAbility = null;
+        interviewLocation = null;
+    }
+    
+    // Build details string based on rules
+    let details_vi = `${age} tuổi - ${height} cm - ${weight} kg`;
+    let details_en = `${age} years old - ${height} cm - ${weight} kg`;
+    let details_ja = `${age}歳 - ${height} cm - ${weight} kg`;
+
+    if (!["3 Go Intern", "Skilled (from Vietnam)", "Skilled (in Japan)"].includes(visaSubtypeEn)) {
+         details_vi += ` - ${hasTattoo ? "Có hình xăm" : "Không hình xăm"}`;
+         details_en += ` - ${hasTattoo ? "Has tattoo" : "No tattoo"}`;
+         details_ja += ` - ${hasTattoo ? "刺青あり" : "刺青なし"}`;
+    }
 
     return {
         id,
@@ -150,15 +210,11 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         name_en,
         avatar,
         details: {
-            vi: `${age} tuổi - ${height} cm - ${weight} kg - ${hasTattoo ? "Có hình xăm" : "Không hình xăm"}`,
-            en: `${age} years old - ${height} cm - ${weight} kg - ${hasTattoo ? "Has tattoo" : "No tattoo"}`,
-            ja: `${age}歳 - ${height} cm - ${weight} kg - ${hasTattoo ? "刺青あり" : "刺青なし"}`,
+            vi: details_vi,
+            en: details_en,
+            ja: details_ja,
         },
-        visa_type: {
-            vi: visaInfo.subtypes.vi[randomVisaSubtypeIndex],
-            en: visaInfo.subtypes.en[randomVisaSubtypeIndex],
-            ja: visaInfo.subtypes.ja[randomVisaSubtypeIndex],
-        },
+        visa_type: visaSubtype,
         specialty: {
             vi: randomSpecialty.vi,
             en: randomSpecialty.en,
@@ -174,5 +230,8 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             images: Array.from({ length: 3 }, (_, j) => `https://picsum.photos/50?random=job${i}${j}`)
         },
         created_date: generateRandomDate(new Date(2023, 0, 1), new Date()),
+        ...(hasHepatitisB && { hepatitis_b: { vi: true, en: true, ja: true } }),
+        ...(financialAbility && { financial_ability: financialAbility }),
+        ...(interviewLocation && { interview_location: interviewLocation }),
     };
 });
