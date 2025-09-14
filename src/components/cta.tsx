@@ -72,12 +72,12 @@ export function Cta() {
       description: t.userRoles.receivingCompany.description,
     },
     {
-      icon: <Building className="h-8 w-8 text-blue-500" />,
+      icon: <Plane className="h-8 w-8 text-blue-500" />,
       title: t.userRoles.sendingCompany.title,
       description: t.userRoles.sendingCompany.description,
     },
     {
-      icon: <Users className="h-8 w-8 text-yellow-500" />,
+      icon: <UserCheck className="h-8 w-8 text-yellow-500" />,
       title: t.userRoles.supportOrg.title,
       description: t.userRoles.supportOrg.description,
     },
@@ -92,7 +92,7 @@ export function Cta() {
       description: t.userRoles.yuryoShokai.description,
     },
     {
-      icon: <Building className="h-8 w-8 text-purple-500" />,
+      icon: <Briefcase className="h-8 w-8 text-purple-500" />,
       title: t.userRoles.hakenCompany.title,
       description: t.userRoles.hakenCompany.description,
     },
@@ -287,7 +287,7 @@ export function Cta() {
                     onClick={() => { setDialog4Open(false); setDialog53Open(true); }}
                   >
                      <div className="flex justify-center mb-4">
-                      <div className="bg-green-400/10 text-green-500 p-3 rounded-full">
+                      <div className="bg-secondary/10 text-secondary p-3 rounded-full">
                         <Briefcase className="w-8 h-8" />
                       </div>
                     </div>
