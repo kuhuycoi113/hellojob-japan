@@ -39,6 +39,7 @@ export type Candidate = {
     years_of_experience?: Record<Language, string>;
     ginou_remaining_period?: Record<Language, string> | null;
     desired_work_shift?: Record<Language, string>;
+    vision?: Record<Language, string>;
 }
 
 const lastNames = [
@@ -137,6 +138,25 @@ const desiredWorkShifts = [
     { vi: 'Nghỉ thứ 7, Chủ Nhật', en: 'Off on Saturday, Sunday', ja: '土日休み' },
     { vi: 'Nghỉ định kỳ trong tuần', en: 'Regular days off during the week', ja: '週休2日制' },
     { vi: 'Khác', en: 'Other', ja: 'その他' }
+];
+
+const visions = [
+    { vi: "20/10", en: "20/10", ja: "2.0" },
+    { vi: "15/10", en: "15/10", ja: "1.5" },
+    { vi: "10/10", en: "10/10", ja: "1.0" },
+    { vi: "9/10", en: "9/10", ja: "0.9" },
+    { vi: "8/10", en: "8/10", ja: "0.8" },
+    { vi: "7/10", en: "7/10", ja: "0.7" },
+    { vi: "6/10", en: "6/10", ja: "0.6" },
+    { vi: "5/10", en: "5/10", ja: "0.5" },
+    { vi: "4/10", en: "4/10", ja: "0.4" },
+    { vi: "3/10", en: "3/10", ja: "0.3" },
+    { vi: "2/10", en: "2/10", ja: "0.2" },
+    { vi: "1/10", en: "1/10", ja: "0.1" },
+    { vi: "Cận thị", en: "Myopia", ja: "近視" },
+    { vi: "Viễn thị", en: "Hyperopia", ja: "遠視" },
+    { vi: "Loạn thị", en: "Astigmatism", ja: "乱視" },
+    { vi: "Mù màu", en: "Color Blindness", ja: "色覚異常" },
 ];
 
 const internIndustries = {
@@ -740,7 +760,8 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             wantsToChangeJob: (randomVisaKey === 'skilled' || randomVisaKey === 'engineer') && Math.random() > 0.75,
         },
         language_ability: randomLanguageAbility,
-        desired_work_shift: getRandomElement(desiredWorkShifts)
+        desired_work_shift: getRandomElement(desiredWorkShifts),
+        vision: getRandomElement(visions)
     };
 });
 
