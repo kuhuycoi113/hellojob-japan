@@ -261,7 +261,10 @@ const engineerIndustries = {
             { vi: 'Nhà văn', en: 'Writer', ja: '作家' },
             { vi: 'Nhạc sĩ, nghệ sĩ sân khấu', en: 'Musician, stage artist', ja: '音楽家、舞台芸術家' },
     ] },
-    sports: { vi: "Thể dục thể thao", en: "Sports", ja: "スポーツ", jobs: [] },
+    sports: { vi: "Thể dục thể thao", en: "Sports", ja: "スポーツ", jobs: [
+        { vi: 'Vận động viên chuyên nghiệp', en: 'Professional athlete', ja: 'プロスポーツ選手' },
+        { vi: 'Vận động viên nghiệp dư', en: 'Amateur athlete', ja: 'アマチュアスポーツ選手' },
+    ] },
     professional: { vi: "Nghề có kỹ năng chuyên nghiệp", en: "Professional Occupations", ja: "専門職", jobs: [] },
     semi_professional: { vi: "Việc làm bán chuyên nghiệp", en: "Semi-professional Occupations", ja: "準専門職", jobs: [] }
 };
