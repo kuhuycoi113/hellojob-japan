@@ -38,6 +38,7 @@ export type Candidate = {
     } | null;
     years_of_experience?: Record<Language, string>;
     ginou_remaining_period?: Record<Language, string> | null;
+    desired_work_shift?: Record<Language, string>;
 }
 
 const lastNames = [
@@ -126,6 +127,17 @@ const ginouRemainingPeriods = [
     { vi: "Trên 4,5 năm", en: "Over 4.5 years", ja: "4.5年以上" }
 ];
 
+const desiredWorkShifts = [
+    { vi: 'Ca ngày (thường 08:00-17:00 hoặc 09:00-18:00)', en: 'Day shift (usually 08:00-17:00 or 09:00-18:00)', ja: '日勤 (通常 08:00-17:00 または 09:00-18:00)' },
+    { vi: 'Ca chiều/tối (thường 16:00-24:00 hoặc 17:00-01:00)', en: 'Afternoon/Evening shift (usually 16:00-24:00 or 17:00-01:00)', ja: '夕勤/夜勤 (通常 16:00-24:00 または 17:00-01:00)' },
+    { vi: 'Ca đêm (thường 24:00-08:00)', en: 'Night shift (usually 24:00-08:00)', ja: '深夜勤 (通常 24:00-08:00)' },
+    { vi: 'Ca luân phiên (chia ca sáng, chiều và đêm; luân phiên tuần tháng)', en: 'Rotating shift (morning, afternoon, night; weekly/monthly rotation)', ja: '交替制 (日勤、夕勤、深夜勤の交代制；週/月ごとのローテーション)' },
+    { vi: 'Ca 2-2-3 (làm 2 ngày, nghỉ 2 ngày, làm 3 ngày và lặp lại)', en: '2-2-3 shift (work 2, off 2, work 3, repeat)', ja: '2-2-3勤務 (2日勤務、2日休み、3日勤務、繰り返し)' },
+    { vi: 'Ca 4-3-3 (làm 4 ngày, nghỉ 3 ngày và tiếp tục 3 ngày nghỉ)', en: '4-3-3 shift (work 4, off 3 and continue 3 days off)', ja: '4勤3休制 (4日勤務、3日休み、そして3日連続休暇)' },
+    { vi: 'Nghỉ thứ 7, Chủ Nhật', en: 'Off on Saturday, Sunday', ja: '土日休み' },
+    { vi: 'Nghỉ định kỳ trong tuần', en: 'Regular days off during the week', ja: '週休2日制' },
+    { vi: 'Khác', en: 'Other', ja: 'その他' }
+];
 
 const internIndustries = {
     agriculture: {
@@ -570,6 +582,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     };
     
     let randomSpecialty: Record<Language, string>;
+    const combinedSpecialties = [...Object.values(internIndustries).flatMap(ind => ind.jobs), ...otherSpecialties];
 
     if (randomVisaKey === 'intern') {
         const industryKeys = Object.keys(internIndustries) as (keyof typeof internIndustries)[];
@@ -727,7 +740,10 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             wantsToChangeJob: (randomVisaKey === 'skilled' || randomVisaKey === 'engineer') && Math.random() > 0.75,
         },
         language_ability: randomLanguageAbility,
+        desired_work_shift: getRandomElement(desiredWorkShifts)
     };
 });
+
+    
 
     
