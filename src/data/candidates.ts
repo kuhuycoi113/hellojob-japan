@@ -213,7 +213,15 @@ const engineerIndustries = {
             { vi: "Vận hành web thương mại điện tử", en: "E-commerce Web Operation", ja: "ECサイト運営" }
         ] 
     },
-    research: { vi: "Nghiên cứu, phân tích", en: "Research, Analysis", ja: "研究・分析", jobs: [] },
+    research: { 
+        vi: "Nghiên cứu, phân tích", 
+        en: "Research, Analysis", 
+        ja: "研究・分析", 
+        jobs: [
+            { vi: "Phân tích dữ liệu", en: "Data Analysis", ja: "データ分析" },
+            { vi: "Nghiên cứu thị trường", en: "Market Research", ja: "市場調査" }
+        ] 
+    },
     education: {
         vi: "Giáo dục, đào tạo",
         en: "Education, Training",
@@ -230,7 +238,15 @@ const engineerIndustries = {
             { vi: "Hướng dẫn thể thao", en: "Sports coaching", ja: "スポーツ指導" }
         ]
     },
-    admin: { vi: "Hành chính, văn phòng", en: "Administration, Office", ja: "事務・オフィス", jobs: [] },
+    admin: { 
+        vi: "Hành chính, văn phòng", 
+        en: "Administration, Office", 
+        ja: "事務・オフィス", 
+        jobs: [
+            { vi: "Biên dịch, phiên dịch", en: "Translation, Interpreting", ja: "翻訳・通訳" },
+            { vi: "Nhân viên văn phòng", en: "Office Staff", ja: "事務員" }
+        ] 
+    },
     legal: { vi: "Pháp lý", en: "Legal", ja: "法務", jobs: [] },
     arts: { vi: "Nghệ thuật, nghệ sĩ", en: "Arts, Artist", ja: "芸術・アーティスト", jobs: [] },
     sports: { vi: "Thể dục thể thao", en: "Sports", ja: "スポーツ", jobs: [] },
