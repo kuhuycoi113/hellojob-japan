@@ -1,3 +1,4 @@
+
 import { type Language } from "@/locales/translations";
 
 export type Candidate = {
@@ -124,23 +125,31 @@ const internIndustries = {
     }
 };
 
-const skilledIndustries = [
-    { vi: "Ngư nghiệp", en: "Fishery", ja: "漁業" },
-    { vi: "Nông nghiệp", en: "Agriculture", ja: "農業" },
-    { vi: "Nhà hàng", en: "Restaurant", ja: "外食" },
-    { vi: "Thực phẩm", en: "Food", ja: "食品" },
-    { vi: "Sản xuất, dịch vụ tổng hợp", en: "General Manufacturing & Services", ja: "製造・サービス" },
-    { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子" },
-    { vi: "Chế tạo Vật liệu", en: "Material Manufacturing", ja: "素材製造" },
-    { vi: "Cơ khí, chế tạo máy", en: "Machinery Manufacturing", ja: "機械製造" },
-    { vi: "Ô tô", en: "Automotive", ja: "自動車" },
-    { vi: "Hàng không", en: "Aviation", ja: "航空" },
-    { vi: "Vận tải", en: "Transportation", ja: "運輸" },
-    { vi: "Xây dựng", en: "Construction", ja: "建設" },
-    { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング" },
-    { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル" },
-    { vi: "Điều dưỡng", en: "Caregiver", ja: "介護" }
-];
+const skilledIndustries = {
+    fishery: {
+        vi: "Ngư nghiệp", 
+        en: "Fishery", 
+        ja: "漁業",
+        jobs: [
+            { vi: 'Nuôi trồng thuỷ sản', en: 'Aquaculture', ja: '養殖業' },
+            { vi: 'Đánh bắt cá', en: 'Fishing', ja: '漁業' }
+        ]
+    },
+    agriculture: { vi: "Nông nghiệp", en: "Agriculture", ja: "農業", jobs: [] },
+    restaurant: { vi: "Nhà hàng", en: "Restaurant", ja: "外食", jobs: [] },
+    food: { vi: "Thực phẩm", en: "Food", ja: "食品", jobs: [] },
+    general: { vi: "Sản xuất, dịch vụ tổng hợp", en: "General Manufacturing & Services", ja: "製造・サービス", jobs: [] },
+    electronics: { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子", jobs: [] },
+    material: { vi: "Chế tạo Vật liệu", en: "Material Manufacturing", ja: "素材製造", jobs: [] },
+    machinery: { vi: "Cơ khí, chế tạo máy", en: "Machinery Manufacturing", ja: "機械製造", jobs: [] },
+    automotive: { vi: "Ô tô", en: "Automotive", ja: "自動車", jobs: [] },
+    aviation: { vi: "Hàng không", en: "Aviation", ja: "航空", jobs: [] },
+    transport: { vi: "Vận tải", en: "Transportation", ja: "運輸", jobs: [] },
+    construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
+    cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [] },
+    hotel: { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル", jobs: [] },
+    caregiver: { vi: "Điều dưỡng", en: "Caregiver", ja: "介護", jobs: [] }
+};
 
 
 const otherSpecialties = [
@@ -241,7 +250,14 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
              randomSpecialty = { vi: industry.vi, en: industry.en, ja: industry.ja };
         }
     } else if (randomVisaKey === 'skilled') {
-        randomSpecialty = getRandomElement(skilledIndustries);
+        const industryKeys = Object.keys(skilledIndustries) as (keyof typeof skilledIndustries)[];
+        const randomIndustryKey = getRandomElement(industryKeys);
+        const industry = skilledIndustries[randomIndustryKey];
+        if (industry.jobs.length > 0) {
+            randomSpecialty = getRandomElement(industry.jobs);
+        } else {
+            randomSpecialty = { vi: industry.vi, en: industry.en, ja: industry.ja };
+        }
     }
     else {
         randomSpecialty = getRandomElement(otherSpecialties);
