@@ -1,5 +1,4 @@
 
-
 import { type Language } from "@/locales/translations";
 import { japanRegions } from "./locations";
 
@@ -534,7 +533,12 @@ const internIndustries = {
 const skilledIndustries = {
     caregiver: { vi: "Điều dưỡng", en: "Caregiver", ja: "介護", jobs: [] },
     hotel: { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル", jobs: [
-        { vi: 'Buồng phòng khách sạn', en: 'Hotel Housekeeping', ja: '客室清掃' }
+        { vi: 'Buồng phòng khách sạn', en: 'Hotel Housekeeping', ja: '客室清掃' },
+        { vi: '(Khách sạn) Tiếp khách, quản lý vệ sinh', en: 'Guest Services & Hygiene Management', ja: '接客・衛生管理' },
+        { vi: 'Hành lý khách sạn', en: 'Bellhop / Porter', ja: 'ベルスタッフ / ポーター' },
+        { vi: 'Lễ tân khách sạn', en: 'Hotel Reception / Front Desk', ja: 'フロント業務 / 受付' },
+        { vi: 'Lưu trú khách sạn', en: 'Accommodation Services', ja: '宿泊サービス' },
+        { vi: 'Quản lý khách sạn', en: 'Hotel Management', ja: 'ホテル管理' }
     ] },
     cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [
         { vi: 'Vệ sinh toà nhà', en: 'Building Cleaning', ja: 'ビルクリーニング' }
@@ -1476,6 +1480,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
