@@ -49,8 +49,11 @@ export function Cta() {
   const [dialog9Open, setDialog9Open] = useState(false);
   const [managementFeeAmount, setManagementFeeAmount] = useState('');
 
+  const [currentFlow, setCurrentFlow] = useState<'quick' | 'ai_post' | null>(null);
+  const [selectedVisa, setSelectedVisa] = useState<{ type: string; subType: string; industry: string } | null>(null);
 
-  const openDialog7 = (caller: string) => {
+  const openDialog7 = (caller: string, industry: string) => {
+    setSelectedVisa(prev => ({ ...prev!, industry }));
     setDialog7Caller(caller);
     if (caller === '61') setDialog61Open(false);
     if (caller === '62') setDialog62Open(false);
@@ -140,6 +143,21 @@ export function Cta() {
     setDialog3Open(false);
     setDialog4Open(true);
   };
+  
+  const handleRegionSelect = (region: string) => {
+    setDialog7Open(false);
+    if (currentFlow === 'quick') {
+      setDialog8Open(true);
+    } else if (currentFlow === 'ai_post') {
+      const params = new URLSearchParams();
+      if (selectedRole) params.set('role', selectedRole.title);
+      if (selectedVisa?.type) params.set('visaType', selectedVisa.type);
+      if (selectedVisa?.subType) params.set('visaSubType', selectedVisa.subType);
+      // 'industry' and 'region' are already part of the final step, no need to add again
+      // The handler for selecting industry/region will add them.
+      router.push(`/post-job-ai?${params.toString()}`);
+    }
+  };
 
 
   return (
@@ -171,7 +189,7 @@ export function Cta() {
                 <DialogDescription>{t_cta_flow.dialog1_desc}</DialogDescription>
               </DialogHeader>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                  <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog3Open(true); }}>
+                  <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setCurrentFlow('quick'); setDialog1Open(false); setDialog3Open(true); }}>
                       <div className="flex justify-center mb-4">
                           <div className="p-3 rounded-full bg-primary/10 text-primary"><FastForward className="w-8 h-8"/></div>
                       </div>
@@ -195,14 +213,14 @@ export function Cta() {
                   <DialogTitle className="text-2xl font-bold font-headline">{t_cta_flow.dialog2_title}</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog2Open(false); setDialog3Open(true); }}>
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setCurrentFlow('ai_post'); setDialog2Open(false); setDialog3Open(true); }}>
                         <div className="flex justify-center mb-4">
                             <div className="p-3 rounded-full bg-primary/10 text-primary"><BrainCircuit className="w-8 h-8"/></div>
                         </div>
                         <h3 className="font-semibold text-lg text-gray-800">{t_cta_flow.dialog2_opt1_title}</h3>
                         <p className="text-sm text-muted-foreground mt-1">{t_cta_flow.dialog2_opt1_desc}</p>
                     </Card>
-                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
+                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => router.push('/post-job-ai')}>
                          <div className="flex justify-center mb-4">
                             <div className="p-3 rounded-full bg-secondary/10 text-secondary"><FileText className="w-8 h-8"/></div>
                         </div>
@@ -260,7 +278,7 @@ export function Cta() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
                   <Card
                     className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
-                    onClick={() => { setDialog4Open(false); setDialog51Open(true); }}
+                    onClick={() => { setSelectedVisa({ type: t.visaTypes.intern.title, subType: '', industry: '' }); setDialog4Open(false); setDialog51Open(true); }}
                   >
                     <div className="flex justify-center mb-4">
                       <div className="bg-primary/10 text-primary p-3 rounded-full">
@@ -273,7 +291,7 @@ export function Cta() {
 
                   <Card
                     className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
-                    onClick={() => { setDialog4Open(false); setDialog52Open(true); }}
+                    onClick={() => { setSelectedVisa({ type: t.visaTypes.skilled.title, subType: '', industry: '' }); setDialog4Open(false); setDialog52Open(true); }}
                   >
                     <div className="flex justify-center mb-4">
                       <div className="bg-yellow-400/10 text-yellow-500 p-3 rounded-full">
@@ -286,7 +304,7 @@ export function Cta() {
 
                   <Card
                     className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
-                    onClick={() => { setDialog4Open(false); setDialog53Open(true); }}
+                    onClick={() => { setSelectedVisa({ type: t.visaTypes.engineer.title, subType: '', industry: '' }); setDialog4Open(false); setDialog53Open(true); }}
                   >
                      <div className="flex justify-center mb-4">
                       <div className="bg-green-500/10 text-green-500 p-3 rounded-full">
@@ -314,7 +332,7 @@ export function Cta() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
                     <Card
                       className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
-                      onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
+                      onClick={() => { setSelectedVisa(prev => ({...prev!, subType: t_cta_flow.dialog5_1_opt1_title})); setDialog51Open(false); setDialog61Open(true); }}
                     >
                       <div className="flex justify-center mb-4">
                         <div className="p-3 rounded-full bg-primary/10 text-primary">
@@ -326,7 +344,7 @@ export function Cta() {
                     </Card>
                     <Card
                       className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
-                      onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
+                      onClick={() => { setSelectedVisa(prev => ({...prev!, subType: t_cta_flow.dialog5_1_opt2_title})); setDialog51Open(false); setDialog61Open(true); }}
                     >
                       <div className="flex justify-center mb-4">
                         <div className="bg-accent/10 text-accent p-3 rounded-full">
@@ -338,7 +356,7 @@ export function Cta() {
                     </Card>
                     <Card
                       className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
-                      onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
+                      onClick={() => { setSelectedVisa(prev => ({...prev!, subType: t_cta_flow.dialog5_1_opt3_title})); setDialog51Open(false); setDialog61Open(true); }}
                     >
                       <div className="flex justify-center mb-4">
                         <div className="bg-chart-1/10 text-chart-1 p-3 rounded-full">
@@ -365,7 +383,7 @@ export function Cta() {
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
                   {t_cta_flow.dialog6_industries_intern.map(industry => (
-                    <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('61')}>
+                    <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('61', industry)}>
                       <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
                     </Card>
                   ))}
@@ -387,7 +405,7 @@ export function Cta() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
-                  onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
+                  onClick={() => { setSelectedVisa(prev => ({...prev!, subType: t_cta_flow.dialog5_2_opt1_title})); setDialog52Open(false); setDialog62Open(true); }}
                 >
                   <div className="flex justify-center mb-4">
                       <div className="bg-primary/10 text-primary p-3 rounded-full">
@@ -399,7 +417,7 @@ export function Cta() {
                 </Card>
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
-                  onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
+                  onClick={() => { setSelectedVisa(prev => ({...prev!, subType: t_cta_flow.dialog5_2_opt2_title})); setDialog52Open(false); setDialog62Open(true); }}
                 >
                    <div className="flex justify-center mb-4">
                       <div className="bg-secondary/10 text-secondary p-3 rounded-full">
@@ -411,7 +429,7 @@ export function Cta() {
                 </Card>
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center"
-                  onClick={() => { setDialog52Open(false); setDialog62Open(true); }}
+                  onClick={() => { setSelectedVisa(prev => ({...prev!, subType: t_cta_flow.dialog5_2_opt3_title})); setDialog52Open(false); setDialog62Open(true); }}
                 >
                    <div className="flex justify-center mb-4">
                       <div className="bg-yellow-500/10 text-yellow-500 p-3 rounded-full">
@@ -438,7 +456,7 @@ export function Cta() {
                 </DialogHeader>
                 <div className="grid grid-cols-3 gap-4 py-4">
                   {t_cta_flow.dialog6_industries_skilled.map(industry => (
-                    <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('62')}>
+                    <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('62', industry)}>
                       <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
                     </Card>
                   ))}
@@ -460,10 +478,7 @@ export function Cta() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
-                  onClick={() => {
-                    setDialog53Open(false);
-                    setDialog63Open(true);
-                  }}
+                  onClick={() => { setSelectedVisa(prev => ({...prev!, subType: t_cta_flow.dialog5_3_opt1_title})); setDialog53Open(false); setDialog63Open(true); }}
                 >
                   <div className="flex justify-center mb-4">
                     <div className="bg-primary/10 text-primary p-3 rounded-full">
@@ -475,10 +490,7 @@ export function Cta() {
                 </Card>
                 <Card
                   className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
-                  onClick={() => {
-                    setDialog53Open(false);
-                    setDialog63Open(true);
-                  }}
+                  onClick={() => { setSelectedVisa(prev => ({...prev!, subType: t_cta_flow.dialog5_3_opt2_title})); setDialog53Open(false); setDialog63Open(true); }}
                 >
                   <div className="flex justify-center mb-4">
                     <div className="bg-primary/10 text-primary p-3 rounded-full">
@@ -514,7 +526,7 @@ export function Cta() {
                 <ScrollArea className="h-[60vh]">
                   <div className="grid grid-cols-3 gap-4 py-4 pr-4">
                     {t_cta_flow.dialog6_industries_engineer.map(industry => (
-                      <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('63')}>
+                      <Card key={industry} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => openDialog7('63', industry)}>
                         <h3 className="font-semibold text-base text-gray-800">{industry}</h3>
                       </Card>
                     ))}
@@ -534,7 +546,7 @@ export function Cta() {
               </DialogHeader>
               <div className="grid grid-cols-3 gap-4 py-4">
                   {t_cta_flow.dialog7_regions.map(region => (
-                    <Card key={region} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog7Open(false); setDialog8Open(true); }}>
+                    <Card key={region} className="p-4 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => handleRegionSelect(region)}>
                       <h3 className="font-semibold text-base text-gray-800">{region}</h3>
                     </Card>
                   ))}
