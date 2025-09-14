@@ -18,6 +18,7 @@ export type Candidate = {
         images: string[];
     };
     created_date: string;
+    height?: number;
     // Add optional fields based on user request
     hepatitis_b?: Record<Language, boolean | null>;
     financial_ability?: Record<Language, string | null>;
@@ -416,7 +417,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const name_ja = `${randomLastName.ja} ${randomFirstName.ja}`;
 
     const age = Math.floor(Math.random() * (69 - 18 + 1)) + 18; // 18-69
-    const height = Math.floor(Math.random() * 30) + 150; // 150-179 cm
+    const height = Math.floor(Math.random() * (205 - 140 + 1)) + 140; // 140-205 cm
     const weight = Math.floor(Math.random() * 30) + 45; // 45-74 kg
     
     const currentYear = new Date().getFullYear();
@@ -497,6 +498,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             images: Array.from({ length: 3 }, (_, j) => `https://picsum.photos/50?random=job${i}${j}`)
         },
         created_date: generateRandomDate(new Date(2023, 0, 1), new Date()),
+        height,
         ...(hasHepatitisB && { hepatitis_b: { vi: true, en: true, ja: true } }),
         ...(financialAbility && { financial_ability: financialAbility }),
         ...(interviewLocation && { interview_location: interviewLocation }),
