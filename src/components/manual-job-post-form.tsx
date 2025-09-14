@@ -1,7 +1,8 @@
 
+
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -10,7 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Progress } from '@/components/ui/progress';
 import { useLanguage } from '@/contexts/language-context';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { ChevronLeft, ChevronRight, FileSignature } from 'lucide-react';
 
 const TOTAL_STEPS = 3;
@@ -18,7 +19,9 @@ const TOTAL_STEPS = 3;
 export function ManualJobPostForm() {
   const { t } = useLanguage();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
+
   const [formData, setFormData] = useState({
     jobTitle: '',
     industry: '',
@@ -30,7 +33,29 @@ export function ManualJobPostForm() {
     description: '',
     requirements: '',
     benefits: '',
+    role: '',
+    visaSubType: '',
+    region: '',
   });
+
+  useEffect(() => {
+    const role = searchParams.get('role') || '';
+    const visaType = searchParams.get('visaType') || '';
+    const visaSubType = searchParams.get('visaSubType') || '';
+    const industry = searchParams.get('industry') || '';
+    const region = searchParams.get('region') || '';
+    
+    setFormData(prev => ({
+        ...prev,
+        role,
+        visaType,
+        visaSubType,
+        industry,
+        region,
+        location: region, // Set location from region
+    }));
+
+  }, [searchParams]);
 
   const handleNext = () => {
     if (step < TOTAL_STEPS) {
@@ -59,7 +84,7 @@ export function ManualJobPostForm() {
 
   const progress = (step / TOTAL_STEPS) * 100;
   
-  const industries = ["Nông nghiệp", "Xây dựng", "Thực phẩm", "Cơ khí", "Hộ lý"];
+  const industries = ["Nông nghiệp", "Xây dựng", "Thực phẩm", "Cơ khí", "Hộ lý", "Dệt may", "Điện tử"];
   const visaTypes = ["Thực tập sinh kỹ năng", "Kỹ năng đặc định", "Kỹ sư, tri thức"];
 
 

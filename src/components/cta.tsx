@@ -49,8 +49,8 @@ export function Cta() {
   const [dialog9Open, setDialog9Open] = useState(false);
   const [managementFeeAmount, setManagementFeeAmount] = useState('');
 
-  const [currentFlow, setCurrentFlow] = useState<'quick' | 'ai_post' | null>(null);
-  const [selectedVisa, setSelectedVisa] = useState<{ type: string; subType: string; industry: string } | null>(null);
+  const [currentFlow, setCurrentFlow] = useState<'quick' | 'ai_post' | 'manual_post' | null>(null);
+  const [selectedVisa, setSelectedVisa] = useState<{ type: string; subType: string; industry: string; region: string; } | null>(null);
 
   const openDialog7 = (caller: string, industry: string) => {
     setSelectedVisa(prev => ({ ...prev!, industry }));
@@ -145,17 +145,23 @@ export function Cta() {
   };
   
   const handleRegionSelect = (region: string) => {
+    const updatedSelections = { ...selectedVisa!, region };
+    setSelectedVisa(updatedSelections);
     setDialog7Open(false);
+
+    const params = new URLSearchParams();
+    if (selectedRole) params.set('role', selectedRole.title);
+    if (updatedSelections.type) params.set('visaType', updatedSelections.type);
+    if (updatedSelections.subType) params.set('visaSubType', updatedSelections.subType);
+    if (updatedSelections.industry) params.set('industry', updatedSelections.industry);
+    if (updatedSelections.region) params.set('region', updatedSelections.region);
+
     if (currentFlow === 'quick') {
       setDialog8Open(true);
     } else if (currentFlow === 'ai_post') {
-      const params = new URLSearchParams();
-      if (selectedRole) params.set('role', selectedRole.title);
-      if (selectedVisa?.type) params.set('visaType', selectedVisa.type);
-      if (selectedVisa?.subType) params.set('visaSubType', selectedVisa.subType);
-      // 'industry' and 'region' are already part of the final step, no need to add again
-      // The handler for selecting industry/region will add them.
       router.push(`/post-job-ai?${params.toString()}`);
+    } else if (currentFlow === 'manual_post') {
+      router.push(`/post-job/manual?${params.toString()}`);
     }
   };
 
@@ -220,7 +226,7 @@ export function Cta() {
                         <h3 className="font-semibold text-lg text-gray-800">{t_cta_flow.dialog2_opt1_title}</h3>
                         <p className="text-sm text-muted-foreground mt-1">{t_cta_flow.dialog2_opt1_desc}</p>
                     </Card>
-                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => router.push('/post-job-ai')}>
+                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setCurrentFlow('manual_post'); setDialog2Open(false); setDialog3Open(true); }}>
                          <div className="flex justify-center mb-4">
                             <div className="p-3 rounded-full bg-secondary/10 text-secondary"><FileText className="w-8 h-8"/></div>
                         </div>
@@ -278,7 +284,7 @@ export function Cta() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
                   <Card
                     className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
-                    onClick={() => { setSelectedVisa({ type: t.visaTypes.intern.title, subType: '', industry: '' }); setDialog4Open(false); setDialog51Open(true); }}
+                    onClick={() => { setSelectedVisa({ type: t.visaTypes.intern.title, subType: '', industry: '', region: '' }); setDialog4Open(false); setDialog51Open(true); }}
                   >
                     <div className="flex justify-center mb-4">
                       <div className="bg-primary/10 text-primary p-3 rounded-full">
@@ -291,7 +297,7 @@ export function Cta() {
 
                   <Card
                     className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
-                    onClick={() => { setSelectedVisa({ type: t.visaTypes.skilled.title, subType: '', industry: '' }); setDialog4Open(false); setDialog52Open(true); }}
+                    onClick={() => { setSelectedVisa({ type: t.visaTypes.skilled.title, subType: '', industry: '', region: '' }); setDialog4Open(false); setDialog52Open(true); }}
                   >
                     <div className="flex justify-center mb-4">
                       <div className="bg-yellow-400/10 text-yellow-500 p-3 rounded-full">
@@ -304,7 +310,7 @@ export function Cta() {
 
                   <Card
                     className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer"
-                    onClick={() => { setSelectedVisa({ type: t.visaTypes.engineer.title, subType: '', industry: '' }); setDialog4Open(false); setDialog53Open(true); }}
+                    onClick={() => { setSelectedVisa({ type: t.visaTypes.engineer.title, subType: '', industry: '', region: '' }); setDialog4Open(false); setDialog53Open(true); }}
                   >
                      <div className="flex justify-center mb-4">
                       <div className="bg-green-500/10 text-green-500 p-3 rounded-full">
