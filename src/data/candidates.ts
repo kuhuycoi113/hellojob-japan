@@ -362,6 +362,25 @@ const tattoos = {
     large: { vi: "Có xăm to (lộ)", en: "Has large (visible) tattoo", ja: "大きい刺青あり（見える）" },
 };
 
+const japaneseLevels = [
+    { vi: "JLPT N5", en: "JLPT N5", ja: "JLPT N5" },
+    { vi: "JLPT N4", en: "JLPT N4", ja: "JLPT N4" },
+    { vi: "JLPT N3", en: "JLPT N3", ja: "JLPT N3" },
+    { vi: "JLPT N2", en: "JLPT N2", ja: "JLPT N2" },
+    { vi: "JLPT N1", en: "JLPT N1", ja: "JLPT N1" },
+    { vi: "Kaiwa N5", en: "Conversational N5", ja: "会話N5" },
+    { vi: "Kaiwa N4", en: "Conversational N4", ja: "会話N4" },
+    { vi: "Kaiwa N3", en: "Conversational N3", ja: "会話N3" },
+    { vi: "Kaiwa N2", en: "Conversational N2", ja: "会話N2" },
+    { vi: "Kaiwa N1", en: "Conversational N1", ja: "会話N1" },
+    { vi: "Trình độ tương đương N5", en: "N5 Equivalent", ja: "N5相当" },
+    { vi: "Trình độ tương đương N4", en: "N4 Equivalent", ja: "N4相当" },
+    { vi: "Trình độ tương đương N3", en: "N3 Equivalent", ja: "N3相当" },
+    { vi: "Trình độ tương đương N2", en: "N2 Equivalent", ja: "N2相当" },
+    { vi: "Trình độ tương đương N1", en: "N1 Equivalent", ja: "N1相当" },
+];
+
+
 const languageAbilities = [
     {
         language: { vi: "Không biết ngoại ngữ", en: "No foreign language", ja: "外国語ができない" },
@@ -369,11 +388,11 @@ const languageAbilities = [
     },
     {
         language: { vi: "Tiếng Nhật", en: "Japanese", ja: "日本語" },
-        level: { vi: "N/A", en: "N/A", ja: "N/A" } // Placeholder for now
+        level: null // Will be replaced by random japanese level
     },
     {
         language: { vi: "Tiếng Anh", en: "English", ja: "英語" },
-        level: { vi: "N/A", en: "N/A", ja: "N/A" } // Placeholder for now
+        level: { vi: "N/A", en: "N/A", ja: "N/A" } 
     }
 ];
 
@@ -515,7 +534,12 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const randomLastName = getRandomElement(lastNames);
     const randomFirstName = getRandomElement(firstNames);
     const randomGender = getRandomElement(genders);
-    const randomLanguageAbility = getRandomElement(languageAbilities);
+    
+    let randomLanguageAbility = {...getRandomElement(languageAbilities)};
+    if (randomLanguageAbility.language.en === 'Japanese') {
+        randomLanguageAbility.level = getRandomElement(japaneseLevels);
+    }
+
 
     const name_vi = `${randomLastName.vi} ${randomFirstName.vi}`;
     const name_en = `${randomLastName.en} ${randomFirstName.en}`;
@@ -625,8 +649,10 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             wantsGinou2: (randomVisaKey === 'intern') && Math.random() > 0.7,
             wantsToChangeJob: (randomVisaKey === 'skilled' || randomVisaKey === 'engineer') && Math.random() > 0.75,
         },
-        language_ability: randomLanguageAbility,
+        language_ability: randomLanguageAbility as { language: Record<Language, string>; level: Record<Language, string>; } | null,
     };
 });
 
     
+
+  
