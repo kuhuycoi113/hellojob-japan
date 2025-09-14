@@ -926,7 +926,18 @@ const engineerIndustries = {
             { vi: "Công nhân trồng trọt đặc khu", en: "Special Zone Cultivation Worker", ja: "特区栽培作業員" }
         ] 
     },
-    food: { vi: "Thực phẩm", en: "Food", ja: "食品", jobs: [] },
+    food: { 
+        vi: "Thực phẩm", 
+        en: "Food", 
+        ja: "食品", 
+        jobs: [
+            { vi: "Công nghệ sinh học", en: "Biotechnology", ja: "バイオテクノロジー" },
+            { vi: "Công nghệ thực phẩm", en: "Food Technology", ja: "食品技術" },
+            { vi: "Đóng gói rau", en: "Vegetable Packaging", ja: "野菜包装" },
+            { vi: "Quản lý sản xuất thực phẩm", en: "Food Production Management", ja: "食品生産管理" },
+            { vi: "Thực phẩm", en: "Food", ja: "食品" }
+        ] 
+    },
     manufacturing: { vi: "Sản xuất, chế tạo, công nghệ", en: "Manufacturing, Fabrication, Technology", ja: "製造・加工・技術", jobs: [] },
     mechanics: { vi: "Cơ khí, máy móc", en: "Mechanics, Machinery", ja: "機械・機器", jobs: [] },
     automotive: { vi: "Công nghệ ô tô", en: "Automotive Technology", ja: "自動車技術", jobs: [] },
@@ -946,7 +957,7 @@ const engineerIndustries = {
         vi: "Công nghệ thông tin", 
         en: "Information Technology", 
         ja: "情報技術", 
-        jobs: []
+        jobs: [] 
     },
     research: { 
         vi: "Nghiên cứu, phân tích", 
@@ -1473,6 +1484,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
