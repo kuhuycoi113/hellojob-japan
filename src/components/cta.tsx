@@ -191,7 +191,7 @@ export function Cta() {
            <Dialog open={dialog2Open} onOpenChange={setDialog2Open}>
               <DialogContent className="sm:max-w-xl">
                 <DialogHeader className="text-center">
-                  <DialogTitle className="text-2xl font-bold font-headline">Bạn muốn đăng hồ sơ chi tiết bằng cách nào?</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold font-headline">Bạn muốn đăng việc làm chi tiết bằng cách nào?</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                     <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
@@ -567,7 +567,7 @@ export function Cta() {
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold font-headline text-center flex items-center justify-center gap-2">
                       <HandCoins className="h-6 w-6 text-primary" />
-                      Nhập phí giới thiệu bạn mong muốn
+                      Nhập phí giới thiệu bạn đề xuất cho đối tác
                     </DialogTitle>
                 </DialogHeader>
                 <div className="py-4">
@@ -597,7 +597,7 @@ export function Cta() {
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold font-headline text-center flex items-center justify-center gap-2">
                         <HandCoins className="h-6 w-6 text-primary" />
-                        Nhập phí quản lý bạn mong muốn
+                        Nhập phí quản lý bạn đề xuất cho đối tác
                     </DialogTitle>
                 </DialogHeader>
                 <div className="py-4">
