@@ -533,8 +533,12 @@ const internIndustries = {
 
 const skilledIndustries = {
     caregiver: { vi: "Điều dưỡng", en: "Caregiver", ja: "介護", jobs: [] },
-    hotel: { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル", jobs: [] },
-    cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [] },
+    hotel: { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル", jobs: [
+        { vi: 'Buồng phòng khách sạn', en: 'Hotel Housekeeping', ja: '客室清掃' }
+    ] },
+    cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [
+        { vi: 'Vệ sinh toà nhà', en: 'Building Cleaning', ja: 'ビルクリーニング' }
+    ] },
     transport: { 
         vi: "Vận tải", 
         en: "Transportation", 
@@ -1472,6 +1476,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
