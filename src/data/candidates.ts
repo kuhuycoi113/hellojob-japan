@@ -238,7 +238,7 @@ const engineerIndustries = {
         jobs: [
             { vi: "Blockchain", en: "Blockchain", ja: "ブロックチェーン" },
             { vi: "BrSE (Bridge System Engineer)", en: "BrSE (Bridge System Engineer)", ja: "BrSE (ブリッジシステムエンジニア)" },
-            { vi: "Business Analyst (BA)", en: "Business Analyst (BA)", ja: "ビジネスアナリスト (BA)" },
+            { vi: "Business Analyst (BA)", en: "Business Analyst (BA)", en: "Business Analyst (BA)", ja: "ビジネスアナリスト (BA)" },
             { vi: "Công nghệ thông tin", en: "Information Technology", ja: "情報技術" },
             { vi: "COO (Chief Operation Officer)", en: "COO (Chief Operation Officer)", ja: "COO (最高執行責任者)" },
             { vi: "CTO (Chief Technology Officer)", en: "CTO (Chief Technology Officer)", ja: "CTO (最高技術責任者)" },
@@ -694,7 +694,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             count: Math.floor(Math.random() * 10) + 1,
             images: Array.from({ length: 3 }, (_, j) => `https://picsum.photos/50?random=job${i}${j}`)
         },
-        created_date: generateRandomDate(new Date(2023, 0, 1), new Date()),
+        created_date: generateRandomDate(new Date(), new Date(new Date().setFullYear(new Date().getFullYear() + 1))),
         height,
         hepatitis_b: (hasHepatitisB) ? { vi: true, en: true, ja: true } : null,
         financial_ability: financialAbility,
@@ -719,5 +719,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
   
 
+
+    
 
     
