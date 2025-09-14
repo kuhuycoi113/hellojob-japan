@@ -124,6 +124,25 @@ const internIndustries = {
     }
 };
 
+const skilledIndustries = [
+    { vi: "Ngư nghiệp", en: "Fishery", ja: "漁業" },
+    { vi: "Nông nghiệp", en: "Agriculture", ja: "農業" },
+    { vi: "Nhà hàng", en: "Restaurant", ja: "外食" },
+    { vi: "Thực phẩm", en: "Food", ja: "食品" },
+    { vi: "Sản xuất, dịch vụ tổng hợp", en: "General Manufacturing & Services", ja: "製造・サービス" },
+    { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子" },
+    { vi: "Chế tạo Vật liệu", en: "Material Manufacturing", ja: "素材製造" },
+    { vi: "Cơ khí, chế tạo máy", en: "Machinery Manufacturing", ja: "機械製造" },
+    { vi: "Ô tô", en: "Automotive", ja: "自動車" },
+    { vi: "Hàng không", en: "Aviation", ja: "航空" },
+    { vi: "Vận tải", en: "Transportation", ja: "運輸" },
+    { vi: "Xây dựng", en: "Construction", ja: "建設" },
+    { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング" },
+    { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル" },
+    { vi: "Điều dưỡng", en: "Caregiver", ja: "介護" }
+];
+
+
 const otherSpecialties = [
     { vi: "Gia công đồ ăn", en: "Food Processing", ja: "食品加工" },
     { vi: "Hộ lý", en: "Caregiving", ja: "介護" },
@@ -221,7 +240,10 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
              // Fallback for industries with no specific jobs yet
              randomSpecialty = { vi: industry.vi, en: industry.en, ja: industry.ja };
         }
-    } else {
+    } else if (randomVisaKey === 'skilled') {
+        randomSpecialty = getRandomElement(skilledIndustries);
+    }
+    else {
         randomSpecialty = getRandomElement(otherSpecialties);
     }
     
