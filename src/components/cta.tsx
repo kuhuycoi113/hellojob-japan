@@ -195,7 +195,7 @@ export function Cta() {
                   <DialogTitle className="text-2xl font-bold font-headline">{t_cta_flow.dialog2_title}</DialogTitle>
                 </DialogHeader>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer">
+                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog2Open(false); setDialog3Open(true); }}>
                         <div className="flex justify-center mb-4">
                             <div className="p-3 rounded-full bg-primary/10 text-primary"><BrainCircuit className="w-8 h-8"/></div>
                         </div>
