@@ -137,7 +137,17 @@ const skilledIndustries = {
     },
     agriculture: { vi: "Nông nghiệp", en: "Agriculture", ja: "農業", jobs: [] },
     restaurant: { vi: "Nhà hàng", en: "Restaurant", ja: "外食", jobs: [] },
-    food: { vi: "Thực phẩm", en: "Food", ja: "食品", jobs: [] },
+    food: {
+        vi: "Thực phẩm",
+        en: "Food",
+        ja: "食品",
+        jobs: [
+            { vi: 'Chế biến thủy sản', en: 'Seafood Processing', ja: '水産加工' },
+            { vi: 'Chế biến thịt', en: 'Meat Processing', ja: '食肉加工' },
+            { vi: 'Chế biến thực phẩm & đồ ăn liền', en: 'Food & Instant Meal Processing', ja: '食品・惣菜加工' },
+            { vi: 'Làm bánh & kẹo', en: 'Bakery & Confectionery', ja: '製パン・製菓' }
+        ]
+    },
     general: { vi: "Sản xuất, dịch vụ tổng hợp", en: "General Manufacturing & Services", ja: "製造・サービス", jobs: [] },
     electronics: { vi: "Điện, điện tử", en: "Electronics", ja: "電気・電子", jobs: [] },
     material: { vi: "Chế tạo Vật liệu", en: "Material Manufacturing", ja: "素材製造", jobs: [] },
