@@ -914,7 +914,18 @@ const skilledIndustries = {
 };
 
 const engineerIndustries = {
-    agri_forest_fish: { vi: "Nông lâm ngư nghiệp", en: "Agriculture, Forestry, Fishery", ja: "農林水産業", jobs: [] },
+    agri_forest_fish: { 
+        vi: "Nông lâm ngư nghiệp", 
+        en: "Agriculture, Forestry, Fishery", 
+        ja: "農林水産業", 
+        jobs: [
+            { vi: "Chăn nuôi", en: "Livestock Farming", ja: "畜産" },
+            { vi: "Công nghệ nông, lâm, ngư nghiệp", en: "Agriculture, Forestry, and Fishery Technology", ja: "農林水産技術" },
+            { vi: "Công nhân chăn nuôi đặc khu", en: "Special Zone Livestock Worker", ja: "特区畜産労働者" },
+            { vi: "Công nhân Nông, Lâm, Ngư nghiệp", en: "Agriculture, Forestry, and Fishery Worker", ja: "農林水産業作業員" },
+            { vi: "Công nhân trồng trọt đặc khu", en: "Special Zone Cultivation Worker", ja: "特区栽培作業員" }
+        ] 
+    },
     food: { vi: "Thực phẩm", en: "Food", ja: "食品", jobs: [] },
     manufacturing: { vi: "Sản xuất, chế tạo, công nghệ", en: "Manufacturing, Fabrication, Technology", ja: "製造・加工・技術", jobs: [] },
     mechanics: { vi: "Cơ khí, máy móc", en: "Mechanics, Machinery", ja: "機械・機器", jobs: [] },
@@ -1462,6 +1473,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
