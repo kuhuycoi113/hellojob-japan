@@ -448,7 +448,7 @@ const visaTypes = {
         ja: "技能実習生",
         subtypes: {
             vi: ["Thực tập sinh 3 năm", "Thực tập sinh 1 năm", "Thực tập sinh 3 Go"],
-            en: ["3-Year Intern", "1-Year Intern", "3 Go Intern"],
+            en: ["3-Year Intern", "1-Year Intern", "No. 3 Intern"],
             ja: ["技能実習3年", "技能実習1年", "技能実習3号"],
         }
     },
@@ -464,7 +464,7 @@ const visaTypes = {
     },
     engineer: {
         vi: "Kỹ sư, tri thức",
-        en: "Engineer/Specialist",
+        en: "Engineer/Specialist in Humanities/International Services",
         ja: "技術・人文知識・国際業務",
         subtypes: {
             vi: ["Kỹ sư, tri thức đầu Nhật", "Kỹ sư, tri thức đầu Việt"],
@@ -535,6 +535,7 @@ const japaneseLevels = [
     { vi: "Trình độ tương đương N3", en: "N3 Equivalent", ja: "N3相当" },
     { vi: "Trình độ tương đương N2", en: "N2 Equivalent", ja: "N2相当" },
     { vi: "Trình độ tương đương N1", en: "N1 Equivalent", ja: "N1相当" },
+    { vi: "Không yêu cầu", en: "Not required", ja: "不問" }
 ];
 
 
@@ -755,15 +756,10 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const dateOfBirth = new Date(birthYear, birthMonth, birthDay);
     const formattedDateOfBirth = `${String(dateOfBirth.getDate()).padStart(2, '0')}/${String(dateOfBirth.getMonth() + 1).padStart(2, '0')}/${dateOfBirth.getFullYear()}`;
 
-    // --- Start applying rules ---
-    const tattooRand = Math.random();
-    let tattooStatus: 'none' | 'small' | 'large' = 'none';
-    if (tattooRand > 0.85) {
-        tattooStatus = 'large';
-    } else if (tattooRand > 0.6) {
-        tattooStatus = 'small';
-    }
-    
+    // --- Start applying rules from the image ---
+    const visaSubtypeEn = visaSubtype.en;
+
+    let hasTattoo = Math.random() > 0.6;
     let hasHepatitisB = Math.random() > 0.9;
     let financialAbility: Record<Language, string> | null = {
         vi: getRandomElement(financialAbilities.vi),
@@ -775,32 +771,37 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         en: getRandomElement(interviewLocations.en),
         ja: getRandomElement(interviewLocations.ja),
     };
-
-    const visaSubtypeEn = visaSubtype.en;
-
-    if (["3 Go Intern", "Skilled (from Vietnam)", "Skilled (in Japan)"].includes(visaSubtypeEn)) {
-         tattooStatus = 'none';
+    
+    if (visaSubtypeEn === 'No. 3 Intern' || visaSubtypeEn === 'Skilled (from Vietnam)' || visaSubtypeEn === 'New Skilled Worker' || visaSubtypeEn === 'Skilled (in Japan)' || visaSubtypeEn === 'Engineer/Specialist (in Japan)') {
+        hasTattoo = false;
+    }
+    
+    if (visaSubtypeEn !== '3-Year Intern' && visaSubtypeEn !== '1-Year Intern') {
         hasHepatitisB = false;
     }
-    if (["New Skilled Worker", "Engineer/Specialist (from Vietnam)", "Engineer/Specialist (in Japan)"].includes(visaSubtypeEn)) {
-        hasHepatitisB = false;
-    }
-    if (["Skilled (in Japan)", "Engineer/Specialist (in Japan)"].includes(visaSubtypeEn)) {
+    
+    if (visaSubtypeEn === 'Skilled (in Japan)' || visaSubtypeEn === 'Engineer/Specialist (in Japan)') {
         financialAbility = null;
         interviewLocation = null;
     }
+
+    if (visaSubtypeEn === 'No. 3 Intern') {
+        interviewLocation = null;
+    }
     
-    const tattooRecord = tattoos[tattooStatus];
-    
+    if (visaSubtypeEn === '3-Year Intern' || visaSubtypeEn === '1-Year Intern') {
+        randomLanguageAbility = { language: { vi: "Không yêu cầu", en: "Not required", ja: "不問" }, level: null };
+    }
+
+    const tattooRecord = hasTattoo ? (Math.random() > 0.5 ? tattoos.large : tattoos.small) : tattoos.none;
+
     let details_vi = `${age} tuổi - ${height} cm - ${weight} kg`;
     let details_en = `${age} years old - ${height} cm - ${weight} kg`;
     let details_ja = `${age}歳 - ${height} cm - ${weight} kg`;
 
-    if (!["3 Go Intern", "Skilled (from Vietnam)", "Skilled (in Japan)"].includes(visaSubtypeEn)) {
-         details_vi += ` - ${tattooRecord.vi}`;
-         details_en += ` - ${tattooRecord.en}`;
-         details_ja += ` - ${tattooRecord.ja}`;
-    }
+    details_vi += ` - ${tattooRecord.vi}`;
+    details_en += ` - ${tattooRecord.en}`;
+    details_ja += ` - ${tattooRecord.ja}`;
 
     const currentResidenceBase = getRandomElement(currentResidences);
     let currentResidenceWithDetail = {...currentResidenceBase};
@@ -851,7 +852,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         },
         created_date: generateRandomDate(new Date(), new Date(new Date().setFullYear(new Date().getFullYear() + 1))),
         height,
-        hepatitis_b: (hasHepatitisB) ? { vi: true, en: true, ja: true } : null,
+        hepatitis_b: hasHepatitisB ? { vi: true, en: true, ja: true } : null,
         financial_ability: financialAbility,
         interview_location: interviewLocation,
         tattoo: {
