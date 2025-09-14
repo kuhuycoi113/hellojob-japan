@@ -15,7 +15,7 @@ import {
 import { DialogFooter } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { Card, CardDescription, CardTitle } from './ui/card';
-import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, Edit, FastForward, UserPlus, ChevronRight, HandCoins, FileText } from 'lucide-react';
+import { GraduationCap, Star, Briefcase, Plane, Users, Building, Handshake, BrainCircuit, HardHat, FastForward, UserPlus, ChevronRight, HandCoins, FileText } from 'lucide-react';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { useRouter } from 'next/navigation';
@@ -178,7 +178,7 @@ export function Cta() {
                   </Card>
                    <Card className="p-6 text-center hover:bg-accent/10 hover:shadow-lg transition-all cursor-pointer" onClick={() => { setDialog1Open(false); setDialog2Open(true); }}>
                        <div className="flex justify-center mb-4">
-                          <div className="p-3 rounded-full bg-green-500/10 text-green-500"><Edit className="w-8 h-8"/></div>
+                          <div className="p-3 rounded-full bg-green-500/10 text-green-500"><FileText className="w-8 h-8"/></div>
                       </div>
                       <h3 className="font-semibold text-lg text-gray-800">Tạo chi tiết</h3>
                       <p className="text-sm text-muted-foreground mt-1">Hãy hoàn thiện thông tin chi tiết hơn để có việc làm hoàn hảo nhất</p>
@@ -262,7 +262,7 @@ export function Cta() {
                   >
                     <div className="flex justify-center mb-4">
                       <div className="bg-primary/10 text-primary p-3 rounded-full">
-                        <GraduationCap className="w-8 h-8" />
+                        <HardHat className="w-8 h-8" />
                       </div>
                     </div>
                     <CardTitle className="font-semibold text-lg">{t.visaTypes.intern.title}</CardTitle>
