@@ -69,17 +69,57 @@ const genders = [
     { vi: "Chưa rõ", en: "Unknown", ja: "不明" }
 ];
 
+const internIndustries = {
+    agriculture: {
+        vi: "Nông nghiệp",
+        en: "Agriculture",
+        ja: "農業",
+        jobs: [
+            { vi: "Trồng trọt", en: "Crop Farming", ja: "耕種農業" },
+            { vi: "Chăn nuôi", en: "Livestock Farming", ja: "畜産農業" },
+        ]
+    },
+    fishery: {
+        vi: "Ngư nghiệp",
+        en: "Fishery",
+        ja: "漁業",
+        jobs: [
+            { vi: "Nuôi trồng thuỷ sản", en: "Aquaculture", ja: "養殖業" },
+            { vi: "Đánh bắt cá ngừ cần và dây", en: "Pole-and-line tuna fishing", ja: "かつお一本釣り漁業" },
+            { vi: "Câu mực", en: "Squid jigging", ja: "いか釣り漁業" },
+            { vi: "Câu tôm, cua bằng lồng", en: "Trap fishing for shrimp and crab", ja: "かに・えびかご漁業" },
+            { vi: "Đánh cá dây câu dài", en: "Longline fishing", ja: "まぐろはえ縄漁業" },
+            { vi: "Đánh cá lưới kéo", en: "Trawl fishing", ja: "引網漁業" },
+            { vi: "Đánh cá lưới rê", en: "Gillnet fishing", ja: "刺し網漁業" },
+            { vi: "Đánh cá lưới sào", en: "Stick-held dip net fishing", ja: "棒受網漁業" },
+            { vi: "Đánh cá lưới thả", en: "Drift net fishing", ja: "流し網漁業" },
+            { vi: "Đặt lưới đánh cá", en: "Set net fishing", ja: "定置網漁業" },
+            { vi: "Nuôi sò điệp", en: "Scallop aquaculture", ja: "ほたてがい養殖業" },
+        ]
+    },
+    construction: {
+        vi: "Xây dựng", en: "Construction", ja: "建設", jobs: []
+    },
+    food: {
+        vi: "Thực phẩm", en: "Food", ja: "食品", jobs: []
+    },
+    textiles: {
+        vi: "May mặc", en: "Textiles", ja: "繊維", jobs: []
+    },
+    mechanics: {
+        vi: "Cơ khí, kim loại", en: "Mechanics & Metal", ja: "機械・金属", jobs: []
+    },
+     general: {
+        vi: "Sản xuất, dịch vụ tổng hợp", en: "General Manufacturing & Services", ja: "製造・サービス", jobs: []
+    }
+};
 
-const specialties = [
-    { vi: "Đóng gói công nghiệp", en: "Industrial Packaging", ja: "工業包装" },
+const otherSpecialties = [
     { vi: "Gia công đồ ăn", en: "Food Processing", ja: "食品加工" },
-    { vi: "Xây dựng", en: "Construction", ja: "建設" },
-    { vi: "Nông nghiệp", en: "Agriculture", ja: "農業" },
-    { vi: "Cơ khí", en: "Mechanics", ja: "機械加工" },
     { vi: "Hộ lý", en: "Caregiving", ja: "介護" },
     { vi: "Lắp ráp điện tử", en: "Electronics Assembly", ja: "電子組立" },
-    { vi: "Dệt may", en: "Textiles", ja: "繊維" },
 ];
+
 
 const visaTypes = {
     intern: {
@@ -149,8 +189,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const id = `VN${String(i + 1).padStart(5, '0')}`;
     const avatar = `https://i.pravatar.cc/150?u=candidate${i}`;
 
-    const randomSpecialty = getRandomElement(specialties);
-    
     const visaKeys = Object.keys(visaTypes) as (keyof typeof visaTypes)[];
     const randomVisaKey = getRandomElement(visaKeys);
     const visaInfo = visaTypes[randomVisaKey];
@@ -160,6 +198,22 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         en: visaInfo.subtypes.en[randomVisaSubtypeIndex],
         ja: visaInfo.subtypes.ja[randomVisaSubtypeIndex],
     };
+    
+    let randomSpecialty: Record<Language, string>;
+
+    if (randomVisaKey === 'intern') {
+        const industryKeys = Object.keys(internIndustries) as (keyof typeof internIndustries)[];
+        const randomIndustryKey = getRandomElement(industryKeys);
+        const industry = internIndustries[randomIndustryKey];
+        if (industry.jobs.length > 0) {
+            randomSpecialty = getRandomElement(industry.jobs);
+        } else {
+             // Fallback for industries with no specific jobs yet
+             randomSpecialty = { vi: industry.vi, en: industry.en, ja: industry.ja };
+        }
+    } else {
+        randomSpecialty = getRandomElement(otherSpecialties);
+    }
     
     const randomLastName = getRandomElement(lastNames);
     const randomFirstName = getRandomElement(firstNames);
@@ -197,7 +251,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const visaSubtypeEn = visaSubtype.en;
 
     if (["3 Go Intern", "Skilled (from Vietnam)", "Skilled (in Japan)"].includes(visaSubtypeEn)) {
-         hasTattoo = false; // "Không có" means no field, so we just don't show it
+         hasTattoo = false; 
         hasHepatitisB = false;
     }
     if (["New Skilled Worker", "Engineer/Specialist (from Vietnam)", "Engineer/Specialist (in Japan)"].includes(visaSubtypeEn)) {
@@ -208,7 +262,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         interviewLocation = null;
     }
     
-    // Build details string based on rules
     let details_vi = `${age} tuổi - ${height} cm - ${weight} kg`;
     let details_en = `${age} years old - ${height} cm - ${weight} kg`;
     let details_ja = `${age}歳 - ${height} cm - ${weight} kg`;
