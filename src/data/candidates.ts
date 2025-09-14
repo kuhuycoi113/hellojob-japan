@@ -32,7 +32,10 @@ export type Candidate = {
         wantsGinou2: boolean;
         wantsToChangeJob: boolean;
     };
-    language_ability?: Record<Language, string | null>;
+    language_ability?: {
+        language: Record<Language, string>;
+        level: Record<Language, string>;
+    } | null;
 }
 
 const lastNames = [
@@ -360,9 +363,18 @@ const tattoos = {
 };
 
 const languageAbilities = [
-    { vi: "Không biết ngoại ngữ", en: "No foreign language", ja: "外国語ができない" },
-    { vi: "Tiếng Nhật", en: "Japanese", ja: "日本語" },
-    { vi: "Tiếng Anh", en: "English", ja: "英語" }
+    {
+        language: { vi: "Không biết ngoại ngữ", en: "No foreign language", ja: "外国語ができない" },
+        level: { vi: "Không biết tiếng", en: "Does not know the language", ja: "言語ができない" }
+    },
+    {
+        language: { vi: "Tiếng Nhật", en: "Japanese", ja: "日本語" },
+        level: { vi: "N/A", en: "N/A", ja: "N/A" } // Placeholder for now
+    },
+    {
+        language: { vi: "Tiếng Anh", en: "English", ja: "英語" },
+        level: { vi: "N/A", en: "N/A", ja: "N/A" } // Placeholder for now
+    }
 ];
 
 function getRandomSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
@@ -613,10 +625,8 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             wantsGinou2: (randomVisaKey === 'intern') && Math.random() > 0.7,
             wantsToChangeJob: (randomVisaKey === 'skilled' || randomVisaKey === 'engineer') && Math.random() > 0.75,
         },
-        language_ability: {
-            vi: randomLanguageAbility.vi,
-            en: randomLanguageAbility.en,
-            ja: randomLanguageAbility.ja,
-        },
+        language_ability: randomLanguageAbility,
     };
 });
+
+    
