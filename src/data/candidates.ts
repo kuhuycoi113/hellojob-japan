@@ -251,7 +251,7 @@ const engineerIndustries = {
         ja: "情報技術", 
         jobs: [
             { vi: "Blockchain", en: "Blockchain", ja: "ブロックチェーン" },
-            { vi: "BrSE (Bridge System Engineer)", en: "BrSE (Bridge System Engineer)", ja: "BrSE (ブリッジシステムエンジニア)" },
+            { vi: "BrSE (Bridge System Engineer)", en: "BrSE (Bridge System Engineer)", en: "Business Analyst (BA)", ja: "BrSE (ブリッジシステムエンジニア)" },
             { vi: "Business Analyst (BA)", en: "Business Analyst (BA)", en: "Business Analyst (BA)", ja: "ビジネスアナリスト (BA)" },
             { vi: "Công nghệ thông tin", en: "Information Technology", ja: "情報技術" },
             { vi: "COO (Chief Operation Officer)", en: "COO (Chief Operation Officer)", ja: "COO (最高執行責任者)" },
@@ -729,14 +729,5 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         language_ability: randomLanguageAbility,
     };
 });
-
-    
-
-  
-
-
-    
-
-    
 
     
