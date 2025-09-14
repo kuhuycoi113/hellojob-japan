@@ -316,7 +316,7 @@ export function Cta() {
                     >
                       <div className="flex justify-center mb-4">
                         <div className="p-3 rounded-full bg-primary/10 text-primary">
-                          <GraduationCap className="w-8 h-8" />
+                          <HardHat className="w-8 h-8" />
                         </div>
                       </div>
                       <CardTitle className="font-semibold text-base">Thực tập sinh 3 năm</CardTitle>
@@ -327,8 +327,8 @@ export function Cta() {
                       onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
                     >
                       <div className="flex justify-center mb-4">
-                        <div className="bg-yellow-400/10 text-yellow-500 p-3 rounded-full">
-                          <GraduationCap className="w-8 h-8" />
+                        <div className="bg-accent/10 text-accent p-3 rounded-full">
+                          <HardHat className="w-8 h-8" />
                         </div>
                       </div>
                       <CardTitle className="font-semibold text-base">Thực tập sinh 1 năm</CardTitle>
@@ -339,8 +339,8 @@ export function Cta() {
                       onClick={() => { setDialog51Open(false); setDialog61Open(true); }}
                     >
                       <div className="flex justify-center mb-4">
-                        <div className="bg-green-400/10 text-green-500 p-3 rounded-full">
-                          <GraduationCap className="w-8 h-8" />
+                        <div className="bg-chart-1/10 text-chart-1 p-3 rounded-full">
+                          <HardHat className="w-8 h-8" />
                         </div>
                       </div>
                       <CardTitle className="font-semibold text-base">Thực tập sinh 3 Go</CardTitle>
