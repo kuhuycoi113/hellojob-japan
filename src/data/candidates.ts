@@ -346,7 +346,7 @@ const engineerIndustries = {
             { vi: "Lập trình nhúng", en: "Embedded Programming", ja: "組み込みプログラミング" },
             { vi: "Lập trình viên", en: "Programmer", ja: "プログラマー" },
             { vi: "PM (Product Manager)", en: "PM (Product Manager)", ja: "PM (プロダクトマネージャー)" },
-            { vi: "PO (Product Owner)", en: "PO (Product Owner)", ja: "PO (プロダクトオーナー)" },
+            { vi: "PO (Product Owner)", en: "PO (Product Owner)", ja: "プロダクトオーナー)" },
             { vi: "Product Manager (PM)", en: "Product Manager (PM)", ja: "プロダクトマネージャー (PM)" },
             { vi: "Product Owner (PO)", en: "Product Owner (PO)", ja: "プロダクトオーナー (PO)" },
             { vi: "Tester", en: "Tester", ja: "テスター" },
@@ -878,3 +878,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
 
 
+
+
+    
