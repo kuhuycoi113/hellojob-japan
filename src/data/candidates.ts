@@ -215,6 +215,15 @@ const currentResidences = [
 ];
 
 const internIndustries = {
+    fishery: {
+        vi: "Ngư nghiệp",
+        en: "Fishery",
+        ja: "漁業",
+        jobs: [
+            { vi: 'Nuôi trồng thuỷ sản', en: 'Aquaculture', ja: '養殖業' },
+            { vi: 'Đánh bắt cá', en: 'Fishing', ja: '漁業' },
+        ]
+    },
     agriculture: {
         vi: "Nông nghiệp",
         en: "Agriculture",
@@ -224,22 +233,10 @@ const internIndustries = {
             { vi: "Chăn nuôi", en: "Livestock Farming", ja: "畜産農業" },
         ]
     },
-    fishery: {
-        vi: "Ngư nghiệp",
-        en: "Fishery",
-        ja: "漁業",
-        jobs: [
-            { vi: "Nuôi trồng thuỷ sản", en: "Aquaculture", ja: "養殖業" },
-            { vi: "Đánh bắt cá", en: "Fishing", ja: "漁業" },
-        ]
-    },
-    construction: {
-        vi: "Xây dựng", en: "Construction", ja: "建設", jobs: []
-    },
     food: {
         vi: "Thực phẩm", 
         en: "Food", 
-        ja: "食品", 
+        ja: "食品製造", 
         jobs: [
             { vi: 'Chế biến thủy sản', en: 'Seafood Processing', ja: '水産加工' },
             { vi: 'Chế biến thịt', en: 'Meat Processing', ja: '食肉加工' },
@@ -247,13 +244,7 @@ const internIndustries = {
             { vi: 'Làm bánh & kẹo', en: 'Bakery & Confectionery', ja: '製パン・製菓'}
         ]
     },
-    textiles: {
-        vi: "May mặc", en: "Textiles", ja: "繊維", jobs: []
-    },
-    mechanics: {
-        vi: "Cơ khí, kim loại", en: "Mechanics & Metal", ja: "機械・金属", jobs: []
-    },
-     general: {
+    general: {
         vi: "Sản xuất, dịch vụ tổng hợp", 
         en: "General Manufacturing & Services", 
         ja: "製造・サービス", 
@@ -266,7 +257,16 @@ const internIndustries = {
             { vi: "Gia công kim loại", en: "Metal Processing", ja: "金属加工" },
             { vi: "Gia công gỗ", en: "Wood Processing", ja: "木材加工" }
         ]
-    }
+    },
+    mechanics: {
+        vi: "Cơ khí, kim loại", en: "Mechanics & Metal", ja: "機械・金属", jobs: []
+    },
+    construction: {
+        vi: "Xây dựng", en: "Construction", ja: "建設", jobs: []
+    },
+    textiles: {
+        vi: "May mặc", en: "Textiles", ja: "繊維・衣服", jobs: []
+    },
 };
 
 const skilledIndustries = {
@@ -893,3 +893,4 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
 
     
+
