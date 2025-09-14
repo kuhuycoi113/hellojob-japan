@@ -265,7 +265,17 @@ const engineerIndustries = {
         { vi: 'Vận động viên chuyên nghiệp', en: 'Professional athlete', ja: 'プロスポーツ選手' },
         { vi: 'Vận động viên nghiệp dư', en: 'Amateur athlete', ja: 'アマチュアスポーツ選手' },
     ] },
-    professional: { vi: "Nghề có kỹ năng chuyên nghiệp", en: "Professional Occupations", ja: "専門職", jobs: [] },
+    professional: { vi: "Nghề có kỹ năng chuyên nghiệp", en: "Professional Occupations", ja: "専門職", jobs: [
+        { vi: 'Công chức', en: 'Public Servant', ja: '公務員' },
+        { vi: 'Giúp việc gia đình đặc khu', en: 'Special Zone Housekeeper', ja: '特別区域家事使用人' },
+        { vi: 'Huấn luyện động vật', en: 'Animal Trainer', ja: '動物調教師' },
+        { vi: 'Nấu nướng', en: 'Cooking', ja: '調理師' },
+        { vi: 'Người pha chế rượu', en: 'Sommelier', ja: 'ソムリエ' },
+        { vi: 'Người quản gia', en: 'Butler/Housekeeper', ja: '執事・家政婦' },
+        { vi: 'Nhà ngoại giao', en: 'Diplomat', ja: '外交官' },
+        { vi: 'Nhân viên tôn giáo', en: 'Religious Worker', ja: '宗教家' },
+        { vi: 'Phi công', en: 'Pilot', ja: 'パイロット' }
+    ] },
     semi_professional: { vi: "Việc làm bán chuyên nghiệp", en: "Semi-professional Occupations", ja: "準専門職", jobs: [] }
 };
 
