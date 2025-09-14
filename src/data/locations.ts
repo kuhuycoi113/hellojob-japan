@@ -16,7 +16,9 @@ export const japanRegions: Region[] = [
     vi: "Hokkaido",
     en: "Hokkaido",
     ja: "北海道",
-    prefectures: []
+    prefectures: [
+        { vi: "Hokkaido", en: "Hokkaido", ja: "北海道" }
+    ]
   },
   {
     vi: "Tohoku",
