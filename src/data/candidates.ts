@@ -340,9 +340,9 @@ const financialAbilities = {
 };
 
 const interviewLocations = {
-    vi: ["Tại Nhật Bản", "Tại Việt Nam"],
-    en: ["In Japan", "In Vietnam"],
-    ja: ["日本国内", "ベトナム国内"],
+    vi: ["Tại Việt Nam", "Tại Nhật Bản"],
+    en: ["In Vietnam", "In Japan"],
+    ja: ["ベトナム国内", "日本国内"],
 };
 
 const tattoos = {
