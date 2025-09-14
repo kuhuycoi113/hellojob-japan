@@ -536,7 +536,16 @@ const skilledIndustries = {
     hotel: { vi: "Lưu trú, khách sạn", en: "Accommodation & Hotel", ja: "宿泊・ホテル", jobs: [] },
     cleaning: { vi: "Vệ sinh toà nhà", en: "Building Cleaning", ja: "ビルクリーニング", jobs: [] },
     transport: { vi: "Vận tải", en: "Transportation", ja: "運輸", jobs: [] },
-    aviation: { vi: "Hàng không", en: "Aviation", ja: "航空", jobs: [] },
+    aviation: { 
+        vi: "Hàng không", 
+        en: "Aviation", 
+        ja: "航空", 
+        jobs: [
+            { vi: 'Dọn dẹp khoang hành khách', en: 'Passenger cabin cleaning', ja: '客室清掃（交通機関）' },
+            { vi: 'Hàng hóa hàng không', en: 'Air cargo handling', ja: '航空貨物取扱' },
+            { vi: 'Hỗ trợ mặt đất máy bay', en: 'Aircraft ground support', ja: '航空機地上支援' }
+        ]
+    },
     automotive: { vi: "Ô tô", en: "Automotive", ja: "自動車", jobs: [
             { vi: 'Bảo dưỡng ô tô', en: 'Automotive Maintenance', ja: '自動車整備' },
             { vi: 'Kiểm tra linh kiện ô tô', en: 'Automotive Parts Inspection', ja: '自動車部品検査' },
@@ -1385,6 +1394,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
