@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Briefcase, Construction, UserCheck } from 'lucide-react';
+import { Briefcase, HardHat, UserCheck } from 'lucide-react';
 import { useLanguage } from '@/contexts/language-context';
 
 export function DevelopmentPath() {
@@ -10,7 +10,7 @@ export function DevelopmentPath() {
 
   const developmentPaths = [
     {
-      icon: <Construction className="h-10 w-10 text-primary" />,
+      icon: <HardHat className="h-10 w-10 text-primary" />,
       title: paths.skillIntern.title,
       description: paths.skillIntern.description,
     },
