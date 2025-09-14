@@ -762,6 +762,24 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
          details_ja += ` - ${tattooRecord.ja}`;
     }
 
+    const currentResidenceBase = getRandomElement(currentResidences);
+    let currentResidenceWithDetail = {...currentResidenceBase};
+    if (currentResidenceBase.en === 'Vietnam') {
+        const randomHometown = getRandomElement(hometowns);
+        currentResidenceWithDetail.vi += `, ${randomHometown.vi}`;
+        currentResidenceWithDetail.en += `, ${randomHometown.en}`;
+        currentResidenceWithDetail.ja += `、${randomHometown.ja}`;
+    } else { // Japan
+        // This is where you would ideally have a list of Japanese prefectures
+        // For now, I'll add a placeholder, but this can be improved.
+        const japanesePrefectures = ["東京都", "大阪府", "愛知県", "福岡県", "北海道"];
+        const randomPrefecture = getRandomElement(japanesePrefectures);
+         currentResidenceWithDetail.ja += `、${randomPrefecture}`;
+         // English and Vietnamese translations for prefectures would be needed for a full solution.
+         currentResidenceWithDetail.en += `, ${randomPrefecture}`;
+         currentResidenceWithDetail.vi += `, ${randomPrefecture}`;
+    }
+
     return {
         id,
         name_ja,
@@ -816,7 +834,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         vision: getRandomElement(visions),
         dominant_hand: getRandomElement(dominantHands),
         hometown: getRandomElement(hometowns),
-        current_residence: getRandomElement(currentResidences),
+        current_residence: currentResidenceWithDetail,
     };
 });
 
@@ -826,3 +844,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
   
 
+
+
+    
