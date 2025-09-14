@@ -14,13 +14,13 @@ export type Candidate = {
     specialty: Record<Language, string>;
     desired_salary: Record<Language, string>;
     desired_net_salary?: Record<Language, string>;
+    education_level?: Record<Language, string>;
     jobs: {
         count: number;
         images: string[];
     };
     created_date: string;
     height?: number;
-    // Add optional fields based on user request
     hepatitis_b?: Record<Language, boolean | null>;
     financial_ability?: Record<Language, string | null>;
     interview_location?: Record<Language, string | null>;
@@ -34,7 +34,7 @@ export type Candidate = {
     };
     language_ability?: {
         language: Record<Language, string>;
-        level: Record<Language, string>;
+        level: Record<Language, string> | null;
     } | null;
 }
 
@@ -82,6 +82,21 @@ const genders = [
     { vi: "Nam", en: "Male", ja: "男性" },
     { vi: "Nữ", en: "Female", ja: "女性" },
     { vi: "Chưa rõ", en: "Unknown", ja: "不明" }
+];
+
+const educationLevels = [
+    { vi: "Trung học cơ sở", en: "Junior High School", ja: "中学校" },
+    { vi: "Phổ thông trung học", en: "High School", ja: "高等学校" },
+    { vi: "Trung cấp", en: "Vocational School", ja: "中級学校" },
+    { vi: "Cao đẳng", en: "College", ja: "短期大学" },
+    { vi: "Đại học", en: "University", ja: "大学" },
+    { vi: "Cao học", en: "Master's Degree", ja: "大学院" },
+    { vi: "Tiến sĩ", en: "Doctorate", ja: "博士" },
+    { vi: "Senmon", en: "Specialized Training College", ja: "専門学校" },
+    { vi: "Tanki-dai", en: "Junior College", ja: "短期大学" },
+    { vi: "Daigaku", en: "University", ja: "大学" },
+    { vi: "Daigaku-in", en: "Graduate School", ja: "大学院" },
+    { vi: "Hakashi", en: "Doctorate", ja: "博士" }
 ];
 
 const internIndustries = {
@@ -561,6 +576,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const randomLastName = getRandomElement(lastNames);
     const randomFirstName = getRandomElement(firstNames);
     const randomGender = getRandomElement(genders);
+    const randomEducation = getRandomElement(educationLevels);
     
     let randomLanguageAbility = {...getRandomElement(languageAbilities)};
     if (randomLanguageAbility.language.en === 'Japanese') {
@@ -657,6 +673,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         },
         desired_salary: getRandomSalary(randomVisaKey),
         desired_net_salary: getRandomNetSalary(randomVisaKey),
+        education_level: randomEducation,
         jobs: {
             count: Math.floor(Math.random() * 10) + 1,
             images: Array.from({ length: 3 }, (_, j) => `https://picsum.photos/50?random=job${i}${j}`)
@@ -678,7 +695,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             wantsGinou2: (randomVisaKey === 'intern') && Math.random() > 0.7,
             wantsToChangeJob: (randomVisaKey === 'skilled' || randomVisaKey === 'engineer') && Math.random() > 0.75,
         },
-        language_ability: randomLanguageAbility as { language: Record<Language, string>; level: Record<Language, string>; } | null,
+        language_ability: randomLanguageAbility,
     };
 });
 
