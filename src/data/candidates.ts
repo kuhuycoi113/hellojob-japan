@@ -567,7 +567,20 @@ const skilledIndustries = {
             { vi: 'Làm bánh & kẹo', en: 'Bakery & Confectionery', ja: '製パン・製菓' }
         ]
     },
-    restaurant: { vi: "Nhà hàng", en: "Restaurant", ja: "外食", jobs: [] },
+    restaurant: { 
+        vi: "Nhà hàng", 
+        en: "Restaurant", 
+        ja: "外食", 
+        jobs: [
+            { vi: 'Chạy bàn', en: 'Waiting tables / Server', ja: 'ホールスタッフ / 接客' },
+            { vi: 'Mua hàng', en: 'Purchasing / Procurement', ja: '仕入れ' },
+            { vi: 'Nấu bếp', en: 'Cooking / Chef', ja: '調理 / 厨房' },
+            { vi: 'Phụ bếp', en: 'Kitchen Assistant', ja: '調理補助' },
+            { vi: 'Quản lý', en: 'Management / Manager', ja: '管理 / 店長' },
+            { vi: 'Rửa bát', en: 'Dishwashing', ja: '洗い場' },
+            { vi: 'Thu ngân', en: 'Cashier', ja: 'レジ' }
+        ] 
+    },
     agriculture: {
         vi: "Nông nghiệp",
         en: "Agriculture",
@@ -1207,3 +1220,4 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
