@@ -938,7 +938,31 @@ const engineerIndustries = {
             { vi: "Thực phẩm", en: "Food", ja: "食品" }
         ] 
     },
-    manufacturing: { vi: "Sản xuất, chế tạo, công nghệ", en: "Manufacturing, Fabrication, Technology", ja: "製造・加工・技術", jobs: [] },
+    manufacturing: { 
+        vi: "Sản xuất, chế tạo, công nghệ", 
+        en: "Manufacturing, Fabrication, Technology", 
+        ja: "製造・加工・技術", 
+        jobs: [
+            { vi: 'Công nghệ môi trường', en: 'Environmental Technology', ja: '環境技術' },
+            { vi: 'Công nghệ sản xuất', en: 'Production Technology', ja: '生産技術' },
+            { vi: 'Công nhân sản xuất, gia công sản phẩm (trừ kim loại)', en: 'Production Worker, Product Processing (excluding metal)', ja: '製造作業員、製品加工（金属を除く）' },
+            { vi: 'Gia công đồ xa xỉ', en: 'Luxury Goods Processing', ja: '高級品加工' },
+            { vi: 'Hoá học làm xưởng', en: 'Industrial Chemistry', ja: '工場化学' },
+            { vi: 'In ấn', en: 'Printing', ja: '印刷' },
+            { vi: 'IT làm xưởng', en: 'Factory IT / IT for Manufacturing', ja: '工場IT／製造業向けIT' },
+            { vi: 'Khoan khảo sát dầu mỏ, năng lượng', en: 'Oil & Energy Exploration Drilling', ja: '石油・エネルギー探査掘削' },
+            { vi: 'Kinh tế làm xưởng', en: 'Industrial Economics', ja: '工場経済' },
+            { vi: 'Lao động nước ngoài lĩnh vực sản xuất', en: 'Foreign Worker in Manufacturing', ja: '製造業の外国人労働者' },
+            { vi: 'May mặc', en: 'Garment Making', ja: '縫製' },
+            { vi: 'Môi trường làm xưởng', en: 'Factory Environment Management', ja: '工場環境管理' },
+            { vi: 'Nhân viên sân bay', en: 'Airport Staff', ja: '空港スタッフ' },
+            { vi: 'Quản lý sản xuất tổng hợp', en: 'General Production Management', ja: '総合生産管理' },
+            { vi: 'Rác thải, phế liệu, tái chế', en: 'Waste, Scrap, Recycling', ja: '廃棄物・スクラップ・リサイクル' },
+            { vi: 'Sản xuất sản phẩm', en: 'Product Manufacturing', ja: '製品製造' },
+            { vi: 'Sản xuất sản phẩm cho nước ngoài', en: 'Export Product Manufacturing', ja: '輸出向け製品製造' },
+            { vi: 'Thiết kế thời trang', en: 'Fashion Design', ja: 'ファッションデザイン' }
+        ] 
+    },
     mechanics: { vi: "Cơ khí, máy móc", en: "Mechanics, Machinery", ja: "機械・機器", jobs: [] },
     automotive: { vi: "Công nghệ ô tô", en: "Automotive Technology", ja: "自動車技術", jobs: [] },
     transport: { vi: "Vận chuyển hàng hoá", en: "Freight Transport", ja: "貨物輸送", jobs: [] },
@@ -1484,6 +1508,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
