@@ -996,11 +996,27 @@ const engineerIndustries = {
             { vi: 'Viễn thông', en: 'Telecommunications', ja: '電気通信' }
         ] 
     },
-    automotive: { vi: "Công nghệ ô tô", en: "Automotive Technology", ja: "自動車技術", jobs: [
-        { vi: "Ô tô", en: "Automotive", ja: "自動車" },
-        { vi: "Thiết kế ô tô", en: "Automotive Design", ja: "自動車設計" }
-    ] },
-    transport: { vi: "Vận chuyển hàng hoá", en: "Freight Transport", ja: "貨物輸送", jobs: [] },
+    automotive: { 
+        vi: "Công nghệ ô tô", 
+        en: "Automotive Technology", 
+        ja: "自動車技術", 
+        jobs: [
+            { vi: "Ô tô", en: "Automotive", ja: "自動車" },
+            { vi: "Thiết kế ô tô", en: "Automotive Design", ja: "自動車設計" }
+        ] 
+    },
+    transport: { 
+        vi: "Vận chuyển hàng hoá", 
+        en: "Freight Transport", 
+        ja: "貨物輸送", 
+        jobs: [
+            { vi: "Đại lý thủ tục hàng hải", en: "Maritime Procedures Agent", ja: "海事手続代理店" },
+            { vi: "Quản lý dọn dẹp", en: "Cleaning Management", ja: "清掃管理" },
+            { vi: "Quản lý đóng gói", en: "Packaging Management", ja: "包装管理" },
+            { vi: "Quản lý vận chuyển", en: "Transportation Management", ja: "輸送管理" },
+            { vi: "Quản lý vận chuyển, dọn dẹp, đóng gói", en: "Logistics, Cleaning, and Packaging Management", ja: "輸送・清掃・包装管理" }
+        ] 
+    },
     construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
     hotel: { vi: "Khách sạn, lưu trú", en: "Hotel, Accommodation", ja: "ホテル・宿泊", jobs: [] },
     medical_care: { vi: "Y tế, điều dưỡng", en: "Medical, Caregiving", ja: "医療・介護", jobs: [] },
@@ -1561,5 +1577,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
 
+
+    
 
     
