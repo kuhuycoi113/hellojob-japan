@@ -1155,7 +1155,11 @@ const engineerIndustries = {
         vi: "Nghiên cứu, phân tích", 
         en: "Research, Analysis", 
         ja: "研究・分析", 
-        jobs: [] 
+        jobs: [
+            { vi: "Khảo sát đất đai, nhà ở", en: "Land and housing survey", ja: "土地・家屋調査" },
+            { vi: "Nghiên cứu", en: "Research", ja: "研究" },
+            { vi: "Nghiên cứu thị trường", en: "Market research", ja: "市場調査" }
+        ] 
     },
     education: {
         vi: "Giáo dục, đào tạo",
@@ -1705,4 +1709,5 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
