@@ -1181,7 +1181,10 @@ const engineerIndustries = {
         vi: "Hành chính, văn phòng", 
         en: "Administration, Office", 
         ja: "事務・オフィス", 
-        jobs: [] 
+        jobs: [
+            { vi: "Biên dịch, phiên dịch", en: "Translation, Interpretation", ja: "翻訳・通訳" },
+            { vi: "Nhân viên văn phòng", en: "Office staff", ja: "事務員" }
+        ] 
     },
     legal: { 
         vi: "Pháp lý", 
@@ -1722,3 +1725,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
 
+
+
+  
