@@ -1204,7 +1204,11 @@ const engineerIndustries = {
         vi: "Nghệ thuật, nghệ sĩ", 
         en: "Arts, Artist", 
         ja: "芸術・アーティスト", 
-        jobs: []
+        jobs: [
+            { vi: "Mỹ thuật gia, nhiếp ảnh gia", en: "Artist, Photographer", ja: "美術家、写真家" },
+            { vi: "Nhà văn", en: "Writer", ja: "作家" },
+            { vi: "Nhạc sĩ, nghệ sĩ sân khấu", en: "Musician, Stage Artist", ja: "音楽家、舞台芸術家" }
+        ]
     },
     sports: { 
         vi: "Thể dục thể thao", 
@@ -1738,3 +1742,4 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
   
 
     
+
