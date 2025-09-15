@@ -1164,7 +1164,8 @@
       "items": [
         { "year": "2010", "title": "Thành lập công ty", "description": "Bắt đầu với đội ngũ 10 nhân viên, tập trung vào thị trường Nhật Bản." },
         { "year": "2015", "title": "Nhận giấy phép xuất khẩu lao động", "description": "Chính thức được Bộ LĐ-TB&XH cấp phép, mở rộng quy mô hoạt động." },
-        { "year": "2019", "title": "Hợp tác với 50+ doanh nghiệp Nhật Bản", "description": "Mở rộng mạng lưới đối tác, cung ứng đa dạng ngành nghề cho người lao động." }
+        { "year": "2019", "title": "Hợp tác với 50+ doanh nghiệp Nhật Bản",
+          "description": "Mở rộng mạng lưới đối tác, cung ứng đa dạng ngành nghề cho người lao động." }
       ]
     },
     "licenses": {

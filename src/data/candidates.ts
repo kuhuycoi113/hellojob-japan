@@ -1626,7 +1626,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         currentResidenceWithDetail.vi += `, ${randomHometown.vi}`;
         currentResidenceWithDetail.en += `, ${randomHometown.en}`;
         currentResidenceWithDetail.ja += `、${randomHometown.ja}`;
-    } else { // Japan
+    } else if (allJapanesePrefectures.length > 0) { // Japan
         const randomPrefecture = getRandomElement(allJapanesePrefectures);
         currentResidenceWithDetail.vi = `Nhật Bản, ${randomPrefecture.vi}`;
         currentResidenceWithDetail.en = `Japan, ${randomPrefecture.en}`;
@@ -1692,75 +1692,3 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         documents_status: getRandomElement(documentStatuses),
     };
 });
-
-    
-
-    
-
-  
-
-
-
-    
-
-
-
-
-    
-
-    
-
-
-
-
-    
-
-    
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    
-
-
-    
-
-
-
-
-
-  
-
-    
-
-
-
-  
