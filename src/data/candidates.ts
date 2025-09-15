@@ -1043,7 +1043,11 @@ const engineerIndustries = {
             { vi: "Xây dựng dân dụng", en: "Civil Construction", ja: "土木建設" }
         ] 
     },
-    hotel: { vi: "Khách sạn, lưu trú", en: "Hotel, Accommodation", ja: "ホテル・宿泊", jobs: [] },
+    hotel: { vi: "Khách sạn, lưu trú", en: "Hotel, Accommodation", ja: "ホテル・宿泊", jobs: [
+            { vi: 'Dịch vụ khách sạn', en: 'Hotel Service', ja: 'ホテルサービス' },
+            { vi: 'Khu nghỉ dưỡng', en: 'Resort', ja: 'リゾート' },
+            { vi: 'Lễ tân khách sạn', en: 'Hotel Reception', ja: 'ホテル受付' }
+        ] },
     medical_care: { vi: "Y tế, điều dưỡng", en: "Medical, Caregiving", ja: "医療・介護", jobs: [] },
     business_econ: { vi: "Kinh doanh, kinh tế", en: "Business, Economics", ja: "ビジネス・経済", jobs: [] },
     finance: { vi: "Tài chính, kế toán, bảo hiểm", en: "Finance, Accounting, Insurance", ja: "金融・会計・保険", jobs: [] },
@@ -1607,3 +1611,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
     
 
+
+
+    
