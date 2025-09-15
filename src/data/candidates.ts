@@ -1105,13 +1105,19 @@ const engineerIndustries = {
         vi: "Tài chính, kế toán, bảo hiểm", 
         en: "Finance, Accounting, Insurance", 
         ja: "金融・会計・保険", 
-        jobs: [] 
+        jobs: [
+            { vi: 'Kế toán công chứng', en: 'Certified Public Accountant', ja: '公認会計士' },
+            { vi: 'Kế toán công chứng nước ngoài', en: 'Foreign Certified Public Accountant', ja: '外国公認会計士' },
+            { vi: 'Kế toán thuế', en: 'Tax Accountant', ja: '税理士' },
+            { vi: 'Tài chính, bảo hiểm', en: 'Finance, Insurance', ja: '金融・保険' },
+            { vi: 'Tư vấn bảo hiểm xã hội', en: 'Social Insurance Consultant', ja: '社会保険労務士' }
+        ] 
     },
     media: { 
         vi: "Báo chí, truyền thông, marketing", 
         en: "Journalism, Media, Marketing", 
         ja: "報道・メディア・マーケティング", 
-        jobs: []
+        jobs: [] 
     },
     it: { 
         vi: "Công nghệ thông tin", 
