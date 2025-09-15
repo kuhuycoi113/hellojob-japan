@@ -431,7 +431,6 @@ const internIndustries = {
             { vi: 'Vận hành máy CNC', en: 'CNC Machine Operation', ja: 'CNC機械操作' },
             { vi: 'Vận hành máy ép', en: 'Press Machine Operation', ja: 'プレス機械操作' },
             { vi: 'Vận hành máy ép nhựa', en: 'Plastic Injection Molding Machine Operation', ja: 'プラスチック射出成形機操作' },
-            { vi: 'Vận hành máy gia công', en: 'Machining Center Operation', ja: 'マシニングセンタ操作' },
             { vi: 'Xử lý điện hóa nhôm', en: 'Aluminum Anodizing', ja: 'アルミニウム陽極酸化処理' }
         ]
     },
@@ -658,7 +657,6 @@ const skilledIndustries = {
         { vi: 'Vận hành máy CNC', en: 'CNC Machine Operation', ja: 'CNC機械操作' },
         { vi: 'Vận hành máy ép', en: 'Press Machine Operation', ja: 'プレス機械操作' },
         { vi: 'Vận hành máy ép nhựa', en: 'Plastic Injection Molding Machine Operation', ja: 'プラスチック射出成形機操作' },
-        { vi: 'Vận hành máy gia công', en: 'Machining Center Operation', ja: 'マシニングセンタ操作' },
         { vi: 'Xử lý điện hóa nhôm', en: 'Aluminum Anodizing', ja: 'アルミニウム陽極酸化処理' }
         ] 
     },
@@ -963,7 +961,41 @@ const engineerIndustries = {
             { vi: 'Thiết kế thời trang', en: 'Fashion Design', ja: 'ファッションデザイン' }
         ] 
     },
-    mechanics: { vi: "Cơ khí, máy móc", en: "Mechanics, Machinery", ja: "機械・機器", jobs: [] },
+    mechanics: { 
+        vi: "Cơ khí, máy móc", 
+        en: "Mechanics, Machinery", 
+        ja: "機械・機器", 
+        jobs: [
+            { vi: 'Bảo trì hệ thống điện', en: 'Electrical System Maintenance', ja: '電気系統の保守' },
+            { vi: 'Bảo trì máy móc', en: 'Machine Maintenance', ja: '機械保守' },
+            { vi: 'Chế tạo máy', en: 'Machine Manufacturing', ja: '機械製造' },
+            { vi: 'Cơ khí', en: 'Mechanics', ja: '機械' },
+            { vi: 'Công nghệ cơ khí', en: 'Mechanical Engineering Technology', ja: '機械工学技術' },
+            { vi: 'Công nhân đóng tàu nước ngoài', en: 'Foreign Shipbuilding Worker', ja: '外国人造船作業員' },
+            { vi: 'Công nhân sản xuất, gia công kim loại', en: 'Production Worker, Metal Processing', ja: '生産作業員、金属加工' },
+            { vi: 'Điện cơ khí hỗ trợ chuyển nhà', en: 'Mechatronics for Moving Support', ja: '引越し支援メカトロニクス' },
+            { vi: 'Điện nội thất', en: 'Interior Electrical Works', ja: '内装電気工事' },
+            { vi: 'Điện, kỹ thuật điện', en: 'Electrical, Electrical Engineering', ja: '電気、電気工学' },
+            { vi: 'Gia công cơ khí', en: 'Machining', ja: '機械加工' },
+            { vi: 'Kiểm tra máy móc', en: 'Machine Inspection', ja: '機械検査' },
+            { vi: 'Lắp đặt điều hoà', en: 'Air Conditioner Installation', ja: 'エアコン設置' },
+            { vi: 'Lắp đặt máy móc', en: 'Machine Installation', ja: '機械設置' },
+            { vi: 'Lắp đặt tủ lạnh', en: 'Refrigerator Installation', ja: '冷蔵庫設置' },
+            { vi: 'Lắp ráp máy móc', en: 'Machinery Assembly', ja: '機械組立' },
+            { vi: 'Phân tích CAE', en: 'CAE Analysis', ja: 'CAE解析' },
+            { vi: 'Quản lý sản xuất máy', en: 'Machine Production Management', ja: '機械生産管理' },
+            { vi: 'Thiết kế Auto CAD', en: 'AutoCAD Design', ja: 'AutoCAD設計' },
+            { vi: 'Thiết kế cơ khí', en: 'Mechanical Design', ja: '機械設計' },
+            { vi: 'Thiết kế điện', en: 'Electrical Design', ja: '電気設計' },
+            { vi: 'Tự động hoá', en: 'Automation', ja: '自動化' },
+            { vi: 'Vận hành máy', en: 'Machine Operation', ja: '機械操作' },
+            { vi: 'Vận hành máy CNC', en: 'CNC Machine Operation', ja: 'CNC機械操作' },
+            { vi: 'Vận hành máy ép', en: 'Press Machine Operation', ja: 'プレス機械操作' },
+            { vi: 'Vận hành máy ép nhựa', en: 'Plastic Injection Molding Machine Operation', ja: 'プラスチック射出成形機操作' },
+            { vi: 'Vận hành robot', en: 'Robot Operation', ja: 'ロボット操作' },
+            { vi: 'Viễn thông', en: 'Telecommunications', ja: '電気通信' }
+        ] 
+    },
     automotive: { vi: "Công nghệ ô tô", en: "Automotive Technology", ja: "自動車技術", jobs: [] },
     transport: { vi: "Vận chuyển hàng hoá", en: "Freight Transport", ja: "貨物輸送", jobs: [] },
     construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
@@ -1508,6 +1540,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
 
