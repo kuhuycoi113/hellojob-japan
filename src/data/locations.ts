@@ -81,7 +81,13 @@ export const japanRegions: Region[] = [
     vi: "Chugoku",
     en: "Chugoku",
     ja: "中国",
-    prefectures: []
+    prefectures: [
+        { vi: "Tottori", en: "Tottori", ja: "鳥取" },
+        { vi: "Shimane", en: "Shimane", ja: "島根" },
+        { vi: "Okayama", en: "Okayama", ja: "岡山" },
+        { vi: "Hiroshima", en: "Hiroshima", ja: "広島" },
+        { vi: "Yamaguchi", en: "Yamaguchi", ja: "山口" }
+    ]
   },
   {
     vi: "Shikoku",
