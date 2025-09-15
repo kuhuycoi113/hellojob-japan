@@ -1010,14 +1010,39 @@ const engineerIndustries = {
         en: "Freight Transport", 
         ja: "貨物輸送", 
         jobs: [
-            { vi: "Đại lý thủ tục hàng hải", en: "Maritime Procedures Agent", ja: "海事手続代理店" },
-            { vi: "Quản lý dọn dẹp", en: "Cleaning Management", ja: "清掃管理" },
-            { vi: "Quản lý đóng gói", en: "Packaging Management", ja: "包装管理" },
-            { vi: "Quản lý vận chuyển", en: "Transportation Management", ja: "輸送管理" },
-            { vi: "Quản lý vận chuyển, dọn dẹp, đóng gói", en: "Logistics, Cleaning, and Packaging Management", ja: "輸送・清掃・包装管理" }
+            { vi: 'Đại lý thủ tục hàng hải', en: 'Maritime Procedures Agent', ja: '海事手続代理店' },
+            { vi: 'Quản lý dọn dẹp', en: 'Cleaning Management', ja: '清掃管理' },
+            { vi: 'Quản lý đóng gói', en: 'Packaging Management', ja: '包装管理' },
+            { vi: 'Quản lý vận chuyển', en: 'Transportation Management', ja: '輸送管理' },
+            { vi: 'Quản lý vận chuyển, dọn dẹp, đóng gói', en: 'Logistics, Cleaning, and Packaging Management', ja: '輸送・清掃・包装管理' }
         ] 
     },
-    construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
+    construction: { 
+        vi: "Xây dựng", 
+        en: "Construction", 
+        ja: "建設", 
+        jobs: [
+            { vi: "Cầu đường", en: "Bridge and Road Construction", ja: "橋梁・道路工事" },
+            { vi: "Công nghệ xây dựng của nước ngoài", en: "Foreign Construction Technology", ja: "海外建設技術" },
+            { vi: "Công nhân kết cấu xây dựng", en: "Structural Construction Worker", ja: "構造建設作業員" },
+            { vi: "Công nhân xây dựng (trừ khung công trình)", en: "Construction Worker (excluding frame construction)", ja: "建設作業員（躯体工事を除く）" },
+            { vi: "Công nhân xây dựng mỏ tổng hợp", en: "General Mine Construction Worker", ja: "総合鉱山建設作業員" },
+            { vi: "Công nhân xây dựng nước ngoài", en: "Foreign Construction Worker", ja: "外国人建設作業員" },
+            { vi: "Đường ống", en: "Piping", ja: "配管" },
+            { vi: "Giám sát thi công", en: "Construction Supervision", ja: "施工監理" },
+            { vi: "Hoàn thiện nội thất", en: "Interior Finishing", ja: "内装仕上げ" },
+            { vi: "Khảo sát", en: "Surveying", ja: "測量" },
+            { vi: "Kiến trúc sư", en: "Architect", ja: "建築士" },
+            { vi: "Kỹ thuật Khảo sát", en: "Surveying Engineering", ja: "測量技術" },
+            { vi: "Kỹ thuật Kiến trúc", en: "Architectural Engineering", ja: "建築技術" },
+            { vi: "Kỹ thuật Kiến trúc, Xây dựng, Khảo sát", en: "Architecture, Construction, Surveying Engineering", ja: "建築・建設・測量技術" },
+            { vi: "Kỹ thuật Xây dựng", en: "Construction Engineering", ja: "建設技術" },
+            { vi: "Nội thất gỗ", en: "Wood Interior", ja: "木製内装" },
+            { vi: "Quản lý, giám sát thi công công trình", en: "Construction Project Management and Supervision", ja: "建設工事の管理・監督" },
+            { vi: "Trắc địa, khảo sát", en: "Geodesy, Surveying", ja: "測地・測量" },
+            { vi: "Xây dựng dân dụng", en: "Civil Construction", ja: "土木建設" }
+        ] 
+    },
     hotel: { vi: "Khách sạn, lưu trú", en: "Hotel, Accommodation", ja: "ホテル・宿泊", jobs: [] },
     medical_care: { vi: "Y tế, điều dưỡng", en: "Medical, Caregiving", ja: "医療・介護", jobs: [] },
     business_econ: { vi: "Kinh doanh, kinh tế", en: "Business, Economics", ja: "ビジネス・経済", jobs: [] },
@@ -1581,3 +1606,4 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     
 
     
+
