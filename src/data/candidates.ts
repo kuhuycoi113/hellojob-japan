@@ -1132,7 +1132,24 @@ const engineerIndustries = {
         vi: "Công nghệ thông tin", 
         en: "Information Technology", 
         ja: "情報技術", 
-        jobs: [] 
+        jobs: [
+            { vi: 'Blockchain', en: 'Blockchain', ja: 'ブロックチェーン' },
+            { vi: 'BrSE (Bridge System Engineer)', en: 'BrSE (Bridge System Engineer)', ja: 'BrSE (ブリッジシステムエンジニア)' },
+            { vi: 'Business Analyst (BA)', en: 'Business Analyst (BA)', ja: 'ビジネスアナリスト (BA)' },
+            { vi: 'Công nghệ thông tin', en: 'Information Technology', ja: '情報技術' },
+            { vi: 'COO (Chief Operation Officer)', en: 'COO (Chief Operation Officer)', ja: 'COO (最高執行責任者)' },
+            { vi: 'CTO (Chief Technology Officer)', en: 'CTO (Chief Technology Officer)', ja: 'CTO (最高技術責任者)' },
+            { vi: 'ITM (Information Technical Manager)', en: 'ITM (Information Technical Manager)', ja: 'ITM (情報技術管理者)' },
+            { vi: 'Lập trình nhúng', en: 'Embedded Programming', ja: '組み込みプログラミング' },
+            { vi: 'Lập trình viên', en: 'Programmer', ja: 'プログラマー' },
+            { vi: 'PM (Product Manager)', en: 'PM (Product Manager)', ja: 'PM (プロダクトマネージャー)' },
+            { vi: 'PO (Product Owner)', en: 'PO (Product Owner)', ja: 'PO (プロダクトオーナー)' },
+            { vi: 'Tester', en: 'Tester', ja: 'テスター' },
+            { vi: 'Thiết kế', en: 'Design', ja: 'デザイン' },
+            { vi: 'Thiết kế UI, UX', en: 'UI, UX Design', ja: 'UI, UXデザイン' },
+            { vi: 'Trí tuệ nhân tạo', en: 'Artificial Intelligence', ja: '人工知能' },
+            { vi: 'Vận hành web thương mại điện tử', en: 'E-commerce Web Operation', ja: 'ECサイト運営' }
+        ] 
     },
     research: { 
         vi: "Nghiên cứu, phân tích", 
@@ -1688,3 +1705,4 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
