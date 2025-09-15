@@ -929,11 +929,11 @@ const engineerIndustries = {
         en: "Food", 
         ja: "食品", 
         jobs: [
-            { vi: "Công nghệ sinh học", en: "Biotechnology", ja: "バイオテクノロジー" },
-            { vi: "Công nghệ thực phẩm", en: "Food Technology", ja: "食品技術" },
-            { vi: "Đóng gói rau", en: "Vegetable Packaging", ja: "野菜包装" },
-            { vi: "Quản lý sản xuất thực phẩm", en: "Food Production Management", ja: "食品生産管理" },
-            { vi: "Thực phẩm", en: "Food", ja: "食品" }
+            { vi: 'Công nghệ sinh học', en: 'Biotechnology', ja: 'バイオテクノロジー' },
+            { vi: 'Công nghệ thực phẩm', en: 'Food Technology', ja: '食品技術' },
+            { vi: 'Đóng gói rau', en: 'Vegetable Packaging', ja: '野菜包装' },
+            { vi: 'Quản lý sản xuất thực phẩm', en: 'Food Production Management', ja: '食品生産管理' },
+            { vi: 'Thực phẩm', en: 'Food', ja: '食品' }
         ] 
     },
     manufacturing: { 
@@ -1001,8 +1001,8 @@ const engineerIndustries = {
         en: "Automotive Technology", 
         ja: "自動車技術", 
         jobs: [
-            { vi: "Ô tô", en: "Automotive", ja: "自動車" },
-            { vi: "Thiết kế ô tô", en: "Automotive Design", ja: "自動車設計" }
+            { vi: 'Ô tô', en: 'Automotive', ja: '自動車' },
+            { vi: 'Thiết kế ô tô', en: 'Automotive Design', ja: '自動車設計' }
         ] 
     },
     transport: { 
@@ -1117,7 +1117,16 @@ const engineerIndustries = {
         vi: "Báo chí, truyền thông, marketing", 
         en: "Journalism, Media, Marketing", 
         ja: "報道・メディア・マーケティング", 
-        jobs: [] 
+        jobs: [
+            { vi: 'Báo chí', en: 'Journalism', ja: '報道' },
+            { vi: 'Biên tập', en: 'Editing', ja: '編集' },
+            { vi: 'Digital Marketing', en: 'Digital Marketing', ja: 'デジタルマーケティング' },
+            { vi: 'Marketing', en: 'Marketing', ja: 'マーケティング' },
+            { vi: 'Nhà báo', en: 'Journalist', ja: 'ジャーナリスト' },
+            { vi: 'Thiết kế Marketing', en: 'Marketing Design', ja: 'マーケティングデザイン' },
+            { vi: 'Truyền thông', en: 'Communications', ja: 'コミュニケーション' },
+            { vi: 'Viết quảng cáo', en: 'Copywriting', ja: 'コピーライティング' }
+        ] 
     },
     it: { 
         vi: "Công nghệ thông tin", 
