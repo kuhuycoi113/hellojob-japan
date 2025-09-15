@@ -51,7 +51,17 @@ export const japanRegions: Region[] = [
     vi: "Chubu",
     en: "Chubu",
     ja: "中部",
-    prefectures: []
+    prefectures: [
+        { vi: "Niigata", en: "Niigata", ja: "新潟" },
+        { vi: "Toyama", en: "Toyama", ja: "富山" },
+        { vi: "Ishikawa", en: "Ishikawa", ja: "石川" },
+        { vi: "Fukui", en: "Fukui", ja: "福井" },
+        { vi: "Yamanashi", en: "Yamanashi", ja: "山梨" },
+        { vi: "Nagano", en: "Nagano", ja: "長野" },
+        { vi: "Gifu", en: "Gifu", ja: "岐阜" },
+        { vi: "Shizuoka", en: "Shizuoka", ja: "静岡" },
+        { vi: "Aichi", en: "Aichi", ja: "愛知" }
+    ]
   },
   {
     vi: "Kansai",
