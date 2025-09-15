@@ -37,7 +37,15 @@ export const japanRegions: Region[] = [
     vi: "Kanto",
     en: "Kanto",
     ja: "関東",
-    prefectures: []
+    prefectures: [
+      { vi: "Ibaraki", en: "Ibaraki", ja: "茨城" },
+      { vi: "Tochigi", en: "Tochigi", ja: "栃木" },
+      { vi: "Gunma", en: "Gunma", ja: "群馬" },
+      { vi: "Saitama", en: "Saitama", ja: "埼玉" },
+      { vi: "Chiba", en: "Chiba", ja: "千葉" },
+      { vi: "Tokyo", en: "Tokyo", ja: "東京" },
+      { vi: "Kanagawa", en: "Kanagawa", ja: "神奈川" }
+    ]
   },
   {
     vi: "Chubu",
