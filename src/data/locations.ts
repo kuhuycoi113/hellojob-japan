@@ -93,7 +93,12 @@ export const japanRegions: Region[] = [
     vi: "Shikoku",
     en: "Shikoku",
     ja: "四国",
-    prefectures: []
+    prefectures: [
+      { vi: "Tokushima", en: "Tokushima", ja: "徳島" },
+      { vi: "Kagawa", en: "Kagawa", ja: "香川" },
+      { vi: "Ehime", en: "Ehime", ja: "愛媛" },
+      { vi: "Kochi", en: "Kochi", ja: "高知" }
+    ]
   },
   {
     vi: "Kyushu",
