@@ -104,7 +104,15 @@ export const japanRegions: Region[] = [
     vi: "Kyushu",
     en: "Kyushu",
     ja: "九州",
-    prefectures: []
+    prefectures: [
+        { vi: "Fukuoka", en: "Fukuoka", ja: "福岡" },
+        { vi: "Saga", en: "Saga", ja: "佐賀" },
+        { vi: "Nagasaki", en: "Nagasaki", ja: "長崎" },
+        { vi: "Kumamoto", en: "Kumamoto", ja: "熊本" },
+        { vi: "Oita", en: "Oita", ja: "大分" },
+        { vi: "Miyazaki", en: "Miyazaki", ja: "宮崎" },
+        { vi: "Kagoshima", en: "Kagoshima", ja: "鹿児島" }
+    ]
   },
   {
     vi: "Okinawa",
