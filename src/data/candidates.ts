@@ -1223,7 +1223,17 @@ const engineerIndustries = {
         vi: "Nghề có kỹ năng chuyên nghiệp", 
         en: "Professional Occupations", 
         ja: "専門職", 
-        jobs: []
+        jobs: [
+            { vi: 'Công chức', en: 'Public Servant', ja: '公務員' },
+            { vi: 'Giúp việc gia đình đặc khu', en: 'Special Zone Housekeeping Staff', ja: '特区家事使用人' },
+            { vi: 'Huấn luyện động vật', en: 'Animal Trainer', ja: '動物調教師' },
+            { vi: 'Nấu nướng', en: 'Cooking / Chef', ja: '調理師 / コック' },
+            { vi: 'Người pha chế rượu', en: 'Sommelier / Bartender', ja: 'ソムリエ / バーテンダー' },
+            { vi: 'Người quản gia', en: 'Butler / House Manager', ja: '執事 / 家令' },
+            { vi: 'Nhà ngoại giao', en: 'Diplomat', ja: '外交官' },
+            { vi: 'Nhân viên tôn giáo', en: 'Religious Worker', ja: '宗教家' },
+            { vi: 'Phi công', en: 'Pilot', ja: 'パイロット' }
+        ]
     },
     semi_professional: { 
         vi: "Việc làm bán chuyên nghiệp", 
