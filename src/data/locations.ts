@@ -123,3 +123,36 @@ export const japanRegions: Region[] = [
     ]
   }
 ];
+
+
+export type InterviewLocation = {
+  [key in Language]: string;
+};
+
+export type InterviewCountry = {
+  name: InterviewLocation,
+  locations: InterviewLocation[]
+};
+
+export const interviewLocations: InterviewCountry[] = [
+    {
+        name: { vi: "Việt Nam", en: "Vietnam", ja: "ベトナム" },
+        locations: [
+            // Sẽ được bổ sung sau
+        ]
+    },
+    {
+        name: { vi: "Nhật Bản", en: "Japan", ja: "日本" },
+        locations: [
+            // Sẽ được bổ sung sau
+        ]
+    },
+    {
+        name: {vi: "Khác", en: "Other", ja: "その他"},
+        locations: [
+            { vi: "Phỏng vấn Online", en: "Online Interview", ja: "オンライン面接" },
+            { vi: "Phỏng vấn tại Công ty", en: "Interview at Company", ja: "会社で面接" },
+        ]
+    }
+];
+

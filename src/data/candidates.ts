@@ -1,6 +1,6 @@
 
 import { type Language } from "@/locales/translations";
-import { japanRegions } from "./locations";
+import { japanRegions, interviewLocations } from "./locations";
 
 export type Candidate = {
     id: string;
@@ -1295,12 +1295,6 @@ const financialAbilities = {
     ja: ["十分", "要支援", "保留中"],
 };
 
-const interviewLocations = {
-    vi: ["Phỏng vấn tại Công ty", "Hà Nội", "Thành phố Hồ Chí Minh", "Đà Nẵng", "Phỏng vấn Online"],
-    en: ["Interview at Company", "Hanoi", "Ho Chi Minh City", "Da Nang", "Online Interview"],
-    ja: ["会社で面接", "ハノイ", "ホーチミン市", "ダナン", "オンライン面接"],
-};
-
 const tattoos = {
     none: { vi: "Không hình xăm", en: "No tattoo", ja: "刺青なし" },
     small: { vi: "Có xăm nhỏ (kín)", en: "Has small (hidden) tattoo", ja: "小さい刺青あり（隠せる）" },
@@ -1495,6 +1489,8 @@ function generateRandomDate(start: Date, end: Date): string {
 
 const allJapanesePrefectures = japanRegions.flatMap(region => region.prefectures);
 
+const allInterviewLocations = interviewLocations.flatMap(country => country.locations);
+
 export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => {
     const id = `VN${String(i + 1).padStart(5, '0')}`;
     const avatar = `https://i.pravatar.cc/150?u=candidate${i}`;
@@ -1560,11 +1556,7 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         en: getRandomElement(financialAbilities.en),
         ja: getRandomElement(financialAbilities.ja),
     };
-    let interviewLocation: Record<Language, string> | null = {
-        vi: getRandomElement(interviewLocations.vi),
-        en: getRandomElement(interviewLocations.en),
-        ja: getRandomElement(interviewLocations.ja),
-    };
+    let interviewLocation: Record<Language, string> | null = allInterviewLocations.length > 0 ? getRandomElement(allInterviewLocations) : null;
     
     if (visaSubtypeEn === 'No. 3 Intern' || visaSubtypeEn === 'Skilled (from Vietnam)' || visaSubtypeEn === 'New Skilled Worker' || visaSubtypeEn === 'Skilled (in Japan)' || visaSubtypeEn === 'Engineer/Specialist (in Japan)') {
         hasTattoo = false;
@@ -1692,3 +1684,4 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         documents_status: getRandomElement(documentStatuses),
     };
 });
+
