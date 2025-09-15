@@ -1084,7 +1084,22 @@ const engineerIndustries = {
         vi: "Kinh doanh, kinh tế", 
         en: "Business, Economics", 
         ja: "ビジネス・経済", 
-        jobs: [] 
+        jobs: [
+            { vi: 'Bán hàng miễn thuế', en: 'Duty-free sales', ja: '免税販売' },
+            { vi: 'Dịch vụ bán hàng', en: 'Sales service', ja: '販売サービス' },
+            { vi: 'Dịch vụ khách hàng tổng hợp', en: 'General customer service', ja: '総合顧客サービス' },
+            { vi: 'Dịch vụ nhà hàng', en: 'Restaurant service', ja: 'レストランサービス' },
+            { vi: 'Điều hành', en: 'Operations / Management', ja: '運営・管理' },
+            { vi: 'Hoạt động khởi nghiệp', en: 'Startup activities / Entrepreneurship', ja: '起業活動' },
+            { vi: 'Kinh doanh kế toán', en: 'Business accounting', ja: '企業会計' },
+            { vi: 'Kinh tế', en: 'Economics', ja: '経済' },
+            { vi: 'Nghiên cứu thị trường, marketing', en: 'Market research, marketing', ja: '市場調査、マーケティング' },
+            { vi: 'Nhân viên dịch vụ khác (không phân loại nơi khác)', en: 'Other service staff (not elsewhere classified)', ja: 'その他のサービススタッフ（他で分類されないもの）' },
+            { vi: 'Quản lý', en: 'Management', ja: '管理' },
+            { vi: 'Quản lý kế hoạch quảng cáo, truyền thông', en: 'Advertising and communications planning management', ja: '広告・コミュニケーション計画管理' },
+            { vi: 'Thương mại nước ngoài', en: 'Foreign trade', ja: '外国貿易' },
+            { vi: 'Tiếp thị (sales) doanh nghiệp', en: 'Corporate sales/marketing', ja: '法人営業・マーケティング' }
+        ] 
     },
     finance: { 
         vi: "Tài chính, kế toán, bảo hiểm", 
@@ -1652,6 +1667,9 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
     
 
+
+
+    
 
 
     
