@@ -1190,7 +1190,15 @@ const engineerIndustries = {
         vi: "Pháp lý", 
         en: "Legal", 
         ja: "法務", 
-        jobs: [] 
+        jobs: [
+            { vi: 'Chuyên viên pháp lý hành chính', en: 'Administrative Scrivener', ja: '行政書士' },
+            { vi: 'Dịch vụ pháp lý', en: 'Legal Services', ja: '法律関連サービス' },
+            { vi: 'Lập văn bản tư pháp', en: 'Judicial Scrivener', ja: '司法書士' },
+            { vi: 'Luật sư', en: 'Lawyer', ja: '弁護士' },
+            { vi: 'Luật sư luật nước ngoài', en: 'Foreign Law Solicitor', ja: '外国法事務弁護士' },
+            { vi: 'Luật sư nước ngoài', en: 'Foreign Lawyer', ja: '外国弁護士' },
+            { vi: 'Luật sư sở hữu trí tuệ', en: 'Patent Attorney', ja: '弁理士' }
+        ] 
     },
     arts: { 
         vi: "Nghệ thuật, nghệ sĩ", 
@@ -1728,3 +1736,5 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
   
+
+    
