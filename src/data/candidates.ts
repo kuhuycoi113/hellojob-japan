@@ -996,7 +996,10 @@ const engineerIndustries = {
             { vi: 'Viễn thông', en: 'Telecommunications', ja: '電気通信' }
         ] 
     },
-    automotive: { vi: "Công nghệ ô tô", en: "Automotive Technology", ja: "自動車技術", jobs: [] },
+    automotive: { vi: "Công nghệ ô tô", en: "Automotive Technology", ja: "自動車技術", jobs: [
+        { vi: "Ô tô", en: "Automotive", ja: "自動車" },
+        { vi: "Thiết kế ô tô", en: "Automotive Design", ja: "自動車設計" }
+    ] },
     transport: { vi: "Vận chuyển hàng hoá", en: "Freight Transport", ja: "貨物輸送", jobs: [] },
     construction: { vi: "Xây dựng", en: "Construction", ja: "建設", jobs: [] },
     hotel: { vi: "Khách sạn, lưu trú", en: "Hotel, Accommodation", ja: "ホテル・宿泊", jobs: [] },
@@ -1557,3 +1560,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
 
+
+
+    
