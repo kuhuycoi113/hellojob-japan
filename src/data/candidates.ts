@@ -1239,7 +1239,12 @@ const engineerIndustries = {
         vi: "Việc làm bán chuyên nghiệp", 
         en: "Semi-professional Occupations", 
         ja: "準専門職", 
-        jobs: []
+        jobs: [
+            { vi: 'Công việc mùa hè', en: 'Summer Job', ja: '夏の仕事' },
+            { vi: 'Lao động kỳ nghỉ', en: 'Working Holiday', ja: 'ワーキング・ホリデー' },
+            { vi: 'Sinh viên thực tập', en: 'Internship', ja: 'インターンシップ' },
+            { vi: 'Trao đổi văn hóa quốc tế', en: 'International Cultural Exchange', ja: '国際文化交流' }
+        ]
     }
 };
 
