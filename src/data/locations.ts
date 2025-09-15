@@ -24,7 +24,14 @@ export const japanRegions: Region[] = [
     vi: "Tohoku",
     en: "Tohoku",
     ja: "東北",
-    prefectures: []
+    prefectures: [
+      { vi: "Aomori", en: "Aomori", ja: "青森" },
+      { vi: "Iwate", en: "Iwate", ja: "岩手" },
+      { vi: "Miyagi", en: "Miyagi", ja: "宮城" },
+      { vi: "Akita", en: "Akita", ja: "秋田" },
+      { vi: "Yamagata", en: "Yamagata", ja: "山形" },
+      { vi: "Fukushima", en: "Fukushima", ja: "福島" }
+    ]
   },
   {
     vi: "Kanto",
