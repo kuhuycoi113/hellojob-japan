@@ -1165,7 +1165,17 @@ const engineerIndustries = {
         vi: "Giáo dục, đào tạo",
         en: "Education, Training",
         ja: "教育・研修",
-        jobs: []
+        jobs: [
+            { vi: "Giảng dạy có chứng chỉ", en: "Certified Teaching", ja: "資格を持つ教員" },
+            { vi: "Giảng dạy đại học", en: "University Teaching", ja: "大学での教育" },
+            { vi: "Giảng dạy ngoài cơ sở giáo dục", en: "Teaching outside educational institutions", ja: "教育機関外での指導" },
+            { vi: "Giảng dạy ngôn ngữ tại Tiểu học, THCS, PTTH", en: "Language teaching at Elementary, Junior High, High School", ja: "小・中・高校での語学教育" },
+            { vi: "Giảng dạy trường dạy nghề (Senmon)", en: "Teaching at vocational school (Senmon)", ja: "専門学校での教育" },
+            { vi: "Giảng dạy trường học các loại", en: "Teaching at various types of schools", ja: "各種学校での教育" },
+            { vi: "Giảng dạy trường quốc tế", en: "Teaching at international school", ja: "インターナショナルスクールでの教育" },
+            { vi: "Hướng dẫn nghiên cứu", en: "Research guidance", ja: "研究指導" },
+            { vi: "Hướng dẫn thể thao", en: "Sports coaching", ja: "スポーツ指導" }
+        ]
     },
     admin: { 
         vi: "Hành chính, văn phòng", 
@@ -1709,5 +1719,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
 
     
+
 
 
