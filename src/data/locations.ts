@@ -138,7 +138,9 @@ export const interviewLocations: InterviewCountry[] = [
     {
         name: { vi: "Việt Nam", en: "Vietnam", ja: "ベトナム" },
         locations: [
-            // Sẽ được bổ sung sau
+            { vi: "Hà Nội", en: "Hanoi", ja: "ハノイ" },
+            { vi: "Thành phố Hồ Chí Minh", en: "Ho Chi Minh City", ja: "ホーチミン市" },
+            { vi: "Đà Nẵng", en: "Da Nang", ja: "ダナン" }
         ]
     },
     {
@@ -155,4 +157,3 @@ export const interviewLocations: InterviewCountry[] = [
         ]
     }
 ];
-
