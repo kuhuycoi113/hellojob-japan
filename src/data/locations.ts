@@ -118,6 +118,8 @@ export const japanRegions: Region[] = [
     vi: "Okinawa",
     en: "Okinawa",
     ja: "沖縄",
-    prefectures: []
+    prefectures: [
+        { vi: "Okinawa", en: "Okinawa", ja: "沖縄" }
+    ]
   }
 ];
