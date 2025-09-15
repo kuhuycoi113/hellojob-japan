@@ -1214,7 +1214,10 @@ const engineerIndustries = {
         vi: "Thể dục thể thao", 
         en: "Sports", 
         ja: "スポーツ", 
-        jobs: []
+        jobs: [
+            { vi: "Vận động viên chuyên nghiệp", en: "Professional athlete", ja: "プロ選手" },
+            { vi: "Vận động viên nghiệp dư", en: "Amateur athlete", ja: "アマチュア選手" }
+        ]
     },
     professional: { 
         vi: "Nghề có kỹ năng chuyên nghiệp", 
@@ -1743,3 +1746,6 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
 
     
 
+
+
+  
