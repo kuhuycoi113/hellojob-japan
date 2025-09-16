@@ -1370,7 +1370,7 @@ const documentStatuses = [
 ];
 
 
-function getRandomSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
+function getSalary(index: number, visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
     let min, max;
     // These are hourly wages
     switch (visaTypeKey) {
@@ -1386,7 +1386,7 @@ function getRandomSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, 
       default:
         min = 700; max = 2000;
     }
-    const salary = Math.floor(Math.random() * (max - min + 1)) + min;
+    const salary = min + (index % (max - min + 1));
     return {
       vi: `${salary.toLocaleString('de-DE')} Yên/giờ`,
       en: `${salary.toLocaleString('en-US')} JPY/hour`,
@@ -1394,7 +1394,7 @@ function getRandomSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, 
     };
 }
 
-function getRandomAnnualIncome(visaTypeKey: keyof typeof visaTypes): Record<Language, string> | null {
+function getAnnualIncome(index: number, visaTypeKey: keyof typeof visaTypes): Record<Language, string> | null {
     let min: number, max: number;
 
     switch (visaTypeKey) {
@@ -1411,19 +1411,8 @@ function getRandomAnnualIncome(visaTypeKey: keyof typeof visaTypes): Record<Lang
             return null; // Interns don't have this data
     }
     
-    const salary = Math.floor(Math.random() * (max - min + 1)) + min;
+    const salary = min + (index % (max - min + 1));
     
-    const formatToMan = (value: number) => {
-        const man = value / 10000;
-        if (man >= 100) {
-            return `${(man / 100).toFixed(1)} triệu`; // for Vietnamese
-        }
-        if (man >= 1) {
-            return `${Math.round(man)}万`;
-        }
-        return `${value.toLocaleString('ja-JP')}`;
-    };
-
     const formatToManJa = (value: number) => {
          const man = value / 10000;
          return `${Math.round(man)}万円`;
@@ -1436,7 +1425,7 @@ function getRandomAnnualIncome(visaTypeKey: keyof typeof visaTypes): Record<Lang
     };
 }
 
-function getRandomNetSalary(visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
+function getNetSalary(index: number, visaTypeKey: keyof typeof visaTypes): Record<Language, string> {
     let min: number, max: number;
 
     switch (visaTypeKey) {
@@ -1457,7 +1446,7 @@ function getRandomNetSalary(visaTypeKey: keyof typeof visaTypes): Record<Languag
             max = 250000;
     }
     
-    const salary = Math.floor(Math.random() * (max - min + 1)) + min;
+    const salary = min + (index % (max - min + 1));
     const salaryInMan = salary / 10000;
     
     const formatToMan = (value: number) => {
@@ -1475,12 +1464,18 @@ function getRandomNetSalary(visaTypeKey: keyof typeof visaTypes): Record<Languag
 }
 
 
-function getRandomElement<T>(arr: T[]): T {
-    return arr[Math.floor(Math.random() * arr.length)];
+function getElement<T>(arr: T[], index: number): T {
+    return arr[index % arr.length];
 }
 
-function generateRandomDate(start: Date, end: Date): string {
-    const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+function generateDate(index: number): string {
+    const start = new Date();
+    const end = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
+    const date = new Date(start.getTime() + (index * 3) * 24 * 60 * 60 * 1000); // Offset by 3 days per index
+    if (date > end) {
+        const resetDate = new Date(start.getTime() + (index % 120) * 24 * 60 * 60 * 1000);
+        return `${String(resetDate.getDate()).padStart(2, '0')}/${String(resetDate.getMonth() + 1).padStart(2, '0')}/${resetDate.getFullYear()}`;
+    }
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
@@ -1496,9 +1491,9 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     const avatar = `https://i.pravatar.cc/150?u=candidate${i}`;
 
     const visaKeys = Object.keys(visaTypes) as (keyof typeof visaTypes)[];
-    const randomVisaKey = getRandomElement(visaKeys);
+    const randomVisaKey = getElement(visaKeys, i);
     const visaInfo = visaTypes[randomVisaKey];
-    const randomVisaSubtypeIndex = Math.floor(Math.random() * visaInfo.subtypes.vi.length);
+    const randomVisaSubtypeIndex = i % visaInfo.subtypes.vi.length;
     const visaSubtype: Record<Language, string> = {
         vi: visaInfo.subtypes.vi[randomVisaSubtypeIndex],
         en: visaInfo.subtypes.en[randomVisaSubtypeIndex],
@@ -1506,57 +1501,42 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     };
     
     let randomSpecialty: Record<Language, string>;
-    const combinedSpecialties = [...Object.values(internIndustries).flatMap(ind => ind.jobs), ...otherSpecialties];
 
     if (randomVisaKey === 'intern') {
         const industryKeys = Object.keys(internIndustries) as (keyof typeof internIndustries)[];
-        const randomIndustryKey = getRandomElement(industryKeys);
+        const randomIndustryKey = getElement(industryKeys, i);
         const industry = internIndustries[randomIndustryKey];
-        if (industry.jobs.length > 0) {
-            randomSpecialty = getRandomElement(industry.jobs);
-        } else {
-             // Fallback for industries with no specific jobs yet
-             randomSpecialty = { vi: industry.vi, en: industry.en, ja: industry.ja };
-        }
+        randomSpecialty = getElement(industry.jobs, i);
     } else if (randomVisaKey === 'skilled') {
         const industryKeys = Object.keys(skilledIndustries) as (keyof typeof skilledIndustries)[];
-        const randomIndustryKey = getRandomElement(industryKeys);
+        const randomIndustryKey = getElement(industryKeys, i);
         const industry = skilledIndustries[randomIndustryKey];
-        if (industry.jobs.length > 0) {
-            randomSpecialty = getRandomElement(industry.jobs);
-        } else {
-            randomSpecialty = { vi: industry.vi, en: industry.en, ja: industry.ja };
-        }
+        randomSpecialty = getElement(industry.jobs, i);
     } else { // Engineer
         const industryKeys = Object.keys(engineerIndustries) as (keyof typeof engineerIndustries)[];
-        const randomIndustryKey = getRandomElement(industryKeys);
+        const randomIndustryKey = getElement(industryKeys, i);
         const industry = engineerIndustries[randomIndustryKey];
-        if (industry.jobs.length > 0) {
-            randomSpecialty = getRandomElement(industry.jobs);
-        } else {
-            randomSpecialty = { vi: industry.vi, en: industry.en, ja: industry.ja };
-        }
+        randomSpecialty = getElement(industry.jobs, i);
     }
     
-    const randomLastName = getRandomElement(lastNames);
-    const randomFirstName = getRandomElement(firstNames);
-    const randomGender = getRandomElement(genders);
-    const randomEducation = getRandomElement(educationLevels);
-    const randomExperience = getRandomElement(yearsOfExperience);
+    const randomLastName = getElement(lastNames, i);
+    const randomFirstName = getElement(firstNames, i);
+    const randomGender = getElement(genders, i);
+    const randomEducation = getElement(educationLevels, i);
+    const randomExperience = getElement(yearsOfExperience, i);
     
-    let randomLanguageAbility = {...getRandomElement(languageAbilities)};
+    let randomLanguageAbility = {...getElement(languageAbilities, i)};
     
-    // --- Start applying rules from the image ---
     const visaSubtypeEn = visaSubtype.en;
 
-    let hasTattoo = Math.random() > 0.6;
-    let hasHepatitisB = Math.random() > 0.9;
+    let hasTattoo = (i % 5) > 2; // ~40% chance
+    let hasHepatitisB = (i % 10) > 8; // ~10% chance
     let financialAbility: Record<Language, string> | null = {
-        vi: getRandomElement(financialAbilities.vi),
-        en: getRandomElement(financialAbilities.en),
-        ja: getRandomElement(financialAbilities.ja),
+        vi: getElement(financialAbilities.vi, i),
+        en: getElement(financialAbilities.en, i),
+        ja: getElement(financialAbilities.ja, i),
     };
-    let interviewLocation: Record<Language, string> | null = allInterviewLocations.length > 0 ? getRandomElement(allInterviewLocations) : null;
+    let interviewLocation: Record<Language, string> | null = allInterviewLocations.length > 0 ? getElement(allInterviewLocations, i) : null;
     
     if (visaSubtypeEn === 'No. 3 Intern' || visaSubtypeEn === 'Skilled (from Vietnam)' || visaSubtypeEn === 'New Skilled Worker' || visaSubtypeEn === 'Skilled (in Japan)' || visaSubtypeEn === 'Engineer/Specialist (in Japan)') {
         hasTattoo = false;
@@ -1579,27 +1559,27 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
         randomLanguageAbility = { language: { vi: "Không yêu cầu", en: "Not required", ja: "不問" }, level: null };
     } else {
         if (randomLanguageAbility.language.en === 'Japanese') {
-            randomLanguageAbility.level = getRandomElement(japaneseLevels);
+            randomLanguageAbility.level = getElement(japaneseLevels, i);
         } else if (randomLanguageAbility.language.en === 'English') {
-            randomLanguageAbility.level = getRandomElement(englishLevels);
+            randomLanguageAbility.level = getElement(englishLevels, i);
         }
     }
 
 
-    const tattooRecord = hasTattoo ? (Math.random() > 0.5 ? tattoos.large : tattoos.small) : tattoos.none;
+    const tattooRecord = hasTattoo ? ((i % 2 === 0) ? tattoos.large : tattoos.small) : tattoos.none;
 
     const name_vi = `${randomLastName.vi} ${randomFirstName.vi}`;
     const name_en = `${randomLastName.en} ${randomFirstName.en}`;
     const name_ja = `${randomLastName.ja} ${randomFirstName.ja}`;
 
-    const age = Math.floor(Math.random() * (69 - 18 + 1)) + 18; // 18-69
-    const height = Math.floor(Math.random() * (205 - 140 + 1)) + 140; // 140-205 cm
-    const weight = Math.floor(Math.random() * (105 - 40 + 1)) + 40; // 40-105 kg
+    const age = 18 + (i % 52); // 18-69
+    const height = 140 + (i % 66); // 140-205 cm
+    const weight = 40 + (i % 66); // 40-105 kg
     
     const currentYear = new Date().getFullYear();
     const birthYear = currentYear - age;
-    const birthMonth = Math.floor(Math.random() * 12);
-    const birthDay = Math.floor(Math.random() * 28) + 1;
+    const birthMonth = i % 12;
+    const birthDay = (i % 28) + 1;
     const dateOfBirth = new Date(birthYear, birthMonth, birthDay);
     const formattedDateOfBirth = `${String(dateOfBirth.getDate()).padStart(2, '0')}/${String(dateOfBirth.getMonth() + 1).padStart(2, '0')}/${dateOfBirth.getFullYear()}`;
 
@@ -1611,15 +1591,15 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
     details_en += ` - ${tattooRecord.en}`;
     details_ja += ` - ${tattooRecord.ja}`;
 
-    const currentResidenceBase = getRandomElement(currentResidences);
+    const currentResidenceBase = getElement(currentResidences, i);
     let currentResidenceWithDetail = {...currentResidenceBase};
     if (currentResidenceBase.en === 'Vietnam') {
-        const randomHometown = getRandomElement(hometowns);
+        const randomHometown = getElement(hometowns, i);
         currentResidenceWithDetail.vi += `, ${randomHometown.vi}`;
         currentResidenceWithDetail.en += `, ${randomHometown.en}`;
         currentResidenceWithDetail.ja += `、${randomHometown.ja}`;
     } else if (allJapanesePrefectures.length > 0) { // Japan
-        const randomPrefecture = getRandomElement(allJapanesePrefectures);
+        const randomPrefecture = getElement(allJapanesePrefectures, i);
         currentResidenceWithDetail.vi = `Nhật Bản, ${randomPrefecture.vi}`;
         currentResidenceWithDetail.en = `Japan, ${randomPrefecture.en}`;
         currentResidenceWithDetail.ja = `日本、${randomPrefecture.ja}`;
@@ -1648,17 +1628,17 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             en: randomSpecialty.en,
             ja: randomSpecialty.ja,
         },
-        desired_salary: getRandomSalary(randomVisaKey),
-        desired_net_salary: getRandomNetSalary(randomVisaKey),
-        desired_annual_income: getRandomAnnualIncome(randomVisaKey),
+        desired_salary: getSalary(i, randomVisaKey),
+        desired_net_salary: getNetSalary(i, randomVisaKey),
+        desired_annual_income: getAnnualIncome(i, randomVisaKey),
         education_level: randomEducation,
         years_of_experience: randomExperience,
-        ginou_remaining_period: randomVisaKey === 'intern' ? getRandomElement(ginouRemainingPeriods) : null,
+        ginou_remaining_period: randomVisaKey === 'intern' ? getElement(ginouRemainingPeriods, i) : null,
         jobs: {
-            count: Math.floor(Math.random() * 10) + 1,
+            count: (i % 10) + 1,
             images: Array.from({ length: 3 }, (_, j) => `https://picsum.photos/50?random=job${i}${j}`)
         },
-        created_date: generateRandomDate(new Date(), new Date(new Date().setFullYear(new Date().getFullYear() + 1))),
+        created_date: generateDate(i),
         height,
         hepatitis_b: hasHepatitisB ? { vi: true, en: true, ja: true } : null,
         financial_ability: financialAbility,
@@ -1669,19 +1649,20 @@ export const allCandidates: Candidate[] = Array.from({ length: 100 }, (_, i) => 
             ja: tattooRecord.ja,
         },
         specialConditions: {
-            isUrgent: Math.random() > 0.8,
-            canDoFactory: Math.random() > 0.5,
-            canDoOutdoor: (randomVisaKey === 'intern' || randomVisaKey === 'skilled') && Math.random() > 0.6,
-            wantsGinou2: (randomVisaKey === 'intern') && Math.random() > 0.7,
-            wantsToChangeJob: (randomVisaKey === 'skilled' || randomVisaKey === 'engineer') && Math.random() > 0.75,
+            isUrgent: (i % 5) === 0,
+            canDoFactory: (i % 2) === 0,
+            canDoOutdoor: (randomVisaKey === 'intern' || randomVisaKey === 'skilled') && (i % 3) === 0,
+            wantsGinou2: (randomVisaKey === 'intern') && (i % 4) === 0,
+            wantsToChangeJob: (randomVisaKey === 'skilled' || randomVisaKey === 'engineer') && (i % 4) > 1,
         },
         language_ability: randomLanguageAbility,
-        desired_work_shift: getRandomElement(desiredWorkShifts),
-        vision: getRandomElement(visions),
-        dominant_hand: getRandomElement(dominantHands),
-        hometown: getRandomElement(hometowns),
+        desired_work_shift: getElement(desiredWorkShifts, i),
+        vision: getElement(visions, i),
+        dominant_hand: getElement(dominantHands, i),
+        hometown: getElement(hometowns, i),
         current_residence: currentResidenceWithDetail,
-        documents_status: getRandomElement(documentStatuses),
+        documents_status: getElement(documentStatuses, i),
     };
 });
 
+    
