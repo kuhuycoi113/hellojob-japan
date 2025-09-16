@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { mockJobs, type MockJob } from '@/data/mock-jobs';
 import { SuitableCandidates } from './suitable-candidates';
+import { Skeleton } from '../ui/skeleton';
 
 export function JobDetail({ jobId }: { jobId: string }) {
   const { t, language } = useLanguage();
@@ -18,19 +19,43 @@ export function JobDetail({ jobId }: { jobId: string }) {
   const jobDetail_t = t.jobDetail;
 
   const [job, setJob] = useState<any | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let foundJob = null;
     const storedJobsRaw = localStorage.getItem('postedJobs');
-    const storedJobs = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
-    const allJobs = [...storedJobs, ...mockJobs];
-    const foundJob = allJobs.find(j => j.id === jobId);
-    setJob(foundJob || null);
+    if (storedJobsRaw) {
+      const storedJobs = JSON.parse(storedJobsRaw);
+      foundJob = storedJobs.find((j: any) => j.id === jobId);
+    }
+    
+    if (!foundJob) {
+      foundJob = mockJobs.find(j => j.id === jobId);
+    }
+
+    setJob(foundJob || 'not-found');
+    setLoading(false);
   }, [jobId]);
 
-  if (job === null) {
-      return null;
+  if (loading) {
+      return (
+        <div className="container mx-auto max-w-5xl py-12 px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div className="lg:col-span-2 space-y-8">
+                    <Skeleton className="h-[200px] w-full" />
+                    <Skeleton className="h-[300px] w-full" />
+                </div>
+                <div className="lg:col-span-1 space-y-6">
+                    <Skeleton className="h-[400px] w-full" />
+                </div>
+            </div>
+        </div>
+      )
   }
-   if (!job) return notFound();
+
+  if (job === 'not-found') {
+      notFound();
+  }
 
   const title = job.title?.[language] || job.title || '';
   const company = job.company?.[language] || job.companyName || '';

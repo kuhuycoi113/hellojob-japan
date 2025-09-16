@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -75,7 +76,7 @@ export function PartnershipOpportunities() {
         // 2. Convert opportunity to a job
         const newJob: MockJob = {
             ...opportunity,
-            id: `JOB-` + new Date().getTime(), // Create a new unique ID
+            id: `JOB-${new Date().getTime()}`, // Create a new unique ID
             status: 'Searching'
         };
 

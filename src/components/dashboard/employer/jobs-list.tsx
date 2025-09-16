@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -19,10 +20,21 @@ export function JobsList() {
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
   const [activeTab, setActiveTab] = useState('all');
   const isMobile = useIsMobile();
+  const [isLoading, setIsLoading] = useState(true);
 
   const loadJobs = () => {
+    setIsLoading(true);
     const storedJobsRaw = localStorage.getItem('postedJobs');
-    const storedJobs: Job[] = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
+    let storedJobs: Job[] = [];
+    if (storedJobsRaw) {
+      try {
+        storedJobs = JSON.parse(storedJobsRaw);
+      } catch (error) {
+        console.error("Failed to parse jobs from localStorage", error);
+        storedJobs = [];
+      }
+    }
+    
     const allJobs = [...storedJobs, ...mockJobs].slice(0, 30); // Combine and limit to 30
      // Remove duplicates by id, giving priority to storedJobs
     const uniqueJobs = allJobs.filter((job, index, self) =>
@@ -32,6 +44,7 @@ export function JobsList() {
     );
 
     setJobs(uniqueJobs);
+    setIsLoading(false);
   };
   
   useEffect(() => {
@@ -54,6 +67,10 @@ export function JobsList() {
   const getTabCount = (tabValue: string) => {
     if (tabValue === 'all') return jobs.length;
     return jobs.filter(j => j.status.toLowerCase() === tabValue).length;
+  }
+
+  if (isLoading) {
+    return <div>Loading...</div>; // Or a skeleton loader
   }
 
   return (

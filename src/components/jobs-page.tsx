@@ -116,27 +116,28 @@ export function JobsPage() {
   const { t, language } = useLanguage();
   const { userRole } = useRole();
   const [jobs, setJobs] = useState<MockJob[]>([]);
-  const [viewMode, setViewMode] = useState<'list' | 'grid' | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
   const [activeTab, setActiveTab] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const jobsListRef = useRef<HTMLDivElement>(null);
   const [highlightedJobId, setHighlightedJobId] = useState<string | null>(null);
 
-   useEffect(() => {
-    // Only set viewMode on client-side to avoid hydration mismatch
-    setViewMode(window.innerWidth < 768 ? 'grid' : 'grid');
-  }, []);
-
-  const loadJobs = () => {
-    const storedJobsRaw = localStorage.getItem('postedJobs');
-    const storedJobs = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
-    const allJobs = [...storedJobs, ...mockJobs].filter(
-      (job, index, self) => index === self.findIndex(j => j.id === job.id)
-    );
-    setJobs(allJobs);
-  };
-  
   useEffect(() => {
+    // Set initial view mode based on window size, but only on the client.
+    setViewMode(window.innerWidth < 768 ? 'grid' : 'grid');
+
+    const loadJobs = () => {
+      setIsLoading(true);
+      const storedJobsRaw = localStorage.getItem('postedJobs');
+      const storedJobs = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
+      const allJobs = [...storedJobs, ...mockJobs].filter(
+        (job, index, self) => index === self.findIndex(j => j.id === job.id)
+      );
+      setJobs(allJobs);
+      setIsLoading(false);
+    };
+    
     loadJobs();
 
     const handleJobsUpdated = (event: Event) => {
@@ -381,6 +382,12 @@ export function JobsPage() {
         </Table>
      </Card>
   );
+  
+  const LoadingView = () => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Array.from({ length: 9 }).map((_, i) => <Skeleton key={i} className="h-[420px] w-full" />)}
+    </div>
+  );
 
   return (
     <div className="space-y-6">
@@ -425,7 +432,6 @@ export function JobsPage() {
                     variant={viewMode === 'list' ? 'secondary' : 'ghost'}
                     size="icon"
                     onClick={() => setViewMode('list')}
-                    disabled={!viewMode}
                   >
                     <List className="h-5 w-5" />
                   </Button>
@@ -433,18 +439,13 @@ export function JobsPage() {
                     variant={viewMode === 'grid' ? 'secondary' : 'ghost'}
                     size="icon"
                     onClick={() => setViewMode('grid')}
-                    disabled={!viewMode}
                   >
                     <LayoutGrid className="h-5 w-5" />
                   </Button>
                 </div>
               </div>
               <div className="mt-4">
-                  {viewMode === 'list' ? <JobsListView /> : viewMode === 'grid' ? <JobsGridView /> : 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {Array.from({ length: 9 }).map((_, i) => <Skeleton key={i} className="h-[420px] w-full" />)}
-                  </div>
-                  }
+                  {isLoading ? <LoadingView /> : (viewMode === 'list' ? <JobsListView /> : <JobsGridView />)}
               </div>
             </Tabs>
             
@@ -511,3 +512,4 @@ export function JobsPage() {
     
 
     
+
