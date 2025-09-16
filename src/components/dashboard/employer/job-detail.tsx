@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { mockJobs, type MockJob } from '@/data/mock-jobs';
 import { SuitableCandidates } from './suitable-candidates';
-import { Skeleton } from '../ui/skeleton';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export function JobDetail({ jobId }: { jobId: string }) {
   const { t, language } = useLanguage();
