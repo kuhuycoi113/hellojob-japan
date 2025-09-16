@@ -20,8 +20,7 @@ export function JobsList() {
   const [activeTab, setActiveTab] = useState('all');
   const isMobile = useIsMobile();
 
-  useEffect(() => {
-    // Set mock jobs data on component mount
+  const loadJobs = () => {
     const storedJobsRaw = localStorage.getItem('postedJobs');
     const storedJobs: Job[] = storedJobsRaw ? JSON.parse(storedJobsRaw) : [];
     const allJobs = [...storedJobs, ...mockJobs].slice(0, 30); // Combine and limit to 30
@@ -33,6 +32,10 @@ export function JobsList() {
     );
 
     setJobs(uniqueJobs);
+  };
+  
+  useEffect(() => {
+    loadJobs();
   }, []);
 
   const filteredJobs = jobs.filter(job => {
