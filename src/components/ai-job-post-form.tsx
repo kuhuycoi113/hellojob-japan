@@ -90,7 +90,7 @@ function AiJobPostFormContent() {
         try {
             localStorage.setItem('latestJobPost', JSON.stringify(result));
             // Simulate a job ID for the URL, in a real app this would come from the backend.
-            const pseudoJobId = `job-${Date.now()}`;
+            const pseudoJobId = `job-` + new Date().getTime();
             router.push(`/dashboard/jobs/${pseudoJobId}/find-candidates`);
         } catch (error) {
              console.error("Failed to save job post to localStorage", error);
@@ -505,7 +505,7 @@ function AiJobPostFormContent() {
       // Create a new job object with a unique ID and current date
       const newJob = {
         ...editableJobPost,
-        id: `job-${Date.now()}`,
+        id: `job-` + new Date().getTime(),
         status: 'Searching', // Default status for a new job
         partners: '0',
         applications: '0',
@@ -920,9 +920,3 @@ export function AiJobPostForm() {
     </Suspense>
   )
 }
-
-    
-
-    
-
-    

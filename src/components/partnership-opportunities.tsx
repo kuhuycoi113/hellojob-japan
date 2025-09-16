@@ -41,15 +41,19 @@ export function PartnershipOpportunities() {
             return timeLeft;
         };
 
-        const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+        const [timeLeft, setTimeLeft] = useState({ minutes: 0, seconds: 0 });
 
         useEffect(() => {
-            const timer = setTimeout(() => {
+            // Set initial value on client mount to avoid server-client mismatch
+            setTimeLeft(calculateTimeLeft());
+
+            const timer = setInterval(() => {
                 setTimeLeft(calculateTimeLeft());
             }, 1000);
 
-            return () => clearTimeout(timer);
-        });
+            return () => clearInterval(timer);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [expiryTimestamp]);
         
         const padWithZero = (num: number) => num.toString().padStart(2, '0');
 
@@ -71,7 +75,7 @@ export function PartnershipOpportunities() {
         // 2. Convert opportunity to a job
         const newJob: MockJob = {
             ...opportunity,
-            id: `JOB-${Date.now()}`, // Create a new unique ID
+            id: `JOB-` + new Date().getTime(), // Create a new unique ID
             status: 'Searching'
         };
 

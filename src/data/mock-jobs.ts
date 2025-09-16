@@ -247,7 +247,7 @@ export const mockJobs: MockJob[] = [
         ja: `${location.ja}での${industry.ja}`
       },
       company,
-      applicants: Math.floor(Math.random() * 30),
+      applicants: jobIndex * 3 % 30, // Consistent applicants
       status: statusTypes[jobIndex % statusTypes.length],
       postedDate: `2024-05-${String(25 - (jobIndex % 25)).padStart(2, '0')}`,
       image: `https://picsum.photos/400/225?random=${jobIndex}`,
